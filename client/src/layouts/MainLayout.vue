@@ -3,7 +3,12 @@
 
     <q-header elevated class="bg-primary text-white" height-hint="98">
       <q-toolbar>
-        <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
+        <span v-if="userStore.isUserLogged">
+          <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
+        </span>
+        <span v-else>
+          <q-btn dense flat round icon="person" />
+        </span>
 
         <q-toolbar-title>
           <q-avatar>
@@ -21,11 +26,11 @@
       </q-tabs>
     </q-header>
 
-    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered>
+    <q-drawer v-model="leftDrawerOpen" side="left" bordered>
       <!-- drawer content -->
     </q-drawer>
 
-    <q-drawer show-if-above v-model="rightDrawerOpen" side="right" bordered>
+    <q-drawer v-model="rightDrawerOpen" side="right" bordered>
       <!-- drawer content -->
     </q-drawer>
 
@@ -38,13 +43,17 @@
 
 <script>
 import { ref } from 'vue'
+import { useUserStore } from "../stores/user-store"
 
 export default {
   setup () {
     const leftDrawerOpen = ref(false)
     const rightDrawerOpen = ref(false)
+    const userStore = useUserStore()
 
     return {
+      userStore,
+
       leftDrawerOpen,
       toggleLeftDrawer () {
         leftDrawerOpen.value = !leftDrawerOpen.value

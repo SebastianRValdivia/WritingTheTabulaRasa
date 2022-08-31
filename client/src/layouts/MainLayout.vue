@@ -7,7 +7,8 @@
           <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
         </span>
         <span v-else>
-          <q-btn dense flat round icon="person" />
+          <q-btn dense flat round icon="person" @click="appStore.openLoginDialog"/>
+          <login-dialog isOpen="isLoginDialogOpen"/>
         </span>
 
         <q-toolbar-title>
@@ -43,16 +44,24 @@
 
 <script>
 import { ref } from 'vue'
-import { useUserStore } from "../stores/user-store"
+import { useUserStore } from "src/stores/user-store"
+import { useAppStore } from "src/stores/app-store"
+
+import LoginDialog from "src/components/LoginDialog.vue"
 
 export default {
-  setup () {
+  components: {
+    LoginDialog
+  },
+  setup() {
     const leftDrawerOpen = ref(false)
     const rightDrawerOpen = ref(false)
     const userStore = useUserStore()
+    const appStore = useAppStore()
 
     return {
       userStore,
+      appStore,
 
       leftDrawerOpen,
       toggleLeftDrawer () {
@@ -62,7 +71,7 @@ export default {
       rightDrawerOpen,
       toggleRightDrawer () {
         rightDrawerOpen.value = !rightDrawerOpen.value
-      }
+      },
     }
   }
 }

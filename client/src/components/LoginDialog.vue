@@ -55,7 +55,10 @@ export default {
       isPwd,
 
       logIn() {
-        userStore.logUser()
+        userStore.logUser(
+          username.value,
+          password.value
+        )
       },
     }
   }

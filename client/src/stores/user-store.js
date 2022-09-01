@@ -8,5 +8,8 @@ export const useUserStore = defineStore('user', {
     isUserLogged: (state) => state.isLogged,
   },
   actions: {
+    logUser() {
+      this.isLogged = true;
+    }
   },
 });

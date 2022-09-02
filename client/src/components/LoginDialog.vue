@@ -1,5 +1,5 @@
 <template>
-  <q-dialog v-model="appStore.isLoginOpen" persistent>
+  <q-dialog v-model="appStore.isLoginOpen" persistent @keyup.enter="submit">
       <q-card class="q-px-sm q-pb-md column">
         <q-card-section class="items-center">
           <q-input v-model="username" filled class="app-login-input">
@@ -26,9 +26,9 @@
           </q-input>
         </q-card-section>
 
-        <q-card-actions align="right">
+        <q-card-actions align="right" >
           <q-btn flat label="Cancel" color="warning" v-close-popup />
-          <q-btn flat label="Proceed" color="primary" @click="logIn" />
+          <q-btn flat label="Proceed" color="primary" @click="submit" />
         </q-card-actions>
      </q-card>
   </q-dialog>
@@ -54,7 +54,7 @@ export default {
       password,
       isPwd,
 
-      logIn() {
+      submit() {
         userStore.logUser(
           username.value,
           password.value

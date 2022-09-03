@@ -17,7 +17,7 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Load and set enviroment variables
+# Load and set environment variables
 env = environ.Env(
     # set casting, default value
     DEBUG=(bool, False),
@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     # Project apps
     'api',
     'user',
+    'applications.notes',
 ]
 
 MIDDLEWARE = [

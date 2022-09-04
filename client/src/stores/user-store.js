@@ -10,8 +10,8 @@ export const useUserStore = defineStore('user', {
     isUserLogged: (state) => state.isLogged,
   },
   actions: {
-    logUser(username, password) {
-      api.auth.postUserAuthentication(username, password)
+    async logUser(username, password) {
+      await api.auth.postUserAuthentication(username, password)
         .then( result => {
           if (result.code === 200) {
             this.userToken = result.token

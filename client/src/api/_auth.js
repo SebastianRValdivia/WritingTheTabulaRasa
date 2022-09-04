@@ -2,7 +2,7 @@ import { api } from "boot/axios";
 
 export default {
   postUserAuthentication(username, password) {
-    return api.post("/user/obtain-token/", {
+    return api.post("v1/users/obtain-token/", {
       username: username,
       password: password,
     })

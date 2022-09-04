@@ -7,8 +7,11 @@ class NoteModel(models.Model):
 
     title = models.CharField(max_length=CHARFIELD_LONG)
 
+    class Meta:
+        verbose_name = 'Note'
+
     def __str__(self):
         return self.title
 
     def get_absolute_url(self):
-        return reverse("NoteModel_detail", kwargs={"pk": self.pk})
+        return reverse('NoteModel_detail', kwargs={'pk': self.pk})

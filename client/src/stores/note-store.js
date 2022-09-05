@@ -7,6 +7,9 @@ export const useNoteStore = defineStore('note', {
    }),
    getters: {
     notesList: state => state.notes,
+    getNoteById: state => {
+      return noteId => state.notes.find(note => note.id === noteId)
+    }
    },
    actions: {
     async retrieveNotes() {
@@ -15,7 +18,6 @@ export const useNoteStore = defineStore('note', {
           this.notes = result.notes
         }
       })
-
     }
 
    }

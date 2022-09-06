@@ -1,0 +1,56 @@
+<template>
+  <div>
+    <h1>{{ note.title }} {{ props.id }}</h1>
+  </div>
+</template>
+
+<script>
+import { useNoteStore } from "src/stores/note-store"
+import { onMounted, ref } from "vue"
+import { useRouter, onBeforeRouteUpdate } from "vue-router"
+
+export default {
+  props: {
+    id: String
+  },
+  setup(props) {
+    const noteStore = useNoteStore()
+    const note = ref("")
+    const router = useRouter()
+
+    const initPage = async () => {
+      setNoteData()
+    }
+
+    function setNoteData() {
+      if (noteStore.getNoteById(Number(props.id)) !== undefined) {
+        note.value = noteStore.getNoteById(Number(props.id))
+      } else {
+        router.push({ name: "NotFound" })
+        note.value = ""
+      }
+    }
+
+    function resetNoteData(noteId) {
+      let newNote = noteStore.getNoteById(noteId)
+      if (newNote !== undefined) {
+        note.value = newNote
+      } else {
+        router.push({ name: "NotFound" })
+        note.value = ""
+      }
+    }
+
+    onMounted(initPage)
+    onBeforeRouteUpdate((to, from) => {
+      resetNoteData(to.params.id)
+    })
+
+    return {
+      props,
+      note,
+    }
+  },
+}
+
+</script>

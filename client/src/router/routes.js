@@ -7,6 +7,7 @@ const routes = [
       { path: "", component: () => import('pages/IndexPage.vue') },
       { 
         path: "/notes/",
+        name: "notes",
         component: () => import("src/pages/NoteListPage.vue"),
       },
       {

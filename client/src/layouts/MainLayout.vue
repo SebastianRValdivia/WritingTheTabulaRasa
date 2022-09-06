@@ -27,8 +27,39 @@
       </q-tabs>
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" side="left" bordered>
-      <!-- drawer content -->
+    <q-drawer 
+      v-model="leftDrawerOpen"
+      side="left"
+      bordered
+      class="bg-grey-3"
+    >
+      <q-scroll-area class="fit">
+        <q-list>
+          <router-link :to="{name: 'notes'}">
+            <q-item clickable v-ripple>
+              <q-item-section avatar>
+                <q-icon name="inbox" />
+              </q-item-section>
+
+              <q-item-section>
+                {{ $t("mainDrawer.notes") }}
+              </q-item-section>
+            </q-item>
+          </router-link>
+
+          <!--
+          <q-img class="absolute-top" src="" style="height: 150px">
+            <div class="absolute-bottom bg-transparent">
+              <q-avatar size="56px" class="q-mb-sm">
+                <img src="">
+              </q-avatar>
+              <div class="text-weight-bold">Username</div>
+            </div>
+          </q-img>
+          -->
+        </q-list>
+
+      </q-scroll-area>
     </q-drawer>
 
     <q-drawer v-model="rightDrawerOpen" side="right" bordered>

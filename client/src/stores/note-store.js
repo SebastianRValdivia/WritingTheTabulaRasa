@@ -18,8 +18,20 @@ export const useNoteStore = defineStore('note', {
           this.notes = result.notes
         }
       })
+    },
+    async retrieveNoteById(id) {
+      if (this.notes.find(note => note.id === id) !== undefined) {
+        await api.notes.getNoteById().then(result => {
+          if (result.code === 200) {
+            this.notes.push(result.note)
+          } else {
+            return result.code
+          }
+        })
+      } else {
+        return "Note already loaded"
+      }
     }
-
    }
 
 })

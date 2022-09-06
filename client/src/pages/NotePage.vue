@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{ note.title }} {{ props.id }}</h1>
+    <h1>{{ note.title }} {{ note.id }}</h1>
   </div>
 </template>
 
@@ -32,7 +32,7 @@ export default {
     }
 
     function resetNoteData(noteId) {
-      let newNote = noteStore.getNoteById(noteId)
+      const newNote = noteStore.getNoteById(noteId)
       if (newNote !== undefined) {
         note.value = newNote
       } else {
@@ -42,8 +42,8 @@ export default {
     }
 
     onMounted(initPage)
-    onBeforeRouteUpdate((to, from) => {
-      resetNoteData(to.params.id)
+    onBeforeRouteUpdate((to, from, next) => {
+      resetNoteData(Number(to.params.id))
     })
 
     return {

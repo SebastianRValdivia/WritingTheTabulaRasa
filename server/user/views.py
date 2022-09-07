@@ -1,7 +1,10 @@
-from django.shortcuts import render
 from rest_framework.generics import RetrieveAPIView
-from .serializers import UserSerializer
+from user.serializers import UserSerializer
 from django.contrib.auth.models import User
+from rest_framework import viewsets, permissions
+
+from user.models import UserPreferences
+from user.serializers import UserPreferencesSerializer
 
 # Create your views here.
 class RetriveUserDataView(RetrieveAPIView):
@@ -10,3 +13,9 @@ class RetriveUserDataView(RetrieveAPIView):
     """
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
+class UserPreferencesViewSet(viewsets.ViewSet):
+
+    model = UserPreferences
+    serializer = UserPreferencesSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]

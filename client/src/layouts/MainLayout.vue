@@ -47,16 +47,14 @@
             </q-item>
           </router-link>
 
-          <!--
-          <q-img class="absolute-top" src="" style="height: 150px">
+          <q-img class="absolute-top" src="~assets/drawer-img.jpg" style="height: 150px">
             <div class="absolute-bottom bg-transparent">
               <q-avatar size="56px" class="q-mb-sm">
-                <img src="">
+                <img src="~assets/no-avatar.svg">
               </q-avatar>
-              <div class="text-weight-bold">Username</div>
+              <div class="text-weight-bold">{{ userStore.getUsername }}</div>
             </div>
           </q-img>
-          -->
         </q-list>
 
       </q-scroll-area>

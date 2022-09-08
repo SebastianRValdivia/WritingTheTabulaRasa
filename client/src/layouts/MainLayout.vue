@@ -32,8 +32,10 @@
       side="left"
       bordered
       class="bg-grey-3"
+      :width="300"
+      :breakpoint="400"
     >
-      <q-scroll-area class="fit">
+      <q-scroll-area class="fit links-area">
         <q-list>
           <router-link :to="{name: 'notes'}">
             <q-item clickable v-ripple>
@@ -47,17 +49,17 @@
             </q-item>
           </router-link>
 
-          <q-img class="absolute-top" src="~assets/drawer-img.jpg" style="height: 150px">
-            <div class="absolute-bottom bg-transparent">
-              <q-avatar size="56px" class="q-mb-sm">
-                <img src="~assets/no-avatar.svg">
-              </q-avatar>
-              <div class="text-weight-bold">{{ userStore.getUsername }}</div>
-            </div>
-          </q-img>
         </q-list>
 
       </q-scroll-area>
+      <q-img class="absolute-top" src="~assets/drawer-img.jpg" style="height: 150px">
+        <div class="absolute-bottom bg-transparent">
+          <q-avatar size="56px" class="q-mb-sm">
+            <img src="~assets/no-avatar.svg">
+          </q-avatar>
+          <div class="text-weight-bold">{{ userStore.getUsername }}</div>
+        </div>
+      </q-img>
     </q-drawer>
 
     <q-drawer v-model="rightDrawerOpen" side="right" bordered>
@@ -105,3 +107,11 @@ export default {
   }
 }
 </script>
+
+<style>
+.links-area { 
+  height: calc(100% - 150px);
+  margin-top: 150px;
+  border-right: 1px solid #ddd
+}
+</style>

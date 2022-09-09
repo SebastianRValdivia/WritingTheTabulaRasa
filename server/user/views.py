@@ -7,7 +7,7 @@ from user.models import UserPreferences
 from user.serializers import UserPreferencesSerializer
 
 # Create your views here.
-class RetriveUserDataView(RetrieveAPIView):
+class RetrieveUserDataView(RetrieveAPIView):
     """
     User data View
     """

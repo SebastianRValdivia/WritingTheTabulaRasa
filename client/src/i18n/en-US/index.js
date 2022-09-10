@@ -2,7 +2,7 @@
 // so you can safely delete all default props below
 const mainDrawer = {
   notes: "My notes",
-  tools: "Tools",
+  tools: "Assistance tools",
 }
 
 export default {

@@ -52,7 +52,7 @@
           <router-link :to="{name: 'tools'}">
             <q-item clickable v-ripple>
               <q-item-section avatar>
-                <q-icon name="plumbing" />
+                <q-icon name="handyman" />
               </q-item-section>
 
               <q-item-section>

@@ -49,6 +49,19 @@
             </q-item>
           </router-link>
 
+          <router-link :to="{name: 'tools'}">
+            <q-item clickable v-ripple>
+              <q-item-section avatar>
+                <q-icon name="plumbing" />
+              </q-item-section>
+
+              <q-item-section>
+                {{ $t("mainDrawer.tools") }}
+              </q-item-section>
+            </q-item>
+          </router-link>
+
+
         </q-list>
 
       </q-scroll-area>

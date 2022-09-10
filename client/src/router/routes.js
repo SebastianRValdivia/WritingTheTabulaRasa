@@ -12,8 +12,14 @@ const routes = [
       },
       {
         path: "/notes/:id",
+        name: "note",
         component: () => import("src/pages/NotePage.vue"),
         props: true
+      },
+      {
+        path: "/tools/",
+        name: "tools",
+        component: () => import("src/pages/ToolsPage.vue"),
       }
     ]
   },

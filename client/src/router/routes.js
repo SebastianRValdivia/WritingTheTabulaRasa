@@ -18,7 +18,7 @@ const routes = [
       },
       {
         path: "/tools/",
-        name: "Tools",
+        name: "tools",
         component: () => import("src/pages/ToolsPage.vue"),
       }
     ]

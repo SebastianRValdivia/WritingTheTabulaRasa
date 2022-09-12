@@ -3,7 +3,9 @@
       show-value
       font-size="16px"
       class="q-ma-md"
-      :value="workTime"
+      :value="toolStore.getTimerRemainingTime"
+      :min="0"
+      :max="5"
       size="60px"
       :thickness="0.05"
       color="black"
@@ -21,24 +23,19 @@
 </template>
 
 <script>
-import { ref } from "vue"
 import { useToolStore } from "src/stores/tool-store"
 
 export default {
   setup() {
-    const workTime = ref(0.2)
-    const restTime = ref(5)
     const toolStore = useToolStore()
 
 
     return {
       toolStore,
-      workTime,
-      restTime,
 
       launch() {
         if (!toolStore.getTimerStatus) { // If timer false (not running)
-          toolStore.runTimer(workTime.value)
+          toolStore.runTimer()
         } else { // Timer is running
           console.log("cant change")
         }

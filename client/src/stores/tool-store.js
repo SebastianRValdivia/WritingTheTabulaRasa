@@ -14,6 +14,9 @@ export const useToolStore = defineStore("tool", {
     getTimerStatus: (state) => state.timerStatus,
     getTimerType: (state) => state.timerType,
     getTimerRemainingTime: (state) => state.timerTime,
+    getTimerPreset: (state) => (
+      {workTime: state.timerWorkTime, restTime: state.timerRestTime }
+    )
   },
   actions: {
     runTimer() {

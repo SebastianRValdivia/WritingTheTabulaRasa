@@ -5,7 +5,7 @@
       class="q-ma-md"
       :value="toolStore.getTimerRemainingTime"
       :min="0"
-      :max="5"
+      :max="maxTime"
       size="60px"
       :thickness="0.05"
       color="black"
@@ -23,15 +23,29 @@
 </template>
 
 <script>
+import { onMounted, ref } from "vue"
+
 import { useToolStore } from "src/stores/tool-store"
 
 export default {
   setup() {
     const toolStore = useToolStore()
+    const maxTime = ref(0) 
 
+
+    function defineMaxTime() {
+      toolStore.getTimerType 
+        ? maxTime.value = toolStore.getTimerPreset.workTime
+        : maxTime.value = toolStore.getTimerPreset.restTime
+    }
+
+    onMounted(() =>  {
+      defineMaxTime()
+    })
 
     return {
       toolStore,
+      maxTime,
 
       launch() {
         if (!toolStore.getTimerStatus) { // If timer false (not running)
@@ -42,7 +56,7 @@ export default {
       }
 
     }
-  }
+  },
 }
 </script>
 

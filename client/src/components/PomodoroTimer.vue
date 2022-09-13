@@ -1,13 +1,13 @@
 <template>
   <q-circular-progress
       show-value
-      font-size="16px"
+      font-size="18px"
       class="q-ma-md"
       :value="toolStore.getTimerRemainingTime"
       :min="0"
       :max="maxTime"
-      size="60px"
-      :thickness="0.05"
+      size="30px"
+      :thickness="0.1"
       color="black"
       center-color="red"
       track-color="grey-3"

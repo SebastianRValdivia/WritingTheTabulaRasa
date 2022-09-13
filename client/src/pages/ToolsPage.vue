@@ -19,7 +19,6 @@
       <q-btn flat round color="primary" icon="save" @click="saveTimerSettings" />
     </div>
     
-    <PomodoroTimer />
   </div>
 </template>
 
@@ -27,10 +26,8 @@
 import { ref } from 'vue';
 
 import { useToolStore } from 'src/stores/tool-store';
-import PomodoroTimer from 'src/components/PomodoroTimer.vue';
 
 export default {
-  components: { PomodoroTimer },
   setup() {
     const toolStore = useToolStore()
 

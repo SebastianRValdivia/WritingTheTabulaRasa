@@ -18,6 +18,8 @@
           Writing the tabula rasa
         </q-toolbar-title>
 
+        <PomodoroTimer />
+
       </q-toolbar>
 
       <q-tabs align="left" v-if="appStore.isTabsOpen">
@@ -92,10 +94,12 @@ import { useUserStore } from "src/stores/user-store"
 import { useAppStore } from "src/stores/app-store"
 
 import LoginDialog from "src/components/LoginDialog.vue"
+import PomodoroTimer from 'src/components/PomodoroTimer.vue';
 
 export default {
   components: {
-    LoginDialog
+    LoginDialog,
+    PomodoroTimer
   },
   setup() {
     const leftDrawerOpen = ref(false)

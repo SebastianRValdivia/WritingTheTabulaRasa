@@ -8,3 +8,4 @@ class NoteViewSet(viewsets.ModelViewSet):
     queryset = NoteModel.objects.all()
     serializer_class = NoteSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    filterset_fields = ["owner"]

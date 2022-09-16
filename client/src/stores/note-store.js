@@ -6,9 +6,12 @@ export const useNoteStore = defineStore('note', {
     notes: []
    }),
    getters: {
-    notesList: state => state.notes,
-    getNoteById: state => {
-      return noteId => state.notes.find(note => note.id === noteId)
+    notesList: (state) => state.notes,
+    getNoteById: (state) => {
+      return (noteId) => state.notes.find((note) => note.id === noteId)
+    },
+    getNotesByUser: (state) => {
+      return (userId) => state.notes.filter((note) => note.owner === userId)
     }
    },
    actions: {

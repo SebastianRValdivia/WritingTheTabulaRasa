@@ -12,11 +12,15 @@
 
 <script>
 import { useNoteStore } from "src/stores/note-store"
+import { onBeforeMount } from "vue"
 
 export default {
   setup() {
     const noteStore = useNoteStore()
-    noteStore.retrieveNotes()
+
+    onBeforeMount(() => {
+      noteStore.retrieveNotes()
+    })
 
     return {
       noteStore,

@@ -6,7 +6,7 @@ from user.models import UserPreferences
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('email', 'username', )
+        fields = ("username", "pk")
 
 class UserPreferencesSerializer(serializers.ModelSerializer):
 

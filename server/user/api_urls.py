@@ -9,6 +9,6 @@ router.register("", UserPreferencesViewSet, basename="UserPreferences")
 urlpatterns = [
     path("", include("django.contrib.auth.urls")),
     path("preferences/", include(router.urls)),
-    path("data/<int:pk>/", RetrieveUserDataView.as_view(), name="user-data"),
+    path("data/", RetrieveUserDataView.as_view(), name="user-data"),
     path("obtain-token/", obtain_auth_token, name="obtain-token"),
 ]

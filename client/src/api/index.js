@@ -1,7 +1,7 @@
-import auth from "./_auth"
+import user from "./_user"
 import notes from "./_notes"
 
 export default {
-    auth,
+    user,
     notes
 }

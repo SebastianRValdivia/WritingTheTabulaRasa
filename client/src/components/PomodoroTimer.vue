@@ -6,11 +6,11 @@
       :value="toolStore.getTimerRemainingTime"
       :min="0"
       :max="maxTime"
-      size="30px"
-      :thickness="0.1"
-      color="black"
+      size="32px"
+      :thickness="0.2"
+      color="secondary"
       center-color="red"
-      track-color="grey-3"
+      track-color=""
       @click="launch"
     >
       <span v-if="toolStore.getTimerType">

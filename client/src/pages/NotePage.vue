@@ -1,17 +1,23 @@
 <template>
   <div>
     <h1>{{ note.title }} {{ note.id }}</h1>
+    <MarkdownPreview :md="note.content"/>
   </div>
 </template>
 
 <script>
-import { useNoteStore } from "src/stores/note-store"
 import { onMounted, ref } from "vue"
 import { useRouter, onBeforeRouteUpdate } from "vue-router"
+
+import { useNoteStore } from "src/stores/note-store"
+import MarkdownPreview from "src/components/MarkdownPreview"
 
 export default {
   props: {
     id: String
+  },
+  components: {
+    MarkdownPreview
   },
   setup(props) {
     const noteStore = useNoteStore()

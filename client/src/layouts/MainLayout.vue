@@ -81,7 +81,7 @@
       <!-- drawer content -->
     </q-drawer>
 
-    <q-page-container>
+    <q-page-container id="page-container">
       <router-view />
     </q-page-container>
 
@@ -130,5 +130,10 @@ export default {
   height: calc(100% - 150px);
   margin-top: 150px;
   border-right: 1px solid #ddd
+}
+#page-container {
+  margin-left: 0.75rem;
+  margin-top: 0.25rem;
+  margin-right: 0.15rem;
 }
 </style>

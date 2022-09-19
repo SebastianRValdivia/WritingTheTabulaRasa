@@ -24,6 +24,7 @@ class NoteModel(models.Model):
         null=False
     )
     content = models.TextField()
+    identifier = models.IntegerField()
 
     class Meta:
         verbose_name = 'Note'

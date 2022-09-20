@@ -21,7 +21,7 @@ export default {
   },
   setup(props) {
     const noteStore = useNoteStore()
-    const note = ref("")
+    const note = ref({})
     const router = useRouter()
 
     const initPage = async () => {

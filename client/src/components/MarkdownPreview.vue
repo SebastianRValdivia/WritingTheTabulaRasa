@@ -7,13 +7,17 @@ import MarkdownIt from "markdown-it"
 import { ref, onBeforeMount, onBeforeUpdate } from "vue"
 
 export default {
-  props: ["md"],
+  props: {
+    md: String
+  },
   setup(props) {
     const markdownIt = new MarkdownIt()
     const html = ref("")
 
     function render() {
-      html.value = markdownIt.render(props.md)
+      if (props.md) {
+        html.value = markdownIt.render(props.md)
+      }
     }
 
     onBeforeMount(() => {

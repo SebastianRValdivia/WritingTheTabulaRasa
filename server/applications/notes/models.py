@@ -10,6 +10,7 @@ class NoteModel(models.Model):
         max_length=CHARFIELD_LONG,
         blank=True,
         null=True,
+        unique=True,
     )
     parent = models.ForeignKey(
         "self",

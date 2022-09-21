@@ -11,11 +11,10 @@ class NoteSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
     def validate_identifier(self, data):
-        query = Q(parent=self.initial_data["parent"]) & Q(identifier=self.initial_data["identifier"])
-        identifiers_notes_of_same_parent = NoteModel.objects.filter(query)
-        if identifiers_notes_of_same_parent.exists():
+        identifiers_of_same_parent = NoteModel.objects.filter(parent=self.initial_data["parent"]).filter(identifier=self.initial_data["identifier"])
+        if identifiers_of_same_parent.exists():
             raise serializers.ValidationError(
-                self.initial_data["identifier"] + " is repeated"
+                str(self.initial_data["identifier"]) + " is repeated"
             )
 
         return data

@@ -3,7 +3,7 @@
   <h1>Notes</h1>
   <ul>
     <li v-for="note in notesToDisplay" :key="note.id">
-      <router-link :to="{name: 'note', params: {id: note.id}}">
+      <router-link :to="{name: 'note', params: {identifier: note.id}}">
         {{ note.title }} 
       </router-link>
     </li>

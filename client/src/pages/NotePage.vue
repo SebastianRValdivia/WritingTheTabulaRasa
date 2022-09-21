@@ -14,7 +14,7 @@ import MarkdownPreview from "src/components/MarkdownPreview"
 
 export default {
   props: {
-    id: String
+    identifier: String
   },
   components: {
     MarkdownPreview

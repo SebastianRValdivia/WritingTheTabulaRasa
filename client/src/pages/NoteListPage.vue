@@ -2,7 +2,7 @@
  <div>
   <h1>Notes</h1>
   <ul>
-    <li v-for="note in notesToDisplay" :key="note.id">
+    <li v-for="note in rootNotes" :key="note.id">
       <router-link :to="{name: 'note', params: {identifier: note.id}}">
         {{ note.title }} 
       </router-link>
@@ -22,25 +22,31 @@ export default {
   setup() {
     const noteStore = useNoteStore()
     const userStore = useUserStore()
-    const notesToDisplay = ref([])
+    const rootNotes = ref([])
 
-    function filterNotesByLoggedUser() {
-      notesToDisplay.value = noteStore.getNotesByUser(userStore.getUserId)
+    function filterUserNotes() {
+      rootNotes.value = noteStore.getNotesByUser(userStore.getUserId)
+        .filter(note => note.parent == null)
+    }
+
+    function filterNotes() {
+        rootNotes.value = noteStore.notesList
+          .filter(note => note.parent == null)
     }
 
     onBeforeMount(async () => {
       await noteStore.retrieveNotes()
       if (userStore.isUserLogged) {
-        filterNotesByLoggedUser()
+        filterUserNotes()
       } else {
-        notesToDisplay.value = noteStore.notesList
+        filterNotes()
       }
     })
 
 
     return {
       noteStore,
-      notesToDisplay,
+      rootNotes,
     }
   }
 

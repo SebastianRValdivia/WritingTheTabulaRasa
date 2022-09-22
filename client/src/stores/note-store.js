@@ -12,6 +12,10 @@ export const useNoteStore = defineStore('note', {
     },
     getNotesByUser: (state) => {
       return (userId) => state.notes.filter((note) => note.owner === userId)
+    },
+    getNotesByParent: (state) => {
+      return (parentId) => state.notes
+        .filter((note) => note.parent === parentId)
     }
    },
    actions: {

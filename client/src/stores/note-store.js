@@ -1,5 +1,6 @@
-import { defineStore } from 'pinia'
+import { defineStore } from "pinia"
 import api from "src/api"
+import { filterNoteFamily } from "src/utils"
 
 export const useNoteStore = defineStore('note', {
    state: () => ({
@@ -10,13 +11,19 @@ export const useNoteStore = defineStore('note', {
     getNoteById: (state) => {
       return (noteId) => state.notes.find((note) => note.id === noteId)
     },
+    // Find note parent till there is only one note
+    getNoteByIdentifier: (state) => {
+      return (noteIdentifierList) => (
+        filterNoteFamily(state.notes, noteIdentifierList).at(-1)
+      )
+    },
     getNotesByUser: (state) => {
       return (userId) => state.notes.filter((note) => note.owner === userId)
     },
     getNotesByParent: (state) => {
       return (parentId) => state.notes
         .filter((note) => note.parent === parentId)
-    }
+    },
    },
    actions: {
     async retrieveNotes() {

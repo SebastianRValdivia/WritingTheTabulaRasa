@@ -5,10 +5,33 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue'
+import { useQuasar } from "quasar"
+import { onBeforeMount } from "vue"
 
-export default defineComponent({
-  name: 'App'
+import { useUserStore } from "src/stores/user-store"
+
+export default ({
+  name: 'App',
+  setup() {
+    const $q = useQuasar()
+    const userStore = useUserStore()
+
+    function restoreUserCredentials() {
+      userStore.saveUserCredentials(
+        $q.cookies.get("username"),
+        $q.cookies.get("userId"),
+        $q.cookies.get("token"),
+      )
+    }
+
+    onBeforeMount(() => {
+      if ($q.cookies.has("token")) {
+        restoreUserCredentials()
+      }
+    })
+
+  }
+
 })
 </script>
 

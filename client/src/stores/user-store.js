@@ -1,6 +1,8 @@
 import { defineStore } from 'pinia'
 import api from "src/api"
 
+import { setUserCookies } from "src/storage/cookies"
+
 export const useUserStore = defineStore('user', {
   state: () => ({
     isLogged: false,
@@ -14,14 +16,15 @@ export const useUserStore = defineStore('user', {
     getUserId: (state) => state.userId,
   },
   actions: {
-    async logUser(username, password) {
+    async retrieveUserCredentials(username, password) {
       const userStore = useUserStore()
-      userStore.saveUsername(username)
+      this.username = username
       await api.user.postUserAuthentication(username, password)
         .then( async result => {
           if (result.code === 200) {
             await userStore.retrieveUserId()
             this.userToken = result.token
+            setUserCookies(this.username, this.userId, this.userToken)
             this.isLogged = true
           } else {
             console.warn("Failed login")
@@ -39,8 +42,11 @@ export const useUserStore = defineStore('user', {
 
       })
     },
-    saveUsername(username) {
+    saveUserCredentials(username, userId, token) {
       this.username = username
+      this.userId = userId
+      this.userToken = token
+      this.isLogged = true
     }
   },
 });

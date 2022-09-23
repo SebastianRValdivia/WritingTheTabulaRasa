@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{ note.title }} {{ note.id }}</h1>
+    <h3>{{note.title}}</h3>
     <MarkdownPreview :md="note.content"/>
   </div>
 </template>
@@ -28,6 +28,11 @@ export default {
       setNoteData()
     }
 
+    function retrieveNoteByIdentifier() {
+      note.value = noteStore.getNoteByIdentifier(props.identifier.split("-"))
+      console.log(note.value)
+    }
+
     function setNoteData() {
       if (noteStore.getNoteById(Number(props.id)) !== undefined) {
         note.value = noteStore.getNoteById(Number(props.id))
@@ -47,9 +52,13 @@ export default {
       }
     }
 
-    onMounted(initPage)
+    onMounted(() => {
+      retrieveNoteByIdentifier()
+
+    })
     onBeforeRouteUpdate((to, from, next) => {
-      resetNoteData(Number(to.params.id))
+      retrieveNoteByIdentifier()
+    //   resetNoteData(Number(to.params.id))
     })
 
     return {

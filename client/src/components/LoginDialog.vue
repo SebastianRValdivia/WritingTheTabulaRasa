@@ -55,7 +55,7 @@ export default {
       isPwd,
 
       submit() {
-        userStore.logUser(
+        userStore.retrieveUserCredentials(
           username.value,
           password.value
         )

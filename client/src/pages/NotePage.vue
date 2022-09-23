@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{ note.title }} {{ note.id }}</h1>
+    <h3>{{note.title}}</h3>
     <MarkdownPreview :md="note.content"/>
   </div>
 </template>
@@ -14,7 +14,7 @@ import MarkdownPreview from "src/components/MarkdownPreview"
 
 export default {
   props: {
-    id: String
+    identifier: String
   },
   components: {
     MarkdownPreview
@@ -26,6 +26,11 @@ export default {
 
     const initPage = async () => {
       setNoteData()
+    }
+
+    function retrieveNoteByIdentifier() {
+      note.value = noteStore.getNoteByIdentifier(props.identifier.split("-"))
+      console.log(note.value)
     }
 
     function setNoteData() {
@@ -47,9 +52,13 @@ export default {
       }
     }
 
-    onMounted(initPage)
+    onMounted(() => {
+      retrieveNoteByIdentifier()
+
+    })
     onBeforeRouteUpdate((to, from, next) => {
-      resetNoteData(Number(to.params.id))
+      retrieveNoteByIdentifier()
+    //   resetNoteData(Number(to.params.id))
     })
 
     return {

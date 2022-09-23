@@ -2,10 +2,9 @@
  <div>
   <h1>Notes</h1>
   <ul>
-    <li v-for="note in notesToDisplay" :key="note.id">
-      <router-link :to="{name: 'note', params: {id: note.id}}">
-        {{ note.title }} 
-      </router-link>
+    <li v-for="note in rootNotes" :key="note.id">
+      <NoteChildren :note="note" />
+
     </li>
   </ul>
 
@@ -17,30 +16,40 @@ import { ref, onBeforeMount } from "vue"
 
 import { useNoteStore } from "src/stores/note-store"
 import { useUserStore } from "src/stores/user-store"
+import NoteChildren from "src/components/for-pages/NoteChildren"
 
 export default {
+  components: {
+    NoteChildren
+  },
   setup() {
     const noteStore = useNoteStore()
     const userStore = useUserStore()
-    const notesToDisplay = ref([])
+    const rootNotes = ref([])
 
-    function filterNotesByLoggedUser() {
-      notesToDisplay.value = noteStore.getNotesByUser(userStore.getUserId)
+    function filterUserNotes() {
+      rootNotes.value = noteStore.getNotesByUser(userStore.getUserId)
+        .filter(note => note.parent == null)
+    }
+
+    function filterNotes() {
+        rootNotes.value = noteStore.notesList
+          .filter(note => note.parent == null)
     }
 
     onBeforeMount(async () => {
       await noteStore.retrieveNotes()
       if (userStore.isUserLogged) {
-        filterNotesByLoggedUser()
+        filterUserNotes()
       } else {
-        notesToDisplay.value = noteStore.notesList
+        filterNotes()
       }
     })
 
 
     return {
       noteStore,
-      notesToDisplay,
+      rootNotes,
     }
   }
 

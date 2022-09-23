@@ -11,7 +11,7 @@ const routes = [
         component: () => import("src/pages/NoteListPage.vue"),
       },
       {
-        path: "/notes/:id",
+        path: "/notes/:identifier",
         name: "note",
         component: () => import("src/pages/NotePage.vue"),
         props: true

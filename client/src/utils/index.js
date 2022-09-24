@@ -1,4 +1,5 @@
 export function filterNoteFamily(noteList, identifierList) {
+  // TODO: Refactor 
   let parentNote
   let wrongNotes
   let noteFamily = []
@@ -21,6 +22,18 @@ export function filterNoteFamily(noteList, identifierList) {
       noteFamily.push(parentNote)
     }
   }
-  return noteFamily // returns family in order
+  return noteFamily // returns family in same order
+}
 
+export function createNoteIdentifier(objectiveNote, noteList, identifierList) {
+  if (objectiveNote.parent === null) {
+    return identifierList.join("-")
+  } else {
+    let parentNote = noteList.find((note) => note.id == objectiveNote.parent)
+    return createNoteIdentifier(
+      parentNote,
+      noteList,
+      [String(parentNote.identifier), ...identifierList]
+    )
+  }
 }

@@ -1,12 +1,22 @@
 <template>
-  <router-link :to="{name: 'note', params: {identifier: identifier}}">
-    {{identifier}} - {{ props.note.title }} 
-  </router-link>
-  <ul>
-    <li v-for="note in children" :key="note.id">
-      <NoteChildren :note="note" />
-    </li>
-  </ul>
+  <q-expansion-item
+    dense-toggle
+    switch-toggle-side
+    expand-separator
+    :label="props.note.title"
+    :to="{name: 'note', params: {identifier: identifier}}"
+  >
+    <q-list>
+      <q-item v-for="note in children" :key="note.id">
+        <NoteChildren :note="note" />
+      </q-item>
+    </q-list>
+      <q-card class="q-ml-xl">
+        <q-card-section>
+          <q-icon name="add" size="2rem"></q-icon>
+        </q-card-section>
+    </q-card>
+  </q-expansion-item>
 </template>
 
 <script>

@@ -24,6 +24,7 @@ export const useNoteStore = defineStore('note', {
       return (parentId) => state.notes
         .filter((note) => note.parent === parentId)
     },
+    getRootNotes: (state) => (state.notes.filter((note) => note.parent === null))
    },
    actions: {
     async retrieveNotes() {

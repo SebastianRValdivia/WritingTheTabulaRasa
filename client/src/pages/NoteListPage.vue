@@ -1,13 +1,10 @@
 <template>
- <div>
-  <h1>Notes</h1>
-  <q-list>
+ <div class="column">
+  <q-list id="note-list">
     <q-item v-for="note in rootNotes" :key="note.id">
       <NoteChildren :note="note" />
     </q-item>
-    <q-separator />
   </q-list>
-
  </div>
 </template>
 
@@ -57,5 +54,8 @@ export default {
 </script>
 
 <style>
+#note-list {
+  max-width: fit-content;
 
+}
 </style>

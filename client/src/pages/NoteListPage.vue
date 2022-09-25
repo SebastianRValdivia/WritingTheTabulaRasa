@@ -1,12 +1,12 @@
 <template>
  <div>
   <h1>Notes</h1>
-  <ul>
-    <li v-for="note in rootNotes" :key="note.id">
+  <q-list>
+    <q-item v-for="note in rootNotes" :key="note.id">
       <NoteChildren :note="note" />
-
-    </li>
-  </ul>
+    </q-item>
+    <q-separator />
+  </q-list>
 
  </div>
 </template>

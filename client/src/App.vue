@@ -19,7 +19,7 @@ export default ({
     function restoreUserCredentials() {
       userStore.saveUserCredentials(
         $q.cookies.get("username"),
-        $q.cookies.get("userId"),
+        Number($q.cookies.get("userId")),
         $q.cookies.get("token"),
       )
     }

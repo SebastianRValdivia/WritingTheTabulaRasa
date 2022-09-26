@@ -14,6 +14,7 @@ export const useUserStore = defineStore('user', {
     isUserLogged: (state) => state.isLogged,
     getUsername: (state) => state.username,
     getUserId: (state) => state.userId,
+    getToken: (state) => state.userToken,
   },
   actions: {
     async retrieveUserCredentials(username, password) {

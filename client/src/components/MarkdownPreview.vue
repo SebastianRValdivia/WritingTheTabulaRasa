@@ -3,28 +3,29 @@
 </template>
 
 <script>
-import MarkdownIt from "markdown-it"
 import { ref, onBeforeMount, onBeforeUpdate } from "vue"
+
+import markdown from "src/utils/markdown"
 
 export default {
   props: {
     md: String
   },
   setup(props) {
-    const markdownIt = new MarkdownIt()
     const html = ref("")
 
-    function render() {
-      if (props.md) {
-        html.value = markdownIt.render(props.md)
+
+    function render(contentToRender) {
+      if (contentToRender) {
+        html.value = markdown.render(contentToRender)
       }
     }
 
     onBeforeMount(() => {
-      render()
+      render(props.md)
     })
     onBeforeUpdate(() => {
-      render()
+      render(props.md)
     })
 
     return {

@@ -9,6 +9,9 @@
         <MarkdownPreview :md="note.content"/>
       </q-card-section>
     </q-card>
+    <div class="q-mt-md column content-center">
+      <q-btn round color="primary" icon="edit" />
+    </div>
   </div>
 </template>
 
@@ -17,6 +20,7 @@ import { onMounted, ref } from "vue"
 import { useRouter, onBeforeRouteUpdate } from "vue-router"
 
 import { useNoteStore } from "src/stores/note-store"
+import { useUserStore } from "src/stores/user-store"
 import MarkdownPreview from "src/components/MarkdownPreview"
 
 export default {
@@ -28,49 +32,37 @@ export default {
   },
   setup(props) {
     const noteStore = useNoteStore()
+    const userStore = useUserStore()
     const note = ref({})
     const router = useRouter()
 
-    const initPage = async () => {
-      setNoteData()
-    }
-
-    function retrieveNoteByIdentifier() {
-      note.value = noteStore.getNoteByIdentifier(props.identifier.split("-"))
-      console.log(note.value)
-    }
-
-    function setNoteData() {
-      if (noteStore.getNoteById(Number(props.id)) !== undefined) {
-        note.value = noteStore.getNoteById(Number(props.id))
-      } else {
-        router.push({ name: "NotFound" })
-        note.value = ""
-      }
-    }
-
-    function resetNoteData(noteId) {
-      const newNote = noteStore.getNoteById(noteId)
-      if (newNote !== undefined) {
-        note.value = newNote
-      } else {
-        router.push({ name: "NotFound" })
-        note.value = ""
+    async function retrieveNote() {
+      // Check if note is in the store
+      if (noteStore.getNoteByIdentifier(props.identifier.split("-")) !== undefined) {
+        note.value = noteStore.getNoteByIdentifier(props.identifier.split("-"))
+      } else { // Else retrieve notes from api and try again
+        await noteStore.retrieveNotes()
+        if (noteStore.getNoteByIdentifier(props.identifier.split("-")) !== undefined) {
+          note.value = noteStore.getNoteByIdentifier(props.identifier.split("-"))
+        } else { // Note doesn't exist
+          router.push({ name: "NotFound" })
+          note.value = "" // To avoid an error
+        }
       }
     }
 
     onMounted(() => {
-      retrieveNoteByIdentifier()
+      retrieveNote()
 
     })
     onBeforeRouteUpdate((to, from, next) => {
-      retrieveNoteByIdentifier()
-    //   resetNoteData(Number(to.params.id))
+      retrieveNote()
     })
 
     return {
       props,
       note,
+      useUserStore,
     }
   },
 }

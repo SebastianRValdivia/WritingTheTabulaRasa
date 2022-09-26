@@ -16,6 +16,7 @@
       <q-separator />
       <q-card-section>
         <textarea
+          id="note-textarea"
           v-model="note.content"
         />
       </q-card-section>
@@ -24,9 +25,12 @@
     <div 
       class="q-mt-md column content-center"
       v-if="userStore.isLogged" 
-      @click="toggleEditor"
     >
-      <q-btn round color="primary" icon="edit" />
+      <span v-if="isEditing">
+        <q-btn round color="negative" icon="cancel" @click="cancelEdit"/>
+        <q-btn round color="primary" icon="save" @click="saveEdit"/>
+      </span>
+      <q-btn v-else round color="primary" icon="edit" @click="toggleEditor"/>
     </div>
   </div>
 </template>
@@ -73,6 +77,14 @@ export default {
       isEditing.value = !isEditing.value
     }
 
+    function cancelEdit() {
+      toggleEditor()
+    }
+
+    function saveEdit() {
+      toggleEditor()
+    }
+
     onMounted(() => {
       retrieveNote()
     })
@@ -86,9 +98,20 @@ export default {
       isEditing,
       userStore,
       noteContent,
+      cancelEdit,
+      saveEdit,
       toggleEditor,
     }
   },
 }
-
 </script>
+
+<style>
+#note-textarea {
+  border: none;
+  outline: none;
+  min-width: 20rem;
+  min-height: 20rem;
+}
+
+</style>

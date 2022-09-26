@@ -17,7 +17,7 @@
       <q-card-section>
         <textarea
           id="note-textarea"
-          v-model="note.content"
+          v-model="newNoteContent"
         />
       </q-card-section>
     </q-card>
@@ -56,7 +56,7 @@ export default {
     const router = useRouter()
     const note = ref({})
     const isEditing = ref(false)
-    const noteContent = ref("")
+    const newNoteContent = ref("")
 
     async function retrieveNote() {
       // Check if note is in the store
@@ -74,14 +74,16 @@ export default {
     }
 
     function toggleEditor() {
-      isEditing.value = !isEditing.value
+      newNoteContent.value = note.value.content // Reset edit content
+      isEditing.value = !isEditing.value // Close editor
     }
 
     function cancelEdit() {
       toggleEditor()
     }
 
-    function saveEdit() {
+    async function saveEdit() {
+      await noteStore.saveNoteContent(note.value.id, newNoteContent)
       toggleEditor()
     }
 
@@ -97,7 +99,7 @@ export default {
       note,
       isEditing,
       userStore,
-      noteContent,
+      newNoteContent,
       cancelEdit,
       saveEdit,
       toggleEditor,

@@ -1,7 +1,14 @@
 <template>
-  <div>
-    <h3>{{note.title}}</h3>
-    <MarkdownPreview :md="note.content"/>
+  <div class="column content-center">
+    <q-card class="q-pa-xl text-center ">
+      <q-card-section class="text-h6">
+        <span class="text-bold">{{ identifier }}:</span> <span>{{note.title}}</span>
+      </q-card-section>
+      <q-separator />
+      <q-card-section>
+        <MarkdownPreview :md="note.content"/>
+      </q-card-section>
+    </q-card>
   </div>
 </template>
 

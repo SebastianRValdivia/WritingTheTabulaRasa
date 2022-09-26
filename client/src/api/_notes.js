@@ -11,5 +11,18 @@ export default {
       .catch(response => { return {
         code: response.status
       }})
+  },
+  patchNoteContent(idNoteToPatch, newNoteContent) {
+    return api.patch(
+      `v1/notes/${idNoteToPatch}/`,
+      { content: newNoteContent.value }
+      )
+      .then(response => { return {
+          code: response.status,
+        }
+      })
+      .catch(response => { return {
+        code: response.status
+      }})
   }
 }

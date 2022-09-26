@@ -1,6 +1,6 @@
 <template>
-  <div class="column content-center">
-    <q-card class="q-pa-xl text-center ">
+  <div class="column content-center" >
+    <q-card class="q-pa-xl text-center" v-if="!isEditing">
       <q-card-section class="text-h6">
         <span class="text-bold">{{ identifier }}:</span> <span>{{note.title}}</span>
       </q-card-section>
@@ -9,7 +9,21 @@
         <MarkdownPreview :md="note.content"/>
       </q-card-section>
     </q-card>
-    <div class="q-mt-md column content-center">
+    <q-card v-else class="q-pa-xl text-center">
+      <q-card-section class="text-h6">
+        <span class="text-bold">{{ identifier }}:</span> <span>{{note.title}}</span>
+      </q-card-section>
+      <q-separator />
+      <q-card-section>
+        <q-editor v-model="noteContent" />
+      </q-card-section>
+    </q-card>
+    
+    <div 
+      class="q-mt-md column content-center"
+      v-if="userStore.isLogged" 
+      @click="toggleEditor"
+    >
       <q-btn round color="primary" icon="edit" />
     </div>
   </div>
@@ -33,8 +47,10 @@ export default {
   setup(props) {
     const noteStore = useNoteStore()
     const userStore = useUserStore()
-    const note = ref({})
     const router = useRouter()
+    const note = ref({})
+    const isEditing = ref(false)
+    const noteContent = ref("")
 
     async function retrieveNote() {
       // Check if note is in the store
@@ -51,9 +67,12 @@ export default {
       }
     }
 
+    function toggleEditor() {
+      isEditing.value = !isEditing.value
+    }
+
     onMounted(() => {
       retrieveNote()
-
     })
     onBeforeRouteUpdate((to, from, next) => {
       retrieveNote()
@@ -62,7 +81,10 @@ export default {
     return {
       props,
       note,
-      useUserStore,
+      isEditing,
+      userStore,
+      noteContent,
+      toggleEditor,
     }
   },
 }

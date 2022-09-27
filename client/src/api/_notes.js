@@ -24,5 +24,16 @@ export default {
       .catch(response => { return {
         code: response.status
       }})
+  },
+  getFleetingNotesList() {
+    return api.get("v1/notes/fleeting/")
+      .then(response => { return {
+          code: response.status,
+          fleetingNotes: response.data
+        }
+      })
+      .catch(response => { return {
+        code: response.status
+      }})
   }
 }

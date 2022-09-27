@@ -1,11 +1,29 @@
 <template>
- <div class="column">
-  <q-list id="note-list">
-    <q-item v-for="note in rootNotes" :key="note.id">
-      <NoteChildren :note="note" />
-    </q-item>
-  </q-list>
- </div>
+  <div class="row">
+    <q-list id="note-list" class="column">
+      <q-item v-for="note in rootNotes" :key="note.id">
+        <NoteChildren :note="note" />
+      </q-item>
+    </q-list>
+    <q-separator vertical/>
+  </div>
+
+  <br />
+  <q-separator />
+
+  <div class="row">
+    <q-card 
+      class="column other-note-card" 
+      v-for="fleetingNote in noteStore.getFleetingNotes" 
+      :key="fleetingNote.id"
+    >
+      <q-card-section class="q-pt-none">
+        {{ fleetingNote.content }}
+      </q-card-section>
+
+    </q-card>
+  </div>
+
 </template>
 
 <script>
@@ -41,6 +59,7 @@ export default {
       } else {
         filterNotes()
       }
+      await noteStore.retrieveFleetingNotes()
     })
 
 
@@ -56,6 +75,9 @@ export default {
 <style>
 #note-list {
   max-width: fit-content;
-
+}
+.other-note-card {
+  min-width: 15rem;
+  min-height: 15rem;
 }
 </style>

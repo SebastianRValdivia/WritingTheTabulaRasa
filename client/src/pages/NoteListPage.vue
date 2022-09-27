@@ -1,11 +1,55 @@
 <template>
- <div class="column">
-  <q-list id="note-list">
-    <q-item v-for="note in rootNotes" :key="note.id">
-      <NoteChildren :note="note" />
-    </q-item>
-  </q-list>
- </div>
+  <div class="row">
+    <q-list id="note-list" class="column">
+      <q-item v-for="note in rootNotes" :key="note.id">
+        <NoteChildren :note="note" />
+      </q-item>
+    </q-list>
+    <q-separator vertical/>
+  </div>
+
+  <br />
+  <q-separator />
+  <div class="row">
+    <div class="column">
+      <span class="text-h5">{{ $t("notePages.fleetingNotes") }}</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <q-card 
+      class="column other-note-card" 
+      v-for="fleetingNote in noteStore.getFleetingNotes" 
+      :key="fleetingNote.id"
+    >
+      <q-card-section class="q-pt-none">
+        {{ fleetingNote.content }}
+      </q-card-section>
+    </q-card>
+    <div 
+      class="column other-note-card content-center q-pt-xl"
+      v-if="!isAddingFleetingNote"
+    >
+      <q-btn icon="add" round @click="toggleNewFleetingNote"/>
+    </div>
+    <q-card 
+      class="column other-note-card" 
+      v-else
+    >
+      <q-card-section>
+        <q-input
+          v-model="newFleetingNoteContent"
+          type="textarea"
+          autogrow
+        />
+      </q-card-section>
+      <q-card-actions align="right" class="absolute-bottom">
+        <q-btn round icon="cancel" @click="toggleNewFleetingNote"/>
+        <q-btn round icon="check" @click="saveNewFleetingNote"/>
+      </q-card-actions>
+    </q-card>
+  </div>
+
 </template>
 
 <script>
@@ -23,6 +67,8 @@ export default {
     const noteStore = useNoteStore()
     const userStore = useUserStore()
     const rootNotes = ref([])
+    const newFleetingNoteContent = ref("")
+    const isAddingFleetingNote = ref(false)
 
     function filterUserNotes() {
       rootNotes.value = noteStore.getNotesByUser(userStore.getUserId)
@@ -34,6 +80,15 @@ export default {
           .filter(note => note.parent == null)
     }
 
+    function toggleNewFleetingNote() {
+      isAddingFleetingNote.value = !isAddingFleetingNote.value
+    }
+    function saveNewFleetingNote() {
+      noteStore.createFleetingNote(newFleetingNoteContent.value)
+      toggleNewFleetingNote()
+
+    }
+
     onBeforeMount(async () => {
       await noteStore.retrieveNotes()
       if (userStore.isUserLogged) {
@@ -41,12 +96,17 @@ export default {
       } else {
         filterNotes()
       }
+      await noteStore.retrieveFleetingNotes()
     })
 
 
     return {
       noteStore,
       rootNotes,
+      newFleetingNoteContent,
+      isAddingFleetingNote,
+      toggleNewFleetingNote,
+      saveNewFleetingNote,
     }
   }
 
@@ -56,6 +116,9 @@ export default {
 <style>
 #note-list {
   max-width: fit-content;
-
+}
+.other-note-card {
+  min-width: 15rem;
+  min-height: 15rem;
 }
 </style>

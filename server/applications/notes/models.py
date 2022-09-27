@@ -35,3 +35,26 @@ class NoteModel(models.Model):
 
     def get_absolute_url(self):
         return reverse('NoteModel_detail', kwargs={'pk': self.pk})
+
+
+class FleetingNoteModel(models.Model):
+
+    content = models.TextField()
+    owner = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        blank=False,
+        null=False,
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Fleeting Note"
+        verbose_name_plural = "Fleeting Notes"
+
+    def __str__(self):
+        return str(self.pk) + ": " + self.content
+
+    def get_absolute_url(self):
+        return reverse("FleetingNoteModel_detail", kwargs={"pk": self.pk})

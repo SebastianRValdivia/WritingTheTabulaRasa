@@ -5,9 +5,14 @@ const mainDrawer = {
   tools: "Assistance tools",
 }
 
+const notePages = {
+  fleetingNotes: "Fleeting notes"
+}
+
 export default {
   failed: 'Action failed',
   success: 'Action was successful',
   mainDrawer: mainDrawer,
+  notePages: notePages,
 
 }

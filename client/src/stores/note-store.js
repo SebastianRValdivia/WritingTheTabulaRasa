@@ -1,6 +1,7 @@
 import { defineStore } from "pinia"
 import api from "src/api"
 import { filterNoteFamily } from "src/utils"
+import { useUserStore } from "src/stores/user-store"
 
 export const useNoteStore = defineStore('note', {
   state: () => ({
@@ -65,5 +66,15 @@ export const useNoteStore = defineStore('note', {
         return false
       }})
     },
+    async createFleetingNote(newNoteContent) {
+      const userStore = useUserStore()
+      await api.notes.postFleetingNote(newNoteContent, userStore.getUserId)
+        .then(
+          (result) => (
+            result.code === 201 
+            ? this.fleetingNotes.push(result.data) 
+            : console.log(result)
+        ))
+    }
   }
 })

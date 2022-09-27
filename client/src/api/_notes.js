@@ -35,5 +35,22 @@ export default {
       .catch(response => { return {
         code: response.status
       }})
+  },
+  postFleetingNote(content, ownerId) {
+    return api.post(
+      "v1/notes/fleeting/",
+      {
+        content: content,
+        owner: ownerId
+      }
+    )
+      .then(response => { return {
+          code: response.status,
+          fleetingNote: response.data
+        }
+      })
+      .catch(response => { return {
+        code: response.status
+      }})
   }
 }

@@ -4,7 +4,8 @@ import { filterNoteFamily } from "src/utils"
 
 export const useNoteStore = defineStore('note', {
   state: () => ({
-    notes: []
+    notes: [],
+    fleetingNotes: [],
   }),
   getters: {
     notesList: (state) => state.notes,
@@ -24,9 +25,11 @@ export const useNoteStore = defineStore('note', {
       return (parentId) => state.notes
         .filter((note) => note.parent === parentId)
     },
-    getRootNotes: (state) => (state.notes.filter((note) => note.parent === null))
+    getRootNotes: (state) => (state.notes.filter((note) => note.parent === null)),
+
+    getFleetingNotes: (state) => state.fleetingNotes,
   },
-   actions: {
+  actions: {
     async retrieveNotes() {
       await api.notes.getNotesList().then(result => {
         if (result.code === 200) {
@@ -52,7 +55,15 @@ export const useNoteStore = defineStore('note', {
       this.notesList[index].content = newNoteContent
       api.notes.patchNoteContent(idNoteToSave, newNoteContent)
         .then((result) => console.log(result.code))
-    }
+    },
+    async retrieveFleetingNotes() {
+      await api.notes.getFleetingNotesList().then(result => {
+      if (result.code === 200) {
+        this.fleetingNotes = result.fleetingNotes
+        return true
+      } else {
+        return false
+      }})
+    },
   }
-
 })

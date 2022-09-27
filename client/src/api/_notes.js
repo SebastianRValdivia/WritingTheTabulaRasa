@@ -46,7 +46,7 @@ export default {
     )
       .then(response => { return {
           code: response.status,
-          fleetingNote: response.data
+          newFleetingNote: response.data
         }
       })
       .catch(response => { return {

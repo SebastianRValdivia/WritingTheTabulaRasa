@@ -72,7 +72,7 @@ export const useNoteStore = defineStore('note', {
         .then(
           (result) => (
             result.code === 201 
-            ? this.fleetingNotes.push(result.data) 
+            ? this.fleetingNotes.push(result.newFleetingNote) 
             : console.log(result)
         ))
     }

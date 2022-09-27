@@ -1,7 +1,7 @@
 from django.db.models import Q
 
 from rest_framework import serializers
-from applications.notes.models import NoteModel
+from applications.notes.models import NoteModel, FleetingNoteModel
 
 # Create your views here.
 class NoteSerializer(serializers.ModelSerializer):
@@ -18,3 +18,9 @@ class NoteSerializer(serializers.ModelSerializer):
             )
 
         return data
+
+class FleetingNoteSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = FleetingNoteModel
+        fields = "__all__"

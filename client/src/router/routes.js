@@ -1,4 +1,3 @@
-
 const routes = [
   {
     path: "/",
@@ -6,12 +5,12 @@ const routes = [
     children: [
       { path: "", component: () => import('pages/IndexPage.vue') },
       { 
-        path: "/notes/",
+        path: "notes/",
         name: "notes",
         component: () => import("src/pages/NoteListPage.vue"),
         children: [
           {
-            path: "/notes/:identifier",
+            path: ":identifier/",
             name: "note",
             component: () => import("src/pages/NotePage.vue"),
             props: true

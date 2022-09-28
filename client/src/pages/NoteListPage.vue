@@ -6,7 +6,9 @@
       </q-item>
     </q-list>
     <q-separator vertical/>
+    <router-view ></router-view>
   </div>
+
 
   <br />
   <q-separator />

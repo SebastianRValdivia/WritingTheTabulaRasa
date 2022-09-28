@@ -9,12 +9,14 @@ const routes = [
         path: "/notes/",
         name: "notes",
         component: () => import("src/pages/NoteListPage.vue"),
-      },
-      {
-        path: "/notes/:identifier",
-        name: "note",
-        component: () => import("src/pages/NotePage.vue"),
-        props: true
+        children: [
+          {
+            path: "/notes/:identifier",
+            name: "note",
+            component: () => import("src/pages/NotePage.vue"),
+            props: true
+          },
+        ]
       },
       {
         path: "/tools/",

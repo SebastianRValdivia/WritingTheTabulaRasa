@@ -1,6 +1,6 @@
 <template>
-  <div class="column content-center" >
-    <q-card class="q-pa-xl text-center" v-if="!isEditing">
+  <div class="column content-center q-pa-md" >
+    <q-card class="text-center" v-if="!isEditing">
       <q-card-section class="text-h6">
         <span class="text-bold">{{ identifier }}:</span> <span>{{note.title}}</span>
       </q-card-section>

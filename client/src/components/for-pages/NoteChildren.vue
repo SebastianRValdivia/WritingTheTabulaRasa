@@ -5,6 +5,7 @@
     expand-separator
     :label="props.note.title"
     :to="{name: 'note', params: {identifier: identifier}}"
+    style="min-width: 20rem;"
   >
     <q-list>
       <q-item v-for="note in children" :key="note.id">

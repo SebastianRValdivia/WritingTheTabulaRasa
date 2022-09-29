@@ -13,7 +13,7 @@ class GoalModel(models.Model):
         null=False,
     )
     result = models.TextField()
-    finish_time = models.DateTimeField(
+    finish = models.DateTimeField(
         blank=False,
         null=False,
     )

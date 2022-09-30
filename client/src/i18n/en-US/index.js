@@ -3,6 +3,7 @@
 const mainDrawer = {
   notes: "My notes",
   tools: "Assistance tools",
+  calendar: "Calendar",
 }
 
 const notePages = {

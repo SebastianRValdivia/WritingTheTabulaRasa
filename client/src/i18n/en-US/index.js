@@ -9,11 +9,16 @@ const mainDrawer = {
 const notePages = {
   fleetingNotes: "Fleeting notes"
 }
+const schedulePage = {
+  noGoals: "No goals yet",
+  calendar: "Calendar",
+}
 
 export default {
   failed: 'Action failed',
   success: 'Action was successful',
   mainDrawer: mainDrawer,
   notePages: notePages,
+  schedulePage: schedulePage,
 
 }

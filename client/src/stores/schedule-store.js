@@ -8,6 +8,7 @@ export const useScheduleStore = defineStore("schedule", {
   }),
   getters: {
     getGoalsList: (state) => state.goalsList,
+    getObjectivesList: (state) => state.objectivesList,
   },
   actions: {
     async retrieveGoals() {

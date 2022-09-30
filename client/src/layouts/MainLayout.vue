@@ -51,7 +51,7 @@
             </q-item>
           </router-link>
 
-          <router-link :to="{name: 'calendar'}">
+          <router-link :to="{name: 'schedules'}">
             <q-item clickable v-ripple>
               <q-item-section avatar>
                 <q-icon name="calendar_month" />

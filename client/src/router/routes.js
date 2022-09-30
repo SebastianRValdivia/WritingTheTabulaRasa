@@ -18,9 +18,9 @@ const routes = [
         ]
       },
       {
-        path: "calendar/",
-        name: "calendar",
-        component: () => import("src/pages/CalendarPage"),
+        path: "schedules/",
+        name: "schedules",
+        component: () => import("src/pages/SchedulePage"),
       },
       {
         path: "tools/",

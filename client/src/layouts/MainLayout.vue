@@ -39,42 +39,35 @@
     >
       <q-scroll-area class="fit links-area">
         <q-list>
-          <router-link :to="{name: 'notes'}">
-            <q-item clickable v-ripple>
-              <q-item-section avatar>
-                <q-icon name="inbox" />
-              </q-item-section>
+          <q-item clickable v-ripple :to="{name: 'notes'}">
+            <q-item-section avatar>
+              <q-icon name="inbox" />
+            </q-item-section>
 
-              <q-item-section>
-                {{ $t("mainDrawer.notes") }}
-              </q-item-section>
-            </q-item>
-          </router-link>
+            <q-item-section>
+              {{ $t("mainDrawer.notes") }}
+            </q-item-section>
+          </q-item>
 
-          <router-link :to="{name: 'schedules'}">
-            <q-item clickable v-ripple>
-              <q-item-section avatar>
-                <q-icon name="calendar_month" />
-              </q-item-section>
+          <q-item clickable v-ripple :to="{name: 'schedules'}">
+            <q-item-section avatar>
+              <q-icon name="calendar_month" />
+            </q-item-section>
 
-              <q-item-section>
-                {{ $t("mainDrawer.calendar") }}
-              </q-item-section>
-            </q-item>
-          </router-link>
+            <q-item-section>
+              {{ $t("mainDrawer.calendar") }}
+            </q-item-section>
+          </q-item>
 
-          <router-link :to="{name: 'tools'}">
-            <q-item clickable v-ripple>
-              <q-item-section avatar>
-                <q-icon name="handyman" />
-              </q-item-section>
+          <q-item clickable v-ripple :to="{name: 'tools'}">
+            <q-item-section avatar>
+              <q-icon name="handyman" />
+            </q-item-section>
 
-              <q-item-section>
-                {{ $t("mainDrawer.tools") }}
-              </q-item-section>
-            </q-item>
-          </router-link>
-
+            <q-item-section>
+              {{ $t("mainDrawer.tools") }}
+            </q-item-section>
+          </q-item>
 
         </q-list>
 

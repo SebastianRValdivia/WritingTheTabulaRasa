@@ -18,7 +18,12 @@ const routes = [
         ]
       },
       {
-        path: "/tools/",
+        path: "schedules/",
+        name: "schedules",
+        component: () => import("src/pages/SchedulePage"),
+      },
+      {
+        path: "tools/",
         name: "tools",
         component: () => import("src/pages/ToolsPage.vue"),
       }

@@ -51,6 +51,18 @@
             </q-item>
           </router-link>
 
+          <router-link :to="{name: 'schedules'}">
+            <q-item clickable v-ripple>
+              <q-item-section avatar>
+                <q-icon name="calendar_month" />
+              </q-item-section>
+
+              <q-item-section>
+                {{ $t("mainDrawer.calendar") }}
+              </q-item-section>
+            </q-item>
+          </router-link>
+
           <router-link :to="{name: 'tools'}">
             <q-item clickable v-ripple>
               <q-item-section avatar>

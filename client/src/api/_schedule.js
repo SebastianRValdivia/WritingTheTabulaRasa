@@ -11,5 +11,16 @@ export default {
         code: response.status,
         reason: response.data
       }))
+  },
+  getObjectives() {
+    return api.get("v1/schedules/objectives/")
+      .then(response => ({
+        code: response.status,
+        objectives: response.data
+      }))
+      .catch( response => ({
+        code: response.status,
+        reason: response.data
+      }))
   }
 }

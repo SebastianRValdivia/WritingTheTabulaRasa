@@ -1,8 +1,11 @@
 <template>
-  <div>
-    Calendar
+  <div v-if="isLoading" class="window-height row justify-center items-center">
+    <q-spinner-rings
+      color="primary"
+      size="10rem"
+    />
   </div>
-  <div v-if="goalsListLength > 0">
+  <div v-else-if="goalsListLength > 0">
     <q-list class="goals-list" >
       <q-item v-for="goal in scheduleStore.getGoalsList" :key="goal.id">
         {{ goal.title }}: {{ goal.result }} to {{ goal.finish }}
@@ -12,7 +15,7 @@
 
     </q-date>
   </div>
-  <h2 v-else>No goals yet</h2>
+  <h2 v-else-if="goalsListLength === 0">No goals yet</h2>
 
 </template>
 
@@ -31,8 +34,6 @@ export default {
     const goalsDates = ref([])
     const newGoalDate = ref("")
 
-
-
     onBeforeMount(async () => {
       isLoading.value = true
       await scheduleStore.retrieveGoals()
@@ -40,9 +41,12 @@ export default {
       scheduleStore.getGoalsList.forEach((goal) => {
         goalsDates.value.push(date.formatDate(goal.finish, "YYYY/MM/DD"))
       })
+      await scheduleStore.retrieveObjectives()
+      isLoading.value = false
     })
 
     return {
+      isLoading,
       scheduleStore,
       goalsListLength,
       goalsDates,

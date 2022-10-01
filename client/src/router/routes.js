@@ -18,6 +18,11 @@ const routes = [
         ]
       },
       {
+        path: "tasks/",
+        name: "tasks",
+        component: () => import("src/pages/TaskListPage"),
+      },
+      {
         path: "schedules/",
         name: "schedules",
         component: () => import("src/pages/SchedulePage"),

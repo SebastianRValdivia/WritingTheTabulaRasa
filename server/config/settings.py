@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     "user",
     "applications.notes",
     "applications.schedule",
+    "applications.tasks",
 ]
 
 MIDDLEWARE = [

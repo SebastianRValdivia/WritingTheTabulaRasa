@@ -3,10 +3,12 @@ import api from "src/api";
 
 export const useScheduleStore = defineStore("schedule", {
   state: () => ({
-    goalsList: []
+    goalsList: [],
+    objectivesList: []
   }),
   getters: {
     getGoalsList: (state) => state.goalsList,
+    getObjectivesList: (state) => state.objectivesList,
   },
   actions: {
     async retrieveGoals() {
@@ -19,7 +21,17 @@ export const useScheduleStore = defineStore("schedule", {
             return false
           }
         })
-      
+    },
+    async retrieveObjectives() {
+      await api.schedule.getObjectives()
+        .then( result => {
+          if (result.code === 200) {
+            this.objectivesList = result.objectives
+            return true
+          } else {
+            return false
+          }
+        })
     }
   }
 })

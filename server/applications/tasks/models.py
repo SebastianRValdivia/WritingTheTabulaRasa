@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 from config.fields_default_values import (CHARFIELD_LONG)
 
@@ -12,6 +13,12 @@ class TaskModel(models.Model):
         on_delete=models.SET_NULL,
         blank=True,
         null=True,
+    )
+    owner = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        blank=False,
+        null=False,
     )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

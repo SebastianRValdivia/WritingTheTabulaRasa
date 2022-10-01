@@ -20,6 +20,7 @@ class TaskModel(models.Model):
         blank=False,
         null=False,
     )
+    completed = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

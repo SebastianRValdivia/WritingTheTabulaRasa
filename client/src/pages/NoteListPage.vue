@@ -1,10 +1,5 @@
 <template>
-  <div v-if="isLoading" class="window-height row justify-center items-center">
-    <q-spinner-rings
-      color="primary"
-      size="10rem"
-    />
-  </div>
+  <LoadingSpinner v-if="isLoading"/>
 
   <div v-else>
     <div class="row">
@@ -69,11 +64,13 @@ import { ref, onBeforeMount } from "vue"
 import { useNoteStore } from "src/stores/note-store"
 import { useUserStore } from "src/stores/user-store"
 import NoteChildren from "src/components/for-pages/NoteChildren"
+import LoadingSpinner from "src/components/LoadingSpinner"
 
 export default {
   components: {
-    NoteChildren
-  },
+    NoteChildren,
+    LoadingSpinner,
+},
   setup() {
     const isLoading = ref(false)
     const noteStore = useNoteStore()

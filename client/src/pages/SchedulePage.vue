@@ -1,10 +1,5 @@
 <template>
-  <div v-if="isLoading" class="window-height row justify-center items-center">
-    <q-spinner-rings
-      color="primary"
-      size="10rem"
-    />
-  </div>
+  <LoadingSpinner v-if="isLoading"/>
 
   <div v-else-if="goalsListLength > 0" >
     <div class="row q-pa-sm">
@@ -42,8 +37,12 @@ import { ref, onBeforeMount } from "vue"
 import { date } from "quasar"
 
 import { useScheduleStore } from "src/stores/schedule-store"
+import LoadingSpinner from "src/components/LoadingSpinner"
 
 export default {
+  components: {
+    LoadingSpinner
+  },
   setup() {
     const scheduleStore = useScheduleStore()
 

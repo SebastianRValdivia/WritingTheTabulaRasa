@@ -6,5 +6,6 @@ import tasks from "./_tasks"
 export default {
     user,
     notes,
-    schedule
+    schedule,
+    tasks
 }

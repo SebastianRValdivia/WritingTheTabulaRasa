@@ -3,6 +3,7 @@
 const mainDrawer = {
   notes: "My notes",
   tools: "Assistance tools",
+  tasks: "Tasks",
   calendar: "Calendar",
 }
 

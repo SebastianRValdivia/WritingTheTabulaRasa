@@ -49,6 +49,16 @@
             </q-item-section>
           </q-item>
 
+          <q-item clickable v-ripple :to="{name: 'tasks'}">
+            <q-item-section avatar>
+              <q-icon name="task_alt" />
+            </q-item-section>
+
+            <q-item-section>
+              {{ $t("mainDrawer.tasks") }}
+            </q-item-section>
+          </q-item>
+
           <q-item clickable v-ripple :to="{name: 'schedules'}">
             <q-item-section avatar>
               <q-icon name="calendar_month" />

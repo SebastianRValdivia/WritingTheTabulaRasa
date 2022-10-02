@@ -14,7 +14,9 @@ const api = axios.create({
 
 api.interceptors.request.use((config) => {
   const userStore = useUserStore();
-  config.headers.Authorization = `Token ${userStore.getToken}`;
+  if (userStore.getToken) {
+    config.headers.Authorization = `Token ${userStore.getToken}`;
+  }
   return config
 })
 

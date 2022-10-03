@@ -8,6 +8,9 @@ export const useTaskStore = defineStore("task", {
   }),
   getters: {
     getTaskList: (state) => state.taskList,
+    getTaskByUser: (state) => {
+      return (userId) => state.taskList.filter((task) => task.owner === userId)
+    }
   },
   actions: {
     async retrieveTasks() {

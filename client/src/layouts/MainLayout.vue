@@ -23,9 +23,12 @@
       </q-toolbar>
 
       <q-tabs align="left" v-if="appStore.isTabsOpen">
-        <q-route-tab to="/page1" label="Page One" />
-        <q-route-tab to="/page2" label="Page Two" />
-        <q-route-tab to="/page3" label="Page Three" />
+        <q-route-tab 
+          v-for="(pathName, title, index) in appStore.getTabs" 
+          :key="index" 
+          :to="{name: pathName}" 
+          :label="title"
+        />
       </q-tabs>
     </q-header>
 

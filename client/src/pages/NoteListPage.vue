@@ -2,7 +2,7 @@
   <LoadingSpinner v-if="isLoading"/>
 
   <div v-else>
-    <div class="row">
+    <div class="row" v-if="!isNoteListEmpty">
       <q-list id="note-list" class="column">
         <q-item v-for="note in rootNotes" :key="note.id">
           <NoteChildren :note="note" />
@@ -10,6 +10,11 @@
       </q-list>
       <q-separator vertical/>
       <router-view ></router-view>
+    </div>
+    <div v-else class="row q-pa-xl q-mg-xl justify-center">
+      <div class="text-h2" style="opacity:.4">
+        {{ $t("notePages.empty")}}
+      </div>
     </div>
 
 
@@ -59,7 +64,7 @@
 </template>
 
 <script>
-import { ref, onBeforeMount } from "vue"
+import { ref, onBeforeMount, computed } from "vue"
 
 import { useNoteStore } from "src/stores/note-store"
 import { useUserStore } from "src/stores/user-store"
@@ -78,6 +83,10 @@ export default {
     const rootNotes = ref([])
     const newFleetingNoteContent = ref("")
     const isAddingFleetingNote = ref(false)
+
+    const isNoteListEmpty = computed(() => {
+      return rootNotes.value.length === 0
+    }) 
 
     function filterUserNotes() {
       rootNotes.value = noteStore.getNotesByUser(userStore.getUserId)
@@ -119,6 +128,7 @@ export default {
       isAddingFleetingNote,
       toggleNewFleetingNote,
       saveNewFleetingNote,
+      isNoteListEmpty,
     }
   }
 

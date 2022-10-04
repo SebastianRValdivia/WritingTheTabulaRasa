@@ -8,7 +8,8 @@ const mainDrawer = {
 }
 
 const notePages = {
-  fleetingNotes: "Fleeting notes"
+  fleetingNotes: "Fleeting notes",
+  empty: "There are no notes yet",
 }
 const schedulePage = {
   noGoals: "No goals yet",

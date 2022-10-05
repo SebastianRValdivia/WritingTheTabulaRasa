@@ -5,7 +5,7 @@ const routes = [
     children: [
       { path: "", component: () => import('pages/IndexPage.vue') },
       { 
-        path: "notes/",
+        path: "notes/permanent/",
         name: "notes",
         component: () => import("src/pages/NoteListPage.vue"),
         children: [
@@ -16,6 +16,16 @@ const routes = [
             props: true
           },
         ]
+      },
+      {
+        path: "notes/fleeting/",
+        name: "fleetingNotes",
+        component: () => import("src/pages/NoteListPage.vue"),
+      },
+      {
+        path: "notes/literary/",
+        name: "literaryNotes",
+        component: () => import("src/pages/NoteListPage.vue"),
       },
       {
         path: "tasks/",

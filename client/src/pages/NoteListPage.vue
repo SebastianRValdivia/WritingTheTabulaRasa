@@ -65,6 +65,7 @@
 
 <script>
 import { ref, onBeforeMount, computed, onBeforeUnmount } from "vue"
+import { useI18n } from "vue-i18n"
 
 import { useNoteStore } from "src/stores/note-store"
 import { useUserStore } from "src/stores/user-store"
@@ -82,6 +83,7 @@ export default {
     const noteStore = useNoteStore()
     const userStore = useUserStore()
     const appStore = useAppStore()
+    const { t } = useI18n()
 
     const rootNotes = ref([])
     const newFleetingNoteContent = ref("")
@@ -112,9 +114,9 @@ export default {
     onBeforeMount(async () => {
       isLoading.value = true
       appStore.setTabs({
-        permanent: "notes",
-        fleeting: "fleetingNotes",
-        literary: "literaryNotes",
+        [t("notePages.permanent")]: "notes",
+        [t("notePages.fleeting")]: "fleetingNotes",
+        [t("notePages.literary")]: "literaryNotes",
       })
       await noteStore.retrieveNotes()
       if (userStore.isUserLogged) {

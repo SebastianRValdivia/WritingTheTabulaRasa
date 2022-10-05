@@ -10,6 +10,7 @@ const mainDrawer = {
 const notePages = {
   permanent: "Permanent",
   fleeting: "Fleeting",
+  literary: "Literary",
   fleetingNotes: "Fleeting notes",
   empty: "There are no notes yet",
 }

@@ -3,7 +3,7 @@ import api from "src/api"
 import { filterNoteFamily } from "src/utils"
 import { useUserStore } from "src/stores/user-store"
 
-export const useNoteStore = defineStore('note', {
+export const useNoteStore = defineStore("note", {
   state: () => ({
     notes: [],
     fleetingNotes: [],

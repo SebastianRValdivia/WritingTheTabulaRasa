@@ -20,7 +20,7 @@ const routes = [
       {
         path: "notes/fleeting/",
         name: "fleetingNotes",
-        component: () => import("src/pages/NoteListPage.vue"),
+        component: () => import("src/pages/FleetingNoteListPage.vue"),
       },
       {
         path: "notes/literary/",

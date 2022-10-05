@@ -1,5 +1,4 @@
-
-const { defineStore } = require("pinia");
+import { defineStore } from "pinia"
 import api from "src/api";
 
 export const useTaskStore = defineStore("task", {

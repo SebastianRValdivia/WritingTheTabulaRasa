@@ -64,10 +64,11 @@
 </template>
 
 <script>
-import { ref, onBeforeMount, computed } from "vue"
+import { ref, onBeforeMount, computed, onBeforeUnmount } from "vue"
 
 import { useNoteStore } from "src/stores/note-store"
 import { useUserStore } from "src/stores/user-store"
+import { useAppStore } from "src/stores/app-store"
 import NoteChildren from "src/components/for-pages/NoteChildren"
 import LoadingSpinner from "src/components/LoadingSpinner"
 
@@ -80,6 +81,8 @@ export default {
     const isLoading = ref(false)
     const noteStore = useNoteStore()
     const userStore = useUserStore()
+    const appStore = useAppStore()
+
     const rootNotes = ref([])
     const newFleetingNoteContent = ref("")
     const isAddingFleetingNote = ref(false)
@@ -104,11 +107,15 @@ export default {
     function saveNewFleetingNote() {
       noteStore.createFleetingNote(newFleetingNoteContent.value)
       toggleNewFleetingNote()
-
     }
 
     onBeforeMount(async () => {
       isLoading.value = true
+      appStore.setTabs({
+        permanent: "notes",
+        fleeting: "fleetingNotes",
+        literary: "literaryNotes",
+      })
       await noteStore.retrieveNotes()
       if (userStore.isUserLogged) {
         filterUserNotes()
@@ -117,6 +124,9 @@ export default {
       }
       await noteStore.retrieveFleetingNotes()
       isLoading.value = false
+    })
+    onBeforeUnmount(() => {
+      appStore.clearTabs()
     })
 
 

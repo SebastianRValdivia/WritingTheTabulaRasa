@@ -1,8 +1,8 @@
 <template>
-  <div  class="window-height row justify-center items-center">
+  <div  class="fullscreen row justify-center items-center">
     <q-spinner-rings
       color="primary"
-      size="10rem"
+      size="10em"
     />
   </div>
 </template>

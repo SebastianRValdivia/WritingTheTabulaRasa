@@ -1,5 +1,7 @@
 <template>
-  <q-page padding>
+  <LoadingSpinner v-if="isLoading"/>
+
+  <q-page v-else padding>
     <div class="row">
       <div class="column">
         <span class="text-h5">{{ $t("notePages.fleetingNotes") }}</span>
@@ -53,6 +55,9 @@ import LoadingSpinner from "src/components/LoadingSpinner"
 
 export default {
   name: 'FleetingNotePage',
+  components: {
+    LoadingSpinner
+  },
   setup() {
     const isLoading = ref(false)
     const noteStore = useNoteStore()

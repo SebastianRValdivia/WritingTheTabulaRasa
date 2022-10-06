@@ -7,4 +7,5 @@ urlpatterns = [
     path("notes/", include("applications.notes.api_urls")),
     path("schedules/", include("applications.schedule.api_urls")),
     path("tasks/", include("applications.tasks.api_urls")),
+    path("resources/", include("applications.resources.api_urls")),
 ]

@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     "applications.notes",
     "applications.schedule",
     "applications.tasks",
+    "applications.resources",
 ]
 
 MIDDLEWARE = [

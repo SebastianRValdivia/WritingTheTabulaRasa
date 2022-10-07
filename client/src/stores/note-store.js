@@ -32,21 +32,23 @@ export const useNoteStore = defineStore("note", {
   },
   actions: {
     async retrieveNotes() {
-      await api.notes.getNotesList().then(result => {
-        if (result.code === 200) {
-          this.notes = result.notes
-        }
-      })
+      let result = await api.notes.getNotesList()
+      if (result.code === 200) {
+        this.notes = result.notes
+        return true
+      } else {
+        return false
+      }
     },
     async retrieveNoteById(id) {
       if (this.notes.find(note => note.id === id) !== undefined) {
-        await api.notes.getNoteById().then(result => {
-          if (result.code === 200) {
-            this.notes.push(result.note)
-          } else {
-            return result.code
-          }
-        })
+        let result = await api.notes.getNoteById()
+        if (result.code === 200) {
+          this.notes.push(result.note)
+          return true
+        } else {
+          return false
+        }
       } else {
         return "Note already loaded"
       }
@@ -58,13 +60,14 @@ export const useNoteStore = defineStore("note", {
         .then((result) => console.log(result.code))
     },
     async retrieveFleetingNotes() {
-      await api.notes.getFleetingNotesList().then(result => {
+      let result = await api.notes.getFleetingNotesList()
+      
       if (result.code === 200) {
         this.fleetingNotes = result.fleetingNotes
         return true
       } else {
         return false
-      }})
+      }
     },
     async createFleetingNote(newNoteContent) {
       const userStore = useUserStore()

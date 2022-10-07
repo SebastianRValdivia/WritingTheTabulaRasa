@@ -13,12 +13,10 @@ export const useTaskStore = defineStore("task", {
   },
   actions: {
     async retrieveTasks() {
-      await api.tasks.getTasks()
-        .then(result => {
-          if (result.code === 200) {
-            this.taskList = result.tasks
-          }
-        })
+      let result = await api.tasks.getTasks()
+      if (result.code === 200) {
+        this.taskList = result.tasks
+      }
     }
 
   }

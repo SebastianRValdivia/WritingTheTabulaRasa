@@ -12,26 +12,23 @@ export const useScheduleStore = defineStore("schedule", {
   },
   actions: {
     async retrieveGoals() {
-      await api.schedule.getGoals()
-        .then( result => {
-          if (result.code === 200) {
-            this.goalsList = result.goals
-            return true
-          } else {
-            return false
-          }
-        })
+      let result = await api.schedule.getGoals()
+
+      if (result.code === 200) {
+        this.goalsList = result.goals
+        return true
+      } else {
+        return false
+      }
     },
     async retrieveObjectives() {
-      await api.schedule.getObjectives()
-        .then( result => {
-          if (result.code === 200) {
-            this.objectivesList = result.objectives
-            return true
-          } else {
-            return false
-          }
-        })
+      let result = await api.schedule.getObjectives()
+      if (result.code === 200) {
+        this.objectivesList = result.objectives
+        return true
+      } else {
+        return false
+      }
     }
   }
 })

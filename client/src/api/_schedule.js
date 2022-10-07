@@ -1,26 +1,36 @@
 import { api } from "boot/axios";
 
 export default {
-  getGoals() {
-    return api.get("v1/schedules/goals/")
-      .then(response => ({
+  async getGoals() {
+    let response = await api.get("v1/schedules/goals/")
+
+
+    if (response.status === 200) {
+      return {
         code: response.status,
-        goals: response.data
-      }))
-      .catch( response => ({
+        goals: response.data.results
+      }
+
+    } else {
+      return {
         code: response.status,
-        reason: response.data
-      }))
+        reason: response.data.results
+      }
+    }
   },
-  getObjectives() {
-    return api.get("v1/schedules/objectives/")
-      .then(response => ({
+  async getObjectives() {
+    let response = await api.get("v1/schedules/objectives/")
+
+    if (response.status === 200) {
+      return {
         code: response.status,
-        objectives: response.data
-      }))
-      .catch( response => ({
+        objectives: response.data.results
+      }
+    } else {
+      return {
         code: response.status,
-        reason: response.data
-      }))
+        reason: response.data.results
+      }
+    }
   }
 }

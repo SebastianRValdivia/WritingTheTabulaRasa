@@ -12,7 +12,7 @@ const routes = [
           {
             path: ":identifier/",
             name: "note",
-            component: () => import("src/pages/NotePage.vue"),
+            component: () => import("src/pages/notes/NotePage.vue"),
             props: true
           },
         ]

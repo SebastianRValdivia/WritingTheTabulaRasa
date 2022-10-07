@@ -33,15 +33,12 @@ export const useUserStore = defineStore('user', {
         }) 
     },
     async retrieveUserId() {
-      await api.user.getUserIdByUsername(this.getUsername)
-        .then( result => {
-          if (result.code === 200) {
-            this.userId = result.userId
-          } else {
-            console.warn("Failed to get user id")
-          }
-
-      })
+      let result = await api.user.getUserIdByUsername(this.getUsername)
+      if (result.code === 200) {
+        this.userId = result.userId
+      } else {
+        console.warn("Failed to get user id")
+      }
     },
     saveUserCredentials(username, userId, token) {
       this.username = username

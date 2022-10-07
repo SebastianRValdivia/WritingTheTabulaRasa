@@ -1,29 +1,38 @@
 import { api } from "boot/axios";
 
 export default {
-  postUserAuthentication(username, password) {
-    return api.post("v1/users/obtain-token/", {
+  async postUserAuthentication(username, password) {
+    let response = await api.post("v1/users/obtain-token/", {
       username: username,
       password: password,
     })
-      .then(response => ({
+
+    if (response.status === 200) {
+      return {
         code: response.status,
         token: response.data.token
-      }))
-      .catch( response => ({
+      }
+
+    } else {
+      return {
         code: response.status,
         reason: response.data
-      }))
+      }
+    }
   },
-  getUserIdByUsername(username) {
-    return api.get(`v1/users/data/?username=${username}`)
-      .then(response => ({
+  async getUserIdByUsername(username) {
+    let response = await api.get(`v1/users/data/?username=${username}`)
+
+    if (response.status === 200) {
+      return {
         code: response.status,
-        userId: response.data[0].pk
-      }))
-      .catch( response => ({
+        userId: response.data.results[0].pk
+      }
+    } else {
+      return {
         code: response.status,
         reason: response.data
-      }))
+      }
+    }
   }
 }

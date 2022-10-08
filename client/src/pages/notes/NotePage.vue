@@ -1,14 +1,11 @@
 <template>
-  <div class="column content-center q-pa-md" >
-    <q-card class="text-center" v-if="!isEditing">
-      <q-card-section class="text-h6">
-        <span class="text-bold">{{ identifier }}:</span> <span>{{note.title}}</span>
-      </q-card-section>
-      <q-separator />
-      <q-card-section>
-        <MarkdownPreview :md="note.content"/>
-      </q-card-section>
-    </q-card>
+    <NoteCard 
+      v-if="!isEditing" 
+      :identifier="identifier"
+      :title="note.title"
+      :content="note.content"
+    />
+    
     <q-card v-else class="q-pa-sm text-center">
       <q-card-section class="text-h6">
         <span class="text-bold">{{ identifier }}:</span> <span>{{note.title}}</span>
@@ -21,7 +18,6 @@
         />
       </q-card-section>
     </q-card>
-    
     <div 
       class="q-mt-md column content-center"
       v-if="userStore.isLogged" 
@@ -32,7 +28,6 @@
       </span>
       <q-btn v-else round color="primary" icon="edit" @click="toggleEditor"/>
     </div>
-  </div>
 </template>
 
 <script>
@@ -41,15 +36,15 @@ import { useRouter, onBeforeRouteUpdate } from "vue-router"
 
 import { useNoteStore } from "src/stores/note-store"
 import { useUserStore } from "src/stores/user-store"
-import MarkdownPreview from "src/components/MarkdownPreview"
+import NoteCard from "src/components/NoteCard"
 
 export default {
   props: {
     identifier: String
   },
   components: {
-    MarkdownPreview
-  },
+    NoteCard,
+},
   setup(props) {
     const noteStore = useNoteStore()
     const userStore = useUserStore()

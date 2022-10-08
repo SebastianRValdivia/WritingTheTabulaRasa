@@ -12,11 +12,6 @@
         <NoteChildren :note="note" />
       </q-item>
     </q-list>
-      <q-card class="q-ml-xl">
-        <q-card-section>
-          <q-icon name="add" size="2rem"></q-icon>
-        </q-card-section>
-    </q-card>
   </q-expansion-item>
 </template>
 

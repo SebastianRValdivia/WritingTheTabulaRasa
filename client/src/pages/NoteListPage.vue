@@ -1,24 +1,28 @@
 <template>
   <LoadingSpinner v-if="isLoading"/>
 
-  <div v-else>
-    <div class="row" v-if="!isNoteListEmpty">
+  <q-page v-else>
+    <div class="row window-height" v-if="!isNoteListEmpty">
       <q-list id="note-list" class="column">
         <q-item v-for="note in rootNotes" :key="note.id">
           <NoteChildren :note="note" />
         </q-item>
       </q-list>
-      <q-separator vertical/>
-      <router-view ></router-view>
+      <q-separator vertical class="gt-md"/>
+      <div class="column content-center q-pa-md col-9" >
+        <router-view ></router-view>
+      </div>
     </div>
+
     <div v-else class="row q-pa-xl q-mg-xl justify-center">
       <div class="text-h2" style="opacity:.4">
         {{ $t("notePages.empty")}}
       </div>
     </div>
-
-
-  </div>
+    <q-page-sticky position="bottom-right" :offset="[18, 18]">
+      <q-btn round color="accent" icon="add" size="lg" :to="{name: 'newNote'}"/>
+    </q-page-sticky>
+  </q-page>
 </template>
 
 <script>

@@ -1,14 +1,21 @@
 <template>
   <q-card class="text-center note-card-desktop gt-md" >
     <q-card-section class="text-h6 row">
-      <q-input v-model="identifier"/>
-      <q-input v-model="title" class="q-pl-xl"/>
+      <q-input 
+        v-model="identifier"
+        :rules="identifierRules"
+      />
+      <q-input 
+        v-model="title"
+        :rules="titleRules"
+        class="q-pl-xl"/>
     </q-card-section>
     <q-separator />
     <q-card-section class="row">
       <q-input 
         type="textarea" 
         v-model="content"
+        class="q-pl-xl"
         autogrow 
         borderless
         style="min-width: 49rem"
@@ -47,6 +54,19 @@ export default {
     const title = ref("")
     const content = ref("")
     const saveEnable = ref(true)
+
+
+    const titleRules = [ val => val.length > 0 ]
+    const identifierRules = [ 
+      val => val.length > 0,
+      val => noteStore.getNoteByIdentifier(val.split("-")) == undefined,
+      val => {
+        let identifiers = val.split("-")
+        for (let id of identifiers) {
+          if (isNaN(id)) { return false }
+        }
+      }
+    ]
     
     async function saveNote() {
       let userStore = useUserStore()
@@ -66,6 +86,8 @@ export default {
       content,
       saveEnable,
       saveNote,
+      titleRules,
+      identifierRules
     }
   }
 }

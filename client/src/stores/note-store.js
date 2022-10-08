@@ -59,6 +59,16 @@ export const useNoteStore = defineStore("note", {
       api.notes.patchNoteContent(idNoteToSave, newNoteContent)
         .then((result) => console.log(result.code))
     },
+    async saveNote(noteData) {
+      let result = await api.notes.postNote(noteData)
+
+      if (result.code === 201) {
+        this.notes.push(result.newNote)
+        return true
+      } else {
+        return result
+      }
+    },
     async retrieveFleetingNotes() {
       let result = await api.notes.getFleetingNotesList()
       

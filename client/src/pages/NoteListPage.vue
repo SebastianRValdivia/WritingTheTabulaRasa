@@ -19,6 +19,9 @@
         {{ $t("notePages.empty")}}
       </div>
     </div>
+    <q-page-sticky position="bottom-right" :offset="[18, 18]">
+      <q-btn round color="accent" icon="add" size="lg" :to="{name: 'newNote'}"/>
+    </q-page-sticky>
   </q-page>
 </template>
 

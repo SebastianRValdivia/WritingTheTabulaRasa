@@ -22,5 +22,20 @@ export default {
         reason: response.data
       }
     }
+  },
+  async postTask(taskData) {
+    let response = await api.post("v1/tasks/", taskData)
+
+    if (response.status === 201) {
+      return {
+        code: response.status,
+        newTask: response.data
+      }
+    } else {
+      return {
+        code: response.status,
+        reason: response.data
+      }
+    }
   }
 }

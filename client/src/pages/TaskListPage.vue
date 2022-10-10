@@ -2,8 +2,18 @@
   <LoadingSpinner v-if="isLoading" />
 
   <q-page v-else>
-    <div class="row q-pa-md q-gutter-sm">
-      <q-input v-model="newTask.title" class="col-6 "/>
+    <div class="row q-pa-md float-right">
+      <q-toggle
+        v-model="showCompleted"
+        checked-icon="check"
+        unchecked-icon="clear"
+        color="info"
+        :label="$t('taskPage.showCompleted')"
+      />
+    </div>
+
+    <div class="row  q-gutter-sm">
+      <q-input v-model="newTask.title" class="col-7 "/>
       <q-btn @click="addNewTask" icon="add" size="md"/>
     </div>
     <q-list padding separator class="row">
@@ -44,8 +54,14 @@ export default {
     const newTask = reactive({
       title: "",
     })
+    const showCompleted = ref(false)
     const displayedTasks = computed(() => {
-      return taskStore.getTaskByUser(userStore.getUserId)
+      if (showCompleted.value) {
+        return taskStore.getTaskByUser(userStore.getUserId)
+      } else {
+        return taskStore.getTaskByUser(userStore.getUserId)
+          .filter((task => task.completed === false))
+      }
     })
 
     async function toggleStatus(taskId) {
@@ -72,6 +88,7 @@ export default {
       newTask,
       addNewTask,
       toggleStatus,
+      showCompleted,
     }
   }
 }

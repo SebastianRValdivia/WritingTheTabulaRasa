@@ -18,6 +18,9 @@ const schedulePage = {
   noGoals: "No goals yet",
   calendar: "Calendar",
 }
+const taskPage = {
+  showCompleted: "Show completed"
+}
 
 export default {
   failed: 'Action failed',
@@ -25,5 +28,6 @@ export default {
   mainDrawer: mainDrawer,
   notePages: notePages,
   schedulePage: schedulePage,
+  taskPage: taskPage,
 
 }

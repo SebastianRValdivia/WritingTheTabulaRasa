@@ -44,6 +44,18 @@ export const useTaskStore = defineStore("task", {
           this.taskList[index] = result.newTask
         }
       }
+    },
+    async removeTask(taskData) {
+      let result = await api.tasks.deleteTask(taskData.taskId)
+
+      if (result.code === 204) {
+        let index = this.taskList.findIndex(
+          (task) => taskData.taskId === task.id
+        )
+        if (index !== -1) {
+          this.taskList.splice(index, 1)
+        }
+      }
     }
   }
 })

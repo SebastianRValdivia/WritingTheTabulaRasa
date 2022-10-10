@@ -2,8 +2,17 @@
   <LoadingSpinner v-if="isLoading" />
 
   <q-page v-else>
+    <div class="row q-pa-md float-right">
+      <q-toggle
+        v-model="showCompleted"
+        checked-icon="check"
+        unchecked-icon="clear"
+        color="info"
+        :label="$t('taskPage.showCompleted')"
+      />
+    </div>
 
-    <div class="row q-pa-md q-gutter-sm">
+    <div class="row  q-gutter-sm">
       <q-input v-model="newTask.title" class="col-7 "/>
       <q-btn @click="addNewTask" icon="add" size="md"/>
     </div>

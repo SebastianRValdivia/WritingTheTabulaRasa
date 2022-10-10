@@ -6,10 +6,19 @@
       <q-input v-model="newTask.title" class="col-6 "/>
       <q-btn @click="addNewTask" icon="add" size="md"/>
     </div>
-    <q-list class="row">
-      <q-item class="col-12" v-for="task in displayedTasks" :key="task.id">
+    <q-list padding separator class="row">
+      <q-item class="col-7" v-for="task in displayedTasks" :key="task.id">
         <q-item-section>
-          {{ task.title }}
+          <q-item-label> 
+            <q-checkbox 
+              v-model="task.completed" 
+              @click="toggleStatus(task.id)"
+            />
+            {{ task.title }}
+          </q-item-label>
+          <q-item-label caption>
+            {{ task.created_at }}
+          </q-item-label>
         </q-item-section>
       </q-item>
     </q-list>
@@ -35,12 +44,17 @@ export default {
     const newTask = reactive({
       title: "",
     })
-
     const displayedTasks = computed(() => {
       return taskStore.getTaskByUser(userStore.getUserId)
     })
 
-
+    async function toggleStatus(taskId) {
+      let task = taskStore.getTaskById(taskId)
+      await taskStore.changeTaskStatus({
+        taskId: taskId,
+        newStatus: task.completed // The new status is already inverted due to the v-model in the checkbox
+      })
+    }
     async function addNewTask() {
       await taskStore.addNewTask(newTask)
     }
@@ -57,8 +71,8 @@ export default {
       taskStore,
       newTask,
       addNewTask,
+      toggleStatus,
     }
-
   }
 }
 </script>

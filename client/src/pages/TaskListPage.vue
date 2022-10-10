@@ -30,6 +30,15 @@
             {{ task.created_at }}
           </q-item-label>
         </q-item-section>
+        <q-item-section avatar>
+          <q-btn 
+            flat 
+            round 
+            color="negative" 
+            icon="delete" 
+            @click="deleteTask(task.id)"
+          />
+        </q-item-section>
       </q-item>
     </q-list>
   </q-page>
@@ -74,6 +83,9 @@ export default {
     async function addNewTask() {
       await taskStore.addNewTask(newTask)
     }
+    async function deleteTask(taskId) {
+      await taskStore.removeTask({taskId: taskId})
+    }
 
     onBeforeMount(async () => {
       isLoading.value = true
@@ -89,6 +101,7 @@ export default {
       addNewTask,
       toggleStatus,
       showCompleted,
+      deleteTask,
     }
   }
 }

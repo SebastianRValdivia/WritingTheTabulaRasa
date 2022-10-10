@@ -54,6 +54,18 @@ export default {
         reason: response.data
       }
     }
-    
+  },
+  async deleteTask(taskId) {
+    let response = await api.delete(`v1/tasks/${taskId}/`)
+    if (response.status === 204) {
+      return {
+        code: response.status
+      }
+    } else {
+      return {
+        code: response.status,
+        reason: response.data
+      }
+    }
   }
 }

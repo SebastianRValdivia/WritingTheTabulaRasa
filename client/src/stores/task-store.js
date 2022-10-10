@@ -11,6 +11,9 @@ export const useTaskStore = defineStore("task", {
     getTaskList: (state) => state.taskList,
     getTaskByUser: (state) => {
       return (userId) => state.taskList.filter((task) => task.owner === userId)
+    },
+    getTaskById: (state) => {
+      return (taskId) => state.taskList.find((task) => task.id === taskId)
     }
   },
   actions: {
@@ -27,7 +30,20 @@ export const useTaskStore = defineStore("task", {
       if (result.code === 201) {
         this.taskList.push(result.newTask)
       }
-    }
+    },
+    async changeTaskStatus(taskData) {
+      let result = await api.tasks.patchTask(
+        taskData.taskId, taskData.newStatus
+      )
 
+      if (result.code === 200) {
+        let index = this.taskList.findIndex(
+          (task) => result.newTask.id === task.id
+        )
+        if (index !== -1) {
+          this.taskList[index] = result.newTask
+        }
+      }
+    }
   }
 })

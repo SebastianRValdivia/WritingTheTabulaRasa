@@ -37,5 +37,23 @@ export default {
         reason: response.data
       }
     }
+  },
+  async patchTask(taskId, newStatus) {
+    let response = await api.patch(`v1/tasks/${taskId}/`,
+      {completed: newStatus}
+    )
+
+    if (response.status === 200) {
+      return {
+        code: response.status,
+        newTask: response.data
+      }
+    } else {
+      return {
+        code: response.status,
+        reason: response.data
+      }
+    }
+    
   }
 }

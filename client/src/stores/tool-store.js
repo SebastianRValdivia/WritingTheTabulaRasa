@@ -1,17 +1,14 @@
-import { setInterval } from "core-js";
 import { defineStore } from "pinia";
 
 export const useToolStore = defineStore("tool", {
   state: () => ({
     timer: null,
-    timerStatus: false, // True = running, false = stop TODO: Use timerTime 0 instead
     timerType: false, // True = working, false = resting
     timerTime: 0, // Minutes to run
     timerWorkTime: 25,
     timerRestTime: 5,
   }),
   getters: {
-    getTimerStatus: (state) => state.timerStatus,
     getTimerType: (state) => state.timerType,
     getTimerRemainingTime: (state) => state.timerTime,
     getTimerPreset: (state) => (
@@ -20,17 +17,15 @@ export const useToolStore = defineStore("tool", {
   },
   actions: {
     runTimer() {
-      this.timerStatus = true
       this.timerType 
         ? this.timerTime = this.timerWorkTime 
         : this.timerTime = this.timerRestTime
       this.timer = setInterval(() => {
         this.timerTime = this.timerTime - 1
         if (this.timerTime === 0) { // Timer done
-          this.timerStatus = false
-          this.invertTimerType()
           alert("Timer done")
           clearInterval(this.timer)
+          this.invertTimerType()
         }
       }, 60000)
     },
@@ -40,6 +35,11 @@ export const useToolStore = defineStore("tool", {
     updateTimerSettings(workTime, restTime) {
       this.timerWorkTime = workTime
       this.timerRestTime = restTime
+    },
+    stopTimer() {
+      this.timer = null
+      this.timerTime = 0
+      this.invertTimerType()
     },
   },
 });

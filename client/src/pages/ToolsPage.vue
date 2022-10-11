@@ -1,25 +1,23 @@
 <template>
-  <div class="tool-box">
+  <q-page>
     <h5>Pomodoro timer</h5>
     <div class="q-gutter-md row items-start">
       <q-input
         v-model.number="timerSettings.workTime.value"
         type="number"
-        filled
-        class="setting-input col"
-        hint="Work interval"
+        class="setting-input col-3"
+        :hint="$t('toolPage.pomoWorkTime')"
       />
       <q-input
         v-model.number="timerSettings.restTime.value"
         type="number"
-        filled
-        class="setting-input col"
-        hint="Rest interval"
+        class="setting-input col-3"
+        :hint="$t('toolPage.pomoRestTime')"
       />
       <q-btn flat round color="primary" icon="save" @click="saveTimerSettings" />
     </div>
     
-  </div>
+  </q-page>
 </template>
 
 <script>
@@ -52,11 +50,7 @@ export default {
 </script>
 
 <style>
-.tool-box {
-  padding: 0.5rem;
-}
 .setting-input {
   max-width: 20%;
 }
-
 </style>

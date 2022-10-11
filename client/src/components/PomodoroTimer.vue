@@ -12,12 +12,16 @@
       center-color="red"
       track-color=""
       @click="launch"
+      @mouseenter="mouseOver = true"
+      @mouseleave="mouseOver = false"
     >
       <span v-if="toolStore.getTimerType">
-        <q-icon name="menu_book" />
+        <q-icon v-if="mouseOver && toolStore.getTimerRemainingTime > 0" name="close" />
+        <q-icon v-else name="menu_book" />
       </span>
       <span v-else>
-        <q-icon name="coffee" />
+        <q-icon v-if="mouseOver && toolStore.getTimerRemainingTime > 0" name="close" />
+        <q-icon v-else name="coffee" />
       </span>
     </q-circular-progress>
 </template>
@@ -31,6 +35,7 @@ export default {
   setup() {
     const toolStore = useToolStore()
     const maxTime = ref(0) 
+    const mouseOver= ref(false)
 
 
     function defineMaxTime() {
@@ -46,12 +51,13 @@ export default {
     return {
       toolStore,
       maxTime,
+      mouseOver,
 
       launch() {
-        if (!toolStore.getTimerStatus) { // If timer false (not running)
+        if (toolStore.getTimerRemainingTime === 0) {
           toolStore.runTimer()
         } else { // Timer is running
-          console.log("cant change")
+          toolStore.stopTimer()
         }
       }
 

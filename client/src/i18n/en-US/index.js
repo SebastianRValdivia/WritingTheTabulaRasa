@@ -21,6 +21,10 @@ const schedulePage = {
 const taskPage = {
   showCompleted: "Show completed"
 }
+const toolPage = {
+  pomoWorkTime: "Work interval",
+  pomoRestTime: "Rest interval"
+}
 
 export default {
   failed: 'Action failed',
@@ -29,5 +33,6 @@ export default {
   notePages: notePages,
   schedulePage: schedulePage,
   taskPage: taskPage,
+  toolPage: toolPage,
 
 }

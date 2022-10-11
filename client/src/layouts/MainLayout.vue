@@ -10,12 +10,11 @@
           <q-btn dense flat round icon="person" @click="appStore.openLoginDialog"/>
           <login-dialog isOpen="isLoginDialogOpen"/>
         </span>
-
+        <q-separator vertical inset class="q-ml-sm"/>
         <q-toolbar-title>
-          <q-avatar>
-            <img src="~/assets/logo.svg">
-          </q-avatar>
-          Writing the tabula rasa
+          <router-link :to="{name: 'home'}">
+            <q-icon name="home" color="secondary"></q-icon>
+          </router-link>
         </q-toolbar-title>
 
         <PomodoroTimer />

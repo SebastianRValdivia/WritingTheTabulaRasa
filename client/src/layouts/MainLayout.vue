@@ -27,6 +27,7 @@
           :key="index" 
           :to="{name: pathName}" 
           :label="title"
+          class="text-secondary"
         />
       </q-tabs>
     </q-header>

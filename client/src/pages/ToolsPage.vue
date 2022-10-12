@@ -14,7 +14,7 @@
         class="setting-input col-3"
         :hint="$t('toolPage.pomoRestTime')"
       />
-      <q-btn flat round color="primary" icon="save" @click="saveTimerSettings" />
+      <q-btn flat round color="secondary" icon="save" @click="saveTimerSettings" />
     </div>
     
   </q-page>

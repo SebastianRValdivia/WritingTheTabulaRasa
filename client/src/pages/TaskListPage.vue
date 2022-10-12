@@ -14,7 +14,7 @@
 
     <div class="row  q-gutter-sm">
       <q-input v-model="newTask.title" class="col-7 "/>
-      <q-btn @click="addNewTask" icon="add" size="md"/>
+      <q-btn flat rounded @click="addNewTask" icon="add" size="md"/>
     </div>
     <q-list padding separator class="row">
       <q-item class="col-7" v-for="task in displayedTasks" :key="task.id">
@@ -23,6 +23,7 @@
             <q-checkbox 
               v-model="task.completed" 
               @click="toggleStatus(task.id)"
+              class="secondary"
             />
             {{ task.title }}
           </q-item-label>

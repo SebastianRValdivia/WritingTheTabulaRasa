@@ -24,9 +24,9 @@
     >
       <span v-if="isEditing">
         <q-btn round color="negative" icon="cancel" @click="cancelEdit"/>
-        <q-btn round color="primary" icon="save" @click="saveEdit"/>
+        <q-btn round color="secondary" icon="save" @click="saveEdit"/>
       </span>
-      <q-btn v-else round color="primary" icon="edit" @click="toggleEditor"/>
+      <q-btn v-else round color="secondary" icon="edit" @click="toggleEditor"/>
     </div>
 </template>
 

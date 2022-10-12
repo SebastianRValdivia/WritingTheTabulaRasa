@@ -23,7 +23,7 @@
     </q-card-section>
     <q-slide-transition>
       <div v-show="saveEnable" class="absolute-bottom q-pa-sm">
-        <q-btn round color="accent" icon="save" @click="saveNote"/>
+        <q-btn round color="secondary" icon="save" @click="saveNote"/>
       </div>
     </q-slide-transition>
   </q-card>

@@ -8,6 +8,9 @@ export const useCheatsheetStore = defineStore("cheatsheet", {
   }),
   getters: {
     getSheets: (state) => state.sheets,
+    getSheetByUrl: (state) => {
+      return (sheetUrl) => state.sheets.find((sheet) => sheet.url === sheetUrl)
+    },
     getCheatsBySheet: (state) => {
       return (sheetId) => state.cheats.filter((cheat) => cheat.sheet === sheetId)
     }

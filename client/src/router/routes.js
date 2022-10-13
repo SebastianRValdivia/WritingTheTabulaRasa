@@ -55,7 +55,13 @@ const routes = [
         path: "cheatsheets/",
         name: "cheatsheets",
         component: () => import ("src/pages/CheatsheetListPage")
-      }
+      },
+      {
+        path: "cheatsheets/:title/",
+        name: "cheatsheet",
+        component: () => import("src/pages/CheatsheetPage"),
+        props: true
+      },
     ]
   },
 

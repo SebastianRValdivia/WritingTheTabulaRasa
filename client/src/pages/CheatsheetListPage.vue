@@ -1,7 +1,9 @@
 <template>
   <ul>
     <li v-for="sheet in cheatsheetStore.getSheets" :key="sheet.id">
-      {{ sheet.title }}
+      <router-link :to="{name: 'cheatsheet', params: {title: sheet.url}}">
+        {{ sheet.title }}
+      </router-link>
     </li>
 
   </ul>

@@ -32,7 +32,7 @@ class SheetModel(models.Model):
 class CheatModel(models.Model):
 
     title = models.CharField(max_length=CHARFIELD_LONG)
-    content = models.TimeField()
+    content = models.TextField()
     sheet = models.ForeignKey(
         SheetModel,
         on_delete=models.CASCADE,

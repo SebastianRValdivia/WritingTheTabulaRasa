@@ -1,7 +1,5 @@
 <template>
-  <LoadingSpinner v-if="isLoading"/>
-
-  <div v-else-if="goalsListLength > 0" >
+  <q-page v-if="goalsListLength > 0" >
     <div class="row q-pa-sm">
       <q-date 
         v-model="userSelection" 
@@ -27,43 +25,37 @@
         </q-item>
       </q-list>
     </div>
-  </div>
+  </q-page>
   <h2 v-else-if="goalsListLength === 0">No goals yet</h2>
-
 </template>
 
 <script>
 import { ref, onBeforeMount } from "vue"
-import { date } from "quasar"
+import { useQuasar, date } from "quasar"
 
 import { useScheduleStore } from "src/stores/schedule-store"
-import LoadingSpinner from "src/components/LoadingSpinner"
 
 export default {
-  components: {
-    LoadingSpinner
-  },
   setup() {
     const scheduleStore = useScheduleStore()
+    const $q = useQuasar()
 
-    const isLoading = ref(false)
     const goalsListLength = ref()
     const objectivesDates = ref([])
     const userSelection = ref("")
 
     onBeforeMount(async () => {
-      isLoading.value = true
+      $q.loading.show()  
       await scheduleStore.retrieveGoals()
       goalsListLength.value = scheduleStore.getGoalsList.length
       await scheduleStore.retrieveObjectives()
       scheduleStore.getObjectivesList.forEach((objective) => {
         objectivesDates.value.push(date.formatDate(objective.date, "YYYY/MM/DD"))
       })
-      isLoading.value = false
+      $q.loading.hide()
     })
 
     return {
-      isLoading,
       scheduleStore,
       goalsListLength,
       userSelection,

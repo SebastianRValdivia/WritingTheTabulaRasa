@@ -10,16 +10,20 @@
 </template>
 
 <script>
-import {onBeforeMount} from "vue"
+import { onBeforeMount } from "vue"
+import { useQuasar } from "quasar"
 
 import { useCheatsheetStore } from "src/stores/cheatsheet-store"
 
 export default {
   setup() {
+    const $q = useQuasar()
     const cheatsheetStore = useCheatsheetStore()
     
-    onBeforeMount(() => {
-      cheatsheetStore.retrieveSheets()
+    onBeforeMount(async () => {
+      $q.loading.show()
+      await cheatsheetStore.retrieveSheets()
+      $q.loading.hide()
     })
     
     return {

@@ -1,7 +1,5 @@
 <template>
-  <LoadingSpinner v-if="isLoading"/>
-
-  <q-page v-else>
+  <q-page>
     <div class="row window-height" v-if="!isNoteListEmpty">
       <q-list id="note-list" class="column">
         <q-item v-for="note in rootNotes" :key="note.id">
@@ -29,24 +27,23 @@
 <script>
 import { ref, onBeforeMount, computed, onBeforeUnmount } from "vue"
 import { useI18n } from "vue-i18n"
+import { useQuasar } from 'quasar'
 
 import { useNoteStore } from "src/stores/note-store"
 import { useUserStore } from "src/stores/user-store"
 import { useAppStore } from "src/stores/app-store"
 import NoteChildren from "src/components/for-pages/NoteChildren"
-import LoadingSpinner from "src/components/LoadingSpinner"
 
 export default {
   components: {
     NoteChildren,
-    LoadingSpinner,
 },
   setup() {
-    const isLoading = ref(false)
     const noteStore = useNoteStore()
     const userStore = useUserStore()
     const appStore = useAppStore()
     const { t } = useI18n()
+    const $q = useQuasar()
 
     const rootNotes = ref([])
 
@@ -65,7 +62,7 @@ export default {
     }
 
     onBeforeMount(async () => {
-      isLoading.value = true
+      $q.loading.show()
       appStore.setTabs({
         [t("notePages.permanent")]: "notes",
         [t("notePages.fleeting")]: "fleetingNotes",
@@ -78,7 +75,7 @@ export default {
         filterNotes()
       }
       await noteStore.retrieveFleetingNotes()
-      isLoading.value = false
+      $q.loading.hide()
     })
     onBeforeUnmount(() => {
       appStore.clearTabs()
@@ -86,7 +83,6 @@ export default {
 
 
     return {
-      isLoading,
       noteStore,
       rootNotes,
       isNoteListEmpty,

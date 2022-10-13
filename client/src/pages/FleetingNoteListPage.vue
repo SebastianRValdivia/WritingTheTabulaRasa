@@ -1,7 +1,5 @@
 <template>
-  <LoadingSpinner v-if="isLoading"/>
-
-  <q-page v-else padding>
+  <q-page padding>
     <div class="row">
       <div class="column">
         <span class="text-h5">{{ $t("notePages.fleetingNotes") }}</span>
@@ -47,19 +45,16 @@
 <script>
 import { ref, onBeforeMount, computed, onBeforeUnmount } from "vue"
 import { useI18n } from "vue-i18n"
+import { useQuasar } from "quasar"
 
 import { useNoteStore } from "src/stores/note-store"
 import { useUserStore } from "src/stores/user-store"
 import { useAppStore } from "src/stores/app-store"
-import LoadingSpinner from "src/components/LoadingSpinner"
 
 export default {
   name: 'FleetingNotePage',
-  components: {
-    LoadingSpinner
-  },
   setup() {
-    const isLoading = ref(false)
+    const $q = useQuasar()
     const noteStore = useNoteStore()
     const userStore = useUserStore()
     const appStore = useAppStore()
@@ -77,21 +72,20 @@ export default {
     }
 
     onBeforeMount(async () => {
-      isLoading.value = true
+      $q.loading.show()
       appStore.setTabs({
         [t("notePages.permanent")]: "notes",
         [t("notePages.fleeting")]: "fleetingNotes",
         [t("notePages.literary")]: "literaryNotes",
       })
       await noteStore.retrieveFleetingNotes()
-      isLoading.value = false
+      $q.loading.hide()
     })
     onBeforeUnmount(() => {
       appStore.clearTabs()
     })
     
     return {
-      isLoading,
       newFleetingNoteContent,
       isAddingFleetingNote,
       toggleNewFleetingNote,

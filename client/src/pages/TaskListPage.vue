@@ -1,7 +1,5 @@
 <template>
-  <LoadingSpinner v-if="isLoading" />
-
-  <q-page v-else>
+  <q-page >
     <div class="row q-pa-md float-right">
       <q-toggle
         v-model="showCompleted"
@@ -47,19 +45,16 @@
 
 <script>
 import { ref, reactive, computed, onBeforeMount } from "vue"
+import { useQuasar } from "quasar"
 
 import { useTaskStore } from "src/stores/task-store"
 import { useUserStore } from "src/stores/user-store"
-import LoadingSpinner from "src/components/LoadingSpinner"
 
 export default {
-  components: {
-    LoadingSpinner,
-  },
   setup() {
-    const isLoading = ref(false)
     const taskStore = useTaskStore()
     const userStore = useUserStore()
+    const $q = useQuasar()
 
     const newTask = reactive({
       title: "",
@@ -89,13 +84,12 @@ export default {
     }
 
     onBeforeMount(async () => {
-      isLoading.value = true
+      $q.loading.show()
       await taskStore.retrieveTasks()
-      isLoading.value = false
+      $q.loading.hide()
     })
 
     return {
-      isLoading,
       displayedTasks,
       taskStore,
       newTask,

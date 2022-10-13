@@ -23,6 +23,7 @@
 
 <script>
 import { ref, onBeforeMount } from "vue"
+import { useQuasar } from "quasar"
 
 import { useCheatsheetStore } from "src/stores/cheatsheet-store"
 import MarkdownPreview from "src/components/MarkdownPreview"
@@ -35,14 +36,18 @@ export default {
     MarkdownPreview,
 },
   setup(props) {
+    const $q = useQuasar()
     const cheatsheetStore = useCheatsheetStore()
+
     const sheet = ref({})
     const cheats = ref({})
 
     onBeforeMount(async () => {
+      $q.loading.show()
       await cheatsheetStore.retrieveCheats()
       sheet.value = cheatsheetStore.getSheetByUrl(props.title)
       cheats.value = cheatsheetStore.getCheatsBySheet(sheet.value.id)
+      $q.loading.hide()
     })
 
 

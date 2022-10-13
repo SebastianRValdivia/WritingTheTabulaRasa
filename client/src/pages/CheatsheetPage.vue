@@ -4,10 +4,16 @@
       <h2>{{ sheet.title }}</h2>
     </div>
 
-    <div class="row col-auto q-col-gutter-sm">
+    <div class="row q-gutter-md">
       <q-card class="cheat-card" v-for="cheat in cheats" :key="cheat.id">
-        <h5>{{ cheat.title }}</h5>
+        <q-card-section>
+          <h5>{{ cheat.title }}</h5>
+        </q-card-section>
+        <q-card-section>
+          <MarkdownPreview :md="cheat.content" />
+        </q-card-section>
       </q-card>
+
 
     </div>
 
@@ -19,11 +25,15 @@
 import { ref, onBeforeMount } from "vue"
 
 import { useCheatsheetStore } from "src/stores/cheatsheet-store"
+import MarkdownPreview from "src/components/MarkdownPreview"
 
 export default {
   props: {
     title: String
   },
+  components: {
+    MarkdownPreview,
+},
   setup(props) {
     const cheatsheetStore = useCheatsheetStore()
     const sheet = ref({})

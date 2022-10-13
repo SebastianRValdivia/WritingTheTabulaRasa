@@ -8,4 +8,5 @@ urlpatterns = [
     path("schedules/", include("applications.schedule.api_urls")),
     path("tasks/", include("applications.tasks.api_urls")),
     path("resources/", include("applications.resources.api_urls")),
+    path("cheatsheets/", include("applications.cheatsheets.api_urls")),
 ]

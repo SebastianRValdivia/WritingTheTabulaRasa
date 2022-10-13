@@ -1,40 +1,40 @@
 const routes = [
   {
     path: "/",
-    component: () => import('layouts/MainLayout.vue'),
+    component: () => import('layouts/MainLayout'),
     children: [
       { 
         path: "",
         name: "home",
-        component: () => import('pages/IndexPage.vue') 
+        component: () => import('pages/IndexPage') 
       },
       { 
         path: "notes/permanent/",
         name: "notes",
-        component: () => import("src/pages/NoteListPage.vue"),
+        component: () => import("src/pages/NoteListPage"),
         children: [
           {
             path: ":identifier/",
             name: "note",
-            component: () => import("src/pages/notes/NotePage.vue"),
+            component: () => import("src/pages/notes/NotePage"),
             props: true
           },
           {
             path: "new/",
             name: "newNote",
-            component: () => import ("src/pages/notes/NewNotePage.vue")
+            component: () => import ("src/pages/notes/NewNotePage")
           }
         ]
       },
       {
         path: "notes/fleeting/",
         name: "fleetingNotes",
-        component: () => import("src/pages/FleetingNoteListPage.vue"),
+        component: () => import("src/pages/FleetingNoteListPage"),
       },
       {
         path: "notes/literary/",
         name: "literaryNotes",
-        component: () => import("src/pages/NoteListPage.vue"),
+        component: () => import("src/pages/NoteListPage"),
       },
       {
         path: "tasks/",
@@ -49,8 +49,19 @@ const routes = [
       {
         path: "tools/",
         name: "tools",
-        component: () => import("src/pages/ToolsPage.vue"),
-      }
+        component: () => import("src/pages/ToolsPage"),
+      },
+      {
+        path: "cheatsheets/",
+        name: "cheatsheets",
+        component: () => import ("src/pages/CheatsheetListPage")
+      },
+      {
+        path: "cheatsheets/:title/",
+        name: "cheatsheet",
+        component: () => import("src/pages/CheatsheetPage"),
+        props: true
+      },
     ]
   },
 
@@ -59,7 +70,7 @@ const routes = [
   {
     path: "/:catchAll(.*)*",
     name: "NotFound",
-    component: () => import("pages/ErrorNotFound.vue")
+    component: () => import("pages/ErrorNotFound")
   }
 ]
 

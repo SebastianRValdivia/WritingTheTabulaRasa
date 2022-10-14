@@ -29,6 +29,8 @@ class NoteModel(models.Model):
         blank=True,
         null=True,
     )
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name = 'Note'
@@ -49,8 +51,8 @@ class FleetingNoteModel(models.Model):
         blank=False,
         null=False,
     )
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name = "Fleeting Note"

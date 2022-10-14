@@ -37,7 +37,7 @@ export function createNoteIdentifier(objectiveNote, noteList, identifierList) {
     return identifierList.join("-") // Arrange the identifier divided by -
   } else {
     // Find the parent of the objective note
-    let parentNote = noteList.find((note) => note.id == objectiveNote.parent)
+    let parentNote = noteList.find((note) => note.id === objectiveNote.parent)
     // Call function again with updated data
     return createNoteIdentifier(
       parentNote,
@@ -45,4 +45,24 @@ export function createNoteIdentifier(objectiveNote, noteList, identifierList) {
       [String(parentNote.identifier), ...identifierList]
     )
   }
+}
+
+export function constructNoteTree(noteList) {
+  let arrangedNoteTree // The arranged in parent/child tree
+  let rootNotes = noteList.filter((note) => note.parent === null) // Grab root notes
+  function addChildren(parent) { // Add children to parent
+    let children = noteList.filter((note) => note.parent === parent.id)
+    if (children.length !== 0) {
+      parent["children"] = children
+    }
+    for (let newParentNote of children) {
+      addChildren(newParentNote) // Recursive call till there is no parents
+    }
+  }
+
+  arrangedNoteTree = rootNotes // Add only root notes to the tree
+  for (let rootNote of arrangedNoteTree) {
+    addChildren(rootNote)
+  }
+  return arrangedNoteTree
 }

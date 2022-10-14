@@ -18,8 +18,10 @@ const schedulePage = {
   noGoals: "No goals yet",
   calendar: "Calendar",
 }
-const taskPage = {
-  showCompleted: "Show completed"
+const taskListPage = {
+  showCompleted: "Show completed",
+  requiredWrong: "Required task doesn't exist",
+  requiredIncomplete: "Required task is incomplete",
 }
 const toolPage = {
   pomoWorkTime: "Work interval",
@@ -29,10 +31,10 @@ const toolPage = {
 export default {
   failed: 'Action failed',
   success: 'Action was successful',
-  mainDrawer: mainDrawer,
-  notePages: notePages,
-  schedulePage: schedulePage,
-  taskPage: taskPage,
-  toolPage: toolPage,
+  mainDrawer,
+  notePages,
+  schedulePage,
+  taskListPage,
+  toolPage,
 
 }

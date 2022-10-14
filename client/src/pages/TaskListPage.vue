@@ -6,7 +6,7 @@
         checked-icon="check"
         unchecked-icon="clear"
         color="info"
-        :label="$t('taskPage.showCompleted')"
+        :label="$t('taskListPage.showCompleted')"
       />
     </div>
 
@@ -21,7 +21,7 @@
                 type="number"
                 autofocus 
                 @keyup.enter="scope.set" 
-                style="max-width: 6rem;"
+                style="max-width: 8rem;"
               >
                 <template v-slot:prepend>
                   <span class="text-caption">ID: </span>
@@ -69,6 +69,7 @@
 <script>
 import { ref, reactive, computed, onBeforeMount } from "vue"
 import { useQuasar } from "quasar"
+import { useI18n } from "vue-i18n"
 
 import { useTaskStore } from "src/stores/task-store"
 import { useUserStore } from "src/stores/user-store"
@@ -78,6 +79,7 @@ export default {
     const taskStore = useTaskStore()
     const userStore = useUserStore()
     const $q = useQuasar()
+    const { t } = useI18n()
 
     const newTask = reactive({
       title: "",
@@ -108,7 +110,6 @@ export default {
         } 
       }
     }
-
     async function toggleStatus(taskId) {
       let task = taskStore.getTaskById(taskId)
       if (task.require === null) {
@@ -117,11 +118,22 @@ export default {
           newStatus: task.completed // The new status is already inverted due to the v-model in the checkbox
         })
       } else {
-        console.log(task.require)
+        $q.notify({
+          message: t("taskListPage.requiredIncomplete"),
+          color: "negative"
+        })
       }
     }
     async function addNewTask() {
-      await taskStore.addNewTask(newTask)
+      if (newTask.require === null || taskStore.getTaskById(Number(newTask.require)) !== undefined) {
+        await taskStore.addNewTask(newTask)
+      } else {
+        $q.notify({
+          message: t("taskListPage.requiredWrong"),
+          color: "negative"
+        })
+      }
+
     }
     async function deleteTask(taskId) {
       await taskStore.removeTask({taskId: taskId})

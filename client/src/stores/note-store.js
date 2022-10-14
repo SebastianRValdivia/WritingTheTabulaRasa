@@ -1,6 +1,6 @@
 import { defineStore } from "pinia"
 import api from "src/api"
-import { filterNoteFamily } from "src/utils"
+import { filterNoteFamily, constructNoteTree } from "src/utils"
 import { useUserStore } from "src/stores/user-store"
 
 export const useNoteStore = defineStore("note", {
@@ -9,7 +9,7 @@ export const useNoteStore = defineStore("note", {
     fleetingNotes: [],
   }),
   getters: {
-    notesList: (state) => state.notes,
+    getNotesList: (state) => state.notes,
     getNoteById: (state) => {
       return (noteId) => state.notes.find((note) => note.id === noteId)
     },
@@ -27,6 +27,7 @@ export const useNoteStore = defineStore("note", {
         .filter((note) => note.parent === parentId)
     },
     getRootNotes: (state) => (state.notes.filter((note) => note.parent === null)),
+    getNotesInTreeFormat: (state) => constructNoteTree(state.notes),
 
     getFleetingNotes: (state) => state.fleetingNotes,
   },

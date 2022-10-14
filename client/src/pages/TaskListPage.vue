@@ -1,5 +1,5 @@
 <template>
-  <q-page >
+  <q-page class="q-pl-md">
     <div class="row q-pa-md float-right">
       <q-toggle
         v-model="showCompleted"
@@ -10,24 +10,47 @@
       />
     </div>
 
-    <div class="row  q-gutter-sm">
-      <q-input v-model="newTask.title" class="col-7 "/>
+    <div class="row q-gutter-sm">
+      <q-input v-model="newTask.title" class="col-7">
+        <template v-slot:prepend>
+          <q-icon name="alt_route" size="md" class="q-pt-md">
+            <q-popup-edit v-model="newTask.require" v-slot="scope">
+              <q-input 
+                v-model="scope.value"
+                dense 
+                type="number"
+                autofocus 
+                @keyup.enter="scope.set" 
+                style="max-width: 6rem;"
+              >
+                <template v-slot:prepend>
+                  <span class="text-caption">ID: </span>
+                </template>
+              </q-input>
+
+            </q-popup-edit>
+          </q-icon>
+          <span class="q-pt-sm" v-if="newTask.require !== null">{{ newTask.require }}</span>
+        </template>
+      </q-input>
       <q-btn flat rounded @click="addNewTask" icon="add" size="md"/>
     </div>
-    <q-list padding separator class="row">
+
+    <q-list padding separator class="row ">
       <q-item class="col-7" v-for="task in displayedTasks" :key="task.id">
         <q-item-section>
           <q-item-label> 
             <q-checkbox 
               v-model="task.completed" 
+              :disable="!requiredCompleted(task)"
               @click="toggleStatus(task.id)"
               class="secondary"
             />
             {{ task.title }}
           </q-item-label>
-          <q-item-label caption>
-            {{ task.created_at }}
-          </q-item-label>
+        </q-item-section>
+        <q-item-section avatar>
+          ID: {{ task.id }}
         </q-item-section>
         <q-item-section avatar>
           <q-btn 
@@ -58,23 +81,44 @@ export default {
 
     const newTask = reactive({
       title: "",
+      require: null,
     })
     const showCompleted = ref(false)
     const displayedTasks = computed(() => {
+      let toDisplay = []
       if (showCompleted.value) {
-        return taskStore.getTaskByUser(userStore.getUserId)
+        toDisplay = taskStore.getTaskByUser(userStore.getUserId)
       } else {
-        return taskStore.getTaskByUser(userStore.getUserId)
+        toDisplay = taskStore.getTaskByUser(userStore.getUserId)
           .filter((task => task.completed === false))
       }
+
+      return toDisplay
     })
+
+    function requiredCompleted(task) {
+      if (task.require === null) {
+        return true
+      } else {
+        let requiredTask = taskStore.getTaskById(task.require)
+        if (requiredTask.completed === true) {
+          return true
+        } else {
+          return false
+        } 
+      }
+    }
 
     async function toggleStatus(taskId) {
       let task = taskStore.getTaskById(taskId)
-      await taskStore.changeTaskStatus({
-        taskId: taskId,
-        newStatus: task.completed // The new status is already inverted due to the v-model in the checkbox
-      })
+      if (task.require === null) {
+        await taskStore.changeTaskStatus({
+          taskId: taskId,
+          newStatus: task.completed // The new status is already inverted due to the v-model in the checkbox
+        })
+      } else {
+        console.log(task.require)
+      }
     }
     async function addNewTask() {
       await taskStore.addNewTask(newTask)
@@ -97,6 +141,7 @@ export default {
       toggleStatus,
       showCompleted,
       deleteTask,
+      requiredCompleted,
     }
   }
 }

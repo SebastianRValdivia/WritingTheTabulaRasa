@@ -13,7 +13,7 @@
     <div class="row q-gutter-sm">
       <q-input v-model="newTask.title" class="col-7">
         <template v-slot:prepend>
-          <q-icon name="alt_route" size="md" class="q-pt-md">
+          <q-icon name="alt_route" size="sm" class="q-pa-sm">
             <q-popup-edit v-model="newTask.require" v-slot="scope">
               <q-input 
                 v-model="scope.value"
@@ -30,7 +30,7 @@
 
             </q-popup-edit>
           </q-icon>
-          <span class="q-pt-sm" v-if="newTask.require !== null">{{ newTask.require }}</span>
+          <span class="q-pa-sm" v-if="newTask.require !== null">{{ newTask.require }}</span>
         </template>
       </q-input>
       <q-btn flat rounded @click="addNewTask" icon="add" size="md"/>

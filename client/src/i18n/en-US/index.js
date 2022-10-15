@@ -5,6 +5,7 @@ const mainDrawer = {
   tools: "Assistance tools",
   tasks: "Tasks",
   calendar: "Calendar",
+  preferences: "Preferences",
 }
 
 const notePages = {

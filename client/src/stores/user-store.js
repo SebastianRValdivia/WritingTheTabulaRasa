@@ -9,12 +9,14 @@ export const useUserStore = defineStore('user', {
     userToken: null,
     userId: null,
     username: "",
+    userPreferences: {}
   }),
   getters: {
     isUserLogged: (state) => state.isLogged,
     getUsername: (state) => state.username,
     getUserId: (state) => state.userId,
     getToken: (state) => state.userToken,
+    getUserPreferences: (state) => state.userPreferences,
   },
   actions: {
     async retrieveUserCredentials(username, password) {
@@ -45,6 +47,14 @@ export const useUserStore = defineStore('user', {
       this.userId = userId
       this.userToken = token
       this.isLogged = true
+    },
+    async retrieveUserPreferences() {
+      let result = await api.user.getUserPreferencesByUserId(this.userId)
+
+      if (result.code === 200) {
+        this.userPreferences = result.userPreferences
+        return true
+      } else { return false }
     }
   },
 });

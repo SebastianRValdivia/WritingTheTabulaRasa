@@ -62,6 +62,11 @@ const routes = [
         component: () => import("src/pages/CheatsheetPage"),
         props: true
       },
+      {
+        path: "preferences/",
+        name: "preferences",
+        component: () => import("src/pages/UserPreferencesPage"),
+      }
     ]
   },
 

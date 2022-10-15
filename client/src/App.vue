@@ -24,10 +24,12 @@ export default ({
       )
     }
 
-    onBeforeMount(() => {
+    onBeforeMount(async () => {
       if ($q.cookies.has("token")) {
         restoreUserCredentials()
+        await userStore.retrieveUserPreferences()
       }
+
     })
 
   }

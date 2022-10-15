@@ -82,6 +82,15 @@
             </q-item-section>
           </q-item>
 
+          <q-item clickable v-ripple :to="{name: 'preferences'}">
+            <q-item-section avatar>
+              <q-icon name="settings" />
+            </q-item-section>
+
+            <q-item-section>
+              {{ $t("mainDrawer.preferences") }}
+            </q-item-section>
+          </q-item>
         </q-list>
 
       </q-scroll-area>

@@ -34,5 +34,21 @@ export default {
         reason: response.data
       }
     }
+  },
+  async getUserPreferencesByUserId(userId) {
+    let response = await api.get(`v1/users/preferences/?owner__id=${userId}`)
+
+    if (response.status === 200) {
+      return {
+        code: response.status,
+        userPreferences: response.data.results[0]
+      }
+    } else {
+      return {
+        code: response.status,
+        reason: response.data
+      }
+    }
   }
+
 }

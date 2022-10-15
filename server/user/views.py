@@ -1,7 +1,8 @@
 from rest_framework.generics import RetrieveAPIView
 from django.contrib.auth.models import User
-from rest_framework import viewsets, permissions
+from rest_framework import permissions
 from rest_framework.generics import ListAPIView
+from rest_framework.viewsets import ModelViewSet
 
 from user.models import UserPreferences
 from user.serializers import UserPreferencesSerializer
@@ -16,8 +17,9 @@ class RetrieveUserDataView(ListAPIView):
     serializer_class = UserSerializer
     filterset_fields = ["username"]
 
-class UserPreferencesViewSet(viewsets.ViewSet):
+class UserPreferencesViewSet(ModelViewSet):
 
-    model = UserPreferences
-    serializer = UserPreferencesSerializer
+    queryset = UserPreferences.objects.all()
+    serializer_class = UserPreferencesSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    filterset_fields = ["owner__id"]

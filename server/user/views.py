@@ -22,4 +22,4 @@ class UserPreferencesViewSet(ModelViewSet):
     queryset = UserPreferences.objects.all()
     serializer_class = UserPreferencesSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    filterset_fields = ["owner__username"]
+    filterset_fields = ["owner__id"]

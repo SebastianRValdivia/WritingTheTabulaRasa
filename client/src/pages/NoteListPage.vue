@@ -35,9 +35,11 @@
     </div>
 
     <div v-else class="row q-pa-xl q-mg-xl justify-center">
-      <div class="text-h2" style="opacity:.4">
+      <div class="text-h2 q-pb-md col-12" style="opacity:.4">
         {{ $t("notePages.empty")}}
       </div>
+      <q-separator></q-separator>
+      <router-view class="row"></router-view>
     </div>
 
     <q-page-sticky position="bottom-right" :offset="[18, 18]">

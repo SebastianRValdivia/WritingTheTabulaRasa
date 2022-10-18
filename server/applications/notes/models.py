@@ -70,7 +70,10 @@ class FleetingNoteModel(models.Model):
 class LiteraryNoteModel(models.Model):
 
     
-    content = models.TextField()
+    content = models.TextField(
+        blank=False,
+        null=False,
+    )
     owner = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
@@ -83,15 +86,28 @@ class LiteraryNoteModel(models.Model):
         blank=False,
         null=False,
     )
+    page = models.IntegerField(
+        blank=True,
+        null=True,
+    )
+    time = models.TimeField(
+        blank=True,
+        null=True,
+    )
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
     class Meta:
-        verbose_name = "Fleeting Note"
-        verbose_name_plural = "Fleeting Notes"
+        verbose_name = "Literary Note"
+        verbose_name_plural = "Literary Notes"
 
     def __str__(self):
-        return self.reference__title
+        if self.time == None:
+            return self.reference.title + "-page:" +str(self.page)
+        else:
+            return self.reference.title + str(self.time)
+
+        
 
     def get_absolute_url(self):
         return reverse("FleetingNoteModel_detail", kwargs={"pk": self.pk})

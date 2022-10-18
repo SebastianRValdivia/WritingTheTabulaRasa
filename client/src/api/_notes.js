@@ -93,5 +93,22 @@ export default {
         code: response.status,
         newFleetingNote: response.data
     }
+  },
+  async getLiteraryNotesList(url=null, previous=[]) {
+    let response = url === null 
+    ? await api.get("v1/notes/literary/") 
+    : await api.get(url)
+
+    let data = [...previous, ...response.data.results]
+
+    if (response.status === 200 && response.data.next === null) {
+      return {
+        code: response.status,
+        literaryNotes: data
+      } 
+    } else {
+        return this.getLiteraryNotesList(response.data.next, data)
+    }
+
   }
 }

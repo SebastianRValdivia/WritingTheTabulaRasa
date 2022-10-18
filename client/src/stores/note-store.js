@@ -7,6 +7,7 @@ export const useNoteStore = defineStore("note", {
   state: () => ({
     notes: [],
     fleetingNotes: [],
+    literaryNotes: []
   }),
   getters: {
     getNotesList: (state) => state.notes,
@@ -30,6 +31,7 @@ export const useNoteStore = defineStore("note", {
     getNotesInTreeFormat: (state) => constructNoteTree(state.notes),
 
     getFleetingNotes: (state) => state.fleetingNotes,
+    getLiteraryNotes: (state) => state.literaryNotes,
   },
   actions: {
     async retrieveNotes() {
@@ -89,6 +91,16 @@ export const useNoteStore = defineStore("note", {
             ? this.fleetingNotes.push(result.newFleetingNote) 
             : console.log(result)
         ))
+    },
+    async retrieveLiteraryNotes() {
+      let result = await api.notes.getLiteraryNotesList()
+
+      if (result.code === 200) {
+        this.literaryNotes = result.literaryNotes
+        return true
+      } else {
+        return false
+      }
     }
   }
 })

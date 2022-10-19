@@ -57,8 +57,8 @@ export const useNoteStore = defineStore("note", {
       }
     },
     async saveNoteContent(idNoteToSave, newNoteContent) {
-      let index = this.notesList.findIndex((note) => note.id === idNoteToSave) 
-      this.notesList[index].content = newNoteContent
+      let index = this.notes.findIndex((note) => note.id === idNoteToSave) 
+      this.notes[index].content = newNoteContent
       api.notes.patchNoteContent(idNoteToSave, newNoteContent)
         .then((result) => console.log(result.code))
     },

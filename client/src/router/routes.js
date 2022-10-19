@@ -12,19 +12,6 @@ const routes = [
         path: "notes/permanent/",
         name: "notes",
         component: () => import("src/pages/NoteListPage"),
-        children: [
-          {
-            path: ":identifier/",
-            name: "note",
-            component: () => import("src/pages/notes/NotePage"),
-            props: true
-          },
-          {
-            path: "new/",
-            name: "newNote",
-            component: () => import ("src/pages/notes/NewNotePage")
-          }
-        ]
       },
       {
         path: "notes/fleeting/",

@@ -39,7 +39,7 @@
     </div>
 
     <q-page-sticky position="bottom-right" :offset="[18, 18]">
-      <q-btn round color="secondary" icon="add" size="lg" :to="{name: 'newNote'}"/>
+      <q-btn round color="secondary" icon="add" size="md" @click="appStore.toggleNewNote"/>
     </q-page-sticky>
   </q-page>
 </template>
@@ -120,6 +120,7 @@ export default {
       createNoteIdentifier,
       openNote,
       previewNote,
+      appStore,
     }
   }
 

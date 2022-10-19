@@ -6,31 +6,27 @@
         node-key="id"
         default-expand-all
         class="q-pr-md"
+        style="max-width: 15%; width: 15%;"
       >
         <template v-slot:default-header="prop">
           <div class="row items-center">
-            <router-link 
-              :to="{
-                name: 'note',
-                params: {identifier: createNoteIdentifier(
-                  prop.node,
-                  noteStore.getNotesList, 
-                  [String(prop.node.identifier)]
-                )},
-                force: true
-              }"
+            <span 
+              class="text-subtitle1"
+              @click="openNote(createNoteIdentifier(prop.node, noteStore.getNotesList, [String(prop.node.identifier)]))"
             >
-              <span class="text-subtitle1">
-                {{ createNoteIdentifier(prop.node, noteStore.getNotesList, [String(prop.node.identifier)])}}
-                {{ prop.node.title }}
-              </span>
-            </router-link>
+              {{ createNoteIdentifier(prop.node, userNoteList, [String(prop.node.identifier)]) }}
+              {{ prop.node.title }}
+            </span>
           </div>
         </template>
       </q-tree>
-      <q-separator vertical class="gt-md"/>
+      <q-separator vertical class="gt-md shadow-2"/>
       <div class="column content-center q-pa-md col-9" >
-        <router-view ></router-view>
+        <NoteCard 
+          v-if="previewNote !== null"
+          :identifier="createNoteIdentifier(previewNote, userNoteList, [String(previewNote.identifier)])"
+          :note="previewNote"
+        />
       </div>
     </div>
 
@@ -57,8 +53,12 @@ import { useNoteStore } from "src/stores/note-store"
 import { useUserStore } from "src/stores/user-store"
 import { useAppStore } from "src/stores/app-store"
 import { constructNoteTree, createNoteIdentifier  } from "src/utils"
+import NoteCard from "src/components/NoteCard"
 
 export default {
+  components: {
+    NoteCard
+  },
   setup() {
     const noteStore = useNoteStore()
     const userStore = useUserStore()
@@ -66,18 +66,30 @@ export default {
     const { t } = useI18n()
     const $q = useQuasar()
 
+    const userNoteList = ref([])
     const hierarchyNoteList = ref([])
+    const previewNote = ref(null)
 
     const isNoteListEmpty = computed(() => {
       return hierarchyNoteList.value.length === 0
     }) 
 
     function filterUserNotes() {
-      hierarchyNoteList.value = noteStore.getNotesByUser(userStore.getUserId)
+      userNoteList.value = noteStore.getNotesByUser(userStore.getUserId)
     }
-
-    function filterNotes() {
-      hierarchyNoteList.value = noteStore.notesList
+    async function openNote(noteIdentifier) {
+      // Check if note is in the store
+      if (noteStore.getNoteByIdentifier(noteIdentifier.split("-")) !== undefined) {
+        previewNote.value = noteStore.getNoteByIdentifier(noteIdentifier.split("-"))
+      } else { // Else retrieve notes from api and try again
+        await noteStore.retrieveNotes()
+        if (noteStore.getNoteByIdentifier(noteIdentifier.split("-")) !== undefined) {
+          previewNote.value = noteStore.getNoteByIdentifier(noteIdentifier.split("-"))
+        } else { // Note doesn't exist
+          router.push({ name: "NotFound" })
+          previewNote.value = null // To avoid an error
+        }
+      }
     }
 
     onBeforeMount(async () => {
@@ -90,10 +102,8 @@ export default {
       await noteStore.retrieveNotes()
       if (userStore.isUserLogged) {
         filterUserNotes()
-      } else {
-        filterNotes()
-      }
-      hierarchyNoteList.value = constructNoteTree(hierarchyNoteList.value)
+      } 
+      hierarchyNoteList.value = constructNoteTree(userNoteList.value)
       await noteStore.retrieveFleetingNotes()
       $q.loading.hide()
     })
@@ -104,9 +114,12 @@ export default {
 
     return {
       noteStore,
+      userNoteList,
       hierarchyNoteList,
       isNoteListEmpty,
       createNoteIdentifier,
+      openNote,
+      previewNote,
     }
   }
 

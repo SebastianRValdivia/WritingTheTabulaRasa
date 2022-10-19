@@ -8,7 +8,10 @@
       <q-input 
         v-model="title"
         :rules="titleRules"
-        class="q-pl-xl"/>
+        class="q-pl-xl"
+      />
+      <q-space/>
+      <q-btn @click="appStore.toggleNewNote" icon="cancel" flat/>
     </q-card-section>
     <q-separator />
     <q-card-section class="row">
@@ -28,27 +31,18 @@
     </q-slide-transition>
   </q-card>
 
-  <q-card class="text-center note-card-mobile lt-md q-ml-xl" >
-    <q-card-section class="text-h6 row">
-      <input type="text">
-    </q-card-section>
-    <q-separator />
-    <q-card-section class="row">
-      <q-input type="textarea" autogrow borderless style="min-width: 19rem"/>
-    </q-card-section>
-  </q-card>
 </template>
 
 <script>
 import { ref } from "vue"
-import { useRouter } from "vue-router"
 import { useNoteStore } from "src/stores/note-store"
 import { useUserStore } from "src/stores/user-store"
+import { useAppStore } from "src/stores/app-store"
 
 export default {
   setup() {
     const noteStore = useNoteStore()
-    const router = useRouter()
+    const appStore = useAppStore()
 
     const identifier = ref("")
     const title = ref("")
@@ -77,7 +71,7 @@ export default {
         identifier: identifier.value,
         parent: null, // TODO
       })
-      result ? router.push({name: "note", params: {identifier: identifier.value}}) : console.warn(result)
+      result ? appStore.toggleNewNote() : console.warn(result)
     }
 
     return {
@@ -87,7 +81,8 @@ export default {
       saveEnable,
       saveNote,
       titleRules,
-      identifierRules
+      identifierRules,
+      appStore
     }
   }
 }
@@ -97,9 +92,7 @@ export default {
 .note-card-desktop {
   min-width: 50rem;
   min-height: 35rem;
-}
-.note-card-mobile {
-  min-width: 20rem;
-  min-height: 25rem;
+  max-width: 50rem;
+  max-height: 35rem;
 }
 </style>

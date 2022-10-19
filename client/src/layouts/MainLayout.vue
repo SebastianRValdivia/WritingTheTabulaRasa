@@ -109,7 +109,16 @@
     </q-drawer>
 
     <q-page-container id="page-container">
-      <router-view />
+      <router-view></router-view>
+
+      <q-page-sticky
+        v-if="appStore.getIsNewNoteOpen"
+        position="bottom-right"
+        :offset="[10, 10]"
+      >
+        <NewNote />
+      </q-page-sticky>
+
     </q-page-container>
 
   </q-layout>
@@ -120,13 +129,15 @@ import { ref } from 'vue'
 import { useUserStore } from "src/stores/user-store"
 import { useAppStore } from "src/stores/app-store"
 
-import LoginDialog from "src/components/LoginDialog.vue"
-import PomodoroTimer from 'src/components/PomodoroTimer.vue';
+import LoginDialog from "src/components/LoginDialog"
+import PomodoroTimer from 'src/components/PomodoroTimer';
+import NewNote from "src/components/NewNote"
 
 export default {
   components: {
     LoginDialog,
-    PomodoroTimer
+    PomodoroTimer,
+    NewNote
   },
   setup() {
     const leftDrawerOpen = ref(false)

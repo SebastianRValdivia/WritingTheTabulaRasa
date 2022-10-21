@@ -43,4 +43,24 @@ export default {
       }
     }
   },
+  async postSheet(sheetData) {
+    let response = await api.post("v1/cheatsheets/sheets/", sheetData)
+    
+    if (response.status === 201) {
+      return {
+        code: response.status,
+        newSheet: response.data
+      }
+    }
+  },
+  async postCheat(cheatData) {
+    let response = await api.post("v1/cheatsheets/cheats/", cheatData)
+    
+    if (response.status === 201) {
+      return {
+        code: response.status,
+        newCheat: response.data
+      }
+    }
+  },
 }

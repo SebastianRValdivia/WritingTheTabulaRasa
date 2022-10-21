@@ -62,6 +62,7 @@ INSTALLED_APPS = [
     "applications.tasks",
     "applications.resources",
     "applications.cheatsheets",
+    "applications.encyclopedia",
 ]
 
 MIDDLEWARE = [

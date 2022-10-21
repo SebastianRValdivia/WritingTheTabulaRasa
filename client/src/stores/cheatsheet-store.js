@@ -35,6 +35,27 @@ export const useCheatsheetStore = defineStore("cheatsheet", {
       } else {
         return false
       }
+    },
+    async createSheet(newSheetData) {
+      let result = await api.cheatsheets.postSheet(newSheetData)
+
+      if (result.code === 201) {
+        this.sheets.push(result.newSheet)
+        return result.newSheet
+      } else {
+        return false
+      }
+    },
+    async createCheat(newCheatData) {
+      let result = await api.cheatsheets.postCheat(newCheatData)
+
+      if (result.code === 201) {
+        this.cheats.push(result.newCheat)
+        return true
+      } else {
+        return false
+      }
+
     }
   }
 })

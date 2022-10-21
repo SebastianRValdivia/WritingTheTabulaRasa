@@ -1,5 +1,8 @@
 // This is just an example,
 // so you can safely delete all default props below
+const mainLayout = {
+  cheatsheets: "Cheat Sheets"
+}
 const mainDrawer = {
   notes: "My notes",
   tools: "Assistance tools",
@@ -28,14 +31,20 @@ const toolPage = {
   pomoWorkTime: "Work interval",
   pomoRestTime: "Rest interval"
 }
+const sheetPage = {
+  noSheets: "No cheat sheets yet"
+}
 
 export default {
   failed: 'Action failed',
   success: 'Action was successful',
+  done: "Done",
+  mainLayout,
   mainDrawer,
   notePages,
   schedulePage,
   taskListPage,
   toolPage,
+  sheetPage,
 
 }

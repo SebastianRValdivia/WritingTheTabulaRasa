@@ -16,6 +16,12 @@
             <q-icon name="home" color="secondary"></q-icon>
           </router-link>
         </q-toolbar-title>
+        <q-tabs shrink>
+          <q-route-tab
+            :label="$t('mainLayout.cheatsheets')" 
+            :to="{name: 'cheatsheets'}"
+          />
+        </q-tabs>
 
         <PomodoroTimer />
 

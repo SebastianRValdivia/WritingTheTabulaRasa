@@ -28,6 +28,7 @@ If this condition is not met PR won't pass
 | Move      | move/cut or rename a file                                        |
 | Delete    | delete useless or buggy code                                     |
 | Refactor  | refactor or improve a part of code (does *not* applies to tests) |
+| Change    | change or replace a functionality for something else             | 
 | Create    | start a new module or section                                    |
 | Remove    | Delete a module                                                  |
 | Test      | add or improve tests (any type)                                  |

@@ -2,13 +2,12 @@
   <q-card v-if="!isEditing" class="text-center note-card-desktop gt-md" >
     <q-card-section class="text-h6 row">
       <span class="text-bold">{{ props.identifier }}:</span> <span>{{props.note.title}}</span>
+      <q-space />
+      <q-btn round color="secondary" icon="edit" @click="toggleEditor"/>
     </q-card-section>
     <q-separator />
     <q-card-section class="row">
       <MarkdownPreview :md="props.note.content"/>
-    </q-card-section>
-    <q-card-section>
-      <q-btn round color="secondary" icon="edit" @click="toggleEditor"/>
     </q-card-section>
   </q-card>
   <q-card v-else class="q-pa-sm text-center">

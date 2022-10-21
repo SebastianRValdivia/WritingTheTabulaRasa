@@ -17,7 +17,7 @@
           </router-link>
         </q-toolbar-title>
         <q-tabs shrink>
-          <q-tab 
+          <q-route-tab
             :label="$t('mainLayout.cheatsheets')" 
             :to="{name: 'cheatsheets'}"
           />

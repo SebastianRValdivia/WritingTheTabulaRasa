@@ -31,15 +31,20 @@ const toolPage = {
   pomoWorkTime: "Work interval",
   pomoRestTime: "Rest interval"
 }
+const sheetPage = {
+  noSheets: "No cheat sheets yet"
+}
 
 export default {
   failed: 'Action failed',
   success: 'Action was successful',
+  done: "Done",
   mainLayout,
   mainDrawer,
   notePages,
   schedulePage,
   taskListPage,
   toolPage,
+  sheetPage,
 
 }

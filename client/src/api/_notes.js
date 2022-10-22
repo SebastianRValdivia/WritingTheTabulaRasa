@@ -64,6 +64,13 @@ export default {
       }
     }
   },
+  async deleteNote(noteId) {
+    let response = await api.delete(`v1/notes/permanent/${noteId}/`)
+    
+    return {
+      code: response.status
+    }
+  },
   async getFleetingNotesList(url=null, previous=[]) {
     let response = url === null 
     ? await api.get("v1/notes/fleeting/") 

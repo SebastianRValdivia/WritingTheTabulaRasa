@@ -4,7 +4,6 @@
       <q-tree
         :nodes="hierarchyNoteList"
         node-key="id"
-        default-expand-all
         class="q-pr-md"
         style="max-width: 15%; width: 15%;"
       >
@@ -26,6 +25,7 @@
           v-if="previewNote !== null"
           :identifier="createNoteIdentifier(previewNote, userNoteList, [String(previewNote.identifier)])"
           :note="previewNote"
+          @deleted="reloadTree"
         />
       </div>
     </div>
@@ -34,8 +34,6 @@
       <div class="text-h2 q-pb-md col-12" style="opacity:.4">
         {{ $t("notePages.empty")}}
       </div>
-      <q-separator></q-separator>
-      <router-view class="row"></router-view>
     </div>
 
     <q-page-sticky position="bottom-right" :offset="[18, 18]">
@@ -91,6 +89,11 @@ export default {
         }
       }
     }
+    function reloadTree() {
+      filterUserNotes()
+      hierarchyNoteList.value = constructNoteTree(userNoteList.value)
+      previewNote.value = null
+    }
 
     onBeforeMount(async () => {
       $q.loading.show()
@@ -121,6 +124,7 @@ export default {
       openNote,
       previewNote,
       appStore,
+      reloadTree,
     }
   }
 

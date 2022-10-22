@@ -1,52 +1,53 @@
 <template>
-  <q-card v-if="!isEditing" class="text-center note-card-desktop gt-md" >
+  <q-card v-if="!isEditing" class="q-pa-sm note-card-desktop" >
     <q-card-section class="text-h6 row">
       <span class="text-bold">{{ props.identifier }}:</span> <span>{{props.note.title}}</span>
+      <q-space />
+      <q-btn round color="primary" icon="edit" @click="toggleEditor"/>
     </q-card-section>
     <q-separator />
     <q-card-section class="row">
       <MarkdownPreview :md="props.note.content"/>
     </q-card-section>
-    <q-card-section>
-      <q-btn round color="secondary" icon="edit" @click="toggleEditor"/>
-    </q-card-section>
   </q-card>
-  <q-card v-else class="q-pa-sm text-center">
-    <q-card-section class="text-h6">
+  <q-card v-else class="q-pa-sm note-card-desktop">
+    <q-card-section class="text-h6 row">
       <span class="text-bold">{{ props.identifier }}:</span> <span>{{props.note.title}}</span>
+      <q-space />
+      <q-btn round color="negative" icon="delete" @click="deleteNote"/>
     </q-card-section>
     <q-separator />
     <q-card-section>
-      <textarea
-        id="note-textarea"
+      <q-input
+        type="textarea"
         v-model="newNoteContent"
+        autogrow 
+        borderless
       />
     </q-card-section>
-    <div 
-      class="q-mt-md column content-center"
+    <q-card-actions
+      class="q-mt-md absolute-bottom"
+      align="right"
       v-if="userStore.isLogged" 
     >
       <span>
-        <q-btn round color="negative" icon="cancel" @click="cancelEdit"/>
-        <q-btn round color="secondary" icon="save" @click="saveEdit"/>
+        <q-btn 
+          round 
+          color="negative" 
+          icon="cancel" 
+          @click="cancelEdit"
+          class="q-ma-sm"
+        />
+        <q-btn round color="primary" icon="save" @click="saveEdit"/>
       </span>
-    </div>
-  </q-card>
-
-
-  <q-card class="text-center note-card-mobile lt-md q-ml-xl" >
-    <q-card-section class="text-h6 row">
-      <span class="text-bold">{{ props.note.identifier }}:</span> <span>{{props.note.title}}</span>
-    </q-card-section>
-    <q-separator />
-    <q-card-section class="row">
-      <MarkdownPreview :md="props.content"/>
-    </q-card-section>
+    </q-card-actions>
   </q-card>
 </template>
 
 <script>
 import { ref  } from "vue"
+import { useQuasar } from "quasar"
+import { useI18n } from "vue-i18n"
 import MarkdownPreview from "src/components/MarkdownPreview"
 
 import { useUserStore } from "src/stores/user-store"
@@ -61,9 +62,14 @@ export default {
   components: {
     MarkdownPreview,
   },
-  setup(props) {
+  emits: [
+    "deleted",
+  ],
+  setup(props, context) {
     const userStore = useUserStore()
     const noteStore = useNoteStore()
+    const $q = useQuasar()
+    const { t } = useI18n()
 
     const isEditing = ref(false)
     const newNoteContent = ref("")
@@ -79,6 +85,18 @@ export default {
       await noteStore.saveNoteContent(props.note.id, newNoteContent)
       toggleEditor()
     }
+    async function deleteNote() {
+      $q.dialog({
+        title: t("confirm"),
+        message: t("sureDelete"),
+        cancel: true,
+        color: "negative"
+      }).onOk(async () => {
+        let result = await noteStore.removeNote(props.note.id)
+        context.emit("deleted")
+      })
+
+    }
 
 
     return {
@@ -89,6 +107,7 @@ export default {
       cancelEdit,
       saveEdit,
       newNoteContent,
+      deleteNote,
     }
   }
 }
@@ -98,9 +117,5 @@ export default {
 .note-card-desktop {
   min-width: 50rem;
   min-height: 35rem;
-}
-.note-card-mobile {
-  min-width: 20rem;
-  min-height: 25rem;
 }
 </style>

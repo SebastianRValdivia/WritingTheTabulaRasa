@@ -39,6 +39,8 @@ export default {
   failed: 'Action failed',
   success: 'Action was successful',
   done: "Done",
+  confirm: "Confirm",
+  sureDelete: "Are you sure you want to delete this?",
   mainLayout,
   mainDrawer,
   notePages,

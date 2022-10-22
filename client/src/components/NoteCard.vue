@@ -1,46 +1,44 @@
 <template>
-  <q-card v-if="!isEditing" class="text-center note-card-desktop gt-md" >
+  <q-card v-if="!isEditing" class="q-pa-sm note-card-desktop gt-md" >
     <q-card-section class="text-h6 row">
       <span class="text-bold">{{ props.identifier }}:</span> <span>{{props.note.title}}</span>
       <q-space />
-      <q-btn round color="secondary" icon="edit" @click="toggleEditor"/>
+      <q-btn round color="primary" icon="edit" @click="toggleEditor"/>
     </q-card-section>
     <q-separator />
     <q-card-section class="row">
       <MarkdownPreview :md="props.note.content"/>
     </q-card-section>
   </q-card>
-  <q-card v-else class="q-pa-sm text-center">
-    <q-card-section class="text-h6">
+  <q-card v-else class="q-pa-sm note-card-desktop gt-md">
+    <q-card-section class="text-h6 row">
       <span class="text-bold">{{ props.identifier }}:</span> <span>{{props.note.title}}</span>
     </q-card-section>
     <q-separator />
     <q-card-section>
-      <textarea
-        id="note-textarea"
+      <q-input
+        type="textarea"
         v-model="newNoteContent"
+        autogrow 
+        borderless
       />
     </q-card-section>
-    <div 
-      class="q-mt-md column content-center"
+    <q-card-actions
+      class="q-mt-md absolute-bottom"
+      align="right"
       v-if="userStore.isLogged" 
     >
       <span>
-        <q-btn round color="negative" icon="cancel" @click="cancelEdit"/>
-        <q-btn round color="secondary" icon="save" @click="saveEdit"/>
+        <q-btn 
+          round 
+          color="negative" 
+          icon="cancel" 
+          @click="cancelEdit"
+          class="q-mr-sm"
+        />
+        <q-btn round color="primary" icon="save" @click="saveEdit"/>
       </span>
-    </div>
-  </q-card>
-
-
-  <q-card class="text-center note-card-mobile lt-md q-ml-xl" >
-    <q-card-section class="text-h6 row">
-      <span class="text-bold">{{ props.note.identifier }}:</span> <span>{{props.note.title}}</span>
-    </q-card-section>
-    <q-separator />
-    <q-card-section class="row">
-      <MarkdownPreview :md="props.content"/>
-    </q-card-section>
+    </q-card-actions>
   </q-card>
 </template>
 

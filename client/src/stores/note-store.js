@@ -72,6 +72,19 @@ export const useNoteStore = defineStore("note", {
         return result
       }
     },
+    async removeNote(idNoteToDelete) {
+      let result = await api.notes.deleteNote(idNoteToDelete)
+
+      if (result.code === 204) {
+        let indexDeletedNote = this.notes.findIndex(
+          (note) => note.id === idNoteToDelete
+        )
+        this.notes.splice(indexDeletedNote, 1)
+        return true
+      } else {
+        return false
+      }
+    },
     async retrieveFleetingNotes() {
       let result = await api.notes.getFleetingNotesList()
       

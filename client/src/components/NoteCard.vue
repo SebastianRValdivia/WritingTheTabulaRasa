@@ -9,6 +9,19 @@
     <q-card-section class="row">
       <MarkdownPreview :md="props.note.content"/>
     </q-card-section>
+    <q-card-actions
+      class="q-mt-md absolute-bottom"
+      align="right"
+      v-if="props.note.audio !== null" 
+    >
+      <q-btn 
+        round 
+        color="primary" 
+        :icon="isAudioPlaying ? 'pause' : 'play_arrow'"
+        @click="toggleAudio"
+        class="q-ma-sm"
+      />
+    </q-card-actions>
   </q-card>
   <q-card v-else class="q-pa-sm note-card-desktop">
     <q-card-section class="text-h6 row">
@@ -45,7 +58,7 @@
 </template>
 
 <script>
-import { ref  } from "vue"
+import { ref, computed } from "vue"
 import { useQuasar } from "quasar"
 import { useI18n } from "vue-i18n"
 import MarkdownPreview from "src/components/MarkdownPreview"
@@ -73,10 +86,33 @@ export default {
 
     const isEditing = ref(false)
     const newNoteContent = ref("")
+    const noteAudio = ref(null)
+    
+    const isAudioPlaying = computed(() => {
+      if (noteAudio.value === null) {
+        return false
+      } else if (noteAudio.value.paused === true) {
+        return false
+      } else {
+        return true
+      }
+    })
 
     function toggleEditor() {
       newNoteContent.value = "" // Reset edit content
       isEditing.value = !isEditing.value // Close editor
+    }
+    function toggleAudio() {
+      if (props.note.audio !== null) {
+        if (noteAudio.value === null) {
+          noteAudio.value = new Audio(props.note.audio)
+        }
+        if (noteAudio.value.paused === true) {
+          noteAudio.value.play()
+        } else {
+          noteAudio.value.pause()
+        }
+      }
     }
     function cancelEdit() {
       toggleEditor()
@@ -108,6 +144,8 @@ export default {
       saveEdit,
       newNoteContent,
       deleteNote,
+      toggleAudio,
+      isAudioPlaying,
     }
   }
 }

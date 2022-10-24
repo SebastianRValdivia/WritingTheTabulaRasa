@@ -176,8 +176,3 @@ LOGIN_REDIRECT_URL = "/"
 
 # Cors headers configuration
 CORS_ORIGIN_ALLOW_ALL = True
-
-# Media config
-# TODO: use .env settings
-MEDIA_URL = "/media/"
-MEDIA_ROOT = BASE_DIR / "media"

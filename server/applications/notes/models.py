@@ -31,11 +31,6 @@ class NoteModel(models.Model):
         blank=True,
         null=True,
     )
-    audio = models.FileField(
-        upload_to="notes/audio/",
-        blank=True,
-        null=True,
-    )
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 

@@ -56,6 +56,12 @@ const routes = [
         props: true
       },
       {
+        path: "encyclopedia/page/:title",
+        name: "encyclopediaPage",
+        component: () => import("src/pages/EncyclopediaPage"),
+        props: true
+      },
+      {
         path: "preferences/",
         name: "preferences",
         component: () => import("src/pages/UserPreferencesPage"),

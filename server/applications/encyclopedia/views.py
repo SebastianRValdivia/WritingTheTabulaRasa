@@ -11,5 +11,6 @@ class EncyclopediaPageViewSet(ModelViewSet):
     queryset = EncyclopediaPageModel.objects.all()
     serializer_class = EncyclopediaPageSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
+    filterset_fields = ["url"]
 
 

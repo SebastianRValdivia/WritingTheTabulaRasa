@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.utils.text import slugify
 
 from config.fields_default_values import (CHARFIELD_LONG)
 # Create your models here.
@@ -18,6 +19,12 @@ class EncyclopediaPageModel(models.Model):
         blank=False,
         null=False,
     )
+    url = models.SlugField(
+        max_length=CHARFIELD_LONG,
+        unique=True,
+        blank=True,
+        null=False
+    )
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     
@@ -31,5 +38,11 @@ class EncyclopediaPageModel(models.Model):
 
     def get_absolute_url(self):
         return reverse("EncyclopediaPageModel_detail", kwargs={"pk": self.pk})
+
+    
+    def save(self, *args, **kwargs):
+        if not self.id:
+            self.url = slugify(self.title)
+        super(EncyclopediaPageModel, self).save(*args, **kwargs)
 
 # TODO: Modification

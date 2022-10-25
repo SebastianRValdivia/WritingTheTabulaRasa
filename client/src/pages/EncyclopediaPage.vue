@@ -1,11 +1,11 @@
 <template>
-  <div>
-  {{ props.title }}
+  <div v-if="pageData">
+    <h1>{{ pageData.title }}</h1>
   </div>
 </template>
 
 <script>
-import { onBeforeMount } from "vue"
+import { ref, onBeforeMount } from "vue"
 import { useQuasar } from "quasar"
 import { useRouter } from "vue-router"
 
@@ -20,6 +20,8 @@ export default {
     const $router = useRouter()
     const wikiStore = useWikiStore()
 
+    const pageData = ref()
+
     onBeforeMount(async () => {
       $q.loading.show()
       let wikiFromStore = wikiStore.getWikiPageByUrl(props.title) // Search in the store
@@ -28,15 +30,16 @@ export default {
         wikiFromStore = wikiStore.getWikiPageByUrl(props.title)
         if (wikiFromStore === undefined) { // Doesn't exist
           $router.push({name: "NotFound"})
+        } else {
+          pageData.value = wikiFromStore
         }
       }
-
-
       $q.loading.hide()
     })
 
     return {
-      props
+      props,
+      pageData,
 
     }
   }

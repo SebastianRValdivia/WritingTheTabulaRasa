@@ -1,7 +1,10 @@
 <template>
-  <div v-if="pageData">
+  <q-page v-if="pageData">
     <h1>{{ pageData.title }}</h1>
-  </div>
+    <h4>{{ pageData.epigraph }}</h4>
+
+    <MarkdownPreview :md="pageData.content" />
+  </q-page>
 </template>
 
 <script>
@@ -10,10 +13,14 @@ import { useQuasar } from "quasar"
 import { useRouter } from "vue-router"
 
 import { useWikiStore } from "src/stores/wiki-store"
+import MarkdownPreview from "src/components/MarkdownPreview"
 
 export default {
   props: {
     title: String,
+  },
+  components: {
+    MarkdownPreview
   },
   setup(props) {
     const $q = useQuasar()

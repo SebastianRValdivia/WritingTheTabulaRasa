@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     # Project apps
     "api",
     "user",
+    "webapp",
     "applications.notes",
     "applications.schedule",
     "applications.tasks",
@@ -145,6 +146,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = "/static/"
+
+WEBAPP_STATIC_URL = "/webapp/"
+WEBAPP_STATIC_ROOT = BASE_DIR / "webapp/staticfiles"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

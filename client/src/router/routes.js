@@ -58,7 +58,7 @@ const routes = [
       {
         path: "encyclopedia/",
         name: "encyclopediaIndex",
-        component: () => import("src/pages/EncyclopediaIndexPage"),
+        component: () => import("src/pages/EncyclopediaListPage"),
       },
       {
         path: "encyclopedia/page/:title",

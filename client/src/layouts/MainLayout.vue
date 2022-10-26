@@ -18,6 +18,10 @@
         </q-toolbar-title>
         <q-tabs shrink>
           <q-route-tab
+            :label="$t('mainLayout.encyclopedia')" 
+            :to="{name: 'encyclopediaIndex'}"
+          />
+          <q-route-tab
             :label="$t('mainLayout.cheatsheets')" 
             :to="{name: 'cheatsheets'}"
           />

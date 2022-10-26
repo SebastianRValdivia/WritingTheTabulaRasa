@@ -8,8 +8,8 @@ export const useWikiStore = defineStore("wiki", {
   getters: {
     getWikiPageByUrl: (state) => {
       return (pageUrl) => state.wikiPages.find((page) => page.url === pageUrl)
-    }
-
+    },
+    getWikiPageList: (state) => state.wikiPages
   },
   actions: {
     async retrieveWikiPages() {

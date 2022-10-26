@@ -56,6 +56,11 @@ const routes = [
         props: true
       },
       {
+        path: "encyclopedia/",
+        name: "encyclopediaIndex",
+        component: () => import("src/pages/EncyclopediaIndexPage"),
+      },
+      {
         path: "encyclopedia/page/:title",
         name: "encyclopediaPage",
         component: () => import("src/pages/EncyclopediaPage"),

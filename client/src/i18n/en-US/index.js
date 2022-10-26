@@ -1,7 +1,8 @@
 // This is just an example,
 // so you can safely delete all default props below
 const mainLayout = {
-  cheatsheets: "Cheat Sheets"
+  cheatsheets: "Cheat Sheets",
+  encyclopedia: "Encyclopedia"
 }
 const mainDrawer = {
   notes: "My notes",

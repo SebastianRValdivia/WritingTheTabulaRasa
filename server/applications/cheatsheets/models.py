@@ -30,6 +30,13 @@ class SheetModel(models.Model):
 
 
 class CheatModel(models.Model):
+    
+    class SizeChoices(models.IntegerChoices):
+        AUTO = 0, "Auto"
+        SIMPLE = 1, "Simple"
+        DOUBLE = 2, "Double"
+        FULL = 3, "Full"
+
 
     title = models.CharField(max_length=CHARFIELD_LONG)
     content = models.TextField()
@@ -39,6 +46,10 @@ class CheatModel(models.Model):
         blank=False,
         null=False,
     )
+    size = models.IntegerField(
+        choices=SizeChoices.choices,
+        default=SizeChoices.AUTO,
+    )
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
@@ -47,4 +58,4 @@ class CheatModel(models.Model):
         verbose_name_plural = "Cheats"
 
     def __str__(self):
-        return self.title
+        return self.sheet.title + ": " + self.title

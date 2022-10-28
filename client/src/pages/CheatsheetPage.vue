@@ -5,19 +5,19 @@
     </div>
 
     <div class="row q-gutter-md">
-      <q-card class="cheat-card" v-for="cheat in cheats" :key="cheat.id">
-        <q-card-section>
+      <div 
+        v-for="cheat in cheats"
+        :key="cheat.id"
+        :class="hasSize(cheat.size)"
+      >
+        <div>
           <h5>{{ cheat.title }}</h5>
-        </q-card-section>
-        <q-card-section>
+        </div>
+        <div>
           <MarkdownPreview :md="cheat.content" />
-        </q-card-section>
-      </q-card>
-
-
+        </div>
+      </div>
     </div>
-
-
   </q-page>
 </template>
 
@@ -34,13 +34,26 @@ export default {
   },
   components: {
     MarkdownPreview,
-},
+  },
   setup(props) {
     const $q = useQuasar()
     const cheatsheetStore = useCheatsheetStore()
 
     const sheet = ref({})
     const cheats = ref({})
+
+    function hasSize(size) {
+      switch (size) {
+        case 1:
+          return "col-3"
+        case 2:
+          return "col-6"
+        case 3:
+          return "col-12"
+        default:
+          return "col"
+      }
+    }
 
     onBeforeMount(async () => {
       $q.loading.show()
@@ -50,11 +63,10 @@ export default {
       $q.loading.hide()
     })
 
-
-
     return {
       cheats,
       sheet,
+      hasSize,
     }
   }
 
@@ -65,5 +77,6 @@ export default {
 <style>
 .cheat-card {
   min-width: 15%;
+  max-width: 50%;
 }
 </style>

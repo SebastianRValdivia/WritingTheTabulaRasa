@@ -32,6 +32,7 @@ export default {
     onBeforeMount(async () => {
       $q.loading.show()
       let wikiFromStore = wikiStore.getWikiPageByUrl(props.title) // Search in the store
+      console.log(wikiFromStore)
       if (wikiFromStore === undefined) { // Not in the store, then try api and assign again
         await wikiStore.retrieveWikiPageByUrl(props.title)
         wikiFromStore = wikiStore.getWikiPageByUrl(props.title)
@@ -40,6 +41,8 @@ export default {
         } else {
           pageData.value = wikiFromStore
         }
+      } else {
+        pageData.value = wikiFromStore
       }
       $q.loading.hide()
     })

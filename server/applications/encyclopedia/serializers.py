@@ -1,7 +1,8 @@
 from rest_framework.serializers import ModelSerializer
 
 from applications.encyclopedia.models import (
-    EncyclopediaPageModel
+    EncyclopediaPageModel,
+    EncyclopediaCardModel
 )
 
 class EncyclopediaPageSerializer(ModelSerializer):
@@ -10,4 +11,8 @@ class EncyclopediaPageSerializer(ModelSerializer):
         model = EncyclopediaPageModel
         fields = "__all__"
 
+class EncyclopediaCardSerializer(ModelSerializer):
 
+    class Meta:
+        model = EncyclopediaCardModel
+        fields = "__all__"

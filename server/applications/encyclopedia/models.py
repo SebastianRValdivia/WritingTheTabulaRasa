@@ -45,4 +45,26 @@ class EncyclopediaPageModel(models.Model):
             self.url = slugify(self.title)
         super(EncyclopediaPageModel, self).save(*args, **kwargs)
 
+class EncyclopediaCardModel(models.Model):
+
+    content = models.TextField(
+        blank=False,
+        null=False,
+    )
+    page = models.OneToOneField(
+        EncyclopediaPageModel,
+        on_delete=models.CASCADE,
+        blank=False,
+        null=False,
+    )
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Encyclopedia Card"
+        verbose_name_plural = "Encyclopedia Cards"
+
+    def __str__(self):
+        return self.page.title + " Card"
+
 # TODO: Modification

@@ -1,7 +1,14 @@
 <template>
   <q-list>
-    <q-item v-for="wikiPage in wikiStore.getWikiPageList" :key="wikiPage.id">
+    <q-item 
+      v-for="wikiPage in wikiStore.getWikiPageList" 
+      :key="wikiPage.id"
+      :to="{name: 'encyclopediaPage', params:{title: wikiPage.url}}"
+    >
       {{ wikiPage.title }}
+      <q-tooltip>
+        {{ wikiPage.epigraph}}
+      </q-tooltip>
     </q-item>
   </q-list>
 </template>

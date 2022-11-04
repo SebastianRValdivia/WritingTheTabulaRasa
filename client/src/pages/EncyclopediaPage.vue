@@ -60,7 +60,9 @@ export default {
       }
 
       let cardFromServer = await api.wiki.getWikiCardByPageId(pageData.value.id)
-      pageCard.value = cardFromServer.card
+      if (cardFromServer.code === 200) {
+        pageCard.value = cardFromServer.card
+      }
       $q.loading.hide()
     })
 

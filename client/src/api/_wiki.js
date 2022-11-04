@@ -36,18 +36,18 @@ export default {
     }
   },
   async getWikiCardByPageId(pageId) {
-    let response = await api.get(`v1/encyclopedia/cards/?page=${pageId}`)
-
-    if (response.status === 200 && response.data.results[0] !== undefined) {
-      return {
-        code: 200,
-        card: response.data.results[0]
+    try {
+      let response = await api.get(`v1/encyclopedia/cards/?page=${pageId}`)
+      if (response.status === 200 && response.data.results[0] !== undefined) {
+        return {
+          code: 200,
+          card: response.data.results[0]
+        }
       }
-    } else {
+    } catch {
       return {
         code: 404
       }
     }
-
   }
 }

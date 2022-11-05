@@ -26,7 +26,7 @@
       </q-list>
     </div>
   </q-page>
-  <h2 v-else-if="goalsListLength === 0">No goals yet</h2>
+  <h2 v-else-if="goalsListLength === 0">{{ $t("schedulePage.empty")}}</h2>
 </template>
 
 <script>

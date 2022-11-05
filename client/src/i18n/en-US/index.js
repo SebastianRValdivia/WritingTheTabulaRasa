@@ -20,7 +20,7 @@ const notePages = {
   empty: "There are no notes yet",
 }
 const schedulePage = {
-  noGoals: "No goals yet",
+  empty: "No goals yet",
   calendar: "Calendar",
 }
 const taskListPage = {

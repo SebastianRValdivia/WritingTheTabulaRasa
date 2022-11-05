@@ -1,8 +1,21 @@
 <template>
-  <q-dialog v-model="appStore.isLoginOpen" persistent @keyup.enter="submit">
-      <q-card class="q-px-sm q-pb-md column">
+  <q-dialog 
+    v-model="appStore.isLoginOpen" 
+    persistent 
+    @keyup.enter="submit"
+  >
+      <q-card 
+        class="animated q-px-sm q-pb-md column"
+        :class="{ wobble: hasError, 'bg-negative': hasError}"
+      >
         <q-card-section class="items-center">
-          <q-input v-model="username" filled class="app-login-input">
+          <q-input 
+            v-model="username"
+            filled class="app-login-input"
+            :rules="[
+              inputIsNotEmptyRule,
+            ]"
+          >
             <template v-slot:prepend>
               <q-icon name="person" />
             </template>
@@ -12,6 +25,9 @@
             v-model="password"
             filled 
             :type="isPwd ? 'password' : 'text'"
+            :rules="[
+              inputIsNotEmptyRule,
+            ]"
           >
             <template v-slot:prepend>
               <q-icon name="key" />
@@ -30,9 +46,8 @@
           <q-btn flat label="Cancel" color="warning" v-close-popup />
           <q-btn flat label="Proceed" color="primary" @click="submit" />
         </q-card-actions>
-     </q-card>
+    </q-card>
   </q-dialog>
-
 </template>
 
 <script>
@@ -44,22 +59,39 @@ export default {
   setup() {
     const appStore = useAppStore()
     const userStore = useUserStore()
+
     const username = ref("")
     const password = ref("")
     const isPwd = ref(true)
+    const hasError = ref(false)
+
+    function inputIsNotEmptyRule (val) {
+      return val.length > 0
+    }
+
+    async function submit () {
+      try {
+        let result = await userStore.retrieveUserCredentials(
+          username.value,
+          password.value
+        )
+
+      } catch {
+        hasError.value = true
+        setTimeout(() => {
+          hasError.value = false
+        }, 400);
+      }
+    }
 
     return {
       appStore,
       username,
       password,
       isPwd,
-
-      submit() {
-        userStore.retrieveUserCredentials(
-          username.value,
-          password.value
-        )
-      },
+      submit,
+      hasError,
+      inputIsNotEmptyRule,
     }
   }
 }

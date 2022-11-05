@@ -22,23 +22,23 @@ export const useUserStore = defineStore('user', {
     async retrieveUserCredentials(username, password) {
       const userStore = useUserStore()
       this.username = username
-      await api.user.postUserAuthentication(username, password)
-        .then( async result => {
-          if (result.code === 200) {
-            await userStore.retrieveUserId()
-            this.userToken = result.token
-            setUserCookies(this.username, this.userId, this.userToken)
-            this.isLogged = true
-          } else {
-            console.warn("Failed login")
-          }
-        }) 
+      try {
+          let result = await api.user.postUserAuthentication(username, password)
+          this.userToken = result.token
+          await userStore.retrieveUserId()
+          setUserCookies(this.username, this.userId, this.userToken)
+          this.isLogged = true
+      } catch {
+        return {
+          code: 400
+        }
+      }
     },
     async retrieveUserId() {
-      let result = await api.user.getUserIdByUsername(this.getUsername)
-      if (result.code === 200) {
+      try {
+        let result = await api.user.getUserIdByUsername(this.getUsername)
         this.userId = result.userId
-      } else {
+      } catch {
         console.warn("Failed to get user id")
       }
     },

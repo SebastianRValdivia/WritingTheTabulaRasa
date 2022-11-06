@@ -34,6 +34,11 @@ const routes = [
         component: () => import("src/pages/SchedulePage"),
       },
       {
+        path: "schedules/new/",
+        name: "newSchedule",
+        component: () => import("src/pages/ScheduleNewPage"),
+      },
+      {
         path: "tools/",
         name: "tools",
         component: () => import("src/pages/ToolsPage"),

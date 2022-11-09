@@ -26,7 +26,16 @@
       </q-list>
     </div>
   </q-page>
-  <h2 v-else-if="goalsListLength === 0">No goals yet</h2>
+  <q-page v-else-if="goalsListLength === 0" class="column items-center">
+    <h2>{{ $t("schedulePage.empty")}}</h2>
+
+    <div>
+      <q-btn 
+        label="Add goal"
+        :to="{name: 'newSchedule'}"        
+      />
+    </div>
+  </q-page>
 </template>
 
 <script>

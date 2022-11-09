@@ -20,8 +20,11 @@ const notePages = {
   empty: "There are no notes yet",
 }
 const schedulePage = {
-  noGoals: "No goals yet",
+  empty: "No goals yet",
   calendar: "Calendar",
+}
+const goalNewPage = {
+  error: "Incomplete data"
 }
 const taskListPage = {
   showCompleted: "Show completed",
@@ -46,6 +49,7 @@ export default {
   mainDrawer,
   notePages,
   schedulePage,
+  goalNewPage,
   taskListPage,
   toolPage,
   sheetPage,

@@ -18,6 +18,24 @@ export default {
       }
     }
   },
+  async postGoal(goalData) {
+    try {
+      let response = await api.post(
+        "v1/schedules/goals/",
+        goalData,
+      )
+
+      if (response.status === 201) {
+        return {
+          code: response.status,
+          newGoal: response.data
+        }
+      }
+    } catch {
+      return false
+    }
+
+  },
   async getObjectives() {
     let response = await api.get("v1/schedules/objectives/")
 

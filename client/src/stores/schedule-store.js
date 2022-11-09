@@ -1,6 +1,8 @@
 import { defineStore } from "pinia"
 import api from "src/api";
 
+import { useUserStore } from "src/stores/user-store"
+
 export const useScheduleStore = defineStore("schedule", {
   state: () => ({
     goalsList: [],
@@ -20,6 +22,16 @@ export const useScheduleStore = defineStore("schedule", {
       } else {
         return false
       }
+    },
+    async createGoal(goalData) {
+      let userStore = useUserStore()
+      goalData.owner = userStore.getUserId
+      let result = await api.schedule.postGoal(goalData)
+
+      if (result) {
+        this.goalsList.push(result.newGoal)
+        return true
+      } else return result
     },
     async retrieveObjectives() {
       let result = await api.schedule.getObjectives()

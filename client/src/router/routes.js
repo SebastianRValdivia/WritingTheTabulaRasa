@@ -36,7 +36,7 @@ const routes = [
       {
         path: "schedules/new/",
         name: "newSchedule",
-        component: () => import("src/pages/ScheduleNewPage"),
+        component: () => import("src/pages/GoalNewPage"),
       },
       {
         path: "tools/",

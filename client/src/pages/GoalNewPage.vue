@@ -15,6 +15,7 @@
 
 <script>
 import { reactive } from "vue"
+import { useRouter } from "vue-router"
 import { useQuasar, date } from "quasar"
 import { useI18n } from "vue-i18n"
 
@@ -26,6 +27,7 @@ export default {
     const quasar = useQuasar()
     const { t } = useI18n()
     const scheduleStore = useScheduleStore()
+    const router = useRouter()
 
     const newGoalInput = reactive({
       title: "",
@@ -44,7 +46,10 @@ export default {
       newGoalInput.finish = (
         date.formatDate(newGoalInput.finish, "YYYY-MM-DDTHH:mm:ss.SSSZ")
       )
-      scheduleStore.createGoal(newGoalInput)
+      let result = scheduleStore.createGoal(newGoalInput)
+      result
+        ? router.push({name: "schedules"})
+        : quasar.notify({ color: "negative", message: t("failed")})
     }
 
     return {

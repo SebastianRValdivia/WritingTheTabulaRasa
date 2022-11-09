@@ -23,6 +23,9 @@ const schedulePage = {
   empty: "No goals yet",
   calendar: "Calendar",
 }
+const goalNewPage = {
+  error: "Incomplete data"
+}
 const taskListPage = {
   showCompleted: "Show completed",
   requiredWrong: "Required task doesn't exist",
@@ -46,6 +49,7 @@ export default {
   mainDrawer,
   notePages,
   schedulePage,
+  goalNewPage,
   taskListPage,
   toolPage,
   sheetPage,

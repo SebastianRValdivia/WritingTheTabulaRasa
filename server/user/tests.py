@@ -14,7 +14,7 @@ class UserTests(APITestCase, URLPatternsTestCase):
     url = reverse("user-data") + "?username=username"
     request = self.client.get(url) # Get user data
     self.assertEqual(request.status_code, 200)
-    self.assertEqual(dict(request.data[0]), {"username": "username", "pk": 1}) # Check if first response is correct
+    self.assertEqual(dict(request.data["results"][0]), {"username": "username", "pk": 1}) # Check if first response is correct
 
   def test_retrieve_user_token(self):
     User.objects.create_user(username="username", password="password") # Create user

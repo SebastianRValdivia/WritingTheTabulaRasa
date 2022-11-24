@@ -38,6 +38,7 @@ export const useUserStore = defineStore('user', {
       try {
         let result = await api.user.getUserIdByUsername(this.getUsername)
         this.userId = result.userId
+        return true
       } catch {
         console.warn("Failed to get user id")
       }

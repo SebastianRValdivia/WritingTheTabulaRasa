@@ -30,6 +30,9 @@ const taskListPage = {
   showCompleted: "Show completed",
   requiredWrong: "Required task doesn't exist",
   requiredIncomplete: "Required task is incomplete",
+  deleteTask: "Delete task",
+  deleteTaskTip: "Deleting a task will completely any traces of it. Are you sure?",
+  taskDeleted: "Task Deleted"
 }
 const toolPage = {
   pomoWorkTime: "Work interval",

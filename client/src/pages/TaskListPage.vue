@@ -136,7 +136,16 @@ export default {
 
     }
     async function deleteTask(taskId) {
-      await taskStore.removeTask({taskId: taskId})
+      $q.dialog({
+        title: t("taskListPage.deleteTask"),
+        message: t("taskListPage.deleteTaskTip")
+      }).onOk(async () => {
+        await taskStore.removeTask({taskId: taskId})
+        $q.notify({
+          message: t("taskListPage.taskDeleted"),
+          color: "info"
+        })
+      })
     }
 
     onBeforeMount(async () => {

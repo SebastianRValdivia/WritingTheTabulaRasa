@@ -49,7 +49,7 @@ If this condition is not met PR won't pass.
 
 The most important branches are: main (development head) and release-{number} (supported releases). All branches use hyphens as word separators.
 
-Branches starting with different names are for work in progress. Their named like feature-{name}, fix-{what is fixed?}, test-{what for?} and docs-{what is it about?}.
+Branches starting with different names are for work in progress. Their named like feature-{name}, install-{what is installed or updated?}, fix-{what is fixed?}, test-{what for?} and docs-{what is it about?}.
 
 Once the work is done a pr is required to join the main branch.
 

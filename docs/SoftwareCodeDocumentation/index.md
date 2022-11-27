@@ -18,10 +18,14 @@ Need a guide to know how things work before jumping to the code. Check the guide
 * [Server Guide](Backend/index.md)
 * [Lite web site](Lite/index.md)
 
+### Documentation
+
+The documentation of the code (not the software) is split in hierarchy level. Each part is contained inside the folders in a README markdown file. In this files we describe the functions of the module along each file or subfolder inside. Lets avoid long and unformatted comments. Comments are only used to describe very specific parts or steps inside a file.
+
 ## How to commit
 
 Its a hard requirement to write commit titles with this initial words. This is used to automate an changelog.
-If this condition is not met PR won't pass
+If this condition is not met PR won't pass.
 
 | Word      | Description                                                      |
 | --------- | ---------------------------------------------------------------- |
@@ -41,11 +45,26 @@ If this condition is not met PR won't pass
 
 > Note: you can use the comment section of the commit at will.
 
+### Branches naming convention
+
+The most important branches are: main (development head) and release-{number} (supported releases). All branches use hyphens as word separators.
+
+Branches starting with different names are for work in progress. Their named like feature-{name}, fix-{what is fixed?}, test-{what for?} and docs-{what is it about?}.
+
+Once the work is done a pr is required to join the main branch.
+
 ## System requirements
 
 Table of the software requirements extracted from the book
 
-| Requirement                | Book section |
-| -------------------- | ------------ |
-| A timer for working and resting intervals                | A.4.3.2      |
-| Calendar to plan goals and objectives | A.4.3.3      |
+| # | Requirement                | Book section |
+| - | -------------------- | ------------ |
+| 1 | A timer for working and resting intervals                | A.4.3.2      |
+| 2 | Calendar to plan goals and objectives | A.4.3.3      |
+| 3 | Resource collection for an investigation | B.1.2 |
+| 4 | Resume of the resources in the collection | B.2.2.1 |
+| 5 | Slip box note system | B.2.2 |
+| 6 | Relationship between notes | B.2.2.4 |
+| 7 | Practice tracker | B.3.3 |
+| 8 | Study activities | B.3.4 |
+

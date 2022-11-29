@@ -14,4 +14,31 @@ class ReferenceModel(models.Model):
     def __str__(self):
         return self.title
 
+class ImageModel(models.Model):
+
+    title = models.CharField(
+        max_length=CHARFIELD_LONG,
+        blank=False,
+        null=False,
+    )
+    caption = models.TextField(
+        blank=True,
+        null=True,
+    )
+    file = models.ImageField(
+        upload_to="resources/images/",
+        blank=False,
+        null=False,
+    )
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Image"
+        verbose_name_plural = "Images"
+
+    def __str__(self):
+        return self.title
+
+
 

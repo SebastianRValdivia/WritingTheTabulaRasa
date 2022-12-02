@@ -11,10 +11,10 @@
     </div>
 
     <div class="row q-gutter-sm">
-      <q-input v-model="newTask.title" class="col-7">
+      <q-input v-model="newTaskInput.titleInput" class="col-7">
         <template v-slot:prepend>
           <q-icon name="alt_route" size="sm" class="q-pa-sm">
-            <q-popup-edit v-model="newTask.require" v-slot="scope">
+            <q-popup-edit v-model="newTaskInput.requireInput" v-slot="scope">
               <q-input 
                 v-model="scope.value"
                 dense 
@@ -30,7 +30,7 @@
 
             </q-popup-edit>
           </q-icon>
-          <span class="q-pa-sm" v-if="newTask.require !== null">{{ newTask.require }}</span>
+          <span class="q-pa-sm" v-if="newTaskInput.requireInput !== null">{{ newTaskInput.requireInput }}</span>
         </template>
       </q-input>
       <q-btn flat rounded @click="addNewTask" icon="add" size="md"/>
@@ -70,6 +70,7 @@
 import { ref, reactive, computed, onBeforeMount } from "vue"
 import { useQuasar } from "quasar"
 import { useI18n } from "vue-i18n"
+import Fuse from "fuse.js"
 
 import { useTaskStore } from "src/stores/task-store"
 import { useUserStore } from "src/stores/user-store"
@@ -81,9 +82,9 @@ export default {
     const $q = useQuasar()
     const { t } = useI18n()
 
-    const newTask = reactive({
-      title: "",
-      require: null,
+    const newTaskInput = reactive({
+      titleInput: "",
+      requireInput: null,
     })
     const showCompleted = ref(false)
     const displayedTasks = computed(() => {
@@ -125,8 +126,11 @@ export default {
       }
     }
     async function addNewTask() {
-      if (newTask.require === null || taskStore.getTaskById(Number(newTask.require)) !== undefined) {
-        await taskStore.addNewTask(newTask)
+      if (newTaskInput.requireInput === null || taskStore.getTaskById(Number(newTaskInput.requireInput)) !== undefined) {
+        await taskStore.addNewTask({
+            title: newTaskInput.titleInput,
+            require: newTaskInput.requireInput,
+          })
       } else {
         $q.notify({
           message: t("taskListPage.requiredWrong"),
@@ -143,7 +147,7 @@ export default {
         await taskStore.removeTask({taskId: taskId})
         $q.notify({
           message: t("taskListPage.taskDeleted"),
-          color: "info"
+          color: "positive"
         })
       })
     }
@@ -157,7 +161,7 @@ export default {
     return {
       displayedTasks,
       taskStore,
-      newTask,
+      newTaskInput,
       addNewTask,
       toggleStatus,
       showCompleted,

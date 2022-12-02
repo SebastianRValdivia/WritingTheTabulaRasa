@@ -12,3 +12,8 @@ export function setUserCookies(username, userId, token) {
   Cookies.set("userId", userId, strictOptions)
   Cookies.set("token", token, strictOptions)
 }
+export function removeUserCookies(username, userId, token) {
+  Cookies.remove("username")
+  Cookies.remove("userId")
+  Cookies.remove("token")
+}

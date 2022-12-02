@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import api from "src/api"
 
-import { setUserCookies } from "src/storage/cookies"
+import { setUserCookies, removeUserCookies } from "src/storage/cookies"
 
 export const useUserStore = defineStore('user', {
   state: () => ({
@@ -56,6 +56,10 @@ export const useUserStore = defineStore('user', {
         this.userPreferences = result.userPreferences
         return true
       } else { return false }
+    },
+    logOutUser() {
+      removeUserCookies()
+      this.isLogged = false
     }
   },
 });

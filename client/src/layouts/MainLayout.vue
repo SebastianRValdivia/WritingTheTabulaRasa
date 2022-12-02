@@ -101,6 +101,16 @@
               {{ $t("mainDrawer.preferences") }}
             </q-item-section>
           </q-item>
+
+          <q-item clickable v-ripple @click="logOut">
+            <q-item-section avatar>
+              <q-icon name="logout" />
+            </q-item-section>
+
+            <q-item-section>
+              {{ $t("mainDrawer.logOut") }}
+            </q-item-section>
+          </q-item>
         </q-list>
 
       </q-scroll-area>
@@ -138,6 +148,7 @@
 import { ref } from 'vue'
 import { useUserStore } from "src/stores/user-store"
 import { useAppStore } from "src/stores/app-store"
+import { useRouter } from "vue-router"
 
 import LoginDialog from "src/components/LoginDialog"
 import PomodoroTimer from 'src/components/PomodoroTimer';
@@ -150,14 +161,23 @@ export default {
     NewNote
   },
   setup() {
+    const router = useRouter()
+
     const leftDrawerOpen = ref(false)
     const rightDrawerOpen = ref(false)
     const userStore = useUserStore()
     const appStore = useAppStore()
 
+    function logOut() {
+      userStore.logOutUser()
+      leftDrawerOpen.value = false
+      router.push({name: "home"})
+    }
+
     return {
       userStore,
       appStore,
+      logOut,
 
       leftDrawerOpen,
       toggleLeftDrawer () {

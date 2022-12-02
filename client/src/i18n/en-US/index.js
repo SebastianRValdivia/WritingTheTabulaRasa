@@ -10,6 +10,7 @@ const mainDrawer = {
   tasks: "Tasks",
   calendar: "Calendar",
   preferences: "Preferences",
+  logOut: "Log out"
 }
 
 const notePages = {

@@ -19,6 +19,7 @@
     "@quasar/extras": "^1.15.3",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "fuse.js": "^6.6.2",
     "markdown-it": "^13.0.1",
     "pinia": "^2.0.11",
     "quasar": "^2.8.2",

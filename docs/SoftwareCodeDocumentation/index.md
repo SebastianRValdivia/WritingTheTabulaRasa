@@ -57,9 +57,9 @@ Once the work is done a pr is required to join the main branch.
 
 Table of the software requirements extracted from the book
 
-| # | Requirement                | Book section |
-| - | -------------------- | ------------ |
-| 1 | A timer for working and resting intervals                | A.4.3.2      |
+| # |  Requirement                | Book section |
+| - | --------------------------- | ------------ |
+| 1 | A timer for working and resting intervals | A.4.3.2      |
 | 2 | Calendar to plan goals and objectives | A.4.3.3      |
 | 3 | Resource collection for an investigation | B.1.2 |
 | 4 | Resume of the resources in the collection | B.2.2.1 |
@@ -67,4 +67,19 @@ Table of the software requirements extracted from the book
 | 6 | Relationship between notes | B.2.2.4 |
 | 7 | Practice tracker | B.3.3 |
 | 8 | Study activities | B.3.4 |
+| 9 | Memorization activities | B.4.1 |
+| 10 | Quizzes | B.4.2.1.1 |
+| 11 | Flash cards | B.4.2.1.2 |
+| 12 | Projects | B.4.2.2 |
+| 13 | Diagrams | C.2.1 |
+| 14 | Images | C.2.2 |
+| 14 | Tables | C.2.3 |
+| 15 | Encyclopedia (wiki) | C.3.1 |
+| 16 | Cheat sheets | C.3.2 |
+| 17 | How to guides | C.3.3 |
+| 18 | Essays | C.3.4 |
+| 19 | Bibliography references | C.3.5 |
+| 20 | Catalogs of the literary resources | C.4.1.1.2 |
+| 21 | Custom metadata | C.4.3 |
+| 22 | Categorization and relationships between resources | C.4.5 |
 

@@ -12,11 +12,13 @@ To contribute use the standar PR of github method and please read how to write c
 
 ## Code Review and Guide
 
-Like any software there is a guide of how to contribute to the code. Since the code is all in one repostory, its splited in parts.
-Need a guide to know how things work before jumping to the code. Check the guides.
+Like any software there is a guide of how to contribute to the code. Since the code is all in one repository, its separated in parts.
+
+Need a guide to know how things work before jumping to the code? Check the each (or all).
 
 * [Server Guide](Backend/index.md)
 * [Lite web site](Lite/index.md)
+* [Client guide](Client/index.md)
 
 ### Documentation
 

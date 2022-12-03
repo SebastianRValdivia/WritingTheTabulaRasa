@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>{% block title %}Tabula Rasa{% endblock title %}</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A study assistant made for either a single person or an entire organization.">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+          
+      <div id="container">
+        {% block content %}
+        {% endblock content %}
+      </div>
+
+      {% block javascript %}
+        <script src="{% static 'js/base.js' %}"></script>
+      {% endblock javascript %}
+      
+    </body>
+</html>

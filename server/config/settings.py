@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     "api",
     "user",
     "webapp",
+    "lite",
     "applications.notes",
     "applications.schedule",
     "applications.tasks",

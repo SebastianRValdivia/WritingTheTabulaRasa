@@ -26,7 +26,8 @@ from config.settings import (
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include('api.urls')),
-    path("webapp/", include("webapp.urls"))
+    path("webapp/", include("webapp.urls")),
+    path("lite/", include("lite.urls"))
 ]
 
 urlpatterns += static(MEDIA_URL, document_root=MEDIA_ROOT)

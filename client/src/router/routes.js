@@ -9,39 +9,44 @@ const routes = [
         component: () => import('pages/IndexPage') 
       },
       { 
-        path: "notes/permanent/",
+        path: "my/notes/permanent/",
         name: "notes",
         component: () => import("src/pages/NoteListPage"),
       },
       {
-        path: "notes/fleeting/",
+        path: "my/notes/fleeting/",
         name: "fleetingNotes",
         component: () => import("src/pages/FleetingNoteListPage"),
       },
       {
-        path: "notes/literary/",
+        path: "my/notes/literary/",
         name: "literaryNotes",
         component: () => import("src/pages/LiteraryNoteListPage"),
       },
       {
-        path: "tasks/",
+        path: "my/tasks/",
         name: "tasks",
         component: () => import("src/pages/TaskListPage"),
       },
       {
-        path: "schedules/",
+        path: "my/schedules/",
         name: "schedules",
         component: () => import("src/pages/SchedulePage"),
       },
       {
-        path: "schedules/new/",
+        path: "my/schedules/new/",
         name: "newSchedule",
         component: () => import("src/pages/GoalNewPage"),
       },
       {
-        path: "tools/",
+        path: "my/tools/",
         name: "tools",
         component: () => import("src/pages/ToolsPage"),
+      },
+      {
+        path: "my/preferences/",
+        name: "preferences",
+        component: () => import("src/pages/UserPreferencesPage"),
       },
       {
         path: "cheatsheets/",
@@ -71,11 +76,6 @@ const routes = [
         component: () => import("src/pages/EncyclopediaPage"),
         props: true
       },
-      {
-        path: "preferences/",
-        name: "preferences",
-        component: () => import("src/pages/UserPreferencesPage"),
-      }
     ]
   },
 

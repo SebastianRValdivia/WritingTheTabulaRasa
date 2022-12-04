@@ -1,6 +1,7 @@
 import os
 import unittest
 from selenium import webdriver
+from selenium.webdriver import FirefoxOptions
 from selenium.webdriver.common.by import By
 
 
@@ -8,7 +9,9 @@ class FirstUserExperience(unittest.TestCase):
 
     def setUp(self):
         """ Before each test do: """
-        self.browser = webdriver.Firefox()
+        opts = FirefoxOptions()
+        opts.add_argument("--headless")
+        self.browser = webdriver.Firefox(options=opts)
 
     def tearDown(self):
         """ After each test do: """

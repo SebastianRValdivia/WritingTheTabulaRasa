@@ -16,11 +16,6 @@ class ReferenceModel(models.Model):
 
 class ImageModel(models.Model):
 
-    title = models.CharField(
-        max_length=CHARFIELD_LONG,
-        blank=False,
-        null=False,
-    )
     caption = models.TextField(
         blank=True,
         null=True,

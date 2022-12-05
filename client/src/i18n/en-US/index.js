@@ -43,19 +43,27 @@ const sheetPage = {
   noSheets: "No cheat sheets yet"
 }
 
+const imageUploadDialog = {
+  caption: "Caption"
+}
+
 export default {
   failed: 'Action failed',
   success: 'Action was successful',
   done: "Done",
   confirm: "Confirm",
   sureDelete: "Are you sure you want to delete this?",
+
   mainLayout,
   mainDrawer,
+
   notePages,
   schedulePage,
   goalNewPage,
   taskListPage,
   toolPage,
   sheetPage,
+
+  imageUploadDialog,
 
 }

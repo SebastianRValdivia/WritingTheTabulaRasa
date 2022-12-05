@@ -18,7 +18,7 @@ export default {
 
     if (response.status = 201) {
       return {
-        code: responsen.status,
+        code: response.status,
         imageUrl: response.data.file,
       }
     } else {

@@ -43,10 +43,12 @@ export default {
           code: 200,
           card: response.data.results[0]
         }
+      } else return {
+        code: 404
       }
     } catch {
       return {
-        code: 404
+        code: 400
       }
     }
   },

@@ -25,6 +25,14 @@ export const useWikiStore = defineStore("wiki", {
       if (result.code === 200) {
         this.wikiPages.push(result.page)
       }
+    },
+    async saveWikiPage(pageData) {
+      let result = await api.wiki.postWikiPage(pageData)
+
+      if (result.code === 201) {
+        this.wikiPages.push(result.newPage) 
+        return true
+      } else return false
     }
   }
 })

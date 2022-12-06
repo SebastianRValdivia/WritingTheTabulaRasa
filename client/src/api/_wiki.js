@@ -64,5 +64,18 @@ export default {
         code: 400
       }
     }
+  },
+  async postWikiCard(cardData) {
+    try {
+      let response = await api.post("v1/encyclopedia/cards/", cardData)
+      if (response.status === 201) return {
+          code: 201,
+          newCard: response.data
+      }
+    } catch {
+      return {
+        code: 400
+      }
+    }
   }
 }

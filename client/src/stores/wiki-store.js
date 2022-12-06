@@ -1,4 +1,4 @@
-import { defineStore } from "pinia";
+import { defineStore } from "pinia"
 import api from "src/api"
 export const useWikiStore = defineStore("wiki", {
   state: () => ({
@@ -31,7 +31,7 @@ export const useWikiStore = defineStore("wiki", {
 
       if (result.code === 201) {
         this.wikiPages.push(result.newPage) 
-        return true
+        return result.newPage
       } else return false
     }
   }

@@ -1,17 +1,39 @@
 <template>
   <q-page class="q-pa-md q-gutter-sm">
-    <q-input 
-      v-model="titleInput" 
-      :placeholder="$t('encyclopediaEditorPage.title')"
-      input-class="title-input"
-    />
-    <q-input
-      v-model="epigraphInput"
-      :placeholder="$t('encyclopediaEditorPage.epigraph')"
-      input-class="text-h4"
-      autogrow
-      borderless
-    />
+    <div id="wiki-head" class="row">
+      <q-input 
+        v-model="titleInput" 
+        :placeholder="$t('encyclopediaEditorPage.title')"
+        input-class="title-input"
+        class="col-10"
+      />
+      <div class="col-2 column items-center">
+        <q-btn
+          class="q-mt-md"
+          icon="post_add"
+          @click="toggleCardEditor()"
+        />
+        <q-page-sticky position="top-right" :offset="[20, 20]">
+          <q-card class="card-width">
+            <q-card-section>
+              <q-input
+                v-model="cardContentInput"
+                autogrow
+                borderless
+              />
+            </q-card-section>
+          </q-card>
+        </q-page-sticky>
+      </div>
+      <q-input
+        v-model="epigraphInput"
+        :placeholder="$t('encyclopediaEditorPage.epigraph')"
+        input-class="text-h4"
+        autogrow
+        borderless
+        class="col-12"
+      />
+    </div>
 
     <q-separator inset />
 
@@ -30,6 +52,7 @@
 
 <script>
 import { ref } from "vue"
+import api from "src/api"
 
 import { useWikiStore } from "src/stores/wiki-store"
 
@@ -41,22 +64,34 @@ export default {
     const titleInput = ref("")
     const epigraphInput = ref("")
     const contentInput = ref("")
+    const isCardEditorOpen = ref(false)
+    const cardContentInput = ref("")
 
     async function submit () {
-      let result = await wikiStore.saveWikiPage({
+      let resultPagePost = await wikiStore.saveWikiPage({
         title: titleInput.value,
         epigraph: epigraphInput.value,
         content: contentInput.value
       })
+      if (cardContentInput.value !== "" && resultPagePost) {
+        let resultCardPost = await api.wiki.postWikiCard({
+          content: cardContentInput.value,
+          page: resultPagePost.id
+        })
+      }
     }
 
-
+    function toggleCardEditor() {
+      isCardEditorOpen.value = !isCardEditorOpen.value
+    }
 
     return {
       titleInput,
       epigraphInput,
       contentInput,
       submit,
+      toggleCardEditor,
+      cardContentInput,
     }
   }
 }
@@ -65,5 +100,9 @@ export default {
 <style>
 .title-input {
   font-size: 3rem;
+}
+.card-width {
+  min-width: 350px;
+  max-width: 400px;
 }
 </style>

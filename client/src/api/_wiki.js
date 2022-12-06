@@ -49,5 +49,18 @@ export default {
         code: 404
       }
     }
+  },
+  async postWikiPage(pageData) {
+    try {
+      let response = await api.post("v1/encyclopedia/pages/", pageData)
+      if (response.status === 201) return {
+          code: 201,
+          newPage: response.data
+      }
+    } catch {
+      return {
+        code: 400
+      }
+    }
   }
 }

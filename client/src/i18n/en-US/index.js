@@ -42,6 +42,10 @@ const toolPage = {
 const sheetPage = {
   noSheets: "No cheat sheets yet"
 }
+const encyclopediaEditorPage = {
+  title: "Page title",
+  epigraph: "Epigraph",
+}
 
 const imageUploadDialog = {
   caption: "Caption"
@@ -63,6 +67,7 @@ export default {
   taskListPage,
   toolPage,
   sheetPage,
+  encyclopediaEditorPage,
 
   imageUploadDialog,
 

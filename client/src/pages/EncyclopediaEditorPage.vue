@@ -13,7 +13,10 @@
           icon="post_add"
           @click="toggleCardEditor()"
         />
-        <q-page-sticky position="top-right" :offset="[20, 20]">
+        <q-page-sticky 
+          v-if="isCardEditorOpen"
+          position="top-right" :offset="[20, 20]"
+        >
           <q-card class="card-width">
             <q-card-section>
               <q-input
@@ -91,6 +94,7 @@ export default {
       contentInput,
       submit,
       toggleCardEditor,
+      isCardEditorOpen,
       cardContentInput,
     }
   }
@@ -102,7 +106,7 @@ export default {
   font-size: 3rem;
 }
 .card-width {
-  min-width: 350px;
-  max-width: 400px;
+  min-width: 18rem;
+  max-width: 18rem;
 }
 </style>

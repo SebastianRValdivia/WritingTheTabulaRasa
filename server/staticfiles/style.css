@@ -1,0 +1,35 @@
+:root {
+  --primary-color: #0745ff;
+  --secondary-color: #ffbf00;
+  --accent-color: #ff07c1;
+  --positive-color: #07FF45;
+  --negative-color: #C10015;
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+nav {
+  position: relative;
+  top: 0;
+  width: 100%;
+}
+nav > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--primary-color);
+}
+nav > ul > li {
+  display: inline;
+  float: left;
+  border-right: 1px solid var(--secondary-color);
+}
+nav > ul > li > a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px 15px;
+  text-decoration: none;
+}

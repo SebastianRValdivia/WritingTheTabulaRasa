@@ -43,11 +43,17 @@
 
     <q-separator inset />
 
-    <q-editor
+    <q-input
       v-model="contentInput"
-      :definitions="{
-      }"
-      flat
+      autogrow
+      borderless
+      placeholder="content"
+      @blur="toggleToPreview"
+    />
+
+    <MarkdownPreview 
+      :md="contentInput"
+      v-if="isPreviewOpen"
     />
 
     <q-page-sticky position="bottom-right" :offset="[20, 20]">
@@ -61,9 +67,13 @@ import { ref } from "vue"
 import api from "src/api"
 
 import { useWikiStore } from "src/stores/wiki-store"
+import MarkdownPreview from "src/components/MarkdownPreview"
 
 export default {
   name: "EncyclopediaEditorPage",
+  components: {
+    MarkdownPreview,
+  },
   setup() {
     const wikiStore = useWikiStore()
 
@@ -72,6 +82,7 @@ export default {
     const contentInput = ref("")
     const isCardEditorOpen = ref(false)
     const cardContentInput = ref("")
+    const isPreviewOpen = ref(false)
 
     async function submit () {
       let resultPagePost = await wikiStore.saveWikiPage({
@@ -86,9 +97,11 @@ export default {
         })
       }
     }
-
     function toggleCardEditor() {
       isCardEditorOpen.value = !isCardEditorOpen.value
+    }
+    function toggleToPreview() {
+      isPreviewOpen.value = true
     }
 
     return {
@@ -99,6 +112,8 @@ export default {
       toggleCardEditor,
       isCardEditorOpen,
       cardContentInput,
+      isPreviewOpen,
+      toggleToPreview,
     }
   }
 }

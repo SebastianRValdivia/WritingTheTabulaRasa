@@ -178,7 +178,7 @@ REST_FRAMEWORK = {
 }
 
 # Session configuration
-LOGIN_REDIRECT_URL = "/"
+LOGIN_REDIRECT_URL = "/lite/"
 
 # Cors headers configuration
 CORS_ORIGIN_ALLOW_ALL = True

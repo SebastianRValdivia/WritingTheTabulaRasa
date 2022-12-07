@@ -18,6 +18,9 @@
           position="top-right" :offset="[20, 20]"
         >
           <q-card class="card-width">
+            <div class="row justify-end">
+              <q-btn class="col-2 q-pa-sm" icon="close" flat size="xs"/>
+            </div>
             <q-card-section>
               <q-input
                 v-model="cardContentInput"

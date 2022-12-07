@@ -13,8 +13,20 @@
           icon="post_add"
           @click="toggleCardEditor()"
         />
-        <q-page-sticky position="top-right" :offset="[20, 20]">
+        <q-page-sticky 
+          v-if="isCardEditorOpen"
+          position="top-right" :offset="[20, 20]"
+        >
           <q-card class="card-width">
+            <div class="row justify-end">
+              <q-btn 
+                class="col-2 q-pa-sm"
+                icon="close"
+                flat 
+                size="xs"
+                @click="toggleCardEditor()"
+              />
+            </div>
             <q-card-section>
               <q-input
                 v-model="cardContentInput"
@@ -37,12 +49,23 @@
 
     <q-separator inset />
 
-    <q-editor
-      v-model="contentInput"
-      :definitions="{
-      }"
-      flat
-    />
+    <div class="q-pa-md">
+      <q-input
+        v-model="contentInput"
+        autogrow
+        borderless
+        :placeholder="$t('encyclopediaEditorPage.content')"
+        @blur="toggleToPreview"
+        v-if="!isPreviewOpen"
+      />
+      
+    </div>
+    <div class="q-pa-md" v-if="isPreviewOpen">
+      <MarkdownPreview 
+        :md="contentInput"
+        @click="toggleToInput"
+      />
+    </div>
 
     <q-page-sticky position="bottom-right" :offset="[20, 20]">
       <q-btn fab icon="done" color="primary" @click="submit"/>
@@ -55,9 +78,13 @@ import { ref } from "vue"
 import api from "src/api"
 
 import { useWikiStore } from "src/stores/wiki-store"
+import MarkdownPreview from "src/components/MarkdownPreview"
 
 export default {
   name: "EncyclopediaEditorPage",
+  components: {
+    MarkdownPreview,
+  },
   setup() {
     const wikiStore = useWikiStore()
 
@@ -66,6 +93,7 @@ export default {
     const contentInput = ref("")
     const isCardEditorOpen = ref(false)
     const cardContentInput = ref("")
+    const isPreviewOpen = ref(false)
 
     async function submit () {
       let resultPagePost = await wikiStore.saveWikiPage({
@@ -80,9 +108,16 @@ export default {
         })
       }
     }
-
     function toggleCardEditor() {
       isCardEditorOpen.value = !isCardEditorOpen.value
+    }
+    function toggleToPreview() {
+      if (contentInput.value) {
+        isPreviewOpen.value = true
+      }
+    }
+    function toggleToInput() {
+      isPreviewOpen.value = false
     }
 
     return {
@@ -91,7 +126,11 @@ export default {
       contentInput,
       submit,
       toggleCardEditor,
+      isCardEditorOpen,
       cardContentInput,
+      isPreviewOpen,
+      toggleToPreview,
+      toggleToInput,
     }
   }
 }
@@ -102,7 +141,7 @@ export default {
   font-size: 3rem;
 }
 .card-width {
-  min-width: 350px;
-  max-width: 400px;
+  min-width: 18rem;
+  max-width: 18rem;
 }
 </style>

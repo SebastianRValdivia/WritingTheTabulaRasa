@@ -45,6 +45,7 @@ const sheetPage = {
 const encyclopediaEditorPage = {
   title: "Page title",
   epigraph: "Epigraph",
+  content: "Page content"
 }
 
 const imageUploadDialog = {

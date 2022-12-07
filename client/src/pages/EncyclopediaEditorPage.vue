@@ -49,12 +49,15 @@
       borderless
       placeholder="content"
       @blur="toggleToPreview"
+      v-if="!isPreviewOpen"
     />
 
-    <MarkdownPreview 
-      :md="contentInput"
-      v-if="isPreviewOpen"
-    />
+    <div v-if="isPreviewOpen">
+      <MarkdownPreview 
+        :md="contentInput"
+        @click="toggleToInput"
+      />
+    </div>
 
     <q-page-sticky position="bottom-right" :offset="[20, 20]">
       <q-btn fab icon="done" color="primary" @click="submit"/>
@@ -103,6 +106,9 @@ export default {
     function toggleToPreview() {
       isPreviewOpen.value = true
     }
+    function toggleToInput() {
+      isPreviewOpen.value = false
+    }
 
     return {
       titleInput,
@@ -114,6 +120,7 @@ export default {
       cardContentInput,
       isPreviewOpen,
       toggleToPreview,
+      toggleToInput,
     }
   }
 }

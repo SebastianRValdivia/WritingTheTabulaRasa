@@ -14,11 +14,17 @@
       <nav>
         <ul>
           {% if user.is_authenticated %}
-            <a href="">{{ user.username }}</a>
+            <li>
+              <a href="{% url 'index' %}">{{ user.username }}</a>
+            </li>
           {% else %}
-            <a href="{% url 'login' %}">Log In</a>
+            <li>
+              <a href="{% url 'login' %}">Log In</a>
+            </li>
           {% endif %}
-          <li><a href="{% url 'index' %}">Index</a></li>
+          <li>
+            <a href="{% url 'index' %}">Index</a>
+          </li>
         </ul>
       </nav>
           

@@ -19,7 +19,13 @@
         >
           <q-card class="card-width">
             <div class="row justify-end">
-              <q-btn class="col-2 q-pa-sm" icon="close" flat size="xs"/>
+              <q-btn 
+                class="col-2 q-pa-sm"
+                icon="close"
+                flat 
+                size="xs"
+                @click="toggleCardEditor()"
+              />
             </div>
             <q-card-section>
               <q-input
@@ -43,16 +49,18 @@
 
     <q-separator inset />
 
-    <q-input
-      v-model="contentInput"
-      autogrow
-      borderless
-      placeholder="content"
-      @blur="toggleToPreview"
-      v-if="!isPreviewOpen"
-    />
-
-    <div v-if="isPreviewOpen">
+    <div class="q-pa-md">
+      <q-input
+        v-model="contentInput"
+        autogrow
+        borderless
+        :placeholder="$t('encyclopediaEditorPage.content')"
+        @blur="toggleToPreview"
+        v-if="!isPreviewOpen"
+      />
+      
+    </div>
+    <div class="q-pa-md" v-if="isPreviewOpen">
       <MarkdownPreview 
         :md="contentInput"
         @click="toggleToInput"
@@ -104,7 +112,9 @@ export default {
       isCardEditorOpen.value = !isCardEditorOpen.value
     }
     function toggleToPreview() {
-      isPreviewOpen.value = true
+      if (contentInput.value) {
+        isPreviewOpen.value = true
+      }
     }
     function toggleToInput() {
       isPreviewOpen.value = false

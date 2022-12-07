@@ -7,12 +7,17 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="A study assistant made for either a single person or an entire organization.">
-        <link href="css/style.css" rel="stylesheet">
+        <link href="{% static 'style.css' %}" rel="stylesheet">
     </head>
     <body>
 
       <nav>
         <ul>
+          {% if user.is_authenticated %}
+            <a href="">{{ user.username }}</a>
+          {% else %}
+            <a href="{% url 'login' %}">Log In</a>
+          {% endif %}
           <li><a href="{% url 'index' %}">Index</a></li>
         </ul>
       </nav>
@@ -22,9 +27,5 @@
         {% endblock content %}
       </div>
 
-      {% block javascript %}
-        <script src="{% static 'js/base.js' %}"></script>
-      {% endblock javascript %}
-      
     </body>
 </html>

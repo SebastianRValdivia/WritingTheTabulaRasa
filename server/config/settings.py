@@ -148,6 +148,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = "/static/"
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "staticfiles"), 
+]
+
 
 WEBAPP_STATIC_URL = "/webapp/"
 WEBAPP_STATIC_ROOT = BASE_DIR / "webapp/staticfiles"

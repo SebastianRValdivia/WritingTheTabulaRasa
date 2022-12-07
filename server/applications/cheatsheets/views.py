@@ -1,5 +1,6 @@
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from django.views.generic import ListView
 
 from applications.cheatsheets.models import SheetModel, CheatModel
 from applications.cheatsheets.serializers import (
@@ -20,3 +21,9 @@ class CheatViewSet(ModelViewSet):
     serializer_class = CheatSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
     filterset_fields = ["sheet"]
+
+
+class SheetLiteListView(ListView):
+
+    model = SheetModel
+    context_object_name = 'sheets'

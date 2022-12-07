@@ -1,0 +1,11 @@
+{% extends "lite/_base.html" %}
+
+{% block content %}
+  <ul>
+    {% for sheet in sheets %}
+      <li>
+        {{ sheet.title }}
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

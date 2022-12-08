@@ -60,6 +60,14 @@ They are classified by task that are only available to a registered user (non ad
 - User fill the resource information and description
 - User click on save the resource and it's added to the research
 
+### Add cheat sheet
+
+- User goes to cheat sheet list from the navigation bar
+- User click on add button
+- User goes to new cheat sheet page
+- User inputs title and some cheat
+- User saves cheat sheet
+
 ### Complete task
 
 - User opens user menu and click on tasks
@@ -86,6 +94,24 @@ They are classified by task that are only available to a registered user (non ad
 - User find the task it wants to delete in the list of tasks
 - User clicks on delete button and is ask to confirm
 - User confirms and task is deleted 
+
+### Delete cheat sheet
+
+- User goes to cheat sheet page
+- User click on edit button
+- User sees edition of cheat sheet page
+- User click on delete sheet
+- User is prompted with a confirmation
+- User confirm and deletes the cheat sheet
+
+### Delete a cheat
+
+- User goes to cheat sheet page
+- User click on edit button
+- User sees edition of sheet
+- User click on delete button of a cheat
+- User is prompted with a confirmation
+- User confirm and deletes the cheat
 
 ### Log In
 

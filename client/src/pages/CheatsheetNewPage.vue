@@ -69,10 +69,12 @@ export default {
     function addCheat() {
       let newCheat = {
         title: null,
-        content: null
+        content: null,
+        size: null,
       }
       newCheat.title = cheatTitleInput.value
       newCheat.content = cheatContentInput.value
+      newCheat.size = cheatSizeInput.value
       
       cheatList.value.push(newCheat)
     }
@@ -85,14 +87,14 @@ export default {
           let cheatCreated = await cheatsheetStore.createCheat({
             title: cheat.title,
             content: cheat.content,
-            sheet: sheetCreated.id
+            sheet: sheetCreated.id,
+            size: cheat.size,
           })
         })
       }
     }
 
     function reduceSize() {
-      console.log(cheatSizeInput.value + "-1")
       1 < cheatSizeInput.value
         ? cheatSizeInput.value -= 1
         : console.log("cant more")

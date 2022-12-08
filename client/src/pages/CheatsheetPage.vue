@@ -8,7 +8,7 @@
       <div 
         v-for="cheat in cheats"
         :key="cheat.id"
-        :class="hasSize(cheat.size)"
+        :class="cheatsheetHasSize(cheat.size)"
       >
         <div>
           <h5>{{ cheat.title }}</h5>
@@ -27,6 +27,7 @@ import { useQuasar } from "quasar"
 
 import { useCheatsheetStore } from "src/stores/cheatsheet-store"
 import MarkdownPreview from "src/components/MarkdownPreview"
+import { cheatsheetHasSize } from "src/utils/cheatsheets"
 
 export default {
   props: {
@@ -42,19 +43,6 @@ export default {
     const sheet = ref({})
     const cheats = ref({})
 
-    function hasSize(size) {
-      switch (size) {
-        case 1:
-          return "col-3"
-        case 2:
-          return "col-6"
-        case 3:
-          return "col-12"
-        default:
-          return "col"
-      }
-    }
-
     onBeforeMount(async () => {
       $q.loading.show()
       await cheatsheetStore.retrieveCheats()
@@ -66,7 +54,7 @@ export default {
     return {
       cheats,
       sheet,
-      hasSize,
+      cheatsheetHasSize,
     }
   }
 

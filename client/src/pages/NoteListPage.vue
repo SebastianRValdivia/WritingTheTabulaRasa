@@ -45,7 +45,7 @@
 <script>
 import { ref, onBeforeMount, computed, onBeforeUnmount } from "vue"
 import { useI18n } from "vue-i18n"
-import { useQuasar } from 'quasar'
+import { useQuasar, useMeta } from 'quasar'
 
 import { useNoteStore } from "src/stores/note-store"
 import { useUserStore } from "src/stores/user-store"
@@ -114,6 +114,9 @@ export default {
       appStore.clearTabs()
     })
 
+    useMeta({
+      title: t("noteListPage.pageTitle")
+    })
 
     return {
       noteStore,

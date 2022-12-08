@@ -6,13 +6,13 @@
         v-model.number="timerSettings.workTime.value"
         type="number"
         class="setting-input col-3"
-        :hint="$t('toolPage.pomoWorkTime')"
+        :hint="$t('toolsPage.pomoWorkTime')"
       />
       <q-input
         v-model.number="timerSettings.restTime.value"
         type="number"
         class="setting-input col-3"
-        :hint="$t('toolPage.pomoRestTime')"
+        :hint="$t('toolsPage.pomoRestTime')"
       />
       <q-btn flat round color="secondary" icon="save" @click="saveTimerSettings" />
     </div>
@@ -21,12 +21,16 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref } from 'vue'
+import { useMeta } from "quasar"
+import { useI18n } from "vue-i18n"
 
-import { useToolStore } from 'src/stores/tool-store';
+import { useToolStore } from 'src/stores/tool-store'
 
 export default {
+  name: "ToolsPage",
   setup() {
+    const { t } = useI18n()
     const toolStore = useToolStore()
 
     const timerSettings = {
@@ -39,6 +43,10 @@ export default {
         timerSettings.restTime.value
       )
     }
+
+    useMeta({
+      title: t("toolsPage.pageTitle")
+    })
 
     return {
       toolStore,

@@ -24,16 +24,23 @@
 
 <script>
 import { onBeforeMount } from "vue"
+import { useI18n } from "vue-i18n"
+import { useMeta } from "quasar"
 
 import { useWikiStore } from "src/stores/wiki-store"
 
 export default {
-  name: "EncyclopediaPage",
+  name: "EncyclopediaListPage",
   setup() {
+    const { t } = useI18n()
     const wikiStore = useWikiStore()
 
     onBeforeMount(async() => {
       wikiStore.retrieveWikiPages()
+    })
+
+    useMeta({
+      title: t("encyclopediaListPage.pageTitle")
     })
 
     return {

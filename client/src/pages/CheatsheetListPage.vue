@@ -18,13 +18,17 @@
 
 <script>
 import { onBeforeMount } from "vue"
-import { useQuasar } from "quasar"
+import { useQuasar, useMeta } from "quasar"
+import { useI18n } from "vue-i18n"
 
 import { useCheatsheetStore } from "src/stores/cheatsheet-store"
 
 export default {
+  name: "CheatsheetListPage",
   setup() {
     const $q = useQuasar()
+    const { t } = useI18n()
+
     const cheatsheetStore = useCheatsheetStore()
     
     onBeforeMount(async () => {
@@ -33,6 +37,9 @@ export default {
       $q.loading.hide()
     })
     
+    useMeta({
+      title: t("cheatSheetListPage.pageTitle"),
+    })
     return {
       cheatsheetStore,
     }

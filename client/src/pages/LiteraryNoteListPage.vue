@@ -11,7 +11,7 @@
 
 <script>
 import { onBeforeMount } from "vue"
-import { useQuasar } from "quasar"
+import { useQuasar, useMeta } from "quasar"
 import { useI18n } from "vue-i18n"
 import { useAppStore } from "src/stores/app-store"
 
@@ -33,6 +33,10 @@ export default {
       })
       await noteStore.retrieveLiteraryNotes()
       $q.loading.hide()
+    })
+
+    useMeta({
+      title: t("literaryNoteListPage.pageTitle")
     })
 
     return {

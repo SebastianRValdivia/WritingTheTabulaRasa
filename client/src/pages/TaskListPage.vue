@@ -80,7 +80,7 @@
 
 <script>
 import { ref, reactive, computed, onBeforeMount } from "vue"
-import { useQuasar } from "quasar"
+import { useQuasar, useMeta } from "quasar"
 import { useI18n } from "vue-i18n"
 import Fuse from "fuse.js"
 
@@ -198,6 +198,10 @@ export default {
       $q.loading.show()
       await taskStore.retrieveTasks()
       $q.loading.hide()
+    })
+
+    useMeta({
+      title: t("taskListPage.pageTitle"),
     })
 
     return {

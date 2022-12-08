@@ -108,6 +108,7 @@ module.exports = configure(function (ctx) {
         "Loading",
         "Notify",
         "Dialog",
+        "Meta",
       ],
       config: {
         loading: {

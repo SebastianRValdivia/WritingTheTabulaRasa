@@ -16,7 +16,7 @@
 <script>
 import { reactive } from "vue"
 import { useRouter } from "vue-router"
-import { useQuasar, date } from "quasar"
+import { useQuasar, date, useMeta } from "quasar"
 import { useI18n } from "vue-i18n"
 
 import { useScheduleStore } from "src/stores/schedule-store"
@@ -51,6 +51,10 @@ export default {
         ? router.push({name: "schedules"})
         : quasar.notify({ color: "negative", message: t("failed")})
     }
+
+    useMeta({
+      title: t("goalNewPage.pageTitle")
+    })
 
     return {
       newGoalInput,

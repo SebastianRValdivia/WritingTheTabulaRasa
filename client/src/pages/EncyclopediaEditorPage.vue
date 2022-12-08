@@ -76,6 +76,8 @@
 <script>
 import { ref } from "vue"
 import api from "src/api"
+import { useI18n } from "vue-i18n"
+import { useMeta } from "quasar"
 
 import { useWikiStore } from "src/stores/wiki-store"
 import MarkdownPreview from "src/components/MarkdownPreview"
@@ -86,6 +88,7 @@ export default {
     MarkdownPreview,
   },
   setup() {
+    const { t } = useI18n()
     const wikiStore = useWikiStore()
 
     const titleInput = ref("")
@@ -119,6 +122,10 @@ export default {
     function toggleToInput() {
       isPreviewOpen.value = false
     }
+
+    useMeta({
+      title: t("encyclopediaEditorPage.pageTitle")
+    })
 
     return {
       titleInput,

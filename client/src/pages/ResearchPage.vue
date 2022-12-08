@@ -14,7 +14,8 @@
 
 <script>
 import { ref, onBeforeMount } from "vue"
-import { date } from "quasar"
+import { date, useMeta } from "quasar"
+import { useI18n } from "vue-i18n"
 
 import { useResearchStore } from "src/stores/research-store"
 
@@ -24,6 +25,7 @@ export default {
     id: String
   },
   setup(props) {
+    const { t } = useI18n()
     const researchStore = useResearchStore()
 
     const researchProcess = ref({})
@@ -35,6 +37,11 @@ export default {
           Number(props.id)
         )
       }
+    })
+
+    useMeta({
+      title: t("researchPage.pageTitle"),
+      titleTemplate: title => `${title} - N°${props.id}`,
     })
 
     return {

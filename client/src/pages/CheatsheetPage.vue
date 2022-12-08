@@ -23,13 +23,15 @@
 
 <script>
 import { ref, onBeforeMount } from "vue"
-import { useQuasar } from "quasar"
+import { useQuasar, useMeta } from "quasar"
+import { useI18n } from "vue-i18n"
 
 import { useCheatsheetStore } from "src/stores/cheatsheet-store"
 import MarkdownPreview from "src/components/MarkdownPreview"
 import { cheatsheetHasSize } from "src/utils/cheatsheets"
 
 export default {
+  name: "CheatsheetPage",
   props: {
     title: String
   },
@@ -38,6 +40,7 @@ export default {
   },
   setup(props) {
     const $q = useQuasar()
+    const { t } = useI18n()
     const cheatsheetStore = useCheatsheetStore()
 
     const sheet = ref({})
@@ -49,6 +52,11 @@ export default {
       sheet.value = cheatsheetStore.getSheetByUrl(props.title)
       cheats.value = cheatsheetStore.getCheatsBySheet(sheet.value.id)
       $q.loading.hide()
+    })
+
+    useMeta({
+      title: t("cheatSheetPage.pageTitle"),
+      titleTemplate: title => `${title} - ${sheet.value.title}`,
     })
 
     return {

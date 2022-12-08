@@ -3,8 +3,7 @@ const routes = [
     path: "/",
     component: () => import('layouts/MainLayout'),
     children: [
-      { 
-        path: "",
+      { path: "",
         name: "home",
         component: () => import('pages/IndexPage') 
       },
@@ -79,6 +78,12 @@ const routes = [
         path: "encyclopedia/page/:title",
         name: "encyclopediaPage",
         component: () => import("src/pages/EncyclopediaPage"),
+        props: true
+      },
+      {
+        path: "research/:id",
+        name: "researchPage",
+        component: () => import("src/pages/ResearchPage"),
         props: true
       },
     ]

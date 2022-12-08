@@ -47,6 +47,9 @@ const encyclopediaEditorPage = {
   epigraph: "Epigraph",
   content: "Page content"
 }
+const researchPage = {
+  startDate: "Start date"
+}
 
 const imageUploadDialog = {
   caption: "Caption"
@@ -69,6 +72,7 @@ export default {
   toolPage,
   sheetPage,
   encyclopediaEditorPage,
+  researchPage,
 
   imageUploadDialog,
 

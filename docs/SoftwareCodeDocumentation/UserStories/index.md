@@ -45,6 +45,13 @@ They are classified by task that are only available to a registered user (non ad
 - User completes the initial information and objectives of the research
 - User click on start research and is redirected to the page
 
+### Add a stage of a research process
+
+- User goes to research page
+- User click on add stage
+- User completes stage information and click save
+- User sees the new stage listed in the research process page
+
 ### Add research resource
 
 - User click research link in the navigation bar
@@ -65,6 +72,13 @@ They are classified by task that are only available to a registered user (non ad
 - User click note and sees the delete button
 - User click the delete button and is ask to confirm
 - User confirms and note is deleted, children are moved one level above
+
+### Delete a research
+
+- User goes to the research page
+- User click on delete research button
+- User is prompted with a confirmation
+- User confirms an confirms and deletes the research
 
 ### Delete task
 
@@ -113,3 +127,10 @@ They are classified by task that are only available to a registered user (non ad
 - User click on cheat sheets link from the navigation bar
 - User sees a list of cheat sheets and click on the one he want to see
 - User is redirected to the view of the cheat sheets 
+
+### View research process
+
+- User clicks on research link from the navigation bar and sees a list of researches
+- User search a particular research process and click it
+- User sees research information and steps
+- User sees resources used for the research process

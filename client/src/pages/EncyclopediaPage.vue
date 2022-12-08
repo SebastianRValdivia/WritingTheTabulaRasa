@@ -21,15 +21,16 @@
 
 <script>
 import { ref, onBeforeMount } from "vue"
-import { useQuasar } from "quasar"
+import { useQuasar, useMeta } from "quasar"
 import { useRouter } from "vue-router"
-
+import { useI18n } from "vue-i18n"
 
 import api from "src/api"
 import { useWikiStore } from "src/stores/wiki-store"
 import MarkdownPreview from "src/components/MarkdownPreview"
 
 export default {
+  name: "EncyclopediaPage",
   props: {
     title: String,
   },
@@ -38,6 +39,7 @@ export default {
   },
   setup(props) {
     const $q = useQuasar()
+    const { t } = useI18n()
     const $router = useRouter()
     const wikiStore = useWikiStore()
 
@@ -64,6 +66,11 @@ export default {
         pageCard.value = cardFromServer.card
       }
       $q.loading.hide()
+    })
+
+    useMeta({
+      title: "Encyclopedia page",
+      titleTemplate: title => `${title} - ${pageData.value.title}`
     })
 
     return {

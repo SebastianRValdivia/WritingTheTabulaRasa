@@ -48,16 +48,20 @@
 
 <script>
 import { ref } from "vue"
+import { useMeta } from "quasar"
+import { useI18n } from "vue-i18n"
 
 import { useCheatsheetStore } from "src/stores/cheatsheet-store"
 import MarkdownPreview from "src/components/MarkdownPreview"
 import { cheatsheetHasSize } from "src/utils/cheatsheets"
 
 export default {
+  name: "CheatsheetNewPage",
   components: {
     MarkdownPreview
   },
   setup() {
+    const { t } = useI18n()
     const cheatsheetStore = useCheatsheetStore()
 
     const sheetTitleInput = ref("")
@@ -105,6 +109,9 @@ export default {
         : console.log("cant more")
     }
 
+    useMeta({
+      title: t("cheatSheetNewPage.pageTitle"),
+    })
     return {
       sheetTitleInput,
       cheatList,

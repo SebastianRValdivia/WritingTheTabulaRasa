@@ -40,12 +40,15 @@
 
 <script>
 import { ref, onBeforeMount } from "vue"
-import { useQuasar, date } from "quasar"
+import { useQuasar, date, useMeta } from "quasar"
+import { useI18n } from "vue-i18n"
 
 import { useScheduleStore } from "src/stores/schedule-store"
 
 export default {
+  name: "SchedulePage",
   setup() {
+    const { t } = useI18n()
     const scheduleStore = useScheduleStore()
     const $q = useQuasar()
 
@@ -62,6 +65,10 @@ export default {
         objectivesDates.value.push(date.formatDate(objective.date, "YYYY/MM/DD"))
       })
       $q.loading.hide()
+    })
+
+    useMeta({
+      title: t("schedulePage.pageTitle")
     })
 
     return {

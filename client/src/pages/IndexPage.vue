@@ -9,9 +9,18 @@
 </template>
 
 <script>
-import { defineComponent } from "vue";
+import { useMeta } from "quasar"
+import { useI18n } from "vue-i18n"
 
-export default defineComponent({
+
+export default {
   name: "IndexPage",
-});
+  setup() {
+    const { t } = useI18n()
+
+    useMeta({
+      title: t("indexPage.pageTitle")
+    })
+  }
+}
 </script>

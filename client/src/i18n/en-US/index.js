@@ -13,6 +13,9 @@ const mainDrawer = {
   logOut: "Log out"
 }
 
+const indexPage = {
+  pageTitle: "Writing The Tabula Rasa"
+}
 const notePages = {
   permanent: "Permanent",
   fleeting: "Fleeting",
@@ -21,13 +24,16 @@ const notePages = {
   empty: "There are no notes yet",
 }
 const schedulePage = {
+  pageTitle: "My schedule",
   empty: "No goals yet",
   calendar: "Calendar",
 }
 const goalNewPage = {
+  pageTitle: "New goal",
   error: "Incomplete data"
 }
 const taskListPage = {
+  pageTitle: "My tasks",
   showCompleted: "Show completed",
   requiredWrong: "Required task doesn't exist",
   requiredIncomplete: "Required task is incomplete",
@@ -35,20 +41,45 @@ const taskListPage = {
   deleteTaskTip: "Deleting a task will completely any traces of it. Are you sure?",
   taskDeleted: "Task Deleted"
 }
-const toolPage = {
+const toolsPage = {
+  pageTitle: "My tools",
   pomoWorkTime: "Work interval",
   pomoRestTime: "Rest interval"
 }
 const sheetPage = {
+  pageTitle: "Sheet",
   noSheets: "No cheat sheets yet"
 }
 const encyclopediaEditorPage = {
+  pageTitle: "New page",
   title: "Page title",
   epigraph: "Epigraph",
   content: "Page content"
 }
+const encyclopediaListPage = {
+  pageTitle: "Encyclopedia"
+}
 const researchPage = {
+  pageTitle: "Research",
   startDate: "Start date"
+}
+const cheatSheetListPage = {
+  pageTitle: "Cheat sheets"
+}
+const cheatSheetPage = {
+  pageTitle: "Cheat sheet"
+}
+const cheatSheetNewPage = {
+  pageTitle: "New cheat sheet"
+}
+const fleetingNoteListPage = {
+  pageTitle: "My fleeting notes"
+}
+const literaryNoteListPage = {
+  pageTitle: "My literary notes"
+}
+const noteListPage = {
+  pageTitle: "My notes"
 }
 
 const imageUploadDialog = {
@@ -65,14 +96,22 @@ export default {
   mainLayout,
   mainDrawer,
 
+  indexPage,
   notePages,
   schedulePage,
   goalNewPage,
   taskListPage,
-  toolPage,
+  toolsPage,
   sheetPage,
   encyclopediaEditorPage,
+  encyclopediaListPage,
   researchPage,
+  cheatSheetListPage,
+  cheatSheetPage,
+  cheatSheetNewPage,
+  fleetingNoteListPage,
+  literaryNoteListPage,
+  noteListPage,
 
   imageUploadDialog,
 

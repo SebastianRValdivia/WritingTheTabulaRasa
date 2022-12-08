@@ -85,3 +85,9 @@ Table of the software requirements extracted from the book
 | 21 | Custom metadata | C.4.3 |
 | 22 | Categorization and relationships between resources | C.4.5 |
 
+### User stories
+
+The development of WTR is linear, however user stories are great to describe the required process of an user action. Also, they are used to define the functional tests.
+
+The complete list of user stories can be found [here](UserStories/index.md)
+

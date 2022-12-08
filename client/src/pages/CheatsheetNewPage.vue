@@ -7,7 +7,13 @@
     </div>
 
     <div class="row">
-      <q-card class="cheat-card" v-for="(cheat, index) in cheatList" :key="index">
+      <!-- Cheat card preview -->
+      <q-card 
+        v-for="(cheat, index) in cheatList" 
+        :key="index"
+        class="cheat-card"
+        :class="cheatsheetHasSize(cheat.size)" 
+      >
         <q-card-section>
           {{ cheat.title }}
         </q-card-section>
@@ -16,7 +22,10 @@
         </q-card-section>
       </q-card>
 
-      <q-card class="cheat-card">
+      <q-card 
+        class="cheat-card"
+        :class="cheatsheetHasSize(cheatSizeInput)" 
+      >
         <q-card-section>
           <q-input v-model="cheatTitleInput"/>
         </q-card-section>
@@ -24,6 +33,10 @@
           <q-input type="textarea" v-model="cheatContentInput"/>
         </q-card-section>
         <q-card-actions>
+          <q-btn-group rounded>
+            <q-btn color="primary" rounded glossy icon="remove" @click="reduceSize()"/>
+            <q-btn color="primary" rounded glossy icon="add" @click="expandSize()"/>
+          </q-btn-group>
           <q-space/>
           <q-btn round icon="done" @click="addCheat"/>
         </q-card-actions>
@@ -38,6 +51,7 @@ import { ref } from "vue"
 
 import { useCheatsheetStore } from "src/stores/cheatsheet-store"
 import MarkdownPreview from "src/components/MarkdownPreview"
+import { cheatsheetHasSize } from "src/utils/cheatsheets"
 
 export default {
   components: {
@@ -50,6 +64,7 @@ export default {
     const cheatList = ref([])
     const cheatTitleInput = ref("") 
     const cheatContentInput = ref("")
+    const cheatSizeInput = ref(2)
 
     function addCheat() {
       let newCheat = {
@@ -74,8 +89,18 @@ export default {
           })
         })
       }
+    }
 
-
+    function reduceSize() {
+      console.log(cheatSizeInput.value + "-1")
+      1 < cheatSizeInput.value
+        ? cheatSizeInput.value -= 1
+        : console.log("cant more")
+    }
+    function expandSize() {
+      2 >= cheatSizeInput.value
+        ? cheatSizeInput.value += 1
+        : console.log("cant more")
     }
 
     return {
@@ -83,8 +108,12 @@ export default {
       cheatList,
       cheatTitleInput,
       cheatContentInput,
+      cheatSizeInput,
       addCheat,
       saveCheatsheet,
+      cheatsheetHasSize,
+      reduceSize,
+      expandSize,
     }
   }
 }

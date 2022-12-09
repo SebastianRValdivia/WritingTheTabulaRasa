@@ -1,23 +1,30 @@
 <template>
   <q-page>
-    <div v-if="cheatsheetStore.getSheets.length > 0" class="row justify-center q-gutter-md">
-      <q-itersection
+    <div 
+      v-if="cheatsheetStore.getSheets.length > 0" 
+      class="row justify-center q-gutter-lg"
+    >
+      <q-intersection
         v-for="sheet in cheatsheetStore.getSheets" 
         :key="sheet.id" 
+        once
+        transition="scale"
       >
-        <q-card class="q-pa-md sheet-card">
-          <router-link :to="{name: 'cheatsheet', params: {title: sheet.url}}">
-            <q-card-section class="column items-center text-h4">
+        <router-link 
+          :to="{name: 'cheatsheet', params: {title: sheet.url}}"
+        >
+          <q-card class="q-pa-md sheet-card">
+            <h4 class="text-h4 column items-center">
               {{ sheet.title }}
-            </q-card-section>
-        
+            </h4>
             <q-card-section>
-              {{ sheet.description }}
+              <p>
+                {{ sheet.description }}
+              </p>
             </q-card-section>
-        
-          </router-link>
-        </q-card>
-      </q-itersection>
+          </q-card>
+        </router-link>
+      </q-intersection>
     </div>
     
     <div v-else class="row justify-center">
@@ -69,7 +76,11 @@ export default {
 
 <style scoped>
 .sheet-card {
-  min-width: 20rem;
+  min-width: 25rem;
   min-height: 20rem;
+  max-width: 25rem;
+  max-height: 20rem;
+  color: black;
 }
+a { text-decoration: none; }
 </style>

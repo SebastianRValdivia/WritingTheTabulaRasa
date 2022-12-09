@@ -4,11 +4,12 @@
       v-if="cheatsheetStore.getSheets.length > 0" 
       class="row justify-center q-gutter-lg"
     >
-      <div class="col-12">
+      <div class="col-12 row justify-center">
         <q-input 
           rounded
           outlined
           v-model="searchInput"
+          class="col-4"
         >
           <template v-slot:append>
             <q-icon name="search" />
@@ -102,6 +103,7 @@ export default {
     useMeta({
       title: t("cheatSheetListPage.pageTitle"),
     })
+
     return {
       cheatsheetStore,
       displayedSheets,

@@ -43,6 +43,20 @@ export default {
       }
     }
   },
+  async getSheetByUrl(url) {
+    try {
+      let response = await api.get(`v1/cheatsheets/sheets/?url=${url}`)
+
+      if (response.data.results.length > 0) {
+        return {
+          code: response.status,
+          sheet: response.data.results[0]
+        }
+      } else return false
+    } catch {
+      return false
+    }
+  },
   async postSheet(sheetData) {
     let response = await api.post("v1/cheatsheets/sheets/", sheetData)
     

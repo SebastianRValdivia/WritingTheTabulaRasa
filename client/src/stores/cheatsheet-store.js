@@ -36,6 +36,14 @@ export const useCheatsheetStore = defineStore("cheatsheet", {
         return false
       }
     },
+    async retrieveSheetByUrl(url) {
+      let result = await api.cheatsheets.getSheetByUrl(url)
+
+      if (result.code === 200 && this.getSheetByUrl(url) === undefined) { // Got the sheet and is not in the store
+        this.sheets.push(result.sheet)
+        return true
+      } else return false
+    },
     async createSheet(newSheetData) {
       let result = await api.cheatsheets.postSheet(newSheetData)
 

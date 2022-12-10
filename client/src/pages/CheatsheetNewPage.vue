@@ -57,6 +57,7 @@
 import { ref } from "vue"
 import { useMeta } from "quasar"
 import { useI18n } from "vue-i18n"
+import { useRouter } from "vue-router"
 
 import { useCheatsheetStore } from "src/stores/cheatsheet-store"
 import MarkdownPreview from "src/components/MarkdownPreview"
@@ -70,6 +71,7 @@ export default {
   setup() {
     const { t } = useI18n()
     const cheatsheetStore = useCheatsheetStore()
+    const router = useRouter()
 
     const sheetTitleInput = ref("")
     const sheetDescriptionInput = ref("")
@@ -105,6 +107,7 @@ export default {
           })
         })
       }
+      router.push({name: "cheatsheets"})
     }
 
     function reduceSize() {

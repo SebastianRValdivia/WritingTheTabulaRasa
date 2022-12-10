@@ -27,7 +27,8 @@ class CheatViewSet(ModelViewSet):
 class SheetLiteListView(ListView):
 
     model = SheetModel
-    context_object_name = 'sheets'
+    context_object_name = "sheets"
+    template_name = "cheatsheets/sheet_list.html"
 
 class SheetLiteDetailView(DetailView):
 

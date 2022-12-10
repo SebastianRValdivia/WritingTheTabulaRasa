@@ -1,0 +1,13 @@
+{% extends "lite/_base.html" %}
+
+{% block content %}
+  <ul>
+    {% for sheet in sheets %}
+      <li>
+        <a href="{% url 'sheet_detail' sheet.url %}">
+          {{ sheet.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

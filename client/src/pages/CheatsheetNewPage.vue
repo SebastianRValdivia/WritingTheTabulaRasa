@@ -1,9 +1,16 @@
 <template>
   <q-page class="q-pa-md justify-center">
-    <div class="row q-pb-xl">
+    <div class="row q-pb-md">
       <q-input v-model="sheetTitleInput" input-class="text-h3"/>
       <q-space/>
       <q-btn :label="$t('done')" color="primary" @click="saveCheatsheet"/>
+    </div>
+    <div class="row q-pb-xl">
+      <q-input 
+        v-model="sheetDescriptionInput"
+        autogrow 
+        placeholder="" 
+      />
     </div>
 
     <div class="row">
@@ -65,6 +72,7 @@ export default {
     const cheatsheetStore = useCheatsheetStore()
 
     const sheetTitleInput = ref("")
+    const sheetDescriptionInput = ref("")
     const cheatList = ref([])
     const cheatTitleInput = ref("") 
     const cheatContentInput = ref("")
@@ -84,7 +92,8 @@ export default {
     }
     async function saveCheatsheet() {
       let sheetCreated = await cheatsheetStore.createSheet({
-        title: sheetTitleInput.value
+        title: sheetTitleInput.value,
+        description: sheetDescriptionInput.value
       })
       if (sheetCreated) {
         cheatList.value.forEach(async (cheat) => {
@@ -114,6 +123,7 @@ export default {
     })
     return {
       sheetTitleInput,
+      sheetDescriptionInput,
       cheatList,
       cheatTitleInput,
       cheatContentInput,

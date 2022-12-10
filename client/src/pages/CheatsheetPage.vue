@@ -25,6 +25,7 @@
 import { ref, onBeforeMount } from "vue"
 import { useQuasar, useMeta } from "quasar"
 import { useI18n } from "vue-i18n"
+import { onBeforeRouteUpdate } from 'vue-router'
 
 import { useCheatsheetStore } from "src/stores/cheatsheet-store"
 import MarkdownPreview from "src/components/MarkdownPreview"
@@ -33,7 +34,7 @@ import { cheatsheetHasSize } from "src/utils/cheatsheets"
 export default {
   name: "CheatsheetPage",
   props: {
-    title: String
+    url: String
   },
   components: {
     MarkdownPreview,
@@ -46,12 +47,24 @@ export default {
     const sheet = ref({})
     const cheats = ref({})
 
-    onBeforeMount(async () => {
+    async function loadPage(cheatUrl) {
       $q.loading.show()
-      await cheatsheetStore.retrieveCheats()
-      sheet.value = cheatsheetStore.getSheetByUrl(props.title)
-      cheats.value = cheatsheetStore.getCheatsBySheet(sheet.value.id)
+      if (cheatsheetStore.getSheetByUrl(cheatUrl) === undefined) { // Sheet not in store
+        let result = await cheatsheetStore.retrieveSheetByUrl(cheatUrl) // Retrieve the sheet
+        sheet.value = cheatsheetStore.getSheetByUrl(cheatUrl)
+        cheats.value = cheatsheetStore.getCheatsBySheet(sheet.value.id)
+      } else {
+        sheet.value = cheatsheetStore.getSheetByUrl(cheatUrl)
+        cheats.value = cheatsheetStore.getCheatsBySheet(sheet.value.id)
+      }
       $q.loading.hide()
+    }
+
+    onBeforeMount(() => {
+      loadPage(props.url)
+    })
+    onBeforeRouteUpdate((to) => {
+      loadPage(to.params.url)
     })
 
     useMeta({

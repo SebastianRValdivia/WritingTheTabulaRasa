@@ -120,6 +120,7 @@ export default {
   max-width: 25rem;
   max-height: 20rem;
   color: black;
+  overflow: hidden;
 }
 a { text-decoration: none; }
 </style>

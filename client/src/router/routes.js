@@ -59,7 +59,7 @@ const routes = [
 
       },
       {
-        path: "cheatsheets/:title/",
+        path: "cheatsheets/:url/",
         name: "cheatsheet",
         component: () => import("src/pages/CheatsheetPage"),
         props: true

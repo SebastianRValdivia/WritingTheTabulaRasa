@@ -1,7 +1,8 @@
 <template>
   <q-page class="q-pa-md">
     <div class="row">
-      <h2>{{ sheet.title }}</h2>
+      <h2 class="text-h2 col-12 q-mb-md">{{ sheet.title }}</h2>
+      <p v-if="sheet.description" class="text-subtitle">{{ sheet.description }}</p>
     </div>
 
     <div class="row q-gutter-md">

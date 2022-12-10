@@ -14,6 +14,7 @@ class SheetViewSet(ModelViewSet):
     queryset = SheetModel.objects.all()
     serializer_class = SheetSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
+    filterset_fields = ["url"]
 
 class CheatViewSet(ModelViewSet):
 

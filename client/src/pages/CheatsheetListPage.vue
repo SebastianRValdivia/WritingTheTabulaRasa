@@ -23,7 +23,7 @@
         transition="scale"
       >
         <router-link 
-          :to="{name: 'cheatsheet', params: {title: sheet.url}}"
+          :to="{name: 'cheatsheet', params: {url: sheet.url}}"
         >
           <q-card class="q-pa-md sheet-card">
             <h4 class="text-h4 column items-center">
@@ -73,9 +73,7 @@ export default {
     const searchInput = ref("")
     const displayedSheets = computed(() => {
       if (searchInput.value) {
-        let i = searchSheet(searchInput.value)
-        console.log(i)
-        return i
+        return searchSheet(searchInput.value)
       } else return cheatsheetStore.getSheets
     })
 

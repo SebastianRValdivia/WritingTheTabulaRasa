@@ -1,15 +1,20 @@
 <template>
   <q-page class="q-pa-md justify-center">
     <div class="row q-pb-md">
-      <q-input v-model="sheetTitleInput" input-class="text-h3"/>
+      <q-input 
+        v-model="sheetTitleInput" 
+        :placeholder="sheetInitialState.title"
+        input-class="text-h3"
+      />
       <q-space/>
+      <q-btn v-if="!isNew" icon="delete" color="negative" @click="deletePage"/>
       <q-btn :label="$t('done')" color="primary" @click="saveCheatsheet"/>
     </div>
     <div class="row q-pb-xl">
       <q-input 
         v-model="sheetDescriptionInput"
         autogrow 
-        placeholder="" 
+        :placeholder="sheetInitialState.description" 
       />
     </div>
 
@@ -28,7 +33,6 @@
           <MarkdownPreview :md="cheat.content" />
         </q-card-section>
       </q-card>
-
       <q-card 
         class="cheat-card"
         :class="cheatsheetHasSize(cheatSizeInput)" 
@@ -49,30 +53,38 @@
         </q-card-actions>
       </q-card>
     </div>
-
   </q-page>
 </template>
 
 <script>
-import { ref } from "vue"
+import { ref, onBeforeMount, reactive } from "vue"
 import { useMeta } from "quasar"
 import { useI18n } from "vue-i18n"
-import { useRouter } from "vue-router"
+import { useRouter, onBeforeRouteUpdate } from "vue-router"
 
 import { useCheatsheetStore } from "src/stores/cheatsheet-store"
 import MarkdownPreview from "src/components/MarkdownPreview"
 import { cheatsheetHasSize } from "src/utils/cheatsheets"
 
 export default {
-  name: "CheatsheetNewPage",
+  name: "CheatsheetEditorPage",
   components: {
     MarkdownPreview
   },
-  setup() {
+  props: {
+    url: String
+  },
+  setup(props) {
     const { t } = useI18n()
     const cheatsheetStore = useCheatsheetStore()
     const router = useRouter()
 
+    const isNew = ref()
+    const sheetInitialState = reactive({
+      id: null,
+      title: "",
+      description: "",
+    })
     const sheetTitleInput = ref("")
     const sheetDescriptionInput = ref("")
     const cheatList = ref([])
@@ -91,25 +103,40 @@ export default {
       newCheat.size = cheatSizeInput.value
       
       cheatList.value.push(newCheat)
+      clearInputs()
+    }
+    function clearInputs() {
+      cheatTitleInput.value = ""
+      cheatContentInput.value = ""
+      cheatSizeInput.value = 2
     }
     async function saveCheatsheet() {
-      let sheetCreated = await cheatsheetStore.createSheet({
-        title: sheetTitleInput.value,
-        description: sheetDescriptionInput.value
-      })
-      if (sheetCreated) {
-        cheatList.value.forEach(async (cheat) => {
-          let cheatCreated = await cheatsheetStore.createCheat({
-            title: cheat.title,
-            content: cheat.content,
-            sheet: sheetCreated.id,
-            size: cheat.size,
-          })
+      if (isNew.value) {
+        let sheetCreated = await cheatsheetStore.createSheet({
+          title: sheetTitleInput.value,
+          description: sheetDescriptionInput.value
         })
+        if (sheetCreated) {
+          cheatList.value.forEach(async (cheat) => {
+            let cheatCreated = await cheatsheetStore.createCheat({
+              title: cheat.title,
+              content: cheat.content,
+              sheet: sheetCreated.id,
+              size: cheat.size,
+            })
+          })
+        }
+        router.push({name: "cheatsheets"})
+      } else {
+        let sheetUpdate = await cheatsheetStore.changeSheet(
+          sheetInitialState.id, // SheetId
+          { // SheetData
+            title: sheetTitleInput.value,
+            description: sheetDescriptionInput.value,
+          }
+        )
       }
-      router.push({name: "cheatsheets"})
     }
-
     function reduceSize() {
       1 < cheatSizeInput.value
         ? cheatSizeInput.value -= 1
@@ -120,11 +147,46 @@ export default {
         ? cheatSizeInput.value += 1
         : console.log("cant more")
     }
+    function deletePage() {
+      if (sheetInitialState.id !== null){
+        cheatsheetStore.removeSheetById(sheetInitialState.id)
+        router.push({name: "cheatsheets"})
+      } else {
+        console.error("No id")
+      }
+    }
+    async function loadPage(sheetUrl) {
+      if(sheetUrl) {
+        isNew.value = false
+        let sheet = cheatsheetStore.getSheetByUrl(sheetUrl)
+        sheetInitialState.id = sheet.id
+        sheetInitialState.title = sheet.title
+        sheetInitialState.description = sheet.description
+        if (cheatsheetStore.getCheatsBySheetId(sheet.id) > 0) {
+          cheatList.value = cheatsheetStore.getCheatsBySheetId(sheetInitialState.id)
+        } else {
+          await cheatsheetStore.retrieveCheatsBySheetId(sheet.id)
+          cheatList.value = cheatsheetStore.getCheatsBySheetId(sheetInitialState.id)
+        }
+      } else {
+        isNew.value = true
+      }
+    }
+
+    onBeforeMount(() => {
+      loadPage(props.url)
+    })
+    onBeforeRouteUpdate((to) => {
+      loadPage(to.params.url)
+    })
+
 
     useMeta({
       title: t("cheatSheetNewPage.pageTitle"),
     })
     return {
+      isNew,
+      sheetInitialState,
       sheetTitleInput,
       sheetDescriptionInput,
       cheatList,
@@ -136,6 +198,7 @@ export default {
       cheatsheetHasSize,
       reduceSize,
       expandSize,
+      deletePage,
     }
   }
 }

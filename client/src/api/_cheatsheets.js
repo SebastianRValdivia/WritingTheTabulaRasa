@@ -57,6 +57,21 @@ export default {
       return false
     }
   },
+  async getCheatsBySheetId(sheetId) {
+    try {
+      let response = await api.get(`v1/cheatsheets/cheats/?sheet=${sheetId}`)
+
+      if (response.data.results.length > 0) {
+        return {
+          code: response.status,
+          cheats: response.data.results[0]
+        }
+      } else return false
+    } catch {
+      return false
+    }
+
+  },
   async postSheet(sheetData) {
     let response = await api.post("v1/cheatsheets/sheets/", sheetData)
     
@@ -75,6 +90,36 @@ export default {
         code: response.status,
         newCheat: response.data
       }
+    }
+  },
+  async deleteSheetById(sheetId) {
+    try {
+      let response = await api.delete(`v1/cheatsheets/sheets/${sheetId}/`)
+
+      if (response.status === 202) {
+        return {
+          code: response.status
+        }
+      } else return false
+    } catch {
+      return false
+    }
+  },
+  async patchSheet(sheetId, newSheetData) {
+    try {
+      let response = await api.patch(
+        `v1/cheatsheets/sheets/${sheetId}/`,
+        newSheetData
+      )
+
+      if (response.status === 200) {
+        return {
+          code: 200,
+          updatedSheet: response.data
+        }
+      }
+    } catch {
+      return false
     }
   },
 }

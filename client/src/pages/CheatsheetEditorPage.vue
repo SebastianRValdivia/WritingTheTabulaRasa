@@ -1,16 +1,20 @@
 <template>
   <q-page class="q-pa-md justify-center">
     <div class="row q-pb-md">
-      <q-input v-model="sheetTitleInput" input-class="text-h3"/>
+      <q-input 
+        v-model="sheetTitleInput" 
+        :placeholder="sheetInitialState.title"
+        input-class="text-h3"
+      />
       <q-space/>
-      <q-btn v-if="!isNew" icon="delete"/>
+      <q-btn v-if="!isNew" icon="delete" color="negative" @click="deletePage"/>
       <q-btn :label="$t('done')" color="primary" @click="saveCheatsheet"/>
     </div>
     <div class="row q-pb-xl">
       <q-input 
         v-model="sheetDescriptionInput"
         autogrow 
-        placeholder="" 
+        :placeholder="sheetInitialState.description" 
       />
     </div>
 
@@ -29,7 +33,6 @@
           <MarkdownPreview :md="cheat.content" />
         </q-card-section>
       </q-card>
-
       <q-card 
         class="cheat-card"
         :class="cheatsheetHasSize(cheatSizeInput)" 
@@ -50,12 +53,11 @@
         </q-card-actions>
       </q-card>
     </div>
-
   </q-page>
 </template>
 
 <script>
-import { ref, onBeforeMount } from "vue"
+import { ref, onBeforeMount, reactive } from "vue"
 import { useMeta } from "quasar"
 import { useI18n } from "vue-i18n"
 import { useRouter, onBeforeRouteUpdate } from "vue-router"
@@ -78,6 +80,11 @@ export default {
     const router = useRouter()
 
     const isNew = ref()
+    const sheetInitialState = reactive({
+      id: null,
+      title: "",
+      description: "",
+    })
     const sheetTitleInput = ref("")
     const sheetDescriptionInput = ref("")
     const cheatList = ref([])
@@ -124,9 +131,21 @@ export default {
         ? cheatSizeInput.value += 1
         : console.log("cant more")
     }
+    function deletePage() {
+      if (sheetInitialState.id !== null){
+        cheatsheetStore.removeSheetById(sheetInitialState.id)
+        router.push({name: "cheatsheets"})
+      } else {
+        console.error("No id")
+      }
+    }
     function loadPage(sheetUrl) {
       if(sheetUrl) {
         isNew.value = false
+        let sheet = cheatsheetStore.getSheetByUrl(sheetUrl)
+        sheetInitialState.id = sheet.id
+        sheetInitialState.title = sheet.title
+        sheetInitialState.description = sheet.description
       } else {
         isNew.value = true
       }
@@ -145,6 +164,7 @@ export default {
     })
     return {
       isNew,
+      sheetInitialState,
       sheetTitleInput,
       sheetDescriptionInput,
       cheatList,
@@ -156,6 +176,7 @@ export default {
       cheatsheetHasSize,
       reduceSize,
       expandSize,
+      deletePage,
     }
   }
 }

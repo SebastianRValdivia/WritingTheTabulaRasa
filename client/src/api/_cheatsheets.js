@@ -77,4 +77,17 @@ export default {
       }
     }
   },
+  async deleteSheetById(sheetId) {
+    try {
+      let response = await api.delete(`v1/cheatsheets/sheets/${sheetId}/`)
+
+      if (response.status === 202) {
+        return {
+          code: response.status
+        }
+      } else return false
+    } catch {
+      return false
+    }
+  }
 }

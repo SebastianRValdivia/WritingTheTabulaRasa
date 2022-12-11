@@ -63,7 +63,14 @@ export const useCheatsheetStore = defineStore("cheatsheet", {
       } else {
         return false
       }
+    },
+    async removeSheetById(sheetId) {
+      let result = await api.cheatsheets.deleteSheetById(sheetId)
 
+      if (result) {
+        sheets = sheets.filter((sheet) => sheet.id === sheetId )
+        return true
+      } else return false
     }
   }
 })

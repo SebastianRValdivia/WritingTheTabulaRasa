@@ -26,6 +26,15 @@
           :to="{name: 'cheatsheet', params: {url: sheet.url}}"
         >
           <q-card class="q-pa-md sheet-card">
+            <span class="row justify-end">
+              <q-btn 
+                icon="edit" 
+                size="sm" 
+                round 
+                :to="{name: 'newCheatsheet'}"
+                v-if="userStore.isUserLogged"
+              /> 
+            </span>
             <h4 class="text-h4 column items-center">
               {{ sheet.title }}
             </h4>
@@ -62,6 +71,7 @@ import { useI18n } from "vue-i18n"
 import Fuse from "fuse.js"
 
 import { useCheatsheetStore } from "src/stores/cheatsheet-store"
+import { useUserStore } from "src/stores/user-store"
 
 export default {
   name: "CheatsheetListPage",
@@ -69,6 +79,7 @@ export default {
     const $q = useQuasar()
     const { t } = useI18n()
     const cheatsheetStore = useCheatsheetStore()
+    const userStore = useUserStore()
 
     const searchInput = ref("")
     const displayedSheets = computed(() => {
@@ -104,6 +115,7 @@ export default {
 
     return {
       cheatsheetStore,
+      userStore,
       displayedSheets,
       searchInput,
     }

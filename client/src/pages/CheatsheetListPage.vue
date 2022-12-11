@@ -31,7 +31,7 @@
                 icon="edit" 
                 size="sm" 
                 round 
-                :to="{name: 'newCheatsheet'}"
+                :to="{name: 'cheatsheetEditor'}"
                 v-if="userStore.isUserLogged"
               /> 
             </span>
@@ -58,7 +58,7 @@
         color="secondary" 
         icon="add" 
         size="md" 
-        :to="{name: 'newCheatsheet' }"
+        :to="{name: 'cheatsheetEditor' }"
       />
     </q-page-sticky>
   </q-page>

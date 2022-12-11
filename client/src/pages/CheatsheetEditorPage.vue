@@ -64,7 +64,7 @@ import MarkdownPreview from "src/components/MarkdownPreview"
 import { cheatsheetHasSize } from "src/utils/cheatsheets"
 
 export default {
-  name: "CheatsheetNewPage",
+  name: "CheatsheetEditorPage",
   components: {
     MarkdownPreview
   },

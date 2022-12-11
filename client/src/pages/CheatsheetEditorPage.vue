@@ -3,6 +3,7 @@
     <div class="row q-pb-md">
       <q-input v-model="sheetTitleInput" input-class="text-h3"/>
       <q-space/>
+      <q-btn v-if="!isNew" icon="delete"/>
       <q-btn :label="$t('done')" color="primary" @click="saveCheatsheet"/>
     </div>
     <div class="row q-pb-xl">
@@ -54,10 +55,10 @@
 </template>
 
 <script>
-import { ref } from "vue"
+import { ref, onBeforeMount } from "vue"
 import { useMeta } from "quasar"
 import { useI18n } from "vue-i18n"
-import { useRouter } from "vue-router"
+import { useRouter, onBeforeRouteUpdate } from "vue-router"
 
 import { useCheatsheetStore } from "src/stores/cheatsheet-store"
 import MarkdownPreview from "src/components/MarkdownPreview"
@@ -68,11 +69,15 @@ export default {
   components: {
     MarkdownPreview
   },
-  setup() {
+  props: {
+    url: String
+  },
+  setup(props) {
     const { t } = useI18n()
     const cheatsheetStore = useCheatsheetStore()
     const router = useRouter()
 
+    const isNew = ref()
     const sheetTitleInput = ref("")
     const sheetDescriptionInput = ref("")
     const cheatList = ref([])
@@ -109,7 +114,6 @@ export default {
       }
       router.push({name: "cheatsheets"})
     }
-
     function reduceSize() {
       1 < cheatSizeInput.value
         ? cheatSizeInput.value -= 1
@@ -120,11 +124,27 @@ export default {
         ? cheatSizeInput.value += 1
         : console.log("cant more")
     }
+    function loadPage(sheetUrl) {
+      if(sheetUrl) {
+        isNew.value = false
+      } else {
+        isNew.value = true
+      }
+    }
+
+    onBeforeMount(() => {
+      loadPage(props.url)
+    })
+    onBeforeRouteUpdate((to) => {
+      loadPage(to.params.url)
+    })
+
 
     useMeta({
       title: t("cheatSheetNewPage.pageTitle"),
     })
     return {
+      isNew,
       sheetTitleInput,
       sheetDescriptionInput,
       cheatList,

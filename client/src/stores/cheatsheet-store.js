@@ -11,7 +11,7 @@ export const useCheatsheetStore = defineStore("cheatsheet", {
     getSheetByUrl: (state) => {
       return (sheetUrl) => state.sheets.find((sheet) => sheet.url === sheetUrl)
     },
-    getCheatsBySheet: (state) => {
+    getCheatsBySheetId: (state) => {
       return (sheetId) => state.cheats.filter((cheat) => cheat.sheet === sheetId)
     }
   },
@@ -44,6 +44,14 @@ export const useCheatsheetStore = defineStore("cheatsheet", {
         return true
       } else return false
     },
+    async retrieveCheatsBySheetId(sheetId) {
+      let result = await api.cheatsheets.getCheatsBySheetId(sheetId)
+
+      if (result.code === 200) {
+        this.cheats = [result.cheats, ...this.cheats]
+        return true
+      } else return false
+    },
     async createSheet(newSheetData) {
       let result = await api.cheatsheets.postSheet(newSheetData)
 
@@ -71,6 +79,18 @@ export const useCheatsheetStore = defineStore("cheatsheet", {
         sheets = sheets.filter((sheet) => sheet.id === sheetId )
         return true
       } else return false
-    }
+    },
+    async changeSheet(sheetId, newSheetData) {
+      let result = await api.cheatsheets.patchSheet(sheetId, newSheetData)
+
+      if (result) {
+        // Find the index of the changed sheet
+        let sheetIndex = this.sheets.findIndex((sheet) => sheet.id === sheetId)
+        // Update sheet data is store
+        if (~sheetIndex) this.sheets[sheetIndex] = result.updatedSheet
+        return true
+      } else return false
+
+    },
   }
 })

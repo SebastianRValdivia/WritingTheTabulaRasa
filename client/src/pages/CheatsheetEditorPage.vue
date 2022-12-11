@@ -103,23 +103,39 @@ export default {
       newCheat.size = cheatSizeInput.value
       
       cheatList.value.push(newCheat)
+      clearInputs()
+    }
+    function clearInputs() {
+      cheatTitleInput.value = ""
+      cheatContentInput.value = ""
+      cheatSizeInput.value = 2
     }
     async function saveCheatsheet() {
-      let sheetCreated = await cheatsheetStore.createSheet({
-        title: sheetTitleInput.value,
-        description: sheetDescriptionInput.value
-      })
-      if (sheetCreated) {
-        cheatList.value.forEach(async (cheat) => {
-          let cheatCreated = await cheatsheetStore.createCheat({
-            title: cheat.title,
-            content: cheat.content,
-            sheet: sheetCreated.id,
-            size: cheat.size,
-          })
+      if (isNew.value) {
+        let sheetCreated = await cheatsheetStore.createSheet({
+          title: sheetTitleInput.value,
+          description: sheetDescriptionInput.value
         })
+        if (sheetCreated) {
+          cheatList.value.forEach(async (cheat) => {
+            let cheatCreated = await cheatsheetStore.createCheat({
+              title: cheat.title,
+              content: cheat.content,
+              sheet: sheetCreated.id,
+              size: cheat.size,
+            })
+          })
+        }
+        router.push({name: "cheatsheets"})
+      } else {
+        let sheetUpdate = await cheatsheetStore.changeSheet(
+          sheetInitialState.id, // SheetId
+          { // SheetData
+            title: sheetTitleInput.value,
+            description: sheetDescriptionInput.value,
+          }
+        )
       }
-      router.push({name: "cheatsheets"})
     }
     function reduceSize() {
       1 < cheatSizeInput.value
@@ -139,13 +155,19 @@ export default {
         console.error("No id")
       }
     }
-    function loadPage(sheetUrl) {
+    async function loadPage(sheetUrl) {
       if(sheetUrl) {
         isNew.value = false
         let sheet = cheatsheetStore.getSheetByUrl(sheetUrl)
         sheetInitialState.id = sheet.id
         sheetInitialState.title = sheet.title
         sheetInitialState.description = sheet.description
+        if (cheatsheetStore.getCheatsBySheetId(sheet.id) > 0) {
+          cheatList.value = cheatsheetStore.getCheatsBySheetId(sheetInitialState.id)
+        } else {
+          await cheatsheetStore.retrieveCheatsBySheetId(sheet.id)
+          cheatList.value = cheatsheetStore.getCheatsBySheetId(sheetInitialState.id)
+        }
       } else {
         isNew.value = true
       }

@@ -31,7 +31,7 @@
                 icon="edit" 
                 size="sm" 
                 round 
-                :to="{name: 'cheatsheetEditor'}"
+                :to="{name: 'cheatsheetEditor', params: {url: sheet.url}}"
                 v-if="userStore.isUserLogged"
               /> 
             </span>

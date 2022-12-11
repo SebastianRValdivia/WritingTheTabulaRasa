@@ -53,10 +53,10 @@ const routes = [
         component: () => import ("src/pages/CheatsheetListPage"),
       },
       {
-        path: "cheatsheets/new/",
+        path: "cheatsheets/new/:url?/",
         name: "newCheatsheet",
-        component: () => import ("src/pages/CheatsheetNewPage")
-
+        component: () => import ("src/pages/CheatsheetNewPage"),
+        props: true
       },
       {
         path: "cheatsheets/:url/",

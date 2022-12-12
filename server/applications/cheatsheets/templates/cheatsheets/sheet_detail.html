@@ -1,5 +1,26 @@
 {% extends "lite/_base.html" %}
 
+{% block title %}
+  Cheatsheet - {{ sheet.title }}
+{% endblock %}
+
 {% block content %}
-  {{ sheet.title }}  
+  <h2>
+    {{ sheet.title }}  
+  </h2>
+
+  <ul>
+    {% for cheat in cheats %}
+      <li>
+        <h4>
+          {{ cheat.title }}
+        </h4>
+        <p>
+          {{ cheat.content }}
+        </p>
+      </li>
+    {% endfor %}
+  </ul>
+
+
 {% endblock %}

@@ -37,3 +37,9 @@ class SheetLiteDetailView(DetailView):
     template_name = "cheatsheets/sheet_detail.html"
     slug_url_kwarg = "url"
     slug_field = "url"
+
+    def get_context_data(self, **kwargs):
+        context = super(SheetLiteDetailView, self).get_context_data(**kwargs)
+        context['cheats'] = CheatModel.objects.filter(sheet=self.object.id)
+        return context
+

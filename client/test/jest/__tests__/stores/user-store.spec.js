@@ -32,4 +32,26 @@ describe("User Store", () => {
     expect(result).toBe(true)
     expect(userStore.getUserId).toEqual(expectedResult.userId)
   })
+
+  it("retrieves user token", async () => {
+    const userStore = useUserStore()
+    const expectedResult = {code: 200, token: "a-secret-token"}
+    jest.spyOn(api.user, "postUserAuthentication")
+      .mockResolvedValue(expectedResult)
+    jest.spyOn(api.user, "getUserIdByUsername")
+      .mockResolvedValue({code: 200, userId: 1})
+
+    const result = await userStore.retrieveUserCredentials("username", "password")
+    expect(result).toBe(true)
+    expect(userStore.getToken).toEqual(expectedResult.token)
+    expect(userStore.isUserLogged).toBe(true)
+  })
+  
+  it("logs user out", () => {
+    const userStore = useUserStore()
+      
+    userStore.logOutUser()
+    expect(userStore.isUserLogged).toBe(false)
+  })
+
 })

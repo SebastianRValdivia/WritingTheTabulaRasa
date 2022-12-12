@@ -23,15 +23,14 @@ export const useUserStore = defineStore('user', {
       const userStore = useUserStore()
       this.username = username
       try {
-          let result = await api.user.postUserAuthentication(username, password)
-          this.userToken = result.token
-          await userStore.retrieveUserId()
-          setUserCookies(this.username, this.userId, this.userToken)
-          this.isLogged = true
+        let result = await api.user.postUserAuthentication(username, password)
+        this.userToken = result.token
+        await userStore.retrieveUserId()
+        setUserCookies(this.username, this.userId, this.userToken)
+        this.isLogged = true
+        return true
       } catch {
-        return {
-          code: 400
-        }
+        return false
       }
     },
     async retrieveUserId() {

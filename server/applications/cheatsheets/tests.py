@@ -2,7 +2,7 @@ from django.test import TestCase
 from django.urls import reverse
 from django.db import IntegrityError
 
-from applications.cheatsheets.models import SheetModel
+from applications.cheatsheets.models import SheetModel, CheatModel
 
 # Create your tests here.
 class CheatsheetsLiteTests(TestCase):
@@ -11,7 +11,7 @@ class CheatsheetsLiteTests(TestCase):
     DESCRIPTION = "Algebra cheatsheet"
 
     def setUp(self):
-        SheetModel.objects.create(
+        self.first_sheet = SheetModel.objects.create(
             title=self.TITLE,
             description=self.DESCRIPTION
         )
@@ -50,6 +50,21 @@ class CheatsheetsLiteTests(TestCase):
         ))
         html = response.content.decode()
         self.assertIn(self.TITLE, html)
+
+    def test_renders_cheat_markdown(self):
+        cheat_title = "Cheat Title"
+        cheat_content = "## h2 title"
+        CheatModel.objects.create(
+            title=cheat_title,
+            content=cheat_content,
+            sheet=self.first_sheet,
+        )
+        response = self.client.get(reverse(
+            "sheet_detail",
+            kwargs={'url': self.TITLE},
+        ))
+        html = response.content.decode()
+        self.assertContains(response, "<h2>h2 title</h2>")
 
 
 

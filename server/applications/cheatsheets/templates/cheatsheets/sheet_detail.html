@@ -1,4 +1,5 @@
 {% extends "lite/_base.html" %}
+{% load markdown_extras %}
 
 {% block title %}
   Cheatsheet - {{ sheet.title }}
@@ -16,7 +17,7 @@
           {{ cheat.title }}
         </h4>
         <p>
-          {{ cheat.content }}
+          {{ cheat.content | render_markdown | safe }}
         </p>
       </li>
     {% endfor %}

@@ -68,10 +68,24 @@ They are classified by task that are only available to a registered user (non ad
 - User inputs title and some cheat
 - User saves cheat sheet
 
+### Add activity
+
+- User goes to activity page
+- User click on new activity button
+- User fills the activities exercises
+- User saves the activity
+
 ### Complete task
 
 - User opens user menu and click on tasks
 - User click on the check mark to complete task
+
+### Do activity
+
+- User click on the activity he wants to do
+- User answers the quizzes questions
+- User click finish
+- User sees result and time expend
 
 ### Delete note
 
@@ -133,6 +147,22 @@ They are classified by task that are only available to a registered user (non ad
 - User modify content or title and click on save
 - User sees note with the new content
 
+### Modify cheat sheet
+
+- User open the cheat sheet page
+- User click on the sheet he wants to modify
+- User enters the editor page with the sheet data
+- User does the modification and click saves
+- User is redirected to the preview page of the sheet with the new modification
+
+### Modify encyclopedia page
+
+- User opens encyclopedia page 
+- User click on edit button
+- User enter the editor with the current page data
+- User does the modification and click saves
+- User is redirected to the preview page of the encyclopedia with the new modification
+
 ### Visit notes 
 
 - User opens user menu and click on notes
@@ -160,3 +190,9 @@ They are classified by task that are only available to a registered user (non ad
 - User search a particular research process and click it
 - User sees research information and steps
 - User sees resources used for the research process
+
+### View bibliographic resources
+
+- User clicks on resources from the navigation bar
+- User select explore books
+- User sees a list of books used in the system

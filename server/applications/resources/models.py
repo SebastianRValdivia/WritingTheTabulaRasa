@@ -33,7 +33,7 @@ class ImageModel(models.Model):
         verbose_name_plural = "Images"
 
     def __str__(self):
-        return self.title
+        return self.caption
 
 
 

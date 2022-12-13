@@ -2,14 +2,32 @@
   <q-page>
     <q-list>
       <q-item 
-        v-for="wikiPage in wikiStore.getWikiPageList" 
+        v-for="wikiPage in displayedPages" 
         :key="wikiPage.id"
         :to="{name: 'encyclopediaPage', params:{title: wikiPage.url}}"
+        class="row"
       >
-        {{ wikiPage.title }}
-        <q-tooltip>
-          {{ wikiPage.epigraph}}
-        </q-tooltip>
+        <q-card class="col-12 row justify-between scoped-wiki-card">
+          <div class="col-7 column q-pl-xl q-pt-lg">
+            <h4 class="col-6 text-h4 q-mt-md q-mb-sm">
+              {{ wikiPage.title }}
+            </h4>
+            
+            <p class="text-subtitle1">
+              {{ wikiPage.epigraph}}
+            </p>
+          </div>
+          <div class="col-4 column justify-center">
+            <q-img
+              v-if="wikiPage.image"
+              :src="wikiPage.image"
+              width="12rem"
+              height="12rem"
+              ratio="1"
+              fit="contain"
+            />
+          </div>
+        </q-card>
       </q-item>
     </q-list>
     <q-page-sticky
@@ -23,29 +41,70 @@
 </template>
 
 <script>
-import { onBeforeMount } from "vue"
+import { ref, onBeforeMount } from "vue"
 import { useI18n } from "vue-i18n"
-import { useMeta } from "quasar"
+import { useQuasar, useMeta } from "quasar"
 
 import { useWikiStore } from "src/stores/wiki-store"
+import api from "src/api"
 
 export default {
   name: "EncyclopediaListPage",
   setup() {
     const { t } = useI18n()
     const wikiStore = useWikiStore()
+    const quasar = useQuasar()
+
+    const displayedPages = ref([])
+
+    async function generateWikiPageImgUrl(imgId) {
+      if (imgId) {
+        let result = await api.resources.getImageResourceById(imgId)
+        if (result) {
+          return result.data.file
+        } else return null
+      } else return null
+    }
+
+    async function generatePageImagesUrl() {
+      for (let page of displayedPages.value) {
+        page.image = await generateWikiPageImgUrl(page.image)
+      }
+      return true
+    }
 
     onBeforeMount(async() => {
-      wikiStore.retrieveWikiPages()
+      quasar.loading.show()
+      let result = await wikiStore.retrieveWikiPages()
+      if (result) {
+        displayedPages.value = wikiStore.getWikiPageList
+        result = await generatePageImagesUrl()
+        if (result) {
+          quasar.loading.hide()
+        }
+      }
     })
 
     useMeta({
       title: t("encyclopediaListPage.pageTitle")
     })
-
     return {
-      wikiStore
+      wikiStore,
+      displayedPages,
+      generateWikiPageImgUrl,
     } 
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.scoped-wiki-card {
+  min-height: 15rem;
+  max-height: 15rem;
+}
+.scoped-wiki-card-image {
+  min-height: 12rem;
+  max-height: 12rem;
+
+}
+</style>

@@ -1,6 +1,20 @@
 import { api } from "boot/axios";
 
 export default {
+  async getImageResourceById(imgId) {
+    try {
+      let response = await api.get(`v1/resources/images/${imgId}`)
+
+      if (response.status === 200) {
+        return {
+          code: 200,
+          data: response.data
+        }
+      } else return false
+    } catch {
+      return false
+    }
+  },
   async postImageResource(imageData) {
     let formData = new FormData()
     formData.append("file", imageData.file)

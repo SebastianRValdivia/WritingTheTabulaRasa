@@ -17,7 +17,8 @@ export const useWikiStore = defineStore("wiki", {
 
       if (result.code === 200) {
         this.wikiPages = result.pages
-      }
+        return true
+      } else return false
     },
     async retrieveWikiPageByUrl(url) {
       let result = await api.wiki.getWikiPageByUrl(url)

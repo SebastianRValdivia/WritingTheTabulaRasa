@@ -21,7 +21,8 @@ export const useTaskStore = defineStore("task", {
       let result = await api.tasks.getTasks()
       if (result.code === 200) {
         this.taskList = result.tasks
-      }
+        return true
+      } else return false
     },
     async addNewTask(newTask) {
       const userStore = useUserStore()
@@ -29,7 +30,8 @@ export const useTaskStore = defineStore("task", {
       let result = await api.tasks.postTask(taskData)
       if (result.code === 201) {
         this.taskList.push(result.newTask)
-      }
+        return true
+      } else return false
     },
     async changeTaskStatus(taskData) {
       let result = await api.tasks.patchTask(
@@ -42,8 +44,9 @@ export const useTaskStore = defineStore("task", {
         )
         if (index !== -1) {
           this.taskList[index] = result.newTask
-        }
-      }
+          return true
+        } else return false
+      } else return false
     },
     async removeTask(taskData) {
       let result = await api.tasks.deleteTask(taskData.taskId)
@@ -54,8 +57,9 @@ export const useTaskStore = defineStore("task", {
         )
         if (index !== -1) {
           this.taskList.splice(index, 1)
-        }
-      }
+          return true
+        } else return false
+      } else return false
     }
   }
 })

@@ -7,19 +7,22 @@
         :to="{name: 'encyclopediaPage', params:{title: wikiPage.url}}"
         class="row"
       >
-        <q-card class="col-12 row scoped-wiki-card">
-          <div class="col-7">
+        <q-card class="col-12 row justify-between scoped-wiki-card">
+          <div class="col-7 column q-pl-xl q-pt-lg">
             <h4 class="col-6 text-h4 q-mt-md q-mb-sm">
               {{ wikiPage.title }}
             </h4>
             
-            {{ wikiPage.epigraph}}
+            <p class="text-subtitle1">
+              {{ wikiPage.epigraph}}
+            </p>
           </div>
-          <div class="col-4">
+          <div class="col-4 column justify-center">
             <q-img
               v-if="wikiPage.image"
               :src="wikiPage.image"
-              class="scoped-wiki-card-image"
+              width="12rem"
+              height="12rem"
               ratio="1"
               fit="contain"
             />
@@ -100,8 +103,8 @@ export default {
   max-height: 15rem;
 }
 .scoped-wiki-card-image {
-  min-height: 10rem;
-  max-height: 10rem;
+  min-height: 12rem;
+  max-height: 12rem;
 
 }
 </style>

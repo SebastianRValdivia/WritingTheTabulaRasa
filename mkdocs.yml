@@ -1,0 +1,17 @@
+site_name: Writing The Tabula Rasa
+
+docs_dir: "./docs"
+
+theme: 
+  name: material
+  logo: _siteassets/logo.svg
+  favicon: _siteassets/logo.svg
+  palette:
+    primary: blue
+
+repo_url: https://github.com/SebastianRValdivia/WritingTheTabulaRasa
+repo_name: Writing The Tabula Rasa
+
+plugins:
+  - search
+

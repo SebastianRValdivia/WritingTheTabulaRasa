@@ -1,3 +1,4 @@
+from django.test import TestCase
 from rest_framework.test import APITestCase, URLPatternsTestCase 
 from django.contrib.auth.models import User
 from django.urls import include, path, reverse
@@ -49,6 +50,22 @@ class MetadataAPITests(APITestCase, URLPatternsTestCase):
 
         self.assertTrue(request.status_code == 200)
         self.assertEqual(len(request.data["results"]), 1)
+
+class MetadataLiteTests(TestCase):
+
+    def test_can_preview_metadata_content(self):
+        content = "{'category': 'category-1'}"
+        MetadataModel.objects.create(
+            content=content,
+        )
+        request = self.client.get(reverse("metadata_detail", kwargs={"pk": 1}))
+        self.assertTrue(request.status_code == 200)
+        self.assertTemplateUsed(request, "metadata/metadata_detail.html")
+        self.assertContains(
+            request,
+            "{&#x27;category&#x27;: &#x27;category-1&#x27;}" # Formated as html
+        ) 
+
 
 
 

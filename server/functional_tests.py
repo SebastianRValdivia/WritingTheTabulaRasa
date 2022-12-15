@@ -32,6 +32,23 @@ class FirstUserExperience(unittest.TestCase):
 
         self.assertEqual(self.browser.current_url, url)
 
+class WebAppFunctionalTests(unittest.TestCase):
+
+    def setUp(self):
+        """ Before each test do: """
+        opts = FirefoxOptions()
+        opts.add_argument("--headless")
+        self.browser = webdriver.Firefox(options=opts)
+
+    def test_user_can_view_cheatsheets(self):
+        # User enters the site
+        root_url = "http://localhost:8000/webapp/#/"
+        cheatsheets_url = f"{root_url}cheatsheets/"
+        self.browser.get(url=root_url)
+        self.assertEqual(self.browser.current_url, root_url)
+
+        self.browser.get(url=cheatsheets_url)
+        self.assertEqual(self.browser.current_url, f"{root_url}cheatsheets/")
 
 
 if __name__ == '__main__':

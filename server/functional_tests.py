@@ -43,10 +43,11 @@ class WebAppFunctionalTests(unittest.TestCase):
     def test_user_can_view_cheatsheets(self):
         # User enters the site
         root_url = "http://localhost:8000/webapp/#/"
+        cheatsheets_url = f"{root_url}cheatsheets/"
         self.browser.get(url=root_url)
         self.assertEqual(self.browser.current_url, root_url)
 
-        self.browser.find_element(By.PARTIAL_LINK_TEXT, "CHEAT SHEETS").click()
+        self.browser.get(url=cheatsheets_url)
         self.assertEqual(self.browser.current_url, f"{root_url}cheatsheets/")
 
 

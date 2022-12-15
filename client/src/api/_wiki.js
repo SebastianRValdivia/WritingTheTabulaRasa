@@ -37,7 +37,7 @@ export default {
   },
   async getWikiCardByPageId(pageId) {
     try {
-      let response = await api.get(`v1/encyclopedia/cards/?page=${pageId}`)
+      let response = await api.get(`v1/encyclopedia/cards/?pg=${pageId}`)
       if (response.status === 200 && response.data.results[0] !== undefined) {
         return {
           code: 200,
@@ -47,9 +47,7 @@ export default {
         code: 404
       }
     } catch {
-      return {
-        code: 400
-      }
+      return false
     }
   },
   async postWikiPage(pageData) {

@@ -25,4 +25,4 @@ class EncyclopediaCardViewSet(ModelViewSet):
     queryset = EncyclopediaCardModel.objects.all()
     serializer_class = EncyclopediaCardSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
-    filterset_fields = ["page"]
+    filterset_fields = ["pg"]

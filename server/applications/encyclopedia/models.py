@@ -57,7 +57,8 @@ class EncyclopediaCardModel(models.Model):
         blank=False,
         null=False,
     )
-    page = models.OneToOneField(
+    # pg is short for page, to avoid errors with django rest pagination system
+    pg = models.OneToOneField( 
         EncyclopediaPageModel,
         on_delete=models.CASCADE,
         blank=False,

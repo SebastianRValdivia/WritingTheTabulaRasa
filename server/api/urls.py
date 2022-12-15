@@ -11,4 +11,5 @@ urlpatterns = [
     path("cheatsheets/", include("applications.cheatsheets.api_urls")),
     path("encyclopedia/", include("applications.encyclopedia.api_urls")),
     path("researches/", include("applications.research.api_urls")),
+    path("metadata/", include("applications.metadata.api_urls")),
 ]

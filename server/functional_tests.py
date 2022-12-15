@@ -37,6 +37,7 @@ class WebAppFunctionalTests(unittest.TestCase):
     def setUp(self):
         """ Before each test do: """
         opts = FirefoxOptions()
+        opts.add_argument("--headless")
         self.browser = webdriver.Firefox(options=opts)
 
     def test_user_can_view_cheatsheets(self):

@@ -1,9 +1,10 @@
 <template>
-  <q-page v-if="pageData">
-    <div class="row">
-      <h1 class="col-12">{{ pageData.title }}</h1>
+  <q-page class="q-pa-md" v-if="pageData">
+    <div id="header" class="row">
+      <h2 class="col-12">{{ pageData.title }}</h2>
       <h4 class="col-10">{{ pageData.epigraph }}</h4>
-      <q-card v-if="pageCard" class="wiki-card">
+      <q-card v-if="pageCard" class=" col-2 wiki-card">
+        <q-img :src="pageData.image"/>
         <q-card-section>
           <MarkdownPreview :md="pageCard.content" />
         </q-card-section>
@@ -12,9 +13,11 @@
 
     <q-separator inset />
 
-    <div class="row">
+    <div id="body" class="row">
       <MarkdownPreview :md="pageData.content" />
     </div>
+
+    <div id="footer"></div>
 
   </q-page>
 </template>
@@ -48,8 +51,10 @@ export default {
 
     onBeforeMount(async () => {
       $q.loading.show()
-      let wikiFromStore = wikiStore.getWikiPageByUrl(props.title) // Search in the store
-      if (wikiFromStore === undefined) { // Not in the store, then try api and assign again
+      // Search in the store
+      let wikiFromStore = wikiStore.getWikiPageByUrl(props.title) 
+      // Not in the store, then try api and assign again
+      if (wikiFromStore === undefined) {
         await wikiStore.retrieveWikiPageByUrl(props.title)
         wikiFromStore = wikiStore.getWikiPageByUrl(props.title)
         if (wikiFromStore === undefined) { // Doesn't exist
@@ -87,7 +92,7 @@ export default {
   min-width: 350px;
   max-width: 400px;
 }
-.wiki-card h1 {
+.wiki-card > h2 {
   border: 1px solid black;
   font-size: 1.5rem;
   line-height: 1;

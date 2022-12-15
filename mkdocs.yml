@@ -7,7 +7,16 @@ theme:
   logo: _siteassets/logo.svg
   favicon: _siteassets/logo.svg
   palette:
-    primary: blue
+    primary: black
+
+nav:
+  - Home: index.md
+  - Code Documentation: 
+    - Index: SoftwareCodeDocumentation/index.md
+    - Back End: SoftwareCodeDocumentation/Backend/index.md
+    - Client: SoftwareCodeDocumentation/Client/index.md
+    - Lite Client: SoftwareCodeDocumentation/Lite/index.md
+    - Documentation for design and behavior: SoftwareCodeDocumentation/Design/index.md
 
 repo_url: https://github.com/SebastianRValdivia/WritingTheTabulaRasa
 repo_name: Writing The Tabula Rasa

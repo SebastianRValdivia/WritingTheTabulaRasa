@@ -9,6 +9,7 @@ urlpatterns = [
     path("tasks/", include("applications.tasks.api_urls")),
     path("resources/", include("applications.resources.api_urls")),
     path("cheatsheets/", include("applications.cheatsheets.api_urls")),
+    path("guides/", include("applications.guides.api_urls")),
     path("encyclopedia/", include("applications.encyclopedia.api_urls")),
     path("researches/", include("applications.research.api_urls")),
     path("metadata/", include("applications.metadata.api_urls")),

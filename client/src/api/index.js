@@ -6,6 +6,7 @@ import cheatsheets from "./_cheatsheets"
 import wiki from "./_wiki"
 import resources from "./_resources.js"
 import research from "./_research.js"
+import guides from "./_guides"
 
 export default {
   user,
@@ -16,4 +17,5 @@ export default {
   wiki,
   resources,
   research,
+  guides,
 }

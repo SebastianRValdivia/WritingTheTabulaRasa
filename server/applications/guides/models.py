@@ -30,7 +30,7 @@ class GuideModel(models.Model):
     def save(self, *args, **kwargs):
         if not self.id:
             self.url = slugify(self.title)
-        super(SheetModel, self).save(*args, **kwargs)
+        super(GuideModel, self).save(*args, **kwargs)
 
 class StepModel(models.Model):
 

@@ -4,17 +4,22 @@
     <p class="text-subtitle1">
       {{ guideData.description }}
     </p>
-    <ol>
+    <ul class="step-order">
       <li
-      v-for="stepData in stepsDataList"
+      v-for="stepData in orderedStepsDataList"
       :key="stepData.id"
-      >{{ stepData.title }}</li>
-    </ol>
+      >
+        <h3 class="text-h3">
+          {{ stepData.order }} - {{ stepData.title }}
+        </h3>
+        {{ stepData.content }}
+      </li>
+    </ul>
   </q-page>
 </template>
 
 <script>
-import { ref, onBeforeMount } from "vue"
+import { ref, computed, onBeforeMount } from "vue"
 
 import api from "src/api"
 
@@ -27,6 +32,10 @@ export default {
     
     const guideData = ref({})
     const stepsDataList = ref([])
+
+    const orderedStepsDataList = computed(() => {
+      return [ ...stepsDataList.value, ].sort((a, b) => (a.order > b.order))
+    });
 
     async function loadPage(pageUrl) {
       // Retrieve page
@@ -46,8 +55,14 @@ export default {
     return {
       props,
       guideData,
-      stepsDataList,
+      orderedStepsDataList,
     }
   }
 }
 </script>
+
+<style lang="scss">
+.step-order {
+  list-style-type: none;
+}
+</style>

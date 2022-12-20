@@ -1,8 +1,10 @@
 // This is just an example,
 // so you can safely delete all default props below
 const mainLayout = {
+  compendiums: "Compendiums",
   cheatsheets: "Cheat Sheets",
-  encyclopedia: "Encyclopedia"
+  encyclopedia: "Encyclopedia",
+  guides: "Guides",
 }
 const mainDrawer = {
   notes: "My notes",
@@ -10,7 +12,7 @@ const mainDrawer = {
   tasks: "Tasks",
   calendar: "Calendar",
   preferences: "Preferences",
-  logOut: "Log out"
+  logOut: "Log out",
 }
 
 const indexPage = {

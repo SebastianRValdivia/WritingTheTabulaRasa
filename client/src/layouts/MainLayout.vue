@@ -16,16 +16,19 @@
             <q-icon name="home" color="secondary"></q-icon>
           </router-link>
         </q-toolbar-title>
-        <q-tabs shrink>
-          <q-route-tab
-            :label="$t('mainLayout.encyclopedia')" 
-            :to="{name: 'encyclopediaIndex'}"
-          />
-          <q-route-tab
-            :label="$t('mainLayout.cheatsheets')" 
-            :to="{name: 'cheatsheets'}"
-          />
-        </q-tabs>
+        <q-btn :label="$t('mainLayout.compendiums')">
+          <q-menu fit anchor="bottom left">
+            <q-item clickable :to="{name: 'encyclopediaIndex'}">
+              <q-item-section>{{ $t('mainLayout.encyclopedia') }}</q-item-section>
+            </q-item>
+            <q-item clickable :to="{name: 'cheatsheets'}">
+              <q-item-section>{{ $t('mainLayout.cheatsheets') }}</q-item-section>
+            </q-item>
+            <q-item clickable :to="{name: ''}">
+              <q-item-section>{{ $t('mainLayout.guides') }}</q-item-section>
+            </q-item>
+          </q-menu>
+        </q-btn>
 
         <PomodoroTimer />
 

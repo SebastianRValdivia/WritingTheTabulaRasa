@@ -87,6 +87,11 @@ const routes = [
         props: true
       },
       {
+        path: "guides/",
+        name: "guidesListPage",
+        component: () => import("src/pages/GuideListPage")
+      },
+      {
         path: "guides/:url/",
         name: "guidePage",
         component: () => import("src/pages/GuidePage"),

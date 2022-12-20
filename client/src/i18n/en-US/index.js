@@ -83,6 +83,9 @@ const literaryNoteListPage = {
 const noteListPage = {
   pageTitle: "My notes"
 }
+const guidesListPage = {
+  pageTitle: "Guides"
+}
 
 const imageUploadDialog = {
   caption: "Caption"
@@ -114,6 +117,7 @@ export default {
   fleetingNoteListPage,
   literaryNoteListPage,
   noteListPage,
+  guidesListPage,
 
   imageUploadDialog,
 

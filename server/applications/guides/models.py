@@ -45,6 +45,11 @@ class StepModel(models.Model):
         blank=False,
         null=False,
     )
+    order = models.PositiveIntegerField(
+        blank=False,
+        null=False,
+        default=1,
+    )
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 

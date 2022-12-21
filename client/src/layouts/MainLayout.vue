@@ -13,7 +13,7 @@
         <q-separator vertical inset class="q-ml-sm"/>
         <q-toolbar-title>
           <router-link :to="{name: 'home'}">
-            <q-icon name="home" color="secondary"></q-icon>
+            <q-img id="logo" src="~/assets/logo.svg" fit/>
           </router-link>
         </q-toolbar-title>
         <q-btn :label="$t('mainLayout.compendiums')">
@@ -24,7 +24,7 @@
             <q-item clickable :to="{name: 'cheatsheets'}">
               <q-item-section>{{ $t('mainLayout.cheatsheets') }}</q-item-section>
             </q-item>
-            <q-item clickable :to="{name: ''}">
+            <q-item clickable :to="{name: 'guidesListPage'}">
               <q-item-section>{{ $t('mainLayout.guides') }}</q-item-section>
             </q-item>
           </q-menu>
@@ -206,5 +206,9 @@ export default {
   margin-left: 0.75rem;
   margin-top: 0.25rem;
   margin-right: 0.15rem;
+}
+#logo {
+  max-height: 62px;
+  max-width: 62px;
 }
 </style>

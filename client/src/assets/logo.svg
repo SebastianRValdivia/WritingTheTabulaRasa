@@ -42,7 +42,6 @@
          id="stop2789" />
     </linearGradient>
     <linearGradient
-       inkscape:collect="always"
        id="linearGradient2779"
        osb:paint="gradient">
       <stop
@@ -73,9 +72,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="6.8173033"
-     inkscape:cx="174.57713"
-     inkscape:cy="136.19284"
+     inkscape:zoom="4.8205614"
+     inkscape:cx="139.34431"
+     inkscape:cy="165.84561"
      inkscape:document-units="px"
      inkscape:current-layer="layer2"
      inkscape:document-rotation="0"
@@ -106,28 +105,36 @@
      id="layer2"
      inkscape:label="BG">
     <rect
-       style="fill:#ffffff;fill-opacity:1;stroke-width:0.66455"
+       style="fill:#ffffff;fill-opacity:1;stroke-width:0.635"
        id="rect2763"
-       width="115"
+       width="105"
        height="125"
        x="90"
        y="65" />
     <rect
-       style="fill:#ffffff;fill-opacity:1;stroke-width:1.12916"
+       style="fill:#feffff;fill-opacity:1;stroke-width:1.12916"
        id="rect2767"
        width="59.826645"
        height="132.12958"
        x="208.12823"
        y="70.463829"
-       transform="matrix(0.99997184,-0.00750524,-0.32814533,0.94462725,0,0)" />
+       transform="matrix(0.99997184,-0.00750524,-0.32814532,0.94462725,0,0)" />
     <rect
-       style="fill:#ffffff;fill-opacity:1;stroke-width:1.12916"
+       style="fill:#ffffff;fill-opacity:1;stroke-width:1.13021"
        id="rect2767-3"
-       width="59.826645"
-       height="132.12958"
-       x="102.8508"
-       y="69.62738"
-       transform="matrix(0.99997184,-0.00750524,-0.32814533,0.94462725,0,0)" />
+       width="59.92812"
+       height="132.15373"
+       x="97.875984"
+       y="69.599258"
+       transform="matrix(0.99997193,-0.00749253,-0.32864195,0.94445459,0,0)" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke-width:1.37239"
+       id="rect891"
+       width="170.00012"
+       height="2.2255352"
+       x="208.07545"
+       y="145.90016"
+       transform="matrix(0.99999996,-2.6855045e-4,-0.89839238,0.43919373,0,0)" />
   </g>
   <g
      inkscape:label="Logo"

@@ -47,8 +47,13 @@ export const useCheatsheetStore = defineStore("cheatsheet", {
     async retrieveCheatsBySheetId(sheetId) {
       let result = await api.cheatsheets.getCheatsBySheetId(sheetId)
 
-      if (result.code === 200) {
-        this.cheats = [result.cheats, ...this.cheats]
+      if (result) {
+        // Cheat doesn't exist in store
+        result.cheats.forEach(newCheat => {
+          if (!this.cheats.find((cheat) => cheat.id === newCheat.id)) {
+            this.cheats.push(newCheat)
+          }
+        });
         return true
       } else return false
     },

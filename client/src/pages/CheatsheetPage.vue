@@ -48,14 +48,19 @@ export default {
     const sheet = ref({})
     const cheats = ref({})
 
+    async function retrievePageCheats() {
+      return await cheatsheetStore.retrieveCheatsBySheetId(sheet.value.id)
+    }
     async function loadPage(cheatUrl) {
       $q.loading.show()
       if (cheatsheetStore.getSheetByUrl(cheatUrl) === undefined) { // Sheet not in store
         let result = await cheatsheetStore.retrieveSheetByUrl(cheatUrl) // Retrieve the sheet
         sheet.value = cheatsheetStore.getSheetByUrl(cheatUrl)
+        await retrievePageCheats()
         cheats.value = cheatsheetStore.getCheatsBySheetId(sheet.value.id)
       } else {
         sheet.value = cheatsheetStore.getSheetByUrl(cheatUrl)
+        await retrievePageCheats()
         cheats.value = cheatsheetStore.getCheatsBySheetId(sheet.value.id)
       }
       $q.loading.hide()

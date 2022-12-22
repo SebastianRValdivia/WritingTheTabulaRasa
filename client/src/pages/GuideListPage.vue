@@ -1,5 +1,17 @@
 <template>
   <q-page class="q-mg-md">
+    <div class="col-12 row justify-center">
+      <q-input 
+        rounded
+        outlined
+        v-model="searchInput"
+        class="col-4"
+      >
+        <template v-slot:append>
+          <q-icon name="search" />
+        </template>
+      </q-input>
+    </div>
     <q-list>
       <q-item 
         v-for="guideData in displayedGuidesList"
@@ -19,9 +31,10 @@
 </template>
 
 <script>
-import { ref, onBeforeMount } from "vue"
+import { ref, computed, onBeforeMount } from "vue"
 import { useQuasar, useMeta } from "quasar"
 import { useI18n } from "vue-i18n"
+import Fuse from "fuse.js"
 
 import { useGuidesStore } from "src/stores/guide-store"
 export default {
@@ -31,7 +44,27 @@ export default {
     const quasar = useQuasar()
     const { t } = useI18n()
 
-    const displayedGuidesList = ref([])
+    const searchInput = ref("")
+    const displayedGuidesList = computed(() => {
+      if (searchInput.value) return searchGuide(searchInput.value)
+      else return guideStore.getGuidesList
+    })
+
+    function searchGuide(searchPattern) {
+      let fuzzySearch = new Fuse(
+        guideStore.getGuidesList,
+        {
+          keys: [
+            "title",
+            "description",
+          ]
+        }
+      )
+      return fuzzySearch
+        .search(searchPattern)
+        .map((item) => item.item)
+    }
+
 
     onBeforeMount(async () => {
 
@@ -40,7 +73,6 @@ export default {
       let result = await guideStore.retrieveGuides()
 
       if (result) {
-        displayedGuidesList.value = guideStore.getGuidesList
         quasar.loading.hide()
       }
     })
@@ -50,6 +82,7 @@ export default {
     })
     return {
       displayedGuidesList,
+      searchInput,
     }
   }
 

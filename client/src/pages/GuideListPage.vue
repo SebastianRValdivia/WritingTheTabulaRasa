@@ -1,5 +1,5 @@
 <template>
-  <q-page class="q-mg-md">
+  <q-page class="q-pa-md">
     <div class="col-12 row justify-center">
       <q-input 
         rounded

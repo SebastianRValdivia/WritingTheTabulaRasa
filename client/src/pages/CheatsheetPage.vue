@@ -53,10 +53,10 @@ export default {
       if (cheatsheetStore.getSheetByUrl(cheatUrl) === undefined) { // Sheet not in store
         let result = await cheatsheetStore.retrieveSheetByUrl(cheatUrl) // Retrieve the sheet
         sheet.value = cheatsheetStore.getSheetByUrl(cheatUrl)
-        cheats.value = cheatsheetStore.getCheatsBySheet(sheet.value.id)
+        cheats.value = cheatsheetStore.getCheatsBySheetId(sheet.value.id)
       } else {
         sheet.value = cheatsheetStore.getSheetByUrl(cheatUrl)
-        cheats.value = cheatsheetStore.getCheatsBySheet(sheet.value.id)
+        cheats.value = cheatsheetStore.getCheatsBySheetId(sheet.value.id)
       }
       $q.loading.hide()
     }

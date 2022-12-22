@@ -64,7 +64,7 @@ export default {
       if (response.data.results.length > 0) {
         return {
           code: response.status,
-          cheats: response.data.results[0]
+          cheats: response.data.results
         }
       } else return false
     } catch {

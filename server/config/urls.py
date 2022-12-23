@@ -25,9 +25,10 @@ from config.settings import (
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('i18n/', include('django.conf.urls.i18n')),
     path('api/v1/', include('api.urls')),
     path("webapp/", include("webapp.urls")),
-    path("lite/", include("lite.urls"))
+    path("lite/", include("lite.urls")),
 ]
 
 urlpatterns += static(MEDIA_URL, document_root=MEDIA_ROOT)

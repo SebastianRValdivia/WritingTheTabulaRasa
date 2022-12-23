@@ -1,0 +1,13 @@
+{% extends "lite/_base.html" %}
+{% load i18n %}
+
+{% block title %} {% trans "GuidesList" %} {% endblock %}
+
+{% block content %}
+  <h2>{% trans "GuidesList" %}</h2>
+  <ul>
+    {% for guide in guides %}
+    <li><a href="{% url "guide_detail" guide.url%}">{{guide.title}}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}

@@ -7,7 +7,7 @@
   <h2>{% trans "GuidesList" %}</h2>
   <ul>
     {% for guide in guides %}
-    <li><a href="{{guide.url}}">{{guide.title}}</a></li>
+    <li><a href="{% url "guide_detail" guide.url%}">{{guide.title}}</a></li>
     {% endfor %}
   </ul>
 {% endblock %}

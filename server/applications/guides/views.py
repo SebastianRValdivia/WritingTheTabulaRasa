@@ -26,3 +26,10 @@ class GuideLiteListView(ListView):
     context_object_name = "guides"
     template_name = "guides/guide_list.html"
 
+class GuideLiteDetailView(DetailView):
+
+    model = GuideModel
+    context_object_name = "guide"
+    template_name = "guides/guide_detail.html"
+    slug_url_kwarg = "url"
+    slug_field = "url"

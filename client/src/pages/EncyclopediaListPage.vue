@@ -4,7 +4,7 @@
       <q-item 
         v-for="wikiPage in displayedPages" 
         :key="wikiPage.id"
-        :to="{name: 'encyclopediaPage', params:{title: wikiPage.url}}"
+        :to="{name: 'encyclopediaPage', params:{url: wikiPage.url}}"
         class="row"
       >
         <q-card class="col-12 row justify-between scoped-wiki-card">
@@ -20,7 +20,7 @@
           <div class="col-4 column justify-center">
             <q-img
               v-if="wikiPage.image"
-              :src="wikiPage.image"
+              :src="findWikiPageUrl(wikiPage.image)"
               width="12rem"
               height="12rem"
               ratio="1"
@@ -41,48 +41,40 @@
 </template>
 
 <script>
-import { ref, onBeforeMount } from "vue"
+import { ref, computed, onBeforeMount } from "vue"
 import { useI18n } from "vue-i18n"
 import { useQuasar, useMeta } from "quasar"
 
 import { useWikiStore } from "src/stores/wiki-store"
-import api from "src/api"
+import { useResourceStore } from "src/stores/resource-store"
 
 export default {
   name: "EncyclopediaListPage",
   setup() {
     const { t } = useI18n()
     const wikiStore = useWikiStore()
+    const resourceStore = useResourceStore()
     const quasar = useQuasar()
 
-    const displayedPages = ref([])
+    const displayedPages = computed(() => {
+      return wikiStore.getWikiPageList
+    })
 
-    async function generateWikiPageImgUrl(imgId) {
-      if (imgId) {
-        let result = await api.resources.getImageResourceById(imgId)
-        if (result) {
-          return result.data.file
-        } else return null
-      } else return null
+    function findWikiPageUrl(imgId) {
+      let imgData = resourceStore.getImageResourceById(imgId)
+      if (imgData) return imgData.file
+      else return null
     }
 
-    async function generatePageImagesUrl() {
-      for (let page of displayedPages.value) {
-        page.image = await generateWikiPageImgUrl(page.image)
-      }
-      return true
+    async function loadPage() {
+      let result = await wikiStore.retrieveWikiPages()
+      if (result) result = await resourceStore.retrieveImageResources()
     }
 
     onBeforeMount(async() => {
       quasar.loading.show()
-      let result = await wikiStore.retrieveWikiPages()
-      if (result) {
-        displayedPages.value = wikiStore.getWikiPageList
-        result = await generatePageImagesUrl()
-        if (result) {
-          quasar.loading.hide()
-        }
-      }
+      await loadPage()
+      quasar.loading.hide()
     })
 
     useMeta({
@@ -91,7 +83,7 @@ export default {
     return {
       wikiStore,
       displayedPages,
-      generateWikiPageImgUrl,
+      findWikiPageUrl,
     } 
   }
 }

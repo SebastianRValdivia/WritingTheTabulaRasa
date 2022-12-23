@@ -3,10 +3,10 @@
     <div id="header" class="row">
       <h2 class="col-12">{{ pageData.title }}</h2>
       <h4 class="col-10">{{ pageData.epigraph }}</h4>
-      <q-card v-if="pageCard" class=" col-2 wiki-card">
-        <q-img :src="pageData.image"/>
+      <q-card v-if="pageCardData" class=" col-2 wiki-card">
+        <q-img :src="findWikiPageUrl(pageData.image)"/>
         <q-card-section>
-          <MarkdownPreview :md="pageCard.content" />
+          <MarkdownPreview :md="pageCardData.content" />
         </q-card-section>
       </q-card>
     </div>
@@ -30,12 +30,13 @@ import { useI18n } from "vue-i18n"
 
 import api from "src/api"
 import { useWikiStore } from "src/stores/wiki-store"
+import { useResourceStore } from "src/stores/resource-store"
 import MarkdownPreview from "src/components/MarkdownPreview"
 
 export default {
   name: "EncyclopediaPage",
   props: {
-    title: String,
+    url: String,
   },
   components: {
     MarkdownPreview
@@ -45,18 +46,23 @@ export default {
     const { t } = useI18n()
     const $router = useRouter()
     const wikiStore = useWikiStore()
+    const resourceStore = useResourceStore()
 
     const pageData = ref()
-    const pageCard = ref()
+    const pageCardData = ref()
 
-    onBeforeMount(async () => {
-      $q.loading.show()
+    function findWikiPageUrl(imgId) {
+      let imgData = resourceStore.getImageResourceById(imgId)
+      if (imgData) return imgData.file
+      else return null
+    }
+    async function loadPage(pageUrl) {
       // Search in the store
-      let wikiFromStore = wikiStore.getWikiPageByUrl(props.title) 
+      let wikiFromStore = wikiStore.getWikiPageByUrl(pageUrl) 
       // Not in the store, then try api and assign again
       if (wikiFromStore === undefined) {
-        await wikiStore.retrieveWikiPageByUrl(props.title)
-        wikiFromStore = wikiStore.getWikiPageByUrl(props.title)
+        await wikiStore.retrieveWikiPageByUrl(pageUrl)
+        wikiFromStore = wikiStore.getWikiPageByUrl(pageUrl)
         if (wikiFromStore === undefined) { // Doesn't exist
           $router.push({name: "NotFound"})
         } else {
@@ -68,8 +74,14 @@ export default {
 
       let cardFromServer = await api.wiki.getWikiCardByPageId(pageData.value.id)
       if (cardFromServer.code === 200) {
-        pageCard.value = cardFromServer.card
+        pageCardData.value = cardFromServer.card
       }
+
+    }
+
+    onBeforeMount(async () => {
+      $q.loading.show()
+      await loadPage(props.url)
       $q.loading.hide()
     })
 
@@ -79,9 +91,9 @@ export default {
     })
 
     return {
-      props,
       pageData,
-      pageCard,
+      pageCardData,
+      findWikiPageUrl,
     }
   }
 }

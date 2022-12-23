@@ -35,7 +35,7 @@ import MarkdownPreview from "src/components/MarkdownPreview"
 export default {
   name: "EncyclopediaPage",
   props: {
-    title: String,
+    url: String,
   },
   components: {
     MarkdownPreview
@@ -49,14 +49,13 @@ export default {
     const pageData = ref()
     const pageCard = ref()
 
-    onBeforeMount(async () => {
-      $q.loading.show()
+    async function loadPage(pageUrl) {
       // Search in the store
-      let wikiFromStore = wikiStore.getWikiPageByUrl(props.title) 
+      let wikiFromStore = wikiStore.getWikiPageByUrl(pageUrl) 
       // Not in the store, then try api and assign again
       if (wikiFromStore === undefined) {
-        await wikiStore.retrieveWikiPageByUrl(props.title)
-        wikiFromStore = wikiStore.getWikiPageByUrl(props.title)
+        await wikiStore.retrieveWikiPageByUrl(pageUrl)
+        wikiFromStore = wikiStore.getWikiPageByUrl(pageUrl)
         if (wikiFromStore === undefined) { // Doesn't exist
           $router.push({name: "NotFound"})
         } else {
@@ -70,6 +69,12 @@ export default {
       if (cardFromServer.code === 200) {
         pageCard.value = cardFromServer.card
       }
+
+    }
+
+    onBeforeMount(async () => {
+      $q.loading.show()
+      await loadPage(props.url)
       $q.loading.hide()
     })
 

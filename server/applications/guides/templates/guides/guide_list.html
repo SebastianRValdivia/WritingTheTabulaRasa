@@ -1,0 +1,12 @@
+{% extends "lite/_base.html" %}
+
+{% block title %} Guides {% endblock %}
+
+{% block content %}
+  <ul>
+    {% for guide in guides %}
+    <li><a href="{{guide.url}}">{{guide.title}}</a></li>
+    {% endfor %}
+  </ul>
+  
+{% endblock %}

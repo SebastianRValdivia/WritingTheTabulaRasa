@@ -6,5 +6,6 @@ urlpatterns = [
     path("", IndexPageView.as_view(), name="index"),
     path("user/", include("user.urls")),
     path("cheatsheets/", include("applications.cheatsheets.urls")),
+    path("guides/", include("applications.guides.urls")),
     path("metadata/", include("applications.metadata.urls")),
 ]

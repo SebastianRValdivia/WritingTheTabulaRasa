@@ -1,5 +1,6 @@
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from django.views.generic import ListView, DetailView
 
 from applications.guides.models import GuideModel, StepModel
 from applications.guides.serializers import GuideSerializer, StepSerializer
@@ -19,6 +20,9 @@ class StepViewSet(ModelViewSet):
     permission_classes = [IsAuthenticatedOrReadOnly]
     filterset_fields = ["guide"]
 
+class GuideLiteListView(ListView):
 
-
+    model = GuideModel
+    context_object_name = "guides"
+    template_name = "guides/guide_list.html"
 

@@ -17,6 +17,22 @@ export const useGuideStore = defineStore("guides", {
         this.guidesList = result.guidesList
         return true
       } else return false
+    },
+    async saveGuide(guideData) {
+      let result = await api.guides.postGuide(guideData)
+
+      if (result) {
+        this.guidesList.push(result.newGuide)
+        return result.newGuide
+      } else return false
+    },
+    async saveStep(stepData) {
+      let result = await api.guides.postStep(stepData)
+
+      if (result) {
+        this.stepsList.push(result.newStep)
+        return true
+      } else return false
     }
   }
 })

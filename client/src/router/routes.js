@@ -97,6 +97,11 @@ const routes = [
         component: () => import("src/pages/GuidePage"),
         props: true
       },
+      {
+        path: "guides/editor/",
+        name: "guideEditor",
+        component: () => import("src/pages/GuideEditorPage")
+      }
     ]
   },
 

@@ -86,6 +86,13 @@ const noteListPage = {
 const guidesListPage = {
   pageTitle: "Guides"
 }
+const guideEditorPage = {
+  pageTitle: "Guide editor",
+  title: "Guide title",
+  description: "Guide description",
+  stepTitle: "Step title",
+  stepContent: "Step content",
+}
 
 const imageUploadDialog = {
   caption: "Caption"
@@ -118,6 +125,7 @@ export default {
   literaryNoteListPage,
   noteListPage,
   guidesListPage,
+  guideEditorPage,
 
   imageUploadDialog,
 

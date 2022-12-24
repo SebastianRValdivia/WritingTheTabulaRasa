@@ -49,6 +49,33 @@ export default {
     } catch {
       return false
     }
+  },
+  async postGuide(guideData) {
+    try {
+      let response = await api.post("v1/guides/guides/", guideData)
 
+      if (response.status === 201) {
+        return {
+          code: response.code,
+          newGuide: response.data
+        }
+      } else return false
+    } catch {
+      return false
+    }
+  },
+  async postStep(stepData) {
+    try {
+      let response = await api.post("v1/guides/steps/", stepData)
+
+      if (response.status === 201) {
+        return {
+          code: response.code,
+          newStep: response.data
+        }
+      } else return false
+    } catch {
+      return false
+    }
   }
 }

@@ -1,7 +1,7 @@
 import { defineStore } from "pinia"
 import api from "src/api"
 
-export const useGuidesStore = defineStore("guides", {
+export const useGuideStore = defineStore("guides", {
   state: () => ({
     guidesList: [],
     stepsList: [],

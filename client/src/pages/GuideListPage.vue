@@ -27,6 +27,18 @@
         </q-item-section>
       </q-item>
     </q-list>
+    <q-page-sticky 
+      v-if="userStore.isUserLogged"
+      position="top-right"
+      :offset="[20, 20]"
+    >
+      <q-btn 
+        round 
+        icon="add"
+        color="primary"
+        :to="{name: 'guideEditor'}"
+      />
+    </q-page-sticky>
   </q-page>
 </template>
 
@@ -36,11 +48,14 @@ import { useQuasar, useMeta } from "quasar"
 import { useI18n } from "vue-i18n"
 import Fuse from "fuse.js"
 
-import { useGuidesStore } from "src/stores/guide-store"
+import { useGuideStore } from "src/stores/guide-store"
+import { useUserStore } from "src/stores/user-store"
+
 export default {
 
   setup() {
-    const guideStore = useGuidesStore()
+    const guideStore = useGuideStore()
+    const userStore = useUserStore()
     const quasar = useQuasar()
     const { t } = useI18n()
 
@@ -83,6 +98,7 @@ export default {
     return {
       displayedGuidesList,
       searchInput,
+      userStore,
     }
   }
 

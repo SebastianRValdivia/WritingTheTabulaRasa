@@ -97,6 +97,9 @@ const guideEditorPage = {
 const imageUploadDialog = {
   caption: "Caption"
 }
+const metadataEditorDialog = {
+  metadata: "Metadata"
+}
 
 export default {
   failed: 'Action failed',
@@ -128,5 +131,6 @@ export default {
   guideEditorPage,
 
   imageUploadDialog,
+  metadataEditorDialog,
 
 }

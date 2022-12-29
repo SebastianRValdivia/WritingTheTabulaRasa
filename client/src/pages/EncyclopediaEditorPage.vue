@@ -67,9 +67,14 @@
       />
     </div>
 
+    <div class="row">
+      <q-btn icon="add" @click="openMetadataEditor"/>
+    </div>
+
     <q-page-sticky position="bottom-right" :offset="[20, 20]">
       <q-btn fab icon="done" color="primary" @click="submit"/>
     </q-page-sticky>
+  <MetadataEditorDialog :isOpen="true"/>
   </q-page>
 </template>
 
@@ -77,10 +82,11 @@
 import { ref } from "vue"
 import api from "src/api"
 import { useI18n } from "vue-i18n"
-import { useMeta } from "quasar"
+import { useQuasar, useMeta } from "quasar"
 
 import { useWikiStore } from "src/stores/wiki-store"
-import MarkdownPreview from "src/components/MarkdownPreview"
+import MarkdownPreview from "src/components/for-viewing/MarkdownPreview"
+import MetadataEditorDialog from "src/components/for-input/MetadataEditorDialog"
 
 export default {
   name: "EncyclopediaEditorPage",
@@ -89,6 +95,7 @@ export default {
   },
   setup() {
     const { t } = useI18n()
+    const quasar = useQuasar()
     const wikiStore = useWikiStore()
 
     const titleInput = ref("")
@@ -98,6 +105,13 @@ export default {
     const cardContentInput = ref("")
     const isPreviewOpen = ref(false)
 
+    function openMetadataEditor() {
+      quasar.dialog({
+        component: MetadataEditorDialog
+      }).onOk((payload) => {
+        console.log(payload)
+      })
+    }
     async function submit () {
       let resultPagePost = await wikiStore.saveWikiPage({
         title: titleInput.value,
@@ -138,6 +152,7 @@ export default {
       isPreviewOpen,
       toggleToPreview,
       toggleToInput,
+      openMetadataEditor,
     }
   }
 }

@@ -31,7 +31,7 @@ import { useI18n } from "vue-i18n"
 import api from "src/api"
 import { useWikiStore } from "src/stores/wiki-store"
 import { useResourceStore } from "src/stores/resource-store"
-import MarkdownPreview from "src/components/MarkdownPreview"
+import MarkdownPreview from "src/components/for-viewing/MarkdownPreview"
 
 export default {
   name: "EncyclopediaPage",

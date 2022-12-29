@@ -63,7 +63,7 @@ import { useI18n } from "vue-i18n"
 import { useRouter, onBeforeRouteUpdate } from "vue-router"
 
 import { useCheatsheetStore } from "src/stores/cheatsheet-store"
-import MarkdownPreview from "src/components/MarkdownPreview"
+import MarkdownPreview from "src/components/for-viewing/MarkdownPreview"
 import { cheatsheetHasSize } from "src/utils/cheatsheets"
 
 export default {

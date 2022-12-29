@@ -153,9 +153,9 @@ import { useUserStore } from "src/stores/user-store"
 import { useAppStore } from "src/stores/app-store"
 import { useRouter } from "vue-router"
 
-import LoginDialog from "src/components/LoginDialog"
-import PomodoroTimer from 'src/components/PomodoroTimer';
-import NewNote from "src/components/NewNote"
+import LoginDialog from "src/components/for-control/LoginDialog"
+import PomodoroTimer from 'src/components/for-control/PomodoroTimer';
+import NewNote from "src/components/for-control/NewNote"
 
 export default {
   components: {

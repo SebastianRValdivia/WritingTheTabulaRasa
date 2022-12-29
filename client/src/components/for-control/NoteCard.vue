@@ -61,7 +61,7 @@
 import { ref, computed } from "vue"
 import { useQuasar } from "quasar"
 import { useI18n } from "vue-i18n"
-import MarkdownPreview from "src/components/MarkdownPreview"
+import MarkdownPreview from "src/components/for-viewing/MarkdownPreview"
 
 import { useUserStore } from "src/stores/user-store"
 import { useNoteStore } from "src/stores/note-store"

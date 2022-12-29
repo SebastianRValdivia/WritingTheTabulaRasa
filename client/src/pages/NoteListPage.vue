@@ -51,7 +51,7 @@ import { useNoteStore } from "src/stores/note-store"
 import { useUserStore } from "src/stores/user-store"
 import { useAppStore } from "src/stores/app-store"
 import { constructNoteTree, createNoteIdentifier  } from "src/utils"
-import NoteCard from "src/components/NoteCard"
+import NoteCard from "src/components/for-control/NoteCard"
 
 export default {
   components: {

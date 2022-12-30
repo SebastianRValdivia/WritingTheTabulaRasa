@@ -59,7 +59,7 @@ export default {
       dialogRef,
       onDialogHide,
       onOKClick() {
-        onDialogOK({metadataInput: JSON.parse(metadataInput.value)})
+        onDialogOK(JSON.parse(metadataInput.value))
       },
     }
   }

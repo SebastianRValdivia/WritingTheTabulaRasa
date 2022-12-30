@@ -85,6 +85,7 @@ import { useI18n } from "vue-i18n"
 import { useQuasar, useMeta } from "quasar"
 
 import { useWikiStore } from "src/stores/wiki-store"
+import { useMetadataStore } from "src/stores/metadata-store"
 import MarkdownPreview from "src/components/for-viewing/MarkdownPreview"
 import MetadataEditorDialog from "src/components/for-input/MetadataEditorDialog"
 
@@ -97,6 +98,7 @@ export default {
     const { t } = useI18n()
     const quasar = useQuasar()
     const wikiStore = useWikiStore()
+    const metadataStore = useMetadataStore()
 
     const titleInput = ref("")
     const epigraphInput = ref("")
@@ -104,19 +106,26 @@ export default {
     const isCardEditorOpen = ref(false)
     const cardContentInput = ref("")
     const isPreviewOpen = ref(false)
+    const pageMetadata = ref({})
 
-    function openMetadataEditor() {
+    async function openMetadataEditor() {
       quasar.dialog({
         component: MetadataEditorDialog
-      }).onOk((payload) => {
-        console.log(payload)
+      }).onOk(async (metadataObject) => {
+        let result = await metadataStore.createMetadataObject({
+          content: metadataObject
+        })
+        if (result) pageMetadata.value = result
       })
     }
     async function submit () {
+      let metadataExist = pageMetadata.value.id 
       let resultPagePost = await wikiStore.saveWikiPage({
         title: titleInput.value,
         epigraph: epigraphInput.value,
-        content: contentInput.value
+        content: contentInput.value,
+
+        ...(metadataExist && {metadata: pageMetadata.value.id})
       })
       if (cardContentInput.value !== "" && resultPagePost) {
         let resultCardPost = await api.wiki.postWikiCard({
@@ -153,6 +162,7 @@ export default {
       toggleToPreview,
       toggleToInput,
       openMetadataEditor,
+      pageMetadata,
     }
   }
 }

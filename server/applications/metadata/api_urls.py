@@ -7,7 +7,7 @@ from applications.metadata.views import (
 )
 
 router = DefaultRouter()
-router.register("metadata", MetadataViewSet, basename="metadata")
+router.register("metadata-objects", MetadataViewSet, basename="metadata")
 router.register("categories", CategoryViewSet, basename="categories")
 
 urlpatterns = [

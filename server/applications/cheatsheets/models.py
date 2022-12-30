@@ -17,6 +17,12 @@ class SheetModel(models.Model):
         blank=True,
         null=False,
     )
+    metadata = models.OneToOneField(
+        "metadata.MetadataModel",
+        on_delete=models.SET_NULL,
+        blank=True,
+        null=True,
+    )
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 

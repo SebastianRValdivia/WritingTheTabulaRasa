@@ -25,8 +25,8 @@ class MetadataModel(models.Model):
     )
 
     class Meta:
-        verbose_name = 'Metadata'
+        verbose_name = "Metadata"
         verbose_name_plural = "Metadata"
 
     def __str__(self):
-        return self.id
+        return str(self.id)

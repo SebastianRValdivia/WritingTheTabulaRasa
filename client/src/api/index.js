@@ -7,6 +7,7 @@ import wiki from "./_wiki"
 import resources from "./_resources.js"
 import research from "./_research.js"
 import guides from "./_guides"
+import metadata from "./_metadata"
 
 export default {
   user,
@@ -18,4 +19,5 @@ export default {
   resources,
   research,
   guides,
+  metadata,
 }

@@ -29,6 +29,13 @@
             </q-item>
           </q-menu>
         </q-btn>
+        <q-btn :label="$t('mainLayout.activities')">
+          <q-menu fit anchor="bottom left">
+            <q-item clickable :to="{name: 'researchListPage'}">
+              <q-item-section>{{ $t('mainLayout.research') }}</q-item-section>
+            </q-item>
+          </q-menu>
+        </q-btn>
 
         <PomodoroTimer />
 

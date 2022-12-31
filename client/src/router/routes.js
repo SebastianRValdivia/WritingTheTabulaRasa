@@ -81,7 +81,12 @@ const routes = [
         props: true
       },
       {
-        path: "research/:id",
+        path: "research/",
+        name: "researchListPage",
+        component: () => import("src/pages/ResearchListPage"),
+      },
+      {
+        path: "research/:id/",
         name: "researchPage",
         component: () => import("src/pages/ResearchPage"),
         props: true

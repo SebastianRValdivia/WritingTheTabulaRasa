@@ -5,6 +5,8 @@ const mainLayout = {
   cheatsheets: "Cheat Sheets",
   encyclopedia: "Encyclopedia",
   guides: "Guides",
+  activities: "Activities",
+  research: "Research"
 }
 const mainDrawer = {
   notes: "My notes",

@@ -1,14 +1,23 @@
 <template>
   <q-page padding>
     <div class="row justify-center">
-      <span class="text-h4">{{ $t("notePages.fleetingNotes") }}</span>
+      <q-input 
+        rounded
+        outlined
+        v-model="searchInput"
+        class="col-4"
+      >
+        <template v-slot:append>
+          <q-icon name="search" />
+        </template>
+      </q-input>
     </div>
 
     <div class="row q-gutter-md">
       <!-- List all user fleeting cards -->
       <q-card 
         class="column fleeting-note-card" 
-        v-for="fleetingNote in noteStore.getFleetingNotes" 
+        v-for="fleetingNote in displayedNotes" 
         :key="fleetingNote.id"
       >
         <q-card-section class="q-pt-xs">
@@ -55,6 +64,7 @@
 import { ref, onBeforeMount, computed, onBeforeUnmount } from "vue"
 import { useI18n } from "vue-i18n"
 import { useQuasar, useMeta } from "quasar"
+import Fuse from "fuse.js"
 
 import { useNoteStore } from "src/stores/note-store"
 import { useUserStore } from "src/stores/user-store"
@@ -71,9 +81,28 @@ export default {
 
     const contentInput = ref("")
     const isAddingFleetingNote = ref(false)
+    const searchInput = ref("")
+    const displayedNotes = computed(() => {
+      if (searchInput.value) {
+        return searchNote(searchInput.value)
+      } else return noteStore.getFleetingNotesByUser(userStore.getUserId)
+    })
 
     function toggleNewFleetingNote() {
       isAddingFleetingNote.value = !isAddingFleetingNote.value
+    }
+    function searchNote(searchPattern) {
+      let fuzzySearch = new Fuse(
+        noteStore.getFleetingNotesByUser(userStore.getUserId),
+        {
+          keys: [
+            "content",
+          ]
+        }
+      )
+      return fuzzySearch
+        .search(searchPattern)
+        .map((item) => item.item)
     }
     async function saveNewFleetingNote() {
       let result = await noteStore.createFleetingNote(contentInput.value)
@@ -107,6 +136,8 @@ export default {
       toggleNewFleetingNote,
       saveNewFleetingNote,
       noteStore,
+      displayedNotes,
+      searchInput,
     }
   }
 }

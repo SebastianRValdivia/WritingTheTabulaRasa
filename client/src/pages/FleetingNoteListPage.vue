@@ -17,12 +17,19 @@
       </q-card>
       
       <!-- Add a fleeting note -->
-      <div 
+      <q-page-sticky
         class="col self-center"
         v-if="!isAddingFleetingNote"
+        position="bottom-right"
+        :offset="[20, 20]"
       >
-        <q-btn icon="add" round @click="toggleNewFleetingNote"/>
-      </div>
+        <q-btn 
+          icon="add" 
+          round 
+          color="primary"
+          @click="toggleNewFleetingNote"
+        />
+      </q-page-sticky>
       <q-card 
         class="column fleeting-note-card" 
         v-else

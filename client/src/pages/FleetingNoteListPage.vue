@@ -1,36 +1,38 @@
 <template>
   <q-page padding>
-    <div class="row">
-      <div class="column">
-        <span class="text-h5">{{ $t("notePages.fleetingNotes") }}</span>
-      </div>
+    <div class="row justify-center">
+      <span class="text-h4">{{ $t("notePages.fleetingNotes") }}</span>
     </div>
 
-    <div class="row">
+    <div class="row q-gutter-md">
+      <!-- List all user fleeting cards -->
       <q-card 
-        class="column other-note-card" 
+        class="column fleeting-note-card" 
         v-for="fleetingNote in noteStore.getFleetingNotes" 
         :key="fleetingNote.id"
       >
-        <q-card-section class="q-pt-none">
+        <q-card-section class="q-pt-xs">
           {{ fleetingNote.content }}
         </q-card-section>
       </q-card>
+      
+      <!-- Add a fleeting note -->
       <div 
-        class="column other-note-card content-center q-pt-xl"
+        class="col self-center"
         v-if="!isAddingFleetingNote"
       >
         <q-btn icon="add" round @click="toggleNewFleetingNote"/>
       </div>
       <q-card 
-        class="column other-note-card" 
+        class="column fleeting-note-card" 
         v-else
       >
         <q-card-section>
           <q-input
-            v-model="newFleetingNoteContent"
+            v-model="contentInput"
             type="textarea"
             autogrow
+            borderless
           />
         </q-card-section>
         <q-card-actions align="right" class="absolute-bottom">
@@ -60,15 +62,18 @@ export default {
     const appStore = useAppStore()
     const { t } = useI18n()
 
-    const newFleetingNoteContent = ref("")
+    const contentInput = ref("")
     const isAddingFleetingNote = ref(false)
 
     function toggleNewFleetingNote() {
       isAddingFleetingNote.value = !isAddingFleetingNote.value
     }
-    function saveNewFleetingNote() {
-      noteStore.createFleetingNote(newFleetingNoteContent.value)
-      toggleNewFleetingNote()
+    async function saveNewFleetingNote() {
+      let result = await noteStore.createFleetingNote(contentInput.value)
+      if (result) {
+        contentInput.value = ""
+        toggleNewFleetingNote()
+      }
     }
 
     onBeforeMount(async () => {
@@ -90,7 +95,7 @@ export default {
     })
     
     return {
-      newFleetingNoteContent,
+      contentInput,
       isAddingFleetingNote,
       toggleNewFleetingNote,
       saveNewFleetingNote,
@@ -101,8 +106,8 @@ export default {
 </script>
 
 <style>
-.other-note-card {
-  min-width: 15rem;
-  min-height: 15rem;
+.fleeting-note-card {
+  min-width: 20rem;
+  min-height: 20rem;
 }
 </style>

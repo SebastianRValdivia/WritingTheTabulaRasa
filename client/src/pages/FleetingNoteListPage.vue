@@ -15,15 +15,12 @@
 
     <div class="row q-gutter-md">
       <!-- List all user fleeting cards -->
-      <q-card 
-        class="column fleeting-note-card" 
-        v-for="fleetingNote in displayedNotes" 
-        :key="fleetingNote.id"
-      >
-        <q-card-section class="q-pt-xs">
-          {{ fleetingNote.content }}
-        </q-card-section>
-      </q-card>
+      <FleetingNoteCard 
+        v-for="fleetingNoteData in displayedNotes" 
+        :key="fleetingNoteData.id"
+        :fleetingNoteData="fleetingNoteData"
+      />
+
       
       <!-- Add a fleeting note -->
       <q-page-sticky
@@ -69,9 +66,13 @@ import Fuse from "fuse.js"
 import { useNoteStore } from "src/stores/note-store"
 import { useUserStore } from "src/stores/user-store"
 import { useAppStore } from "src/stores/app-store"
+import FleetingNoteCard from "src/components/for-input/FleetingNoteCard"
 
 export default {
   name: 'FleetingNotePage',
+  components: {
+    FleetingNoteCard
+  },
   setup() {
     const $q = useQuasar()
     const noteStore = useNoteStore()

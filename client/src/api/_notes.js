@@ -101,6 +101,16 @@ export default {
         newFleetingNote: response.data
     }
   },
+  async deleteFleetingNote(noteId) {
+    try {
+      let response = await api.delete(`v1/notes/fleeting/${noteId}/`)
+      
+      if (response.status === 204) return true
+      else return false
+    } catch {
+      return false
+    }
+  },
   async getLiteraryNotesList(url=null, previous=[]) {
     let response = url === null 
     ? await api.get("v1/notes/literary/") 

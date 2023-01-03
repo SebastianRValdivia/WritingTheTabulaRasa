@@ -4,7 +4,8 @@ import api from "src/api"
 export const useQuizzStore = defineStore("quizz", {
   state: () => ({
     quizzesList: [],
-    formulationQuestionsList: []
+    formulationQuestionsList: [],
+    choicesQuestionList: [],
   }),
   getters: {
     getQuizzesList: (state) => state.quizzesList,
@@ -13,11 +14,15 @@ export const useQuizzStore = defineStore("quizz", {
         let formulationQuestions = state.formulationQuestionsList.filter(
           (question) => question.quizz === quizzId
         ) 
+        let choicesQuestions = state.choicesQuestionList.filter(
+          (question) => question.quizz === quizzId
+        ) 
         return [
           ...formulationQuestions,
+          ...choicesQuestions,
         ]
       }
-    }
+    },
   },
   actions: {
     async retrieveQuizzesList() {
@@ -36,8 +41,17 @@ export const useQuizzStore = defineStore("quizz", {
         return true
       } else return false
     },
+    async retrieveQuizzesChoicesQuestionsList() {
+      let result = await api.quizzes.getQuizzesChoicesQuestions()
+
+      if (result) {
+        this.choicesQuestionList = result.choicesQuestionsList
+        return true
+      } else return false
+    },
     async retrieveQuizzesQuestionsList() {
       await this.retrieveQuizzesFormulationQuestionsList()
+      await this.retrieveQuizzesChoicesQuestionsList()
     }
   }
 })

@@ -7,7 +7,7 @@ from applications.quizzes.views import (
 )
 
 router = DefaultRouter()
-router.register("quizzes-objects/", QuizzViewSet, basename="quizzes")
+router.register("quizzes-objects", QuizzViewSet, basename="quizzes")
 router.register("questions", QuizzQuestionViewSet, basename="questions")
 
 urlpatterns = [

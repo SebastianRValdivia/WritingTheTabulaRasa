@@ -16,7 +16,11 @@
       <li
         v-for="quizz in displayedQuizzes"
         :key="quizz.id"
-      >{{ quizz.title }}</li> 
+      >
+        <router-link :to="{name: 'quizzPage', params:{id: quizz.id}}">
+          {{ quizz.title }}
+        </router-link>
+      </li> 
     </ul>
   </q-page>
 </template>

@@ -112,6 +112,12 @@ const routes = [
         name: "quizzesListPage",
         component: () => import("src/pages/QuizzListPage")
       },
+      {
+        path: "quizzes/:id/",
+        name: "quizzPage",
+        component: () => import("src/pages/QuizzPage"),
+        props: true
+      },
     ]
   },
 

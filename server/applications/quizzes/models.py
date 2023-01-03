@@ -25,7 +25,7 @@ class QuizzModel(models.Model):
     def __str__(self):
         return self.title
 
-class QuizzQuestionModel(models.Model):
+class QuizzFormulationQuestionModel(models.Model):
 
     quizz = models.ForeignKey(
         "quizzes.QuizzModel",
@@ -33,16 +33,20 @@ class QuizzQuestionModel(models.Model):
         blank=True,
         null=True,
     )
-    content = models.TextField(
-        blank=True,
-        null=True,
+    question = models.TextField(
+        blank=False,
+        null=False,
+    )
+    response = models.TextField(
+        blank=False,
+        null=False,
     )
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
     class Meta:
-        verbose_name = "Quizz question"
-        verbose_name_plural = "Quizz questions"
+        verbose_name = "Quizz formulation question"
+        verbose_name_plural = "Quizz formulation questions"
 
     def __str__(self):
-        return self.content
+        return self.question

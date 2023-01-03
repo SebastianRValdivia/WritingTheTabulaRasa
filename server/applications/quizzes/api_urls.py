@@ -3,12 +3,16 @@ from rest_framework.routers import DefaultRouter
 
 from applications.quizzes.views import (
     QuizzViewSet,
-    QuizzQuestionViewSet,
+    QuizzFormulationQuestionViewSet,
 )
 
 router = DefaultRouter()
 router.register("quizzes-objects", QuizzViewSet, basename="quizzes")
-router.register("questions", QuizzQuestionViewSet, basename="questions")
+router.register(
+    "formulation-questions",
+    QuizzFormulationQuestionViewSet,
+    basename="questions"
+)
 
 urlpatterns = [
     path("", include(router.urls))

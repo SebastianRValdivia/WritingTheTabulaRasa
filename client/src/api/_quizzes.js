@@ -21,10 +21,10 @@ export default {
       return false
     }
   },
-  async getQuizzesQuestions(url=null, previous=[]) {
+  async getQuizzesFormulationQuestions(url=null, previous=[]) {
     try {
       let response = url === null 
-        ? await api.get("v1/quizzes/questions/") 
+        ? await api.get("v1/quizzes/formulation-questions/") 
         : await api.get(url)
 
       let data = [...previous, ...response.data.results]
@@ -32,13 +32,13 @@ export default {
       if (response.status === 200 && response.data.next === null) {
         return {
           code: response.status,
-          quizzesQuestionsList: data
+          quizzesFormulationQuestionsList: data
         } 
       } else if (response.data.next !== null) {
-        return this.getQuizzesQuestions(response.data.next, data)
+        return this.getQuizzesFormulationQuestions(response.data.next, data)
       } else return false
     } catch {
       return false
     }
-  }
+  },
 }

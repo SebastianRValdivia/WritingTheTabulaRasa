@@ -4,13 +4,19 @@ import api from "src/api"
 export const useQuizzStore = defineStore("quizz", {
   state: () => ({
     quizzesList: [],
-    questionsList: []
+    formulationQuestionsList: []
   }),
   getters: {
     getQuizzesList: (state) => state.quizzesList,
     getQuestionsByQuizzId: (state) => {
-      return (quizzId) => 
-        state.questionsList.filter((question) => question.quizz === quizzId) 
+      return (quizzId) => {
+        let formulationQuestions = state.formulationQuestionsList.filter(
+          (question) => question.quizz === quizzId
+        ) 
+        return [
+          ...formulationQuestions,
+        ]
+      }
     }
   },
   actions: {
@@ -22,13 +28,16 @@ export const useQuizzStore = defineStore("quizz", {
         return true
       } else return false
     },
-    async retrieveQuizzesQuestionsList() {
-      let result = await api.quizzes.getQuizzesQuestions()
+    async retrieveQuizzesFormulationQuestionsList() {
+      let result = await api.quizzes.getQuizzesFormulationQuestions()
 
       if (result) {
-        this.questionsList = result.quizzesQuestionsList
+        this.formulationQuestionsList = result.quizzesFormulationQuestionsList
         return true
       } else return false
+    },
+    async retrieveQuizzesQuestionsList() {
+      await this.retrieveQuizzesFormulationQuestionsList()
     }
   }
 })

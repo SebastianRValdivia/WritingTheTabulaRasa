@@ -1,5 +1,13 @@
 // This is just an example,
 // so you can safely delete all default props below
+const general = {
+  failed: 'Action failed',
+  success: 'Action was successful',
+  done: "Done",
+  confirm: "Confirm",
+  sureDelete: "Are you sure you want to delete this?",
+}
+
 const mainLayout = {
   compendiums: "Compendiums",
   cheatsheets: "Cheat Sheets",
@@ -95,6 +103,9 @@ const guideEditorPage = {
   stepTitle: "Step title",
   stepContent: "Step content",
 }
+const quizzesListPage = {
+  pageTitle: "Quizzes"
+}
 
 const imageUploadDialog = {
   caption: "Caption"
@@ -104,11 +115,7 @@ const metadataEditorDialog = {
 }
 
 export default {
-  failed: 'Action failed',
-  success: 'Action was successful',
-  done: "Done",
-  confirm: "Confirm",
-  sureDelete: "Are you sure you want to delete this?",
+  general,
 
   mainLayout,
   mainDrawer,
@@ -131,6 +138,7 @@ export default {
   noteListPage,
   guidesListPage,
   guideEditorPage,
+  quizzesListPage,
 
   imageUploadDialog,
   metadataEditorDialog,

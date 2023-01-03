@@ -3,10 +3,14 @@ from rest_framework import viewsets, permissions
 from applications.quizzes.models import (
     QuizzModel,
     QuizzFormulationQuestionModel,
+    QuizzChoicesQuestionModel,
+    QuizzChoiceModel,
 )
 from applications.quizzes.serializers import (
     QuizzSerializer,
     QuizzFormulationQuestionSerializer,
+    QuizzChoicesQuestionSerializer,
+    QuizzChoiceSerializer,
 )
 
 # Create your views here.
@@ -22,3 +26,17 @@ class QuizzFormulationQuestionViewSet(viewsets.ModelViewSet):
     serializer_class = QuizzFormulationQuestionSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     filterset_fields = ["quizz"]
+
+class QuizzChoicesQuestionViewSet(viewsets.ModelViewSet):
+
+    queryset = QuizzChoicesQuestionModel.objects.all().order_by("id")
+    serializer_class = QuizzChoicesQuestionSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    filterset_fields = ["quizz"]
+
+class QuizzChoiceViewSet(viewsets.ModelViewSet):
+
+    queryset = QuizzChoiceModel.objects.all().order_by("id")
+    serializer_class = QuizzChoiceSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    filterset_fields = ["question"]

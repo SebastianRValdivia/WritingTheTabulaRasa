@@ -107,6 +107,16 @@ export const useNoteStore = defineStore("note", {
         return true 
       } else return false
     },
+    async updateFleetingNote(noteId, newNoteContent) {
+      let result = await api.notes.patchFleetingNoteContent(noteId, newNoteContent)
+
+      if (result) {
+        let index = this.fleetingNotes.findIndex(
+          (note) => note.id === noteId
+        )
+        if (index !== -1) this.fleetingNotes[index].content = newNoteContent
+      } else return false
+    },
     async removeFleetingNote(noteId) {
       let result = await api.notes.deleteFleetingNote(noteId)
 

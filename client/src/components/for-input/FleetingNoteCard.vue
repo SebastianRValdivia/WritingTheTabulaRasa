@@ -42,7 +42,9 @@
       v-else 
       class="q-pt-xs"
     >
-      {{ props.fleetingNoteData.content }}
+      <MarkdownPreview
+        :md="props.fleetingNoteData.content"
+      />
     </q-card-section>
 
   </q-card>
@@ -52,6 +54,7 @@
 import { ref, onBeforeMount } from "vue"
 
 import { useNoteStore } from "src/stores/note-store"
+import MarkdownPreview from "src/components/for-viewing/MarkdownPreview"
 
 export default {
   name: "FleetingNoteCard",
@@ -60,7 +63,9 @@ export default {
       requiered: true
     }
   },
-
+  components: {
+    MarkdownPreview,
+  },
   setup(props) {
     const noteStore = useNoteStore()
 

@@ -111,6 +111,24 @@ export default {
       return false
     }
   },
+  async patchFleetingNoteContent(idNoteToPatch, newNoteContent) {
+    try {
+      let response = await api.patch(
+        `v1/notes/fleeting/${idNoteToPatch}/`,
+        { content: newNoteContent }
+      )
+
+      if (response.status === 200) {
+        return {
+          code: response.status,
+          updatedFleetingNote: response.data
+        }
+      } else return false
+    } catch {
+      return false
+    }
+
+  },
   async getLiteraryNotesList(url=null, previous=[]) {
     let response = url === null 
     ? await api.get("v1/notes/literary/") 

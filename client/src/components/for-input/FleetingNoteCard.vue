@@ -25,6 +25,7 @@
         round 
         flat 
         color="primary"
+        @click="saveEdit"
       />
     </q-card-actions>
     <q-card-section v-if="isEditing">
@@ -72,6 +73,13 @@ export default {
     function editNote() {
       isEditing.value = !isEditing.value
     }
+    async function saveEdit() {
+      let result = await noteStore.updateFleetingNote(
+        props.fleetingNoteData.id,
+        contentInput.value,
+      )
+      isEditing.value = false
+    }
 
     onBeforeMount(() => {
       contentInput.value = props.fleetingNoteData.content
@@ -84,6 +92,7 @@ export default {
 
       editNote,
       removeNote,
+      saveEdit,
     }
 
   }

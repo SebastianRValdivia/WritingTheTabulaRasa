@@ -4,7 +4,7 @@
   >
     <q-card-actions align="right">
       <q-btn 
-        icon="removeNote" 
+        icon="delete" 
         round 
         flat 
         color="negative"

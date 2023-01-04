@@ -21,6 +21,20 @@ export default {
       return false
     }
   },
+  async getQuizzObjectById(quizzId) {
+    try {
+      let response = await api.get(`v1/quizzes/quizzes-objects/${quizzId}/`)
+
+      if (response.status === 200) {
+        return {
+          code: response.status,
+          quizzData: response.data
+        }
+      } else return false
+    } catch {
+      return false
+    }
+  },
   async getQuizzesFormulationQuestions(url=null, previous=[]) {
     try {
       let response = url === null 

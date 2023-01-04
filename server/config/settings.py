@@ -69,6 +69,7 @@ INSTALLED_APPS = [
     "applications.encyclopedia",
     "applications.research",
     "applications.guides",
+    "applications.quizzes",
     "applications.metadata",
 ]
 

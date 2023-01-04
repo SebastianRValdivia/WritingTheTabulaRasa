@@ -106,7 +106,18 @@ const routes = [
         path: "guides/editor/",
         name: "guideEditor",
         component: () => import("src/pages/GuideEditorPage")
-      }
+      },
+      {
+        path: "quizzes/",
+        name: "quizzesListPage",
+        component: () => import("src/pages/QuizzListPage")
+      },
+      {
+        path: "quizzes/:id/",
+        name: "quizzPage",
+        component: () => import("src/pages/QuizzPage"),
+        props: true
+      },
     ]
   },
 

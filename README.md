@@ -2,17 +2,15 @@
 
 ### IN DEVELOPEMENT DO NOT USE IN PRODUCTION YET
 
-Tabula Rasa is a self hosted web service. It's a cooperative and multipurpouse study assistant made for either a single person or an entire organization.
+Writing the Tabula Rasa is a study system and an information organizer. It's aimed at students of any type, with the goal of helping in their task of learning.
 
-Based on the [Writing the Tabula Rasa](docs/WritingTheTabulaRasa/index.md).
-
-It provides many features that can overwhelming but they are based on research and effective study guides. For more information check FAQs.
+The software development is guided by the book *Writing the Blank Tabula* which can be read for free here. The proposed tools and features are taken from this book, any improvements must be referenced from it. The book follows a version system that allows it to adapt to changes. Anyone can start a discussion about the book by creating an issue and expressing their point of view in an academic way, citing sources and explaining their position.
 
 ---
 
 ## Licence
 
-Copyright © 2020 Sebastian Valdivia
+Copyright © 2023 Sebastian Valdivia
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

@@ -4,7 +4,7 @@
 
 Writing the Tabula Rasa is a study system and an information organizer. It's aimed at students of any type, with the goal of helping in their task of learning.
 
-The software development is guided by the book *Writing the Blank Tabula* which can be read for free here. The proposed tools and features are taken from this book, any improvements must be referenced from it. The book follows a version system that allows it to adapt to changes. Anyone can start a discussion about the book by creating an issue and expressing their point of view in an academic way, citing sources and explaining their position.
+The software development is guided by the book *Writing the Tabula Rasa* which can be read for free here. The proposed tools and features are taken from this book, any improvements must be referenced from it. The book follows a version system that allows it to adapt to changes. Anyone can start a discussion about the book by creating an issue and expressing their point of view in an academic way, citing sources and explaining their position.
 
 ---
 

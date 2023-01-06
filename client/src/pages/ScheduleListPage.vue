@@ -9,16 +9,20 @@
             </router-link>
           </q-item>
         </q-list>
-        <q-page-sticky position="bottom-right" :offset="[20, 20]">
-        <q-btn 
-          icon="add"
-          round
-          color="primary"
-          :to="{name: 'newSchedule'}"        
+        <q-date
+          v-model="selectedDate"
+          :events="displayedGoalsDates"
         />
-        </q-page-sticky>
       </div>
     </div>
+    <q-page-sticky position="bottom-right" :offset="[20, 20]">
+      <q-btn 
+        icon="add"
+        round
+        color="primary"
+        :to="{name: 'newSchedule'}"        
+      />
+    </q-page-sticky>
   </q-page>
 </template>
 
@@ -37,11 +41,12 @@ export default {
     const { t } = useI18n()
     const scheduleStore = useScheduleStore()
     const userStore = useUserStore()
-    const $q = useQuasar()
+    const quasar = useQuasar()
 
     const objectivesDates = ref([])
     const userSelection = ref("")
     const searchInput = ref("")
+    const selectedDate = ref()
 
     const displayedGoals = computed(() => {
       if (searchInput.value) return fuzzySearchByObjectByKeys(
@@ -51,11 +56,21 @@ export default {
       )
       else return scheduleStore.getGoalsListByUser(userStore.getUserId)
     })
+    const displayedGoalsDates = computed(() => {
+      if (displayedGoals.value.length > 0) {
+        let goalDates = displayedGoals.value.map((goal) => goal.finish)
+        goalDates.forEach((goalDate, goalDateIndex, goalDatesArray) => {
+          goalDatesArray[goalDateIndex] = 
+            date.formatDate(goalDate, "YYYY/MM/DD")
+        })
+        return goalDates
+      } else return []
+    })
 
     async function loadPage() {
-      $q.loading.show()  
+      quasar.loading.show()  
       await scheduleStore.retrieveGoals()
-      $q.loading.hide()
+      quasar.loading.hide()
     }
 
     onBeforeMount(() => {
@@ -68,7 +83,9 @@ export default {
 
     return {
       displayedGoals,
+      displayedGoalsDates,
       userSelection,
+      selectedDate,
     }
 
   }

@@ -39,7 +39,7 @@ const routes = [
       },
       {
         path: "my/schedules/:id/",
-        name: "schedule",
+        name: "schedulePage",
         component: () => import("src/pages/SchedulePage"),
         props: true,
       },

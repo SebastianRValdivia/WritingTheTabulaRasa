@@ -4,7 +4,9 @@
       <div class="col-12 column items-center">
         <q-list class="goals-list column" >
           <q-item v-for="goal in scheduleStore.getGoalsList" :key="goal.id">
-            {{ goal.title }}: {{ goal.result }} to {{ goal.finish }}
+            <router-link :to="{name: 'schedulePage', params: {id: goal.id}}">
+              {{ goal.title }}: {{ goal.result }} to {{ goal.finish }}
+            </router-link>
           </q-item>
         </q-list>
         <q-btn 

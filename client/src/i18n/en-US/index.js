@@ -107,6 +107,10 @@ const guideEditorPage = {
 const quizzesListPage = {
   pageTitle: "Quizzes"
 }
+const essaysListPage = {
+  pageTitle: "Essays",
+  by: "By"
+}
 
 const imageUploadDialog = {
   caption: "Caption"
@@ -140,6 +144,7 @@ export default {
   guidesListPage,
   guideEditorPage,
   quizzesListPage,
+  essaysListPage,
 
   imageUploadDialog,
   metadataEditorDialog,

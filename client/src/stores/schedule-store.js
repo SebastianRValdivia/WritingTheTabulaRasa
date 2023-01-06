@@ -10,7 +10,13 @@ export const useScheduleStore = defineStore("schedule", {
   }),
   getters: {
     getGoalsList: (state) => state.goalsList,
+    getGoalsListByUser: (state) => {
+      return (userId) => state.goalsList.filter((goal) => goal.owner === userId)
+    },
     getObjectivesList: (state) => state.objectivesList,
+    getGoalById: (state) => {
+      return (goalId) => state.goalsList.find((goal) => goal.id === goalId)
+    }
   },
   actions: {
     async retrieveGoals() {
@@ -22,6 +28,14 @@ export const useScheduleStore = defineStore("schedule", {
       } else {
         return false
       }
+    },
+    async retrieveGoalById(goalId){
+      let result = await api.schedule.getGoalById(goalId)
+
+      if (result && !this.getGoalById(goalId)) {
+        this.goalsList.push(result.goal)
+        return true
+      } else return false
     },
     async createGoal(goalData) {
       let userStore = useUserStore()

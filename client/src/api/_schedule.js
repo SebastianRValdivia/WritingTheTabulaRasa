@@ -18,6 +18,20 @@ export default {
       }
     }
   },
+  async getGoalById(goalId) {
+    try {
+      let response = await api.get(`v1/schedules/goals/${goalId}/`)
+
+      if (response.status === 200) {
+        return {
+          code: 200,
+          goal: response.data
+        }
+      } else return fales
+    } catch {
+      return false
+    }
+  },
   async postGoal(goalData) {
     try {
       let response = await api.post(

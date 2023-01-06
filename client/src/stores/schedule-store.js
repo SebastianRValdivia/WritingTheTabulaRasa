@@ -10,6 +10,9 @@ export const useScheduleStore = defineStore("schedule", {
   }),
   getters: {
     getGoalsList: (state) => state.goalsList,
+    getGoalsListByUser: (state) => {
+      return (userId) => state.goalsList.filter((goal) => goal.owner === userId)
+    },
     getObjectivesList: (state) => state.objectivesList,
     getGoalById: (state) => {
       return (goalId) => state.goalsList.find((goal) => goal.id === goalId)

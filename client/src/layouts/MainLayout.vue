@@ -27,6 +27,9 @@
             <q-item clickable :to="{name: 'guidesListPage'}">
               <q-item-section>{{ $t('mainLayout.guides') }}</q-item-section>
             </q-item>
+            <q-item clickable :to="{name: 'essaysListPage'}">
+              <q-item-section>{{ $t('mainLayout.essays') }}</q-item-section>
+            </q-item>
           </q-menu>
         </q-btn>
         <q-btn :label="$t('mainLayout.activities')">

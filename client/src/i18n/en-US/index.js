@@ -14,7 +14,8 @@ const mainLayout = {
   encyclopedia: "Encyclopedia",
   guides: "Guides",
   activities: "Activities",
-  research: "Research"
+  research: "Research",
+  essays: "Essays",
 }
 const mainDrawer = {
   notes: "My notes",

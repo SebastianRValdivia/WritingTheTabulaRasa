@@ -114,6 +114,11 @@ const routes = [
         component: () => import("src/pages/GuideEditorPage")
       },
       {
+        path: "essays/",
+        name: "essaysListPage",
+        component: () => import("src/pages/EssaysListPage")
+      },
+      {
         path: "quizzes/",
         name: "quizzesListPage",
         component: () => import("src/pages/QuizzListPage")

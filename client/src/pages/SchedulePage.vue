@@ -1,83 +1,56 @@
 <template>
-  <q-page v-if="goalsListLength > 0" >
-    <div class="row q-pa-sm">
-      <q-date 
-        v-model="userSelection" 
-        :events="objectivesDates" 
-        class="column col-5"
-      />
-      <q-list class="column q-ml-md col-6" bordered separator>
-        <q-item 
-          v-for="objective in scheduleStore.getObjectivesList" 
-          :key="objective.id"
-          class="clickable"
-        >
-          <q-item-section>
-            {{ objective.title }}
-          </q-item-section>
-        </q-item>
-      </q-list>
-    </div>
-    <div class="row">
-      <q-list class="goals-list column" >
-        <q-item v-for="goal in scheduleStore.getGoalsList" :key="goal.id">
-          {{ goal.title }}: {{ goal.result }} to {{ goal.finish }}
-        </q-item>
-      </q-list>
-    </div>
-  </q-page>
-  <q-page v-else-if="goalsListLength === 0" class="column items-center">
-    <h2>{{ $t("schedulePage.empty")}}</h2>
-
-    <div>
-      <q-btn 
-        label="Add goal"
-        :to="{name: 'newSchedule'}"        
-      />
+  <q-page padding v-if="goalData">
+    <div class="row justify-center">
+      <h3 class="text-h3">#{{ goalData.id }} {{ goalData.title }}</h3>
     </div>
   </q-page>
 </template>
 
 <script>
 import { ref, onBeforeMount } from "vue"
-import { useQuasar, date, useMeta } from "quasar"
+import { onBeforeRouteUpdate } from "vue-router"
+import { useQuasar, useMeta } from "quasar"
 import { useI18n } from "vue-i18n"
 
 import { useScheduleStore } from "src/stores/schedule-store"
 
 export default {
   name: "SchedulePage",
-  setup() {
-    const { t } = useI18n()
+  props: {
+    id: String
+  },
+  setup(props) {
     const scheduleStore = useScheduleStore()
-    const $q = useQuasar()
+    const quasar = useQuasar()
+    const { t } = useI18n()
 
-    const goalsListLength = ref()
-    const objectivesDates = ref([])
-    const userSelection = ref("")
+    const goalData = ref()
 
-    onBeforeMount(async () => {
-      $q.loading.show()  
-      await scheduleStore.retrieveGoals()
-      goalsListLength.value = scheduleStore.getGoalsList.length
-      await scheduleStore.retrieveObjectives()
-      scheduleStore.getObjectivesList.forEach((objective) => {
-        objectivesDates.value.push(date.formatDate(objective.date, "YYYY/MM/DD"))
-      })
-      $q.loading.hide()
+    async function loadPage(goalId) {
+      quasar.loading.show()
+      goalData.value = scheduleStore.getGoalById(goalId)
+
+      if (!goalData.value) {
+        let result = await scheduleStore.retrieveGoalById(goalId)
+        if (result) goalData.value = scheduleStore.getGoalById(goalId)
+      }
+      quasar.loading.hide()
+    }
+
+    onBeforeMount(() => {
+      loadPage(Number(props.id))
+    })
+    onBeforeRouteUpdate((to) => {
+      loadPage(Number(to.params.id))
     })
 
     useMeta({
-      title: t("schedulePage.pageTitle")
+      title: t("cheatSheetPage.pageTitle"),
     })
 
     return {
-      scheduleStore,
-      goalsListLength,
-      userSelection,
-      objectivesDates,
+      goalData,
     }
-
   }
 }
 </script>

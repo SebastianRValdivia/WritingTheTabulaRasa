@@ -1,18 +1,22 @@
 <template>
   <q-page padding>
-    <div class="row">
-      <div class="col-12 column items-center">
-        <q-list class="goals-list column" >
-          <q-item v-for="goal in displayedGoals" :key="goal.id">
-            <router-link :to="{name: 'schedulePage', params: {id: goal.id}}">
-              {{ goal.title }}: {{ goal.result }} to {{ goal.finish }}
-            </router-link>
-          </q-item>
-        </q-list>
-        <q-date
-          v-model="selectedDate"
-          :events="displayedGoalsDates"
-        />
+    <div class="row ">
+      <div class="col-12">
+        <q-table
+          :rows=displayedGoals
+          row-key="title"
+          selection="single"
+          v-model:selected="selectedDate"
+        >
+        </q-table>
+        <div class="column col-12 items-center" v-if="selectedDate">
+          <h3 class="text-h3">{{ selectedDate[0].title}}</h3>
+          <p class="subtitle1">{{ selectedDate[0].result }}</p>
+          <q-btn
+            icon="navigate_next"
+            :to="{name: 'schedulePage', params: {id: selectedDate[0].id}}"
+          />
+        </div>
       </div>
     </div>
     <q-page-sticky position="bottom-right" :offset="[20, 20]">
@@ -49,12 +53,33 @@ export default {
     const selectedDate = ref()
 
     const displayedGoals = computed(() => {
-      if (searchInput.value) return fuzzySearchByObjectByKeys(
-        scheduleStore.getGoalsListByUser(userStore.getUserId),
-        searchInput.value,
-        ["title"],
-      )
-      else return scheduleStore.getGoalsListByUser(userStore.getUserId)
+      function formatForDisplay(goalArray) {
+        goalArray.forEach((goal, index, goalsArr) => {
+          let formatCreatedDate = date.formatDate(goal.created, "MM/DD/YYYY")
+          let formatFinishDate = date.formatDate(goal.finish, "MM/DD/YYYY")
+          goalsArr[index] = {
+            id: goal.id,
+            title: goal.title,
+            result: goal.result,
+            created: formatCreatedDate,
+            finish: formatFinishDate,
+          }
+        })
+        return goalArray
+      }
+
+      if (searchInput.value) {
+        let searchResult = fuzzySearchByObjectByKeys(
+          scheduleStore.getGoalsListByUser(userStore.getUserId),
+          searchInput.value,
+          ["title"],
+        )
+        return searchResult
+      } else {
+        return formatForDisplay(
+          scheduleStore.getGoalsListByUser(userStore.getUserId)
+        )
+      }
     })
     const displayedGoalsDates = computed(() => {
       if (displayedGoals.value.length > 0) {

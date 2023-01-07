@@ -29,6 +29,7 @@ export default ({
         restoreUserCredentials()
         await userStore.retrieveUserPreferences()
       }
+      await userStore.retrieveUsersData()
 
     })
 

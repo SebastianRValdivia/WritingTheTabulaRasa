@@ -14,7 +14,8 @@ const mainLayout = {
   encyclopedia: "Encyclopedia",
   guides: "Guides",
   activities: "Activities",
-  research: "Research"
+  research: "Research",
+  essays: "Essays",
 }
 const mainDrawer = {
   notes: "My notes",
@@ -106,6 +107,14 @@ const guideEditorPage = {
 const quizzesListPage = {
   pageTitle: "Quizzes"
 }
+const essaysListPage = {
+  pageTitle: "Essays",
+  by: "By"
+}
+const essayPage = {
+  pageTitle: "Essay",
+  autor: "Autor",
+}
 
 const imageUploadDialog = {
   caption: "Caption"
@@ -139,6 +148,8 @@ export default {
   guidesListPage,
   guideEditorPage,
   quizzesListPage,
+  essaysListPage,
+  essayPage,
 
   imageUploadDialog,
   metadataEditorDialog,

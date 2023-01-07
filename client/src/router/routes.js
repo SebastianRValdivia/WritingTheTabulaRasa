@@ -114,6 +114,17 @@ const routes = [
         component: () => import("src/pages/GuideEditorPage")
       },
       {
+        path: "essays/",
+        name: "essaysListPage",
+        component: () => import("src/pages/EssaysListPage")
+      },
+      {
+        path: "essays/:url/",
+        name: "essayPage",
+        component: () => import("src/pages/EssayPage"),
+        props: true
+      },
+      {
         path: "quizzes/",
         name: "quizzesListPage",
         component: () => import("src/pages/QuizzListPage")
@@ -131,7 +142,7 @@ const routes = [
   // but you can also remove it
   {
     path: "/:catchAll(.*)*",
-    name: "NotFound",
+    name: "notFound",
     component: () => import("pages/ErrorNotFound")
   }
 ]

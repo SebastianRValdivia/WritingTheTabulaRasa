@@ -12,6 +12,7 @@ urlpatterns = [
     path("guides/", include("applications.guides.api_urls")),
     path("encyclopedia/", include("applications.encyclopedia.api_urls")),
     path("researches/", include("applications.research.api_urls")),
+    path("essays/", include("applications.essays.api_urls")),
     path("quizzes/", include("applications.quizzes.api_urls")),
     path("metadata/", include("applications.metadata.api_urls")),
 ]

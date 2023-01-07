@@ -49,6 +49,25 @@ export default {
         reason: response.data
       }
     }
-  }
+  },
+  async getUsersData(url=null, previous=[]) {
+    try {
+      let response = url === null 
+      ? await api.get("v1/users/data/") 
+      : await api.get(url)
 
+      let data = [...previous, ...response.data.results]
+
+      if (response.status === 200 && response.data.next === null) {
+        return {
+          code: response.status,
+          usersList: data
+        } 
+      } else if (response.data.next !== null) {
+          return this.getUsersData(response.data.next, data)
+      } else return false
+    } catch {
+      return false
+    }
+  },
 }

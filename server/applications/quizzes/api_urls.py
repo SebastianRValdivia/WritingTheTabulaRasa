@@ -6,6 +6,10 @@ from applications.quizzes.views import (
     QuizzFormulationQuestionViewSet,
     QuizzChoicesQuestionViewSet,
     QuizzChoiceViewSet,
+    QuizzOrderListQuestionViewSet,
+    QuizzListItemViewSet,
+    QuizzJoinQuestionViewSet,
+    QuizzJoinElementViewSet,
 )
 
 router = DefaultRouter()
@@ -24,6 +28,26 @@ router.register(
     "choices",
     QuizzChoiceViewSet,
     basename="choices"
+)
+router.register(
+    "list-questions",
+    QuizzOrderListQuestionViewSet,
+    basename="order-list-questions"
+)
+router.register(
+    "list-items",
+    QuizzListItemViewSet,
+    basename="list-items"
+)
+router.register(
+    "join-questions",
+    QuizzJoinQuestionViewSet,
+    basename="join-questions"
+)
+router.register(
+    "join-element",
+    QuizzJoinElementViewSet,
+    basename="join-elements"
 )
 
 urlpatterns = [

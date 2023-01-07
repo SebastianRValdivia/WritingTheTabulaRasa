@@ -5,6 +5,10 @@ from applications.quizzes.models import (
     QuizzFormulationQuestionModel,
     QuizzChoicesQuestionModel,
     QuizzChoiceModel,
+    QuizzOrderListQuestionModel,
+    QuizzListItemModel,
+    QuizzJoinQuestionModel,
+    QuizzJoinElementModel,
 )
 
 class QuizzSerializer(ModelSerializer):
@@ -29,4 +33,28 @@ class QuizzChoiceSerializer(ModelSerializer):
 
     class Meta:
         model = QuizzChoiceModel
+        fields = "__all__"
+
+class QuizzOrderListQuestionSerializer(ModelSerializer):
+
+    class Meta:
+        model = QuizzOrderListQuestionModel
+        fields = "__all__"
+
+class QuizzListItemSerializer(ModelSerializer):
+
+    class Meta:
+        model = QuizzListItemModel
+        fields = "__all__"
+
+class QuizzJoinQuestionSerializer(ModelSerializer):
+
+    class Meta:
+        model = QuizzJoinQuestionModel
+        fields = "__all__"
+
+class QuizzJoinElementSerializer(ModelSerializer):
+
+    class Meta:
+        model = QuizzJoinElementModel
         fields = "__all__"

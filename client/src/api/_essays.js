@@ -21,4 +21,18 @@ export default {
       return false 
     }
   },
+  async getEssayByUrl(essayUrl) {
+    try {
+      let response = await api.get(`v1/essays/?url=${essayUrl}`)
+
+      if (response.status === 200) {
+        return {
+          code: 200,
+          essay: response.data.results[0]
+        }
+      } else return false
+    } catch {
+      return false 
+    }
+  },
 }

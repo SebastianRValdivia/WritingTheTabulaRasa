@@ -21,6 +21,14 @@ export const useEssayStore = defineStore("essays", {
         this.essaysList = result.essaysList
         return true
       } else return false
+    },
+    async retrieveEssayByUrl(essayUrl) {
+      let result = await api.essays.getEssayByUrl(essayUrl)
+
+      if (result && !this.getEssayByUrl(essayUrl)) {
+        this.essaysList.push(result.essay)
+        return true
+      } else return false
     }
   }
 })

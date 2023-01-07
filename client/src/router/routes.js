@@ -142,7 +142,7 @@ const routes = [
   // but you can also remove it
   {
     path: "/:catchAll(.*)*",
-    name: "NotFound",
+    name: "notFound",
     component: () => import("pages/ErrorNotFound")
   }
 ]

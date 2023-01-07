@@ -6,6 +6,7 @@
         :key="essayData.id" 
         v-ripple
         clickable
+        :to="{name: 'essayPage', params: {url: essayData.url}}"
       >
         <q-item-section>
           <q-item-label overline> #{{ essayData.id }}</q-item-label>

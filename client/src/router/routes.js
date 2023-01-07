@@ -119,6 +119,12 @@ const routes = [
         component: () => import("src/pages/EssaysListPage")
       },
       {
+        path: "essays/:url/",
+        name: "essayPage",
+        component: () => import("src/pages/EssayPage"),
+        props: true
+      },
+      {
         path: "quizzes/",
         name: "quizzesListPage",
         component: () => import("src/pages/QuizzListPage")

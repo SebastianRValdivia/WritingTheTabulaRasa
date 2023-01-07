@@ -16,6 +16,7 @@ const mainLayout = {
   activities: "Activities",
   research: "Research",
   essays: "Essays",
+  quizzes: "Quizzes"
 }
 const mainDrawer = {
   notes: "My notes",

@@ -3,51 +3,39 @@ from rest_framework.routers import DefaultRouter
 
 from applications.quizzes.views import (
     QuizzViewSet,
+    QuizzQuestionViewSet,
     QuizzFormulationQuestionViewSet,
-    QuizzChoicesQuestionViewSet,
-    QuizzChoiceViewSet,
-    QuizzOrderListQuestionViewSet,
-    QuizzListItemViewSet,
-    QuizzJoinQuestionViewSet,
-    QuizzJoinElementViewSet,
+    QuizzListItemQuestionViewSet,
+    QuizzJoinElementQuestionViewSet,
+    QuizzChoiceQuestionViewSet,
 )
 
 router = DefaultRouter()
 router.register("quizzes-objects", QuizzViewSet, basename="quizzes")
 router.register(
-    "formulation-questions",
+    "quizz-questions",
+    QuizzQuestionViewSet,
+    basename="quizz-question"
+)
+router.register(
+    "question-formulations",
     QuizzFormulationQuestionViewSet,
-    basename="formulation-questions"
+    basename="question-formulation"
 )
 router.register(
-    "choices-questions",
-    QuizzChoicesQuestionViewSet,
-    basename="choices-questions"
+    "question-list-items",
+    QuizzListItemQuestionViewSet,
+    basename="question-list-item"
 )
 router.register(
-    "choices",
-    QuizzChoiceViewSet,
-    basename="choices"
+    "question-join-elements",
+    QuizzJoinElementQuestionViewSet,
+    basename="question-join-element"
 )
 router.register(
-    "list-questions",
-    QuizzOrderListQuestionViewSet,
-    basename="order-list-questions"
-)
-router.register(
-    "list-items",
-    QuizzListItemViewSet,
-    basename="list-items"
-)
-router.register(
-    "join-questions",
-    QuizzJoinQuestionViewSet,
-    basename="join-questions"
-)
-router.register(
-    "join-element",
-    QuizzJoinElementViewSet,
-    basename="join-elements"
+    "question-choices",
+    QuizzChoiceQuestionViewSet,
+    basename="question-choice"
 )
 
 urlpatterns = [

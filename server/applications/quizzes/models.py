@@ -25,8 +25,13 @@ class QuizzModel(models.Model):
     def __str__(self):
         return self.title
 
-# Formulation question
-class QuizzFormulationQuestionModel(models.Model):
+class QuizzQuestionModel(models.Model):
+
+    class QuestionTypeChoices(models.IntegerChoices):
+        FORMULATION = 0, "Formulation" 
+        CHOICE = 1, "Choice"
+        JOIN = 2, "Join"
+        LIST = 3, "List"
 
     quizz = models.ForeignKey(
         "quizzes.QuizzModel",
@@ -34,7 +39,32 @@ class QuizzFormulationQuestionModel(models.Model):
         blank=True,
         null=True,
     )
+    size = models.IntegerField(
+        choices=QuestionTypeChoices.choices,
+        default=QuestionTypeChoices.FORMULATION,
+        blank=False,
+        null=False,
+    )
     question = models.TextField(
+        blank=False,
+        null=False,
+    )
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Quizz question"
+        verbose_name_plural = "Quizz questions"
+
+    def __str__(self):
+        return str(self.quizz.id) + self.question
+
+# Formulation question
+class QuizzFormulationQuestionModel(models.Model):
+
+    question = models.ForeignKey(
+        "quizzes.QuizzQuestionModel",
+        on_delete=models.CASCADE,
         blank=False,
         null=False,
     )
@@ -53,31 +83,7 @@ class QuizzFormulationQuestionModel(models.Model):
         return self.question
 
 
-# Multiple choice question model
-# Each might ve several QuizzChoiceModel attached to it 
-class QuizzChoicesQuestionModel(models.Model):
-
-    quizz = models.ForeignKey(
-        "quizzes.QuizzModel",
-        on_delete=models.SET_NULL,
-        blank=True,
-        null=True,
-    )
-    question = models.TextField(
-        blank=False,
-        null=False,
-    )
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        verbose_name = "Quizz choice question"
-        verbose_name_plural = "Quizz choice questions"
-
-    def __str__(self):
-        return self.question
-
-class QuizzChoiceModel(models.Model):
+class QuizzChoiceQuestionModel(models.Model):
 
     text = models.CharField( # The text to present
         max_length=CHARFIELD_LONG,
@@ -89,7 +95,7 @@ class QuizzChoiceModel(models.Model):
         null=False,
     )
     question = models.ForeignKey(
-        "quizzes.QuizzChoicesQuestionModel",
+        "quizzes.QuizzQuestionModel",
         on_delete=models.CASCADE,
         blank=False,
         null=False,
@@ -105,32 +111,10 @@ class QuizzChoiceModel(models.Model):
         return self.text
 
 # Order the list question
-class QuizzOrderListQuestionModel(models.Model):
-
-    quizz = models.ForeignKey(
-        "quizzes.QuizzModel",
-        on_delete=models.SET_NULL,
-        blank=True,
-        null=True,
-    )
-    question = models.TextField(
-        blank=False,
-        null=False,
-    )
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        verbose_name = "Quizz order list question"
-        verbose_name_plural = "Quizz order list questions"
-
-    def __str__(self):
-        return self.question
-
-class QuizzListItemModel(models.Model):
+class QuizzListItemQuestionModel(models.Model):
 
     question = models.ForeignKey(
-        "quizzes.QuizzOrderListQuestionModel",
+        "quizzes.QuizzQuestionModel",
         on_delete=models.CASCADE,
         blank=False,
         null=False,
@@ -154,33 +138,10 @@ class QuizzListItemModel(models.Model):
     def __str__(self):
         return str(self.question.id) + str(self.order)
 
-# Join related parts
-class QuizzJoinQuestionModel(models.Model):
-
-    quizz = models.ForeignKey(
-        "quizzes.QuizzModel",
-        on_delete=models.SET_NULL,
-        blank=True,
-        null=True,
-    )
-    question = models.TextField(
-        blank=False,
-        null=False,
-    )
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        verbose_name = "Quizz join question"
-        verbose_name_plural = "Quizz join questions"
-
-    def __str__(self):
-        return self.question
-
-class QuizzJoinElementModel(models.Model):
+class QuizzJoinElementQuestionModel(models.Model):
 
     question = models.ForeignKey(
-        "quizzes.QuizzJoinQuestionModel",
+        "quizzes.QuizzQuestionModel",
         on_delete=models.CASCADE,
         blank=False,
         null=False,

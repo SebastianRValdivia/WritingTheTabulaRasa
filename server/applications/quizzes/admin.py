@@ -2,21 +2,17 @@ from django.contrib import admin
 
 from applications.quizzes.models import (
     QuizzModel,
+    QuizzQuestionModel,
     QuizzFormulationQuestionModel,
-    QuizzChoicesQuestionModel,
-    QuizzChoiceModel,
-    QuizzOrderListQuestionModel,
-    QuizzListItemModel,
-    QuizzJoinQuestionModel,
-    QuizzJoinElementModel,
+    QuizzListItemQuestionModel,
+    QuizzJoinElementQuestionModel,
+    QuizzChoiceQuestionModel,
 )
 
 # Register your models here.
 admin.site.register(QuizzModel)
+admin.site.register(QuizzQuestionModel)
 admin.site.register(QuizzFormulationQuestionModel)
-admin.site.register(QuizzChoicesQuestionModel)
-admin.site.register(QuizzChoiceModel)
-admin.site.register(QuizzOrderListQuestionModel)
-admin.site.register(QuizzListItemModel)
-admin.site.register(QuizzJoinQuestionModel)
-admin.site.register(QuizzJoinElementModel)
+admin.site.register(QuizzListItemQuestionModel)
+admin.site.register(QuizzJoinElementQuestionModel)
+admin.site.register(QuizzChoiceQuestionModel)

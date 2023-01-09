@@ -4,8 +4,8 @@ import api from "src/api"
 export const useQuizzStore = defineStore("quizz", {
   state: () => ({
     quizzesList: [],
-    formulationQuestionsList: [],
-    choicesQuestionList: [],
+    quizzesQuestionsList: [],
+    formulationResponsesList: [],
   }),
   getters: {
     getQuizzesList: (state) => state.quizzesList,
@@ -15,19 +15,15 @@ export const useQuizzStore = defineStore("quizz", {
       )
     },
     getQuestionsByQuizzId: (state) => {
-      return (quizzId) => {
-        let formulationQuestions = state.formulationQuestionsList.filter(
-          (question) => question.quizz === quizzId
-        ) 
-        let choicesQuestions = state.choicesQuestionList.filter(
-          (question) => question.quizz === quizzId
-        ) 
-        return [
-          ...formulationQuestions,
-          ...choicesQuestions,
-        ]
-      }
+      return (quizzId) => state.quizzesQuestionsList.filter(
+        (question) => question.quizz === quizzId
+      )
     },
+    getFormulationResponseByQuestionId: (state) => {
+      return (questionId) => state.formulationResponsesList.find(
+        (response) => response.question === questionId
+      )
+    }
   },
   actions: {
     async retrieveQuizzesList() {
@@ -47,25 +43,22 @@ export const useQuizzStore = defineStore("quizz", {
         return true
       } else return false
     },
-    async retrieveQuizzesFormulationQuestionsList() {
-      let result = await api.quizzes.getQuizzesFormulationQuestions()
-
-      if (result) {
-        this.formulationQuestionsList = result.quizzesFormulationQuestionsList
-        return true
-      } else return false
-    },
-    async retrieveQuizzesChoicesQuestionsList() {
-      let result = await api.quizzes.getQuizzesChoicesQuestions()
-
-      if (result) {
-        this.choicesQuestionList = result.choicesQuestionsList
-        return true
-      } else return false
-    },
     async retrieveQuizzesQuestionsList() {
-      await this.retrieveQuizzesFormulationQuestionsList()
-      await this.retrieveQuizzesChoicesQuestionsList()
+      let result = await api.quizzes.getQuizzesQuestions()
+
+      if (result) {
+        this.quizzesQuestionsList = result.quizzesQuestionsList
+        return true
+      } else return false
+    },
+    async retrieveFormulationResponseByQuestionId(questionId) {
+      let result = await api.quizzes.getFormulationResponseByQuestionId(
+        questionId
+      )
+      if (result) {
+        this.formulationResponsesList.push(result.formulationReponse)
+        return true
+      } else return false
     }
   }
 })

@@ -39,7 +39,7 @@ class QuizzQuestionModel(models.Model):
         blank=True,
         null=True,
     )
-    size = models.IntegerField(
+    type = models.IntegerField(
         choices=QuestionTypeChoices.choices,
         default=QuestionTypeChoices.FORMULATION,
         blank=False,

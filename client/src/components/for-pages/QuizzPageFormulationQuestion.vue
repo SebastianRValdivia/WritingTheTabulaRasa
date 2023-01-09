@@ -1,9 +1,42 @@
 <template>
 <q-card>
-  <q-input 
-    v-model="responseInput"
-    type="textarea"
-  />
+  <q-card-section>
+    <q-input 
+      v-if="!previewAnswer"
+      v-model="responseInput"
+      type="textarea"
+    />
+    <q-splitter
+      v-else
+      v-model="splitterSize"
+      style="height: 400px"
+    >
+      <template v-slot:before>
+        <div class="q-pa-md">
+          <span class="text-h4">
+            {{ $t("quizzPageFormulationQuestion.correctAnswer")}}
+          </span>
+          <div>
+            {{ formulationResponse.response }}
+          </div>
+        </div>
+      </template>
+      <template v-slot:after>
+        <div class="q-pa-md">
+          <span class="text-h4">
+            {{ $t("quizzPageFormulationQuestion.yourAnswer")}}
+          </span>
+          <div>
+            {{ responseInput }}
+          </div>
+        </div>
+      </template>
+    </q-splitter>
+  </q-card-section>
+  <q-card-actions align="right">
+    <q-btn icon="done" @click="readyForReview"/>
+  </q-card-actions>
+
 </q-card>
 </template>
 
@@ -20,11 +53,18 @@ export default {
       required: true,
     }
   },
-  setup(props) {
+  emits: ["ready"],
+  setup(props, { emit }) {
     const quizzStore = useQuizzStore()
 
     const formulationResponse = ref()
+    const previewAnswer = ref(false)
     const responseInput = ref()
+    const splitterSize = ref(50)
+
+    function readyForReview() {
+      previewAnswer.value = true
+    }
 
     onBeforeMount(async () => {
       await quizzStore.retrieveFormulationResponseByQuestionId(
@@ -38,6 +78,10 @@ export default {
     return {
       formulationResponse,
       responseInput,
+      previewAnswer,
+      splitterSize,
+
+      readyForReview,
 
     }
     

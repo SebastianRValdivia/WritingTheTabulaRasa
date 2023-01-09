@@ -24,6 +24,7 @@
         <QuizzPageFormulationQuestion 
           v-if="question.type === 0"
           :questionId="question.id"
+          @ready="checkFormulationAnswer"
         />
         <q-stepper-navigation align="right">
           <q-btn-group>

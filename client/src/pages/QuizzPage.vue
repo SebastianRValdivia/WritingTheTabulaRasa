@@ -19,33 +19,35 @@
         :key="index"
         :name="index"
         :title="question.question"
-        :done="step > index"
+        :done="quizzResult[index] === true"
       >
         <QuizzPageFormulationQuestion 
           v-if="question.type === 0"
           :questionId="question.id"
-          @ready="checkFormulationAnswer"
+          @ready="checkAnswer"
         />
-        <q-stepper-navigation align="right">
-          <q-btn-group>
+      </q-step>
+      <template v-slot:navigation>
+        <q-stepper-navigation align="center">
+          <q-btn-group flat>
             <q-btn
-              @click="step = index + 1" 
+              @click="nextStep()" 
               icon="arrow_downward"
             />
             <q-btn 
-              @click="step = index - 1" 
+              @click="previousStep()" 
               icon="arrow_upward"
               class="q-ml-sm" 
             />
           </q-btn-group>
         </q-stepper-navigation>
-      </q-step>
+      </template>
     </q-stepper>
   </q-page>
 </template>
 
 <script>
-import { ref, onBeforeMount } from "vue"
+import { ref, computed, onBeforeMount } from "vue"
 
 import { useQuizzStore } from "src/stores/quizz-store"
 import QuizzPageFormulationQuestion from 
@@ -65,8 +67,17 @@ export default {
     const quizzData = ref({})
     const questionsList = ref([])
     const step = ref(0)
+    const quizzResult = ref([])
 
-
+    function checkAnswer(result, index) {
+      quizzResult.value.push(result)
+    }
+    function nextStep() {
+      step.value += 1
+    }
+    function previousStep() {
+      step.value -= 1
+    }
     async function loadPage(quizzId) {
       // Get quizz data
       quizzData.value = quizzStore.getQuizzDataById(quizzId)
@@ -74,8 +85,6 @@ export default {
         await quizzStore.retrieveQuizzById(quizzId)
         quizzData.value = quizzStore.getQuizzDataById(quizzId)
       }
-      
-
       // Get quizz questions
       questionsList.value = quizzStore.getQuestionsByQuizzId(quizzId)
       if (questionsList.value.length === 0) {
@@ -94,6 +103,12 @@ export default {
       quizzData,
       questionsList,
       step,
+      quizzResult,
+
+      checkAnswer,
+      previousStep,
+      nextStep,
+
     }
   }
 }

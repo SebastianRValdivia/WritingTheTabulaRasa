@@ -34,7 +34,11 @@
     </q-splitter>
   </q-card-section>
   <q-card-actions align="right">
-    <q-btn icon="done" @click="readyForReview"/>
+    <q-btn-group v-if="previewAnswer">
+      <q-btn icon="close" @click="markNegative"/>
+      <q-btn icon="done" @click="markPositive"/>
+    </q-btn-group>
+    <q-btn v-else icon="done" @click="readyForReview"/>
   </q-card-actions>
 
 </q-card>
@@ -65,6 +69,12 @@ export default {
     function readyForReview() {
       previewAnswer.value = true
     }
+    function markPositive() {
+      emit("ready", true)
+    }
+    function markNegative() {
+      emit("ready", false)
+    }
 
     onBeforeMount(async () => {
       await quizzStore.retrieveFormulationResponseByQuestionId(
@@ -82,6 +92,8 @@ export default {
       splitterSize,
 
       readyForReview,
+      markPositive,
+      markNegative,
 
     }
     

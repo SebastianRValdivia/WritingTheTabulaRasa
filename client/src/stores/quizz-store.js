@@ -6,6 +6,7 @@ export const useQuizzStore = defineStore("quizz", {
     quizzesList: [],
     quizzesQuestionsList: [],
     formulationResponsesList: [],
+    choicesList: [],
   }),
   getters: {
     getQuizzesList: (state) => state.quizzesList,
@@ -22,6 +23,11 @@ export const useQuizzStore = defineStore("quizz", {
     getFormulationResponseByQuestionId: (state) => {
       return (questionId) => state.formulationResponsesList.find(
         (response) => response.question === questionId
+      )
+    },
+    getChoicesByQuestionId: (state) => {
+      return (questionId) => state.choicesList.filter(
+        (choice) => choice.question === questionId
       )
     }
   },
@@ -57,6 +63,15 @@ export const useQuizzStore = defineStore("quizz", {
       )
       if (result) {
         this.formulationResponsesList.push(result.formulationReponse)
+        return true
+      } else return false
+    },
+    async retrieveChoicesByQuestionId(questionId) {
+      let result = await api.quizzes.getChoicesByQuestionId(questionId)
+
+      // TODO: check if choice already exist
+      if (result) {
+        this.choicesList = [...result.choicesList, ...this.choicesList]
         return true
       } else return false
     }

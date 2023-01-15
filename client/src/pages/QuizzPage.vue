@@ -24,7 +24,12 @@
         <QuizzPageFormulationQuestion 
           v-if="question.type === 0"
           :questionId="question.id"
-          @ready="checkAnswer"
+          @ready="saveResult"
+        />
+        <QuizzPageChoiceQuestion 
+          v-if="question.type === 1"
+          :questionId="question.id"
+          @ready="saveResult"
         />
       </q-step>
       <template v-slot:navigation>
@@ -43,6 +48,7 @@
         </q-stepper-navigation>
       </template>
     </q-stepper>
+    {{ quizzResult }}
   </q-page>
 </template>
 
@@ -52,6 +58,8 @@ import { ref, computed, onBeforeMount } from "vue"
 import { useQuizzStore } from "src/stores/quizz-store"
 import QuizzPageFormulationQuestion from 
   "src/components/for-pages/QuizzPageFormulationQuestion"
+import QuizzPageChoiceQuestion from 
+  "src/components/for-pages/QuizzPageChoiceQuestion"
 
 export default {
   name: "QuizzPage",
@@ -60,6 +68,7 @@ export default {
   },
   components: {
     QuizzPageFormulationQuestion,
+    QuizzPageChoiceQuestion,
   },
   setup(props) {
     const quizzStore = useQuizzStore()
@@ -69,7 +78,7 @@ export default {
     const step = ref(0)
     const quizzResult = ref([])
 
-    function checkAnswer(result, index) {
+    function saveResult(result, index) {
       quizzResult.value.push(result)
     }
     function nextStep() {
@@ -105,7 +114,7 @@ export default {
       step,
       quizzResult,
 
-      checkAnswer,
+      saveResult,
       previousStep,
       nextStep,
 

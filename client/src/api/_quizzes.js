@@ -51,4 +51,20 @@ export default {
       return false 
     }
   }, 
+  async getChoicesByQuestionId(questionId) {
+    try {
+      let response = await api.get(
+        `v1/quizzes/question-choices/?question=${questionId}`
+      )
+
+      if (response.status === 200) {
+        return {
+          code: 200,
+          choicesList: response.data.results,
+        }
+      } else return false
+    } catch {
+      return false
+    }
+  }
 }

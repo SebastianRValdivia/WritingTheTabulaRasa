@@ -1,47 +1,41 @@
 <template>
-<q-card>
-  <q-card-section>
-    <q-input 
-      v-if="!previewAnswer"
-      v-model="responseInput"
-      type="textarea"
-    />
-    <q-splitter
-      v-else
-      v-model="splitterSize"
-      style="height: 400px"
-    >
-      <template v-slot:before>
-        <div class="q-pa-md">
-          <span class="text-h4">
-            {{ $t("quizzPageFormulationQuestion.correctAnswer")}}
-          </span>
-          <div>
-            {{ formulationResponse.response }}
-          </div>
+  <q-input 
+    v-if="!previewAnswer"
+    v-model="responseInput"
+    type="textarea"
+  />
+  <q-splitter
+    v-else
+    v-model="splitterSize"
+    style="height: 400px"
+  >
+    <template v-slot:before>
+      <div class="q-pa-md">
+        <span class="text-h4">
+          {{ $t("quizzPageFormulationQuestion.correctAnswer")}}
+        </span>
+        <div>
+          {{ formulationResponse.response }}
         </div>
-      </template>
-      <template v-slot:after>
-        <div class="q-pa-md">
-          <span class="text-h4">
-            {{ $t("quizzPageFormulationQuestion.yourAnswer")}}
-          </span>
-          <div>
-            {{ responseInput }}
-          </div>
+      </div>
+    </template>
+    <template v-slot:after>
+      <div class="q-pa-md">
+        <span class="text-h4">
+          {{ $t("quizzPageFormulationQuestion.yourAnswer")}}
+        </span>
+        <div>
+          {{ responseInput }}
         </div>
-      </template>
-    </q-splitter>
-  </q-card-section>
-  <q-card-actions align="right">
-    <q-btn-group v-if="previewAnswer">
-      <q-btn icon="close" @click="markNegative"/>
-      <q-btn icon="done" @click="markPositive"/>
-    </q-btn-group>
-    <q-btn v-else icon="done" @click="readyForReview"/>
-  </q-card-actions>
+      </div>
+    </template>
+  </q-splitter>
+  <q-btn-group v-if="previewAnswer">
+    <q-btn icon="close" @click="markNegative"/>
+    <q-btn icon="done" @click="markPositive"/>
+  </q-btn-group>
+  <q-btn v-else icon="done" @click="readyForReview"/>
 
-</q-card>
 </template>
 
 <script>

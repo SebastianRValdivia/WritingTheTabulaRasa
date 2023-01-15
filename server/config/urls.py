@@ -27,7 +27,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('i18n/', include('django.conf.urls.i18n')),
     path('api/v1/', include('api.urls')),
-    path("webapp/", include("webapp.urls")),
+    path("app/", include("webapp.urls")),
     path("lite/", include("lite.urls")),
 ]
 

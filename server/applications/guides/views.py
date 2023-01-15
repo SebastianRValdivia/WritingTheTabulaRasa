@@ -1,6 +1,7 @@
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from django.views.generic import ListView, DetailView
+from django.views.generic.edit import CreateView
 
 from applications.guides.models import GuideModel, StepModel
 from applications.guides.serializers import GuideSerializer, StepSerializer
@@ -33,3 +34,9 @@ class GuideLiteDetailView(DetailView):
     template_name = "guides/guide_detail.html"
     slug_url_kwarg = "url"
     slug_field = "url"
+
+class GuideLiteCreateView(CreateView):
+
+    model = GuideModel
+    template_name = "guides/guide_new.html"
+    fields = ["title", "description", "metadata"]

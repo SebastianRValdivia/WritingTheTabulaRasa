@@ -1,0 +1,13 @@
+{% extends "lite/_base.html" %}
+{% load i18n %}
+
+{% block title %} {% trans "GuidesNew" %} {% endblock %}
+
+{% block content %}
+  <h2>{% trans "GuidesNew" %}</h2>
+  <form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="{% trans "Save" %}">
+  </form>
+{% endblock %}

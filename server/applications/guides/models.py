@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
+from django.urls import reverse
 
 from config.fields_default_values import CHARFIELD_LONG
 
@@ -37,6 +38,9 @@ class GuideModel(models.Model):
         if not self.id:
             self.url = slugify(self.title)
         super(GuideModel, self).save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse("guide_detail", kwargs={"url": self.url})
 
 class StepModel(models.Model):
 

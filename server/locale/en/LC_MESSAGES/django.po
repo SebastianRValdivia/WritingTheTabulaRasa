@@ -1,5 +1,11 @@
 msgid "English"
 msgstr "English"
 
+msgid "Save"
+msgstr "Save"
+
 msgid "GuidesList"
 msgstr "Guides List"
+
+msgid "GuidesNew"
+msgstr "New Guide"

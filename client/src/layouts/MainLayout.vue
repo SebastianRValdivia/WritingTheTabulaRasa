@@ -37,6 +37,9 @@
             <q-item clickable :to="{name: 'researchListPage'}">
               <q-item-section>{{ $t('mainLayout.research') }}</q-item-section>
             </q-item>
+            <q-item clickable :to="{name: 'quizzesListPage'}">
+              <q-item-section>{{ $t('mainLayout.quizzes') }}</q-item-section>
+            </q-item>
           </q-menu>
         </q-btn>
 

@@ -1,25 +1,16 @@
 import { api } from "boot/axios"
 
+import { recursiveGetCall } from "src/utils/api"
+
 export default {
   async getQuizzesObjects(url=null, previous=[]) {
-    try {
-      let response = url === null 
-        ? await api.get("v1/quizzes/quizzes-objects/") 
-        : await api.get(url)
-
-      let data = [...previous, ...response.data.results]
-
-      if (response.status === 200 && response.data.next === null) {
-        return {
-          code: response.status,
-          quizzesList: data
-        } 
-      } else if (response.data.next !== null) {
-        return this.getQuizzesObjects(response.data.next, data)
-      } else return false
-    } catch {
-      return false
-    }
+    let result = await recursiveGetCall("v1/quizzes/quizzes-objects/")
+    if (result) {
+      return {
+        code: result.code,
+        quizzesList: result.data
+      }
+    } else return false
   },
   async getQuizzObjectById(quizzId) {
     try {
@@ -35,41 +26,42 @@ export default {
       return false
     }
   },
-  async getQuizzesFormulationQuestions(url=null, previous=[]) {
+  async getQuizzesQuestions() {
+    let result = await recursiveGetCall("v1/quizzes/quizz-questions/")
+    if (result) {
+      return {
+        code: result.code,
+        quizzesQuestionsList: result.data
+      }
+    } else return false
+  },
+  async getFormulationResponseByQuestionId(questionId) {
     try {
-      let response = url === null 
-        ? await api.get("v1/quizzes/formulation-questions/") 
-        : await api.get(url)
+      let response = await api.get(
+        `v1/quizzes/question-formulations/?question=${questionId}`
+      )
 
-      let data = [...previous, ...response.data.results]
-
-      if (response.status === 200 && response.data.next === null) {
+      if (response.status === 200) {
         return {
-          code: response.status,
-          quizzesFormulationQuestionsList: data
-        } 
-      } else if (response.data.next !== null) {
-        return this.getQuizzesFormulationQuestions(response.data.next, data)
+          code: 200,
+          formulationReponse: response.data.results[0]
+        }
       } else return false
     } catch {
-      return false
+      return false 
     }
-  },
-  async getQuizzesChoicesQuestions(url=null, previous=[]) {
+  }, 
+  async getChoicesByQuestionId(questionId) {
     try {
-      let response = url === null 
-        ? await api.get("v1/quizzes/choices-questions/") 
-        : await api.get(url)
+      let response = await api.get(
+        `v1/quizzes/question-choices/?question=${questionId}`
+      )
 
-      let data = [...previous, ...response.data.results]
-
-      if (response.status === 200 && response.data.next === null) {
+      if (response.status === 200) {
         return {
-          code: response.status,
-          choicesQuestionsList: data
-        } 
-      } else if (response.data.next !== null) {
-        return this.getQuizzesChoicesQuestions(response.data.next, data)
+          code: 200,
+          choicesList: response.data.results,
+        }
       } else return false
     } catch {
       return false

@@ -16,6 +16,7 @@ const mainLayout = {
   activities: "Activities",
   research: "Research",
   essays: "Essays",
+  quizzes: "Quizzes"
 }
 const mainDrawer = {
   notes: "My notes",
@@ -122,6 +123,10 @@ const imageUploadDialog = {
 const metadataEditorDialog = {
   metadata: "Metadata"
 }
+const quizzPageFormulationQuestion = {
+  correctAnswer: "Correct answer",
+  yourAnswer: "Your answer",
+}
 
 export default {
   general,
@@ -153,5 +158,5 @@ export default {
 
   imageUploadDialog,
   metadataEditorDialog,
-
+  quizzPageFormulationQuestion,
 }

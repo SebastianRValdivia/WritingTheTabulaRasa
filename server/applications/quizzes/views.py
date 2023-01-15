@@ -2,15 +2,19 @@ from rest_framework import viewsets, permissions
 
 from applications.quizzes.models import (
     QuizzModel,
+    QuizzQuestionModel,
     QuizzFormulationQuestionModel,
-    QuizzChoicesQuestionModel,
-    QuizzChoiceModel,
+    QuizzListItemQuestionModel,
+    QuizzJoinElementQuestionModel,
+    QuizzChoiceQuestionModel,
 )
 from applications.quizzes.serializers import (
     QuizzSerializer,
+    QuizzQuestionSerializer,
     QuizzFormulationQuestionSerializer,
-    QuizzChoicesQuestionSerializer,
-    QuizzChoiceSerializer,
+    QuizzListItemQuestionSerializer,
+    QuizzJoinElementQuestionSerializer,
+    QuizzChoiceQuestionSerializer,
 )
 
 # Create your views here.
@@ -20,23 +24,37 @@ class QuizzViewSet(viewsets.ModelViewSet):
     serializer_class = QuizzSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
+class QuizzQuestionViewSet(viewsets.ModelViewSet):
+
+    queryset = QuizzQuestionModel.objects.all().order_by("id")
+    serializer_class = QuizzQuestionSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    filterset_fields = ["quizz"]
+
 class QuizzFormulationQuestionViewSet(viewsets.ModelViewSet):
 
     queryset = QuizzFormulationQuestionModel.objects.all().order_by("id")
     serializer_class = QuizzFormulationQuestionSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    filterset_fields = ["quizz"]
+    filterset_fields = ["question"]
 
-class QuizzChoicesQuestionViewSet(viewsets.ModelViewSet):
+class QuizzListItemQuestionViewSet(viewsets.ModelViewSet):
 
-    queryset = QuizzChoicesQuestionModel.objects.all().order_by("id")
-    serializer_class = QuizzChoicesQuestionSerializer
+    queryset = QuizzListItemQuestionModel.objects.all().order_by("id")
+    serializer_class = QuizzListItemQuestionSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    filterset_fields = ["quizz"]
+    filterset_fields = ["question"]
 
-class QuizzChoiceViewSet(viewsets.ModelViewSet):
+class QuizzJoinElementQuestionViewSet(viewsets.ModelViewSet):
 
-    queryset = QuizzChoiceModel.objects.all().order_by("id")
-    serializer_class = QuizzChoiceSerializer
+    queryset = QuizzJoinElementQuestionModel.objects.all().order_by("id")
+    serializer_class = QuizzJoinElementQuestionSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    filterset_fields = ["question"]
+
+class QuizzChoiceQuestionViewSet(viewsets.ModelViewSet):
+
+    queryset = QuizzChoiceQuestionModel.objects.all().order_by("id")
+    serializer_class = QuizzChoiceQuestionSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     filterset_fields = ["question"]

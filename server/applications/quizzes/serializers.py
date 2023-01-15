@@ -2,9 +2,11 @@ from rest_framework.serializers import ModelSerializer
 
 from applications.quizzes.models import (
     QuizzModel,
+    QuizzQuestionModel,
     QuizzFormulationQuestionModel,
-    QuizzChoicesQuestionModel,
-    QuizzChoiceModel,
+    QuizzListItemQuestionModel,
+    QuizzJoinElementQuestionModel,
+    QuizzChoiceQuestionModel,
 )
 
 class QuizzSerializer(ModelSerializer):
@@ -13,20 +15,32 @@ class QuizzSerializer(ModelSerializer):
         model = QuizzModel
         fields = "__all__"
 
+class QuizzQuestionSerializer(ModelSerializer):
+
+    class Meta:
+        model = QuizzQuestionModel
+        fields = "__all__"
+
 class QuizzFormulationQuestionSerializer(ModelSerializer):
 
     class Meta:
         model = QuizzFormulationQuestionModel
         fields = "__all__"
 
-class QuizzChoicesQuestionSerializer(ModelSerializer):
+class QuizzListItemQuestionSerializer(ModelSerializer):
 
     class Meta:
-        model = QuizzChoicesQuestionModel
+        model = QuizzListItemQuestionModel
         fields = "__all__"
 
-class QuizzChoiceSerializer(ModelSerializer):
+class QuizzJoinElementQuestionSerializer(ModelSerializer):
+
+    class Meta: 
+        model = QuizzJoinElementQuestionModel
+        fields = "__all__"
+
+class QuizzChoiceQuestionSerializer(ModelSerializer):
 
     class Meta:
-        model = QuizzChoiceModel
+        model = QuizzChoiceQuestionModel
         fields = "__all__"

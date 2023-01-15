@@ -19,7 +19,7 @@
         :key="index"
         :name="index"
         :title="question.question"
-        :done="quizzResult[index] === true"
+        :done="quizzQuestionsResultsList[index] === true"
       >
         <QuizzPageFormulationQuestion 
           v-if="question.type === 0"
@@ -76,10 +76,25 @@ export default {
     const quizzData = ref({})
     const questionsList = ref([])
     const step = ref(0)
-    const quizzResult = ref([])
+    const quizzQuestionsResultsList = ref([])
+    const quizzResult = computed(() => {
+      if (
+        questionsList.value.length === quizzQuestionsResultsList.value.length
+      ) {
+        if (
+          quizzQuestionsResultsList.value.every(
+            result => result === true
+          )
+        ) {
+          return "approved"
+        } else return "not approved"
+      } else {
+        return false
+      }
+    })
 
     function saveResult(result, index) {
-      quizzResult.value.push(result)
+      quizzQuestionsResultsList.value.push(result)
     }
     function nextStep() {
       step.value += 1
@@ -112,6 +127,7 @@ export default {
       quizzData,
       questionsList,
       step,
+      quizzQuestionsResultsList,
       quizzResult,
 
       saveResult,

@@ -37,9 +37,18 @@ class GuideLiteTests(TestCase):
         response = self.client.get(reverse("guide_list"))
         html = response.content.decode()
 
-        a_tag = f'<a href="/lite/guides/{self.TITLE_EXAMPLE.lower()}/">{self.TITLE_EXAMPLE}</a>'
+        a_tag = f'<a href="/lite/guides/detail-of/{self.TITLE_EXAMPLE.lower()}/">{self.TITLE_EXAMPLE}</a>'
         self.assertIn(a_tag, html)
 
-
-
+    def test_can_create_a_guide(self):
+        guide_data = {
+            "title": "Title 2",
+            "description": "Description 2",
+        }
+        response = self.client.post(
+            reverse("guide_new"),
+            guide_data,
+        )
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(GuideModel.objects.last().title, guide_data["title"])
 

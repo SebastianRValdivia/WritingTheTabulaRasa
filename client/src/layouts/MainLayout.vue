@@ -16,32 +16,34 @@
             <q-img id="logo" src="~/assets/logo.svg" fit/>
           </router-link>
         </q-toolbar-title>
-        <q-btn :label="$t('mainLayout.compendiums')">
-          <q-menu fit anchor="bottom left">
-            <q-item clickable :to="{name: 'encyclopediaIndex'}">
-              <q-item-section>{{ $t('mainLayout.encyclopedia') }}</q-item-section>
-            </q-item>
-            <q-item clickable :to="{name: 'cheatsheets'}">
-              <q-item-section>{{ $t('mainLayout.cheatsheets') }}</q-item-section>
-            </q-item>
-            <q-item clickable :to="{name: 'guidesListPage'}">
-              <q-item-section>{{ $t('mainLayout.guides') }}</q-item-section>
-            </q-item>
-            <q-item clickable :to="{name: 'essaysListPage'}">
-              <q-item-section>{{ $t('mainLayout.essays') }}</q-item-section>
-            </q-item>
-          </q-menu>
-        </q-btn>
-        <q-btn :label="$t('mainLayout.activities')">
-          <q-menu fit anchor="bottom left">
-            <q-item clickable :to="{name: 'researchListPage'}">
-              <q-item-section>{{ $t('mainLayout.research') }}</q-item-section>
-            </q-item>
-            <q-item clickable :to="{name: 'quizzesListPage'}">
-              <q-item-section>{{ $t('mainLayout.quizzes') }}</q-item-section>
-            </q-item>
-          </q-menu>
-        </q-btn>
+        <div class="absolute-center">
+          <q-btn :label="$t('mainLayout.compendiums')">
+            <q-menu fit anchor="bottom left">
+              <q-item clickable :to="{name: 'encyclopediaIndex'}">
+                <q-item-section>{{ $t('mainLayout.encyclopedia') }}</q-item-section>
+              </q-item>
+              <q-item clickable :to="{name: 'cheatsheets'}">
+                <q-item-section>{{ $t('mainLayout.cheatsheets') }}</q-item-section>
+              </q-item>
+              <q-item clickable :to="{name: 'guidesListPage'}">
+                <q-item-section>{{ $t('mainLayout.guides') }}</q-item-section>
+              </q-item>
+              <q-item clickable :to="{name: 'essaysListPage'}">
+                <q-item-section>{{ $t('mainLayout.essays') }}</q-item-section>
+              </q-item>
+            </q-menu>
+          </q-btn>
+          <q-btn :label="$t('mainLayout.activities')">
+            <q-menu fit anchor="bottom left">
+              <q-item clickable :to="{name: 'researchListPage'}">
+                <q-item-section>{{ $t('mainLayout.research') }}</q-item-section>
+              </q-item>
+              <q-item clickable :to="{name: 'quizzesListPage'}">
+                <q-item-section>{{ $t('mainLayout.quizzes') }}</q-item-section>
+              </q-item>
+            </q-menu>
+          </q-btn>
+        </div>
 
         <PomodoroTimer />
 

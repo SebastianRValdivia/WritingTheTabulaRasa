@@ -65,7 +65,7 @@ class EncyclopediaCardModel(models.Model):
     )
     # pg is short for page, to avoid errors with django rest pagination system
     pg = models.OneToOneField( 
-        EncyclopediaPageModel,
+        "encyclopedia.EncyclopediaPageModel",
         on_delete=models.CASCADE,
         blank=False,
         null=False,
@@ -78,6 +78,6 @@ class EncyclopediaCardModel(models.Model):
         verbose_name_plural = "Encyclopedia Cards"
 
     def __str__(self):
-        return self.page.title + " Card"
+        return self.pg.title + " Card"
 
 # TODO: Modification

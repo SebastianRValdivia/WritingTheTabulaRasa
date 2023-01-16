@@ -35,4 +35,17 @@ export default {
       return false 
     }
   },
+  async postEssay(essayData) {
+    try {
+      let response = await api.post("v1/essays/", essayData)
+      if (response.status === 201) {
+        return {
+          code: 201,
+          essay: response.data
+        }
+      } else return false
+    } catch {
+      return false
+    }
+  }
 }

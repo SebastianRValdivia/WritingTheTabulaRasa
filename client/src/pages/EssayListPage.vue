@@ -17,6 +17,19 @@
         </q-item-section>
       </q-item>
     </q-list>
+    <q-page-sticky 
+      v-if="userStore.isUserLogged"
+      position="top-right" 
+      :offset="[20, 20]"
+    >
+      <q-btn 
+        round 
+        color="primary" 
+        icon="add" 
+        size="md" 
+        :to="{name: 'essayEditorPage' }"
+      />
+    </q-page-sticky>
   </q-page>
 </template>
 
@@ -60,6 +73,8 @@ export default {
     return {
       displayedEssays,
       getUsername,
+
+      userStore,
     }
 
   }

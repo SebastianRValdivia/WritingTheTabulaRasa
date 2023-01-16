@@ -29,6 +29,14 @@ export const useEssayStore = defineStore("essays", {
         this.essaysList.push(result.essay)
         return true
       } else return false
+    },
+    async saveEssay(essayData) {
+      let result = await api.essays.postEssay(essayData)
+
+      if (result) {
+        this.essaysList.push(result.essay)
+        return true
+      } else return false
     }
   }
 })

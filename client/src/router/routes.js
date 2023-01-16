@@ -65,7 +65,7 @@ const routes = [
         props: true
       },
       {
-        path: "cheatsheets/:url/",
+        path: "cheatsheets/page/:url/",
         name: "cheatsheet",
         component: () => import("src/pages/CheatsheetPage"),
         props: true
@@ -116,7 +116,13 @@ const routes = [
       {
         path: "essays/",
         name: "essaysListPage",
-        component: () => import("src/pages/EssaysListPage")
+        component: () => import("src/pages/EssayListPage")
+      },
+      {
+        path: "essays/editor/:url?/",
+        name: "essayEditorPage",
+        component: () => import("src/pages/EssayEditorPage"),
+        props: true,
       },
       {
         path: "essays/:url/",

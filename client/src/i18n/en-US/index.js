@@ -6,6 +6,7 @@ const general = {
   done: "Done",
   confirm: "Confirm",
   sureDelete: "Are you sure you want to delete this?",
+  by: "By",
 }
 
 const mainLayout = {
@@ -116,6 +117,13 @@ const essayPage = {
   pageTitle: "Essay",
   autor: "Autor",
 }
+const essayEditorPage = {
+  pageTitle: "Essay editor",
+  essayTitle: "Essay title",
+  essayBody: "Essay body",
+  incompleteData: "Some fields are incomplete",
+}
+
 
 const imageUploadDialog = {
   caption: "Caption"
@@ -155,6 +163,7 @@ export default {
   quizzesListPage,
   essaysListPage,
   essayPage,
+  essayEditorPage, 
 
   imageUploadDialog,
   metadataEditorDialog,

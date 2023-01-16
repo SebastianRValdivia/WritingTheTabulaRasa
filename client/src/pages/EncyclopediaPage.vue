@@ -3,17 +3,17 @@
     <div id="header" class="row">
       <h2 class="col-12">{{ pageData.title }}</h2>
       <h4 class="col-10">{{ pageData.epigraph }}</h4>
-      <q-card v-if="pageCardData" class=" col-2 wiki-card">
+    </div>
+
+    <q-separator inset />
+
+    <div id="body">
+      <q-card v-if="pageCardData" class="wiki-card">
         <q-img :src="findWikiPageUrl(pageData.image)"/>
         <q-card-section>
           <MarkdownPreview :md="pageCardData.content" />
         </q-card-section>
       </q-card>
-    </div>
-
-    <q-separator inset />
-
-    <div id="body" class="row">
       <MarkdownPreview :md="pageData.content" />
     </div>
 
@@ -101,8 +101,9 @@ export default {
 
 <style>
 .wiki-card {
-  min-width: 350px;
-  max-width: 400px;
+  min-width: 200px;
+  max-width: 300px;
+  float: right;
 }
 .wiki-card > h2 {
   border: 1px solid black;

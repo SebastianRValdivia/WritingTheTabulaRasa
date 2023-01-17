@@ -141,6 +141,11 @@ const routes = [
         component: () => import("src/pages/QuizzPage"),
         props: true
       },
+      {
+        path: "my/learning-resources/",
+        name: "learningResources",
+        component: () => import("src/pages/LearningResourcesPage")
+      },
     ]
   },
 

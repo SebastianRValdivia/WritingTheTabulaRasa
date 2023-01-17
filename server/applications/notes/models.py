@@ -3,8 +3,6 @@ from django.urls import reverse
 from config.fields_default_values import (CHARFIELD_LONG)
 from django.contrib.auth.models import User
 
-from applications.resources.models import ReferenceModel
-
 # Create your models here.
 class NoteModel(models.Model):
 
@@ -86,7 +84,7 @@ class LiteraryNoteModel(models.Model):
         null=False,
     )
     reference = models.ForeignKey(
-        ReferenceModel,
+        "resources.LearningResourceModel",
         on_delete=models.CASCADE,
         blank=False,
         null=False,

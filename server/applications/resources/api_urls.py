@@ -1,10 +1,14 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
-from applications.resources.views import ReferenceViewSet, ImageViewSet
+from applications.resources.views import LearningResourceViewSet, ImageViewSet
 
 router = DefaultRouter()
-router.register("reference", ReferenceViewSet, basename="references")
+router.register(
+    "learning",
+    LearningResourceViewSet,
+    basename="learning-resources"
+)
 router.register("images", ImageViewSet, basename="images")
 
 urlpatterns = [

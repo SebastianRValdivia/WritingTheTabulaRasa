@@ -8,7 +8,7 @@ export const useResourceStore = defineStore("resource", {
   }),
   getters: {
     getLearningResourcesByUser: (state) => {
-      return (userId) => state.learningResourcesList.find(
+      return (userId) => state.learningResourcesList.filter(
         (resource) => resource.owner === userId
       )
     },

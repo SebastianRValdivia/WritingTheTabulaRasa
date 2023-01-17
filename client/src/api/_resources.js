@@ -12,6 +12,23 @@ export default {
       }
     } else return false
   },
+  async postLearningResource(learningResourceData) {
+    try {
+      let response = await api.post(
+        "v1/resources/learning/",
+        learningResourceData
+      )
+
+      if (response.status === 201) {
+        return {
+          code: result.status,
+          newLearningResource: result.data
+        }
+      } else return false
+    } catch {
+      return false
+    }
+  },
   async getImageResources(url=null, previous=[]) {
     try {
       let response = url === null 

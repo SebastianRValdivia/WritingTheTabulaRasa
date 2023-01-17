@@ -27,6 +27,16 @@ export const useResourceStore = defineStore("resource", {
         return true
       } else return false
     },
+    async saveLearningResource(learningResourceData) {
+      let result = await api.resources.postLearningResource(
+        learningResourceData
+      )
+
+      if (result) {
+        this.learningResourcesList.push(result.newLearningResource)
+        return true
+      } else return false
+    },
     async retrieveImageResources() {
       let result = await api.resources.getImageResources()
 

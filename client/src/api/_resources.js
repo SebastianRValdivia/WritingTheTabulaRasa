@@ -1,6 +1,17 @@
-import { api } from "boot/axios";
+import { api } from "boot/axios"
+import { recursiveGetCall } from "src/utils/api"
 
 export default {
+  async getLearningResources() {
+    let result = await recursiveGetCall("v1/resources/learning/")
+
+    if (result.code === 200) {
+      return {
+        code: result.code,
+        learningResourcesList: result.data
+      }
+    } else return false
+  },
   async getImageResources(url=null, previous=[]) {
     try {
       let response = url === null 

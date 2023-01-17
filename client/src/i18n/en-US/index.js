@@ -17,7 +17,7 @@ const mainLayout = {
   activities: "Activities",
   research: "Research",
   essays: "Essays",
-  quizzes: "Quizzes"
+  quizzes: "Quizzes",
 }
 const mainDrawer = {
   notes: "My notes",
@@ -25,6 +25,7 @@ const mainDrawer = {
   tasks: "Tasks",
   calendar: "Calendar",
   preferences: "Preferences",
+  resources: "Resources",
   logOut: "Log out",
 }
 

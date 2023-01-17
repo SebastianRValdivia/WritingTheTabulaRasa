@@ -1,11 +1,14 @@
 from rest_framework.serializers import ModelSerializer
 
-from applications.resources.models import ReferenceModel, ImageModel
+from applications.resources.models import (
+    LearningResourceModel,
+    ImageModel,
+)
 
-class ReferenceSerializer(ModelSerializer):
+class LearningResourceSerializer(ModelSerializer):
 
     class Meta:
-        model = ReferenceModel
+        model = LearningResourceModel
         fields = "__all__"
 
 class ImageSerializer(ModelSerializer):

@@ -1,14 +1,20 @@
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
-from applications.resources.models import ReferenceModel, ImageModel
-from applications.resources.serializers import ReferenceSerializer, ImageSerializer
+from applications.resources.models import (
+    LearningResourceModel,
+    ImageModel,
+)
+from applications.resources.serializers import (
+    LearningResourceSerializer,
+    ImageSerializer,
+)
 
 # Create your views here.
-class ReferenceViewSet(ModelViewSet):
+class LearningResourceViewSet(ModelViewSet):
 
-    queryset = ReferenceModel.objects.all()
-    serializer_class = ReferenceSerializer
+    queryset = LearningResourceModel.objects.all()
+    serializer_class = LearningResourceSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
 
 class ImageViewSet(ModelViewSet):

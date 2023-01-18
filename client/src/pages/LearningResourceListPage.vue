@@ -23,7 +23,7 @@
         />
       </q-page-sticky>
     </div>
-    <div class="row">
+    <div class="row q-gutter-md q-pt-md">
       <q-card
         v-for="resource in displayedResources"
         :key="resource.id"

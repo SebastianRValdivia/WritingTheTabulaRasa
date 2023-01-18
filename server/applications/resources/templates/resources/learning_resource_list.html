@@ -1,0 +1,13 @@
+{% extends "lite/_base.html" %}
+{% load i18n %}
+
+{% block title %} {% trans "LearningResources" %} {% endblock %}
+
+{% block content %}
+  <h2>{% trans "LearningResources" %}</h2>
+  <ul>
+    {% for learning_resource in learning_resources  %}
+    <li>{{ learning_resource.title }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

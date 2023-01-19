@@ -9,3 +9,6 @@ msgstr "Guides List"
 
 msgid "GuidesNew"
 msgstr "New Guide"
+
+msgid "LearningResources"
+msgstr "Learning Resources"

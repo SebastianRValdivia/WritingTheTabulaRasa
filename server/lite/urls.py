@@ -8,4 +8,5 @@ urlpatterns = [
     path("cheatsheets/", include("applications.cheatsheets.urls")),
     path("guides/", include("applications.guides.urls")),
     path("metadata/", include("applications.metadata.urls")),
+    path("resources/", include("applications.resources.urls")),
 ]

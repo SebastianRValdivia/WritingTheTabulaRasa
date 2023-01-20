@@ -37,6 +37,18 @@ export const useResourceStore = defineStore("resource", {
         return true
       } else return false
     },
+    async removeLearningResourceById(resourceId) {
+      let result = await api.resources.deleteLearningResource(
+        resourceId
+      )
+
+      if (result) {
+        this.learningResourcesList = this.learningResourcesList.filter(
+          (resource) => resource.id !== resourceId
+        )
+        return true
+      } else return false
+    },
     async retrieveImageResources() {
       let result = await api.resources.getImageResources()
 

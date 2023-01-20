@@ -29,6 +29,17 @@ export default {
       return false
     }
   },
+  async deleteLearningResource(resourceId) {
+    try {
+      let response = await api.delete(`v1/resources/learning/${resourceId}`)
+
+      if (response.status === 204) {
+        return true
+      }
+    } catch {
+      return false 
+    }
+  },
   async getImageResources(url=null, previous=[]) {
     try {
       let response = url === null 

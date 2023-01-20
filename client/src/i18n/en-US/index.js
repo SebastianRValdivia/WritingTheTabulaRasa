@@ -25,7 +25,7 @@ const mainDrawer = {
   tasks: "Tasks",
   calendar: "Calendar",
   preferences: "Preferences",
-  resources: "Resources",
+  learningResources: "Learning resources",
   logOut: "Log out",
 }
 

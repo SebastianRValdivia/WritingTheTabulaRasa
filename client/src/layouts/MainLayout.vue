@@ -96,7 +96,7 @@
             </q-item-section>
 
             <q-item-section>
-              {{ $t("mainDrawer.resources") }}
+              {{ $t("mainDrawer.learningResources") }}
             </q-item-section>
           </q-item>
 

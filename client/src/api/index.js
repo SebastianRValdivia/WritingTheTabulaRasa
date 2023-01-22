@@ -10,6 +10,7 @@ import guides from "./_guides"
 import quizzes from "./_quizzes"
 import essays from "./_essays"
 import metadata from "./_metadata"
+import quotes from "./_quotes"
 
 export default {
   user,
@@ -24,4 +25,5 @@ export default {
   quizzes,
   essays,
   metadata,
+  quotes,
 }

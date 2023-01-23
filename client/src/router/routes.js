@@ -23,6 +23,11 @@ const routes = [
         component: () => import("src/pages/LiteraryNoteListPage"),
       },
       {
+        path: "my/notes/literary/new/",
+        name: "literaryNoteNewPage",
+        component: () => import("src/pages/LiteraryNoteNewPage"),
+      },
+      {
         path: "my/tasks/",
         name: "tasks",
         component: () => import("src/pages/TaskListPage"),

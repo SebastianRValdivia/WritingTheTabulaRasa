@@ -1,12 +1,24 @@
 <template>
-  <div v-if="noteStore.getLiteraryNotes.length === 0">
-    No notes yet
-  </div>
-
-  <div v-else> 
-    {{ noteStore.getLiteraryNotes }}
-  </div>
-
+  <q-page padding>
+    <div class="row">
+      <q-page-sticky position="top-right" :offset="[18, 18]">
+        <q-btn 
+          round 
+          color="primary" 
+          icon="add" 
+          size="md" 
+          :to="{name: 'literaryNoteNewPage'}"
+        />
+      </q-page-sticky>
+    </div>
+    <div v-if="noteStore.getLiteraryNotes.length === 0">
+      No notes yet
+    </div>
+    
+    <div v-else> 
+      {{ noteStore.getLiteraryNotes }}
+    </div>
+  </q-page>
 </template>
 
 <script>
@@ -19,20 +31,20 @@ import { useNoteStore } from "src/stores/note-store"
 
 export default {
   setup() {
-    const $q = useQuasar()
+    const quasar = useQuasar()
     const appStore = useAppStore()
     const { t } = useI18n()
     const noteStore = useNoteStore()
 
     onBeforeMount(async () => {
-      $q.loading.show()
+      quasar.loading.show()
       appStore.setTabs({
         [t("notePages.permanent")]: "notes",
         [t("notePages.fleeting")]: "fleetingNotes",
         [t("notePages.literary")]: "literaryNotes",
       })
       await noteStore.retrieveLiteraryNotes()
-      $q.loading.hide()
+      quasar.loading.hide()
     })
 
     useMeta({

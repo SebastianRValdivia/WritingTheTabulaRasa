@@ -72,7 +72,6 @@ class FleetingNoteModel(models.Model):
 
 class LiteraryNoteModel(models.Model):
 
-    
     content = models.TextField(
         blank=False,
         null=False,
@@ -83,17 +82,13 @@ class LiteraryNoteModel(models.Model):
         blank=False,
         null=False,
     )
-    reference = models.ForeignKey(
+    resource = models.ForeignKey(
         "resources.LearningResourceModel",
         on_delete=models.CASCADE,
         blank=False,
         null=False,
     )
-    page = models.IntegerField(
-        blank=True,
-        null=True,
-    )
-    time = models.TimeField(
+    position = models.IntegerField(
         blank=True,
         null=True,
     )
@@ -105,12 +100,7 @@ class LiteraryNoteModel(models.Model):
         verbose_name_plural = "Literary Notes"
 
     def __str__(self):
-        if self.time == None:
-            return self.reference.title + "-page:" +str(self.page)
-        else:
-            return self.reference.title + str(self.time)
-
+        return self.resource.title + "-position:" +str(self.position)
         
-
     def get_absolute_url(self):
         return reverse("FleetingNoteModel_detail", kwargs={"pk": self.pk})

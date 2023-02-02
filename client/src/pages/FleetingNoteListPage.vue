@@ -118,7 +118,7 @@ export default {
       appStore.setTabs({
         [t("notePages.permanent")]: "notes",
         [t("notePages.fleeting")]: "fleetingNotes",
-        [t("notePages.literary")]: "literaryNotes",
+        [t("notePages.literary")]: "literaryNoteListPage",
       })
       await noteStore.retrieveFleetingNotes()
       $q.loading.hide()

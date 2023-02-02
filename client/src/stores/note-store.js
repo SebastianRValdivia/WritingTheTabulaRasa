@@ -75,6 +75,15 @@ export const useNoteStore = defineStore("note", {
         return result
       }
     },
+    async saveLiteraryNote(literaryNoteData) {
+      let result = await api.notes.postLitearyNote(literaryNoteData)
+
+      if (result) {
+        this.literaryNotes.push(result)
+        return true
+      } else return false
+
+    },
     async removeNote(idNoteToDelete) {
       let result = await api.notes.deleteNote(idNoteToDelete)
 

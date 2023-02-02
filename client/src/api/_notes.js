@@ -144,6 +144,16 @@ export default {
     } else {
         return this.getLiteraryNotesList(response.data.next, data)
     }
+  },
+  async postLitearyNote(data) {
+    try {
+      let response = await api.post("v1/notes/literary/", data)
 
+      if (response.status === 201) {
+        return response.data
+      } else return false
+    } catch {
+      return false
+    }
   }
 }

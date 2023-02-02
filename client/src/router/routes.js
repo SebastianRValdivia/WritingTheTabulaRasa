@@ -19,8 +19,13 @@ const routes = [
       },
       {
         path: "my/notes/literary/",
-        name: "literaryNotes",
+        name: "literaryNoteListPage",
         component: () => import("src/pages/LiteraryNoteListPage"),
+      },
+      {
+        path: "my/notes/literary/new/",
+        name: "literaryNoteNewPage",
+        component: () => import("src/pages/LiteraryNoteNewPage"),
       },
       {
         path: "my/tasks/",

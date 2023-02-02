@@ -7,9 +7,15 @@ export const useResourceStore = defineStore("resource", {
     imagesResourcesList: [],
   }),
   getters: {
+    getLearningResources: (state) => state.learningResourcesList,
     getLearningResourcesByUser: (state) => {
       return (userId) => state.learningResourcesList.filter(
         (resource) => resource.owner === userId
+      )
+    },
+    getLearningResourceById: (state) => {
+      return (resourceId) => state.learningResourcesList.find(
+        (resource) => resource.id === resourceId
       )
     },
     getImageResourceById: (state) => {

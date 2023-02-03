@@ -35,6 +35,9 @@ export const useNoteStore = defineStore("note", {
 
     getFleetingNotes: (state) => state.fleetingNotes,
     getLiteraryNotes: (state) => state.literaryNotes,
+    getLiteraryNotesByUser: (state) => {
+      return (userId) => state.literaryNotes.filter((note) => note.owner === userId)
+    },
   },
   actions: {
     async retrieveNotes() {

@@ -23,6 +23,7 @@
         />
         <q-card 
           v-if="isCardEditorOpen"
+          class="wiki-card-editor"
         >
           <div class="row justify-end">
             <q-btn 
@@ -43,7 +44,7 @@
             <template v-slot:after>
               <q-btn 
                 round 
-                dense 
+                size="sm"
                 flat 
                 icon="send"
                 @click="createImageUrl"
@@ -52,7 +53,7 @@
           </q-file>
           <q-img 
             v-else
-            class="q-pa-xs"
+            class="q-pa-xs card-image"
             :src="imageInputUrl"
           />
           <q-card-section>
@@ -156,7 +157,7 @@ export default {
       return contentInput.value.concat(
           epigraphInput.value,
           titleInput.value,
-        ) 
+      ) 
     }
     async function openMetadataEditor() {
       quasar.dialog({
@@ -178,7 +179,6 @@ export default {
           file: imageInput.value,
         })
       }
-      console.log(saveImageResult)
       savePageResult = await wikiStore.saveWikiPage({
         title: titleInput.value,
         epigraph: epigraphInput.value,
@@ -245,5 +245,17 @@ export default {
 <style>
 .title-input {
   font-size: 3rem;
+}
+.card-image {
+  max-height: 15rem;
+  max-width: 15rem;
+  min-height: 15rem;
+  min-width: 15rem;
+}
+.wiki-card-editor {
+  max-height: 15rem;
+  max-width: 15rem;
+  min-height: 15rem;
+  min-width: 15rem;
 }
 </style>

@@ -7,49 +7,69 @@
         input-class="title-input"
         class="col-10"
       />
-      <div class="col-2 column items-center">
-        <q-btn
-          class="q-mt-md"
-          icon="post_add"
-          @click="toggleCardEditor()"
-        />
-        <q-page-sticky 
-          v-if="isCardEditorOpen"
-          position="top-right" :offset="[20, 20]"
-        >
-          <q-card class="card-width">
-            <div class="row justify-end">
-              <q-btn 
-                class="col-2 q-pa-sm"
-                icon="close"
-                flat 
-                size="xs"
-                @click="toggleCardEditor()"
-              />
-            </div>
-            <q-card-section>
-              <q-input
-                v-model="cardContentInput"
-                autogrow
-                borderless
-              />
-            </q-card-section>
-          </q-card>
-        </q-page-sticky>
-      </div>
       <q-input
         v-model="epigraphInput"
         :placeholder="$t('encyclopediaEditorPage.epigraph')"
         input-class="text-h4"
         autogrow
         borderless
-        class="col-12"
+        class="col-10"
       />
+      <div class="col-2 column justify-center">
+        <q-btn
+          class="q-mt-md"
+          icon="post_add"
+          @click="toggleCardEditor()"
+        />
+        <q-card 
+          v-if="isCardEditorOpen"
+        >
+          <div class="row justify-end">
+            <q-btn 
+              class="col-2 q-pa-sm"
+              icon="close"
+              flat 
+              size="xs"
+              @click="toggleCardEditor()"
+            />
+          </div>
+          <q-file 
+            v-if="!imageInputUrl"
+            class="col-2" 
+            filled 
+            v-model="imageInput" 
+            :label="$t('encyclopediaEditorPage.presentationImage')"
+          >
+            <template v-slot:after>
+              <q-btn 
+                round 
+                dense 
+                flat 
+                icon="send"
+                @click="createImageUrl"
+              />
+            </template>
+          </q-file>
+          <q-img 
+            v-else
+            class="q-pa-xs"
+            :src="imageInputUrl"
+          />
+          <q-card-section>
+            <q-input
+              v-model="cardContentInput"
+              autogrow
+              borderless
+              class="q-pa-sm"
+            />
+          </q-card-section>
+        </q-card>
+      </div>
     </div>
 
     <q-separator inset />
 
-    <div class="q-pa-md">
+    <div class="q-pa-md row">
       <q-input
         v-model="contentInput"
         autogrow
@@ -57,8 +77,8 @@
         :placeholder="$t('encyclopediaEditorPage.content')"
         @blur="toggleToPreview"
         v-if="!isPreviewOpen"
+        class="col-10"
       />
-      
     </div>
     <div class="q-pa-md" v-if="isPreviewOpen">
       <MarkdownPreview 
@@ -86,6 +106,7 @@ import { useQuasar, useMeta } from "quasar"
 
 import { useWikiStore } from "src/stores/wiki-store"
 import { useMetadataStore } from "src/stores/metadata-store"
+import { useResourceStore } from "src/stores/resource-store"
 import MarkdownPreview from "src/components/for-viewing/MarkdownPreview"
 import MetadataEditorDialog from "src/components/for-input/MetadataEditorDialog"
 
@@ -99,6 +120,7 @@ export default {
     const quasar = useQuasar()
     const wikiStore = useWikiStore()
     const metadataStore = useMetadataStore()
+    const resourceStore = useResourceStore()
 
     const titleInput = ref("")
     const epigraphInput = ref("")
@@ -107,6 +129,8 @@ export default {
     const cardContentInput = ref("")
     const isPreviewOpen = ref(false)
     const pageMetadata = ref({})
+    const imageInput = ref()
+    const imageInputUrl = ref("")
 
     async function openMetadataEditor() {
       quasar.dialog({
@@ -119,18 +143,30 @@ export default {
       })
     }
     async function submit () {
-      let metadataExist = pageMetadata.value.id 
-      let resultPagePost = await wikiStore.saveWikiPage({
+      let saveImageResult = null
+      let savePageResult = null
+
+      // Saves the image resource first
+      if (imageInput.value) {
+        saveImageResult = await resourceStore.saveImageResource({
+          file: imageInput.value,
+        })
+      }
+      console.log(saveImageResult)
+      savePageResult = await wikiStore.saveWikiPage({
         title: titleInput.value,
         epigraph: epigraphInput.value,
         content: contentInput.value,
 
-        ...(metadataExist && {metadata: pageMetadata.value.id})
+        // If null wont create
+        ...(pageMetadata.value && {metadata: pageMetadata.value.id}),
+        ...(saveImageResult && {image: saveImageResult.id})
       })
-      if (cardContentInput.value !== "" && resultPagePost) {
+      // If user input something to the card creates the card
+      if (cardContentInput.value !== "" && savePageResult) {
         let resultCardPost = await api.wiki.postWikiCard({
           content: cardContentInput.value,
-          page: resultPagePost.id
+          page: savePageResult.id
         })
       }
     }
@@ -140,6 +176,12 @@ export default {
     function toggleToPreview() {
       if (contentInput.value) {
         isPreviewOpen.value = true
+      }
+    }
+    function createImageUrl() {
+      // Creates a url to display the image 
+      if (imageInput.value) {
+        imageInputUrl.value = URL.createObjectURL(imageInput.value)
       }
     }
     function toggleToInput() {
@@ -154,15 +196,19 @@ export default {
       titleInput,
       epigraphInput,
       contentInput,
-      submit,
-      toggleCardEditor,
-      isCardEditorOpen,
       cardContentInput,
       isPreviewOpen,
+      isCardEditorOpen,
+      pageMetadata,
+      imageInput,
+      imageInputUrl,
+
+      submit,
+      toggleCardEditor,
       toggleToPreview,
       toggleToInput,
       openMetadataEditor,
-      pageMetadata,
+      createImageUrl,
     }
   }
 }
@@ -171,9 +217,5 @@ export default {
 <style>
 .title-input {
   font-size: 3rem;
-}
-.card-width {
-  min-width: 18rem;
-  max-width: 18rem;
 }
 </style>

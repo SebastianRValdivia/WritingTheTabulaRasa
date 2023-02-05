@@ -70,7 +70,8 @@ const encyclopediaEditorPage = {
   pageTitle: "New page",
   title: "Page title",
   epigraph: "Epigraph",
-  content: "Page content"
+  content: "Page content",
+  presentationImage: "Presentation Image"
 }
 const encyclopediaListPage = {
   pageTitle: "Encyclopedia"

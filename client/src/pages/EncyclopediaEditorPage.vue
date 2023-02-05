@@ -2,10 +2,9 @@
   <q-page class="q-pa-md q-gutter-sm">
     <div id="wiki-head" class="row">
       <q-input 
-        v-if="!titleInput"
         v-model="titleInput" 
         :placeholder="$t('encyclopediaEditorPage.title')"
-        input-class="title-input"
+        input-class="text-h2"
         class="col-10"
       />
       <q-input
@@ -17,71 +16,70 @@
         class="col-10"
       />
       <div class="col-2 column justify-center">
-        <q-btn
-          class="q-mt-md"
-          icon="post_add"
-          @click="toggleCardEditor()"
-        />
-        <q-card 
-          v-if="isCardEditorOpen"
-          class="wiki-card-editor"
-        >
-          <div class="row justify-end">
-            <q-btn 
-              class="col-2 q-pa-sm"
-              icon="close"
-              flat 
-              size="xs"
-              @click="toggleCardEditor()"
-            />
-          </div>
-          <q-file 
-            v-if="!imageInputUrl"
-            class="col-2" 
-            filled 
-            v-model="imageInput" 
-            :label="$t('encyclopediaEditorPage.presentationImage')"
-          >
-            <template v-slot:after>
-              <q-btn 
-                round 
-                size="sm"
-                flat 
-                icon="send"
-                @click="createImageUrl"
-              />
-            </template>
-          </q-file>
-          <q-img 
-            v-else
-            class="q-pa-xs card-image"
-            :src="imageInputUrl"
-          />
-          <q-card-section>
-            <q-input
-              v-model="cardContentInput"
-              autogrow
-              borderless
-              class="q-pa-sm"
-            />
-          </q-card-section>
-        </q-card>
       </div>
     </div>
 
     <q-separator inset />
 
-    <div class="q-pa-md row">
-      <q-input
-        v-model="contentInput"
-        autogrow
-        borderless
-        :placeholder="$t('encyclopediaEditorPage.content')"
-        @blur="toggleToPreview"
-        v-if="!isPreviewOpen"
-        class="col-10"
+      <q-btn
+        class="q-mt-md card-editor-btn"
+        icon="post_add"
+        @click="toggleCardEditor()"
+        v-if="isCardEditorOpen"
       />
-    </div>
+      <q-card 
+        v-if="!isCardEditorOpen"
+        class="wiki-card-editor"
+      >
+        <div class="row justify-end">
+          <q-btn 
+            class="col-2 q-pa-sm"
+            icon="close"
+            flat 
+            size="xs"
+            @click="toggleCardEditor()"
+          />
+        </div>
+        <q-file 
+          v-if="!imageInputUrl"
+          class="col-2" 
+          filled 
+          v-model="imageInput" 
+          :label="$t('encyclopediaEditorPage.presentationImage')"
+        >
+          <template v-slot:after>
+            <q-btn 
+              round 
+              size="sm"
+              flat 
+              icon="send"
+              @click="createImageUrl"
+            />
+          </template>
+        </q-file>
+        <q-img 
+          v-else
+          class="q-pa-xs card-image"
+          :src="imageInputUrl"
+        />
+        <q-card-section>
+          <q-input
+            v-model="cardContentInput"
+            autogrow
+            borderless
+            class="q-pa-sm"
+          />
+        </q-card-section>
+      </q-card>
+    <q-input
+      v-model="contentInput"
+      autogrow
+      borderless
+      :placeholder="$t('encyclopediaEditorPage.content')"
+      @blur="toggleToPreview"
+      v-if="!isPreviewOpen"
+      class="col-10"
+    />
     <div class="q-pa-md" v-if="isPreviewOpen">
       <MarkdownPreview 
         :md="contentInput"
@@ -244,9 +242,6 @@ export default {
 </script>
 
 <style>
-.title-input {
-  font-size: 3rem;
-}
 .card-image {
   max-height: 15rem;
   max-width: 15rem;
@@ -258,5 +253,9 @@ export default {
   max-width: 15rem;
   min-height: 15rem;
   min-width: 15rem;
+  float: right;
+}
+.card-editor-btn {
+  float: right;
 }
 </style>

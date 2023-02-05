@@ -94,7 +94,6 @@
     <q-page-sticky position="bottom-right" :offset="[20, 20]">
       <q-btn fab icon="done" color="primary" @click="submit"/>
     </q-page-sticky>
-  <MetadataEditorDialog :isOpen="true"/>
   </q-page>
 </template>
 

@@ -87,6 +87,19 @@
       />
     </div>
 
+    <q-separator />
+
+    <div class="row">
+      <div class="col-6">
+        {{ $t("encyclopediaEditorPage.words")}}:
+        {{ wordCount }}
+      </div>
+      <div class="col-6">
+        {{ $t("encyclopediaEditorPage.characters")}}: 
+        {{ characterCount }}
+      </div>
+    </div>
+
     <div class="row justify-center">
       <q-btn icon="data_object" @click="openMetadataEditor"/>
     </div>
@@ -98,7 +111,7 @@
 </template>
 
 <script>
-import { ref } from "vue"
+import { ref, computed } from "vue"
 import api from "src/api"
 import { useI18n } from "vue-i18n"
 import { useQuasar, useMeta } from "quasar"
@@ -108,6 +121,7 @@ import { useMetadataStore } from "src/stores/metadata-store"
 import { useResourceStore } from "src/stores/resource-store"
 import MarkdownPreview from "src/components/for-viewing/MarkdownPreview"
 import MetadataEditorDialog from "src/components/for-input/MetadataEditorDialog"
+import { countWords, countCharacters } from "src/utils/text.js"
 
 export default {
   name: "EncyclopediaEditorPage",
@@ -131,6 +145,19 @@ export default {
     const imageInput = ref()
     const imageInputUrl = ref("")
 
+    const wordCount = computed(() => {
+      return countWords(concatAllInput())
+    })
+    const characterCount = computed(() => {
+      return countCharacters(concatAllInput())
+    })
+
+    function concatAllInput () {
+      return contentInput.value.concat(
+          epigraphInput.value,
+          titleInput.value,
+        ) 
+    }
     async function openMetadataEditor() {
       quasar.dialog({
         component: MetadataEditorDialog
@@ -201,6 +228,8 @@ export default {
       pageMetadata,
       imageInput,
       imageInputUrl,
+      wordCount,
+      characterCount,
 
       submit,
       toggleCardEditor,

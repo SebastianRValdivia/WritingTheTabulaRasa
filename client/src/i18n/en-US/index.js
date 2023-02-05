@@ -71,7 +71,9 @@ const encyclopediaEditorPage = {
   title: "Page title",
   epigraph: "Epigraph",
   content: "Page content",
-  presentationImage: "Presentation Image"
+  presentationImage: "Presentation Image",
+  words: "Words",
+  characters: "Characters",
 }
 const encyclopediaListPage = {
   pageTitle: "Encyclopedia"

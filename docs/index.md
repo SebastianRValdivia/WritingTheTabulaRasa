@@ -7,7 +7,7 @@ Writing Tabula Rasa (software) developement is based in this guide/esearch. Any 
 
 Requested features and improvements must be debated and added to this paper. Any sugested objectives must contain the proper research and evidence.
 
-You can read it [here](WritingTheTabulaRasa/index.md)
+You can read it [here](Book/)
 
 ## FAQ
 

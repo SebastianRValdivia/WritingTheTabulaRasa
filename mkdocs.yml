@@ -11,6 +11,9 @@ theme:
 
 nav:
   - Home: index.md
+  - Book: 
+    - English: Book/English/index.md
+    - Español: Book/Español/index.md
   - Code Documentation: 
     - Index: SoftwareCodeDocumentation/index.md
     - Back End: SoftwareCodeDocumentation/Backend/index.md

@@ -87,8 +87,8 @@
       />
     </div>
 
-    <div class="row">
-      <q-btn icon="add" @click="openMetadataEditor"/>
+    <div class="row justify-center">
+      <q-btn icon="data_object" @click="openMetadataEditor"/>
     </div>
 
     <q-page-sticky position="bottom-right" :offset="[20, 20]">

@@ -2,6 +2,7 @@
   <q-page class="q-pa-md q-gutter-sm">
     <div id="wiki-head" class="row">
       <q-input 
+        v-if="!titleInput"
         v-model="titleInput" 
         :placeholder="$t('encyclopediaEditorPage.title')"
         input-class="title-input"

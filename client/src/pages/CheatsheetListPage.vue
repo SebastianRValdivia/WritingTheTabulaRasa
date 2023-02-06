@@ -1,21 +1,10 @@
 <template>
-  <q-page>
+  <q-page padding>
     <div 
       v-if="cheatsheetStore.getSheets.length > 0" 
       class="row justify-center q-gutter-lg"
     >
-      <div class="col-12 row justify-center">
-        <q-input 
-          rounded
-          outlined
-          v-model="searchInput"
-          class="col-4"
-        >
-          <template v-slot:append>
-            <q-icon name="search" />
-          </template>
-        </q-input>
-      </div>
+      <SearchInput @search="searchSheets"/>
       <q-intersection
         v-for="sheet in displayedSheets" 
         :key="sheet.id" 
@@ -68,13 +57,17 @@
 import { ref, computed, onBeforeMount } from "vue"
 import { useQuasar, useMeta } from "quasar"
 import { useI18n } from "vue-i18n"
-import Fuse from "fuse.js"
 
 import { useCheatsheetStore } from "src/stores/cheatsheet-store"
 import { useUserStore } from "src/stores/user-store"
+import SearchInput from "src/components/for-input/SearchInput"
+import { fuzzySearchByObjectByKeys } from "src/utils/search"
 
 export default {
   name: "CheatsheetListPage",
+  components: {
+    SearchInput
+  },
   setup() {
     const $q = useQuasar()
     const { t } = useI18n()
@@ -84,23 +77,16 @@ export default {
     const searchInput = ref("")
     const displayedSheets = computed(() => {
       if (searchInput.value) {
-        return searchSheet(searchInput.value)
+        return fuzzySearchByObjectByKeys(
+          cheatsheetStore.getSheets,
+          searchInput.value,
+          ["title"]
+        )
       } else return cheatsheetStore.getSheets
     })
 
-    function searchSheet(searchPattern) {
-      let fuzzySearch = new Fuse(
-        cheatsheetStore.getSheets,
-        {
-          keys: [
-            "title",
-            "description",
-          ]
-        }
-      )
-      return fuzzySearch
-        .search(searchPattern)
-        .map((item) => item.item)
+    function searchSheets(searchPattern) {
+      searchInput.value = searchPattern
     }
 
     onBeforeMount(async () => {
@@ -117,7 +103,8 @@ export default {
       cheatsheetStore,
       userStore,
       displayedSheets,
-      searchInput,
+
+      searchSheets,
     }
   }
 }

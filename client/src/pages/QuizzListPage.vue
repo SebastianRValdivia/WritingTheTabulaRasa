@@ -1,17 +1,6 @@
 <template>
   <q-page padding>
-    <div class="col-12 row justify-center">
-      <q-input 
-        rounded
-        outlined
-        v-model="searchInput"
-        class="col-4"
-      >
-        <template v-slot:append>
-          <q-icon name="search" />
-        </template>
-      </q-input>
-    </div>
+    <SearchInput @search="searchQuizzes"/>
     <ul>
       <li
         v-for="quizz in displayedQuizzes"
@@ -33,10 +22,14 @@ import { useI18n } from "vue-i18n"
 import { useQuizzStore } from "src/stores/quizz-store"
 import { errorNotification } from "src/utils/notifications"
 import { fuzzySearchByObjectByKeys } from "src/utils/search"
+import SearchInput from "src/components/for-input/SearchInput"
 
 
 export default {
   name: "QuizzListPage",
+  components: {
+    SearchInput
+  },
   setup() {
     const quizzStore = useQuizzStore()
     const quasar = useQuasar()
@@ -44,13 +37,18 @@ export default {
 
     const searchInput = ref("")
     const displayedQuizzes = computed(() => {
-      if (searchInput.value) return fuzzySearchByObjectByKeys(
-        quizzStore.getQuizzesList,
-        searchInput.value,
-        ["title"],
-      )
-      else return quizzStore.getQuizzesList
+      if (searchInput.value) {
+        return fuzzySearchByObjectByKeys(
+          quizzStore.getQuizzesList,
+          searchInput.value,
+          ["title"],
+        ) 
+      } else return quizzStore.getQuizzesList
     })
+
+    function searchQuizzes(searchPattern) {
+      searchInput.value = searchPattern
+    }
 
     onBeforeMount(async () => {
       let result = await quizzStore.retrieveQuizzesList()
@@ -64,7 +62,8 @@ export default {
     
     return {
       displayedQuizzes,
-      searchInput,
+
+      searchQuizzes,
     }
     
   }

@@ -1,17 +1,6 @@
 <template>
   <q-page class="q-pa-md">
-    <div class="col-12 row justify-center">
-      <q-input 
-        rounded
-        outlined
-        v-model="searchInput"
-        class="col-4"
-      >
-        <template v-slot:append>
-          <q-icon name="search" />
-        </template>
-      </q-input>
-    </div>
+    <SearchInput @search="searchGuides"/>
     <q-list>
       <q-item 
         v-for="guideData in displayedGuidesList"
@@ -46,13 +35,17 @@
 import { ref, computed, onBeforeMount } from "vue"
 import { useQuasar, useMeta } from "quasar"
 import { useI18n } from "vue-i18n"
-import Fuse from "fuse.js"
 
 import { useGuideStore } from "src/stores/guide-store"
 import { useUserStore } from "src/stores/user-store"
+import SearchInput from "src/components/for-input/SearchInput"
+import { fuzzySearchByObjectByKeys } from "src/utils/search"
 
 export default {
-
+  name: "GuideListPage",
+  components: {
+    SearchInput
+  },
   setup() {
     const guideStore = useGuideStore()
     const userStore = useUserStore()
@@ -61,30 +54,22 @@ export default {
 
     const searchInput = ref("")
     const displayedGuidesList = computed(() => {
-      if (searchInput.value) return searchGuide(searchInput.value)
-      else return guideStore.getGuidesList
+      if (searchInput.value) {
+        return fuzzySearchByObjectByKeys(
+          guideStore.getGuidesList,
+          searchInput.value,
+          ["title", "description"]
+        )
+      } else return guideStore.getGuidesList
     })
 
-    function searchGuide(searchPattern) {
-      let fuzzySearch = new Fuse(
-        guideStore.getGuidesList,
-        {
-          keys: [
-            "title",
-            "description",
-          ]
-        }
-      )
-      return fuzzySearch
-        .search(searchPattern)
-        .map((item) => item.item)
+    function searchGuides(searchPattern) {
+      searchInput.value = searchPattern
     }
 
 
     onBeforeMount(async () => {
-
       quasar.loading.show()
-
       let result = await guideStore.retrieveGuides()
 
       if (result) {
@@ -96,9 +81,11 @@ export default {
       title: t("guidesListPage.pageTitle"),
     })
     return {
-      displayedGuidesList,
-      searchInput,
       userStore,
+
+      displayedGuidesList,
+
+      searchGuides,
     }
   }
 

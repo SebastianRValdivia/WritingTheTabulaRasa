@@ -1,13 +1,6 @@
 <template>
-  <q-page class="column items-center">
-    <q-input 
-      rounded
-      outlined
-    >
-      <template v-slot:append>
-        <q-icon name="search" />
-      </template>
-    </q-input>
+  <q-page padding>
+    <SearchInput @search="searchResearches"/>
     <ul>
       <li 
         v-for="researchProcess in displayedResearches" 
@@ -22,12 +15,16 @@
 <script>
 import { ref, computed, onBeforeMount } from "vue"
 import { useQuasar } from "quasar"
-import Fuse from "fuse.js"
 
 import { useResearchStore } from "src/stores/research-store"
+import SearchInput from "src/components/for-input/SearchInput"
+import { fuzzySearchByObjectByKeys } from "src/utils/search"
 
 export default {
   name: "ResearchListPage",
+  components: {
+    SearchInput
+  },
   setup() {
     const quasar = useQuasar()
     const researchStore = useResearchStore()
@@ -36,23 +33,16 @@ export default {
 
     const displayedResearches = computed(() => {
       if (searchInput.value) {
-        return searchResearch(searchInput.value)
+        return fuzzySearchByObjectByKeys(
+          researchStore.getResearchesProcessList,
+          searchInput.value,
+          ["title"]
+        )
       } else return researchStore.getResearchesProcessList
     })
 
-    function searchResearch(searchPattern) {
-      let fuzzySearch = new Fuse(
-        researchStore.getResearchesProcessList,
-        {
-          keys: [
-            "title",
-            "description",
-          ]
-        }
-      )
-      return fuzzySearch
-        .search(searchPattern)
-        .map((item) => item.item)
+    function searchResearches(searchPattern) {
+      searchInput.value = searchPattern
     }
     
     onBeforeMount(async () => {
@@ -63,7 +53,8 @@ export default {
 
     return {
       displayedResearches,
-      searchInput,
+
+      searchResearches,
     }
   }
 }

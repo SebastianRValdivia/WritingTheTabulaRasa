@@ -1,5 +1,6 @@
 <template>
-  <q-page>
+  <q-page padding>
+    <SearchInput @search="searchPages" />
     <q-list>
       <q-item 
         v-for="wikiPage in displayedPages" 
@@ -47,25 +48,43 @@ import { useQuasar, useMeta } from "quasar"
 
 import { useWikiStore } from "src/stores/wiki-store"
 import { useResourceStore } from "src/stores/resource-store"
+import SearchInput from "src/components/for-input/SearchInput"
+import { fuzzySearchByObjectByKeys } from "src/utils/search"
 
 export default {
   name: "EncyclopediaListPage",
+  components: {
+    SearchInput
+  },
   setup() {
     const { t } = useI18n()
     const wikiStore = useWikiStore()
     const resourceStore = useResourceStore()
     const quasar = useQuasar()
 
+    const searchPattern = ref("")
+
     const displayedPages = computed(() => {
-      return wikiStore.getWikiPageList
+      if (searchPattern.value) {
+        return fuzzySearchByObjectByKeys(
+          wikiStore.getWikiPageList,
+          searchPattern.value,
+          ['title', 'epigraph']
+        )
+      } else {
+        return wikiStore.getWikiPageList
+      }
     })
 
+
+    function searchPages(pattern) {
+      searchPattern.value = pattern
+    }
     function findWikiPageUrl(imgId) {
       let imgData = resourceStore.getImageResourceById(imgId)
       if (imgData) return imgData.file
       else return null
     }
-
     async function loadPage() {
       let result = await wikiStore.retrieveWikiPages()
       if (result) result = await resourceStore.retrieveImageResources()
@@ -82,8 +101,11 @@ export default {
     })
     return {
       wikiStore,
+
       displayedPages,
+
       findWikiPageUrl,
+      searchPages,
     } 
   }
 }

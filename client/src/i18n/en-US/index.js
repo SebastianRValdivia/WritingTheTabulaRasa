@@ -139,6 +139,9 @@ const quizzPageFormulationQuestion = {
   correctAnswer: "Correct answer",
   yourAnswer: "Your answer",
 }
+const emptyAlert = {
+  noResults: "No results found"
+}
 
 export default {
   general,
@@ -172,4 +175,5 @@ export default {
   imageUploadDialog,
   metadataEditorDialog,
   quizzPageFormulationQuestion,
+  emptyAlert,
 }

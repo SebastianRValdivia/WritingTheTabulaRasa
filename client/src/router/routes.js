@@ -7,6 +7,10 @@ const routes = [
         name: "home",
         component: () => import('pages/IndexPage') 
       },
+      { path: "book/",
+        name: "book",
+        component: () => import('pages/BookReaderPage') 
+      },
       { 
         path: "my/notes/permanent/",
         name: "notes",

@@ -6,7 +6,7 @@ export const useEssayStore = defineStore("essays", {
     essaysList: [],
   }),
   getters: {
-    getEssays: (state) => state.essaysList,
+    getEssaysList: (state) => state.essaysList,
     getEssayByUrl: (state) => {
       return (essayUrl) => state.essaysList.find(
         (essay) => essay.url === essayUrl

@@ -1,5 +1,6 @@
 <template>
   <q-page padding>
+    <SearchInput @search="searchEssays"/>
     <q-list>
       <q-item 
         v-for="essayData in displayedEssays"
@@ -34,26 +35,43 @@
 </template>
 
 <script>
-import { ref, onBeforeMount } from "vue"
+import { ref, computed, onBeforeMount } from "vue"
 import { useQuasar, useMeta } from "quasar"
 import { useI18n } from "vue-i18n"
 
 import { useEssayStore } from "src/stores/essay-store"
 import { useUserStore } from "src/stores/user-store"
+import SearchInput from "src/components/for-input/SearchInput"
+import { fuzzySearchByObjectByKeys } from "src/utils/search"
 
 
 export default {
   name: "EssaysListPage",
+  components: {
+    SearchInput
+  },
   setup() {
     const quasar = useQuasar()
     const { t } = useI18n()
     const essayStore = useEssayStore() 
     const userStore = useUserStore()
 
-    const displayedEssays = ref()
+    const searchInput = ref("")
+    const displayedEssays = computed(() => {
+      if (searchInput.value) {
+        return fuzzySearchByObjectByKeys(
+          essayStore.getEssaysList,
+          searchInput.value,
+          ["title"]
+        )
+      } else return essayStore.getEssaysList
+    })
 
     function getUsername(userId) {
       return userStore.getUsernameById(userId)
+    }
+    function searchEssays(searchPattern) {
+      searchInput.value = searchPattern
     }
 
     onBeforeMount(async () => {
@@ -61,9 +79,8 @@ export default {
       let result = await essayStore.retrieveEssays()
       
       if (result) {
-        displayedEssays.value = essayStore.getEssays
+        quasar.loading.hide()
       }
-      quasar.loading.hide()
     })
 
     useMeta({
@@ -71,10 +88,12 @@ export default {
     })
 
     return {
+      userStore,
+
       displayedEssays,
       getUsername,
 
-      userStore,
+      searchEssays,
     }
 
   }

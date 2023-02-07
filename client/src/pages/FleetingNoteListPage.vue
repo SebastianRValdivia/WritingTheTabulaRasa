@@ -1,32 +1,28 @@
 <template>
   <q-page padding>
-    <div class="row justify-center">
-      <q-input 
-        rounded
-        outlined
-        v-model="searchInput"
-        class="col-4"
-      >
-        <template v-slot:append>
-          <q-icon name="search" />
-        </template>
-      </q-input>
-    </div>
+    <SearchInput></SearchInput>
 
-    <div class="row q-gutter-md">
+    <div>
       <!-- List all user fleeting cards -->
-      <FleetingNoteCard 
-        v-for="fleetingNoteData in displayedNotes" 
-        :key="fleetingNoteData.id"
-        :fleetingNoteData="fleetingNoteData"
-      />
+      <div
+        class="row q-gutter-md"
+        v-if="displayedNotes.lenght > 0"
+      >
+        <FleetingNoteCard 
+          v-for="fleetingNoteData in displayedNotes" 
+          :key="fleetingNoteData.id"
+          :fleetingNoteData="fleetingNoteData"
+        />
+      </div>
+
+      <EmptyAlert v-else-if="!isAddingFleetingNote" />
 
       
       <!-- Add a fleeting note -->
       <q-page-sticky
         class="col self-center"
         v-if="!isAddingFleetingNote"
-        position="bottom-right"
+        position="top-right"
         :offset="[20, 20]"
       >
         <q-btn 
@@ -66,11 +62,15 @@ import Fuse from "fuse.js"
 import { useNoteStore } from "src/stores/note-store"
 import { useUserStore } from "src/stores/user-store"
 import FleetingNoteCard from "src/components/for-input/FleetingNoteCard"
+import SearchInput from "src/components/for-input/SearchInput"
+import EmptyAlert from "src/components/for-viewing/EmptyAlert"
 
 export default {
   name: 'FleetingNotePage',
   components: {
-    FleetingNoteCard
+    FleetingNoteCard,
+    SearchInput,
+    EmptyAlert,
   },
   setup() {
     const $q = useQuasar()
@@ -138,5 +138,7 @@ export default {
 .fleeting-note-card {
   min-width: 20rem;
   min-height: 20rem;
+  max-width: 20rem;
+  max-height: 20rem;
 }
 </style>

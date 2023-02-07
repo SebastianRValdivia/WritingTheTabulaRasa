@@ -1,40 +1,26 @@
 <template>
   <q-page padding>
-    <SearchInput></SearchInput>
-
-    <div>
-      <!-- List all user fleeting cards -->
-      <div
-        class="row q-gutter-md"
-        v-if="displayedNotes.lenght > 0"
-      >
-        <FleetingNoteCard 
-          v-for="fleetingNoteData in displayedNotes" 
-          :key="fleetingNoteData.id"
-          :fleetingNoteData="fleetingNoteData"
-        />
-      </div>
-
-      <EmptyAlert v-else-if="!isAddingFleetingNote" />
-
-      
+    <SearchInput @search="searchFleetingNotes"/>
       <!-- Add a fleeting note -->
-      <q-page-sticky
-        class="col self-center"
-        v-if="!isAddingFleetingNote"
-        position="top-right"
-        :offset="[20, 20]"
-      >
-        <q-btn 
-          icon="add" 
-          round 
-          color="primary"
-          @click="toggleNewFleetingNote"
-        />
-      </q-page-sticky>
+    <q-page-sticky
+      class="col self-center"
+      v-if="!isAddingFleetingNote"
+      position="top-right"
+      :offset="[20, 20]"
+    >
+      <q-btn 
+        icon="add" 
+        round 
+        color="primary"
+        @click="toggleNewFleetingNote"
+      />
+    </q-page-sticky>
+    <div 
+      class="row justify-center q-pa-md"
+      v-else
+    >
       <q-card 
         class="column fleeting-note-card" 
-        v-else
       >
         <q-card-section>
           <q-input
@@ -50,6 +36,19 @@
         </q-card-actions>
       </q-card>
     </div>
+
+    <!-- List all user fleeting cards -->
+    <div
+      class="row q-gutter-md"
+      v-if="displayedNotes.length > 0"
+    >
+      <FleetingNoteCard 
+        v-for="fleetingNoteData in displayedNotes" 
+        :key="fleetingNoteData.id"
+        :fleetingNoteData="fleetingNoteData"
+      />
+    </div>
+    <EmptyAlert v-else-if="!isAddingFleetingNote" />
   </q-page>
 </template>
 
@@ -61,6 +60,7 @@ import Fuse from "fuse.js"
 
 import { useNoteStore } from "src/stores/note-store"
 import { useUserStore } from "src/stores/user-store"
+import { fuzzySearchByObjectByKeys } from "src/utils/search"
 import FleetingNoteCard from "src/components/for-input/FleetingNoteCard"
 import SearchInput from "src/components/for-input/SearchInput"
 import EmptyAlert from "src/components/for-viewing/EmptyAlert"
@@ -83,25 +83,19 @@ export default {
     const searchInput = ref("")
     const displayedNotes = computed(() => {
       if (searchInput.value) {
-        return searchNote(searchInput.value)
+        return fuzzySearchByObjectByKeys(
+        noteStore.getFleetingNotesByUser(userStore.getUserId),
+        searchInput.value,
+        ["content"]
+      )
       } else return noteStore.getFleetingNotesByUser(userStore.getUserId)
     })
 
     function toggleNewFleetingNote() {
       isAddingFleetingNote.value = !isAddingFleetingNote.value
     }
-    function searchNote(searchPattern) {
-      let fuzzySearch = new Fuse(
-        noteStore.getFleetingNotesByUser(userStore.getUserId),
-        {
-          keys: [
-            "content",
-          ]
-        }
-      )
-      return fuzzySearch
-        .search(searchPattern)
-        .map((item) => item.item)
+    function searchFleetingNotes(searchPattern) {
+      searchInput.value = searchPattern
     }
     async function saveNewFleetingNote() {
       let result = await noteStore.createFleetingNote(contentInput.value)
@@ -128,7 +122,8 @@ export default {
       saveNewFleetingNote,
       noteStore,
       displayedNotes,
-      searchInput,
+
+      searchFleetingNotes,
     }
   }
 }

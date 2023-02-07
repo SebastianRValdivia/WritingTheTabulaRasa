@@ -98,7 +98,8 @@ const fleetingNoteListPage = {
   pageTitle: "My fleeting notes"
 }
 const literaryNoteListPage = {
-  pageTitle: "My literary notes"
+  pageTitle: "My literary notes",
+  source: "Source"
 }
 const noteListPage = {
   pageTitle: "My notes"

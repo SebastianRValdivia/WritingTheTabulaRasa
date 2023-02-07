@@ -70,15 +70,37 @@
     >
       <q-scroll-area class="fit links-area">
         <q-list>
-          <q-item clickable v-ripple :to="{name: 'notes'}">
-            <q-item-section avatar>
-              <q-icon name="inbox" />
-            </q-item-section>
-
-            <q-item-section>
-              {{ $t("mainDrawer.notes") }}
-            </q-item-section>
-          </q-item>
+          <q-expansion-item 
+            :label="$t('mainDrawer.notes')" 
+            icon="inbox"
+            default-opened
+            :content-inset-level="1"
+          >
+            <q-item clickable v-ripple :to="{name: 'notes'}">
+              <q-item-section avatar>
+                <q-icon name="text_snippet" />
+              </q-item-section>
+              <q-item-section>
+                {{ $t("mainDrawer.permanent") }}
+              </q-item-section>
+            </q-item>
+            <q-item clickable v-ripple :to="{name: 'fleetingNotesListPage'}">
+              <q-item-section avatar>
+                <q-icon name="bolt" />
+              </q-item-section>
+              <q-item-section>
+                {{ $t("mainDrawer.fleeting") }}
+              </q-item-section>
+            </q-item>
+            <q-item clickable v-ripple :to="{name: 'literaryNotesListPage'}">
+              <q-item-section avatar>
+                <q-icon name="menu_book" />
+              </q-item-section>
+              <q-item-section>
+                {{ $t("mainDrawer.literary") }}
+              </q-item-section>
+            </q-item>
+          </q-expansion-item>
 
           <q-item clickable v-ripple :to="{name: 'tasks'}">
             <q-item-section avatar>
@@ -158,15 +180,6 @@
 
     <q-page-container id="page-container">
       <router-view></router-view>
-
-      <q-page-sticky
-        v-if="appStore.getIsNewNoteOpen"
-        position="bottom-right"
-        :offset="[10, 10]"
-      >
-        <NewNote />
-      </q-page-sticky>
-
     </q-page-container>
 
   </q-layout>
@@ -180,13 +193,11 @@ import { useRouter } from "vue-router"
 
 import LoginDialog from "src/components/for-control/LoginDialog"
 import PomodoroTimer from 'src/components/for-control/PomodoroTimer';
-import NewNote from "src/components/for-control/NewNote"
 
 export default {
   components: {
     LoginDialog,
     PomodoroTimer,
-    NewNote
   },
   setup() {
     const router = useRouter()

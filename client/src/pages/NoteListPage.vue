@@ -31,13 +31,11 @@
     </div>
 
     <div v-else class="row q-pa-xl q-mg-xl justify-center">
-      <div class="text-h2 q-pb-md col-12" style="opacity:.4">
-        {{ $t("notePages.empty")}}
-      </div>
+      <EmptyAlert />
     </div>
 
-    <q-page-sticky position="bottom-right" :offset="[18, 18]">
-      <q-btn round color="secondary" icon="add" size="md" @click="appStore.toggleNewNote"/>
+    <q-page-sticky position="top-right" :offset="[20, 20]">
+      <q-btn round color="primary" icon="add" size="md" @click="appStore.toggleNewNote"/>
     </q-page-sticky>
   </q-page>
 </template>
@@ -52,10 +50,12 @@ import { useUserStore } from "src/stores/user-store"
 import { useAppStore } from "src/stores/app-store"
 import { constructNoteTree, createNoteIdentifier  } from "src/utils"
 import NoteCard from "src/components/for-control/NoteCard"
+import EmptyAlert from "src/components/for-viewing/EmptyAlert"
 
 export default {
   components: {
-    NoteCard
+    NoteCard,
+    EmptyAlert,
   },
   setup() {
     const noteStore = useNoteStore()
@@ -97,11 +97,6 @@ export default {
 
     onBeforeMount(async () => {
       $q.loading.show()
-      appStore.setTabs({
-        [t("notePages.permanent")]: "notes",
-        [t("notePages.fleeting")]: "fleetingNotes",
-        [t("notePages.literary")]: "literaryNoteListPage",
-      })
       await noteStore.retrieveNotes()
       if (userStore.isUserLogged) {
         filterUserNotes()
@@ -109,9 +104,6 @@ export default {
       hierarchyNoteList.value = constructNoteTree(userNoteList.value)
       await noteStore.retrieveFleetingNotes()
       $q.loading.hide()
-    })
-    onBeforeUnmount(() => {
-      appStore.clearTabs()
     })
 
     useMeta({

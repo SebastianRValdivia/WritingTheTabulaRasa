@@ -65,7 +65,6 @@ import Fuse from "fuse.js"
 
 import { useNoteStore } from "src/stores/note-store"
 import { useUserStore } from "src/stores/user-store"
-import { useAppStore } from "src/stores/app-store"
 import FleetingNoteCard from "src/components/for-input/FleetingNoteCard"
 
 export default {
@@ -77,7 +76,6 @@ export default {
     const $q = useQuasar()
     const noteStore = useNoteStore()
     const userStore = useUserStore()
-    const appStore = useAppStore()
     const { t } = useI18n()
 
     const contentInput = ref("")
@@ -115,16 +113,8 @@ export default {
 
     onBeforeMount(async () => {
       $q.loading.show()
-      appStore.setTabs({
-        [t("notePages.permanent")]: "notes",
-        [t("notePages.fleeting")]: "fleetingNotes",
-        [t("notePages.literary")]: "literaryNoteListPage",
-      })
       await noteStore.retrieveFleetingNotes()
       $q.loading.hide()
-    })
-    onBeforeUnmount(() => {
-      appStore.clearTabs()
     })
 
     useMeta({

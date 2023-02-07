@@ -21,6 +21,9 @@ const mainLayout = {
 }
 const mainDrawer = {
   notes: "My notes",
+  permanent: "Permanent",
+  fleeting: "Fleeting",
+  literary: "Literary",
   tools: "Assistance tools",
   tasks: "Tasks",
   calendar: "Calendar",

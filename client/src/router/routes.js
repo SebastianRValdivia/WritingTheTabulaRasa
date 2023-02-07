@@ -18,12 +18,12 @@ const routes = [
       },
       {
         path: "my/notes/fleeting/",
-        name: "fleetingNotes",
+        name: "fleetingNotesListPage",
         component: () => import("src/pages/FleetingNoteListPage"),
       },
       {
         path: "my/notes/literary/",
-        name: "literaryNoteListPage",
+        name: "literaryNotesListPage",
         component: () => import("src/pages/LiteraryNoteListPage"),
       },
       {

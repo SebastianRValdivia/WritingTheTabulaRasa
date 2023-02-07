@@ -58,7 +58,6 @@ import { fuzzySearchByObjectByKeys } from "src/utils/search"
 export default {
   setup() {
     const quasar = useQuasar()
-    const appStore = useAppStore()
     const { t } = useI18n()
     const noteStore = useNoteStore()
     const userStore = useUserStore()
@@ -78,11 +77,6 @@ export default {
 
     onBeforeMount(async () => {
       quasar.loading.show()
-      appStore.setTabs({
-        [t("notePages.permanent")]: "notes",
-        [t("notePages.fleeting")]: "fleetingNotes",
-        [t("notePages.literary")]: "literaryNoteListPage",
-      })
       await noteStore.retrieveLiteraryNotes()
       await resourceStore.retrieveLearningResources()
       quasar.loading.hide()

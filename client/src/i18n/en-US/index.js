@@ -144,7 +144,7 @@ const quizzPageFormulationQuestion = {
   yourAnswer: "Your answer",
 }
 const emptyAlert = {
-  noResults: "No results found"
+  noResults: "Nothing found"
 }
 
 export default {

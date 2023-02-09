@@ -21,6 +21,9 @@ const mainLayout = {
 }
 const mainDrawer = {
   notes: "My notes",
+  permanent: "Permanent",
+  fleeting: "Fleeting",
+  literary: "Literary",
   tools: "Assistance tools",
   tasks: "Tasks",
   calendar: "Calendar",
@@ -95,10 +98,14 @@ const fleetingNoteListPage = {
   pageTitle: "My fleeting notes"
 }
 const literaryNoteListPage = {
-  pageTitle: "My literary notes"
+  pageTitle: "My literary notes",
+  source: "Source"
 }
 const noteListPage = {
   pageTitle: "My notes"
+}
+const noteEditorPage = {
+  pageTitle: "New note",
 }
 const guidesListPage = {
   pageTitle: "Guides"
@@ -140,7 +147,7 @@ const quizzPageFormulationQuestion = {
   yourAnswer: "Your answer",
 }
 const emptyAlert = {
-  noResults: "No results found"
+  noResults: "Nothing found"
 }
 
 export default {
@@ -165,6 +172,7 @@ export default {
   fleetingNoteListPage,
   literaryNoteListPage,
   noteListPage,
+  noteEditorPage,
   guidesListPage,
   guideEditorPage,
   quizzesListPage,

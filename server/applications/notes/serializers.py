@@ -13,15 +13,6 @@ class NoteSerializer(serializers.ModelSerializer):
         model = NoteModel
         fields = "__all__"
 
-    def validate_identifier(self, data):
-        identifiers_of_same_parent = NoteModel.objects.filter(parent=self.initial_data["parent"]).filter(identifier=self.initial_data["identifier"])
-        if identifiers_of_same_parent.exists():
-            raise serializers.ValidationError(
-                str(self.initial_data["identifier"]) + " is repeated"
-            )
-
-        return data
-
 class FleetingNoteSerializer(serializers.ModelSerializer):
 
     class Meta:

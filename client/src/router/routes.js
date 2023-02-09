@@ -13,17 +13,22 @@ const routes = [
       },
       { 
         path: "my/notes/permanent/",
-        name: "notes",
+        name: "noteListPage",
         component: () => import("src/pages/NoteListPage"),
       },
       {
+        path: "my/notes/permanent/editor/",
+        name: "noteEditorPage",
+        component: () => import("src/pages/NoteEditorPage"),
+      },
+      {
         path: "my/notes/fleeting/",
-        name: "fleetingNotes",
+        name: "fleetingNotesListPage",
         component: () => import("src/pages/FleetingNoteListPage"),
       },
       {
         path: "my/notes/literary/",
-        name: "literaryNoteListPage",
+        name: "literaryNotesListPage",
         component: () => import("src/pages/LiteraryNoteListPage"),
       },
       {

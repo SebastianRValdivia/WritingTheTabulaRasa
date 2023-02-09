@@ -10,16 +10,7 @@
           :to="{name: 'literaryNoteNewPage'}"
         />
       </q-page-sticky>
-      <q-input 
-        rounded
-        outlined
-        v-model="searchInput"
-        class="col-4"
-      >
-        <template v-slot:append>
-          <q-icon name="search" />
-        </template>
-      </q-input>
+      <SearchInput @search="searchLiteraryNotes"/>
     </div>
     <div 
       class="row justify-center q-gutter-md"
@@ -31,14 +22,19 @@
         :key="note.id"
         class="col-5 literary-note-card"
       >
-        <q-card-section
-          v-if="resourceStore.getLearningResourceById(note.resource)"
-        >
-          {{ resourceStore.getLearningResourceById(note.resource).title }}
-        </q-card-section>
         <q-card-section>
           {{ note.content }}
         </q-card-section>
+        <q-card-actions
+          v-if="resourceStore.getLearningResourceById(note.resource)"
+          class="absolute-bottom"
+          align="right"
+        >
+          <span>
+            {{ $t("literaryNoteListPage.source") }}:
+            {{ resourceStore.getLearningResourceById(note.resource).title }}
+          </span>
+        </q-card-actions>
       </q-card>
     </div>
   </q-page>
@@ -54,11 +50,15 @@ import { useNoteStore } from "src/stores/note-store"
 import { useUserStore } from "src/stores/user-store"
 import { useResourceStore } from "src/stores/resource-store"
 import { fuzzySearchByObjectByKeys } from "src/utils/search"
+import SearchInput from "src/components/for-input/SearchInput"
 
 export default {
+  name: "LiteraryNoteListPage",
+  components: {
+    SearchInput
+  },
   setup() {
     const quasar = useQuasar()
-    const appStore = useAppStore()
     const { t } = useI18n()
     const noteStore = useNoteStore()
     const userStore = useUserStore()
@@ -68,21 +68,20 @@ export default {
 
     const displayedNotes = computed(() => {
       if (searchInput.value) {
-        return (fuzzySearchByObjectByKeys(
+        return fuzzySearchByObjectByKeys(
           noteStore.getLiteraryNotesByUser(userStore.getUserId),
           searchInput.value,
           ["content"]
-        ))
+        )
       } else return noteStore.getLiteraryNotesByUser(userStore.getUserId)
     })
 
+    function searchLiteraryNotes(searchPattern) {
+      searchInput.value = searchPattern
+    }
+
     onBeforeMount(async () => {
       quasar.loading.show()
-      appStore.setTabs({
-        [t("notePages.permanent")]: "notes",
-        [t("notePages.fleeting")]: "fleetingNotes",
-        [t("notePages.literary")]: "literaryNoteListPage",
-      })
       await noteStore.retrieveLiteraryNotes()
       await resourceStore.retrieveLearningResources()
       quasar.loading.hide()
@@ -95,9 +94,9 @@ export default {
     return {
       resourceStore,
 
-      searchInput,
-
       displayedNotes,
+
+      searchLiteraryNotes,
     }
   }
 

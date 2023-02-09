@@ -1,44 +1,26 @@
 <template>
   <q-page padding>
-    <div class="row justify-center">
-      <q-input 
-        rounded
-        outlined
-        v-model="searchInput"
-        class="col-4"
-      >
-        <template v-slot:append>
-          <q-icon name="search" />
-        </template>
-      </q-input>
-    </div>
-
-    <div class="row q-gutter-md">
-      <!-- List all user fleeting cards -->
-      <FleetingNoteCard 
-        v-for="fleetingNoteData in displayedNotes" 
-        :key="fleetingNoteData.id"
-        :fleetingNoteData="fleetingNoteData"
-      />
-
-      
+    <SearchInput @search="searchFleetingNotes"/>
       <!-- Add a fleeting note -->
-      <q-page-sticky
-        class="col self-center"
-        v-if="!isAddingFleetingNote"
-        position="bottom-right"
-        :offset="[20, 20]"
-      >
-        <q-btn 
-          icon="add" 
-          round 
-          color="primary"
-          @click="toggleNewFleetingNote"
-        />
-      </q-page-sticky>
+    <q-page-sticky
+      class="col self-center"
+      v-if="!isAddingFleetingNote"
+      position="top-right"
+      :offset="[20, 20]"
+    >
+      <q-btn 
+        icon="add" 
+        round 
+        color="primary"
+        @click="toggleNewFleetingNote"
+      />
+    </q-page-sticky>
+    <div 
+      class="row justify-center q-pa-md"
+      v-else
+    >
       <q-card 
         class="column fleeting-note-card" 
-        v-else
       >
         <q-card-section>
           <q-input
@@ -54,6 +36,19 @@
         </q-card-actions>
       </q-card>
     </div>
+
+    <!-- List all user fleeting cards -->
+    <div
+      class="row q-gutter-md"
+      v-if="displayedNotes.length > 0"
+    >
+      <FleetingNoteCard 
+        v-for="fleetingNoteData in displayedNotes" 
+        :key="fleetingNoteData.id"
+        :fleetingNoteData="fleetingNoteData"
+      />
+    </div>
+    <EmptyAlert v-else-if="!isAddingFleetingNote" />
   </q-page>
 </template>
 
@@ -65,19 +60,22 @@ import Fuse from "fuse.js"
 
 import { useNoteStore } from "src/stores/note-store"
 import { useUserStore } from "src/stores/user-store"
-import { useAppStore } from "src/stores/app-store"
+import { fuzzySearchByObjectByKeys } from "src/utils/search"
 import FleetingNoteCard from "src/components/for-input/FleetingNoteCard"
+import SearchInput from "src/components/for-input/SearchInput"
+import EmptyAlert from "src/components/for-viewing/EmptyAlert"
 
 export default {
   name: 'FleetingNotePage',
   components: {
-    FleetingNoteCard
+    FleetingNoteCard,
+    SearchInput,
+    EmptyAlert,
   },
   setup() {
     const $q = useQuasar()
     const noteStore = useNoteStore()
     const userStore = useUserStore()
-    const appStore = useAppStore()
     const { t } = useI18n()
 
     const contentInput = ref("")
@@ -85,25 +83,19 @@ export default {
     const searchInput = ref("")
     const displayedNotes = computed(() => {
       if (searchInput.value) {
-        return searchNote(searchInput.value)
+        return fuzzySearchByObjectByKeys(
+        noteStore.getFleetingNotesByUser(userStore.getUserId),
+        searchInput.value,
+        ["content"]
+      )
       } else return noteStore.getFleetingNotesByUser(userStore.getUserId)
     })
 
     function toggleNewFleetingNote() {
       isAddingFleetingNote.value = !isAddingFleetingNote.value
     }
-    function searchNote(searchPattern) {
-      let fuzzySearch = new Fuse(
-        noteStore.getFleetingNotesByUser(userStore.getUserId),
-        {
-          keys: [
-            "content",
-          ]
-        }
-      )
-      return fuzzySearch
-        .search(searchPattern)
-        .map((item) => item.item)
+    function searchFleetingNotes(searchPattern) {
+      searchInput.value = searchPattern
     }
     async function saveNewFleetingNote() {
       let result = await noteStore.createFleetingNote(contentInput.value)
@@ -115,16 +107,8 @@ export default {
 
     onBeforeMount(async () => {
       $q.loading.show()
-      appStore.setTabs({
-        [t("notePages.permanent")]: "notes",
-        [t("notePages.fleeting")]: "fleetingNotes",
-        [t("notePages.literary")]: "literaryNoteListPage",
-      })
       await noteStore.retrieveFleetingNotes()
       $q.loading.hide()
-    })
-    onBeforeUnmount(() => {
-      appStore.clearTabs()
     })
 
     useMeta({
@@ -138,7 +122,8 @@ export default {
       saveNewFleetingNote,
       noteStore,
       displayedNotes,
-      searchInput,
+
+      searchFleetingNotes,
     }
   }
 }
@@ -148,5 +133,7 @@ export default {
 .fleeting-note-card {
   min-width: 20rem;
   min-height: 20rem;
+  max-width: 20rem;
+  max-height: 20rem;
 }
 </style>

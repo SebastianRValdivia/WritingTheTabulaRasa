@@ -14,7 +14,7 @@ class NoteModel(models.Model):
     )
     parent = models.ForeignKey(
         "self",
-        models.SET_NULL,
+        models.CASCADE,
         blank=True,
         null=True,
     )

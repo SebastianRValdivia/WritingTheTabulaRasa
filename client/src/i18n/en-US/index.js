@@ -104,6 +104,9 @@ const literaryNoteListPage = {
 const noteListPage = {
   pageTitle: "My notes"
 }
+const noteEditorPage = {
+  pageTitle: "New note",
+}
 const guidesListPage = {
   pageTitle: "Guides"
 }
@@ -169,6 +172,7 @@ export default {
   fleetingNoteListPage,
   literaryNoteListPage,
   noteListPage,
+  noteEditorPage,
   guidesListPage,
   guideEditorPage,
   quizzesListPage,

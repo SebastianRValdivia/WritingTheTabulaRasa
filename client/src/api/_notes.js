@@ -47,21 +47,19 @@ export default {
     }
   },
   async postNote(newNoteContent) {
-    let response = await api.post(
-      "v1/notes/permanent/",
-      newNoteContent,
-    )
+    try {
+      let response = await api.post(
+        "v1/notes/permanent/",
+        newNoteContent,
+      )
 
-    if (response.status === 201) {
-      return {
-        code: response.status,
-        newNote: response.data
-      }
-    } else {
-      return {
-        code: response.status,
-        reason: response.data
-      }
+      if (response.status === 201) {
+        return {
+          data: response.data
+        }
+      } else return false
+    } catch {
+      return false
     }
   },
   async deleteNote(noteId) {

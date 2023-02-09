@@ -35,7 +35,13 @@
     </div>
 
     <q-page-sticky position="top-right" :offset="[20, 20]">
-      <q-btn round color="primary" icon="add" size="md" @click="appStore.toggleNewNote"/>
+      <q-btn 
+        round 
+        color="primary" 
+        icon="add"
+        size="md"
+        :to="{name: 'noteEditorPage'}"
+      />
     </q-page-sticky>
   </q-page>
 </template>

@@ -71,12 +71,10 @@ export const useNoteStore = defineStore("note", {
     async saveNote(noteData) {
       let result = await api.notes.postNote(noteData)
 
-      if (result.code === 201) {
-        this.notes.push(result.newNote)
+      if (result) {
+        this.notes.push(result.data)
         return true
-      } else {
-        return result
-      }
+      } else return false
     },
     async saveLiteraryNote(literaryNoteData) {
       let result = await api.notes.postLitearyNote(literaryNoteData)

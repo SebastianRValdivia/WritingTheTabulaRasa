@@ -17,6 +17,11 @@ const routes = [
         component: () => import("src/pages/NoteListPage"),
       },
       {
+        path: "my/notes/permanent/editor/",
+        name: "noteEditorPage",
+        component: () => import("src/pages/NoteEditorPage"),
+      },
+      {
         path: "my/notes/fleeting/",
         name: "fleetingNotesListPage",
         component: () => import("src/pages/FleetingNoteListPage"),

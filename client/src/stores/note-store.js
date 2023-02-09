@@ -1,6 +1,6 @@
 import { defineStore } from "pinia"
 import api from "src/api"
-import { filterNoteFamily, constructNoteTree } from "src/utils"
+import { filterNoteFamily, constructNoteTree } from "src/utils/notes"
 import { useUserStore } from "src/stores/user-store"
 
 export const useNoteStore = defineStore("note", {

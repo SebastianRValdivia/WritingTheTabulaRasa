@@ -76,7 +76,7 @@
             default-opened
             :content-inset-level="1"
           >
-            <q-item clickable v-ripple :to="{name: 'notes'}">
+            <q-item clickable v-ripple :to="{name: 'noteListPage'}">
               <q-item-section avatar>
                 <q-icon name="text_snippet" />
               </q-item-section>

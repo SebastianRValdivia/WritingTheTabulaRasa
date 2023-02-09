@@ -13,7 +13,7 @@ const routes = [
       },
       { 
         path: "my/notes/permanent/",
-        name: "notes",
+        name: "noteListPage",
         component: () => import("src/pages/NoteListPage"),
       },
       {

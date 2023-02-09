@@ -54,7 +54,7 @@ import { useQuasar, useMeta } from 'quasar'
 import { useNoteStore } from "src/stores/note-store"
 import { useUserStore } from "src/stores/user-store"
 import { useAppStore } from "src/stores/app-store"
-import { constructNoteTree, createNoteIdentifier  } from "src/utils"
+import { constructNoteTree, createNoteIdentifier  } from "src/utils/notes"
 import NoteCard from "src/components/for-control/NoteCard"
 import EmptyAlert from "src/components/for-viewing/EmptyAlert"
 

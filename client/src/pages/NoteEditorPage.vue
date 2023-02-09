@@ -41,11 +41,13 @@ import { useNoteStore } from "src/stores/note-store"
 import { useUserStore } from "src/stores/user-store"
 import { useAppStore } from "src/stores/app-store"
 import { errorNotification } from "src/utils/notifications"
+import { filterNoteFamily } from "src/utils/notes"
 
 export default {
   setup() {
     const noteStore = useNoteStore()
     const appStore = useAppStore()
+    const userStore = useUserStore()
     const router = useRouter()
     const quasar = useQuasar()
     const { t } = useI18n()
@@ -58,24 +60,34 @@ export default {
 
     const titleRules = [ val => val.length > 0 ]
     const identifierRules = [ 
-      val => val.length > 0,
-      val => noteStore.getNoteByIdentifier(val.split("-")) == undefined,
-      val => {
+      val => val.length > 0, // Field not empty
+      val => { // There are no letters
         let identifiers = val.split("-")
         for (let id of identifiers) {
           if (isNaN(id)) { return false }
         }
       }
     ]
-    
+
     async function saveNote() {
-      let userStore = useUserStore()
+      let identifierList = identifier.value.split("-")
+      let family = filterNoteFamily(
+        noteStore.getNotesByUser(userStore.getUserId),
+        identifierList,
+      )
+      let noteIdentifierNumber = Number(identifierList.slice(-1))
+      // Direct parent of the family
+      let parentId
+      family.length >= 2
+        ? parentId = family[family.length - 2].id
+        : parentId = null
+
       let result = await noteStore.saveNote({
         title: title.value,
         content: content.value,
         owner: userStore.getUserId,
-        identifier: identifier.value,
-        parent: null, // TODO
+        identifier: noteIdentifierNumber,
+        parent: parentId, 
       })
       if (result) {
         router.push({name: "noteListPage"})

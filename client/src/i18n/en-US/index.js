@@ -134,6 +134,11 @@ const essayEditorPage = {
   essayBody: "Essay body",
   incompleteData: "Some fields are incomplete",
 }
+const learningResourcesEditorPage = {
+  title: "Title",
+  autor: "Autor",
+  about: "About",
+}
 
 
 const imageUploadDialog = {
@@ -182,6 +187,7 @@ export default {
   essaysListPage,
   essayPage,
   essayEditorPage, 
+  learningResourcesEditorPage,
 
   imageUploadDialog,
   metadataEditorDialog,

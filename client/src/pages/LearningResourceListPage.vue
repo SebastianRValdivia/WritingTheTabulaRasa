@@ -89,6 +89,7 @@ export default {
       for (let resourceId of selectedLearningResourcesList.value) {
         resourcesStore.removeLearningResourceById(resourceId)
       }
+      selectedLearningResourcesList.value = []
     }
     onBeforeMount(async () => {
       quasar.loading.show()

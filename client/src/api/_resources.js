@@ -21,8 +21,8 @@ export default {
 
       if (response.status === 201) {
         return {
-          code: result.status,
-          newLearningResource: result.data
+          code: response.status,
+          data: response.data
         }
       } else return false
     } catch {

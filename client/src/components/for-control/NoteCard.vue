@@ -1,20 +1,19 @@
 <template>
   <q-card v-if="!isEditing" class="q-pa-sm note-card-desktop" >
+    <div class="column items-end text-semi-transparent">
+      #{{ props.note.id }}
+    </div>
     <q-card-section class="text-h6 row">
       <span class="text-bold">{{ props.identifier }}:</span> <span>{{props.note.title}}</span>
-      <q-space />
-      <q-btn round color="primary" icon="edit" @click="toggleEditor"/>
     </q-card-section>
     <q-separator />
     <q-card-section class="row">
       <MarkdownPreview :md="props.note.content"/>
     </q-card-section>
-    <q-card-actions
-      class="q-mt-md absolute-bottom"
-      align="right"
-      v-if="props.note.audio !== null" 
-    >
+    <q-card-actions class="absolute-bottom q-pa-md" align="right">
+      <q-btn round color="primary" icon="edit" @click="toggleEditor"/>
       <q-btn 
+      v-if="props.note.audio !== null" 
         round 
         color="primary" 
         :icon="isAudioPlaying ? 'pause' : 'play_arrow'"
@@ -61,10 +60,11 @@
 import { ref, computed } from "vue"
 import { useQuasar } from "quasar"
 import { useI18n } from "vue-i18n"
-import MarkdownPreview from "src/components/for-viewing/MarkdownPreview"
 
 import { useUserStore } from "src/stores/user-store"
 import { useNoteStore } from "src/stores/note-store"
+import MarkdownPreview from "src/components/for-viewing/MarkdownPreview"
+import { errorNotification } from "src/utils/notifications/"
 
 export default {
   name: "NoteCard",
@@ -81,7 +81,7 @@ export default {
   setup(props, context) {
     const userStore = useUserStore()
     const noteStore = useNoteStore()
-    const $q = useQuasar()
+    const quasar = useQuasar()
     const { t } = useI18n()
 
     const isEditing = ref(false)
@@ -122,14 +122,17 @@ export default {
       toggleEditor()
     }
     async function deleteNote() {
-      $q.dialog({
-        title: t("confirm"),
-        message: t("sureDelete"),
+      quasar.dialog({
+        title: t("general.confirm"),
+        message: t("noteCard.deleteAll"),
         cancel: true,
         color: "negative"
       }).onOk(async () => {
         let result = await noteStore.removeNote(props.note.id)
-        context.emit("deleted")
+        if (result) {
+          context.emit("deleted")
+        } else {
+        }
       })
 
     }

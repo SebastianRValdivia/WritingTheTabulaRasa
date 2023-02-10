@@ -19,7 +19,7 @@
           </div>
         </template>
       </q-tree>
-      <q-separator vertical class="gt-md shadow-2"/>
+      <q-separator vertical class="shadow-2 q-mg-md"/>
       <div class="column content-center q-pa-md col-9" >
         <NoteCard 
           v-if="previewNote !== null"

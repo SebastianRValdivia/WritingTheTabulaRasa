@@ -2,9 +2,18 @@
   <q-page padding class="column items-center">
     <q-card>
       <q-card-section>
-        <q-input v-model="titleInput"/>
-        <q-input v-model="autorInput"/>
-        <q-input v-model="descriptionInput" type="textarea"/>
+        <q-input 
+          v-model="titleInput" 
+          :label="$t('learningResourcesEditorPage.title')"
+        />
+        <q-input 
+          v-model="autorInput" :label="$t('learningResourcesEditorPage.autor')"
+        />
+        <q-input 
+          v-model="descriptionInput" 
+          type="textarea"
+          :label="$t('learningResourcesEditorPage.about')"
+        />
       </q-card-section>
     </q-card>
 

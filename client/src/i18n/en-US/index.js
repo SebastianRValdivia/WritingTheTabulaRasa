@@ -4,7 +4,7 @@ const general = {
   failed: 'Action failed',
   success: 'Action was successful',
   done: "Done",
-  confirm: "Confirm",
+  confirm: "Are you sure?",
   sureDelete: "Are you sure you want to delete this?",
   by: "By",
 }
@@ -149,6 +149,9 @@ const quizzPageFormulationQuestion = {
 const emptyAlert = {
   noResults: "Nothing found"
 }
+const noteCard = {
+  deleteAll: "This will delete all children cards too"
+}
 
 export default {
   general,
@@ -184,4 +187,5 @@ export default {
   metadataEditorDialog,
   quizzPageFormulationQuestion,
   emptyAlert,
+  noteCard,
 }

@@ -117,7 +117,7 @@
             </q-item-section>
           </q-item>
 
-          <q-item clickable v-ripple :to="{name: 'learningResources'}">
+          <q-item clickable v-ripple :to="{name: 'learningResourceUserListPage'}">
             <q-item-section avatar>
               <q-icon name="book" />
             </q-item-section>

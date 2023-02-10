@@ -39,7 +39,7 @@ export const useResourceStore = defineStore("resource", {
       )
 
       if (result) {
-        this.learningResourcesList.push(result.newLearningResource)
+        this.learningResourcesList.push(result.data)
         return true
       } else return false
     },

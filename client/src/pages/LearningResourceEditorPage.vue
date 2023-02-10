@@ -53,7 +53,7 @@ export default {
         owner: userStore.getUserId
       })
 
-      if (result) router.push({name: "learningResources"})
+      if (result) router.push({name: "learningResourceUserListPage"})
     }
 
     return {

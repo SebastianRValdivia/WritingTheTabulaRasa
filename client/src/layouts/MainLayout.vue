@@ -12,8 +12,13 @@
         </span>
         <q-separator vertical inset class="q-ml-sm"/>
         <q-toolbar-title>
-          <router-link :to="{name: 'home'}">
-            <q-img id="logo" src="~/assets/logo.svg" fit/>
+          <router-link :to="{name: 'home'}" >
+            <span 
+              class="text-bold text-white" 
+              style="text-decoration: none;"
+            >
+              /
+            </span>
           </router-link>
         </q-toolbar-title>
         <div class="absolute-center">

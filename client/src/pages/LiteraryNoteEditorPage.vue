@@ -1,32 +1,31 @@
 <template>
   <q-page padding class="column items-center">
     <q-card class="literary-note-card">
-      <q-card-section
-        align="right"
-      >
-        <LearningResourceChooser 
-          @selection="assignResource"
-        />
-      </q-card-section>
       <q-card-section>
-        <q-input 
-          v-model="contentInput"
-          type="textarea"
-        />
         <q-input 
           v-model.number="positionInput"
           type="number"
         />
+        <q-input 
+          v-model="contentInput"
+          type="textarea"
+        />
       </q-card-section>
       <q-card-actions align="center" class="absolute-bottom">
-        <q-btn 
-          icon="done"
-          rounded
-          color="primary"
-          @click="submit"
+        <LearningResourceChooser 
+          v-model="resourceInput"
         />
       </q-card-actions>
     </q-card>
+    <q-page-sticky position="top-right" :offset="[20, 20]">
+      <q-btn 
+        v-if="resourceInput"
+        icon="done"
+        round
+        color="primary"
+        @click="submit"
+      />
+    </q-page-sticky>
   </q-page>
 </template>
 
@@ -37,7 +36,7 @@ import { useRouter } from "vue-router"
 import { useUserStore } from "src/stores/user-store" 
 import { useNoteStore } from "src/stores/note-store"
 import LearningResourceChooser from 
-  "src/components/for-control/LearningResourcesChooser"
+  "src/components/for-control/LearningResourceChooser"
 
 
 export default {
@@ -74,6 +73,7 @@ export default {
     return {
       contentInput,
       positionInput,
+      resourceInput,
 
       assignResource,
       submit,

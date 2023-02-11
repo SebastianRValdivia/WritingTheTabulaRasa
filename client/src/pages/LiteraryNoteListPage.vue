@@ -7,7 +7,7 @@
           color="primary" 
           icon="add" 
           size="md" 
-          :to="{name: 'literaryNoteNewPage'}"
+          :to="{name: 'literaryNoteEditorPage'}"
         />
       </q-page-sticky>
       <SearchInput @search="searchLiteraryNotes"/>

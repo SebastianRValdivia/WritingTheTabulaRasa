@@ -32,9 +32,12 @@ import { ref, computed, onBeforeMount } from "vue"
 import { useResourceStore } from "src/stores/resource-store"
 
 export default {
-  name: "LearningResourcesChooser",
+  name: "LearningResourceChooser",
+  props: [
+    "modelValue"
+  ],
   emits: [
-    "selection"
+    "update:modelValue",
   ],
   setup(props, ctx) {
     const resourceStore = useResourceStore()
@@ -48,9 +51,9 @@ export default {
       }
     })
 
-    function selectResource(resId) {
-      userSelection.value = resId
-      ctx.emit("selection", resId)
+    function selectResource(resourceId) {
+      userSelection.value = resourceId
+      ctx.emit("update:modelValue", resourceId)
     }
 
     onBeforeMount(async () => {
@@ -61,6 +64,7 @@ export default {
       resourceStore,
 
       btnLabel,
+
       selectResource,
     }
 

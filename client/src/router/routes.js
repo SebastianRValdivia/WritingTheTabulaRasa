@@ -32,9 +32,9 @@ const routes = [
         component: () => import("src/pages/LiteraryNoteListPage"),
       },
       {
-        path: "my/notes/literary/new/",
-        name: "literaryNoteNewPage",
-        component: () => import("src/pages/LiteraryNoteNewPage"),
+        path: "my/notes/literary/editor/",
+        name: "literaryNoteEditorPage",
+        component: () => import("src/pages/LiteraryNoteEditorPage"),
       },
       {
         path: "my/tasks/",

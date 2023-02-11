@@ -163,6 +163,19 @@ export const useNoteStore = defineStore("note", {
           return true
         } else return false
       } else return false
-    }
+    },
+    async removeLiteraryNote(idNoteToDelete) {
+      let result = await api.notes.deleteLiteraryNote(idNoteToDelete)
+
+      if (result) {
+        let indexDeletedNote = this.literaryNotes.findIndex(
+          (note) => note.id === idNoteToDelete
+        )
+        this.literaryNotes.splice(indexDeletedNote, 1)
+        return true
+      } else {
+        return false
+      }
+    },
   }
 })

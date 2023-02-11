@@ -36,7 +36,7 @@
         icon="delete"
         round
         color="negative"
-        @click="submit"
+        @click="deleteNote"
       />
     </q-page-sticky>
   </q-page>
@@ -104,6 +104,13 @@ export default {
         router.push({name: "literaryNoteListPage"})
       }
     }
+    async function deleteNote() {
+      let result = await noteStore.removeLiteraryNote(props.id)
+
+      if (result) {
+        router.push({name: "literaryNoteListPage"})
+      }
+    }
 
     onBeforeMount(() => {
       if (props.id) {
@@ -122,6 +129,7 @@ export default {
       resourceInput,
 
       inputComplete,
+      deleteNote,
 
       assignResource,
       submit,

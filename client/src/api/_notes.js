@@ -170,6 +170,14 @@ export default {
     } catch {
       return false
     }
-
+  },
+  async deleteLiteraryNote(noteId) {
+    try {
+      let response = await api.delete(`v1/notes/literary/${noteId}/`)
+      
+      if (response.status === 204) return true
+    } catch {
+      return false
+    }
   },
 }

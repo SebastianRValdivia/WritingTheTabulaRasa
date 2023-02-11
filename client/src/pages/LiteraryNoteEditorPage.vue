@@ -45,11 +45,14 @@
 <script>
 import { ref, computed, onBeforeMount } from "vue"
 import { useRouter } from "vue-router"
+import { useQuasar } from "quasar"
+import { useI18n } from "vue-i18n"
 
 import { useUserStore } from "src/stores/user-store" 
 import { useNoteStore } from "src/stores/note-store"
 import LearningResourceChooser from 
   "src/components/for-control/LearningResourceChooser"
+import { dangerConfirmNotification } from "src/utils/notifications"
 
 
 export default {
@@ -67,6 +70,8 @@ export default {
     const userStore = useUserStore()
     const noteStore = useNoteStore()
     const router = useRouter()
+    const quasar = useQuasar()
+    const { t } = useI18n()
 
     const contentInput = ref("")
     const positionInput = ref(0)
@@ -105,11 +110,16 @@ export default {
       }
     }
     async function deleteNote() {
-      let result = await noteStore.removeLiteraryNote(props.id)
+      quasar.dialog(dangerConfirmNotification(
+        t("general.confirm"),
+        t("literaryNoteEditorPage.delete")
+      )).onOk(async () => {
+        let result = await noteStore.removeLiteraryNote(props.id)
 
-      if (result) {
-        router.push({name: "literaryNoteListPage"})
-      }
+        if (result) {
+          router.push({name: "literaryNoteListPage"})
+        }
+      })
     }
 
     onBeforeMount(() => {

@@ -30,6 +30,15 @@
         @click="submit"
       />
     </q-page-sticky>
+    <q-page-sticky position="top-left" :offset="[20, 20]">
+      <q-btn 
+        v-if="props.id"
+        icon="delete"
+        round
+        color="negative"
+        @click="submit"
+      />
+    </q-page-sticky>
   </q-page>
 </template>
 
@@ -77,13 +86,20 @@ export default {
     }
 
     async function submit() {
+      async function defineTypeOfAction() {
+        if (props.id) { // Already exist
+          return await noteStore.updateLiteraryNote(props.id, data)
+        } else { // New note
+          return await noteStore.saveLiteraryNote(data)
+        }
+      }
       let data = {
         owner: userStore.getUserId,
         content: contentInput.value,
         position: positionInput.value,
         resource: resourceInput.value,
       }
-      let result = await noteStore.saveLiteraryNote(data)
+      let result = await defineTypeOfAction()
       if (result) {
         router.push({name: "literaryNoteListPage"})
       }

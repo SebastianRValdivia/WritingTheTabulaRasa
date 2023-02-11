@@ -150,6 +150,19 @@ export const useNoteStore = defineStore("note", {
       } else {
         return false
       }
+    },
+    async updateLiteraryNote(noteId, noteData) {
+      let result = await api.notes.patchLiteraryNote(noteId, noteData)
+
+      if (result) {
+        let index = this.literaryNotes.findIndex(
+          (note) => note.id === result.data.id
+        )
+        if (index !== -1) {
+          this.literaryNotes[index] = result.data
+          return true
+        } else return false
+      } else return false
     }
   }
 })

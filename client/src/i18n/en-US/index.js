@@ -101,6 +101,10 @@ const literaryNoteListPage = {
   pageTitle: "My literary notes",
   source: "Source"
 }
+const literaryNoteEditorPage = {
+  location: "Location",
+  content: "Note Content"
+}
 const noteListPage = {
   pageTitle: "My notes"
 }
@@ -179,6 +183,7 @@ export default {
   cheatSheetNewPage,
   fleetingNoteListPage,
   literaryNoteListPage,
+  literaryNoteEditorPage,
   noteListPage,
   noteEditorPage,
   guidesListPage,

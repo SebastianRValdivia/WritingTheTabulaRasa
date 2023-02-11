@@ -5,10 +5,14 @@
         <q-input 
           v-model.number="positionInput"
           type="number"
+          :label="$t('literaryNoteEditorPage.location')"
         />
         <q-input 
           v-model="contentInput"
-          type="textarea"
+          class="content-input"
+          autogrow
+          borderless
+          :label="$t('literaryNoteEditorPage.content')"
         />
       </q-card-section>
       <q-card-actions align="center" class="absolute-bottom">
@@ -19,7 +23,7 @@
     </q-card>
     <q-page-sticky position="top-right" :offset="[20, 20]">
       <q-btn 
-        v-if="resourceInput"
+        v-if="inputComplete"
         icon="done"
         round
         color="primary"
@@ -30,7 +34,7 @@
 </template>
 
 <script>
-import { ref } from "vue"
+import { ref, computed } from "vue"
 import { useRouter } from "vue-router"
 
 import { useUserStore } from "src/stores/user-store" 
@@ -52,6 +56,15 @@ export default {
     const contentInput = ref("")
     const positionInput = ref(0)
     const resourceInput = ref()
+
+    const inputComplete = computed(() => {
+      if (
+        contentInput.value
+        && positionInput.value
+        && resourceInput.value
+      ) return true
+      else return false
+    })
 
     function assignResource(resourceId) {
       resourceInput.value = resourceId
@@ -75,6 +88,8 @@ export default {
       positionInput,
       resourceInput,
 
+      inputComplete,
+
       assignResource,
       submit,
     }
@@ -87,5 +102,4 @@ export default {
   min-width: 25rem;
   min-height: 30rem;
 }
-
 </style>

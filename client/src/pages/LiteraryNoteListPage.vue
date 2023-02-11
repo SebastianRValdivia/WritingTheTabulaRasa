@@ -22,8 +22,15 @@
         :key="note.id"
         class="col-5 literary-note-card"
       >
+        <q-card-actions align="right">
+          <q-btn 
+            icon="edit"
+            round
+            flat
+          />
+        </q-card-actions>
         <q-card-section>
-          {{ note.content }}
+          <MarkdownPreview :md="note.content"/>
         </q-card-section>
         <q-card-actions
           v-if="resourceStore.getLearningResourceById(note.resource)"
@@ -32,7 +39,7 @@
         >
           <span>
             {{ $t("literaryNoteListPage.source") }}:
-            {{ resourceStore.getLearningResourceById(note.resource).title }}
+            {{ resourceStore.getLearningResourceById(note.resource).title }}.
           </span>
         </q-card-actions>
       </q-card>
@@ -51,11 +58,13 @@ import { useUserStore } from "src/stores/user-store"
 import { useResourceStore } from "src/stores/resource-store"
 import { fuzzySearchByObjectByKeys } from "src/utils/search"
 import SearchInput from "src/components/for-input/SearchInput"
+import MarkdownPreview from "src/components/for-viewing/MarkdownPreview"
 
 export default {
   name: "LiteraryNoteListPage",
   components: {
-    SearchInput
+    SearchInput,
+    MarkdownPreview,
   },
   setup() {
     const quasar = useQuasar()

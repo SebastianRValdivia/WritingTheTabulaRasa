@@ -58,6 +58,9 @@ export default {
 
     onBeforeMount(async () => {
       await resourceStore.retrieveLearningResources()
+      if (props.modelValue) {
+        userSelection.value = props.modelValue
+      }
     })
 
     return {

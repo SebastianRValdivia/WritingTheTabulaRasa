@@ -38,6 +38,9 @@ export const useNoteStore = defineStore("note", {
     getLiteraryNotesByUser: (state) => {
       return (userId) => state.literaryNotes.filter((note) => note.owner === userId)
     },
+    getLiteraryNoteById: (state) => {
+      return (noteId) => state.literaryNotes.find((note) => note.id === noteId)
+    },
   },
   actions: {
     async retrieveNotes() {
@@ -147,6 +150,32 @@ export const useNoteStore = defineStore("note", {
       } else {
         return false
       }
-    }
+    },
+    async updateLiteraryNote(noteId, noteData) {
+      let result = await api.notes.patchLiteraryNote(noteId, noteData)
+
+      if (result) {
+        let index = this.literaryNotes.findIndex(
+          (note) => note.id === result.data.id
+        )
+        if (index !== -1) {
+          this.literaryNotes[index] = result.data
+          return true
+        } else return false
+      } else return false
+    },
+    async removeLiteraryNote(idNoteToDelete) {
+      let result = await api.notes.deleteLiteraryNote(idNoteToDelete)
+
+      if (result) {
+        let indexDeletedNote = this.literaryNotes.findIndex(
+          (note) => note.id === idNoteToDelete
+        )
+        this.literaryNotes.splice(indexDeletedNote, 1)
+        return true
+      } else {
+        return false
+      }
+    },
   }
 })

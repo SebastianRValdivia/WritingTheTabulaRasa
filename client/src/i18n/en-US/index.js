@@ -103,7 +103,8 @@ const literaryNoteListPage = {
 }
 const literaryNoteEditorPage = {
   location: "Location",
-  content: "Note Content"
+  content: "Note Content",
+  delete: "This will permanently delete this note!"
 }
 const noteListPage = {
   pageTitle: "My notes"

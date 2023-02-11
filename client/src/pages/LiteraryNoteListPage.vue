@@ -23,7 +23,15 @@
         class="col-5 literary-note-card"
       >
         <q-card-section>
-          {{ note.content }}
+          <q-btn 
+            icon="edit"
+            flat
+            round
+            size="sm"
+            class="float-right"
+            :to="{name: 'literaryNoteEditorPage', params: {id: note.id}}"
+          />
+          <MarkdownPreview :md="note.content"/>
         </q-card-section>
         <q-card-actions
           v-if="resourceStore.getLearningResourceById(note.resource)"
@@ -32,7 +40,8 @@
         >
           <span>
             {{ $t("literaryNoteListPage.source") }}:
-            {{ resourceStore.getLearningResourceById(note.resource).title }}
+            {{ resourceStore.getLearningResourceById(note.resource).title }},
+            {{ note.position }}
           </span>
         </q-card-actions>
       </q-card>
@@ -42,7 +51,7 @@
 
 <script>
 import { ref, computed, onBeforeMount } from "vue"
-import { useQuasar, useMeta } from "quasar"
+import{ useQuasar, useMeta } from "quasar"
 import { useI18n } from "vue-i18n"
 import { useAppStore } from "src/stores/app-store"
 
@@ -51,11 +60,13 @@ import { useUserStore } from "src/stores/user-store"
 import { useResourceStore } from "src/stores/resource-store"
 import { fuzzySearchByObjectByKeys } from "src/utils/search"
 import SearchInput from "src/components/for-input/SearchInput"
+import MarkdownPreview from "src/components/for-viewing/MarkdownPreview"
 
 export default {
   name: "LiteraryNoteListPage",
   components: {
-    SearchInput
+    SearchInput,
+    MarkdownPreview,
   },
   setup() {
     const quasar = useQuasar()

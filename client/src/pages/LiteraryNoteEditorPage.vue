@@ -30,17 +30,29 @@
         @click="submit"
       />
     </q-page-sticky>
+    <q-page-sticky position="top-left" :offset="[20, 20]">
+      <q-btn 
+        v-if="props.id"
+        icon="delete"
+        round
+        color="negative"
+        @click="deleteNote"
+      />
+    </q-page-sticky>
   </q-page>
 </template>
 
 <script>
-import { ref, computed } from "vue"
+import { ref, computed, onBeforeMount } from "vue"
 import { useRouter } from "vue-router"
+import { useQuasar } from "quasar"
+import { useI18n } from "vue-i18n"
 
 import { useUserStore } from "src/stores/user-store" 
 import { useNoteStore } from "src/stores/note-store"
 import LearningResourceChooser from 
   "src/components/for-control/LearningResourceChooser"
+import { dangerConfirmNotification } from "src/utils/notifications"
 
 
 export default {
@@ -48,10 +60,18 @@ export default {
   components: {
     LearningResourceChooser,
   },
-  setup() {
+  props: {
+    id: {
+      type: String,
+      required: false
+    }
+  },
+  setup(props) {
     const userStore = useUserStore()
     const noteStore = useNoteStore()
     const router = useRouter()
+    const quasar = useQuasar()
+    const { t } = useI18n()
 
     const contentInput = ref("")
     const positionInput = ref(0)
@@ -71,24 +91,55 @@ export default {
     }
 
     async function submit() {
+      async function defineTypeOfAction() {
+        if (props.id) { // Already exist
+          return await noteStore.updateLiteraryNote(props.id, data)
+        } else { // New note
+          return await noteStore.saveLiteraryNote(data)
+        }
+      }
       let data = {
         owner: userStore.getUserId,
         content: contentInput.value,
         position: positionInput.value,
         resource: resourceInput.value,
       }
-      let result = await noteStore.saveLiteraryNote(data)
+      let result = await defineTypeOfAction()
       if (result) {
         router.push({name: "literaryNoteListPage"})
       }
     }
+    async function deleteNote() {
+      quasar.dialog(dangerConfirmNotification(
+        t("general.confirm"),
+        t("literaryNoteEditorPage.delete")
+      )).onOk(async () => {
+        let result = await noteStore.removeLiteraryNote(props.id)
+
+        if (result) {
+          router.push({name: "literaryNoteListPage"})
+        }
+      })
+    }
+
+    onBeforeMount(() => {
+      if (props.id) {
+        let noteId = Number(props.id)
+        let noteData = noteStore.getLiteraryNoteById(noteId)
+        contentInput.value = noteData.content
+        resourceInput.value = noteData.resource
+        positionInput.value = noteData.position
+      }
+    })
 
     return {
+      props,
       contentInput,
       positionInput,
       resourceInput,
 
       inputComplete,
+      deleteNote,
 
       assignResource,
       submit,

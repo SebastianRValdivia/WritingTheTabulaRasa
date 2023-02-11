@@ -153,5 +153,31 @@ export default {
     } catch {
       return false
     }
-  }
+  },
+  async patchLiteraryNote(idNoteToPatch, newNoteData) {
+    try {
+      let response = await api.patch(
+        `v1/notes/literary/${idNoteToPatch}/`,
+        newNoteData
+      )
+
+      if (response.status === 200) {
+        return {
+          code: response.status,
+          data: response.data
+        }
+      } else return false
+    } catch {
+      return false
+    }
+  },
+  async deleteLiteraryNote(noteId) {
+    try {
+      let response = await api.delete(`v1/notes/literary/${noteId}/`)
+      
+      if (response.status === 204) return true
+    } catch {
+      return false
+    }
+  },
 }

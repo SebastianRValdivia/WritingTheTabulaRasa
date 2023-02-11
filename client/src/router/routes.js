@@ -28,7 +28,7 @@ const routes = [
       },
       {
         path: "my/notes/literary/",
-        name: "literaryNotesListPage",
+        name: "literaryNoteListPage",
         component: () => import("src/pages/LiteraryNoteListPage"),
       },
       {

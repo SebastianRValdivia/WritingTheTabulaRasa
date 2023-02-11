@@ -97,7 +97,7 @@
                 {{ $t("mainDrawer.fleeting") }}
               </q-item-section>
             </q-item>
-            <q-item clickable v-ripple :to="{name: 'literaryNotesListPage'}">
+            <q-item clickable v-ripple :to="{name: 'literaryNoteListPage'}">
               <q-item-section avatar>
                 <q-icon name="menu_book" />
               </q-item-section>

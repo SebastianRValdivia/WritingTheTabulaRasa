@@ -22,14 +22,15 @@
         :key="note.id"
         class="col-5 literary-note-card"
       >
-        <q-card-actions align="right">
+        <q-card-section>
           <q-btn 
             icon="edit"
-            round
             flat
+            round
+            size="sm"
+            class="float-right"
+            :to="{name: 'literaryNoteEditorPage', params: {id: note.id}}"
           />
-        </q-card-actions>
-        <q-card-section>
           <MarkdownPreview :md="note.content"/>
         </q-card-section>
         <q-card-actions
@@ -39,7 +40,8 @@
         >
           <span>
             {{ $t("literaryNoteListPage.source") }}:
-            {{ resourceStore.getLearningResourceById(note.resource).title }}.
+            {{ resourceStore.getLearningResourceById(note.resource).title }},
+            {{ note.position }}
           </span>
         </q-card-actions>
       </q-card>
@@ -49,7 +51,7 @@
 
 <script>
 import { ref, computed, onBeforeMount } from "vue"
-import { useQuasar, useMeta } from "quasar"
+import{ useQuasar, useMeta } from "quasar"
 import { useI18n } from "vue-i18n"
 import { useAppStore } from "src/stores/app-store"
 

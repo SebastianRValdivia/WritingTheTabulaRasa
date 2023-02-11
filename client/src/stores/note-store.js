@@ -38,6 +38,9 @@ export const useNoteStore = defineStore("note", {
     getLiteraryNotesByUser: (state) => {
       return (userId) => state.literaryNotes.filter((note) => note.owner === userId)
     },
+    getLiteraryNoteById: (state) => {
+      return (noteId) => state.literaryNotes.find((note) => note.id === noteId)
+    },
   },
   actions: {
     async retrieveNotes() {

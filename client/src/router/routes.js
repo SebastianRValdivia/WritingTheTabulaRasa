@@ -32,9 +32,10 @@ const routes = [
         component: () => import("src/pages/LiteraryNoteListPage"),
       },
       {
-        path: "my/notes/literary/editor/",
+        path: "my/notes/literary/editor/:id?/",
         name: "literaryNoteEditorPage",
         component: () => import("src/pages/LiteraryNoteEditorPage"),
+        props: true,
       },
       {
         path: "my/tasks/",

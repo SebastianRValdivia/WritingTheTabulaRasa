@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import { ref, computed } from "vue"
+import { ref, computed, onBeforeMount } from "vue"
 import { useRouter } from "vue-router"
 
 import { useUserStore } from "src/stores/user-store" 
@@ -48,7 +48,13 @@ export default {
   components: {
     LearningResourceChooser,
   },
-  setup() {
+  props: {
+    id: {
+      type: String,
+      required: false
+    }
+  },
+  setup(props) {
     const userStore = useUserStore()
     const noteStore = useNoteStore()
     const router = useRouter()
@@ -83,7 +89,18 @@ export default {
       }
     }
 
+    onBeforeMount(() => {
+      if (props.id) {
+        let noteId = Number(props.id)
+        let noteData = noteStore.getLiteraryNoteById(noteId)
+        contentInput.value = noteData.content
+        resourceInput.value = noteData.resource
+        positionInput.value = noteData.position
+      }
+    })
+
     return {
+      props,
       contentInput,
       positionInput,
       resourceInput,

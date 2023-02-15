@@ -51,7 +51,7 @@ import { useI18n } from "vue-i18n"
 import { useUserStore } from "src/stores/user-store" 
 import { useNoteStore } from "src/stores/note-store"
 import LearningResourceChooser from 
-  "src/components/for-control/LearningResourceChooser"
+  "src/components/for-input/LearningResourceChooser"
 import { dangerConfirmNotification } from "src/utils/notifications"
 
 

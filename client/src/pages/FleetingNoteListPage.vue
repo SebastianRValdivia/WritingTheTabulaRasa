@@ -20,7 +20,7 @@
       v-else
     >
       <q-card 
-        class="column fleeting-note-card" 
+        class="column fleeting-note-card animated fadeInDown" 
       >
         <q-card-section>
           <q-input
@@ -39,8 +39,9 @@
 
     <!-- List all user fleeting cards -->
     <div
-      class="row q-gutter-md"
+      class="row q-gutter-md animated"
       v-if="displayedNotes.length > 0"
+      :class="{'fadeInDown': isAddingFleetingNote}"
     >
       <FleetingNoteCard 
         v-for="fleetingNoteData in displayedNotes" 

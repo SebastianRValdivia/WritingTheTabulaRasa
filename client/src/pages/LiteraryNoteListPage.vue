@@ -10,7 +10,11 @@
           :to="{name: 'literaryNoteEditorPage'}"
         />
       </q-page-sticky>
-      <SearchInput @search="searchLiteraryNotes"/>
+      <SearchInput 
+        @search="searchLiteraryNotes"
+        learningResourceChooser
+        @learningResource="filterLearningResource"
+      />
     </div>
     <div 
       class="row justify-center q-gutter-md"
@@ -76,19 +80,40 @@ export default {
     const resourceStore = useResourceStore()
 
     const searchInput = ref("")
+    const learningResource = ref()
 
     const displayedNotes = computed(() => {
       if (searchInput.value) {
+        if (learningResource.value) {
+          let noteList = noteStore.getLiteraryNotesByUser(userStore.getUserId)
+            .filter((note) => note.resource === learningResource.value)
+          return fuzzySearchByObjectByKeys(
+            noteList,
+            searchInput.value,
+            ["content"]
+          )
+        }
         return fuzzySearchByObjectByKeys(
           noteStore.getLiteraryNotesByUser(userStore.getUserId),
           searchInput.value,
           ["content"]
         )
-      } else return noteStore.getLiteraryNotesByUser(userStore.getUserId)
+      } else {
+        if (learningResource.value) {
+          return noteStore.getLiteraryNotesByUser(userStore.getUserId)
+            .filter((note) => note.resource === learningResource.value)
+        }
+        return noteStore.getLiteraryNotesByUser(userStore.getUserId)
+      }
+
     })
 
     function searchLiteraryNotes(searchPattern) {
       searchInput.value = searchPattern
+    }
+    function filterLearningResource(resourceId) {
+      console.log(resourceId)
+      learningResource.value = resourceId
     }
 
     onBeforeMount(async () => {
@@ -108,6 +133,7 @@ export default {
       displayedNotes,
 
       searchLiteraryNotes,
+      filterLearningResource,
     }
   }
 

@@ -38,6 +38,7 @@ export default {
   ],
   emits: [
     "update:modelValue",
+    "selected"
   ],
   setup(props, ctx) {
     const resourceStore = useResourceStore()
@@ -54,6 +55,7 @@ export default {
     function selectResource(resourceId) {
       userSelection.value = resourceId
       ctx.emit("update:modelValue", resourceId)
+      ctx.emit("selected")
     }
 
     onBeforeMount(async () => {

@@ -5,10 +5,11 @@
       <q-item 
         v-for="wikiPage in displayedPages" 
         :key="wikiPage.id"
-        :to="{name: 'encyclopediaPage', params:{url: wikiPage.url}}"
-        class="row"
+        class="row justify-center"
       >
-        <q-card class="col-12 row justify-between scoped-wiki-card">
+        <q-card 
+          class="col-12 row justify-between scoped-wiki-card"
+        >
           <div class="col-7 column q-pl-xl q-pt-lg">
             <h4 class="col-6 text-h4 q-mt-md q-mb-sm">
               {{ wikiPage.title }}
@@ -28,6 +29,12 @@
               fit="contain"
             />
           </div>
+          <q-card-actions>
+            <q-btn 
+              icon="launch"
+              :to="{name: 'encyclopediaPage', params:{url: wikiPage.url}}"
+            />
+          </q-card-actions>
         </q-card>
       </q-item>
     </q-list>
@@ -115,6 +122,8 @@ export default {
 .scoped-wiki-card {
   min-height: 15rem;
   max-height: 15rem;
+  min-width: 70%;
+  max-width: 70%;
 }
 .scoped-wiki-card-image {
   min-height: 12rem;

@@ -7,10 +7,6 @@ const routes = [
         name: "home",
         component: () => import('pages/IndexPage') 
       },
-      { path: "book/",
-        name: "book",
-        component: () => import('pages/BookReaderPage') 
-      },
       { 
         path: "my/notes/permanent/",
         name: "noteListPage",
@@ -165,6 +161,18 @@ const routes = [
         path: "my/learning-resources/editor/",
         name: "learningResourcesEditor",
         component: () => import("src/pages/LearningResourceEditorPage")
+      },
+      {
+        path: "help-center/",
+        name: "helpCenterPage",
+        component: () => import("src/pages/HelpCenterPage.vue"),
+        children: [
+          { 
+            path: "book/",
+            name: "bookReaderPage",
+            component: () => import("src/pages/HelpCenterPage/BookReaderPage") 
+          },
+        ]
       },
     ]
   },

@@ -1,6 +1,6 @@
 <template>
   <q-page padding>
-    <MarkdownPreview v-if="!bookMd" :md="bookMd"/>
+    <MarkdownPreview v-if="bookMd" :md="bookMd"/>
     <div v-else class="column items-center text-grey">
       <h1 class="text-h1">
         Cannot retrieve book
@@ -15,7 +15,7 @@ import { useQuasar } from "quasar"
 
 import MarkdownPreview from "src/components/for-viewing/MarkdownPreview"
 
-import axios from 'axios'
+import axios from "axios"
 
 export default {
   name: "BookReaderPage",

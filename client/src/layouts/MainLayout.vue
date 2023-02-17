@@ -52,6 +52,8 @@
 
         <PomodoroTimer />
 
+        <q-btn flat icon="help_center" :to="{name: 'helpCenterPage'}"/>
+
       </q-toolbar>
 
       <q-tabs align="left" v-if="appStore.isTabsOpen">

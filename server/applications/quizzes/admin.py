@@ -7,6 +7,8 @@ from applications.quizzes.models import (
     QuizzListItemQuestionModel,
     QuizzJoinElementQuestionModel,
     QuizzChoiceQuestionModel,
+    FlashCardModel,
+    FlashCardCollectionModel,
 )
 
 # Register your models here.
@@ -16,3 +18,5 @@ admin.site.register(QuizzFormulationQuestionModel)
 admin.site.register(QuizzListItemQuestionModel)
 admin.site.register(QuizzJoinElementQuestionModel)
 admin.site.register(QuizzChoiceQuestionModel)
+admin.site.register(FlashCardModel)
+admin.site.register(FlashCardCollectionModel)

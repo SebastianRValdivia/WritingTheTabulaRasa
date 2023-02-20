@@ -8,6 +8,8 @@ from applications.quizzes.views import (
     QuizzListItemQuestionViewSet,
     QuizzJoinElementQuestionViewSet,
     QuizzChoiceQuestionViewSet,
+    FlashCardCollectionViewSet,
+    FlashCardViewSet,
 )
 
 router = DefaultRouter()
@@ -36,6 +38,16 @@ router.register(
     "question-choices",
     QuizzChoiceQuestionViewSet,
     basename="question-choice"
+)
+router.register(
+    "flashcards",
+    FlashCardViewSet,
+    basename="flashcard"
+)
+router.register(
+    "flashcard-collections",
+    FlashCardCollectionViewSet,
+    basename="flashcard-collections"
 )
 
 urlpatterns = [

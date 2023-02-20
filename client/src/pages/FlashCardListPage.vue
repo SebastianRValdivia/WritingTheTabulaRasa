@@ -1,5 +1,12 @@
 <template>
-{{ quizzStore.getFlashCardCollectionList }}
+  <q-list>
+    <q-item 
+      v-for="collection in quizzStore.getFlashCardCollectionList" 
+      :key="collection.id">
+      <CardDeck :title="collection.title"/>
+    </q-item>
+  </q-list>
+
 </template>
 
 <script>
@@ -9,9 +16,13 @@ import { useI18n } from "vue-i18n"
 import { useQuasar, useMeta } from "quasar"
 
 import { useQuizzStore } from "src/stores/quizz-store"
+import CardDeck from "src/components/for-viewing/CardDeck"
 
 export default {
   name: "FlashCardListPage",
+  components: {
+    CardDeck
+  },
   setup() {
     const quasar = useQuasar()
     const { t } = useI18n()

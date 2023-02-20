@@ -147,6 +147,9 @@ const learningResourcesEditorPage = {
 const helpCenterPage = {
   book: "Writing the Tabula Rasa Book"
 }
+const flashCardListPage = {
+  pageTitle: "Flashcards"
+}
 
 
 const imageUploadDialog = {
@@ -198,6 +201,7 @@ export default {
   essayEditorPage, 
   learningResourcesEditorPage,
   helpCenterPage,
+  flashCardListPage,
 
   imageUploadDialog,
   metadataEditorDialog,

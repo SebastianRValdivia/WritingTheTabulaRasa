@@ -7,6 +7,7 @@ export const useQuizzStore = defineStore("quizz", {
     quizzesQuestionsList: [],
     formulationResponsesList: [],
     choicesList: [],
+    flashCardCollectionList: [],
   }),
   getters: {
     getQuizzesList: (state) => state.quizzesList,
@@ -29,7 +30,8 @@ export const useQuizzStore = defineStore("quizz", {
       return (questionId) => state.choicesList.filter(
         (choice) => choice.question === questionId
       )
-    }
+    },
+    getFlashCardCollectionList: (state) => state.flashCardCollectionList,
   },
   actions: {
     async retrieveQuizzesList() {
@@ -74,6 +76,14 @@ export const useQuizzStore = defineStore("quizz", {
         this.choicesList = [...result.choicesList, ...this.choicesList]
         return true
       } else return false
-    }
+    },
+    async retrieveFlashCardCollections() {
+      let result = await api.quizzes.getFlashCardCollections()
+
+      if (result) {
+        this.flashCardCollectionList = result.data
+        return true
+      } else return false
+    },
   }
 })

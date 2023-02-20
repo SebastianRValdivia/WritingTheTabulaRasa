@@ -153,6 +153,11 @@ const routes = [
         props: true
       },
       {
+        path: "flashcards/",
+        name: "flashCardListPage",
+        component: () => import("src/pages/FlashCardListPage")
+      },
+      {
         path: "my/learning-resources/",
         name: "learningResourceUserListPage",
         component: () => import("src/pages/LearningResourceListPage")

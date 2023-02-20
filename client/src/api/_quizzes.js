@@ -66,5 +66,14 @@ export default {
     } catch {
       return false
     }
-  }
+  },
+  async getFlashCardCollections() {
+    let result = await recursiveGetCall("v1/quizzes/flashcard-collections/")
+    if (result) {
+      return {
+        code: result.code,
+        data: result.data
+      }
+    } else return false
+  },
 }

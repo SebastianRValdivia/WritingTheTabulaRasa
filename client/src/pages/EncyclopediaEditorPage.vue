@@ -87,25 +87,27 @@
       />
     </div>
 
-    <q-separator />
 
-    <div class="row">
-      <div class="col-6">
-        {{ $t("encyclopediaEditorPage.words")}}:
-        {{ wordCount }}
+    <div class="absolute-bottom">
+      <q-separator />
+      <div class="row">
+        <div class="col-6">
+          {{ $t("encyclopediaEditorPage.words")}}:
+          {{ wordCount }}
+        </div>
+        <div class="col-6">
+          {{ $t("encyclopediaEditorPage.characters")}}: 
+          {{ characterCount }}
+        </div>
       </div>
-      <div class="col-6">
-        {{ $t("encyclopediaEditorPage.characters")}}: 
-        {{ characterCount }}
+      
+      <div class="row justify-center">
+        <q-btn icon="data_object" @click="openMetadataEditor"/>
       </div>
     </div>
 
-    <div class="row justify-center">
-      <q-btn icon="data_object" @click="openMetadataEditor"/>
-    </div>
-
-    <q-page-sticky position="bottom-right" :offset="[20, 20]">
-      <q-btn fab icon="done" color="primary" @click="submit"/>
+    <q-page-sticky position="top-right" :offset="[20, 20]">
+      <q-btn round icon="done" color="primary" @click="submit"/>
     </q-page-sticky>
   </q-page>
 </template>

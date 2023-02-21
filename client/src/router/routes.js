@@ -154,8 +154,14 @@ const routes = [
       },
       {
         path: "flashcards/",
-        name: "flashCardListPage",
+        name: "flashcardListpage",
         component: () => import("src/pages/FlashCardListPage")
+      },
+      {
+        path: "flashcards/:id/",
+        name: "flashCardCollectionPage",
+        component: () => import("src/pages/FlashCardCollectionPage"),
+        props: true
       },
       {
         path: "my/learning-resources/",

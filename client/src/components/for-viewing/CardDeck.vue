@@ -1,6 +1,7 @@
 <template>
-  <div class="cards-container">
+  <div class="cards-container" @click="pushToActivity">
     <q-card class="card card-1">
+      <span>#{{ props.id }}</span>
       <q-card-section>
         <h5>
           {{ props.title }}
@@ -15,17 +16,31 @@
 </template>
 
 <script>
+import { useRouter } from "vue-router"
+
 export default {
   name: "CardDeck",
   props: {
     title: {
       type: String,
       required: true
+    },
+    id: {
+      type: Number,
+      required: true
     }
   },
   setup(props) {
+    const router = useRouter()
+
+    function pushToActivity() {
+      router.push({name: "flashCardCollectionPage", params: {id: props.id}})
+    }
+
+
     return {
-      props
+      props,
+      pushToActivity,
     }
   }
 }
@@ -42,11 +57,11 @@ export default {
 }
 .card-2 {
   z-index: 9;
-  margin-left: 10rem;
+  margin-left: 5rem;
 }
 .card-3 {
-  z-index: 9;
-  margin-left: 5rem;
+  z-index: 8;
+  margin-left: 10rem;
 }
 .cards-container {
   padding: 10rem;

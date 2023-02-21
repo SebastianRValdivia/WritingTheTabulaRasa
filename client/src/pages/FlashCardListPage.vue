@@ -1,11 +1,16 @@
 <template>
-  <q-list>
-    <q-item 
-      v-for="collection in quizzStore.getFlashCardCollectionList" 
-      :key="collection.id">
-      <CardDeck :title="collection.title"/>
-    </q-item>
-  </q-list>
+  <q-page padding class="column items-center">
+    <q-list>
+      <q-item 
+        v-for="collection in quizzStore.getFlashCardCollectionList" 
+        :key="collection.id">
+        <CardDeck 
+          :title="collection.title"
+          :id="collection.id"
+        />
+      </q-item>
+    </q-list>
+  </q-page>
 
 </template>
 
@@ -32,6 +37,7 @@ export default {
     onBeforeMount(async () => {
       quasar.loading.show()
       await quizzStore.retrieveFlashCardCollections()
+      await quizzStore.retrieveFlashCards()
       quasar.loading.hide()
     })
 

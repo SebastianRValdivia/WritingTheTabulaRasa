@@ -76,4 +76,22 @@ export default {
       }
     } else return false
   },
+  async getFlashCards() {
+    let result = await recursiveGetCall("v1/quizzes/flashcards/")
+    if (result) {
+      return {
+        code: result.code,
+        data: result.data
+      }
+    } else return false
+  },
+  async getFlashCardsByCollectionId(collectionId) {
+    let result = await recursiveGetCall(`v1/quizzes/flashcards/?collection=${collectionId}`)
+    if (result) {
+      return {
+        code: result.code,
+        data: result.data
+      }
+    } else return false
+  }
 }

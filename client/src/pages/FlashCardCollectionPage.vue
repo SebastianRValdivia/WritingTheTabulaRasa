@@ -1,5 +1,10 @@
 <template>
-  <q-page padding>
+  <q-page padding class="column items-center">
+    <FlashCardCollectionPageFlashCardPreview 
+      :cardData="displayedFlashCard"
+      @correct="removeCardFromDeck"
+      @incorrect="pickFlashCard"
+    />
   </q-page>
 </template>
 
@@ -8,6 +13,8 @@ import { ref, onBeforeMount } from "vue"
 import { useQuasar } from "quasar"
 
 import { useQuizzStore } from "src/stores/quizz-store"
+import FlashCardCollectionPageFlashCardPreview from 
+  "src/components/for-pages/FlashCardCollectionPageFlashCardPreview"
 
 export default {
   name: "FlashCardCollectionPage",
@@ -17,25 +24,51 @@ export default {
       required: true
     }
   },
+  components: {
+    FlashCardCollectionPageFlashCardPreview
+  },
   setup(props) {
     const quizzStore = useQuizzStore()
     const quasar = useQuasar()
     
-    const displayedFlashCards = ref()
+    const flashCardList = ref()
+    const displayedFlashCard = ref()
+    const toSolveFlashCards = ref([])
+    const solvedFlashCards = ref([])
+
+    function pickFlashCard() {
+      displayedFlashCard.value = toSolveFlashCards.value[
+        Math.floor( Math.random() * toSolveFlashCards.value.length )
+      ]
+    }
+
+    function removeCardFromDeck() {
+      toSolveFlashCards.value = toSolveFlashCards.value.filter(
+        (card) => card.id !== displayedFlashCard.value.id
+      )
+      console.log(toSolveFlashCards.value)
+      pickFlashCard()
+    }
 
     onBeforeMount( async () => {
       quasar.loading.show()
 
-      displayedFlashCards.value = quizzStore.getFlashCardsByCollectionId(Number(props.id))
-      if (displayedFlashCards.value.length === 0) {
+      flashCardList.value = quizzStore.getFlashCardsByCollectionId(Number(props.id))
+      if (flashCardList.value.length === 0) {
         await quizzStore.retrieveFlashCardsByCollectionId(Number(props.id))
-        displayedFlashCards.value = quizzStore.getFlashCardsByCollectionId(Number(props.id))
+        flashCardList.value = quizzStore.getFlashCardsByCollectionId(Number(props.id))
       }
+
+      toSolveFlashCards.value = flashCardList.value
+      pickFlashCard()
       quasar.loading.hide()
     })
     return {
-      props,
-      displayedFlashCards,
+      toSolveFlashCards,
+      displayedFlashCard,
+
+      pickFlashCard,
+      removeCardFromDeck,
     }
   }
 }

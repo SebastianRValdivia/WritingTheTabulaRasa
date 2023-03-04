@@ -164,3 +164,47 @@ class QuizzJoinElementQuestionModel(models.Model):
 
     def __str__(self):
         return str(self.question.id) + self.content
+
+class FlashCardModel(models.Model):
+
+    hint = models.TextField(
+        blank=False,
+        null=False,
+    )
+    response = models.TextField(
+        blank=False,
+        null=False,
+    )
+    collection = models.ForeignKey(
+        "quizzes.FlashCardCollectionModel",
+        on_delete=models.CASCADE,
+        blank=False,
+        null=False,
+    )
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+
+    class Meta:
+        verbose_name = "Flashcard"
+        verbose_name_plural = "Flashcards"
+
+    def __str__(self):
+        return self.hint
+
+class FlashCardCollectionModel(models.Model):
+
+    title = models.CharField(
+        max_length=CHARFIELD_LONG,
+        blank=False,
+        null=False,
+    )
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Flashcard collection"
+        verbose_name_plural = "Flashcard collections"
+
+    def __str__(self):
+        return self.title

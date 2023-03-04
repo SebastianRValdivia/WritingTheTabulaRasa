@@ -18,6 +18,7 @@ const mainLayout = {
   research: "Research",
   essays: "Essays",
   quizzes: "Quizzes",
+  flashcards: "Flashcards"
 }
 const mainDrawer = {
   notes: "My notes",
@@ -147,6 +148,9 @@ const learningResourcesEditorPage = {
 const helpCenterPage = {
   book: "Writing the Tabula Rasa Book"
 }
+const flashCardListPage = {
+  pageTitle: "Flashcards"
+}
 
 
 const imageUploadDialog = {
@@ -198,6 +202,7 @@ export default {
   essayEditorPage, 
   learningResourcesEditorPage,
   helpCenterPage,
+  flashCardListPage,
 
   imageUploadDialog,
   metadataEditorDialog,

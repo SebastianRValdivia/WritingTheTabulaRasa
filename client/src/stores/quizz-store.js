@@ -7,6 +7,8 @@ export const useQuizzStore = defineStore("quizz", {
     quizzesQuestionsList: [],
     formulationResponsesList: [],
     choicesList: [],
+    flashCardCollectionList: [],
+    flashCardList: [],
   }),
   getters: {
     getQuizzesList: (state) => state.quizzesList,
@@ -25,11 +27,17 @@ export const useQuizzStore = defineStore("quizz", {
         (response) => response.question === questionId
       )
     },
-    getChoicesByQuestionId: (state) => {
-      return (questionId) => state.choicesList.filter(
-        (choice) => choice.question === questionId
+    getchoicesbyquestionid: (state) => {
+      return (questionid) => state.choiceslist.filter(
+        (choice) => choice.question === questionid
       )
-    }
+    },
+    getFlashCardCollectionList: (state) => state.flashCardCollectionList,
+    getFlashCardsByCollectionId: (state) => {
+      return (collectionId) => state.flashCardList.filter(
+        (flashcard) => flashcard.collection === collectionId
+      )
+    },
   },
   actions: {
     async retrieveQuizzesList() {
@@ -74,6 +82,30 @@ export const useQuizzStore = defineStore("quizz", {
         this.choicesList = [...result.choicesList, ...this.choicesList]
         return true
       } else return false
-    }
+    },
+    async retrieveFlashCardCollections() {
+      let result = await api.quizzes.getFlashCardCollections()
+
+      if (result) {
+        this.flashCardCollectionList = result.data
+        return true
+      } else return false
+    },
+    async retrieveFlashCards() {
+      let result = await api.quizzes.getFlashCards()
+
+      if (result) {
+        this.flashCardList = result.data
+        return true
+      } else return false
+    },
+    async retrieveFlashCardsByCollectionId(collectionId) {
+      let result = await api.quizzes.getFlashCardsByCollectionId(collectionId)
+
+      if (result) {
+        this.flashCardList = [...this.flashCardList, ...result.data]
+        return true
+      } else return false
+    },
   }
 })

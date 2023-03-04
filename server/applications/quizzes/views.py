@@ -7,6 +7,8 @@ from applications.quizzes.models import (
     QuizzListItemQuestionModel,
     QuizzJoinElementQuestionModel,
     QuizzChoiceQuestionModel,
+    FlashCardModel,
+    FlashCardCollectionModel,
 )
 from applications.quizzes.serializers import (
     QuizzSerializer,
@@ -15,6 +17,8 @@ from applications.quizzes.serializers import (
     QuizzListItemQuestionSerializer,
     QuizzJoinElementQuestionSerializer,
     QuizzChoiceQuestionSerializer,
+    FlashCardSerializer,
+    FlashCardCollectionSerializer,
 )
 
 # Create your views here.
@@ -58,3 +62,16 @@ class QuizzChoiceQuestionViewSet(viewsets.ModelViewSet):
     serializer_class = QuizzChoiceQuestionSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     filterset_fields = ["question"]
+
+class FlashCardViewSet(viewsets.ModelViewSet):
+
+    queryset = FlashCardModel.objects.all().order_by("id")
+    serializer_class = FlashCardSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    filterset_fields = ["collection"]
+
+class FlashCardCollectionViewSet(viewsets.ModelViewSet):
+
+    queryset = FlashCardCollectionModel.objects.all().order_by("id")
+    serializer_class = FlashCardCollectionSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]

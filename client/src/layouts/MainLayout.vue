@@ -46,6 +46,9 @@
               <q-item clickable :to="{name: 'quizzesListPage'}">
                 <q-item-section>{{ $t('mainLayout.quizzes') }}</q-item-section>
               </q-item>
+              <q-item clickable :to="{name: 'flashCardCollectionListPage'}">
+                <q-item-section>{{ $t('mainLayout.flashcards') }}</q-item-section>
+              </q-item>
             </q-menu>
           </q-btn>
         </div>

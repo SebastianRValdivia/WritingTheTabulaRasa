@@ -1,6 +1,5 @@
 <template>
   <q-page padding>
-    {{displayedFlashCards}}
   </q-page>
 </template>
 

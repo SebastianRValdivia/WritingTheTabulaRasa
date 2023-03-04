@@ -18,6 +18,7 @@ const mainLayout = {
   research: "Research",
   essays: "Essays",
   quizzes: "Quizzes",
+  flashcards: "Flashcards"
 }
 const mainDrawer = {
   notes: "My notes",

@@ -154,8 +154,8 @@ const routes = [
       },
       {
         path: "flashcards/",
-        name: "flashcardListpage",
-        component: () => import("src/pages/FlashCardListPage")
+        name: "flashCardCollectionListPage",
+        component: () => import("src/pages/FlashCardCollectionListPage")
       },
       {
         path: "flashcards/:id/",

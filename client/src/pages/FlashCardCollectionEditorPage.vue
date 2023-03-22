@@ -8,7 +8,7 @@
     <div class="col col-12 column items-center">
       <q-card 
         class="col-6 scoped-flashcard animated"
-        :class="{ flipInY: cardOnHintSide, flipInX: !cardOnHintSide }"
+        :class="{ flipInY: cardOnHintSide, flip: !cardOnHintSide }"
       >
         <q-card-section>
           <q-input

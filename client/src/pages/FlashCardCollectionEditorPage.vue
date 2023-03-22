@@ -65,6 +65,8 @@
 
 <script>
 import { ref } from "vue"
+import { useMeta } from "quasar"
+import { useI18n } from "vue-i18n"
 
 export default {
   name: "flashCardCollectionEditorPage",
@@ -73,6 +75,7 @@ export default {
     const hintInput = ref("")
     const responseInput = ref("")
     const cardOnHintSide = ref(true)
+    const { t } = useI18n()
 
     function saveFlashCard() {
       let newFlashCardData = {
@@ -88,6 +91,9 @@ export default {
       cardOnHintSide.value = true
     }
 
+    useMeta({
+      title: t("flashCardCollectionEditorPage.pageTitle")
+    })
     return {
       flashCardsList,
       hintInput,

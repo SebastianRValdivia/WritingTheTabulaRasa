@@ -2,7 +2,13 @@
   <q-page padding class="row">
     <q-input 
       :label="$t('flashCardCollectionEditorPage.collectionTitle')"
-      class="col col-12"
+      class="col col-10"
+      v-model="titleInput"
+    />
+    <q-btn 
+      :label="$t('general.done')"
+      class="col q-ma-lg"
+      @click="submitDeck"
     />
 
     <div class="col col-12 column items-center">
@@ -68,14 +74,19 @@ import { ref } from "vue"
 import { useMeta } from "quasar"
 import { useI18n } from "vue-i18n"
 
+import { useQuizzStore } from "src/stores/quizz-store"
+
 export default {
   name: "flashCardCollectionEditorPage",
   setup() {
+    const { t } = useI18n()
+    const quizzStore = useQuizzStore()
+
+    const titleInput = ref("")
     const flashCardsList = ref([])
     const hintInput = ref("")
     const responseInput = ref("")
     const cardOnHintSide = ref(true)
-    const { t } = useI18n()
 
     function saveFlashCard() {
       let newFlashCardData = {
@@ -90,11 +101,17 @@ export default {
     function toggleToHintSide() {
       cardOnHintSide.value = true
     }
+    async function submitDeck() {
+      let result = await quizzStore.saveFlashCardCollection({
+        title: titleInput.value
+      })
+    }
 
     useMeta({
       title: t("flashCardCollectionEditorPage.pageTitle")
     })
     return {
+      titleInput,
       flashCardsList,
       hintInput,
       responseInput,
@@ -103,6 +120,7 @@ export default {
       saveFlashCard,
       toggleToResponseSide,
       toggleToHintSide,
+      submitDeck,
     }
   }
 

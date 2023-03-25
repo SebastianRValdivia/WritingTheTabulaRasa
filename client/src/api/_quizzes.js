@@ -93,5 +93,18 @@ export default {
         data: result.data
       }
     } else return false
+  },
+  async postFlashCardCollection(collectionData) {
+    let response = await api.post(
+      "v1/quizzes/flashcard-collections/",
+      collectionData
+    )
+
+    if (response) {
+      return {
+        code: response.code,
+        data: response.data
+      }
+    } else return false
   }
 }

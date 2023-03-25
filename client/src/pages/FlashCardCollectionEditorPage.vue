@@ -102,9 +102,18 @@ export default {
       cardOnHintSide.value = true
     }
     async function submitDeck() {
-      let result = await quizzStore.saveFlashCardCollection({
+      let idAssignedToDeck = await quizzStore.saveFlashCardCollection({
         title: titleInput.value
       })
+
+      if (idAssignedToDeck) {
+        const cardsListWithCollectionId = flashCardsList.value.map(
+          (cardData) => ({...cardData, collection: idAssignedToDeck})
+        )
+        for (let flashCardData of cardsListWithCollectionId) {
+          await quizzStore.saveFlashCard(flashCardData)
+        }
+      }
     }
 
     useMeta({

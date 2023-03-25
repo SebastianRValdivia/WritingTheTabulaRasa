@@ -111,8 +111,16 @@ export const useQuizzStore = defineStore("quizz", {
       let result = await api.quizzes.postFlashCardCollection(collectionData)
 
       if (result) {
-        this.flashCardList.push(result.data)
+        this.flashCardCollectionList.push(result.data)
         return result.data.id
+      } else return false
+    },
+    async saveFlashCard(flashCardData) {
+      let result = await api.quizzes.postFlashCard(flashCardData)
+
+      if (result) {
+        this.flashCardList.push(result.data)
+        return true
       } else return false
     }
   }

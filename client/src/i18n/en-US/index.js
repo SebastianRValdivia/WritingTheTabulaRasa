@@ -151,6 +151,12 @@ const helpCenterPage = {
 const flashCardListPage = {
   pageTitle: "Flashcards"
 }
+const flashCardCollectionEditorPage = {
+  pageTitle: "Flashcard editor",
+  collectionTitle: "Collection title",
+  aHint: "Add a hint to trigger the memory",
+  correctResponse: "The correct response",
+}
 
 
 const imageUploadDialog = {
@@ -203,6 +209,7 @@ export default {
   learningResourcesEditorPage,
   helpCenterPage,
   flashCardListPage,
+  flashCardCollectionEditorPage,
 
   imageUploadDialog,
   metadataEditorDialog,

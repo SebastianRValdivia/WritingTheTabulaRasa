@@ -164,6 +164,11 @@ const routes = [
         props: true
       },
       {
+        path: "flashcards/editor/",
+        name: "flashCardCollectionEditorPage",
+        component: () => import("src/pages/FlashCardCollectionEditorPage")
+      },
+      {
         path: "my/learning-resources/",
         name: "learningResourceUserListPage",
         component: () => import("src/pages/LearningResourceListPage")

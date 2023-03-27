@@ -2,9 +2,22 @@
   <q-page padding class="column items-center">
     <FlashCardCollectionPageFlashCardPreview 
       :cardData="displayedFlashCard"
-      @correct="removeCardFromDeck"
-      @incorrect="pickFlashCard"
+      class="q-mt-xl"
     />
+    <div class="row q-gutter-md q-ma-lg">
+      <q-btn 
+        round
+        icon="done"
+        color="positive"
+        @click="removeCardFromDeck"
+      />
+      <q-btn 
+        round
+        icon="close"
+        color="negative"
+        @click="pickFlashCard"
+      />
+    </div>
   </q-page>
 </template>
 
@@ -46,7 +59,6 @@ export default {
       toSolveFlashCards.value = toSolveFlashCards.value.filter(
         (card) => card.id !== displayedFlashCard.value.id
       )
-      console.log(toSolveFlashCards.value)
       pickFlashCard()
     }
 

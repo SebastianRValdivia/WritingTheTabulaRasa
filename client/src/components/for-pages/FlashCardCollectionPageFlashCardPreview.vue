@@ -2,11 +2,11 @@
   <q-card 
     class="flashcard-preview animated"
     :class="{
-      'flipInY': isOnResponseSide
+      'flipInY': props.isOnResponseSide
     }"
   >
     <q-card-section 
-      v-if="!isOnResponseSide"
+      v-if="!props.isOnResponseSide"
       class="column items-center"
     >
       {{ props.cardData.hint }}
@@ -23,38 +23,41 @@
       class="absolute-bottom"
     >
       <q-btn
-        v-if="!isOnResponseSide"
+        v-if="!props.isOnResponseSide"
         round
         flat
         icon="chevron_right"
-        @click="flip"
+        @click="flipToResponse"
       />
     </q-card-actions>
   </q-card>
 </template>
 
 <script>
-import { ref } from "vue"
+import { ref, watch } from "vue"
 
 export default {
   name: "FlashCardCollectionPageFlashCardPreview",
   props: {
     cardData: {
       required: true
+    },
+    isOnResponseSide: {
+      type: Boolean,
+      default: false,
     }
   },
-  setup(props) {
-    const isOnResponseSide = ref(false)
+  emits: ["update:isOnResponseSide"],
+  setup(props, ctx) {
 
-    function flip() {
-      isOnResponseSide.value = !isOnResponseSide.value
+    function flipToResponse(){
+      ctx.emit("update:isOnResponseSide", true)
     }
 
     return {
-      isOnResponseSide,
       props,
 
-      flip,
+      flipToResponse,
     }
   }
 }

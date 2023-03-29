@@ -2,11 +2,11 @@
   <q-page padding class="row justify-center">
     <q-list class="col col-12 row">
       <q-item 
-        class="col col-9 row"
+        class="scoped-collection-item col col-9 row q-ma-md"
         v-for="collection in quizzStore.getFlashCardCollectionList" 
         :key="collection.id"
       >
-        <div>
+        <div class="overflow-auto">
           <h4>
             {{ collection.title }}
           </h4>
@@ -78,3 +78,11 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.scoped-collection-item {
+  max-height: 15rem;
+  min-height: 15rem;
+}
+
+</style>

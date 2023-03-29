@@ -44,6 +44,8 @@ export default {
 .card {
   min-height: 15rem;
   min-width: 20rem;
+  max-height: 15rem;
+  max-width: 20rem;
   position: absolute;
 }
 .card-1 {

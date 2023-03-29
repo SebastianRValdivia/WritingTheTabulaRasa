@@ -1,43 +1,67 @@
 <template>
   <q-card 
-    class="flashcard-preview"
+    class="flashcard-preview animated"
+    :class="{
+      'flipInY': props.isOnResponseSide,
+      'backInDown': props.isNew,
+    }"
   >
-    <q-card-section class="column items-center">
+    <q-card-section 
+      v-if="!props.isOnResponseSide"
+      class="column items-center"
+    >
       {{ props.cardData.hint }}
     </q-card-section>
+    <q-card-section 
+      v-else
+      class="column items-center"
+    >
+      {{ props.cardData.response }}
+    </q-card-section>
+
     <q-card-actions 
-      align="center"
+      align="right"
       class="absolute-bottom"
     >
-      <q-btn 
+      <q-btn
+        v-if="!props.isOnResponseSide"
         round
-        icon="done"
-        color="positive"
-        @click="$emit('correct')"
-      />
-      <q-btn 
-        round
-        icon="close"
-        color="negative"
-        @click="$emit('incorrect')"
+        flat
+        icon="chevron_right"
+        @click="flipToResponse"
       />
     </q-card-actions>
   </q-card>
 </template>
 
 <script>
+import { ref } from "vue"
 
 export default {
   name: "FlashCardCollectionPageFlashCardPreview",
   props: {
     cardData: {
       required: true
+    },
+    isOnResponseSide: {
+      type: Boolean,
+      default: false,
+    },
+    isNew: {
+      type: Boolean,
     }
   },
-  emits: ["correct", "incorrect"],
-  setup(props) {
+  emits: ["update:isOnResponseSide"],
+  setup(props, ctx) {
+
+    function flipToResponse(){
+      ctx.emit("update:isOnResponseSide", true)
+    }
+
     return {
-      props
+      props,
+
+      flipToResponse,
     }
   }
 }

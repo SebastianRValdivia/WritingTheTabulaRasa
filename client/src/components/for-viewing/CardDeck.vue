@@ -1,12 +1,6 @@
 <template>
   <div class="cards-container" @click="pushToActivity">
     <q-card class="card card-1">
-      <span>#{{ props.id }}</span>
-      <q-card-section>
-        <h5>
-          {{ props.title }}
-        </h5>
-      </q-card-section>
     </q-card>
     <q-card class="card card-2">
     </q-card>
@@ -50,6 +44,8 @@ export default {
 .card {
   min-height: 15rem;
   min-width: 20rem;
+  max-height: 15rem;
+  max-width: 20rem;
   position: absolute;
 }
 .card-1 {
@@ -57,14 +53,11 @@ export default {
 }
 .card-2 {
   z-index: 9;
-  margin-left: 5rem;
+  margin-left: 1rem;
 }
 .card-3 {
   z-index: 8;
-  margin-left: 10rem;
-}
-.cards-container {
-  padding: 10rem;
+  margin-left: 2rem;
 }
 </style>
 

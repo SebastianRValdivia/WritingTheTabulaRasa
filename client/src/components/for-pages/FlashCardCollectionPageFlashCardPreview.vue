@@ -2,7 +2,8 @@
   <q-card 
     class="flashcard-preview animated"
     :class="{
-      'flipInY': props.isOnResponseSide
+      'flipInY': props.isOnResponseSide,
+      'backInDown': props.isNew,
     }"
   >
     <q-card-section 
@@ -34,7 +35,7 @@
 </template>
 
 <script>
-import { ref, watch } from "vue"
+import { ref } from "vue"
 
 export default {
   name: "FlashCardCollectionPageFlashCardPreview",
@@ -45,6 +46,9 @@ export default {
     isOnResponseSide: {
       type: Boolean,
       default: false,
+    },
+    isNew: {
+      type: Boolean,
     }
   },
   emits: ["update:isOnResponseSide"],

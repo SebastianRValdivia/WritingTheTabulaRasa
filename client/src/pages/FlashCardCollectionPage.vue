@@ -2,7 +2,8 @@
   <q-page padding class="column items-center">
     <FlashCardCollectionPageFlashCardPreview 
       :cardData="displayedFlashCard"
-      v-model:isOnResponseSide="isCardInitializing"
+      :isNew="isCardInitializing"
+      v-model:isOnResponseSide="isFlipped"
       class="q-mt-xl"
     />
     <div class="row q-gutter-md q-ma-lg">
@@ -49,6 +50,7 @@ export default {
     const displayedFlashCard = ref()
     const toSolveFlashCards = ref([]) // TODO: Add list in name
     const solvedFlashCards = ref([])
+    const isFlipped = ref(false) // If card is fliped to response
     const isCardInitializing = ref(false) // If a new card was just picked
 
     function pickFlashCard() {
@@ -56,7 +58,7 @@ export default {
       displayedFlashCard.value = toSolveFlashCards.value[
         Math.floor( Math.random() * toSolveFlashCards.value.length )
       ]
-      isCardInitializing.value = false
+      isFlipped.value = false
     }
 
     function removeCardFromDeck() {
@@ -83,6 +85,7 @@ export default {
       toSolveFlashCards,
       displayedFlashCard,
       isCardInitializing,
+      isFlipped,
 
       pickFlashCard,
       removeCardFromDeck,

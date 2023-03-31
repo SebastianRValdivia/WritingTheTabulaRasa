@@ -122,6 +122,18 @@ export const useQuizzStore = defineStore("quizz", {
         this.flashCardList.push(result.data)
         return true
       } else return false
+    },
+    async removeFlashCardCollection(collectionId) {
+      let result = await api.quizzes.deleteFlashCardCollection(collectionId)
+
+      if (result) {
+        let indexCollectionToDelete = this.flashCardCollectionList.findIndex(
+          (collection) => collection.id === collectionId
+        )
+        this.flashCardCollectionList.splice(indexCollectionToDelete, 1)
+        // TODO: remove flashcards too
+        return true
+      } else return false
     }
   }
 })

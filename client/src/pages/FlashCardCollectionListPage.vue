@@ -26,6 +26,12 @@
         <div class="col col-9 overflow-auto">
           <h4>
             {{ collection.title }}
+            <q-btn 
+              flat
+              round
+              icon="edit"
+              @click="pushToEditPage(collection.id)"
+            />
           </h4>
           <p>
             {{ collection.description }}
@@ -49,6 +55,7 @@
 import { ref, onBeforeMount } from "vue"
 import { useI18n } from "vue-i18n"
 import { useQuasar, useMeta } from "quasar"
+import { useRouter } from "vue-router"
 
 import { useQuizzStore } from "src/stores/quizz-store"
 import { useUserStore } from "src/stores/user-store"
@@ -66,7 +73,15 @@ export default {
     const { t } = useI18n()
     const quizzStore = useQuizzStore()
     const userStore = useUserStore()
+    const router = useRouter()
 
+    
+    function pushToEditPage(id) {
+      router.push({
+        name: "flashCardCollectionEditorPage",
+        params: {id: id}
+      })
+    }
 
     onBeforeMount(async () => {
       quasar.loading.show()
@@ -82,6 +97,8 @@ export default {
     return {
       quizzStore,
       userStore,
+
+      pushToEditPage,
     }
   }
 }

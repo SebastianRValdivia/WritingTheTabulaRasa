@@ -1,12 +1,12 @@
 <template>
   <q-page padding class="row justify-center">
-    <q-list class="col col-12 row">
+    <q-list class="col col-12">
       <q-item 
-        class="scoped-collection-item col col-9 row q-ma-md"
+        class="scoped-collection-item row q-ma-md"
         v-for="collection in quizzStore.getFlashCardCollectionList" 
         :key="collection.id"
       >
-        <div class="overflow-auto">
+        <div class="col col-9 overflow-auto">
           <h4>
             {{ collection.title }}
           </h4>
@@ -15,8 +15,7 @@
           </p>
         </div>
         <CardDeck 
-          class="q-pt-xl absolute-right"
-          :title="collection.title"
+          class="q-pt-xl col col-3"
           :id="collection.id"
         />
       </q-item>

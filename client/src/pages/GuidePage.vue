@@ -1,25 +1,46 @@
 <template>
-  <q-page class="q-pa-md">
-    <h2 class="text-h2">{{guideData.title}}</h2>
-    <p class="text-subtitle1">
-      {{ guideData.description }}
-    </p>
-    <ul class="step-order">
-      <li
-      v-for="stepData in orderedStepsDataList"
-      :key="stepData.id"
-      >
-        <h3 class="text-h3">
+  <q-page padding class="row">
+    <div class="col col-10">
+      <h2 class="text-h2">{{guideData.title}}</h2>
+      <p class="text-subtitle1">
+        {{ guideData.description }}
+      </p>
+      <ul class="scoped-step-order">
+        <li
+          v-for="stepData in orderedStepsDataList"
+          :key="stepData.id"
+          ref="orderedStepsDataListRefs" 
+        >
+          <h3 class="text-h3">
+            {{ stepData.order }} - {{ stepData.title }}
+          </h3>
+          <pre>
+            {{ stepData.content }}
+          </pre>
+        </li>
+      </ul>
+    </div>
+    <div class="col col-2">
+      <ul class="scoped-step-order">
+        <li
+          v-for="(stepData, index) in orderedStepsDataList"
+          :key="stepData.id"
+          @click="scrollToElement(orderedStepsDataListRefs[
+            index
+          ])"
+        >
           {{ stepData.order }} - {{ stepData.title }}
-        </h3>
-        {{ stepData.content }}
-      </li>
-    </ul>
+        </li>
+      </ul>
+    
+    </div>
   </q-page>
 </template>
 
 <script>
 import { ref, computed, onBeforeMount } from "vue"
+import { scroll } from 'quasar'
+
 
 import api from "src/api"
 
@@ -29,14 +50,22 @@ export default {
     url: String
   },
   setup(props) {
+    const { getScrollTarget, setVerticalScrollPosition } = scroll
     
     const guideData = ref({})
     const stepsDataList = ref([])
+    const orderedStepsDataListRefs = ref([])
 
     const orderedStepsDataList = computed(() => {
       return [ ...stepsDataList.value, ].sort((a, b) => (a.order > b.order))
-    });
+    })
 
+    function scrollToElement (el) {
+      const target = getScrollTarget(el)
+      const offset = el.offsetTop
+      const duration = 500
+      setVerticalScrollPosition(target, offset, duration)
+    }
     async function loadPage(pageUrl) {
       // Retrieve page
       let result = await api.guides.getGuideByUrl(pageUrl)
@@ -56,13 +85,16 @@ export default {
       props,
       guideData,
       orderedStepsDataList,
+      orderedStepsDataListRefs,
+
+      scrollToElement,
     }
   }
 }
 </script>
 
 <style lang="scss">
-.step-order {
+.scoped-step-order {
   list-style-type: none;
 }
 </style>

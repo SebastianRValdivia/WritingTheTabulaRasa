@@ -15,6 +15,9 @@
           </p>
         </div>
         <CardDeck 
+          v-if="
+            quizzStore.getFlashCardsByCollectionId(collection.id).length > 0
+          "
           class="q-pt-xl col col-3"
           :id="collection.id"
         />

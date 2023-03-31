@@ -5,6 +5,7 @@ const general = {
   success: 'Action was successful',
   done: "Done",
   confirm: "Are you sure?",
+  delete: "Delete",
   sureDelete: "Are you sure you want to delete this?",
   by: "By",
 }

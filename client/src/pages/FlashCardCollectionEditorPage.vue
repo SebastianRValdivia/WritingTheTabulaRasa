@@ -6,6 +6,14 @@
       v-model="titleInput"
     />
     <q-btn 
+      v-if="noModifications && props.id"
+      :label="$t('general.delete')"
+      class="col q-ma-lg"
+      color="negative"
+      @click="deleteCollection"
+    />
+    <q-btn 
+      v-else
       :label="$t('general.done')"
       class="col q-ma-lg"
       @click="submitDeck"
@@ -71,22 +79,33 @@
 
 <script>
 import { ref } from "vue"
-import { useMeta } from "quasar"
+import { useQuasar, useMeta } from "quasar"
 import { useI18n } from "vue-i18n"
+import { useRouter } from "vue-router"
 
 import { useQuizzStore } from "src/stores/quizz-store"
+import { errorNotification } from "src/utils/notifications"
 
 export default {
   name: "flashCardCollectionEditorPage",
-  setup() {
+  props: {
+    id: {
+      type: String
+    }
+  },
+  setup(props) {
     const { t } = useI18n()
     const quizzStore = useQuizzStore()
+    const router = useRouter()
+    const quasar = useQuasar()
 
     const titleInput = ref("")
     const flashCardsList = ref([])
     const hintInput = ref("")
     const responseInput = ref("")
     const cardOnHintSide = ref(true)
+    // Change when something has been modified
+    const noModifications = ref(true) 
 
     function saveFlashCard() {
       let newFlashCardData = {
@@ -115,21 +134,31 @@ export default {
         }
       }
     }
+    async function deleteCollection() {
+      let result = await quizzStore.removeFlashCardCollection(
+        Number(props.id)
+      )
+      if (result) return router.push({name: "flashCardCollectionListPage"})
+      else return quasar.notify(errorNotification(t("general.failed")))
+    }
 
     useMeta({
       title: t("flashCardCollectionEditorPage.pageTitle")
     })
     return {
+      props,
       titleInput,
       flashCardsList,
       hintInput,
       responseInput,
       cardOnHintSide,
+      noModifications,
 
       saveFlashCard,
       toggleToResponseSide,
       toggleToHintSide,
       submitDeck,
+      deleteCollection,
     }
   }
 

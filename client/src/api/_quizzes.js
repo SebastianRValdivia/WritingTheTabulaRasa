@@ -123,5 +123,17 @@ export default {
     } catch {
       return false
     }
+  },
+  async deleteFlashCardCollection(collectionId) {
+    try {
+      let response = await api.delete(
+        `v1/quizzes/flashcard-collections/${collectionId}/`
+      )
+
+      if (response) return true
+      else return false
+    } catch {
+      return false
+    }
   }
 }

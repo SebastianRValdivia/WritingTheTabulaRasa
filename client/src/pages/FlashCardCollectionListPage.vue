@@ -1,5 +1,22 @@
 <template>
   <q-page padding class="row justify-center">
+    <div class="col-12 row">
+      <SearchInput />
+      <q-page-sticky
+        position="top-right"
+        :offset="[20, 20]"
+        class="scoped-add-btn"
+      >
+        <q-btn 
+          v-if="userStore.isUserLogged"
+          round 
+          color="primary" 
+          icon="add" 
+          size="md" 
+          :to="{name: 'flashCardCollectionEditorPage' }"
+        />
+      </q-page-sticky>
+    </div>
     <q-list class="col col-12">
       <q-item 
         class="scoped-collection-item row q-ma-md"
@@ -23,19 +40,6 @@
         />
       </q-item>
     </q-list>
-    <q-page-sticky 
-      v-if="userStore.isUserLogged"
-      position="top-right" 
-      :offset="[20, 20]"
-    >
-      <q-btn 
-        round 
-        color="primary" 
-        icon="add" 
-        size="md" 
-        :to="{name: 'flashCardCollectionEditorPage' }"
-      />
-    </q-page-sticky>
   </q-page>
 
 </template>
@@ -49,11 +53,13 @@ import { useQuasar, useMeta } from "quasar"
 import { useQuizzStore } from "src/stores/quizz-store"
 import { useUserStore } from "src/stores/user-store"
 import CardDeck from "src/components/for-viewing/CardDeck"
+import SearchInput from "src/components/for-input/SearchInput"
 
 export default {
   name: "FlashCardListPage",
   components: {
-    CardDeck
+    CardDeck,
+    SearchInput,
   },
   setup() {
     const quasar = useQuasar()
@@ -85,6 +91,9 @@ export default {
 .scoped-collection-item {
   max-height: 15rem;
   min-height: 15rem;
+}
+.scoped-add-btn {
+  z-index: 999;
 }
 
 </style>

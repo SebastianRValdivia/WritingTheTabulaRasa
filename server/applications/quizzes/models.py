@@ -1,5 +1,7 @@
 from django.db import models
 from config.fields_default_values import CHARFIELD_LONG 
+from django.core.validators import MaxValueValidator
+from django.contrib.auth.models import User
 
 # Create your models here.
 class QuizzModel(models.Model):
@@ -212,3 +214,27 @@ class FlashCardCollectionModel(models.Model):
 
     def __str__(self):
         return self.title
+
+class FlashCardTestResultModel(models.Model):
+
+    # This stores a number from 0 to 100 to represent a percentage
+    score = models.PositiveIntegerField(
+        blank=False,
+        null=False,
+        validators=[MaxValueValidator(100)],
+    )
+    owner = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        blank=False,
+        null=False,
+    )
+    collection = models.ForeignKey(
+        "quizzes.FlashCardCollectionModel",
+        on_delete=models.CASCADE,
+        blank=False,
+        null=False,
+    )
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+

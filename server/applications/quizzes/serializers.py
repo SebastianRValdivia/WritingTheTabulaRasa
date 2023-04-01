@@ -9,6 +9,7 @@ from applications.quizzes.models import (
     QuizzChoiceQuestionModel,
     FlashCardModel,
     FlashCardCollectionModel,
+    FlashCardTestResultModel,
 )
 
 class QuizzSerializer(ModelSerializer):
@@ -57,4 +58,10 @@ class FlashCardCollectionSerializer(ModelSerializer):
 
     class Meta:
         model = FlashCardCollectionModel
+        fields = "__all__"
+
+class FlashCardTestResultSerializer(ModelSerializer):
+
+    class Meta:
+        model = FlashCardTestResultModel
         fields = "__all__"

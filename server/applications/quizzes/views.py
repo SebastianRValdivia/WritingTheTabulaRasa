@@ -9,6 +9,7 @@ from applications.quizzes.models import (
     QuizzChoiceQuestionModel,
     FlashCardModel,
     FlashCardCollectionModel,
+    FlashCardTestResultModel,
 )
 from applications.quizzes.serializers import (
     QuizzSerializer,
@@ -19,6 +20,7 @@ from applications.quizzes.serializers import (
     QuizzChoiceQuestionSerializer,
     FlashCardSerializer,
     FlashCardCollectionSerializer,
+    FlashCardTestResultSerializer,
 )
 
 # Create your views here.
@@ -75,3 +77,10 @@ class FlashCardCollectionViewSet(viewsets.ModelViewSet):
     queryset = FlashCardCollectionModel.objects.all().order_by("id")
     serializer_class = FlashCardCollectionSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+class FlashCardTestResultViewSet(viewsets.ModelViewSet):
+
+    queryset = FlashCardTestResultModel.objects.all().order_by("id")
+    serializer_class = FlashCardTestResultSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    filterset_fields = ["owner"]

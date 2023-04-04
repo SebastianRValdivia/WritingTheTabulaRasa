@@ -16,4 +16,5 @@ urlpatterns = [
     path("quizzes/", include("applications.quizzes.api_urls")),
     path("metadata/", include("applications.metadata.api_urls")),
     path("quotes/", include("applications.quotes.api_urls")),
+    path("practice/", include("applications.practice.api_urls")),
 ]

@@ -38,10 +38,14 @@
 <script>
 import { ref, onBeforeMount } from "vue"
 import { useQuasar } from "quasar"
+import api from "src/api"
+import { useI18n } from "vue-i18n"
 
 import { useQuizzStore } from "src/stores/quizz-store"
+import { useUserStore } from "src/stores/user-store"
 import FlashCardCollectionPageFlashCardPreview from 
   "src/components/for-pages/FlashCardCollectionPageFlashCardPreview"
+import { errorNotification } from "src/utils/notifications"
 
 export default {
   name: "FlashCardCollectionPage",
@@ -56,7 +60,9 @@ export default {
   },
   setup(props) {
     const quizzStore = useQuizzStore()
+    const userStore = useUserStore()
     const quasar = useQuasar()
+    const { t } = useI18n()
     
     const flashCardList = ref()
     const displayedFlashCard = ref(null)
@@ -110,11 +116,23 @@ export default {
       removeCardFromDeck()
     }
 
-    function finishTest() {
+    async function finishTest() {
       userScore.value = (
           flashCardList.value.length / userTries.value
       ) * 100
-      hasTestEnded.value = true
+      // Since api require positive integers
+      userScore.value = userScore.value.toFixed() // Round number
+      // TODO: this should be on a store
+      let result = await api.quizzes.postFlashCardTestResult({
+        score: userScore.value,
+        collection: Number(props.id),
+        owner: userStore.getUserId
+      })
+      if (result) {
+        hasTestEnded.value = true
+      } else {
+        quasar.notify(errorNotification(t("general.failed")))
+      }
     }
 
     onBeforeMount( async () => {

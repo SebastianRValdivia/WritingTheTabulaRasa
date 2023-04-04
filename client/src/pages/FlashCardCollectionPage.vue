@@ -11,13 +11,13 @@
         round
         icon="close"
         color="negative"
-        @click="pickFlashCard"
+        @click="negativeAttempt()"
       />
       <q-btn 
         round
         icon="done"
         color="positive"
-        @click="removeCardFromDeck"
+        @click="positiveAttempt()"
       />
     </div>
   </q-page>
@@ -47,17 +47,29 @@ export default {
     const quasar = useQuasar()
     
     const flashCardList = ref()
-    const displayedFlashCard = ref()
+    const displayedFlashCard = ref(null)
     const toSolveFlashCards = ref([]) // TODO: Add list in name
     const solvedFlashCards = ref([])
     const isFlipped = ref(false) // If card is fliped to response
     const isCardInitializing = ref(false) // If a new card was just picked
+    const userTries = ref(0)
 
-    function pickFlashCard() {
+    function pickNewFlashCard() {
       isCardInitializing.value = true
-      displayedFlashCard.value = toSolveFlashCards.value[
-        Math.floor( Math.random() * toSolveFlashCards.value.length )
-      ]
+      // There is one displayed
+      if (displayedFlashCard.value !== null) {
+        let cardsMinusDiplayed = toSolveFlashCards.value.filter(
+          (card) => card.id !== displayedFlashCard.value.id
+        )
+        displayedFlashCard.value = cardsMinusDiplayed[
+          Math.floor( Math.random() * cardsMinusDiplayed.length )
+        ]
+      // There is nothing displayed yet
+      } else {
+        displayedFlashCard.value = toSolveFlashCards.value[
+          Math.floor( Math.random() * toSolveFlashCards.value.length )
+        ]
+      }
       isFlipped.value = false
     }
 
@@ -65,7 +77,31 @@ export default {
       toSolveFlashCards.value = toSolveFlashCards.value.filter(
         (card) => card.id !== displayedFlashCard.value.id
       )
-      pickFlashCard()
+      if (toSolveFlashCards.value.length === 0) {
+        finishTest()
+      } else {
+        pickNewFlashCard()
+      }
+    }
+
+    // User could not solve the flash card
+    function negativeAttempt() {
+      userTries.value += 1
+      pickNewFlashCard()
+    }
+
+    // User solve the flash card
+    function positiveAttempt() {
+      userTries.value += 1
+      removeCardFromDeck()
+    }
+
+    function finishTest() {
+      const userScore = (
+          flashCardList.value.length / userTries.value
+      ) * 100
+
+
     }
 
     onBeforeMount( async () => {
@@ -78,7 +114,7 @@ export default {
       }
 
       toSolveFlashCards.value = flashCardList.value
-      pickFlashCard()
+      pickNewFlashCard()
       quasar.loading.hide()
     })
     return {
@@ -87,8 +123,8 @@ export default {
       isCardInitializing,
       isFlipped,
 
-      pickFlashCard,
-      removeCardFromDeck,
+      negativeAttempt,
+      positiveAttempt,
     }
   }
 }

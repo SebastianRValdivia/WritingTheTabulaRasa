@@ -1,24 +1,36 @@
 <template>
-  <q-page padding class="column items-center">
-    <FlashCardCollectionPageFlashCardPreview 
-      :cardData="displayedFlashCard"
-      :isNew="isCardInitializing"
-      v-model:isOnResponseSide="isFlipped"
-      class="q-mt-xl"
-    />
-    <div class="row q-gutter-md q-ma-lg">
-      <q-btn 
-        round
-        icon="close"
-        color="negative"
-        @click="pickFlashCard"
+  <q-page padding class="row">
+    <div v-if="!hasTestEnded" class="col column items-center">
+      <FlashCardCollectionPageFlashCardPreview 
+        :cardData="displayedFlashCard"
+        :isNew="isCardInitializing"
+        v-model:isOnResponseSide="isFlipped"
+        class="q-mt-xl"
       />
-      <q-btn 
-        round
-        icon="done"
-        color="positive"
-        @click="removeCardFromDeck"
-      />
+      <div class="row q-gutter-md q-ma-lg">
+        <q-btn 
+          round
+          icon="close"
+          color="negative"
+          @click="negativeAttempt()"
+        />
+        <q-btn 
+          round
+          icon="done"
+          color="positive"
+          @click="positiveAttempt()"
+        />
+      </div>
+    </div>
+    <div 
+      v-else 
+      class="col column items-center text-h1"
+      :class="{
+        'text-positive': userScore >= 50,
+        'text-negative': userScore < 50
+      }"
+    >
+      {{ userScore }}
     </div>
   </q-page>
 </template>
@@ -26,10 +38,14 @@
 <script>
 import { ref, onBeforeMount } from "vue"
 import { useQuasar } from "quasar"
+import api from "src/api"
+import { useI18n } from "vue-i18n"
 
 import { useQuizzStore } from "src/stores/quizz-store"
+import { useUserStore } from "src/stores/user-store"
 import FlashCardCollectionPageFlashCardPreview from 
   "src/components/for-pages/FlashCardCollectionPageFlashCardPreview"
+import { errorNotification } from "src/utils/notifications"
 
 export default {
   name: "FlashCardCollectionPage",
@@ -44,20 +60,36 @@ export default {
   },
   setup(props) {
     const quizzStore = useQuizzStore()
+    const userStore = useUserStore()
     const quasar = useQuasar()
+    const { t } = useI18n()
     
     const flashCardList = ref()
-    const displayedFlashCard = ref()
+    const displayedFlashCard = ref(null)
     const toSolveFlashCards = ref([]) // TODO: Add list in name
     const solvedFlashCards = ref([])
     const isFlipped = ref(false) // If card is fliped to response
     const isCardInitializing = ref(false) // If a new card was just picked
+    const userTries = ref(0)
+    const userScore = ref(0)
+    const hasTestEnded = ref(false)
 
-    function pickFlashCard() {
+    function pickNewFlashCard() {
       isCardInitializing.value = true
-      displayedFlashCard.value = toSolveFlashCards.value[
-        Math.floor( Math.random() * toSolveFlashCards.value.length )
-      ]
+      // There is one displayed
+      if (displayedFlashCard.value !== null) {
+        let cardsMinusDiplayed = toSolveFlashCards.value.filter(
+          (card) => card.id !== displayedFlashCard.value.id
+        )
+        displayedFlashCard.value = cardsMinusDiplayed[
+          Math.floor( Math.random() * cardsMinusDiplayed.length )
+        ]
+      // There is nothing displayed yet
+      } else {
+        displayedFlashCard.value = toSolveFlashCards.value[
+          Math.floor( Math.random() * toSolveFlashCards.value.length )
+        ]
+      }
       isFlipped.value = false
     }
 
@@ -65,7 +97,42 @@ export default {
       toSolveFlashCards.value = toSolveFlashCards.value.filter(
         (card) => card.id !== displayedFlashCard.value.id
       )
-      pickFlashCard()
+      if (toSolveFlashCards.value.length === 0) {
+        finishTest()
+      } else {
+        pickNewFlashCard()
+      }
+    }
+
+    // User could not solve the flash card
+    function negativeAttempt() {
+      userTries.value += 1
+      pickNewFlashCard()
+    }
+
+    // User solve the flash card
+    function positiveAttempt() {
+      userTries.value += 1
+      removeCardFromDeck()
+    }
+
+    async function finishTest() {
+      userScore.value = (
+          flashCardList.value.length / userTries.value
+      ) * 100
+      // Since api require positive integers
+      userScore.value = userScore.value.toFixed() // Round number
+      // TODO: this should be on a store
+      let result = await api.quizzes.postFlashCardTestResult({
+        score: userScore.value,
+        collection: Number(props.id),
+        owner: userStore.getUserId
+      })
+      if (result) {
+        hasTestEnded.value = true
+      } else {
+        quasar.notify(errorNotification(t("general.failed")))
+      }
     }
 
     onBeforeMount( async () => {
@@ -78,7 +145,7 @@ export default {
       }
 
       toSolveFlashCards.value = flashCardList.value
-      pickFlashCard()
+      pickNewFlashCard()
       quasar.loading.hide()
     })
     return {
@@ -86,9 +153,11 @@ export default {
       displayedFlashCard,
       isCardInitializing,
       isFlipped,
+      userScore,
+      hasTestEnded,
 
-      pickFlashCard,
-      removeCardFromDeck,
+      negativeAttempt,
+      positiveAttempt,
     }
   }
 }

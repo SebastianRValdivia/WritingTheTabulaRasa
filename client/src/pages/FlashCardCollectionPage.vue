@@ -1,24 +1,36 @@
 <template>
-  <q-page padding class="column items-center">
-    <FlashCardCollectionPageFlashCardPreview 
-      :cardData="displayedFlashCard"
-      :isNew="isCardInitializing"
-      v-model:isOnResponseSide="isFlipped"
-      class="q-mt-xl"
-    />
-    <div class="row q-gutter-md q-ma-lg">
-      <q-btn 
-        round
-        icon="close"
-        color="negative"
-        @click="negativeAttempt()"
+  <q-page padding class="row">
+    <div v-if="!hasTestEnded" class="col column items-center">
+      <FlashCardCollectionPageFlashCardPreview 
+        :cardData="displayedFlashCard"
+        :isNew="isCardInitializing"
+        v-model:isOnResponseSide="isFlipped"
+        class="q-mt-xl"
       />
-      <q-btn 
-        round
-        icon="done"
-        color="positive"
-        @click="positiveAttempt()"
-      />
+      <div class="row q-gutter-md q-ma-lg">
+        <q-btn 
+          round
+          icon="close"
+          color="negative"
+          @click="negativeAttempt()"
+        />
+        <q-btn 
+          round
+          icon="done"
+          color="positive"
+          @click="positiveAttempt()"
+        />
+      </div>
+    </div>
+    <div 
+      v-else 
+      class="col column items-center text-h1"
+      :class="{
+        'text-positive': userScore >= 50,
+        'text-negative': userScore < 50
+      }"
+    >
+      {{ userScore }}
     </div>
   </q-page>
 </template>
@@ -53,6 +65,8 @@ export default {
     const isFlipped = ref(false) // If card is fliped to response
     const isCardInitializing = ref(false) // If a new card was just picked
     const userTries = ref(0)
+    const userScore = ref(0)
+    const hasTestEnded = ref(false)
 
     function pickNewFlashCard() {
       isCardInitializing.value = true
@@ -97,11 +111,10 @@ export default {
     }
 
     function finishTest() {
-      const userScore = (
+      userScore.value = (
           flashCardList.value.length / userTries.value
       ) * 100
-
-
+      hasTestEnded.value = true
     }
 
     onBeforeMount( async () => {
@@ -122,6 +135,8 @@ export default {
       displayedFlashCard,
       isCardInitializing,
       isFlipped,
+      userScore,
+      hasTestEnded,
 
       negativeAttempt,
       positiveAttempt,

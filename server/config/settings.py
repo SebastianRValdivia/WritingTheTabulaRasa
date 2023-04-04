@@ -73,6 +73,7 @@ INSTALLED_APPS = [
     "applications.essays",
     "applications.metadata",
     "applications.quotes",
+    "applications.practice",
 ]
 
 MIDDLEWARE = [

@@ -158,6 +158,10 @@ const flashCardCollectionEditorPage = {
   aHint: "Add a hint to trigger the memory",
   correctResponse: "The correct response",
 }
+const practicePage = {
+  pageTitle: "Practice editor",
+  routineTitle: "Routine title",
+}
 
 
 const imageUploadDialog = {
@@ -211,6 +215,7 @@ export default {
   helpCenterPage,
   flashCardListPage,
   flashCardCollectionEditorPage,
+  practicePage,
 
   imageUploadDialog,
   metadataEditorDialog,

@@ -8,12 +8,12 @@ from applications.practice.views import (
 
 router = DefaultRouter()
 router.register(
-    "routine",
+    "routines",
     PracticeRoutineViewSet,
     basename="practice-routine"
 )
 router.register(
-    "completion",
+    "completions",
     PracticeCompletionViewSet,
     basename="practice-completion"
 )

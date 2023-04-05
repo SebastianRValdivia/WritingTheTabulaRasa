@@ -159,7 +159,8 @@ const flashCardCollectionEditorPage = {
   correctResponse: "The correct response",
 }
 const practicePage = {
-  pageTitle: "Practice editor"
+  pageTitle: "Practice editor",
+  routineTitle: "Routine title",
 }
 
 

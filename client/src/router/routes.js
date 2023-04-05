@@ -65,6 +65,11 @@ const routes = [
         component: () => import("src/pages/UserPreferencesPage"),
       },
       {
+        path: "my/practices/editor/",
+        name: "practiceRoutineEditorPage",
+        component: () => import("src/pages/PracticeRoutineEditorPage"),
+      },
+      {
         path: "cheatsheets/",
         name: "cheatsheets",
         component: () => import ("src/pages/CheatsheetListPage"),

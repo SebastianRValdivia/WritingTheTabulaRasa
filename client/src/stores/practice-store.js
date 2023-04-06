@@ -5,6 +5,7 @@ import { useUserStore } from "src/stores/user-store"
 export const usePracticeStore = defineStore("practice", {
   state: () => ({
     practiceRoutinesList: [],
+    assignedPracticeRoutinesList: [],
   }),
   getters: {},
   actions: {
@@ -23,6 +24,13 @@ export const usePracticeStore = defineStore("practice", {
 
       if (result) {
         this.practiceRoutinesList = result.data
+      } else return false
+    },
+    async retrieveAssignedPracticeRoutines() {
+      let result = await api.practice.getAssignedPracticeRoutines()
+
+      if (result) {
+        this.assignedPracticeRoutinesList = result.data
       } else return false
     }
   }

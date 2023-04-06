@@ -25,6 +25,7 @@ export default {
       quasar.loading.show()
       // TODO: Check for error
       await practiceStore.retrievePracticeRoutines()
+      await practiceStore.retrieveAssignedPracticeRoutines()
       quasar.loading.hide()
     })
 

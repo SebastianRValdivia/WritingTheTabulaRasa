@@ -32,5 +32,19 @@ export default {
     } catch {
       return false
     }
+  },
+  async getAssignedPracticeRoutines() {
+    try {
+      let result = await recursiveGetCall("v1/practice/assigned-routines/")
+
+      if (result) {
+        return {
+          code: result.code,
+          data: result.data,
+        }
+      } else return false
+    } catch {
+      return false
+    }
   }
 }

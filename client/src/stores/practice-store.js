@@ -2,11 +2,18 @@ import { defineStore } from "pinia"
 import api from "src/api"
 import { useUserStore } from "src/stores/user-store"
 
-export const usePracticeStore = defineStore("note", {
+export const usePracticeStore = defineStore("practice", {
   state: () => ({
-    practicesList: [],
+    practiceRoutinesList: [],
+    assignedPracticeRoutinesList: [],
   }),
-  getters: {},
+  getters: {
+    getAssignedPracticeRoutinesByUser: (state) => {
+      return (userId) => state.assignedPracticeRoutinesList.filter(
+        (assignedRoutine) => assignedRoutine.owner === userId
+      )
+    },
+  },
   actions: {
     async createPracticeRoutine(routineData) {
       const userStore = useUserStore()
@@ -14,8 +21,22 @@ export const usePracticeStore = defineStore("note", {
       let result = await api.practice.postPracticeRoutine(routineData)
 
       if (result) {
-        practicesList.push(result.data)
+        this.practiceRoutinesList.push(result.data)
         return result.data
+      } else return false
+    },
+    async retrievePracticeRoutines() {
+      let result = await api.practice.getPracticeRoutinesList()
+
+      if (result) {
+        this.practiceRoutinesList = result.data
+      } else return false
+    },
+    async retrieveAssignedPracticeRoutines() {
+      let result = await api.practice.getAssignedPracticeRoutines()
+
+      if (result) {
+        this.assignedPracticeRoutinesList = result.data
       } else return false
     }
   }

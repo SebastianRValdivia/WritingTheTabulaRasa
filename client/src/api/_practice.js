@@ -1,4 +1,5 @@
 import { api } from "boot/axios"
+import { recursiveGetCall } from "src/utils/api"
 
 export default {
   async postPracticeRoutine(routineData) {
@@ -18,4 +19,32 @@ export default {
       return false
     }
   },
+  async getPracticeRoutinesList() {
+    try {
+      let result = await recursiveGetCall("v1/practice/routines/")
+
+      if (result) {
+        return {
+          code: result.code,
+          data: result.data,
+        }
+      } else return false
+    } catch {
+      return false
+    }
+  },
+  async getAssignedPracticeRoutines() {
+    try {
+      let result = await recursiveGetCall("v1/practice/assigned-routines/")
+
+      if (result) {
+        return {
+          code: result.code,
+          data: result.data,
+        }
+      } else return false
+    } catch {
+      return false
+    }
+  }
 }

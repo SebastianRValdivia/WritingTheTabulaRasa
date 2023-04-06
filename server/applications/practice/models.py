@@ -5,6 +5,8 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class PracticeRoutineModel(models.Model):
+    """ Grouped practices exercises 
+    """
 
     title = models.CharField(
         max_length=CHARFIELD_LONG,
@@ -14,8 +16,16 @@ class PracticeRoutineModel(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        verbose_name = "Practice routine"
+        verbose_name_plural = "Practice routines"
+
+    def __str__(self):
+        return self.title
+
 class UserAssignedPracticeRoutineModel(models.Model):
     """ Model to assign user to a routine
+    TODO: schedule field
     """
 
     owner = models.ForeignKey(
@@ -32,6 +42,13 @@ class UserAssignedPracticeRoutineModel(models.Model):
     )
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "User routine"
+        verbose_name_plural = "User routines"
+
+    def __str__(self):
+        return f"{self.owner.username} assigned to {self.routine.title}"
 
 class PracticeCompletionModel(models.Model):
     """ Model to track user completion of routines 
@@ -53,3 +70,12 @@ class PracticeCompletionModel(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        verbose_name = "Practice completion"
+        verbose_name_plural = "Practice completions"
+
+    def __str__(self):
+        return (
+            f"{self.owner.username} completed "
+            f"{self.routine.title} at {str(self.created)}"
+        )

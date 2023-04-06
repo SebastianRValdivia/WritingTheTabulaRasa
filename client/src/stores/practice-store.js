@@ -2,9 +2,9 @@ import { defineStore } from "pinia"
 import api from "src/api"
 import { useUserStore } from "src/stores/user-store"
 
-export const usePracticeStore = defineStore("note", {
+export const usePracticeStore = defineStore("practice", {
   state: () => ({
-    practicesList: [],
+    practiceRoutinesList: [],
   }),
   getters: {},
   actions: {
@@ -14,8 +14,15 @@ export const usePracticeStore = defineStore("note", {
       let result = await api.practice.postPracticeRoutine(routineData)
 
       if (result) {
-        practicesList.push(result.data)
+        this.practiceRoutinesList.push(result.data)
         return result.data
+      } else return false
+    },
+    async retrievePracticeRoutines() {
+      let result = await api.practice.getPracticeRoutinesList()
+
+      if (result) {
+        this.practiceRoutinesList = result.data
       } else return false
     }
   }

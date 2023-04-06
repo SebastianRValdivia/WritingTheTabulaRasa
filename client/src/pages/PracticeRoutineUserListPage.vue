@@ -1,6 +1,8 @@
 <template>
   <q-page padding>
 
+    {{ practiceStore.getAssignedPracticeRoutinesByUser(userStore.getUserId)}}
+
   </q-page>
 </template>
 
@@ -29,8 +31,10 @@ export default {
       quasar.loading.hide()
     })
 
-
-
+    return {
+      practiceStore,
+      userStore,
+    }
 
   }
 }

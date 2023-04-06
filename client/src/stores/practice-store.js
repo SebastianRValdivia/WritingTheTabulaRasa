@@ -7,7 +7,13 @@ export const usePracticeStore = defineStore("practice", {
     practiceRoutinesList: [],
     assignedPracticeRoutinesList: [],
   }),
-  getters: {},
+  getters: {
+    getAssignedPracticeRoutinesByUser: (state) => {
+      return (userId) => state.assignedPracticeRoutinesList.filter(
+        (assignedRoutine) => assignedRoutine.owner === userId
+      )
+    },
+  },
   actions: {
     async createPracticeRoutine(routineData) {
       const userStore = useUserStore()

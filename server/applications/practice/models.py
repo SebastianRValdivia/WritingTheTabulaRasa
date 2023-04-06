@@ -14,7 +14,9 @@ class PracticeRoutineModel(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
-class PracticeCompletionModel(models.Model):
+class UserAssignedPracticeRoutineModel(models.Model):
+    """ Model to assign user to a routine
+    """
 
     owner = models.ForeignKey(
         User,
@@ -23,7 +25,27 @@ class PracticeCompletionModel(models.Model):
         null=False,
     )
     routine = models.ForeignKey(
-        "practice.PracticeCompletionModel",
+        "practice.PracticeRoutineModel",
+        on_delete=models.CASCADE,
+        blank=False,
+        null=False,
+    )
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+class PracticeCompletionModel(models.Model):
+    """ Model to track user completion of routines 
+    TODO: Add notes field
+    """
+
+    owner = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        blank=False,
+        null=False,
+    )
+    routine = models.ForeignKey(
+        "practice.PracticeRoutineModel",
         on_delete=models.CASCADE,
         blank=False,
         null=False,

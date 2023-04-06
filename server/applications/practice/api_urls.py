@@ -3,19 +3,25 @@ from rest_framework.routers import DefaultRouter
 
 from applications.practice.views import (
     PracticeRoutineViewSet,
-    PracticeCompletionViewSet
+    UserAssignedPracticeRoutineViewSet,
+    PracticeCompletionViewSet,
 )
 
 router = DefaultRouter()
 router.register(
     "routines",
     PracticeRoutineViewSet,
-    basename="practice-routine"
+    basename="practice-routine",
+)
+router.register(
+    "assigned-routines",
+    UserAssignedPracticeRoutineViewSet,
+    basename="assigned-practices",
 )
 router.register(
     "completions",
     PracticeCompletionViewSet,
-    basename="practice-completion"
+    basename="practice-completion",
 )
 
 urlpatterns = [

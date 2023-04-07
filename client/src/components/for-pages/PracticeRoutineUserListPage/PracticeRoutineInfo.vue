@@ -25,7 +25,12 @@ export default {
     const practiceRoutineData = ref()
 
     function pushToPracticeRoutinePage() {
-      router.push({name: "home"})
+      router.push({
+        name: "practiceRoutineUserPage",
+        params: {
+          id: props.practiceRoutineId,
+        }
+      })
     }
 
     onBeforeMount(() => {

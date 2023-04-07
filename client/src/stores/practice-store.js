@@ -13,6 +13,11 @@ export const usePracticeStore = defineStore("practice", {
         (assignedRoutine) => assignedRoutine.owner === userId
       )
     },
+    getPracticeRoutineById: (state) => {
+      return (practiceRoutineId) => state.practiceRoutinesList.find(
+        (practiceRoutine) => practiceRoutine.id === practiceRoutineId
+      )
+    },
   },
   actions: {
     async createPracticeRoutine(routineData) {

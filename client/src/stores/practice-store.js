@@ -35,6 +35,15 @@ export const usePracticeStore = defineStore("practice", {
 
       if (result) {
         this.practiceRoutinesList = result.data
+        return true
+      } else return false
+    },
+    async retrievePracticeRoutine(routineId) {
+      let result = await api.practice.getPracticeRoutineById(routineId)
+
+      if (result) {
+        this.practiceRoutinesList.push(result.data) 
+        return true
       } else return false
     },
     async retrieveAssignedPracticeRoutines() {
@@ -42,6 +51,7 @@ export const usePracticeStore = defineStore("practice", {
 
       if (result) {
         this.assignedPracticeRoutinesList = result.data
+        return true
       } else return false
     }
   }

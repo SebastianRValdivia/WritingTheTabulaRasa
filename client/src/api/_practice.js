@@ -60,5 +60,21 @@ export default {
     } catch {
       return false
     }
+  },
+  async getCompletedPracticeRoutinesByUser(userId) {
+    try {
+      let result = await recursiveGetCall(
+        `v1/practice/completions/?owner=${userId}`
+      )
+
+      if (result) {
+        return {
+          code: result.code,
+          data: result.data,
+        }
+      } else return false
+    } catch {
+      return false
+    }
   }
 }

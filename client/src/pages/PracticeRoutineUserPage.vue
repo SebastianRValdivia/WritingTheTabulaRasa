@@ -34,7 +34,9 @@ export default {
           practiceRoutineData.value = practiceStore.getPracticeRoutineById(
             Number(props.id)
           )
+          practiceStore.retrieveUserCompletedPracticeRoutines()
         } else {
+          // It does not exist
           router.push({name: "notFound"})
         }
       }

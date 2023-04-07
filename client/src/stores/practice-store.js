@@ -6,6 +6,7 @@ export const usePracticeStore = defineStore("practice", {
   state: () => ({
     practiceRoutinesList: [],
     assignedPracticeRoutinesList: [],
+    practiceRoutineUserCompletions: [], // Only logged user
   }),
   getters: {
     getAssignedPracticeRoutinesByUser: (state) => {
@@ -51,6 +52,18 @@ export const usePracticeStore = defineStore("practice", {
 
       if (result) {
         this.assignedPracticeRoutinesList = result.data
+        return true
+      } else return false
+    },
+    async retrieveUserCompletedPracticeRoutines() {
+      const userStore = useUserStore()
+
+      let result = await api.practice.getCompletedPracticeRoutinesByUser(
+        userStore.getUserId
+      )
+
+      if (result) {
+        this.practiceRoutineUserCompletions = result.data
         return true
       } else return false
     }

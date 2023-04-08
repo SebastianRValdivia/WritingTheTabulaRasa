@@ -152,6 +152,16 @@
             </q-item-section>
           </q-item>
 
+          <q-item clickable v-ripple :to="{name: 'practiceRoutineUserListPage'}">
+            <q-item-section avatar>
+              <q-icon name="fitness_center" />
+            </q-item-section>
+
+            <q-item-section>
+              {{ $t("mainDrawer.practice") }}
+            </q-item-section>
+          </q-item>
+
           <q-item clickable v-ripple :to="{name: 'preferences'}">
             <q-item-section avatar>
               <q-icon name="settings" />

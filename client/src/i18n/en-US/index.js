@@ -19,7 +19,7 @@ const mainLayout = {
   research: "Research",
   essays: "Essays",
   quizzes: "Quizzes",
-  flashcards: "Flashcards"
+  flashcards: "Flashcards",
 }
 const mainDrawer = {
   notes: "My notes",
@@ -32,6 +32,7 @@ const mainDrawer = {
   preferences: "Preferences",
   learningResources: "Learning resources",
   logOut: "Log out",
+  practice: "Practice",
 }
 
 const indexPage = {

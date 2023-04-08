@@ -33,9 +33,39 @@ export default {
       return false
     }
   },
+  async getPracticeRoutineById(routineId) {
+    try {
+      let response = await api.get(`v1/practice/routines/${routineId}/`)
+
+      if (response) {
+        return {
+          code: response.code,
+          data: response.data,
+        }
+      } else return false
+    } catch {
+      return false
+    }
+  },
   async getAssignedPracticeRoutines() {
     try {
       let result = await recursiveGetCall("v1/practice/assigned-routines/")
+
+      if (result) {
+        return {
+          code: result.code,
+          data: result.data,
+        }
+      } else return false
+    } catch {
+      return false
+    }
+  },
+  async getCompletedPracticeRoutinesByUser(userId) {
+    try {
+      let result = await recursiveGetCall(
+        `v1/practice/completions/?owner=${userId}`
+      )
 
       if (result) {
         return {

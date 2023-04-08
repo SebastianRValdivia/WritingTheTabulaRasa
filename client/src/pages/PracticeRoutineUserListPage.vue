@@ -1,7 +1,12 @@
 <template>
-  <q-page padding>
+  <q-page padding class="row">
 
-    {{ practiceStore.getAssignedPracticeRoutinesByUser(userStore.getUserId)}}
+      <PracticeRoutineInfo 
+        class="col col-12"
+        v-for="userPractice in userPracticeRoutinesList"
+        :key="userPractice.id"
+        :practiceRoutineId="userPractice.routine"
+      />
 
   </q-page>
 </template>
@@ -13,9 +18,14 @@ import { useI18n } from "vue-i18n"
 
 import { usePracticeStore } from "src/stores/practice-store"
 import { useUserStore } from "src/stores/user-store"
+import PracticeRoutineInfo from 
+  "src/components/for-pages/PracticeRoutineUserListPage/PracticeRoutineInfo"
 
 export default {
   name: "PracticeRoutineUserListPage",
+  components: {
+    PracticeRoutineInfo
+  },
   setup() {
     const practiceStore = usePracticeStore()
     const userStore = useUserStore()
@@ -28,16 +38,18 @@ export default {
       // TODO: Check for error
       await practiceStore.retrievePracticeRoutines()
       await practiceStore.retrieveAssignedPracticeRoutines()
+
+      userPracticeRoutinesList.value =
+        practiceStore.getAssignedPracticeRoutinesByUser(userStore.getUserId)
+
       quasar.loading.hide()
     })
 
     return {
-      practiceStore,
-      userStore,
+      userPracticeRoutinesList
     }
 
   }
 }
 
 </script>
-

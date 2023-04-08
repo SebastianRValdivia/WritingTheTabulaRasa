@@ -6,6 +6,7 @@ export const usePracticeStore = defineStore("practice", {
   state: () => ({
     practiceRoutinesList: [],
     assignedPracticeRoutinesList: [],
+    practiceRoutineUserCompletions: [], // Only logged user
   }),
   getters: {
     getAssignedPracticeRoutinesByUser: (state) => {
@@ -13,6 +14,16 @@ export const usePracticeStore = defineStore("practice", {
         (assignedRoutine) => assignedRoutine.owner === userId
       )
     },
+    getPracticeRoutineById: (state) => {
+      return (practiceRoutineId) => state.practiceRoutinesList.find(
+        (practiceRoutine) => practiceRoutine.id === practiceRoutineId
+      )
+    },
+    getUserPracticeRoutineCompletionsByRoutineId: (state) => {
+      return (practiceRoutineId) => state.practiceRoutineUserCompletions.filter(
+        (completion) => completion.routine === practiceRoutineId
+      )
+    }
   },
   actions: {
     async createPracticeRoutine(routineData) {
@@ -30,6 +41,15 @@ export const usePracticeStore = defineStore("practice", {
 
       if (result) {
         this.practiceRoutinesList = result.data
+        return true
+      } else return false
+    },
+    async retrievePracticeRoutine(routineId) {
+      let result = await api.practice.getPracticeRoutineById(routineId)
+
+      if (result) {
+        this.practiceRoutinesList.push(result.data) 
+        return true
       } else return false
     },
     async retrieveAssignedPracticeRoutines() {
@@ -37,6 +57,19 @@ export const usePracticeStore = defineStore("practice", {
 
       if (result) {
         this.assignedPracticeRoutinesList = result.data
+        return true
+      } else return false
+    },
+    async retrieveUserCompletedPracticeRoutines() {
+      const userStore = useUserStore()
+
+      let result = await api.practice.getCompletedPracticeRoutinesByUser(
+        userStore.getUserId
+      )
+
+      if (result) {
+        this.practiceRoutineUserCompletions = result.data
+        return true
       } else return false
     }
   }

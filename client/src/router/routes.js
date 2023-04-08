@@ -70,7 +70,7 @@ const routes = [
         component: () => import("src/pages/PracticeRoutineUserListPage"),
       },
       {
-        path: "my/practices/:id",
+        path: "my/practices/:id/",
         name: "practiceRoutineUserPage",
         component: () => import("src/pages/PracticeRoutineUserPage"),
         props: true,

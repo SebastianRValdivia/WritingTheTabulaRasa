@@ -19,6 +19,11 @@ export const usePracticeStore = defineStore("practice", {
         (practiceRoutine) => practiceRoutine.id === practiceRoutineId
       )
     },
+    getUserPracticeRoutineCompletionsByRoutineId: (state) => {
+      return (practiceRoutineId) => state.practiceRoutineUserCompletions.filter(
+        (completion) => completion.routine === practiceRoutineId
+      )
+    }
   },
   actions: {
     async createPracticeRoutine(routineData) {

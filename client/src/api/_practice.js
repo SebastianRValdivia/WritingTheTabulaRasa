@@ -76,5 +76,21 @@ export default {
     } catch {
       return false
     }
-  }
+  },
+  async getPracticeExercisesByRoutine(routineId) {
+    try {
+      let result = await recursiveGetCall(
+        `v1/practice/exercises/?routine=${routineId}`
+      )
+
+      if (result) {
+        return {
+          code: result.code,
+          data: result.data,
+        }
+      }
+    } catch {
+      return false
+    }
+  },
 }

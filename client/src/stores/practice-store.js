@@ -88,5 +88,18 @@ export const usePracticeStore = defineStore("practice", {
         return true
       } else return false
     },
+    async createPracticeRoutineCompletion(routineId) {
+      const userStore = useUserStore()
+      let data = {
+        routine: routineId,
+        owner: userStore.getUserId
+      }
+      let result = await api.practice.postCompletedPracticeRoutine(data)
+
+      if (result) {
+        this.practiceRoutineUserCompletions.push(result.data)
+        return true
+      } else return false
+    },
   }
 })

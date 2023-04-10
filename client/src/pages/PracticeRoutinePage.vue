@@ -1,48 +1,82 @@
 <template>
   <q-page 
     padding
-    class="row"
   >
-    <div class="col-1">
-      <q-stepper
-        v-model="exerciseIndex"
-        vertical
-        color="primary"
-        animated
-        flat
-      >
-        <q-step
-          v-for="(exercise, index) in practiceExercisesList"
-          :key="exercise.id"
-          :name="index"
-          :title="exercise.title"
-          icon="highlight_off"
-          active-icon="chevron_right"
-          icon-done="done"
-          done-color="positive"
-          :done="isExerciseDone(exercise.id)"
-          @click="goToExercise(exercise.id, index)"
+    <div 
+      class="row"
+      v-if="!isRoutineFinished"
+    >
+      <div class="col-1">
+        <q-stepper
+          v-model="exerciseIndex"
+          vertical
+          color="primary"
+          animated
+          flat
         >
-        </q-step>
-      </q-stepper>
-    </div>
-    <div class="col-10 column items-center">
-      <h4>
-        {{ displayedExerciseData.title }} 
-      </h4>
-      <div>
-        <MarkdownPreview :md="displayedExerciseData.content"/>
+          <q-step
+            v-for="(exercise, index) in practiceExercisesList"
+            :key="exercise.id"
+            :name="index"
+            :title="exercise.title"
+            icon="highlight_off"
+            active-icon="chevron_right"
+            icon-done="done"
+            done-color="positive"
+            :done="isExerciseDone(exercise.id)"
+            @click="goToExercise(exercise.id, index)"
+          >
+          </q-step>
+        </q-stepper>
       </div>
-      <q-btn 
-        label="done"
-        @click="markCompleted(displayedExerciseData.id)"
-      />
+      <div
+        class="col-10 column items-center"
+      >
+        <h4>
+          {{ displayedExerciseData.title }} 
+        </h4>
+        <div>
+          <MarkdownPreview :md="displayedExerciseData.content"/>
+        </div>
+        <q-btn 
+          label="done"
+          @click="markCompleted(displayedExerciseData.id)"
+        />
+      </div>
+    </div>
+    <div 
+      v-else
+      class="column items-center"
+    >
+      <h2 class="text-h2 col col-12 text-positive">
+        {{ $t("practiceRoutinePage.practiceDone") }}
+      </h2>
+      <div class="row justify-center">
+        <q-icon 
+          class="flip-horizontal col"
+          name="celebration"
+          size="xl"
+          color="positive"
+        />
+        <q-icon 
+          class="col"
+          name="celebration"
+          size="xl"
+          color="positive"
+        />
+      </div>
+      <h4
+        class="col"
+      >
+        {{ $t("practiceRoutinePage.savingProgress")}}
+      </h4>
     </div>
   </q-page>
 </template>
 
 <script>
-import { ref, onBeforeMount, computed } from "vue"
+import { ref, onBeforeMount, computed, watch } from "vue"
+import { useRouter } from "vue-router"
 
 import { usePracticeStore } from "src/stores/practice-store"
 import MarkdownPreview from "src/components/for-viewing/MarkdownPreview"
@@ -60,12 +94,29 @@ export default {
   },
   setup(props) {
     const practiceStore = usePracticeStore()
+    const router = useRouter()
 
     const practiceExercisesList = ref([])
     // List of ids to completed exercises
     const completedExercisesIdList = ref([]) 
     const displayedExerciseData = ref({})
     const exerciseIndex = ref(0)
+
+    // Return true when all exercises are completed
+    const isRoutineFinished = computed(() => {
+      return practiceExercisesList.value.length === 
+        completedExercisesIdList.value.length
+    })
+    
+    watch(isRoutineFinished, async (newValue) => {
+      if (newValue) {
+        let result = await practiceStore.
+          createPracticeRoutineCompletion(Number(props.id))
+        if (result) {
+          router.push({name: "practiceRoutineUserPage", params: {id: props.id}})
+        }
+      }
+    })
 
 
     function markCompleted(exerciseId) {
@@ -110,6 +161,8 @@ export default {
       practiceExercisesList,
       displayedExerciseData,
       exerciseIndex,
+
+      isRoutineFinished,
 
       isExerciseDone,
       goToExercise,

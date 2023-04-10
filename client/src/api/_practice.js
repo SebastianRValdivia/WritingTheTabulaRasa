@@ -11,7 +11,7 @@ export default {
 
       if (response) {
         return {
-          code: response.code,
+          code: response.status,
           data: response.data
         }
       } else return false
@@ -76,6 +76,24 @@ export default {
     } catch {
       return false
     }
+  },
+  async postCompletedPracticeRoutine(routineCompletionData) {
+    try {
+      let response = await api.post(
+        "v1/practice/completions/",
+        routineCompletionData,
+      )
+
+      if (response) {
+        return {
+          code: response.status,
+          data: response.data
+        }
+      } else return false
+    } catch {
+      return false
+    }
+
   },
   async getPracticeExercisesByRoutine(routineId) {
     try {

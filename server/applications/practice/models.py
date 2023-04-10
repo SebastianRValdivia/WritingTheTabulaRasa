@@ -1,5 +1,6 @@
 from django.db import models
 from config.fields_default_values import CHARFIELD_LONG
+from django.core.validators import MaxValueValidator
 from django.contrib.auth.models import User
 
 # Create your models here.
@@ -79,3 +80,29 @@ class PracticeCompletionModel(models.Model):
             f"{self.owner.username} completed "
             f"{self.routine.title} at {str(self.created)}"
         )
+
+class PracticeExerciseModel(models.Model):
+
+    title = models.CharField(
+        max_length=CHARFIELD_LONG,
+        blank=False,
+        null=False,
+    )
+    content = models.TextField(
+        blank=False,
+        null=False,
+    )
+    difficulty = models.PositiveIntegerField(
+        blank=True,
+        null=True,
+        validators=[MaxValueValidator(5)],
+    )
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Practice exercise"
+        verbose_name_plural = "Practice exercises"
+
+    def __str__(self):
+        return self.title

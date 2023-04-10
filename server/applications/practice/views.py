@@ -5,11 +5,13 @@ from applications.practice.models import (
     PracticeRoutineModel,
     UserAssignedPracticeRoutineModel,
     PracticeCompletionModel,
+    PracticeExerciseModel,
 )
 from applications.practice.serializers import (
     PracticeRoutineSerializer,
     UserAssignedPracticeRoutineSerializer,
     PracticeCompletionSerializer,
+    PracticeExerciseSerializer,
 )
 # Create your views here.
 class PracticeRoutineViewSet(ModelViewSet):
@@ -32,3 +34,9 @@ class PracticeCompletionViewSet(ModelViewSet):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     filterset_fields = ["owner"]
 
+class PracticeExerciseViewSet(ModelViewSet):
+
+    queryset = PracticeExerciseModel.objects.all().order_by("id")
+    serializer_class = PracticeExerciseSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    filterset_fields = ["routine"]

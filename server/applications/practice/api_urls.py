@@ -5,6 +5,7 @@ from applications.practice.views import (
     PracticeRoutineViewSet,
     UserAssignedPracticeRoutineViewSet,
     PracticeCompletionViewSet,
+    PracticeExerciseViewSet,
 )
 
 router = DefaultRouter()
@@ -22,6 +23,11 @@ router.register(
     "completions",
     PracticeCompletionViewSet,
     basename="practice-completion",
+)
+router.register(
+    "exercises",
+    PracticeExerciseViewSet,
+    basename="practice-exercises"
 )
 
 urlpatterns = [

@@ -4,6 +4,7 @@ from applications.practice.models import (
     PracticeRoutineModel,
     UserAssignedPracticeRoutineModel,
     PracticeCompletionModel,
+    PracticeExerciseModel,
 )
 
 class PracticeRoutineSerializer(ModelSerializer):
@@ -22,4 +23,10 @@ class PracticeCompletionSerializer(ModelSerializer):
 
     class Meta:
         model = PracticeCompletionModel
+        fields = "__all__"
+
+class PracticeExerciseSerializer(ModelSerializer):
+
+    class Meta:
+        model = PracticeExerciseModel
         fields = "__all__"

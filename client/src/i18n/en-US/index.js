@@ -163,6 +163,9 @@ const practicePage = {
   pageTitle: "Practice editor",
   routineTitle: "Routine title",
 }
+const practiceRoutineUserPage = {
+  doNow: "Do routine now",
+}
 
 
 const imageUploadDialog = {
@@ -217,6 +220,7 @@ export default {
   flashCardListPage,
   flashCardCollectionEditorPage,
   practicePage,
+  practiceRoutineUserPage,
 
   imageUploadDialog,
   metadataEditorDialog,

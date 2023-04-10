@@ -97,6 +97,12 @@ class PracticeExerciseModel(models.Model):
         null=True,
         validators=[MaxValueValidator(5)],
     )
+    routine = models.ForeignKey(
+        "practice.PracticeRoutineModel",
+        on_delete=models.CASCADE,
+        blank=False,
+        null=False,
+    )
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 

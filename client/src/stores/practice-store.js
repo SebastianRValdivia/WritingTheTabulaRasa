@@ -6,7 +6,9 @@ export const usePracticeStore = defineStore("practice", {
   state: () => ({
     practiceRoutinesList: [],
     assignedPracticeRoutinesList: [],
+    // TODO: Refactor to use list
     practiceRoutineUserCompletions: [], // Only logged user
+    practiceExercisesList: [],
   }),
   getters: {
     getAssignedPracticeRoutinesByUser: (state) => {
@@ -22,6 +24,11 @@ export const usePracticeStore = defineStore("practice", {
     getUserPracticeRoutineCompletionsByRoutineId: (state) => {
       return (practiceRoutineId) => state.practiceRoutineUserCompletions.filter(
         (completion) => completion.routine === practiceRoutineId
+      )
+    },
+    getPracticeExercisesByRoutine: (state) => {
+      return (practiceRoutineId) => state.practiceExercisesList.filter(
+        (exercise) => exercise.routine === practiceRoutineId
       )
     }
   },
@@ -71,6 +78,28 @@ export const usePracticeStore = defineStore("practice", {
         this.practiceRoutineUserCompletions = result.data
         return true
       } else return false
-    }
+    },
+    async retrievePracticeExercisesByRoutine(routineId) {
+      let result = await api.practice.getPracticeExercisesByRoutine(routineId)
+
+      if (result.data.length > 0) {
+        // TODO: check if there arent already on the store
+        this.practiceExercisesList = [...this.practiceExercisesList, ...result.data]
+        return true
+      } else return false
+    },
+    async createPracticeRoutineCompletion(routineId) {
+      const userStore = useUserStore()
+      let data = {
+        routine: routineId,
+        owner: userStore.getUserId
+      }
+      let result = await api.practice.postCompletedPracticeRoutine(data)
+
+      if (result) {
+        this.practiceRoutineUserCompletions.push(result.data)
+        return true
+      } else return false
+    },
   }
 })

@@ -1,12 +1,23 @@
 <template>
-  <h3 class="text-h3" v-if="practiceRoutineData">
-    {{ practiceRoutineData.title }}
-  </h3>
-
-  <q-table
-    :columns="completionsTableColumns"
-    :rows="completionsList"
-  ></q-table>
+  <q-page padding class="row">
+    <h3 class="text-h3 col-12" v-if="practiceRoutineData">
+      {{ practiceRoutineData.title }}
+    </h3>
+    
+    <div class="col-12 column items-center">
+      <q-btn
+        color="positive"
+        :label="$t('practiceRoutineUserPage.doNow')"
+        :to="{name: 'practiceRoutinePage', params: {id: practiceRoutineData.id}}"
+      />
+    </div>
+    
+    <q-table
+      class="col-12"
+      :columns="completionsTableColumns"
+      :rows="completionsList"
+    ></q-table>
+  </q-page>
 </template>
 
 <script>

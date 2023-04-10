@@ -196,6 +196,12 @@ const routes = [
         component: () => import("src/pages/LearningResourceEditorPage")
       },
       {
+        path: "practice-routine/:id/",
+        name: "practiceRoutinePage",
+        component: () => import("src/pages/PracticeRoutinePage"),
+        props: true,
+      },
+      {
         path: "help-center/",
         name: "helpCenterPage",
         component: () => import("src/pages/HelpCenterPage.vue"),

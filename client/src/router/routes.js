@@ -76,7 +76,7 @@ const routes = [
         props: true,
       },
       {
-        path: "my/practices/editor/",
+        path: "practices/editor/",
         name: "practiceRoutineEditorPage",
         component: () => import("src/pages/PracticeRoutineEditorPage"),
       },

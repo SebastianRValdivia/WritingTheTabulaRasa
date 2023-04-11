@@ -1,6 +1,6 @@
 <template>
-  <q-page padding class="row">
-    <h3 class="text-h3 col-12" v-if="practiceRoutineData">
+  <q-page padding class="row" v-if="practiceRoutineData">
+    <h3 class="text-h3 col-12">
       {{ practiceRoutineData.title }}
     </h3>
     
@@ -23,6 +23,7 @@
 <script>
 import { ref, onBeforeMount } from "vue"
 import { useRouter } from "vue-router"
+import { useQuasar } from "quasar"
 
 import { usePracticeStore } from "src/stores/practice-store"
 
@@ -35,7 +36,7 @@ export default {
     }
   },
   setup(props) {
-
+    const quasar = useQuasar()
     const practiceStore = usePracticeStore()
     const router = useRouter()
 
@@ -57,27 +58,32 @@ export default {
     ]
 
     onBeforeMount(async () => {
+      quasar.loading.show()
+      const routineId = Number(props.id) // Convert to int
+
       practiceRoutineData.value = practiceStore.getPracticeRoutineById(
-        Number(props.id)
+        routineId
       )
       // If is false is not in the store so tries to retrieve
       if (!practiceRoutineData.value) {
-        let result = await practiceStore.retrievePracticeRoutine(Number(props.id))
+        let result = await practiceStore.retrievePracticeRoutine(routineId)
         if (result) {
           practiceRoutineData.value = practiceStore.getPracticeRoutineById(
-            Number(props.id)
+            routineId
           )
           await practiceStore.retrieveUserCompletedPracticeRoutines()
           completionsList.value = practiceStore.
             getUserPracticeRoutineCompletionsByRoutineId(
-              Number(props.id)
+              routineId
             )
         } else {
           // It does not exist
           router.push({name: "notFound"})
         }
       }
+      quasar.loading.hide()
     })
+
     return {
       practiceRoutineData,
       completionsList,

@@ -12,7 +12,7 @@ export async function recursiveGetCall(url, previous=[]) {
         data: data
       } 
     } else if (response.data.next !== null) {
-      return this.recursiveGetCall(response.data.next, data)
+      return recursiveGetCall(response.data.next, data)
     } else return false
   } catch {
     return false

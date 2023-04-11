@@ -20,6 +20,7 @@ const mainLayout = {
   essays: "Essays",
   quizzes: "Quizzes",
   flashcards: "Flashcards",
+  practice: "Practice",
 }
 const mainDrawer = {
   notes: "My notes",

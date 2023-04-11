@@ -196,6 +196,11 @@ const routes = [
         component: () => import("src/pages/LearningResourceEditorPage")
       },
       {
+        path: "practice-routine/",
+        name: "practiceRoutineListPage",
+        component: () => import("src/pages/PracticeRoutineListPage"),
+      },
+      {
         path: "practice-routine/:id/",
         name: "practiceRoutinePage",
         component: () => import("src/pages/PracticeRoutinePage"),

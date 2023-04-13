@@ -25,7 +25,14 @@
     </q-card-section>
     <q-card-actions align="right" class="absolute-bottom">
       <q-btn 
-        v-if="!isEditing"
+        v-if="isEditing"
+        icon="done" 
+        round 
+        flat 
+        @click="removeNote"
+      />
+      <q-btn 
+        v-else
         icon="delete" 
         round 
         flat 

@@ -111,4 +111,21 @@ export default {
       return false
     }
   },
+  async postAssignPracticeRoutine(data) {
+    try {
+      let result = await api.post(
+        "v1/practice/assigned-routines/",
+        data
+      )
+
+      if (result.status === 201) {
+        return {
+          code: result.code,
+          data: result.data,
+        }
+      } else return false
+    } catch {
+      return false
+    }
+  }
 }

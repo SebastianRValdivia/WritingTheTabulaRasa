@@ -102,5 +102,18 @@ export const usePracticeStore = defineStore("practice", {
         return true
       } else return false
     },
+    async createAssignedPracticeRoutineToUser(routineId) {
+      const userStore = useUserStore()
+      let data = {
+        routine: routineId,
+        owner: userStore.getUserId
+      }
+      let result = await api.practice.postAssignPracticeRoutine(data)
+
+      if (result) {
+        this.assignedPracticeRoutinesList.push(result.data)
+        return true
+      } else return false
+    }
   }
 })

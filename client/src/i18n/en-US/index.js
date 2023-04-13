@@ -171,6 +171,9 @@ const practiceRoutinePage = {
   practiceDone: "Practice done",
   savingProgress: "Saving progress"
 }
+const practiceRoutineListPage = {
+  enlisted: "Enlisted"
+}
 
 
 const imageUploadDialog = {
@@ -227,6 +230,7 @@ export default {
   practicePage,
   practiceRoutineUserPage,
   practiceRoutinePage,
+  practiceRoutineListPage, 
 
   imageUploadDialog,
   metadataEditorDialog,

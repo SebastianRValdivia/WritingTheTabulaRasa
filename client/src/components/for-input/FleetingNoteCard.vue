@@ -3,50 +3,43 @@
     class="column fleeting-note-card full-height" 
     :class="isEditing ? 'shadow-24' : 'shadow-4'"
   >
-    <q-card-actions align="right">
-      <q-btn
-        :icon="isEditing ? 'cancel' :'edit'" 
-        round 
-        flat 
-        color="primary"
-        @click="editNote"
-      />
-      <q-btn 
-        v-if="!isEditing"
-        icon="delete" 
-        round 
-        flat 
-        color="negative"
-        @click="removeNote"
-      />
-      <q-btn
-        v-else
-        icon="save" 
-        round 
-        flat 
-        color="primary"
-        @click="saveEdit"
-      />
-    </q-card-actions>
     <q-card-section v-if="isEditing">
       <q-input
         v-model="contentInput"
+        autofocus
         type="textarea"
         autogrow
         borderless
-        class="q-pt-xs"
+        @blur="saveEdit"
       />
     </q-card-section>
 
     <q-card-section 
       v-else 
       class="q-pt-xs"
+      @click="editNote"
     >
       <MarkdownPreview
         :md="props.fleetingNoteData.content"
       />
     </q-card-section>
-
+    <q-card-actions align="right" class="absolute-bottom">
+      <q-btn 
+        v-if="isEditing"
+        icon="done" 
+        round 
+        flat 
+        @click="removeNote"
+      />
+      <q-btn 
+        v-else
+        icon="delete" 
+        round 
+        flat 
+        color="negative"
+        @click="removeNote"
+      />
+    </q-card-actions>
   </q-card>
 </template>
 

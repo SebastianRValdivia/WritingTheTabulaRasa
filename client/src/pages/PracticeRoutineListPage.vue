@@ -13,6 +13,12 @@
             class="col col-2"
             v-if="isUserAssignedToRoutine(practiceRoutine.id)"
           > {{ $t("practiceRoutineListPage.enlisted") }}</p>
+          <q-btn 
+            v-else
+            icon="add_box"
+            class="col col-2"
+            @click="enlist(practiceRoutine.id)"
+          />
         </q-card-section>
       </q-card>
     </div>
@@ -67,6 +73,10 @@ export default {
       })
       return index !== -1
     }
+    async function enlist(routineId) {
+      let result = 
+        await practiceStore.createAssignedPracticeRoutineToUser(routineId)
+    }
 
     onBeforeMount(async () => {
       quasar.loading.show()
@@ -87,6 +97,7 @@ export default {
 
       searchPracticeRoutines,
       isUserAssignedToRoutine,
+      enlist,
     }
     
   }

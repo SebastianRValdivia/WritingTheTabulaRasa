@@ -1,11 +1,11 @@
 <template>
   <q-page padding>
     <SearchInput @search="searchPracticeRoutines"/>
-    <div class="row q-ma-xl">
+    <div class="row q-ma-xl q-gutter-md">
       <q-card
         v-for="practiceRoutine in displayedPracticeRoutines"
         :key="practiceRoutine.id"
-        class="col col"
+        class="col"
       >
         <q-card-section>
           <h4 class="text-h4">{{ practiceRoutine.title }}</h4>

@@ -16,6 +16,7 @@ export const usePracticeStore = defineStore("practice", {
         (assignedRoutine) => assignedRoutine.owner === userId
       )
     },
+    getPracticeRoutines: (state) => state.practiceRoutinesList,
     getPracticeRoutineById: (state) => {
       return (practiceRoutineId) => state.practiceRoutinesList.find(
         (practiceRoutine) => practiceRoutine.id === practiceRoutineId

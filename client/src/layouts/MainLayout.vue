@@ -56,9 +56,8 @@
           </q-btn>
         </div>
 
-        <PomodoroTimer />
-
         <q-btn flat icon="help_center" :to="{name: 'helpCenterPage'}"/>
+        <q-btn flat icon="handyman" @click="toggleToolDrawer" />
 
       </q-toolbar>
 
@@ -197,8 +196,27 @@
       </q-img>
     </q-drawer>
 
-    <q-drawer v-model="rightDrawerOpen" side="right" bordered>
-      <!-- drawer content -->
+    <!-- Tool drawer -->
+    <q-drawer 
+      v-model="isToolDrawerOpen" 
+      side="right" 
+      bordered
+      mini
+    >
+      <q-scroll-area class="fit" :horizontal-thumb-style="{ opacity: 0 }">
+        <q-list>
+          <q-item clickable v-ripple>
+            <q-item-section avatar>
+              <q-icon name="sticky_note_2" />
+            </q-item-section>
+          </q-item>
+          <q-item v-ripple>
+            <q-item-section avatar>
+              <PomodoroTimer />
+            </q-item-section>
+          </q-item>
+        </q-list>
+      </q-scroll-area>
     </q-drawer>
 
     <q-page-container id="page-container">
@@ -225,8 +243,8 @@ export default {
   setup() {
     const router = useRouter()
 
+    const isToolDrawerOpen = ref(false)
     const leftDrawerOpen = ref(false)
-    const rightDrawerOpen = ref(false)
     const userStore = useUserStore()
     const appStore = useAppStore()
 
@@ -235,21 +253,22 @@ export default {
       leftDrawerOpen.value = false
       router.push({name: "home"})
     }
+    function toggleToolDrawer() {
+      isToolDrawerOpen.value = !isToolDrawerOpen.value
+    }
 
     return {
       userStore,
       appStore,
-      logOut,
-
       leftDrawerOpen,
+      isToolDrawerOpen,
+
+      logOut,
       toggleLeftDrawer () {
         leftDrawerOpen.value = !leftDrawerOpen.value
       },
+      toggleToolDrawer,
 
-      rightDrawerOpen,
-      toggleRightDrawer () {
-        rightDrawerOpen.value = !rightDrawerOpen.value
-      },
     }
   }
 }

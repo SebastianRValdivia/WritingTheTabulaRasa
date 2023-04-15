@@ -210,11 +210,25 @@
             v-ripple
             @click="openFleetingNoteDialog"
           >
+            <q-tooltip 
+              :delay="500"
+              anchor="center start" 
+              self="center right"
+            >
+              {{ $t("toolDrawer.fleetingNote") }}
+            </q-tooltip>
             <q-item-section avatar>
               <q-icon name="sticky_note_2" />
             </q-item-section>
           </q-item>
           <q-item v-ripple>
+            <q-tooltip 
+              :delay="500"
+              anchor="center start" 
+              self="center right"
+            >
+              {{ $t("toolDrawer.timer") }}
+            </q-tooltip>
             <q-item-section avatar>
               <PomodoroTimer />
             </q-item-section>

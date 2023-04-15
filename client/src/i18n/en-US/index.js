@@ -35,6 +35,10 @@ const mainDrawer = {
   logOut: "Log out",
   practice: "Practice",
 }
+const toolDrawer = {
+  fleetingNote: "New fleeting note",
+  timer: "Timer",
+}
 
 const indexPage = {
   pageTitle: "Writing The Tabula Rasa"
@@ -198,6 +202,7 @@ export default {
 
   mainLayout,
   mainDrawer,
+  toolDrawer,
 
   indexPage,
   notePages,

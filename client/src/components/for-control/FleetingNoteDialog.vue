@@ -19,7 +19,11 @@
 
 <script>
 import { ref } from "vue"
-import { useDialogPluginComponent } from 'quasar'
+import { useI18n } from "vue-i18n"
+import { useQuasar, useDialogPluginComponent } from 'quasar'
+
+import { useNoteStore } from "src/stores/note-store"
+import { errorNotification } from "src/utils/notifications"
 
 export default {
   name: "FleetingNoteDialog",
@@ -27,6 +31,9 @@ export default {
     ...useDialogPluginComponent.emits
   ],
   setup() {
+    const noteStore = useNoteStore()
+    const quasar = useQuasar()
+    const { t } = useI18n()
     // REQUIRED; must be called inside of setup()
     const { dialogRef, onDialogHide, onDialogOK, onDialogCancel } = useDialogPluginComponent()
     // dialogRef      - Vue ref to be applied to QDialog
@@ -39,12 +46,13 @@ export default {
     
       // other methods that we used in our vue html template;
       // these are part of our example (so not required)
-    function onOKClick () {
-      // on OK, it is REQUIRED to
-      // call onDialogOK (with optional payload)
-      onDialogOK()
-      // or with payload: onDialogOK({ ... })
-      // ...and it will also hide the dialog automatically
+    async function onOKClick () {
+      let result = await noteStore.createFleetingNote(fleetingNoteInput.value)
+      if (result) {
+        onDialogOK()
+      } else {
+        quasar.notify(errorNotification(t("general.failed")))
+      }
     }
 
     return {

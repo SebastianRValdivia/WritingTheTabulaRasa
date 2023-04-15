@@ -1,5 +1,4 @@
 <template>
-  <!-- notice dialogRef here -->
   <q-dialog ref="dialogRef" @hide="onDialogHide">
     <q-card class="q-dialog-plugin scoped-card-size">
       <q-card-section>

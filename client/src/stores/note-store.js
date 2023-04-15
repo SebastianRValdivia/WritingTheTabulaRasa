@@ -113,10 +113,14 @@ export const useNoteStore = defineStore("note", {
     },
     async createFleetingNote(newNoteContent) {
       const userStore = useUserStore()
-      let result = await api.notes.postFleetingNote(newNoteContent, userStore.getUserId)
+      let data = {
+        content: newNoteContent,
+        owner: userStore.getUserId
+      }
+      let result = await api.notes.postFleetingNote(data)
       
       if (result) {
-        this.fleetingNotes.push(result.newFleetingNote) 
+        this.fleetingNotes.push(result.data) 
         return true 
       } else return false
     },

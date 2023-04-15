@@ -205,7 +205,11 @@
     >
       <q-scroll-area class="fit" :horizontal-thumb-style="{ opacity: 0 }">
         <q-list>
-          <q-item clickable v-ripple>
+          <q-item 
+            clickable 
+            v-ripple
+            @click="openFleetingNoteDialog"
+          >
             <q-item-section avatar>
               <q-icon name="sticky_note_2" />
             </q-item-section>
@@ -231,9 +235,11 @@ import { ref } from 'vue'
 import { useUserStore } from "src/stores/user-store"
 import { useAppStore } from "src/stores/app-store"
 import { useRouter } from "vue-router"
+import { useQuasar } from "quasar"
 
 import LoginDialog from "src/components/for-control/LoginDialog"
-import PomodoroTimer from 'src/components/for-control/PomodoroTimer';
+import FleetingNoteDialog from "src/components/for-control/FleetingNoteDialog"
+import PomodoroTimer from 'src/components/for-control/PomodoroTimer'
 
 export default {
   components: {
@@ -242,6 +248,7 @@ export default {
   },
   setup() {
     const router = useRouter()
+    const quasar = useQuasar()
 
     const isToolDrawerOpen = ref(false)
     const leftDrawerOpen = ref(false)
@@ -256,6 +263,11 @@ export default {
     function toggleToolDrawer() {
       isToolDrawerOpen.value = !isToolDrawerOpen.value
     }
+    function openFleetingNoteDialog() {
+      quasar.dialog({
+        component: FleetingNoteDialog,
+      })
+    }
 
     return {
       userStore,
@@ -267,6 +279,7 @@ export default {
       toggleLeftDrawer () {
         leftDrawerOpen.value = !leftDrawerOpen.value
       },
+      openFleetingNoteDialog,
       toggleToolDrawer,
 
     }

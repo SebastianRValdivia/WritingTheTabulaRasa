@@ -85,18 +85,15 @@ export default {
         return this.getFleetingNotesList(response.data.next, data)
     }
   },
-  async postFleetingNote(content, ownerId) {
+  async postFleetingNote(noteData) {
     let response = await api.post(
       "v1/notes/fleeting/",
-      {
-        content: content,
-        owner: ownerId
-      }
+      noteData,
     )
 
     return {
         code: response.status,
-        newFleetingNote: response.data
+        data: response.data
     }
   },
   async deleteFleetingNote(noteId) {

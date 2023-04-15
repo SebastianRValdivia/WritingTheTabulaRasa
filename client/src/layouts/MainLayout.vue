@@ -4,7 +4,7 @@
     <q-header elevated class="bg-primary text-white" height-hint="98">
       <q-toolbar>
         <span v-if="userStore.isUserLogged">
-          <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
+          <q-btn flat icon="menu" @click="toggleLeftDrawer" />
         </span>
         <span v-else>
           <q-btn dense flat round icon="person" @click="appStore.openLoginDialog"/>

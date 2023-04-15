@@ -34,18 +34,10 @@ export default {
     const noteStore = useNoteStore()
     const quasar = useQuasar()
     const { t } = useI18n()
-    // REQUIRED; must be called inside of setup()
     const { dialogRef, onDialogHide, onDialogOK, onDialogCancel } = useDialogPluginComponent()
-    // dialogRef      - Vue ref to be applied to QDialog
-    // onDialogHide   - Function to be used as handler for @hide on QDialog
-    // onDialogOK     - Function to call to settle dialog with "ok" outcome
-    //                    example: onDialogOK() - no payload
-    //                    example: onDialogOK({ /*.../* }) - with payload
-    // onDialogCancel - Function to call to settle dialog with "cancel" outcome
+
     const fleetingNoteInput = ref("")
     
-      // other methods that we used in our vue html template;
-      // these are part of our example (so not required)
     async function onOKClick () {
       let result = await noteStore.createFleetingNote(fleetingNoteInput.value)
       if (result) {
@@ -57,9 +49,9 @@ export default {
 
     return {
       dialogRef,
-      onDialogHide,
       fleetingNoteInput,
 
+      onDialogHide,
       onOKClick,
       onCancelClick: onDialogCancel
     }

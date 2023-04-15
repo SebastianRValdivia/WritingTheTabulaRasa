@@ -58,6 +58,16 @@ export default {
     ]
 
     onBeforeMount(async () => {
+      async function retrieveCompletions() {
+        let result = await practiceStore.retrieveUserCompletedPracticeRoutines()
+        if (result) {
+          completionsList.value = practiceStore.
+            getUserPracticeRoutineCompletionsByRoutineId(
+              routineId
+            )
+          return true
+        } else return false
+      }
       quasar.loading.show()
       const routineId = Number(props.id) // Convert to int
 
@@ -71,15 +81,13 @@ export default {
           practiceRoutineData.value = practiceStore.getPracticeRoutineById(
             routineId
           )
-          await practiceStore.retrieveUserCompletedPracticeRoutines()
-          completionsList.value = practiceStore.
-            getUserPracticeRoutineCompletionsByRoutineId(
-              routineId
-            )
+          let retrieveCompletionsResult = await retrieveCompletions()
         } else {
           // It does not exist
           router.push({name: "notFound"})
         }
+      } else {
+        let retrieveCompletionsResult = await retrieveCompletions()
       }
       quasar.loading.hide()
     })

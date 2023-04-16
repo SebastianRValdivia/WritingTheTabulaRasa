@@ -65,6 +65,8 @@
 <script>
 import { ref } from "vue"
 import { useRouter } from "vue-router"
+import { useMeta } from "quasar"
+import { useI18n } from "vue-i18n"
 
 import { useGuideStore } from "src/stores/guide-store"
 
@@ -73,6 +75,7 @@ export default {
   setup() {
     const guideStore = useGuideStore()
     const router = useRouter()
+    const { t } = useI18n()
 
     const titleInput = ref("")
     const descriptionInput = ref("")
@@ -105,6 +108,10 @@ export default {
         router.push({name: "guidePage", params: {url: newGuide.url}})
       }
     }
+
+    useMeta({
+      title: t("guideEditorPage.pageTitle"),
+    })
 
     return {
       titleInput,

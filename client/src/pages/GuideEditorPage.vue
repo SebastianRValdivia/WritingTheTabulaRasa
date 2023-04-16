@@ -2,13 +2,13 @@
   <q-page class="row q-pa-md">
     <div class="row">
       <q-input 
-        class="col-8" 
+        class="col-12" 
         input-class="text-h2" 
         v-model="titleInput"
         :placeholder="$t('guideEditorPage.title')"
       />
       <q-page-sticky position="top-right" :offset="[20, 20]">
-        <q-btn icon="save" round primary @click="submitGuideAndSteps"/>
+        <q-btn icon="done" round color="primary" @click="submitGuideAndSteps"/>
       </q-page-sticky>
       <q-input 
         autogrow 
@@ -28,30 +28,37 @@
         </div>
       </li>
     </ul>
-    <q-card class="col-7 q-ml-xl">
-      <q-card-section class="row">
-        <q-input 
-          v-model.number="stepOrderInput" 
-          type="number"
-          class="col-1 q-mr-md"
+    <div class="col col-12 row">
+      <q-card class="col-7 q-ml-xl">
+        <q-card-section class="row">
+          <q-input 
+            v-model.number="stepOrderInput" 
+            type="number"
+            class="col-1 q-mr-md"
+          />
+          <q-input 
+            class="col-8" 
+            input-class="text-h4" 
+            v-model="stepTitleInput"
+            :placeholder="$t('guideEditorPage.stepTitle')"
+          />
+          <q-input 
+            class="col-12" 
+            v-model="stepContentInput"
+            :placeholder="$t('guideEditorPage.stepContent')"
+            autogrow
+            borderless
+          />
+        </q-card-section>
+      </q-card>
+      <div class="col q-pl-xl self-center">
+        <q-btn 
+          icon="add" 
+          @click="addStep"
+          color="primary"
         />
-        <q-input 
-          class="col-8" 
-          input-class="text-h3" 
-          v-model="stepTitleInput"
-          :placeholder="$t('guideEditorPage.stepTitle')"
-        />
-        <q-input 
-          class="col-12" 
-          v-model="stepContentInput"
-          :placeholder="$t('guideEditorPage.stepContent')"
-        />
-      </q-card-section>
-      <q-separator />
-      <q-card-actions align="right">
-        <q-btn icon="add" round @click="addStep"/>
-      </q-card-actions>
-    </q-card>
+      </div>
+    </div>
   </q-page>
 </template>
 

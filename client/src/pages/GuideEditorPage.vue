@@ -1,8 +1,8 @@
 <template>
-  <q-page class="row q-pa-md">
-    <div class="row">
+  <q-page padding class="row">
+    <div class="col col-10 row">
       <q-input 
-        class="col-12" 
+        class="col col-12 self-center" 
         input-class="text-h2" 
         v-model="titleInput"
         :placeholder="$t('guideEditorPage.title')"
@@ -14,16 +14,22 @@
         autogrow 
         borderless 
         v-model="descriptionInput"
-        class="col-12"
+        class="col col-12"
         :placeholder="$t('guideEditorPage.description')"
       />
     </div>
-    <ul class="col-12 step">
-      <li v-for="(step, index) in stepList" :key="index">
+    <ul
+      class="col col-12 scoped-step"
+      v-if="stepList.length > 0"
+    >
+      <li 
+        v-for="(step, index) in stepList" 
+        :key="index"
+      >
         <div>
-          <h3 class="text-h3">
-            {{ step.order }} -{{ step.title }}
-          </h3>
+          <h4 class="text-h4">
+            {{ step.order }} - {{ step.title }}
+          </h4>
           {{ step.content }}
         </div>
       </li>
@@ -137,7 +143,7 @@ export default {
 </script>
 
 <style lang="scss">
-.step {
+.scoped-step {
   list-style-type: none;
 }
 </style>

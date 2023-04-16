@@ -19,7 +19,7 @@
       />
     </div>
     <ul class="col-12 step">
-      <li v-for="(step, index) in stepsListInput" :key="index">
+      <li v-for="(step, index) in stepList" :key="index">
         <div>
           <h3 class="text-h3">
             {{ step.order }} -{{ step.title }}
@@ -79,18 +79,25 @@ export default {
 
     const titleInput = ref("")
     const descriptionInput = ref("")
-    const stepsListInput = ref([])
+    const stepList = ref([])
     const stepTitleInput = ref("")
-    const stepOrderInput = ref("")
+    const stepOrderInput = ref(1) // Initial value is 1
     const stepContentInput = ref("")
 
     function addStep() {
+      // Arrange step data
       let stepData = {
         title: stepTitleInput.value,
         content: stepContentInput.value,
         order: stepOrderInput.value,
       }
-      stepsListInput.value.push(stepData)
+      // Add step to stepList
+      stepList.value.push(stepData)
+      // Clear inputs
+      stepTitleInput.value = ""
+      stepContentInput.value = ""
+      // Add 1 to step
+      stepOrderInput.value += 1
     }
     async function submitGuideAndSteps() {
       let newGuideData = {
@@ -100,7 +107,7 @@ export default {
       let newGuide = await guideStore.saveGuide(newGuideData)
 
       if (newGuide) {
-        stepsListInput.value.forEach(async (stepData) => {
+        stepList.value.forEach(async (stepData) => {
           let guideField = {guide: newGuide.id}
           stepData = {...stepData, ...guideField}
           await guideStore.saveStep(stepData)
@@ -116,7 +123,7 @@ export default {
     return {
       titleInput,
       descriptionInput,
-      stepsListInput,
+      stepList,
       stepTitleInput,
       stepOrderInput,
       stepContentInput,

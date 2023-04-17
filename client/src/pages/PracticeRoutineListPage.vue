@@ -9,15 +9,20 @@
       >
         <q-card-section class="row">
           <h5 class="text-h5 col col-8">{{ practiceRoutine.title }}</h5>
-          <p 
-            class="col col-2"
-            v-if="isUserAssignedToRoutine(practiceRoutine.id)"
-          > {{ $t("practiceRoutineListPage.enlisted") }}</p>
+          <div v-if="userStore.isUserLogged">
+            <p 
+              class="col col-2"
+              v-if="isUserAssignedToRoutine(practiceRoutine.id)"
+            > {{ $t("practiceRoutineListPage.enlisted") }}</p>
+            <q-btn 
+              v-else
+              icon="add_box"
+              class="col col-2"
+              @click="enlist(practiceRoutine.id)"
+            />
+          </div>
           <q-btn 
-            v-else
-            icon="add_box"
-            class="col col-2"
-            @click="enlist(practiceRoutine.id)"
+            
           />
         </q-card-section>
       </q-card>
@@ -91,6 +96,7 @@ export default {
     })
 
     return {
+      userStore,
       searchPattern,
 
       displayedPracticeRoutines,

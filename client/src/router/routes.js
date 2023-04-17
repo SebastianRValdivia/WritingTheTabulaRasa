@@ -92,6 +92,12 @@ const routes = [
         props: true,
       },
       {
+        path: "practice/preview/:id/",
+        name: "practiceRoutinePreviewPage",
+        component: () => import("src/pages/PracticeRoutinePreviewPage"),
+        props: true,
+      },
+      {
         path: "cheatsheets/",
         name: "cheatsheets",
         component: () => import ("src/pages/CheatsheetListPage"),

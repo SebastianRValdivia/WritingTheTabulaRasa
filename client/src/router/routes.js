@@ -76,9 +76,20 @@ const routes = [
         props: true,
       },
       {
-        path: "practices/editor/",
+        path: "practice/editor/",
         name: "practiceRoutineEditorPage",
         component: () => import("src/pages/PracticeRoutineEditorPage"),
+      },
+      {
+        path: "practice/",
+        name: "practiceRoutineListPage",
+        component: () => import("src/pages/PracticeRoutineListPage"),
+      },
+      {
+        path: "practice/:id/",
+        name: "practiceRoutinePage",
+        component: () => import("src/pages/PracticeRoutinePage"),
+        props: true,
       },
       {
         path: "cheatsheets/",
@@ -194,17 +205,6 @@ const routes = [
         path: "my/learning-resources/editor/",
         name: "learningResourcesEditor",
         component: () => import("src/pages/LearningResourceEditorPage")
-      },
-      {
-        path: "practice-routine/",
-        name: "practiceRoutineListPage",
-        component: () => import("src/pages/PracticeRoutineListPage"),
-      },
-      {
-        path: "practice-routine/:id/",
-        name: "practiceRoutinePage",
-        component: () => import("src/pages/PracticeRoutinePage"),
-        props: true,
       },
       {
         path: "help-center/",

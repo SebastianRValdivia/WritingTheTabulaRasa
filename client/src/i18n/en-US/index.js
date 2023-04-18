@@ -8,6 +8,7 @@ const general = {
   delete: "Delete",
   sureDelete: "Are you sure you want to delete this?",
   by: "By",
+  empty: "Nothing found",
 }
 
 const mainLayout = {
@@ -178,6 +179,10 @@ const practiceRoutinePage = {
 const practiceRoutineListPage = {
   enlisted: "Enlisted"
 }
+const practiceRoutinePreviewPage = {
+  pageTitle: "Practice for",
+  noExercises: "There are no exercises in this routine"
+}
 
 
 const imageUploadDialog = {
@@ -236,6 +241,7 @@ export default {
   practiceRoutineUserPage,
   practiceRoutinePage,
   practiceRoutineListPage, 
+  practiceRoutinePreviewPage,
 
   imageUploadDialog,
   metadataEditorDialog,

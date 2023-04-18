@@ -7,19 +7,38 @@
         :key="practiceRoutine.id"
         class="col"
       >
-        <q-card-section class="row">
-          <h5 class="text-h5 col col-8">{{ practiceRoutine.title }}</h5>
+        <q-card-actions
+          v-if="userStore.isUserLogged"
+          align="right"
+        >
           <p 
-            class="col col-2"
             v-if="isUserAssignedToRoutine(practiceRoutine.id)"
           > {{ $t("practiceRoutineListPage.enlisted") }}</p>
           <q-btn 
             v-else
             icon="add_box"
-            class="col col-2"
             @click="enlist(practiceRoutine.id)"
           />
+        </q-card-actions>
+        <q-card-section>
+          <h4 class="text-h4">{{ practiceRoutine.title }}</h4>
+          <MarkdownPreview :md="practiceRoutine.description"/>
         </q-card-section>
+        <q-card-actions
+          class="absolute-bottom"
+          align="center"
+        >
+          <q-btn 
+            icon="visibility"
+            flat
+            :to="{
+              name: 'practiceRoutinePreviewPage',
+              params: {
+                id: practiceRoutine.id
+              }
+            }"
+          />
+        </q-card-actions>
       </q-card>
     </div>
 
@@ -35,11 +54,13 @@ import { usePracticeStore } from "src/stores/practice-store"
 import { useUserStore } from "src/stores/user-store"
 import { fuzzySearchByObjectByKeys } from "src/utils/search"
 import SearchInput from "src/components/for-input/SearchInput"
+import MarkdownPreview from "src/components/for-viewing/MarkdownPreview"
 
 export default {
   name: "PracticeRoutineListPage",
   components: {
     SearchInput,
+    MarkdownPreview,
   },
   setup() {
     const practiceStore = usePracticeStore()
@@ -91,6 +112,7 @@ export default {
     })
 
     return {
+      userStore,
       searchPattern,
 
       displayedPracticeRoutines,

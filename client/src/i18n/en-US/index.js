@@ -180,6 +180,7 @@ const practiceRoutineListPage = {
   enlisted: "Enlisted"
 }
 const practiceRoutinePreviewPage = {
+  pageTitle: "Practice for",
   noExercises: "There are no exercises in this routine"
 }
 

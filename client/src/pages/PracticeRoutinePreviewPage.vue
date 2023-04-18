@@ -13,7 +13,10 @@
           v-for="exercise in practiceExercisesList"
           :key="exercise.id"
         >
-          {{ exercise}}
+          <h4 class="text-h4">
+            {{ exercise.title }}
+          </h4>
+          <MarkdownPreview :md="exercise.content"/>
         </li>
       </ul>
     </div>
@@ -28,6 +31,7 @@ import { useI18n } from "vue-i18n"
 
 import { usePracticeStore } from "src/stores/practice-store"
 import EmptyMsg from "src/components/for-viewing/EmptyMsg"
+import MarkdownPreview from "src/components/for-viewing/MarkdownPreview"
 
 export default {
   name: "PracticeRoutinePreviewPage",
@@ -39,6 +43,7 @@ export default {
   },
   components: {
     EmptyMsg,
+    MarkdownPreview,
   },
   setup(props) {
     const practiceStore = usePracticeStore()

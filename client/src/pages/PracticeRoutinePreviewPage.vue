@@ -23,6 +23,8 @@
 <script>
 import { ref, onBeforeMount } from "vue"
 import { useRouter } from "vue-router"
+import { useQuasar, useMeta } from "quasar"
+import { useI18n } from "vue-i18n"
 
 import { usePracticeStore } from "src/stores/practice-store"
 import EmptyMsg from "src/components/for-viewing/EmptyMsg"
@@ -41,13 +43,17 @@ export default {
   setup(props) {
     const practiceStore = usePracticeStore()
     const router = useRouter()
+    const quasar = useQuasar()
+    const { t } = useI18n()
 
     const routineData = ref({})
     const practiceExercisesList = ref([])
 
     onBeforeMount(async () => {
+      quasar.loading.show()
       const routineId = Number(props.id)
 
+      // Get routine data from store if not found tries to retrieve
       if (practiceStore.getPracticeRoutineById(routineId)){
         routineData.value = practiceStore.getPracticeRoutineById(routineId)
       } else {
@@ -74,8 +80,14 @@ export default {
           practiceExercisesList.value = null
         }
       }
+      quasar.loading.hide()
     })
-    
+
+    useMeta({
+      title: t("practiceRoutinePreviewPage.pageTitle"),
+      titleTemplate: (title) => `${title} ${routineData.value.title}`
+    })
+
     return {
       routineData,
       practiceExercisesList,

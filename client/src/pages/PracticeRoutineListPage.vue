@@ -97,6 +97,8 @@ export default {
     async function enlist(routineId) {
       let result = 
         await practiceStore.createAssignedPracticeRoutineToUser(routineId)
+      userPracticeRoutines.value = 
+        practiceStore.getAssignedPracticeRoutinesByUser(userStore.getUserId)
     }
 
     onBeforeMount(async () => {

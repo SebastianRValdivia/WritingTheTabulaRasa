@@ -6,6 +6,17 @@
     >
       <EmptyMsg :msg="$t('practiceRoutinePreviewPage.noExercises')"/>
     </div>
+    <div class="col col-12 column items-center" v-else>
+    <h3 class="text-h3">{{ routineData.title }}</h3>
+      <ul>
+        <li
+          v-for="exercise in practiceExercisesList"
+          :key="exercise.id"
+        >
+          {{ exercise}}
+        </li>
+      </ul>
+    </div>
   </q-page>
 </template>
 
@@ -31,10 +42,22 @@ export default {
     const practiceStore = usePracticeStore()
     const router = useRouter()
 
+    const routineData = ref({})
     const practiceExercisesList = ref([])
 
     onBeforeMount(async () => {
       const routineId = Number(props.id)
+
+      if (practiceStore.getPracticeRoutineById(routineId)){
+        routineData.value = practiceStore.getPracticeRoutineById(routineId)
+      } else {
+        let result = await practiceStore.retrievePracticeRoutine(routineId)
+        if (result) {
+          routineData.value = practiceStore.getPracticeRoutineById(routineId)
+        } else {
+          router.push({name: "notFound"})
+        }
+      }
 
       // Check if exercises are on the store
       if (practiceStore.getPracticeExercisesByRoutine(routineId).length > 0) {
@@ -54,6 +77,7 @@ export default {
     })
     
     return {
+      routineData,
       practiceExercisesList,
     }
   }

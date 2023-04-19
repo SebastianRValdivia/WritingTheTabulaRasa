@@ -45,6 +45,10 @@ class UserAssignedPracticeRoutineModel(models.Model):
         blank=False,
         null=False,
     )
+    scheduled = models.DateTimeField(
+        blank=True,
+        null=True,
+    )
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 

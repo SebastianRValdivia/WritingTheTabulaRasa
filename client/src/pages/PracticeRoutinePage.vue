@@ -4,7 +4,7 @@
   >
     <div 
       class="row"
-      v-if="!isRoutineFinished"
+      v-if="!isRoutineFinished && practiceExercisesList.length > 0"
     >
       <div class="col-1">
         <q-stepper
@@ -45,7 +45,7 @@
       </div>
     </div>
     <div 
-      v-else
+      v-else-if="isRoutineFinished && practiceExercisesList.length > 0"
       class="column items-center"
     >
       <h2 class="text-h2 col col-12 text-positive">
@@ -71,6 +71,11 @@
         {{ $t("practiceRoutinePage.savingProgress")}}
       </h4>
     </div>
+    <div
+      v-else
+    >
+      <EmptyMsg />
+    </div>
   </q-page>
 </template>
 
@@ -80,6 +85,7 @@ import { useRouter } from "vue-router"
 
 import { usePracticeStore } from "src/stores/practice-store"
 import MarkdownPreview from "src/components/for-viewing/MarkdownPreview"
+import EmptyMsg from "src/components/for-viewing/EmptyMsg"
 
 export default {
   name: "PracticeRoutinePage",
@@ -90,7 +96,8 @@ export default {
     }
   },
   components: {
-    MarkdownPreview
+    MarkdownPreview,
+    EmptyMsg,
   },
   setup(props) {
     const practiceStore = usePracticeStore()

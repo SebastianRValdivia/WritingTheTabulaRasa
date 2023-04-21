@@ -233,8 +233,10 @@
               <PomodoroTimer />
             </q-item-section>
           </q-item>
-          <q-item v-ripple class="absolute-bottom">
-            <QuoteBtn />
+          <q-item class="absolute-bottom">
+            <q-item-section avatar>
+              <QuoteBtn />
+            </q-item-section>
           </q-item>
         </q-list>
       </q-scroll-area>

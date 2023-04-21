@@ -233,6 +233,11 @@
               <PomodoroTimer />
             </q-item-section>
           </q-item>
+          <q-item class="absolute-bottom">
+            <q-item-section avatar>
+              <QuoteBtn />
+            </q-item-section>
+          </q-item>
         </q-list>
       </q-scroll-area>
     </q-drawer>
@@ -254,11 +259,13 @@ import { useQuasar } from "quasar"
 import LoginDialog from "src/components/for-control/LoginDialog"
 import FleetingNoteDialog from "src/components/for-control/FleetingNoteDialog"
 import PomodoroTimer from 'src/components/for-control/PomodoroTimer'
+import QuoteBtn from "src/components/for-input/QuoteBtn"
 
 export default {
   components: {
     LoginDialog,
     PomodoroTimer,
+    QuoteBtn,
   },
   setup() {
     const router = useRouter()

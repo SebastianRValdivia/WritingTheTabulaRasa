@@ -10,7 +10,7 @@ export default {
     if (result) {
       return {
         code: 200,
-        quotesList: result.data
+        data: result.data
       }
     } else return false
   }

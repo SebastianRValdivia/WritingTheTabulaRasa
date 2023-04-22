@@ -56,7 +56,7 @@ class ImageModel(models.Model):
         if self.caption:
             return self.caption
         else:
-            return self.id
+            return str(self.id)
 
 
 

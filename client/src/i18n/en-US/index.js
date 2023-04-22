@@ -9,6 +9,7 @@ const general = {
   sureDelete: "Are you sure you want to delete this?",
   by: "By",
   empty: "Nothing found",
+  toClipboard: "Added to clipboard",
 }
 
 const mainLayout = {

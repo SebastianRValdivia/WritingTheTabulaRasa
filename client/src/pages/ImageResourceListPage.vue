@@ -8,6 +8,7 @@
       <q-img 
         :src="image.file"
         class="scoped-image"
+        @click="copyUrlToClipboard(image.file)"
       >
         <div 
           v-if="image.caption"
@@ -15,6 +16,9 @@
         >
           {{ image.caption }}
         </div>
+        <q-tooltip>
+          {{ image.file }}
+        </q-tooltip>
       </q-img>
     </div>
     
@@ -24,6 +28,7 @@
 <script>
 import { ref, onBeforeMount } from "vue"
 import { useQuasar } from "quasar"
+import { useI18n } from "vue-i18n"
 
 import { useResourceStore } from "src/stores/resource-store"
 
@@ -31,10 +36,19 @@ export default {
   name: "ImageResourceListPage",
   setup() {
     const quasar = useQuasar()
+    const { t } = useI18n()
     const resourceStore = useResourceStore()
 
     const displayedImages = ref([])
 
+    function copyUrlToClipboard(imageUrl) {
+      navigator.clipboard.writeText(imageUrl)
+
+      quasar.notify({
+        message: t("general.toClipboard"),
+        color: "positive"
+      })
+    }
 
     onBeforeMount(async () => {
       quasar.loading.show()
@@ -48,6 +62,8 @@ export default {
     return {
 
       displayedImages,
+
+      copyUrlToClipboard,
 
     }
 

@@ -62,7 +62,7 @@ INSTALLED_APPS = [
     "webapp",
     "lite",
     "applications.notes",
-    "applications.schedule",
+    "applications.schedules",
     "applications.tasks",
     "applications.resources",
     "applications.cheatsheets",

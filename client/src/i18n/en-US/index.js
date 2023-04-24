@@ -32,6 +32,7 @@ const mainDrawer = {
   tools: "Assistance tools",
   tasks: "Tasks",
   calendar: "Calendar",
+  goals: "Goals",
   preferences: "Preferences",
   learningResources: "Learning resources",
   logOut: "Log out",

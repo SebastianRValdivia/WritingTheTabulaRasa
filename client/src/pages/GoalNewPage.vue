@@ -48,7 +48,7 @@ export default {
       )
       let result = scheduleStore.createGoal(newGoalInput)
       result
-        ? router.push({name: "schedules"})
+        ? router.push({name: "goalListPage"})
         : quasar.notify({ color: "negative", message: t("failed")})
     }
 

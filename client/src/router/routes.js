@@ -39,19 +39,19 @@ const routes = [
         component: () => import("src/pages/TaskListPage"),
       },
       {
-        path: "my/schedules/",
-        name: "schedules",
-        component: () => import("src/pages/ScheduleListPage"),
+        path: "my/goals/",
+        name: "goalsListPage",
+        component: () => import("src/pages/GoalListPage"),
       },
       {
-        path: "my/schedules/new/",
-        name: "newSchedule",
-        component: () => import("src/pages/ScheduleNewPage"),
+        path: "my/goals/new/",
+        name: "goalNewPage",
+        component: () => import("src/pages/GoalNewPage"),
       },
       {
-        path: "my/schedules/:id/",
-        name: "schedulePage",
-        component: () => import("src/pages/SchedulePage"),
+        path: "my/goals/:id/",
+        name: "goalsPage",
+        component: () => import("src/pages/GoalPage"),
         props: true,
       },
       {

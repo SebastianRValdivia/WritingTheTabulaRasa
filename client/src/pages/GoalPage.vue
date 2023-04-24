@@ -15,7 +15,7 @@ import { useI18n } from "vue-i18n"
 import { useScheduleStore } from "src/stores/schedule-store"
 
 export default {
-  name: "SchedulePage",
+  name: "GoalPage",
   props: {
     id: String
   },

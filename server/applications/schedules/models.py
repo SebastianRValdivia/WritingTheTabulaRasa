@@ -32,7 +32,7 @@ class UserTimeTableModel(models.Model):
         title = "Table from " + self.owner.username + " id: " + str(self.id)
         return title
 
-class UserSchduleModel(models.Model):
+class UserHourModel(models.Model):
 
     class DaysChoices(models.TextChoices):
         MONDAY = "MON", "Monday"
@@ -70,8 +70,8 @@ class UserSchduleModel(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     class Meta:
-        verbose_name = "Schedule"
-        verbose_name_plural = "Schedules"
+        verbose_name = "Hour"
+        verbose_name_plural = "Hours"
 
     def __str__(self):
         return self.title

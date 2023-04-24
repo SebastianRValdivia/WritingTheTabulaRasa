@@ -4,7 +4,7 @@ from applications.schedules.models import (
     ObjectiveModel,
     GoalModel,
     UserTimeTableModel,
-    UserSchduleModel,
+    UserHourModel,
 )
 
 
@@ -12,5 +12,5 @@ from applications.schedules.models import (
 admin.site.register(ObjectiveModel)
 admin.site.register(GoalModel)
 admin.site.register(UserTimeTableModel)
-admin.site.register(UserSchduleModel)
+admin.site.register(UserHourModel)
 

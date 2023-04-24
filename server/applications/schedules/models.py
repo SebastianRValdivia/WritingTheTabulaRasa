@@ -34,6 +34,15 @@ class UserTimeTableModel(models.Model):
 
 class UserSchduleModel(models.Model):
 
+    class DaysChoices(models.TextChoices):
+        MONDAY = "MON", "Monday"
+        TUESDAY = "TUE", "Tuesday"
+        WEDNESDAY = "WED", "Wednesday"
+        THURSDAY = "THU", "Thursday"
+        FRIDAY = "FRI", "Friday"
+        SATURDAY = "SAT", "Saturday"
+        SUNDAY = "SUN", "Sunday"
+
     title = models.CharField(
         max_length=CHARFIELD_LONG,
         blank=False,
@@ -46,6 +55,13 @@ class UserSchduleModel(models.Model):
     owner = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
+        blank=False,
+        null=False,
+    )
+    day = models.CharField(
+        max_length=3,
+        choices=DaysChoices.choices,
+        default=DaysChoices.MONDAY,
         blank=False,
         null=False,
     )

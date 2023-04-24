@@ -64,12 +64,12 @@ export const useResourceStore = defineStore("resource", {
         return true
       } else return false
     },
-    async saveImageResource(imageData) {
+    async createImageResource(imageData) {
       let result = await api.resources.postImageResource(imageData)
 
       if (result) {
-        this.imagesResourcesList.push(result.responseData)
-        return result.responseData
+        this.imagesResourcesList.push(result.data)
+        return result.data
       } else return false
     }
   }

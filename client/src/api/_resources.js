@@ -77,7 +77,7 @@ export default {
         }
       )
 
-      if (response.status = 201) return {responseData: response.data}
+      if (response.status === 201) return {data: response.data}
       else return false
     } catch {
       return false

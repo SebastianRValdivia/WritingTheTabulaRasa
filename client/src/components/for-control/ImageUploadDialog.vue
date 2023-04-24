@@ -1,7 +1,6 @@
 <template>
   <q-dialog 
     v-model="isOpen" 
-    persistent 
     @keyup.enter="submit"
   >
     <q-card>
@@ -40,22 +39,29 @@
 <script>
 import { ref } from "vue"
 
-import api from "src/api"
+import { useResourceStore } from "src/stores/resource-store"
+import { copyToClipboard } from "src/utils/clipboard"
 
 export default {
   setup() {
+    const resourceStore = useResourceStore()
+
     const isOpen = ref(true)
     const imageInput = ref(null)
     const captionInput = ref("")
 
     async function submit() {
-      let result = await api.resources.postImageResource({
+      let result = await resourceStore.createImageResource({
         caption: captionInput.value,
         file: imageInput.value
       })
 
-      result ? isOpen.value = false : isOpen.value = true
-
+      if (result) {
+        copyToClipboard(result.file)
+        isOpen.value = false
+      } else {
+        isOpen.value = true
+      }
     }
 
     return {

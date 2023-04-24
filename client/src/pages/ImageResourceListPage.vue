@@ -31,6 +31,7 @@ import { useQuasar } from "quasar"
 import { useI18n } from "vue-i18n"
 
 import { useResourceStore } from "src/stores/resource-store"
+import { copyToClipboard } from "src/utils/clipboard"
 
 export default {
   name: "ImageResourceListPage",
@@ -42,7 +43,7 @@ export default {
     const displayedImages = ref([])
 
     function copyUrlToClipboard(imageUrl) {
-      navigator.clipboard.writeText(imageUrl)
+      copyToClipboard(imageUrl)
 
       quasar.notify({
         message: t("general.toClipboard"),

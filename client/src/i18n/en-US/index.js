@@ -40,6 +40,7 @@ const mainDrawer = {
 const toolDrawer = {
   fleetingNote: "New fleeting note",
   timer: "Timer",
+  newImage: "New image resource"
 }
 
 const indexPage = {

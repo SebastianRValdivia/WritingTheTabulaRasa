@@ -233,6 +233,19 @@
               <PomodoroTimer />
             </q-item-section>
           </q-item>
+          <q-item v-ripple>
+            <q-tooltip 
+              :delay="500"
+              anchor="center start" 
+              self="center right"
+            >
+              {{ $t("toolDrawer.newImage") }}
+            </q-tooltip>
+            <q-item-section avatar>
+              <UploadImageBtn />
+            </q-item-section>
+          </q-item>
+
           <q-item class="absolute-bottom">
             <q-item-section avatar>
               <QuoteBtn />
@@ -260,12 +273,14 @@ import LoginDialog from "src/components/for-control/LoginDialog"
 import FleetingNoteDialog from "src/components/for-control/FleetingNoteDialog"
 import PomodoroTimer from 'src/components/for-control/PomodoroTimer'
 import QuoteBtn from "src/components/for-input/QuoteBtn"
+import UploadImageBtn from "src/components/for-input/UploadImageBtn"
 
 export default {
   components: {
     LoginDialog,
     PomodoroTimer,
     QuoteBtn,
+    UploadImageBtn,
   },
   setup() {
     const router = useRouter()

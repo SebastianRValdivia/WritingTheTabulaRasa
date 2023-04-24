@@ -134,15 +134,22 @@
             </q-item-section>
           </q-item>
 
-          <q-item clickable v-ripple :to="{name: 'schedules'}">
-            <q-item-section avatar>
-              <q-icon name="calendar_month" />
-            </q-item-section>
-
-            <q-item-section>
-              {{ $t("mainDrawer.calendar") }}
-            </q-item-section>
-          </q-item>
+          <q-expansion-item
+            :label="$t('mainDrawer.calendar')" 
+            icon="calendar_month"
+            default-opened
+            :content-inset-level="1"
+          >
+            <q-item clickable v-ripple :to="{name: 'goalsListPage'}">
+              <q-item-section avatar>
+                <q-icon name="flag" />
+              </q-item-section>
+            
+              <q-item-section>
+                {{ $t("mainDrawer.goals") }}
+              </q-item-section>
+            </q-item>
+          </q-expansion-item>
 
           <q-item clickable v-ripple :to="{name: 'tools'}">
             <q-item-section avatar>

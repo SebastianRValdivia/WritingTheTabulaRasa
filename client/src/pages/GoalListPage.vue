@@ -14,7 +14,7 @@
           <p class="subtitle1">{{ selectedDate[0].result }}</p>
           <q-btn
             icon="navigate_next"
-            :to="{name: 'schedulePage', params: {id: selectedDate[0].id}}"
+            :to="{name: 'goalPage', params: {id: selectedDate[0].id}}"
           />
         </div>
       </div>
@@ -24,7 +24,7 @@
         icon="add"
         round
         color="primary"
-        :to="{name: 'newSchedule'}"        
+        :to="{name: 'goalNewPage'}"        
       />
     </q-page-sticky>
   </q-page>
@@ -40,7 +40,7 @@ import { useUserStore } from "src/stores/user-store"
 import { fuzzySearchByObjectByKeys } from "src/utils/search"
 
 export default {
-  name: "SchedulePage",
+  name: "GoalListPage",
   setup() {
     const { t } = useI18n()
     const scheduleStore = useScheduleStore()

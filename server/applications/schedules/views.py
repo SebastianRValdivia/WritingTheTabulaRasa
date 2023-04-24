@@ -2,8 +2,8 @@ from django.shortcuts import render
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
-from applications.schedule.models  import ObjectiveModel, GoalModel
-from applications.schedule.serializers import (
+from applications.schedules.models  import ObjectiveModel, GoalModel
+from applications.schedules.serializers import (
     ObjectiveSerializer,
     GoalSerializer,
 )

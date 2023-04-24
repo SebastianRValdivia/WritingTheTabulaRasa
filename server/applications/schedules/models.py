@@ -4,6 +4,63 @@ from config.fields_default_values import (CHARFIELD_LONG)
 from django.contrib.auth.models import User
 
 # Create your models here.
+class UserTimeTableModel(models.Model):
+    """
+    User time table model.
+    The status represent if its active or not (can be using only 1)
+    """
+
+    owner = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        blank=False,
+        null=False,
+    )
+    status = models.BooleanField(
+        default=False,
+        blank=False,
+        null=False,
+    )
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Time table"
+        verbose_name_plural = "Time tables"
+
+    def __str__(self):
+        title = "Table from " + self.owner.username + " id: " + str(self.id)
+        return title
+
+class UserSchduleModel(models.Model):
+
+    title = models.CharField(
+        max_length=CHARFIELD_LONG,
+        blank=False,
+        null=False,
+    )
+    table = models.ForeignKey(
+        "schedules.UserTimeTableModel",
+        on_delete=models.CASCADE,
+    )
+    owner = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        blank=False,
+        null=False,
+    )
+    time = models.TimeField()
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Schedule"
+        verbose_name_plural = "Schedules"
+
+    def __str__(self):
+        return self.title
+
+
 class GoalModel(models.Model):
     """ Long term goal """
 
@@ -51,7 +108,7 @@ class ObjectiveModel(models.Model):
         null=False,
     )
     goal = models.ForeignKey(
-        GoalModel,
+        "schedules.GoalModel",
         on_delete=models.CASCADE,
         blank=False,
         null=False,

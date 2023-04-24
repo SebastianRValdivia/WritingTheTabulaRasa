@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from applications.schedule.models import (
+from applications.schedules.models import (
     ObjectiveModel,
     GoalModel,
 )

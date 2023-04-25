@@ -24,16 +24,16 @@
         <div class="absolute-center">
           <q-btn :label="$t('mainLayout.compendiums')">
             <q-menu fit anchor="bottom left">
-              <q-item clickable :to="{name: 'encyclopediaIndex'}">
+              <q-item clickable :to="{name: 'encyclopediaindex'}">
                 <q-item-section>{{ $t('mainLayout.encyclopedia') }}</q-item-section>
               </q-item>
               <q-item clickable :to="{name: 'cheatsheets'}">
                 <q-item-section>{{ $t('mainLayout.cheatsheets') }}</q-item-section>
               </q-item>
-              <q-item clickable :to="{name: 'guidesListPage'}">
+              <q-item clickable :to="{name: 'guideslistpage'}">
                 <q-item-section>{{ $t('mainLayout.guides') }}</q-item-section>
               </q-item>
-              <q-item clickable :to="{name: 'essaysListPage'}">
+              <q-item clickable :to="{name: 'essayslistpage'}">
                 <q-item-section>{{ $t('mainLayout.essays') }}</q-item-section>
               </q-item>
             </q-menu>
@@ -51,6 +51,20 @@
               </q-item>
               <q-item clickable :to="{name: 'practiceRoutineListPage'}">
                 <q-item-section>{{ $t('mainLayout.practice') }}</q-item-section>
+              </q-item>
+            </q-menu>
+          </q-btn>
+          <q-btn :label="$t('mainLayout.resources')">
+            <q-menu fit anchor="bottom left">
+              <q-item clickable :to="{name: 'learningResourceListPage'}">
+                <q-item-section>
+                  {{ $t('mainLayout.learnignResources') }}
+                </q-item-section>
+              </q-item>
+              <q-item clickable :to="{name: 'imageResourceListPage'}">
+                <q-item-section>
+                  {{ $t('mainLayout.images') }}
+                </q-item-section>
               </q-item>
             </q-menu>
           </q-btn>

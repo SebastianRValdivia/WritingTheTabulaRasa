@@ -25,6 +25,7 @@ class UserAssignedLearningResourceViewSet(ModelViewSet):
     queryset = UserAssignedLearningResourceModel.objects.all().order_by("id")
     serializer_class = UserAssignedLearningResourceSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
+    filterset_fields = ["owner"]
 
 class ImageViewSet(ModelViewSet):
 

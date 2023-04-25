@@ -21,54 +21,52 @@
             </span>
           </router-link>
         </q-toolbar-title>
-        <div class="absolute-center">
-          <q-btn :label="$t('mainLayout.compendiums')">
-            <q-menu fit anchor="bottom left">
-              <q-item clickable :to="{name: 'encyclopediaindex'}">
-                <q-item-section>{{ $t('mainLayout.encyclopedia') }}</q-item-section>
-              </q-item>
-              <q-item clickable :to="{name: 'cheatsheets'}">
-                <q-item-section>{{ $t('mainLayout.cheatsheets') }}</q-item-section>
-              </q-item>
-              <q-item clickable :to="{name: 'guideslistpage'}">
-                <q-item-section>{{ $t('mainLayout.guides') }}</q-item-section>
-              </q-item>
-              <q-item clickable :to="{name: 'essayslistpage'}">
-                <q-item-section>{{ $t('mainLayout.essays') }}</q-item-section>
-              </q-item>
-            </q-menu>
-          </q-btn>
-          <q-btn :label="$t('mainLayout.activities')">
-            <q-menu fit anchor="bottom left">
-              <q-item clickable :to="{name: 'researchListPage'}">
-                <q-item-section>{{ $t('mainLayout.research') }}</q-item-section>
-              </q-item>
-              <q-item clickable :to="{name: 'quizzesListPage'}">
-                <q-item-section>{{ $t('mainLayout.quizzes') }}</q-item-section>
-              </q-item>
-              <q-item clickable :to="{name: 'flashCardCollectionListPage'}">
-                <q-item-section>{{ $t('mainLayout.flashcards') }}</q-item-section>
-              </q-item>
-              <q-item clickable :to="{name: 'practiceRoutineListPage'}">
-                <q-item-section>{{ $t('mainLayout.practice') }}</q-item-section>
-              </q-item>
-            </q-menu>
-          </q-btn>
-          <q-btn :label="$t('mainLayout.resources')">
-            <q-menu fit anchor="bottom left">
-              <q-item clickable :to="{name: 'learningResourceListPage'}">
-                <q-item-section>
-                  {{ $t('mainLayout.learnignResources') }}
-                </q-item-section>
-              </q-item>
-              <q-item clickable :to="{name: 'imageResourceListPage'}">
-                <q-item-section>
-                  {{ $t('mainLayout.images') }}
-                </q-item-section>
-              </q-item>
-            </q-menu>
-          </q-btn>
-        </div>
+        <q-btn :label="$t('mainLayout.compendiums')">
+          <q-menu fit anchor="bottom left">
+            <q-item clickable :to="{name: 'encyclopediaindex'}">
+              <q-item-section>{{ $t('mainLayout.encyclopedia') }}</q-item-section>
+            </q-item>
+            <q-item clickable :to="{name: 'cheatsheets'}">
+              <q-item-section>{{ $t('mainLayout.cheatsheets') }}</q-item-section>
+            </q-item>
+            <q-item clickable :to="{name: 'guideslistpage'}">
+              <q-item-section>{{ $t('mainLayout.guides') }}</q-item-section>
+            </q-item>
+            <q-item clickable :to="{name: 'essayslistpage'}">
+              <q-item-section>{{ $t('mainLayout.essays') }}</q-item-section>
+            </q-item>
+          </q-menu>
+        </q-btn>
+        <q-btn :label="$t('mainLayout.activities')">
+          <q-menu fit anchor="bottom left">
+            <q-item clickable :to="{name: 'researchListPage'}">
+              <q-item-section>{{ $t('mainLayout.research') }}</q-item-section>
+            </q-item>
+            <q-item clickable :to="{name: 'quizzesListPage'}">
+              <q-item-section>{{ $t('mainLayout.quizzes') }}</q-item-section>
+            </q-item>
+            <q-item clickable :to="{name: 'flashCardCollectionListPage'}">
+              <q-item-section>{{ $t('mainLayout.flashcards') }}</q-item-section>
+            </q-item>
+            <q-item clickable :to="{name: 'practiceRoutineListPage'}">
+              <q-item-section>{{ $t('mainLayout.practice') }}</q-item-section>
+            </q-item>
+          </q-menu>
+        </q-btn>
+        <q-btn :label="$t('mainLayout.resources')">
+          <q-menu fit anchor="bottom left">
+            <q-item clickable :to="{name: 'learningResourceListPage'}">
+              <q-item-section>
+                {{ $t('mainLayout.learnignResources') }}
+              </q-item-section>
+            </q-item>
+            <q-item clickable :to="{name: 'imageResourceListPage'}">
+              <q-item-section>
+                {{ $t('mainLayout.images') }}
+              </q-item-section>
+            </q-item>
+          </q-menu>
+        </q-btn>
 
         <q-btn flat icon="help_center" :to="{name: 'helpCenterPage'}"/>
         <q-btn flat icon="handyman" @click="toggleToolDrawer" />

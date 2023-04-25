@@ -14,18 +14,11 @@ class LearningResourceModel(models.Model):
         max_length=CHARFIELD_LONG,
         blank=True,
         null=True,
-    )
+    ) # TODO remove, this is part of metadata
     description = models.TextField(
         blank=True,
         null=True,
     )
-    owner = models.ForeignKey(
-        User,
-        on_delete=models.CASCADE,
-        blank=False,
-        null=False
-    )
-
 
     class Meta:
         verbose_name = "Learning resource reference"
@@ -33,6 +26,27 @@ class LearningResourceModel(models.Model):
 
     def __str__(self):
         return self.title
+
+class UserAssignedLearningResourceModel(models.Model):
+    """
+    Learning resources assigned to an user
+    """
+    owner = models.OneToOneField(
+        User,
+        on_delete=models.CASCADE,
+        blank=False,
+        null=False
+    )
+    resources = models.ManyToManyField(
+        "resources.LearningResourceModel",
+    )
+
+    class Meta:
+        verbose_name = "User assigned learning resource"
+        verbose_name_plural = "User assigned learning resources"
+
+    def __str__(self):
+        return self.owner.usernamer
 
 class ImageModel(models.Model):
 

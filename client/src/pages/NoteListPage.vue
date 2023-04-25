@@ -24,7 +24,7 @@
         <NoteCard 
           v-if="previewNote !== null"
           :identifier="createNoteIdentifier(previewNote, userNoteList, [String(previewNote.identifier)])"
-          :note="previewNote"
+          :noteData="previewNote"
           @deleted="reloadTree"
         />
       </div>

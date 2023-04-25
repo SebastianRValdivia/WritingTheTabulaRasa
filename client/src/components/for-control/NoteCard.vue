@@ -1,19 +1,50 @@
 <template>
+  <!-- View mode -->
   <q-card v-if="!isEditing" class="q-pa-sm note-card-desktop" >
-    <div class="column items-end text-semi-transparent">
-      #{{ props.note.id }}
+    <div class="column items-end">
+      <span class="col row">
+        <q-btn 
+          class="col"
+          flat
+          icon="more_horiz"
+          size="sm"
+        >
+          <q-menu anchor="bottom left" self="top left">
+            <q-item 
+              clickable
+              @click="toggleEditor"
+            >
+              <q-item-section>
+                {{ $t("general.edit") }}
+              </q-item-section>
+            </q-item>
+            <q-item 
+              clickable
+              @click="deleteNote"
+            >
+              <q-item-section
+              >
+                {{ $t("general.delete") }}
+              </q-item-section>
+            </q-item>
+          </q-menu>
+        </q-btn>
+        <span class="col text-semi-transparent">
+          #{{ props.noteData.id }}
+        </span>
+      </span>
     </div>
     <q-card-section class="text-h6 row">
-      <span class="text-bold">{{ props.identifier }}:</span> <span>{{props.note.title}}</span>
+      <span class="text-bold">{{ props.identifier }}:</span> 
+      <span>{{props.noteData.title}}</span>
     </q-card-section>
     <q-separator />
     <q-card-section class="row">
-      <MarkdownPreview :md="props.note.content"/>
+      <MarkdownPreview :md="props.noteData.content"/>
     </q-card-section>
     <q-card-actions class="absolute-bottom q-pa-md" align="right">
-      <q-btn round color="primary" icon="edit" @click="toggleEditor"/>
       <q-btn 
-      v-if="props.note.audio !== null" 
+      v-if="props.noteData.audio !== null" 
         round 
         color="primary" 
         :icon="isAudioPlaying ? 'pause' : 'play_arrow'"
@@ -22,11 +53,20 @@
       />
     </q-card-actions>
   </q-card>
+
+  <!-- Editor mode -->
   <q-card v-else class="q-pa-sm note-card-desktop">
+    <div class="column items-end">
+      <q-btn 
+        round 
+        flat
+        icon="close" 
+        @click="cancelEdit"
+        size="sm"
+      />
+    </div>
     <q-card-section class="text-h6 row">
-      <span class="text-bold">{{ props.identifier }}:</span> <span>{{props.note.title}}</span>
-      <q-space />
-      <q-btn round color="negative" icon="delete" @click="deleteNote"/>
+      <span class="text-bold">{{ props.identifier }}:</span> <span>{{props.noteData.title}}</span>
     </q-card-section>
     <q-separator />
     <q-card-section>
@@ -43,14 +83,7 @@
       v-if="userStore.isLogged" 
     >
       <span>
-        <q-btn 
-          round 
-          color="negative" 
-          icon="cancel" 
-          @click="cancelEdit"
-          class="q-ma-sm"
-        />
-        <q-btn round color="primary" icon="save" @click="saveEdit"/>
+        <q-btn round color="primary" icon="done" @click="saveEdit"/>
       </span>
     </q-card-actions>
   </q-card>
@@ -70,7 +103,7 @@ export default {
   name: "NoteCard",
   props: {
     identifier: String,
-    note: Object
+    noteData: Object
   },
   components: {
     MarkdownPreview,
@@ -99,13 +132,15 @@ export default {
     })
 
     function toggleEditor() {
-      newNoteContent.value = "" // Reset edit content
+      if (props.noteData.content) {
+        newNoteContent.value = props.noteData.content
+      } else newNoteContent.value = "" // Reset edit content
       isEditing.value = !isEditing.value // Close editor
     }
     function toggleAudio() {
-      if (props.note.audio !== null) {
+      if (props.noteData.audio !== null) {
         if (noteAudio.value === null) {
-          noteAudio.value = new Audio(props.note.audio)
+          noteAudio.value = new Audio(props.noteData.audio)
         }
         if (noteAudio.value.paused === true) {
           noteAudio.value.play()
@@ -118,7 +153,7 @@ export default {
       toggleEditor()
     }
     async function saveEdit() {
-      await noteStore.saveNoteContent(props.note.id, newNoteContent)
+      await noteStore.saveNoteContent(props.noteData.id, newNoteContent)
       toggleEditor()
     }
     async function deleteNote() {
@@ -128,7 +163,7 @@ export default {
         cancel: true,
         color: "negative"
       }).onOk(async () => {
-        let result = await noteStore.removeNote(props.note.id)
+        let result = await noteStore.removeNote(props.noteData.id)
         if (result) {
           context.emit("deleted")
         } else {
@@ -140,15 +175,16 @@ export default {
 
     return {
       props,
-      isEditing,
-      toggleEditor,
       userStore,
-      cancelEdit,
-      saveEdit,
-      newNoteContent,
-      deleteNote,
-      toggleAudio,
+      isEditing,
       isAudioPlaying,
+      newNoteContent,
+
+      saveEdit,
+      deleteNote,
+      cancelEdit,
+      toggleAudio,
+      toggleEditor,
     }
   }
 }

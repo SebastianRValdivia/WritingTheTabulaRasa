@@ -1,23 +1,23 @@
 import { defineStore } from "pinia"
 import api from "src/api"
+import { useUserStore } from "src/stores/user-store"
 
 export const useResourceStore = defineStore("resource", {
   state: () => ({
     learningResourcesList: [],
+    // List of ids of user assigned learning res
+    userLearningResourceIdsList: [], 
     imagesResourcesList: [],
   }),
   getters: {
     getLearningResources: (state) => state.learningResourcesList,
-    getLearningResourcesByUser: (state) => {
-      return (userId) => state.learningResourcesList.filter(
-        (resource) => resource.owner === userId
-      )
-    },
     getLearningResourceById: (state) => {
       return (resourceId) => state.learningResourcesList.find(
         (resource) => resource.id === resourceId
       )
     },
+    getUserAssignedLearningResources: (state) => 
+      state.userLearningResourceIdsList,
     getImageResourceById: (state) => {
       return (imgId) => state.imagesResourcesList.find(
         (img) => img.id === imgId
@@ -31,6 +31,17 @@ export const useResourceStore = defineStore("resource", {
 
       if (result) {
         this.learningResourcesList = result.learningResourcesList
+        return true
+      } else return false
+    },
+    async retrieveUserAssignedLearningResources() {
+      const userStore = useUserStore()
+      let result = await api.resources.getUserAssignedLearningResources(
+        userStore.getUserId
+      )
+
+      if (result) {
+        this.userLearningResourceIdsList = result.data
         return true
       } else return false
     },

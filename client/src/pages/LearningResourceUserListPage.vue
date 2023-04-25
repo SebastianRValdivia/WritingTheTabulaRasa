@@ -71,9 +71,10 @@ export default {
     const selectedLearningResourcesList = ref([])
     const searchInput = ref("")
     const displayedResources = computed(() => {
-      let allUserResources = resourcesStore.getLearningResourcesByUser(
-        userStore.getUserId
-      )
+      let allUserResources = []
+      for (let resourceId of resourcesStore.getUserAssignedLearningResources) {
+        allUserResources.push(resourcesStore.getLearningResourceById(resourceId))
+      }
       return allUserResources
     })
 
@@ -94,7 +95,11 @@ export default {
     onBeforeMount(async () => {
       quasar.loading.show()
       let result = await resourcesStore.retrieveLearningResources()
-      quasar.loading.hide()
+      if (result) 
+        result = await resourcesStore.retrieveUserAssignedLearningResources()
+      if (result) {
+        quasar.loading.hide()
+      }
     })
 
     return {

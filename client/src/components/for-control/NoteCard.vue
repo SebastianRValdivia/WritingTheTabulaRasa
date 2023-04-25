@@ -131,7 +131,9 @@ export default {
     })
 
     function toggleEditor() {
-      newNoteContent.value = "" // Reset edit content
+      if (props.note.content) {
+        newNoteContent.value = props.note.content
+      } else newNoteContent.value = "" // Reset edit content
       isEditing.value = !isEditing.value // Close editor
     }
     function toggleAudio() {
@@ -172,15 +174,16 @@ export default {
 
     return {
       props,
-      isEditing,
-      toggleEditor,
       userStore,
-      cancelEdit,
-      saveEdit,
-      newNoteContent,
-      deleteNote,
-      toggleAudio,
+      isEditing,
       isAudioPlaying,
+      newNoteContent,
+
+      saveEdit,
+      deleteNote,
+      cancelEdit,
+      toggleAudio,
+      toggleEditor,
     }
   }
 }

@@ -19,6 +19,8 @@ class LearningResourceModel(models.Model):
         blank=True,
         null=True,
     )
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name = "Learning resource reference"
@@ -40,13 +42,15 @@ class UserAssignedLearningResourceModel(models.Model):
     resources = models.ManyToManyField(
         "resources.LearningResourceModel",
     )
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name = "User assigned learning resource"
         verbose_name_plural = "User assigned learning resources"
 
     def __str__(self):
-        return self.owner.usernamer
+        return self.owner.username
 
 class ImageModel(models.Model):
 

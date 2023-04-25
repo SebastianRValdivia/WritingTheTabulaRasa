@@ -10,6 +10,7 @@ const general = {
   by: "By",
   empty: "Nothing found",
   toClipboard: "Added to clipboard",
+  edit: "Edit",
 }
 
 const mainLayout = {

@@ -1,7 +1,38 @@
 <template>
+  <!-- View mode -->
   <q-card v-if="!isEditing" class="q-pa-sm note-card-desktop" >
-    <div class="column items-end text-semi-transparent">
-      #{{ props.note.id }}
+    <div class="column items-end">
+      <span class="col row">
+        <q-btn 
+          class="col"
+          flat
+          icon="more_horiz"
+          size="sm"
+        >
+          <q-menu anchor="bottom left" self="top left">
+            <q-item 
+              clickable
+              @click="toggleEditor"
+            >
+              <q-item-section>
+                {{ $t("general.edit") }}
+              </q-item-section>
+            </q-item>
+            <q-item 
+              clickable
+              @click="deleteNote"
+            >
+              <q-item-section
+              >
+                {{ $t("general.delete") }}
+              </q-item-section>
+            </q-item>
+          </q-menu>
+        </q-btn>
+        <span class="col text-semi-transparent">
+          #{{ props.note.id }}
+        </span>
+      </span>
     </div>
     <q-card-section class="text-h6 row">
       <span class="text-bold">{{ props.identifier }}:</span> <span>{{props.note.title}}</span>
@@ -11,7 +42,6 @@
       <MarkdownPreview :md="props.note.content"/>
     </q-card-section>
     <q-card-actions class="absolute-bottom q-pa-md" align="right">
-      <q-btn round color="primary" icon="edit" @click="toggleEditor"/>
       <q-btn 
       v-if="props.note.audio !== null" 
         round 
@@ -22,11 +52,20 @@
       />
     </q-card-actions>
   </q-card>
+
+  <!-- Editor mode -->
   <q-card v-else class="q-pa-sm note-card-desktop">
+    <div class="column items-end">
+      <q-btn 
+        round 
+        flat
+        icon="close" 
+        @click="cancelEdit"
+        size="sm"
+      />
+    </div>
     <q-card-section class="text-h6 row">
       <span class="text-bold">{{ props.identifier }}:</span> <span>{{props.note.title}}</span>
-      <q-space />
-      <q-btn round color="negative" icon="delete" @click="deleteNote"/>
     </q-card-section>
     <q-separator />
     <q-card-section>
@@ -43,14 +82,7 @@
       v-if="userStore.isLogged" 
     >
       <span>
-        <q-btn 
-          round 
-          color="negative" 
-          icon="cancel" 
-          @click="cancelEdit"
-          class="q-ma-sm"
-        />
-        <q-btn round color="primary" icon="save" @click="saveEdit"/>
+        <q-btn round color="primary" icon="done" @click="saveEdit"/>
       </span>
     </q-card-actions>
   </q-card>

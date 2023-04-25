@@ -24,6 +24,9 @@ const mainLayout = {
   quizzes: "Quizzes",
   flashcards: "Flashcards",
   practice: "Practice",
+  resources: "Resources",
+  learnignResources: "Learning resources",
+  images: "Images",
 }
 const mainDrawer = {
   notes: "My notes",

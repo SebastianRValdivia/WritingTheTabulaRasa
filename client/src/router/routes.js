@@ -205,7 +205,7 @@ const routes = [
       {
         path: "my/learning-resources/",
         name: "learningResourceUserListPage",
-        component: () => import("src/pages/LearningResourceListPage")
+        component: () => import("src/pages/LearningResourceUserListPage")
       },
       {
         path: "my/learning-resources/editor/",

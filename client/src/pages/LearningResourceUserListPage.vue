@@ -57,6 +57,7 @@
 <script>
 import { ref, onBeforeMount, computed } from "vue"
 import { useQuasar, useMeta } from "quasar"
+import { useI18n } from "vue-i18n"
 
 import { useUserStore } from "src/stores/user-store"
 import { useResourceStore } from "src/stores/resource-store"
@@ -65,6 +66,7 @@ export default {
   name: "LearningResourcesPage",
   setup() {
     const quasar = useQuasar()
+    const { t } = useI18n()
     const userStore = useUserStore()
     const resourcesStore = useResourceStore()
     
@@ -87,10 +89,15 @@ export default {
       selectedLearningResourcesList.value.push(resourceId)
     }
     async function deleteSelectedResources() {
-      for (let resourceId of selectedLearningResourcesList.value) {
-        resourcesStore.removeLearningResourceById(resourceId)
-      }
-      selectedLearningResourcesList.value = []
+      quasar.dialog({
+        message: t("general.sureDelete"),
+        cancel: true,
+      }).onOk(() => {
+        for (let resourceId of selectedLearningResourcesList.value) {
+          resourcesStore.removeLearningResourceById(resourceId)
+        }
+        selectedLearningResourcesList.value = []
+      })
     }
     onBeforeMount(async () => {
       quasar.loading.show()

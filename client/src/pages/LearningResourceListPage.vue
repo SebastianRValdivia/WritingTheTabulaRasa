@@ -1,8 +1,16 @@
 <template>
-  <q-page padding>
+  <q-page padding class="row">
+    <div
+      v-for="learningResource in displayedLearningResources"
+      :key="learningResource.id"
+      class="col column items-center q-gutter-md"
+    >
+      <LearningResourceCard 
+        :title="learningResource.title"
+        class="col-2"
+      />
+    </div>
 
-    {{ displayedLearningResources }}
-    
   </q-page>
 </template>
 
@@ -11,9 +19,14 @@ import { ref, computed, onBeforeMount } from "vue"
 import { useQuasar } from "quasar"
 
 import { useResourceStore } from "src/stores/resource-store"
+import LearningResourceCard from 
+  "src/components/for-viewing/LearningResourceCard"
 
 export default {
   name: "LearningResourceListPage",
+  components: {
+    LearningResourceCard,
+  },
   setup() {
     const resourceStore = useResourceStore()
     const quasar = useQuasar()

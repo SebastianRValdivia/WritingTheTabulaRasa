@@ -218,6 +218,11 @@ const routes = [
         component: () => import("src/pages/ImageResourceListPage")
       },
       {
+        path: "learning-resources/",
+        name: "learningResourceListPage",
+        component: () => import("src/pages/LearningResourceListPage")
+      },
+      {
         path: "help-center/",
         name: "helpCenterPage",
         component: () => import("src/pages/HelpCenterPage.vue"),

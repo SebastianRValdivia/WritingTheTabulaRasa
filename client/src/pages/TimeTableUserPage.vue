@@ -28,6 +28,13 @@
           <td>
             {{ hour }}
           </td>
+
+          <td 
+            v-for="(day, index) in daysCells" 
+            :key="index"
+          >
+            {{ day[hour] }}
+          </td>
         </tr>
       </tbody>
     </table>
@@ -60,12 +67,25 @@ export default {
       t("timeTableUserPage.saturday"),
       t("timeTableUserPage.sunday"),
     ])
-    const hours = ref(generateHours())
+    const hours = ref(Array.from(Array(24).keys()))
+    const daysCells = ref(generateHoursCells())
+
     
-    function generateHours() {
+    function generateHoursCells() {
       let hoursPerDay = 24 // To be change by user config
-      return Array.from(Array(hoursPerDay).keys())
+      let daysPerWeek = 7 // I hope it doesnt change
+
+      let hours = Array.from(Array(hoursPerDay).keys())
+      // Generate an hoursPerDayxdaysPerWeek
+      let week = Array.from(
+        Array(daysPerWeek).keys(),
+        () => hours
+      )
+
+      return week
     }
+
+
     onBeforeMount(async () => {
       quasar.loading.show()
 
@@ -88,6 +108,7 @@ export default {
       activeTableHours,
       daysLabel,
       hours,
+      daysCells,
     }
   }
 }

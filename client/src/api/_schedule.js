@@ -1,4 +1,5 @@
 import { api } from "boot/axios";
+import { recursiveGetCall } from "src/utils/api"
 
 export default {
   async getGoals() {
@@ -64,5 +65,17 @@ export default {
         reason: response.data.results
       }
     }
-  }
+  },
+  async getTimeTablesByUser(userId) {
+    let result = await recursiveGetCall(
+      `v1/schedules/timetables/?owner=${userId}`
+    )
+    return result
+  },
+  async getHoursByUser(userId) {
+    let result = await recursiveGetCall(
+      `v1/schedules/hours/?table=&owner=${userId}`
+    )
+    return result
+  },
 }

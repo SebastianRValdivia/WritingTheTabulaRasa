@@ -9,6 +9,8 @@ class CategoryModel(models.Model):
         blank=False,
         null=False,
     )
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name = "Category"
@@ -23,6 +25,8 @@ class MetadataModel(models.Model):
         blank=False,
         null=False
     )
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name = "Metadata"

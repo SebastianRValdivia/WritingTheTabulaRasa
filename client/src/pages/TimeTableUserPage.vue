@@ -95,5 +95,13 @@ export default {
 
 <style scoped>
 .scoped-time-table {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+.scoped-time-table th {
+  border: 2px solid black;
+}
+.scoped-time-table td {
+  border: 1px solid black;
 }
 </style>

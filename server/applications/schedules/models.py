@@ -10,6 +10,11 @@ class UserTimeTableModel(models.Model):
     The status represent if its active or not (can be using only 1)
     """
 
+    title = models.CharField(
+        max_length=CHARFIELD_LONG,
+        blank=True,
+        null=True,
+    )
     owner = models.ForeignKey(
         User,
         on_delete=models.CASCADE,

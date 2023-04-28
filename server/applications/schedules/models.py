@@ -34,8 +34,7 @@ class UserTimeTableModel(models.Model):
         verbose_name_plural = "Time tables"
 
     def __str__(self):
-        title = "Table from " + self.owner.username + " id: " + str(self.id)
-        return title
+        return f"{self.title} from {self.owner.username}"
 
 class UserHourModel(models.Model):
 
@@ -79,7 +78,10 @@ class UserHourModel(models.Model):
         verbose_name_plural = "Hours"
 
     def __str__(self):
-        return self.title
+        return (
+            f"{self.owner.username} to do {self.title}" 
+            f" at {self.time} {self.day}"
+        )
 
 
 class GoalModel(models.Model):

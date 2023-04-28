@@ -4,7 +4,7 @@
       filled
       v-model="activeTable"
       option-label="title"
-      class="col-6"
+      class="col-6 q-mb-sm"
     />
     <table class="col-10 scoped-time-table">
       <thead>
@@ -22,7 +22,7 @@
       </thead>
       <tbody>
         <tr
-          v-for="(hour, index) in hours"
+          v-for="(hour, index) in hoursLabels"
           :key="index"
         >
           <td>
@@ -33,7 +33,7 @@
             v-for="(day, index) in daysCells" 
             :key="index"
           >
-            {{ day[hour] }}
+            {{ scheduledTask(index, day[hour]) }}
           </td>
         </tr>
       </tbody>
@@ -67,7 +67,7 @@ export default {
       t("timeTableUserPage.saturday"),
       t("timeTableUserPage.sunday"),
     ])
-    const hours = ref(Array.from(Array(24).keys()))
+    const hoursLabels = ref(Array.from(Array(24).keys()))
     const daysCells = ref(generateHoursCells())
 
     
@@ -84,7 +84,50 @@ export default {
 
       return week
     }
+    function scheduledTask(day, time) {
+      // forgive me for what i am about to do
+      const hourToDecimal = (hour) => {
+        let arr = hour.split(':')
+        let dec = parseInt((arr[1]/6)*10, 10)
+        return parseFloat(parseInt(arr[0], 10) + '.' + (dec<10?'0':'') + dec)
+      }   
 
+      const dayHours = (dayCode) => {
+        return activeTableHours.value.filter( (hour) => hour.day === dayCode )
+      }
+      switch (day) {
+          case 0:
+            let hours = dayHours("MON")
+            for (let hour of hours) {
+              let apiTimeAsDecimal = hourToDecimal(hour.time) 
+              if (apiTimeAsDecimal === time) {
+                return hour.title
+              }
+            }
+            break;
+          case 1:
+            return dayHours("TUE")
+            break;
+          case 2:
+            dayHours("WED")
+            break;
+          case 3:
+            dayHours("THU")
+            break;
+          case 4:
+            dayHours("FRI")
+            break;
+          case 5:
+            dayHours("SAT")
+            break;
+          case 6:
+            dayHours("SUN")
+            break;
+          default:
+            return null
+            break;
+      }
+    }
 
     onBeforeMount(async () => {
       quasar.loading.show()
@@ -107,8 +150,10 @@ export default {
       activeTable,
       activeTableHours,
       daysLabel,
-      hours,
+      hoursLabels,
       daysCells,
+
+      scheduledTask,
     }
   }
 }

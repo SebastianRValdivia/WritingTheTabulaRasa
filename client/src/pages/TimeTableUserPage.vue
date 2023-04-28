@@ -87,6 +87,17 @@ export default {
     function scheduledTask(day, time) {
       // forgive me for what i am about to do
 
+      const daysCodes = Object.freeze({
+        monday: "MON",
+        thuesday: "TUE",
+        wednesday: "WED",
+        thursday: "THU",
+        friday: "FRI",
+        saturday: "SAT",
+        sunday: "SUN"
+      })
+
+
       // Convert api format to a single number
       const hourToDecimal = (hour) => {
         let arr = hour.split(':')
@@ -111,25 +122,25 @@ export default {
       // Check for the day code and return the title
       switch (day) {
           case 0:
-            return findHourTitle(dayHours("MON"))
+            return findHourTitle(dayHours(daysCodes.monday))
             break
           case 1:
-            return findHourTitle(dayHours("TUE"))
+            return findHourTitle(dayHours(daysCodes.thuesday))
             break
           case 2:
-            return findHourTitle(dayHours("WED"))
+            return findHourTitle(dayHours(daysCodes.wednesday))
             break
           case 3:
-            return findHourTitle(dayHours("THU"))
+            return findHourTitle(dayHours(daysCodes.thursday))
             break;
           case 4:
-            return findHourTitle(dayHours("FRI"))
+            return findHourTitle(dayHours(daysCodes.friday))
             break
           case 5:
-            return findHourTitle(dayHours("SAT"))
+            return findHourTitle(dayHours(daysCodes.saturday))
             break
           case 6:
-            return findHourTitle(dayHours("SUN"))
+            return findHourTitle(dayHours(daysCodes.sunday))
             break
           default:
             return null

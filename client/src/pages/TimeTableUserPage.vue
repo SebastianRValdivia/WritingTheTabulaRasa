@@ -86,43 +86,51 @@ export default {
     }
     function scheduledTask(day, time) {
       // forgive me for what i am about to do
+
+      // Convert api format to a single number
       const hourToDecimal = (hour) => {
         let arr = hour.split(':')
         let dec = parseInt((arr[1]/6)*10, 10)
         return parseFloat(parseInt(arr[0], 10) + '.' + (dec<10?'0':'') + dec)
       }   
 
+      // Find a list of hours according to the day 
       const dayHours = (dayCode) => {
         return activeTableHours.value.filter( (hour) => hour.day === dayCode )
       }
+
+      // Search the hour list for the correct hour and its title
+      const findHourTitle = (hours) => {
+        for (let hour of hours) {
+          let apiTimeAsDecimal = hourToDecimal(hour.time) 
+          if (apiTimeAsDecimal === time) {
+            return hour.title
+          }
+        }
+      }
+      // Check for the day code and return the title
       switch (day) {
           case 0:
-            let hours = dayHours("MON")
-            for (let hour of hours) {
-              let apiTimeAsDecimal = hourToDecimal(hour.time) 
-              if (apiTimeAsDecimal === time) {
-                return hour.title
-              }
-            }
-            break;
+            return findHourTitle(dayHours("MON"))
+            break
           case 1:
-            return dayHours("TUE")
-            break;
+            return findHourTitle(dayHours("TUE"))
+            break
           case 2:
-            dayHours("WED")
-            break;
+            return findHourTitle(dayHours("WED"))
+            break
           case 3:
-            dayHours("THU")
+            return findHourTitle(dayHours("THU"))
             break;
           case 4:
-            dayHours("FRI")
-            break;
+            return findHourTitle(dayHours("FRI"))
+            break
           case 5:
-            dayHours("SAT")
-            break;
+            return findHourTitle(dayHours("SAT"))
+            break
           case 6:
-            dayHours("SUN")
-            break;
+            return findHourTitle(dayHours("SUN"))
+            break
           default:
             return null
             break;

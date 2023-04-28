@@ -35,8 +35,9 @@ const mainDrawer = {
   literary: "Literary",
   tools: "Assistance tools",
   tasks: "Tasks",
-  calendar: "Calendar",
+  schedule: "Schedule",
   goals: "Goals",
+  timeTable: "Time table",
   preferences: "Preferences",
   learningResources: "Learning resources",
   logOut: "Log out",
@@ -190,6 +191,16 @@ const practiceRoutinePreviewPage = {
   pageTitle: "Practice for",
   noExercises: "There are no exercises in this routine"
 }
+const timeTableUserPage = {
+  monday: "Monday",
+  thuesday: "Thuesday",
+  wednesday: "Wednesday",
+  thursday: "Thursday",
+  friday: "Friday",
+  saturday: "Saturday",
+  sunday: "Sunday",
+  hours: "Hours",
+}
 
 
 const imageUploadDialog = {
@@ -249,6 +260,7 @@ export default {
   practiceRoutinePage,
   practiceRoutineListPage, 
   practiceRoutinePreviewPage,
+  timeTableUserPage,
 
   imageUploadDialog,
   metadataEditorDialog,

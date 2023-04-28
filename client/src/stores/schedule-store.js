@@ -6,7 +6,9 @@ import { useUserStore } from "src/stores/user-store"
 export const useScheduleStore = defineStore("schedule", {
   state: () => ({
     goalsList: [],
-    objectivesList: []
+    objectivesList: [],
+    userTimeTablesList: [], // Only logged user tables
+    userHoursList: [], // Only logged user hours
   }),
   getters: {
     getGoalsList: (state) => state.goalsList,
@@ -16,7 +18,16 @@ export const useScheduleStore = defineStore("schedule", {
     getObjectivesList: (state) => state.objectivesList,
     getGoalById: (state) => {
       return (goalId) => state.goalsList.find((goal) => goal.id === goalId)
-    }
+    },
+    getUserActiveTimeTable: (state) => {
+      return state.userTimeTablesList.find( (table) => table.status === true)
+    },
+    getUserHours: (state) => state.userHoursList,
+    getUserHoursByTable: (state) => {
+      return (tableId) => state.userHoursList.filter( 
+        (hour) => hour.table == tableId
+      )
+    },
   },
   actions: {
     async retrieveGoals() {
@@ -52,9 +63,23 @@ export const useScheduleStore = defineStore("schedule", {
       if (result.code === 200) {
         this.objectivesList = result.objectives
         return true
-      } else {
-        return false
-      }
-    }
+      } else return false
+    },
+    async retrieveUserTimeTables() {
+      let userStore = useUserStore()
+      let result = await api.schedule.getTimeTablesByUser(userStore.getUserId)
+      if (result.code === 200) {
+        this.userTimeTablesList = result.data
+        return true
+      } else return false
+    },
+    async retrieveUserHours() {
+      let userStore = useUserStore()
+      let result = await api.schedule.getHoursByUser(userStore.getUserId)
+      if (result.code === 200) {
+        this.userHoursList = result.data
+        return true
+      } else return false
+    },
   }
 })

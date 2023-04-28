@@ -55,6 +55,11 @@ const routes = [
         props: true,
       },
       {
+        path: "my/timetable/",
+        name: "timeTableUserPage",
+        component: () => import("src/pages/TimeTableUserPage"),
+      },
+      {
         path: "my/tools/",
         name: "tools",
         component: () => import("src/pages/ToolsPage"),

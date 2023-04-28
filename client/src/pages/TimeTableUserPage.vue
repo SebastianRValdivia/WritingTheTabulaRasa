@@ -26,14 +26,28 @@
           :key="index"
         >
           <td>
-            {{ hour }}
+            {{ hour }}:00
           </td>
 
           <td 
             v-for="(day, index) in daysCells" 
             :key="index"
+            class="cursor-pointer"
           >
             {{ scheduledTask(index, day[hour]) }}
+            <q-popup-edit 
+              v-model="isPopUpOpen"
+              auto-save
+              v-slot="scope"
+              @hide="createScheduledHour(index, day[hour])"
+            >
+              <q-input 
+                v-model="hourTitleInput" 
+                dense 
+                autofocus 
+                @keyup.enter="scope.set" 
+              />
+            </q-popup-edit>
           </td>
         </tr>
       </tbody>
@@ -69,7 +83,18 @@ export default {
     ])
     const hoursLabels = ref(Array.from(Array(24).keys()))
     const daysCells = ref(generateHoursCells())
+    const isPopUpOpen = ref(false)
+    const hourTitleInput = ref("")
 
+    const daysCodes = Object.freeze({
+      monday: "MON",
+      thuesday: "TUE",
+      wednesday: "WED",
+      thursday: "THU",
+      friday: "FRI",
+      saturday: "SAT",
+      sunday: "SUN"
+    })
     
     function generateHoursCells() {
       let hoursPerDay = 24 // To be change by user config
@@ -86,17 +111,8 @@ export default {
     }
     function scheduledTask(day, time) {
       // forgive me for what i am about to do
-
-      const daysCodes = Object.freeze({
-        monday: "MON",
-        thuesday: "TUE",
-        wednesday: "WED",
-        thursday: "THU",
-        friday: "FRI",
-        saturday: "SAT",
-        sunday: "SUN"
-      })
-
+      // Finds the correct day and time and if it exist in the table returns
+      // the title
 
       // Convert api format to a single number
       const hourToDecimal = (hour) => {
@@ -147,6 +163,21 @@ export default {
             break;
       }
     }
+    async function createScheduledHour(dayIndex, hourInteger) {
+      const hourForApi = () => { // TODO: mv to utils
+        // day doesnt matter here its just a required parameter
+        return new Date("1985", "10", "26", hourInteger)
+          .toLocaleTimeString('en-US', {
+            hour: 'numeric', minute: 'numeric', hour12: false,
+          })
+      }
+      let result = await scheduleStore.createHour(
+        Object.values(daysCodes)[dayIndex], // Treat dic as list and uses number
+        hourForApi(hourInteger),
+        activeTable.value.id,
+        hourTitleInput.value,
+      )
+    }
 
     onBeforeMount(async () => {
       quasar.loading.show()
@@ -171,8 +202,11 @@ export default {
       daysLabel,
       hoursLabels,
       daysCells,
+      isPopUpOpen,
+      hourTitleInput,
 
       scheduledTask,
+      createScheduledHour,
     }
   }
 }
@@ -187,6 +221,7 @@ export default {
   border: 2px solid black;
 }
 .scoped-time-table td {
+  text-align: center;
   border: 1px solid black;
 }
 </style>

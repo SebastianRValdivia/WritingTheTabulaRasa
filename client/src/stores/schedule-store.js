@@ -81,5 +81,20 @@ export const useScheduleStore = defineStore("schedule", {
         return true
       } else return false
     },
+    async createHour(day, time, tableId, title) {
+      let userStore = useUserStore()
+      let result = await api.schedule.postHour({
+        owner: userStore.getUserId,
+        day: day,
+        time: time,
+        table: tableId,
+        title: title
+      })
+
+      if (result.code === 201) {
+        this.userHoursList.push(result.data)
+        return result.data
+      } else return false
+    },
   }
 })

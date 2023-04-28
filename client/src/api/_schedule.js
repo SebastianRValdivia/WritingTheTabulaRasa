@@ -78,4 +78,18 @@ export default {
     )
     return result
   },
+  async postHour(hourData) {
+    try {
+      let response = await api.post("v1/schedules/hours/", hourData)
+
+      if (response) {
+        return {
+          code: response.status,
+          data: response.data
+        }
+      } else return false
+    } catch {
+      return false
+    }
+  }
 }

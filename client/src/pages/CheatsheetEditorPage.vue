@@ -1,55 +1,74 @@
 <template>
-  <q-page class="q-pa-md justify-center">
-    <div class="row q-pb-md">
+  <q-page padding class="row">
+    <div class="col col-12 row q-pb-md">
       <q-input 
         v-model="sheetTitleInput" 
         :placeholder="sheetInitialState.title"
         input-class="text-h3"
+        :label="$t('cheatSheetEditorPage.sheetTitle')"
+        :rules="[val => !!val || $t('general.required')]"
       />
       <q-space/>
-      <q-btn v-if="!isNew" icon="delete" color="negative" @click="deletePage"/>
-      <q-btn :label="$t('done')" color="primary" @click="saveCheatsheet"/>
+      <q-page-sticky position="top-right" :offset="[20, 20]">
+        <q-btn round icon="done" color="primary" @click="submit"/>
+      </q-page-sticky>
     </div>
-    <div class="row q-pb-xl">
+    <div class="col col-9 q-pb-xl">
       <q-input 
         v-model="sheetDescriptionInput"
         autogrow 
+        borderless
+        :label="$t('cheatSheetEditorPage.sheetDescription')"
         :placeholder="sheetInitialState.description" 
+        :rules="[val => !!val || $t('general.required')]"
       />
     </div>
 
-    <div class="row">
+    <div class="col col-12 row justify-center q-gutter-sm">
       <!-- Cheat card preview -->
       <q-card 
         v-for="(cheat, index) in cheatList" 
         :key="index"
-        class="cheat-card"
+        class="cheat-card col"
         :class="cheatsheetHasSize(cheat.size)" 
       >
         <q-card-section>
-          {{ cheat.title }}
+          <h6 class="text-h6">
+            {{ cheat.title }}
+          </h6>
         </q-card-section>
         <q-card-section>
           <MarkdownPreview :md="cheat.content" />
         </q-card-section>
       </q-card>
+
+      <!-- Input card for new cheat -->
       <q-card 
-        class="cheat-card"
+        class="cheat-card col"
         :class="cheatsheetHasSize(cheatSizeInput)" 
       >
         <q-card-section>
-          <q-input v-model="cheatTitleInput"/>
+          <q-input 
+            v-model="cheatTitleInput"
+            input-class="text-h6"
+            :label="$t('cheatSheetEditorPage.cheatTitle')"
+            :rules="[val => !!val || $t('general.required')]"
+          />
         </q-card-section>
         <q-card-section>
-          <q-input type="textarea" v-model="cheatContentInput"/>
+          <q-input 
+            type="textarea" 
+            v-model="cheatContentInput"
+            :rules="[val => !!val || $t('general.required')]"
+          />
         </q-card-section>
         <q-card-actions>
-          <q-btn-group rounded>
-            <q-btn color="primary" rounded glossy icon="remove" @click="reduceSize()"/>
-            <q-btn color="primary" rounded glossy icon="add" @click="expandSize()"/>
+          <q-btn-group flat>
+            <q-btn color="primary" flat icon="remove" @click="reduceSize()"/>
+            <q-btn color="primary" flat icon="add" @click="expandSize()"/>
           </q-btn-group>
           <q-space/>
-          <q-btn round icon="done" @click="addCheat"/>
+          <q-btn round color="primary" icon="done" @click="addCheat"/>
         </q-card-actions>
       </q-card>
     </div>
@@ -93,16 +112,15 @@ export default {
     const cheatSizeInput = ref(2)
 
     function addCheat() {
-      let newCheat = {
-        title: null,
-        content: null,
-        size: null,
+      // Create the cheat obj and add it to the list of cheats
+      if (cheatTitleInput.value && cheatContentInput.value) {
+        let newCheat = {
+          title: cheatTitleInput.value,
+          content: cheatContentInput.value,
+          size: cheatSizeInput.value,
+        }
+        cheatList.value.push(newCheat)
       }
-      newCheat.title = cheatTitleInput.value
-      newCheat.content = cheatContentInput.value
-      newCheat.size = cheatSizeInput.value
-      
-      cheatList.value.push(newCheat)
       clearInputs()
     }
     function clearInputs() {
@@ -110,21 +128,21 @@ export default {
       cheatContentInput.value = ""
       cheatSizeInput.value = 2
     }
-    async function saveCheatsheet() {
+    async function submit() {
       if (isNew.value) {
         let sheetCreated = await cheatsheetStore.createSheet({
           title: sheetTitleInput.value,
           description: sheetDescriptionInput.value
         })
         if (sheetCreated) {
-          cheatList.value.forEach(async (cheat) => {
-            let cheatCreated = await cheatsheetStore.createCheat({
+          for (let cheat of cheatList.value) {
+            let cheatCreationResult = await cheatsheetStore.createCheat({
               title: cheat.title,
               content: cheat.content,
               sheet: sheetCreated.id,
               size: cheat.size,
             })
-          })
+          }
         }
         router.push({name: "cheatsheets"})
       } else {
@@ -182,7 +200,7 @@ export default {
 
 
     useMeta({
-      title: t("cheatSheetNewPage.pageTitle"),
+      title: t("cheatSheetEditorPage.pageTitle"),
     })
     return {
       isNew,
@@ -194,11 +212,12 @@ export default {
       cheatContentInput,
       cheatSizeInput,
       addCheat,
-      saveCheatsheet,
       cheatsheetHasSize,
       reduceSize,
       expandSize,
       deletePage,
+
+      submit,
     }
   }
 }

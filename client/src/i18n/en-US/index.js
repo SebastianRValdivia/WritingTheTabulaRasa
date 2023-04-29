@@ -11,6 +11,7 @@ const general = {
   empty: "Nothing found",
   toClipboard: "Added to clipboard",
   edit: "Edit",
+  required: "Required"
 }
 
 const mainLayout = {
@@ -108,8 +109,11 @@ const cheatSheetListPage = {
 const cheatSheetPage = {
   pageTitle: "Cheat sheet"
 }
-const cheatSheetNewPage = {
-  pageTitle: "New cheat sheet"
+const cheatSheetEditorPage = {
+  pageTitle: "Edit cheat sheet",
+  cheatTitle: "Cheat title",
+  sheetTitle: "Sheet title",
+  sheetDescription: "A description of the sheet",
 }
 const fleetingNoteListPage = {
   pageTitle: "My fleeting notes"
@@ -239,7 +243,7 @@ export default {
   researchPage,
   cheatSheetListPage,
   cheatSheetPage,
-  cheatSheetNewPage,
+  cheatSheetEditorPage,
   fleetingNoteListPage,
   literaryNoteListPage,
   literaryNoteEditorPage,

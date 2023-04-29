@@ -8,7 +8,9 @@
       />
       <q-space/>
       <q-btn v-if="!isNew" icon="delete" color="negative" @click="deletePage"/>
-      <q-btn :label="$t('done')" color="primary" @click="saveCheatsheet"/>
+      <q-page-sticky position="top-right" :offset="[20, 20]">
+        <q-btn round icon="done" color="primary" @click="submit"/>
+      </q-page-sticky>
     </div>
     <div class="row q-pb-xl">
       <q-input 
@@ -33,6 +35,8 @@
           <MarkdownPreview :md="cheat.content" />
         </q-card-section>
       </q-card>
+
+      <!-- Input card for new cheat -->
       <q-card 
         class="cheat-card"
         :class="cheatsheetHasSize(cheatSizeInput)" 
@@ -44,7 +48,7 @@
           <q-input type="textarea" v-model="cheatContentInput"/>
         </q-card-section>
         <q-card-actions>
-          <q-btn-group rounded>
+          <q-btn-group rounded flat>
             <q-btn color="primary" rounded glossy icon="remove" @click="reduceSize()"/>
             <q-btn color="primary" rounded glossy icon="add" @click="expandSize()"/>
           </q-btn-group>
@@ -110,21 +114,21 @@ export default {
       cheatContentInput.value = ""
       cheatSizeInput.value = 2
     }
-    async function saveCheatsheet() {
+    async function submit() {
       if (isNew.value) {
         let sheetCreated = await cheatsheetStore.createSheet({
           title: sheetTitleInput.value,
           description: sheetDescriptionInput.value
         })
         if (sheetCreated) {
-          cheatList.value.forEach(async (cheat) => {
-            let cheatCreated = await cheatsheetStore.createCheat({
+          for (let cheat of cheatList.value) {
+            let cheatCreationResult = await cheatsheetStore.createCheat({
               title: cheat.title,
               content: cheat.content,
               sheet: sheetCreated.id,
               size: cheat.size,
             })
-          })
+          }
         }
         router.push({name: "cheatsheets"})
       } else {
@@ -194,11 +198,12 @@ export default {
       cheatContentInput,
       cheatSizeInput,
       addCheat,
-      saveCheatsheet,
       cheatsheetHasSize,
       reduceSize,
       expandSize,
       deletePage,
+
+      submit,
     }
   }
 }

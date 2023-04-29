@@ -11,29 +11,40 @@
         once
         transition="scale"
       >
-        <router-link 
-          :to="{name: 'cheatsheet', params: {url: sheet.url}}"
-        >
           <q-card class="q-pa-md sheet-card">
-            <span class="row justify-end">
-              <q-btn 
-                icon="edit" 
-                size="sm" 
-                round 
-                :to="{name: 'cheatsheetEditor', params: {url: sheet.url}}"
+            <q-card-actions class="row justify-end">
+              <q-btn
+                icon="more_horiz"
+                flat
                 v-if="userStore.isUserLogged"
-              /> 
-            </span>
-            <h4 class="text-h4 column items-center">
-              {{ sheet.title }}
-            </h4>
-            <q-card-section>
-              <p>
-                {{ sheet.description }}
-              </p>
-            </q-card-section>
+              >
+                <q-menu auto-close anchor="top start" self="top right">
+                  <q-item 
+                    clickable
+                    :to="{name: 'cheatsheetEditor', params: {url: sheet.url}}"
+                  >
+                    <q-item-section>
+                      {{ $t("general.edit") }}
+                    </q-item-section>
+                  </q-item>
+                </q-menu>
+              </q-btn>
+            </q-card-actions>
+            <router-link 
+              :to="{name: 'cheatsheet', params: {url: sheet.url}}"
+            >
+              <q-card-section>
+                <h4 class="text-h4 column items-center">
+                  {{ sheet.title }}
+                </h4>
+              </q-card-section>
+              <q-card-section>
+                <p>
+                  {{ sheet.description }}
+                </p>
+              </q-card-section>
+            </router-link>
           </q-card>
-        </router-link>
       </q-intersection>
     </div>
     
@@ -41,12 +52,11 @@
       <h1>{{ $t("sheetPage.noSheets") }}</h1>
     </div>
     
-    <q-page-sticky position="bottom-right" :offset="[18, 18]">
+    <q-page-sticky position="top-right" :offset="[20, 20]">
       <q-btn 
         round 
-        color="secondary" 
+        color="primary" 
         icon="add" 
-        size="md" 
         :to="{name: 'cheatsheetEditor' }"
       />
     </q-page-sticky>

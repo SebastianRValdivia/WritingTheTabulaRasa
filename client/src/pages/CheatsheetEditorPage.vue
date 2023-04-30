@@ -33,34 +33,9 @@
       />
 
       <!-- Input card for new cheat -->
-      <q-card 
-        class="cheat-card col"
-        :class="cheatsheetHasSize(cheatSizeInput)" 
-      >
-        <q-card-section>
-          <q-input 
-            v-model="cheatTitleInput"
-            input-class="text-h6"
-            :label="$t('cheatSheetEditorPage.cheatTitle')"
-            :rules="[val => !!val || $t('general.required')]"
-          />
-        </q-card-section>
-        <q-card-section>
-          <q-input 
-            type="textarea" 
-            v-model="cheatContentInput"
-            :rules="[val => !!val || $t('general.required')]"
-          />
-        </q-card-section>
-        <q-card-actions>
-          <q-btn-group flat>
-            <q-btn color="primary" flat icon="remove" @click="reduceSize()"/>
-            <q-btn color="primary" flat icon="add" @click="expandSize()"/>
-          </q-btn-group>
-          <q-space/>
-          <q-btn round color="primary" icon="done" @click="addCheat"/>
-        </q-card-actions>
-      </q-card>
+      <CheatInput
+        @onDone="addCheat"
+      />
     </div>
   </q-page>
 </template>
@@ -75,11 +50,14 @@ import { useCheatsheetStore } from "src/stores/cheatsheet-store"
 import { cheatsheetHasSize } from "src/utils/cheatsheets"
 import CheatPreview from 
   "src/components/for-pages/CheatsheetEditorPage/CheatPreview"
+import CheatInput from
+  "src/components/for-pages/CheatsheetEditorPage/CheatInput"
 
 export default {
   name: "CheatsheetEditorPage",
   components: {
     CheatPreview,
+    CheatInput,
   },
   props: {
     url: String
@@ -98,26 +76,10 @@ export default {
     const sheetTitleInput = ref("")
     const sheetDescriptionInput = ref("")
     const cheatList = ref([])
-    const cheatTitleInput = ref("") 
-    const cheatContentInput = ref("")
-    const cheatSizeInput = ref(2)
 
-    function addCheat() {
-      // Create the cheat obj and add it to the list of cheats
-      if (cheatTitleInput.value && cheatContentInput.value) {
-        let newCheat = {
-          title: cheatTitleInput.value,
-          content: cheatContentInput.value,
-          size: cheatSizeInput.value,
-        }
-        cheatList.value.push(newCheat)
-      }
-      clearInputs()
-    }
-    function clearInputs() {
-      cheatTitleInput.value = ""
-      cheatContentInput.value = ""
-      cheatSizeInput.value = 2
+    function addCheat(newCheat) {
+      // Add cheat to cheats list
+      cheatList.value.push(newCheat)
     }
     async function submit() {
       if (isNew.value) {
@@ -145,16 +107,6 @@ export default {
           }
         )
       }
-    }
-    function reduceSize() {
-      1 < cheatSizeInput.value
-        ? cheatSizeInput.value -= 1
-        : console.log("cant more")
-    }
-    function expandSize() {
-      2 >= cheatSizeInput.value
-        ? cheatSizeInput.value += 1
-        : console.log("cant more")
     }
     function deletePage() {
       if (sheetInitialState.id !== null){
@@ -199,13 +151,7 @@ export default {
       sheetTitleInput,
       sheetDescriptionInput,
       cheatList,
-      cheatTitleInput,
-      cheatContentInput,
-      cheatSizeInput,
       addCheat,
-      cheatsheetHasSize,
-      reduceSize,
-      expandSize,
       deletePage,
 
       submit,

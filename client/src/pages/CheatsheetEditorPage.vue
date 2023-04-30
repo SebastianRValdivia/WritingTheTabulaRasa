@@ -26,21 +26,11 @@
 
     <div class="col col-12 row justify-center q-gutter-sm">
       <!-- Cheat card preview -->
-      <q-card 
+      <CheatPreview 
         v-for="(cheat, index) in cheatList" 
         :key="index"
-        class="cheat-card col"
-        :class="cheatsheetHasSize(cheat.size)" 
-      >
-        <q-card-section>
-          <h6 class="text-h6">
-            {{ cheat.title }}
-          </h6>
-        </q-card-section>
-        <q-card-section>
-          <MarkdownPreview :md="cheat.content" />
-        </q-card-section>
-      </q-card>
+        :cheatData="cheat"
+      />
 
       <!-- Input card for new cheat -->
       <q-card 
@@ -82,13 +72,14 @@ import { useI18n } from "vue-i18n"
 import { useRouter, onBeforeRouteUpdate } from "vue-router"
 
 import { useCheatsheetStore } from "src/stores/cheatsheet-store"
-import MarkdownPreview from "src/components/for-viewing/MarkdownPreview"
 import { cheatsheetHasSize } from "src/utils/cheatsheets"
+import CheatPreview from 
+  "src/components/for-pages/CheatsheetEditorPage/CheatPreview"
 
 export default {
   name: "CheatsheetEditorPage",
   components: {
-    MarkdownPreview
+    CheatPreview,
   },
   props: {
     url: String

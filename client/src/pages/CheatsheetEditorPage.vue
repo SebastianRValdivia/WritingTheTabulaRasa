@@ -30,6 +30,7 @@
         v-for="(cheat, index) in cheatList" 
         :key="index"
         :cheatData="cheat"
+        @onUpdated="updateCheat"
       />
 
       <!-- Input card for new cheat -->
@@ -77,6 +78,12 @@ export default {
     const sheetDescriptionInput = ref("")
     const cheatList = ref([])
 
+    function updateCheat(currentTitle, updatedCheatData) {
+      // search cheat by current title and then update the data
+      let indexOfCheatToChange = 
+        cheatList.value.findIndex( (cheat) => cheat.title === currentTitle)
+      cheatList.value[indexOfCheatToChange] = updatedCheatData
+    }
     function addCheat(newCheat) {
       // Add cheat to cheats list
       cheatList.value.push(newCheat)
@@ -151,6 +158,8 @@ export default {
       sheetTitleInput,
       sheetDescriptionInput,
       cheatList,
+
+      updateCheat,
       addCheat,
       deletePage,
 

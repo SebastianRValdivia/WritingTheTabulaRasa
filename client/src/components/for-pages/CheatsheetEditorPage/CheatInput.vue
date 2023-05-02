@@ -16,7 +16,7 @@
       type="textarea" 
       v-model="cheatContentInput"
       :rules="[val => !!val || $t('general.required')]"
-/>
+    />
   </q-card-section>
   <q-card-actions>
     <q-btn-group flat>
@@ -24,7 +24,7 @@
       <q-btn color="primary" flat icon="add" @click="expandSize()"/>
     </q-btn-group>
     <q-space/>
-    <q-btn round color="primary" icon="done" @click="emitDone"/>
+    <q-btn round flat icon="done" @click="emitDone"/>
   </q-card-actions>
 </q-card>
 </template>

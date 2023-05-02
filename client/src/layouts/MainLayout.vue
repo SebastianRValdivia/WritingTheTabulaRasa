@@ -23,7 +23,7 @@
         </q-toolbar-title>
         <q-btn :label="$t('mainLayout.compendiums')">
           <q-menu fit anchor="bottom left">
-            <q-item clickable :to="{name: 'encyclopediaindex'}">
+            <q-item clickable :to="{name: 'encyclopediaListPage'}">
               <q-item-section>{{ $t('mainLayout.encyclopedia') }}</q-item-section>
             </q-item>
             <q-item clickable :to="{name: 'cheatsheets'}">

@@ -121,7 +121,7 @@ const routes = [
       },
       {
         path: "encyclopedia/",
-        name: "encyclopediaIndex",
+        name: "encyclopediaListPage",
         component: () => import("src/pages/EncyclopediaListPage"),
       },
       {

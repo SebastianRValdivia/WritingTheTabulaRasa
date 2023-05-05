@@ -1,20 +1,39 @@
 <template>
   <q-page class="q-pa-md" v-if="pageData">
     <div id="header" class="row">
-      <h2 class="col-12">{{ pageData.title }}</h2>
-      <h4 class="col-10">{{ pageData.epigraph }}</h4>
+      <h1 class="col col-12 text-h2">{{ pageData.title }}</h1>
+      <p class="col col-10 text-h4">{{ pageData.epigraph }}</p>
     </div>
 
     <q-separator inset />
 
-    <div id="body">
-      <q-card v-if="pageCardData" class="wiki-card">
-        <q-img :src="findWikiPageUrl(pageData.image)"/>
-        <q-card-section>
-          <MarkdownPreview :md="pageCardData.content" />
-        </q-card-section>
-      </q-card>
-      <MarkdownPreview :md="pageData.content" />
+    <div id="body" class="row">
+
+      <!-- Content -->
+      <div class="col col-10" id="content">
+        <MarkdownPreview :md="pageData.content" />
+      </div>
+      <!-- Page card -->
+      <div class="col col-2">
+        <q-card v-if="pageCardData" class="wiki-card">
+          <q-img :src="findWikiPageUrl(pageData.image)"/>
+          <q-card-section>
+            <MarkdownPreview :md="pageCardData.content" />
+          </q-card-section>
+        </q-card>
+        <div>
+          <q-list>
+            <q-item
+              v-for="(section, index) in pageSections"
+              :key="index"
+              clickable
+              @click="scrollToSection(section)"
+            >
+              {{ section.innerText }}
+            </q-item>
+          </q-list>
+        </div>
+      </div>
     </div>
 
     <div id="footer"></div>
@@ -23,8 +42,8 @@
 </template>
 
 <script>
-import { ref, onBeforeMount } from "vue"
-import { useQuasar, useMeta } from "quasar"
+import { ref, computed, onBeforeMount } from "vue"
+import { useQuasar, useMeta, scroll } from "quasar"
 import { useRouter } from "vue-router"
 import { useI18n } from "vue-i18n"
 
@@ -43,6 +62,7 @@ export default {
   },
   setup(props) {
     const $q = useQuasar()
+    const { getScrollTarget, setVerticalScrollPosition } = scroll
     const { t } = useI18n()
     const $router = useRouter()
     const wikiStore = useWikiStore()
@@ -50,11 +70,23 @@ export default {
 
     const pageData = ref()
     const pageCardData = ref()
+    const pageSections = ref()
+
+    function getSections() {
+      const pageContentElement = document.getElementById("content")
+      pageSections.value = pageContentElement.getElementsByTagName("h1")
+    }
 
     function findWikiPageUrl(imgId) {
       let imgData = resourceStore.getImageResourceById(imgId)
       if (imgData) return imgData.file
       else return null
+    }
+    function scrollToSection (el) {
+      const target = getScrollTarget(el)
+      const offset = el.offsetTop
+      const duration = 500
+      setVerticalScrollPosition(target, offset, duration)
     }
     async function loadPage(pageUrl) {
       // Search in the store
@@ -82,6 +114,7 @@ export default {
     onBeforeMount(async () => {
       $q.loading.show()
       await loadPage(props.url)
+      getSections()
       $q.loading.hide()
     })
 
@@ -93,6 +126,10 @@ export default {
     return {
       pageData,
       pageCardData,
+
+      pageSections, 
+
+      scrollToSection,
       findWikiPageUrl,
     }
   }

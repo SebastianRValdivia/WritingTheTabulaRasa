@@ -172,16 +172,6 @@
             </q-item>
           </q-expansion-item>
 
-          <q-item clickable v-ripple :to="{name: 'tools'}">
-            <q-item-section avatar>
-              <q-icon name="handyman" />
-            </q-item-section>
-
-            <q-item-section>
-              {{ $t("mainDrawer.tools") }}
-            </q-item-section>
-          </q-item>
-
           <q-item clickable v-ripple :to="{name: 'practiceRoutineUserListPage'}">
             <q-item-section avatar>
               <q-icon name="fitness_center" />
@@ -189,6 +179,16 @@
 
             <q-item-section>
               {{ $t("mainDrawer.practice") }}
+            </q-item-section>
+          </q-item>
+
+          <q-item clickable v-ripple :to="{name: 'tools'}">
+            <q-item-section avatar>
+              <q-icon name="handyman" />
+            </q-item-section>
+
+            <q-item-section>
+              {{ $t("mainDrawer.tools") }}
             </q-item-section>
           </q-item>
 

@@ -1,20 +1,39 @@
 <template>
   <q-page class="q-pa-md" v-if="pageData">
     <div id="header" class="row">
-      <h2 class="col-12">{{ pageData.title }}</h2>
-      <h4 class="col-10">{{ pageData.epigraph }}</h4>
+      <h1 class="col col-12 text-h2">{{ pageData.title }}</h1>
+      <p class="col col-10 text-h4">{{ pageData.epigraph }}</p>
     </div>
 
     <q-separator inset />
 
-    <div id="body">
-      <q-card v-if="pageCardData" class="wiki-card">
-        <q-img :src="findWikiPageUrl(pageData.image)"/>
-        <q-card-section>
-          <MarkdownPreview :md="pageCardData.content" />
-        </q-card-section>
-      </q-card>
-      <MarkdownPreview :md="pageData.content" />
+    <div id="body" class="row">
+
+      <!-- Content -->
+      <div class="col col-10">
+        <MarkdownPreview :md="pageData.content" />
+      </div>
+      <!-- Page card -->
+      <div class="col col-2">
+        <q-card v-if="pageCardData" class="wiki-card">
+          <q-img :src="findWikiPageUrl(pageData.image)"/>
+          <q-card-section>
+            <MarkdownPreview :md="pageCardData.content" />
+          </q-card-section>
+        </q-card>
+        <div>
+          <q-list>
+            <q-item
+              v-for="(section, index) in sections"
+              :key="index"
+              clickable
+              @click="scrollToSection(section)"
+            >
+              {{ replaceHashs(section) }}
+            </q-item>
+          </q-list>
+        </div>
+      </div>
     </div>
 
     <div id="footer"></div>
@@ -23,8 +42,8 @@
 </template>
 
 <script>
-import { ref, onBeforeMount } from "vue"
-import { useQuasar, useMeta } from "quasar"
+import { ref, computed, onBeforeMount } from "vue"
+import { useQuasar, useMeta, scroll } from "quasar"
 import { useRouter } from "vue-router"
 import { useI18n } from "vue-i18n"
 
@@ -43,6 +62,7 @@ export default {
   },
   setup(props) {
     const $q = useQuasar()
+    const { getScrollTarget, setVerticalScrollPosition } = scroll
     const { t } = useI18n()
     const $router = useRouter()
     const wikiStore = useWikiStore()
@@ -51,10 +71,29 @@ export default {
     const pageData = ref()
     const pageCardData = ref()
 
+    const sections = computed(() => {
+      // Finds all lines with # from 1 to 6
+      // Returns a list of titles
+      let allLinesWithHash = [
+        ...pageData.value.content.matchAll(/#{1,6}.+(?=\n)/gm)
+      ]
+      return allLinesWithHash.map( (section) => section[0] )
+    })
+    function replaceHashs(stringWithHashes) {
+      return stringWithHashes.replaceAll("#", "")
+    }
+
     function findWikiPageUrl(imgId) {
       let imgData = resourceStore.getImageResourceById(imgId)
       if (imgData) return imgData.file
       else return null
+    }
+    function scrollToSection (els) {
+      let el = document.querySelectorAll(replaceHashs(els))[0]
+      const target = getScrollTarget(el)
+      const offset = el.offsetTop
+      const duration = 500
+      setVerticalScrollPosition(target, offset, duration)
     }
     async function loadPage(pageUrl) {
       // Search in the store
@@ -93,6 +132,11 @@ export default {
     return {
       pageData,
       pageCardData,
+
+      sections, 
+
+      replaceHashs,
+      scrollToSection,
       findWikiPageUrl,
     }
   }

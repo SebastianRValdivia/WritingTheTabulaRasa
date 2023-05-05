@@ -10,11 +10,6 @@ class LearningResourceModel(models.Model):
         blank=False,
         null=False,
     )
-    autor = models.CharField(
-        max_length=CHARFIELD_LONG,
-        blank=True,
-        null=True,
-    ) # TODO remove, this is part of metadata
     description = models.TextField(
         blank=True,
         null=True,

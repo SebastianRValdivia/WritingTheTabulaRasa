@@ -45,9 +45,6 @@
           <div class="text-subtitle1">
             {{ resource.title }}
           </div>
-          <div>
-            {{ $t("general.by")}}: {{ resource.autor }}
-          </div>
         </q-card-section>
       </q-card>
     </div>

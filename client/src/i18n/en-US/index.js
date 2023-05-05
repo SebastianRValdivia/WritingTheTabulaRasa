@@ -182,7 +182,9 @@ const practicePage = {
   routineTitle: "Routine title",
 }
 const practiceRoutineUserPage = {
+  pageTitle: "Practice routine viewer",
   doNow: "Do routine now",
+  neverDone: "You haven't done this before",
 }
 const practiceRoutinePage = {
   practiceDone: "Practice done",

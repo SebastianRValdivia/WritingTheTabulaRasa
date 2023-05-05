@@ -13,17 +13,24 @@
     </div>
     
     <q-table
-      class="col-12"
+      class="col col-12"
+      v-if="completionsList.length > 0"
       :columns="completionsTableColumns"
       :rows="completionsList"
     ></q-table>
+    <div v-else class="col col-12 column items-center text-grey">
+      <h3>
+        {{ $t("practiceRoutineUserPage.neverDone") }}
+      </h3>
+    </div>
   </q-page>
 </template>
 
 <script>
 import { ref, onBeforeMount } from "vue"
+import { useI18n } from "vue-i18n"
 import { useRouter } from "vue-router"
-import { useQuasar } from "quasar"
+import { useQuasar, useMeta } from "quasar"
 
 import { usePracticeStore } from "src/stores/practice-store"
 
@@ -39,9 +46,10 @@ export default {
     const quasar = useQuasar()
     const practiceStore = usePracticeStore()
     const router = useRouter()
+    const { t } = useI18n()
 
     const practiceRoutineData = ref()
-    const completionsList = ref()
+    const completionsList = ref([])
     const completionsTableColumns = [
       {
         name: "routineId",
@@ -57,7 +65,7 @@ export default {
       }
     ]
 
-    onBeforeMount(async () => {
+    async function loadPage() {
       async function retrieveCompletions() {
         let result = await practiceStore.retrieveUserCompletedPracticeRoutines()
         if (result) {
@@ -68,7 +76,6 @@ export default {
           return true
         } else return false
       }
-      quasar.loading.show()
       const routineId = Number(props.id) // Convert to int
 
       practiceRoutineData.value = practiceStore.getPracticeRoutineById(
@@ -89,9 +96,17 @@ export default {
       } else {
         let retrieveCompletionsResult = await retrieveCompletions()
       }
+    }
+
+    onBeforeMount(async () => {
+      quasar.loading.show()
+      await loadPage()
       quasar.loading.hide()
     })
 
+    useMeta({
+      pageTitle: t("practiceRoutineUserPage.pageTitle")
+    })
     return {
       practiceRoutineData,
       completionsList,

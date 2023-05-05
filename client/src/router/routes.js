@@ -104,7 +104,7 @@ const routes = [
       },
       {
         path: "cheatsheets/",
-        name: "cheatsheets",
+        name: "cheatsheetListPage",
         component: () => import ("src/pages/CheatsheetListPage"),
       },
       {
@@ -148,7 +148,7 @@ const routes = [
       },
       {
         path: "guides/",
-        name: "guidesListPage",
+        name: "guideListPage",
         component: () => import("src/pages/GuideListPage")
       },
       {

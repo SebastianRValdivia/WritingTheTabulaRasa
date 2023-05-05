@@ -26,13 +26,13 @@
             <q-item clickable :to="{name: 'encyclopediaListPage'}">
               <q-item-section>{{ $t('mainLayout.encyclopedia') }}</q-item-section>
             </q-item>
-            <q-item clickable :to="{name: 'cheatsheets'}">
+            <q-item clickable :to="{name: 'cheatsheetListPage'}">
               <q-item-section>{{ $t('mainLayout.cheatsheets') }}</q-item-section>
             </q-item>
-            <q-item clickable :to="{name: 'guideslistpage'}">
+            <q-item clickable :to="{name: 'guideListPage'}">
               <q-item-section>{{ $t('mainLayout.guides') }}</q-item-section>
             </q-item>
-            <q-item clickable :to="{name: 'essayslistpage'}">
+            <q-item clickable :to="{name: 'essayListPage'}">
               <q-item-section>{{ $t('mainLayout.essays') }}</q-item-section>
             </q-item>
           </q-menu>

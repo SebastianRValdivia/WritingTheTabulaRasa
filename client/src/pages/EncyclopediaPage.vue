@@ -10,7 +10,7 @@
     <div id="body" class="row">
 
       <!-- Content -->
-      <div class="col col-10">
+      <div class="col col-10" id="content">
         <MarkdownPreview :md="pageData.content" />
       </div>
       <!-- Page card -->
@@ -24,12 +24,12 @@
         <div>
           <q-list>
             <q-item
-              v-for="(section, index) in sections"
+              v-for="(section, index) in pageSections"
               :key="index"
               clickable
               @click="scrollToSection(section)"
             >
-              {{ replaceHashs(section) }}
+              {{ section.innerText }}
             </q-item>
           </q-list>
         </div>
@@ -70,17 +70,11 @@ export default {
 
     const pageData = ref()
     const pageCardData = ref()
+    const pageSections = ref()
 
-    const sections = computed(() => {
-      // Finds all lines with # from 1 to 6
-      // Returns a list of titles
-      let allLinesWithHash = [
-        ...pageData.value.content.matchAll(/#{1,6}.+(?=\n)/gm)
-      ]
-      return allLinesWithHash.map( (section) => section[0] )
-    })
-    function replaceHashs(stringWithHashes) {
-      return stringWithHashes.replaceAll("#", "")
+    function getSections() {
+      const pageContentElement = document.getElementById("content")
+      pageSections.value = pageContentElement.getElementsByTagName("h1")
     }
 
     function findWikiPageUrl(imgId) {
@@ -88,8 +82,7 @@ export default {
       if (imgData) return imgData.file
       else return null
     }
-    function scrollToSection (els) {
-      let el = document.querySelectorAll(replaceHashs(els))[0]
+    function scrollToSection (el) {
       const target = getScrollTarget(el)
       const offset = el.offsetTop
       const duration = 500
@@ -121,6 +114,7 @@ export default {
     onBeforeMount(async () => {
       $q.loading.show()
       await loadPage(props.url)
+      getSections()
       $q.loading.hide()
     })
 
@@ -133,9 +127,8 @@ export default {
       pageData,
       pageCardData,
 
-      sections, 
+      pageSections, 
 
-      replaceHashs,
       scrollToSection,
       findWikiPageUrl,
     }

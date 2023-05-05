@@ -22,17 +22,17 @@
     </div>
     <div class="col col-2 q-pt-xl">
       <ul class="scoped-step-order fixed">
-        <li
-          v-for="(stepData, index) in orderedStepsDataList"
-          :key="stepData.id"
-          @click="scrollToElement(orderedStepsDataListRefs[
-            index
+          <q-item 
+            clickable
+            v-for="(stepData, index) in orderedStepsDataList"
+            :key="stepData.id"
+            @click="scrollToElement(orderedStepsDataListRefs[
+              index
           ])"
           class="text-subtitle1"
-        >
-          
-          {{ stepData.order }} - {{ stepData.title }}
-        </li>
+          >
+            {{ stepData.order }} - {{ stepData.title }}
+          </q-item>
       </ul>
     
     </div>

@@ -9,13 +9,14 @@
       >
         <template v-slot:default-header="prop">
           <div class="row items-center">
-            <span 
+            <q-item 
+              clickable
               class="text-subtitle1"
               @click="openNote(createNoteIdentifier(prop.node, noteStore.getNotesList, [String(prop.node.identifier)]))"
             >
               {{ createNoteIdentifier(prop.node, userNoteList, [String(prop.node.identifier)]) }}
               {{ prop.node.title }}
-            </span>
+            </q-item>
           </div>
         </template>
       </q-tree>

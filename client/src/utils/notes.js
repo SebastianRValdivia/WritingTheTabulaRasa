@@ -48,11 +48,17 @@ export function createNoteIdentifier(objectiveNote, noteList, identifierList) {
 }
 
 export function constructNoteTree(noteList) {
-  let arrangedNoteTree // The arranged in parent/child tree
-  let rootNotes = noteList.filter((note) => note.parent === null) // Grab root notes
+  function orderByIdentifier(unorderedNoteList) {
+    // Sort the note list by its identifier
+    return unorderedNoteList.sort( (a, b) => {
+      // If its positive goes up else goes down
+      return a.identifier - b.identifier 
+    })
+  }
   function addChildren(parent) { // Add children to parent
     let children = noteList.filter((note) => note.parent === parent.id)
     if (children.length !== 0) {
+      children = orderByIdentifier(children) // Sort it before assign
       parent["children"] = children
     }
     for (let newParentNote of children) {
@@ -60,6 +66,9 @@ export function constructNoteTree(noteList) {
     }
   }
 
+  let arrangedNoteTree // The arranged in parent/child tree
+  let rootNotes = noteList.filter((note) => note.parent === null) // Grab root notes
+  rootNotes = orderByIdentifier(rootNotes) // Order by identifier
   arrangedNoteTree = rootNotes // Add only root notes to the tree
   for (let rootNote of arrangedNoteTree) {
     addChildren(rootNote)

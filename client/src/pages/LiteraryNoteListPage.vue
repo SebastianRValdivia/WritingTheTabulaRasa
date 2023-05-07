@@ -26,15 +26,30 @@
         :key="note.id"
         class="col-5 literary-note-card"
       >
-        <q-card-section>
+        <q-card-actions align="right" class="q-pa-none">
           <q-btn 
-            icon="edit"
+            icon="more_horiz"
             flat
-            round
-            size="sm"
-            class="float-right"
-            :to="{name: 'literaryNoteEditorPage', params: {id: note.id}}"
-          />
+          >
+            <q-menu>
+              <q-item 
+                clickable
+                :to="{name: 'literaryNoteEditorPage', params: {id: note.id}}"
+              >
+                {{ $t("general.edit") }}
+              </q-item>
+              <q-item 
+                clickable
+                @click="deleteNote(note.id)"
+              >
+                <span class="text-negative">
+                  {{ $t("general.delete") }}
+                </span>
+              </q-item>
+            </q-menu>
+          </q-btn>
+        </q-card-actions>
+        <q-card-section>
           <MarkdownPreview :md="note.content"/>
         </q-card-section>
         <q-card-actions
@@ -63,6 +78,7 @@ import { useNoteStore } from "src/stores/note-store"
 import { useUserStore } from "src/stores/user-store"
 import { useResourceStore } from "src/stores/resource-store"
 import { fuzzySearchByObjectByKeys } from "src/utils/search"
+import { dangerConfirmNotification } from "src/utils/notifications"
 import SearchInput from "src/components/for-input/SearchInput"
 import MarkdownPreview from "src/components/for-viewing/MarkdownPreview"
 
@@ -115,6 +131,14 @@ export default {
       console.log(resourceId)
       learningResource.value = resourceId
     }
+    async function deleteNote(noteId) {
+      quasar.dialog(dangerConfirmNotification(
+        t("general.confirm"),
+        t("literaryNoteEditorPage.delete")
+      )).onOk(async () => {
+        let result = await noteStore.removeLiteraryNote(noteId)
+      })
+    }
 
     onBeforeMount(async () => {
       quasar.loading.show()
@@ -134,6 +158,7 @@ export default {
 
       searchLiteraryNotes,
       filterLearningResource,
+      deleteNote,
     }
   }
 

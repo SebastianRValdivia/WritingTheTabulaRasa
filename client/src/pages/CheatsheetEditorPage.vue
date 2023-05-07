@@ -104,7 +104,7 @@ export default {
             })
           }
         }
-        router.push({name: "cheatsheets"})
+        router.push({name: "cheatsheetListPage"})
       } else {
         let sheetUpdate = await cheatsheetStore.changeSheet(
           sheetInitialState.id, // SheetId
@@ -118,7 +118,7 @@ export default {
     function deletePage() {
       if (sheetInitialState.id !== null){
         cheatsheetStore.removeSheetById(sheetInitialState.id)
-        router.push({name: "cheatsheets"})
+        router.push({name: "cheatsheetListPage"})
       } else {
         console.error("No id")
       }

@@ -30,15 +30,6 @@
         @click="submit"
       />
     </q-page-sticky>
-    <q-page-sticky position="top-left" :offset="[20, 20]">
-      <q-btn 
-        v-if="props.id"
-        icon="delete"
-        round
-        color="negative"
-        @click="deleteNote"
-      />
-    </q-page-sticky>
   </q-page>
 </template>
 
@@ -52,7 +43,6 @@ import { useUserStore } from "src/stores/user-store"
 import { useNoteStore } from "src/stores/note-store"
 import LearningResourceChooser from 
   "src/components/for-input/LearningResourceChooser"
-import { dangerConfirmNotification } from "src/utils/notifications"
 
 
 export default {
@@ -109,18 +99,6 @@ export default {
         router.push({name: "literaryNoteListPage"})
       }
     }
-    async function deleteNote() {
-      quasar.dialog(dangerConfirmNotification(
-        t("general.confirm"),
-        t("literaryNoteEditorPage.delete")
-      )).onOk(async () => {
-        let result = await noteStore.removeLiteraryNote(props.id)
-
-        if (result) {
-          router.push({name: "literaryNoteListPage"})
-        }
-      })
-    }
 
     onBeforeMount(() => {
       if (props.id) {
@@ -139,7 +117,6 @@ export default {
       resourceInput,
 
       inputComplete,
-      deleteNote,
 
       assignResource,
       submit,

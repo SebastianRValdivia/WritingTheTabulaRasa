@@ -191,6 +191,11 @@ const routes = [
         props: true
       },
       {
+        path: "quizzes/editor/",
+        name: "quizzEditorPage",
+        component: () => import("src/pages/QuizzEditorPage")
+      },
+      {
         path: "flashcards/",
         name: "flashCardCollectionListPage",
         component: () => import("src/pages/FlashCardCollectionListPage")

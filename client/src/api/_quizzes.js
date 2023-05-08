@@ -12,6 +12,23 @@ export default {
       }
     } else return false
   },
+  async postQuizzObject(payload) {
+    try {
+      let result = await api.post(
+        "v1/quizzes/quizzes-objects/",
+        payload,
+      )
+
+      if (result.status === 201) {
+        return {
+          code: result.code,
+          data: result.data
+        }
+      }
+    } catch {
+      return false
+    }
+  },
   async getQuizzObjectById(quizzId) {
     try {
       let response = await api.get(`v1/quizzes/quizzes-objects/${quizzId}/`)

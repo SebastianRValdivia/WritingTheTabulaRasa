@@ -25,14 +25,18 @@
         :label="$t('quizzEditorPage.type')"
         v-model="typeSelection"
         :options="typeOptions"
+        emit-value
+        map-options
       />
       <q-space />
       <q-btn 
         class="col col-1"
         icon="add"
         flat
+        @click="addQuestion"
       />
     </div>
+    {{ questionList }}
   </q-page>
 </template>
 
@@ -53,8 +57,9 @@ export default {
     const { t } = useI18n()
 
     const titleInput = ref("")
+    const questionList = ref([])
     const questionInput = ref("")
-    const typeSelection = ref()
+    const typeSelection = ref(null)
     const typeOptions = [ // From quizz question choices
       {
         label: t("quizzEditorPage.formulation"),
@@ -74,6 +79,20 @@ export default {
       },
     ]
 
+    function clearQuestionInputs() {
+      questionInput.value = ""
+      typeSelection.value = null
+    }
+    function addQuestion() {
+      let questionData = {
+        type: typeSelection.value,
+        question: questionInput.value,
+      }
+      if (questionData.type && questionData.question) {
+        questionList.value.push(questionData)
+        clearQuestionInputs()
+      }
+    }
     async function submit() {
       if (titleInput.value) {
         let quizzData = {
@@ -81,15 +100,24 @@ export default {
         }
         let resultQuizzCreation = await quizzStore.createQuizzObject(quizzData)
 
+        for (let questionData of questionList.value) {
+          // Add the quizz id to the obj
+          questionData = {...questionData, quizz: resultQuizzCreation.id}
+          let resultQuestionCreation = await quizzStore.createQuizzQuestion(
+            questionData
+          )
+        }
       }
     }
 
     return { 
       titleInput,
+      questionList,
       questionInput,
       typeSelection,
       typeOptions,
 
+      addQuestion,
       submit,
     }
   }

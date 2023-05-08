@@ -4,7 +4,7 @@ import api from "src/api"
 export const useQuizzStore = defineStore("quizz", {
   state: () => ({
     quizzesList: [],
-    quizzesQuestionsList: [],
+    quizzesQuestionsList: [], // All questions from all quizzes
     formulationResponsesList: [],
     choicesList: [],
     flashCardCollectionList: [],
@@ -45,7 +45,7 @@ export const useQuizzStore = defineStore("quizz", {
 
       if (result) {
         this.quizzesList.push(result.data)
-        return true
+        return result.data
       } else return false
     },
     async retrieveQuizzesList() {
@@ -63,6 +63,14 @@ export const useQuizzStore = defineStore("quizz", {
       if (result) {
         this.quizzesList.push(result.quizzData)
         return true
+      } else return false
+    },
+    async createQuizzQuestion(questionData) {
+      let result = await api.quizzes.postQuizzQuestion(questionData)
+
+      if (result) {
+        this.quizzesQuestionsList.push(result.data)
+        return result.data
       } else return false
     },
     async retrieveQuizzesQuestionsList() {

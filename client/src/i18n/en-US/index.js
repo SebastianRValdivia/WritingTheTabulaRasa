@@ -146,6 +146,15 @@ const guideEditorPage = {
 const quizzesListPage = {
   pageTitle: "Quizzes"
 }
+const quizzEditorPage = {
+  pageTitle: "Quizz editor",
+  question: "Question",
+  type: "Type",
+  formulation: "Formulation",
+  choice: "Choice",
+  join: "Join",
+  list: "List",
+}
 const essaysListPage = {
   pageTitle: "Essays",
   by: "By"
@@ -254,6 +263,7 @@ export default {
   guidesListPage,
   guideEditorPage,
   quizzesListPage,
+  quizzEditorPage,
   essaysListPage,
   essayPage,
   essayEditorPage, 

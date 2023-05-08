@@ -37,9 +37,9 @@ class QuizzQuestionModel(models.Model):
 
     quizz = models.ForeignKey(
         "quizzes.QuizzModel",
-        on_delete=models.SET_NULL,
-        blank=True,
-        null=True,
+        on_delete=models.CASCADE,
+        blank=False,
+        null=False,
     )
     type = models.IntegerField(
         choices=QuestionTypeChoices.choices,
@@ -59,7 +59,7 @@ class QuizzQuestionModel(models.Model):
         verbose_name_plural = "Quizz questions"
 
     def __str__(self):
-        return str(self.quizz.id) + self.question
+        return self.question
 
 # Formulation question
 class QuizzFormulationQuestionModel(models.Model):
@@ -82,7 +82,7 @@ class QuizzFormulationQuestionModel(models.Model):
         verbose_name_plural = "Quizz formulation questions"
 
     def __str__(self):
-        return self.question
+        return str(self.question.id)
 
 
 class QuizzChoiceQuestionModel(models.Model):

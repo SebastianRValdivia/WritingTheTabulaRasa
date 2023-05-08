@@ -1,6 +1,7 @@
 <template>
   <q-page padding>
     <SearchInput @search="searchQuizzes"/>
+    <AddNewBtn :to="{name: 'quizzEditorPage'}" />
     <ul>
       <li
         v-for="quizz in displayedQuizzes"
@@ -23,12 +24,14 @@ import { useQuizzStore } from "src/stores/quizz-store"
 import { errorNotification } from "src/utils/notifications"
 import { fuzzySearchByObjectByKeys } from "src/utils/search"
 import SearchInput from "src/components/for-input/SearchInput"
+import AddNewBtn from "src/components/for-input/AddNewBtn"
 
 
 export default {
   name: "QuizzListPage",
   components: {
-    SearchInput
+    SearchInput,
+    AddNewBtn,
   },
   setup() {
     const quizzStore = useQuizzStore()

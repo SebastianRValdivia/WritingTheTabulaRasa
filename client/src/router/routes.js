@@ -164,7 +164,7 @@ const routes = [
       },
       {
         path: "essays/",
-        name: "essaysListPage",
+        name: "essayListPage",
         component: () => import("src/pages/EssayListPage")
       },
       {

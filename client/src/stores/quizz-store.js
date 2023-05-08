@@ -40,6 +40,14 @@ export const useQuizzStore = defineStore("quizz", {
     },
   },
   actions: {
+    async createQuizzObject(quizzData) {
+      let result = await api.quizzes.postQuizzObject(quizzData)
+
+      if (result) {
+        this.quizzesList.push(result.data)
+        return true
+      } else return false
+    },
     async retrieveQuizzesList() {
       let result = await api.quizzes.getQuizzesObjects()
 

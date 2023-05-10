@@ -1,42 +1,64 @@
 <template>
   <q-page padding class="row">
     <SubmitBtn @click="submit" />
-    <div class="col col-11">
-      <q-input 
-        input-class="text-h4"
-        v-model="titleInput"
-        :rules="[val => !!val || $t('general.required')]"
-      />
+    <div class="col col-10">
+        <q-input 
+          input-class="text-h4"
+          v-model="titleInput"
+          :label="$t('quizzEditorPage.quizzTitle')"
+          :rules="[val => !!val || $t('general.required')]"
+        />
+      <div class="col col-10 row scoped-question-input">
+        <q-input 
+          class="col col-5"
+          :label="$t('quizzEditorPage.question')"
+          v-model="questionInput"
+          :rules="[val => !!val || $t('general.required')]"
+        >
+          <template v-slot:append>
+            <q-icon name="question_mark"/>
+          </template>
+        </q-input>
+        <q-space />
+        <q-select 
+          class="col col-3"
+          :label="$t('quizzEditorPage.type')"
+          v-model="typeSelection"
+          :options="typeOptions"
+          emit-value
+          map-options
+        />
+        <q-space />
+        <q-btn 
+          class="col col-1"
+          icon="add"
+          flat
+          @click="addQuestion"
+        />
+      </div>
     </div>
-    <div class="col col-10 row scoped-question-input">
-      <q-input 
-        class="col col-5"
-        :label="$t('quizzEditorPage.question')"
-        v-model="questionInput"
-        :rules="[val => !!val || $t('general.required')]"
+    <q-stepper 
+      class="col col-12"
+      v-model="questionStep"
+      color="primary"
+      animated
+      vertical
+      header-nav
+    >
+      <q-step 
+        v-for="(questionData, index) of questionList"
+        :key="index"
+        :name="index"
+        :title="questionData.question"
       >
-        <template v-slot:append>
-          <q-icon name="question_mark"/>
-        </template>
-      </q-input>
-      <q-space />
-      <q-select 
-        class="col col-3"
-        :label="$t('quizzEditorPage.type')"
-        v-model="typeSelection"
-        :options="typeOptions"
-        emit-value
-        map-options
-      />
-      <q-space />
-      <q-btn 
-        class="col col-1"
-        icon="add"
-        flat
-        @click="addQuestion"
-      />
-    </div>
-    {{ questionList }}
+        <InputFormulationQuestion 
+          v-if="questionData.type == 1"
+          :index="index"
+          @ready="saveQuestionResponseInput"
+        />
+
+      </q-step>
+    </q-stepper>
   </q-page>
 </template>
 
@@ -46,11 +68,14 @@ import { useI18n } from "vue-i18n"
 
 import { useQuizzStore } from "src/stores/quizz-store"
 import SubmitBtn from "src/components/for-input/SubmitBtn"
+import InputFormulationQuestion from 
+  "src/components/for-pages/QuizzEditorPage/InputFormulationQuestion"
 
 export default {
   name: "QuizzEditorPage",
   components: {
-    SubmitBtn
+    SubmitBtn,
+    InputFormulationQuestion,
   },
   setup() {
     const quizzStore = useQuizzStore()
@@ -63,21 +88,23 @@ export default {
     const typeOptions = [ // From quizz question choices
       {
         label: t("quizzEditorPage.formulation"),
-        value: "1",
+        value: 1,
       },
       {
         label: t("quizzEditorPage.choice"),
-        value: "2",
+        value: 2,
       },
       {
         label: t("quizzEditorPage.join"),
-        value: "3",
+        value: 3,
       },
       {
         label: t("quizzEditorPage.list"),
-        value: "4",
+        value: 4,
       },
     ]
+    const questionResponseDataList = ref([])
+    const questionStep = ref(1)
 
     function clearQuestionInputs() {
       questionInput.value = ""
@@ -93,6 +120,9 @@ export default {
         clearQuestionInputs()
       }
     }
+    function saveQuestionResponseInput(responseData, index) {
+      questionResponseDataList.value[index] = responseData
+    }
     async function submit() {
       if (titleInput.value) {
         let quizzData = {
@@ -100,12 +130,25 @@ export default {
         }
         let resultQuizzCreation = await quizzStore.createQuizzObject(quizzData)
 
-        for (let questionData of questionList.value) {
+        for (let [index, questionData] of questionList.value.entries()) {
           // Add the quizz id to the obj
           questionData = {...questionData, quizz: resultQuizzCreation.id}
           let resultQuestionCreation = await quizzStore.createQuizzQuestion(
             questionData
           )
+          switch (questionData.type) {
+            case 1:
+              await quizzStore.createFormulationQuestion(
+                { 
+                  ...questionResponseDataList.value[index],
+                  question: resultQuestionCreation.id,
+                }
+              )
+              break
+            default:
+              console.log("error")
+              break
+          }
         }
       }
     }
@@ -116,7 +159,11 @@ export default {
       questionInput,
       typeSelection,
       typeOptions,
+      questionStep,
+      questionResponseDataList,
 
+
+      saveQuestionResponseInput,
       addQuestion,
       submit,
     }

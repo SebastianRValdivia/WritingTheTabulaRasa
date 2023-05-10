@@ -148,6 +148,7 @@ const quizzesListPage = {
 }
 const quizzEditorPage = {
   pageTitle: "Quizz editor",
+  quizzTitle: "Quizz title",
   question: "Question",
   type: "Type",
   formulation: "Formulation",

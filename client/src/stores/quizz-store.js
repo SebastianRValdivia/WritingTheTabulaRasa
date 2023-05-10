@@ -90,6 +90,17 @@ export const useQuizzStore = defineStore("quizz", {
         return true
       } else return false
     },
+    async createFormulationQuestion(formulationQuestionData) {
+      let result = await api.quizzes.postQuizzFormulationQuestion(
+        formulationQuestionData
+      )
+
+      if (result) {
+        this.formulationResponsesList.push(result.data)
+        return result.data
+      } else return false
+
+    },
     async retrieveChoicesByQuestionId(questionId) {
       let result = await api.quizzes.getChoicesByQuestionId(questionId)
 

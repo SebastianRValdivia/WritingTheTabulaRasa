@@ -85,6 +85,23 @@ export default {
       return false 
     }
   }, 
+  async postQuizzFormulationQuestion(questionData) {
+    try {
+      let respose = await api.post(
+        "v1/quizzes/question-formulations/",
+        questionData,
+      )
+
+      if (response.status === 201) {
+        return {
+          code: 200,
+          data: response.data
+        }
+      } else return false
+    } catch {
+      return false
+    }
+  },
   async getChoicesByQuestionId(questionId) {
     try {
       let response = await api.get(

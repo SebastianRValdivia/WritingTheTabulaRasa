@@ -134,7 +134,7 @@ export const useQuizzStore = defineStore("quizz", {
         return true
       } else return false
     },
-    async saveFlashCardCollection(collectionData) {
+    async createFlashCardCollection(collectionData) {
       let result = await api.quizzes.postFlashCardCollection(collectionData)
 
       if (result) {
@@ -142,7 +142,7 @@ export const useQuizzStore = defineStore("quizz", {
         return result.data.id
       } else return false
     },
-    async saveFlashCard(flashCardData) {
+    async createFlashCard(flashCardData) {
       let result = await api.quizzes.postFlashCard(flashCardData)
 
       if (result) {

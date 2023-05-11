@@ -71,7 +71,7 @@ export default {
         return 0 // Avoid submit
       }
 
-      let resultCollectionCreation = await quizzStore.saveFlashCardCollection({
+      let resultCollectionCreation = await quizzStore.createFlashCardCollection({
         title: titleInput.value
       })
 
@@ -80,7 +80,7 @@ export default {
           (cardData) => ({...cardData, collection: resultCollectionCreation})
         )
         for (let flashCardData of cardsListWithCollectionId) {
-          await quizzStore.saveFlashCard(flashCardData)
+          await quizzStore.createFlashCard(flashCardData)
         }
       }
     }

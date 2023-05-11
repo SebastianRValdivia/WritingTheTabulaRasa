@@ -9,7 +9,7 @@
       @click="submitDeck"
     />
 
-    <div class="col col-12 column items-center">
+    <div class="col col-12 column items-center q-pa-xl">
       <q-card 
         class="col-6 scoped-flashcard animated"
         :class="{ flipInY: cardOnHintSide, flip: !cardOnHintSide }"
@@ -163,5 +163,7 @@ export default {
 .scoped-flashcard {
   min-height: 20rem;
   min-width: 30rem;
+  max-height: 20rem;
+  max-width: 30rem;
 }
 </style>

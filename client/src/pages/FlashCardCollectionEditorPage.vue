@@ -5,17 +5,7 @@
       class="col col-10"
       v-model="titleInput"
     />
-    <q-btn 
-      v-if="noModifications && props.id"
-      :label="$t('general.delete')"
-      class="col q-ma-lg"
-      color="negative"
-      @click="deleteCollection"
-    />
-    <q-btn 
-      v-else
-      :label="$t('general.done')"
-      class="col q-ma-lg"
+    <SubmitBtn 
       @click="submitDeck"
     />
 
@@ -85,6 +75,7 @@ import { useRouter } from "vue-router"
 
 import { useQuizzStore } from "src/stores/quizz-store"
 import { errorNotification } from "src/utils/notifications"
+import SubmitBtn from "src/components/for-input/SubmitBtn"
 
 export default {
   name: "flashCardCollectionEditorPage",
@@ -92,6 +83,9 @@ export default {
     id: {
       type: String
     }
+  },
+  components: {
+    SubmitBtn,
   },
   setup(props) {
     const { t } = useI18n()

@@ -10,46 +10,7 @@
     />
 
     <div class="col col-12 column items-center q-pa-xl">
-      <q-card 
-        class="col-6 scoped-flashcard animated"
-        :class="{ flipInY: cardOnHintSide, flipInX: !cardOnHintSide }"
-      >
-        <q-card-section>
-          <q-input
-            v-if="cardOnHintSide"
-            class="q-mt-xl"
-            type="textarea"
-            autogrow
-            v-model="hintInput"
-            :label="$t('flashCardCollectionEditorPage.aHint')"
-          />
-          <q-input
-            v-else
-            class="q-mt-xl"
-            type="textarea"
-            autogrow
-            v-model="responseInput"
-            :label="$t('flashCardCollectionEditorPage.correctResponse')"
-          />
-        </q-card-section>
-        <q-card-actions class="column items-center absolute-bottom"> 
-          <q-btn 
-            v-if="cardOnHintSide"
-            icon="chevron_right"
-            @click="toggleToResponseSide"
-          />
-          <q-btn 
-            v-else
-            icon="chevron_left"
-            @click="toggleToHintSide"
-          />
-        </q-card-actions>
-      </q-card>
-      <q-btn 
-        icon="done"
-        @click="saveFlashCard"
-        class="q-mt-md q-mb-md"
-      />
+      <FlashCardInput @onDone="saveFlashCard"/>
     </div>
 
     <div class="row justify-center q-gutter-md">
@@ -76,6 +37,8 @@ import { useRouter } from "vue-router"
 import { useQuizzStore } from "src/stores/quizz-store"
 import { errorNotification } from "src/utils/notifications"
 import SubmitBtn from "src/components/for-input/SubmitBtn"
+import FlashCardInput from 
+  "src/components/for-pages/FlashCardCollectionEditorPage/FlashCardInput"
 
 export default {
   name: "flashCardCollectionEditorPage",
@@ -86,6 +49,7 @@ export default {
   },
   components: {
     SubmitBtn,
+    FlashCardInput,
   },
   setup(props) {
     const { t } = useI18n()
@@ -95,24 +59,11 @@ export default {
 
     const titleInput = ref("")
     const flashCardsList = ref([])
-    const hintInput = ref("")
-    const responseInput = ref("")
-    const cardOnHintSide = ref(true)
     // Change when something has been modified
     const noModifications = ref(true) 
 
-    function saveFlashCard() {
-      let newFlashCardData = {
-        hint: hintInput.value,
-        response: responseInput.value,
-      }
-      flashCardsList.value.push(newFlashCardData)
-    }
-    function toggleToResponseSide() {
-      cardOnHintSide.value = false
-    }
-    function toggleToHintSide() {
-      cardOnHintSide.value = true
+    function saveFlashCard(cardData) {
+      flashCardsList.value.push(cardData)
     }
     async function submitDeck() {
       let idAssignedToDeck = await quizzStore.saveFlashCardCollection({
@@ -143,14 +94,9 @@ export default {
       props,
       titleInput,
       flashCardsList,
-      hintInput,
-      responseInput,
-      cardOnHintSide,
       noModifications,
 
       saveFlashCard,
-      toggleToResponseSide,
-      toggleToHintSide,
       submitDeck,
       deleteCollection,
     }

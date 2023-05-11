@@ -14,15 +14,11 @@
     </div>
 
     <div class="row justify-center q-gutter-md">
-      <q-card
+      <FlashCard
         v-for="(flashCard, index) in flashCardsList"
         :key="index"
-        class="scoped-flashcard col"
-      >
-        <q-card-section>
-          {{ flashCard.hint }}
-        </q-card-section>
-      </q-card>
+        :cardData="flashCard"
+      />
     </div>
 
   </q-page>
@@ -37,6 +33,7 @@ import { useRouter } from "vue-router"
 import { useQuizzStore } from "src/stores/quizz-store"
 import { errorNotification } from "src/utils/notifications"
 import SubmitBtn from "src/components/for-input/SubmitBtn"
+import FlashCard from "src/components/for-viewing/FlashCard"
 import FlashCardInput from 
   "src/components/for-pages/FlashCardCollectionEditorPage/FlashCardInput"
 
@@ -49,6 +46,7 @@ export default {
   },
   components: {
     SubmitBtn,
+    FlashCard,
     FlashCardInput,
   },
   setup(props) {

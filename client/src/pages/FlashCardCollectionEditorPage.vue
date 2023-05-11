@@ -64,16 +64,23 @@ export default {
       flashCardsList.value.push(cardData)
     }
     async function submitDeck() {
-      let idAssignedToDeck = await quizzStore.saveFlashCardCollection({
+      if (flashCardsList.value.length <= 0) { // There are no cards
+        quasar.notify(errorNotification(
+          t("flashCardCollectionEditorPage.noCards")
+        ))
+        return 0 // Avoid submit
+      }
+
+      let resultCollectionCreation = await quizzStore.createFlashCardCollection({
         title: titleInput.value
       })
 
-      if (idAssignedToDeck) {
+      if (resultCollectionCreation) {
         const cardsListWithCollectionId = flashCardsList.value.map(
-          (cardData) => ({...cardData, collection: idAssignedToDeck})
+          (cardData) => ({...cardData, collection: resultCollectionCreation})
         )
         for (let flashCardData of cardsListWithCollectionId) {
-          await quizzStore.saveFlashCard(flashCardData)
+          await quizzStore.createFlashCard(flashCardData)
         }
       }
     }

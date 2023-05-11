@@ -21,21 +21,26 @@
         :label="$t('flashCardCollectionEditorPage.correctResponse')"
       />
     </q-card-section>
-    <q-card-actions class="column items-center absolute-bottom"> 
+    <q-card-actions 
+      align="right" 
+      class="absolute-bottom"
+    > 
       <q-btn 
         v-if="cardOnHintSide"
         icon="chevron_right"
+        flat
         @click="toggleToResponseSide"
       />
       <q-btn 
         v-else
         icon="chevron_left"
+        flat
         @click="toggleToHintSide"
       />
     </q-card-actions>
   </q-card>
   <q-btn 
-    icon="done"
+    icon="add"
     @click="emitDone"
     class="q-mt-md q-mb-md"
   />

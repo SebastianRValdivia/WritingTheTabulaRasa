@@ -22,14 +22,12 @@
     >
       <q-btn
         v-if="!isOnResponseSide"
-        round
         flat
         icon="chevron_right"
         @click="flipToResponse"
       />
       <q-btn
         v-else
-        round
         flat
         icon="chevron_left"
         @click="flipToHint"

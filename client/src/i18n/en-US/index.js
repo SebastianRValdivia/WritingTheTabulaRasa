@@ -186,6 +186,7 @@ const flashCardCollectionEditorPage = {
   collectionTitle: "Collection title",
   aHint: "Add a hint to trigger the memory",
   correctResponse: "The correct response",
+  noCards: "There are no cards in this collection",
 }
 const practicePage = {
   pageTitle: "Practice editor",

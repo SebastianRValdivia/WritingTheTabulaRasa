@@ -5,73 +5,20 @@
       class="col col-10"
       v-model="titleInput"
     />
-    <q-btn 
-      v-if="noModifications && props.id"
-      :label="$t('general.delete')"
-      class="col q-ma-lg"
-      color="negative"
-      @click="deleteCollection"
-    />
-    <q-btn 
-      v-else
-      :label="$t('general.done')"
-      class="col q-ma-lg"
+    <SubmitBtn 
       @click="submitDeck"
     />
 
-    <div class="col col-12 column items-center">
-      <q-card 
-        class="col-6 scoped-flashcard animated"
-        :class="{ flipInY: cardOnHintSide, flip: !cardOnHintSide }"
-      >
-        <q-card-section>
-          <q-input
-            v-if="cardOnHintSide"
-            class="q-mt-xl"
-            type="textarea"
-            autogrow
-            v-model="hintInput"
-            :label="$t('flashCardCollectionEditorPage.aHint')"
-          />
-          <q-input
-            v-else
-            class="q-mt-xl"
-            type="textarea"
-            autogrow
-            v-model="responseInput"
-            :label="$t('flashCardCollectionEditorPage.correctResponse')"
-          />
-        </q-card-section>
-        <q-card-actions class="column items-center absolute-bottom"> 
-          <q-btn 
-            v-if="cardOnHintSide"
-            icon="chevron_right"
-            @click="toggleToResponseSide"
-          />
-          <q-btn 
-            v-else
-            icon="chevron_left"
-            @click="toggleToHintSide"
-          />
-        </q-card-actions>
-      </q-card>
-      <q-btn 
-        icon="done"
-        @click="saveFlashCard"
-        class="q-mt-md q-mb-md"
-      />
+    <div class="col col-12 column items-center q-pa-xl">
+      <FlashCardInput @onDone="saveFlashCard"/>
     </div>
 
     <div class="row justify-center q-gutter-md">
-      <q-card
+      <FlashCard
         v-for="(flashCard, index) in flashCardsList"
         :key="index"
-        class="scoped-flashcard col"
-      >
-        <q-card-section>
-          {{ flashCard.hint }}
-        </q-card-section>
-      </q-card>
+        :cardData="flashCard"
+      />
     </div>
 
   </q-page>
@@ -85,6 +32,10 @@ import { useRouter } from "vue-router"
 
 import { useQuizzStore } from "src/stores/quizz-store"
 import { errorNotification } from "src/utils/notifications"
+import SubmitBtn from "src/components/for-input/SubmitBtn"
+import FlashCard from "src/components/for-viewing/FlashCard"
+import FlashCardInput from 
+  "src/components/for-pages/FlashCardCollectionEditorPage/FlashCardInput"
 
 export default {
   name: "flashCardCollectionEditorPage",
@@ -92,6 +43,11 @@ export default {
     id: {
       type: String
     }
+  },
+  components: {
+    SubmitBtn,
+    FlashCard,
+    FlashCardInput,
   },
   setup(props) {
     const { t } = useI18n()
@@ -101,24 +57,11 @@ export default {
 
     const titleInput = ref("")
     const flashCardsList = ref([])
-    const hintInput = ref("")
-    const responseInput = ref("")
-    const cardOnHintSide = ref(true)
     // Change when something has been modified
     const noModifications = ref(true) 
 
-    function saveFlashCard() {
-      let newFlashCardData = {
-        hint: hintInput.value,
-        response: responseInput.value,
-      }
-      flashCardsList.value.push(newFlashCardData)
-    }
-    function toggleToResponseSide() {
-      cardOnHintSide.value = false
-    }
-    function toggleToHintSide() {
-      cardOnHintSide.value = true
+    function saveFlashCard(cardData) {
+      flashCardsList.value.push(cardData)
     }
     async function submitDeck() {
       let idAssignedToDeck = await quizzStore.saveFlashCardCollection({
@@ -149,14 +92,9 @@ export default {
       props,
       titleInput,
       flashCardsList,
-      hintInput,
-      responseInput,
-      cardOnHintSide,
       noModifications,
 
       saveFlashCard,
-      toggleToResponseSide,
-      toggleToHintSide,
       submitDeck,
       deleteCollection,
     }
@@ -169,5 +107,7 @@ export default {
 .scoped-flashcard {
   min-height: 20rem;
   min-width: 30rem;
+  max-height: 20rem;
+  max-width: 30rem;
 }
 </style>

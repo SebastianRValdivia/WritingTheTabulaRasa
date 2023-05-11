@@ -6,7 +6,14 @@ from user.models import UserPreferences
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ("username", "pk")
+        fields = (
+            "username",
+            "pk",
+            "is_superuser",
+            "is_staff",
+            "first_name",
+            "last_name"
+        )
 
 class UserPreferencesSerializer(serializers.ModelSerializer):
 

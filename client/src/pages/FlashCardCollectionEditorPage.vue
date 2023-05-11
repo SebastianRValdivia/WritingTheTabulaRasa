@@ -12,7 +12,7 @@
     <div class="col col-12 column items-center q-pa-xl">
       <q-card 
         class="col-6 scoped-flashcard animated"
-        :class="{ flipInY: cardOnHintSide, flip: !cardOnHintSide }"
+        :class="{ flipInY: cardOnHintSide, flipInX: !cardOnHintSide }"
       >
         <q-card-section>
           <q-input

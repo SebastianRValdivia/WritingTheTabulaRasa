@@ -47,6 +47,28 @@ class NoteModel(models.Model):
     def get_absolute_url(self):
         return reverse('NoteModel_detail', kwargs={'pk': self.pk})
 
+class NoteConnectionGroupModel(models.Model):
+
+    title = models.CharField(
+        max_length=CHARFIELD_LONG,
+        blank=False,
+        null=False,
+    )
+    notes = models.ManyToManyField(
+        "notes.NoteModel"
+    )
+    owner = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        blank=False,
+        null=False
+    )
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
+
 
 class FleetingNoteModel(models.Model):
 

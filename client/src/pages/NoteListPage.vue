@@ -110,6 +110,7 @@ export default {
       } 
       hierarchyNoteList.value = constructNoteTree(userNoteList.value)
       await noteStore.retrieveFleetingNotes()
+      await noteStore.retrieveNoteConnectionListByLoggedUser()
       $q.loading.hide()
     })
 

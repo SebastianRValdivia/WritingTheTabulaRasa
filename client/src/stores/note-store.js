@@ -7,7 +7,8 @@ export const useNoteStore = defineStore("note", {
   state: () => ({
     notes: [],
     fleetingNotes: [],
-    literaryNotes: []
+    literaryNotes: [],
+    userNoteConnectionList: [],
   }),
   getters: {
     getNotesList: (state) => state.notes,
@@ -64,6 +65,15 @@ export const useNoteStore = defineStore("note", {
       } else {
         return "Note already loaded"
       }
+    },
+    async retrieveNoteConnectionListByLoggedUser() {
+      const userStore = useUserStore()
+      let result = await api.notes.getNoteConnectionsByUser(userStore.getUserId)
+
+      if (result) {
+        this.userNoteConnectionList = result.data
+        return true
+      } else return false
     },
     async saveNoteContent(idNoteToSave, newNoteContent) {
       let index = this.notes.findIndex((note) => note.id === idNoteToSave) 

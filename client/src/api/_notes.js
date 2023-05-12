@@ -1,4 +1,5 @@
 import { api } from "boot/axios"
+import { recursiveGetCall } from "src/utils/api"
 
 export default {
   async getNotesList(url=null, previous=[]) {
@@ -177,4 +178,10 @@ export default {
       return false
     }
   },
+  async getNoteConnectionsByUser(userId) {
+    let result = await recursiveGetCall(`v1/notes/connections/?owner=${userId}`)
+
+    if (result.code === 200) return result
+    else return false
+  }
 }

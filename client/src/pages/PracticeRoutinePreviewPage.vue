@@ -6,19 +6,25 @@
     >
       <EmptyMsg :msg="$t('practiceRoutinePreviewPage.noExercises')"/>
     </div>
-    <div class="col col-12 column items-center" v-else>
+    <div class="col col-12" v-else>
     <h3 class="text-h3">{{ routineData.title }}</h3>
-      <ul>
-        <li
-          v-for="exercise in practiceExercisesList"
-          :key="exercise.id"
-        >
-          <h4 class="text-h4">
-            {{ exercise.title }}
-          </h4>
-          <MarkdownPreview :md="exercise.content"/>
-        </li>
-      </ul>
+    <q-list>
+      <q-item
+        v-for="exercise in practiceExercisesList"
+        :key="exercise.id"
+      >
+        <q-item-section>
+          <q-item-label>
+            <h4 class="text-h4">
+              {{ exercise.title }}
+            </h4>
+          </q-item-label>
+          <q-item-label caption>
+            <MarkdownPreview :md="exercise.content"/>
+          </q-item-label>
+        </q-item-section>
+      </q-item>
+    </q-list>
     </div>
   </q-page>
 </template>

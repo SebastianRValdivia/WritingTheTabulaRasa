@@ -127,5 +127,22 @@ export default {
     } catch {
       return false
     }
-  }
+  },
+  async postPracticeExercise(exerciseData) {
+    try {
+      let response = await api.post(
+        "v1/practice/exercises/",
+        exerciseData,
+      )
+
+      if (response.status === 201) {
+        return {
+          code: response.status,
+          data: response.data,
+        }
+      }
+    } catch {
+      return false
+    }
+  },
 }

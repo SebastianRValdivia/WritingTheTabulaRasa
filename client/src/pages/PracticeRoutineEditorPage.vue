@@ -66,6 +66,7 @@
 import { ref } from "vue"
 import { useQuasar, useMeta } from "quasar"
 import { useI18n } from "vue-i18n"
+import { useRouter } from "vue-router"
 
 import { usePracticeStore } from "src/stores/practice-store"
 import SubmitBtn from "src/components/for-input/SubmitBtn"
@@ -79,6 +80,7 @@ export default {
   setup() {
     const { t } = useI18n()
     const practiceStore = usePracticeStore()
+    const router = useRouter()
 
     const titleInput = ref("")
     const exerciseTitleInput = ref("")
@@ -114,6 +116,13 @@ export default {
             let resultExerciseCreation = await practiceStore
               .createPracticeExercise(newExerciseData)
           }
+          router.push({
+            name: "practiceRoutinePreviewPage",
+            params: {
+              id: resultRoutineCreation.id
+            }
+          })
+
         }
       }
     }

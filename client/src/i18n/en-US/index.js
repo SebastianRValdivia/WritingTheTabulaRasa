@@ -188,9 +188,13 @@ const flashCardCollectionEditorPage = {
   correctResponse: "The correct response",
   noCards: "There are no cards in this collection",
 }
-const practicePage = {
+const practiceRoutineEditorPage = {
   pageTitle: "Practice editor",
   routineTitle: "Routine title",
+  exerciseTitle: "Excercice title",
+  dificulty: "Dificulty",
+  description: "Description",
+  overMax: "Over the max"
 }
 const practiceRoutineUserPage = {
   pageTitle: "Practice routine viewer",
@@ -273,7 +277,7 @@ export default {
   helpCenterPage,
   flashCardListPage,
   flashCardCollectionEditorPage,
-  practicePage,
+  practiceRoutineEditorPage,
   practiceRoutineUserPage,
   practiceRoutinePage,
   practiceRoutineListPage, 

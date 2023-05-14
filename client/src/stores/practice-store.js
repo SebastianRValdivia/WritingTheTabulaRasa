@@ -114,6 +114,14 @@ export const usePracticeStore = defineStore("practice", {
         this.assignedPracticeRoutinesList.push(result.data)
         return true
       } else return false
-    }
+    },
+    async createPracticeExercise(exerciseData) {
+      let result = await api.practice.postPracticeExercise(exerciseData)
+
+      if (result) {
+        this.practiceExercisesList.push(result.data)
+        return result.data
+      } else return false
+    },
   }
 })

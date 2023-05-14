@@ -192,7 +192,7 @@ const practiceRoutineEditorPage = {
   pageTitle: "Practice editor",
   routineTitle: "Routine title",
   exerciseTitle: "Excercice title",
-  dificulty: "Dificulty",
+  difficulty: "Difficulty",
   description: "Description",
   overMax: "Over the max"
 }

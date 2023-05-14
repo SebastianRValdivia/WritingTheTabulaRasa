@@ -23,7 +23,7 @@
           <q-input
             v-model.number="exerciseDificultyInput"
             type="number"
-            :label="$t('practiceRoutineEditorPage.dificulty')"
+            :label="$t('practiceRoutineEditorPage.difficulty')"
             class="col col-2"
             :rules="[
               val => (val <= 5) || $t('practiceRoutineEditorPage.overMax')
@@ -49,7 +49,16 @@
       </q-card>
     </div>
 
-    {{ exerciseList }}
+    <q-list class="col col-12">
+      <q-item
+        v-for="(exercise, index) in exerciseList"
+        :key="index"
+      >
+        <q-item-label>
+          {{ exercise.title }}
+        </q-item-label>
+      </q-item>
+    </q-list>
   </q-page>
 </template>
 
@@ -86,16 +95,26 @@ export default {
       let newExerciseData = {
         title: exerciseTitleInput.value,
         content: exerciseContentInput.value,
-        dificulty: exerciseDificultyInput.value,
+        difficulty: exerciseDificultyInput.value,
       }
       exerciseList.value.push(newExerciseData)
       clearExerciseInputs()
     }
     async function submit() {
       if (titleInput.value) {
-        await practiceStore.createPracticeRoutine({
+        let resultRoutineCreation = await practiceStore.createPracticeRoutine({
           title: titleInput.value,
         })
+        if (resultRoutineCreation) {
+          for (let exerciseData of exerciseList.value) {
+            let newExerciseData = {
+              routine: resultRoutineCreation.id,
+              ...exerciseData,
+            }
+            let resultExerciseCreation = await practiceStore
+              .createPracticeExercise(newExerciseData)
+          }
+        }
       }
     }
 

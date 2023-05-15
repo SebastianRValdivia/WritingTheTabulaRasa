@@ -9,21 +9,23 @@ export const useUserStore = defineStore('user', {
     userToken: null,
     userId: null,
     username: "",
+    userData: {},
     userPreferences: {},
     usersList: []
   }),
   getters: {
     isUserLogged: (state) => state.isLogged,
-    getUsername: (state) => state.username,
+    getUserName: (state) => state.username,
     getUserId: (state) => state.userId,
     getToken: (state) => state.userToken,
+    getUserData: (state) => state.userData,
     getUserPreferences: (state) => state.userPreferences,
     getUsernameById: (state) => {
       return (userId) => {
         let userData = state.usersList.find((user) => user.pk === userId)
         if (userData) return userData.username
       }
-    }
+    },
   },
   actions: {
     async retrieveUserCredentials(username, password) {
@@ -72,6 +74,14 @@ export const useUserStore = defineStore('user', {
 
       if (result) {
         this.usersList = result.usersList
+        return true
+      } else return false
+    },
+    async retrieveUserData() {
+      let result = await api.user.getUserData(this.getUserName)
+
+      if (result) {
+        this.userData = result.data
         return true
       } else return false
     }

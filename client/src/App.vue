@@ -27,6 +27,7 @@ export default ({
     onBeforeMount(async () => {
       if ($q.cookies.has("token")) {
         restoreUserCredentials()
+        await userStore.retrieveUserData()
         await userStore.retrieveUserPreferences()
       }
       await userStore.retrieveUsersData()

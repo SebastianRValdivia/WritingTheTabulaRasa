@@ -70,4 +70,17 @@ export default {
       return false
     }
   },
+  async getUserData(userName) {
+    try {
+      let response = await api.get(`v1/users/data/?username=${userName}`)
+      if (response.status === 200) {
+        return {
+          code: response.status,
+          data: response.data.results[0]
+        }
+      } else return false
+    } catch {
+      return false 
+    }
+  }
 }

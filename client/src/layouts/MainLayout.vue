@@ -89,9 +89,12 @@
       side="left"
       bordered
       class="bg-grey-3"
-      :width="300"
+      :width="250"
       :breakpoint="400"
     >
+      <q-img class="absolute-top" src="~assets/drawer-img.jpg" style="height: 150px">
+        <UserBadge logged-user class="absolute-bottom"/>
+      </q-img>
       <q-scroll-area class="fit links-area">
         <q-list>
           <q-expansion-item 
@@ -214,14 +217,6 @@
         </q-list>
 
       </q-scroll-area>
-      <q-img class="absolute-top" src="~assets/drawer-img.jpg" style="height: 150px">
-        <div class="absolute-bottom bg-transparent">
-          <q-avatar size="56px" class="q-mb-sm">
-            <img src="~assets/no-avatar.svg">
-          </q-avatar>
-          <div class="text-weight-bold">{{ userStore.getUsername }}</div>
-        </div>
-      </q-img>
     </q-drawer>
 
     <!-- Tool drawer -->
@@ -302,6 +297,7 @@ import FleetingNoteDialog from "src/components/for-control/FleetingNoteDialog"
 import PomodoroTimer from 'src/components/for-control/PomodoroTimer'
 import QuoteBtn from "src/components/for-input/QuoteBtn"
 import UploadImageBtn from "src/components/for-input/UploadImageBtn"
+import UserBadge from "src/components/for-viewing/UserBadge"
 
 export default {
   components: {
@@ -309,6 +305,7 @@ export default {
     PomodoroTimer,
     QuoteBtn,
     UploadImageBtn,
+    UserBadge,
   },
   setup() {
     const router = useRouter()

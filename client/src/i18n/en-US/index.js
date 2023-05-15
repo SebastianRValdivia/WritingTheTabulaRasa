@@ -240,6 +240,10 @@ const emptyAlert = {
 const noteCard = {
   deleteAll: "This will delete all children cards too"
 }
+const userBadge = {
+  professor: "Professor",
+  student: "Student",
+}
 
 export default {
   general,
@@ -289,4 +293,5 @@ export default {
   quizzPageFormulationQuestion,
   emptyAlert,
   noteCard,
+  userBadge,
 }

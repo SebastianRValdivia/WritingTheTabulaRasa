@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
+from django.contrib.auth.models import User
 
 from config.fields_default_values import (CHARFIELD_LONG)
 # Create your models here.
@@ -79,5 +80,33 @@ class EncyclopediaCardModel(models.Model):
 
     def __str__(self):
         return self.pg.title + " Card"
+
+class EncyclopediaDiscussionPostModel(models.Model):
+
+    content = models.TextField(
+        blank=False,
+        null=False,
+    )
+    owner = models.ForeignKey(
+        User,
+        on_delete=models.SET_NULL,
+        blank=False,
+        null=True,
+    )
+    pg = models.ForeignKey( 
+        "encyclopedia.EncyclopediaPageModel",
+        on_delete=models.CASCADE,
+        blank=False,
+        null=False,
+    )
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Encyclopedia discussion post"
+        verbose_name_plural = "Encyclopedia discussion posts"
+
+    def __str__(self):
+        return str(self.pg.id) + self.content
 
 # TODO: Modification

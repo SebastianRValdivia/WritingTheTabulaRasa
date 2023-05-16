@@ -4,10 +4,12 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from applications.encyclopedia.models import (
     EncyclopediaPageModel,
     EncyclopediaCardModel,
+    EncyclopediaDiscussionPostModel,
 )
 from applications.encyclopedia.serializers import (
     EncyclopediaPageSerializer,
     EncyclopediaCardSerializer,
+    EncyclopediaDiscussionPostSerializer,
 )
 
 # Create your views here.
@@ -26,3 +28,14 @@ class EncyclopediaCardViewSet(ModelViewSet):
     serializer_class = EncyclopediaCardSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
     filterset_fields = ["pg"]
+
+class EncyclopediaDiscussionPostViewSet(ModelViewSet):
+
+    queryset = EncyclopediaDiscussionPostModel.objects.all().order_by("id")
+    serializer_class = EncyclopediaDiscussionPostSerializer
+    permission_classes = [IsAuthenticatedOrReadOnly]
+    filterset_fields = ["pg"]
+
+    def perform_create(self, serializer):
+        request = serializer.context["request"]
+        serializer.save(owner=request.user)

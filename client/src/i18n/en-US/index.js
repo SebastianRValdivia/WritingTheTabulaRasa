@@ -99,6 +99,13 @@ const encyclopediaEditorPage = {
 const encyclopediaListPage = {
   pageTitle: "Encyclopedia"
 }
+const encyclopediaPage = {
+  pageTitle: "",
+  content: "Content",
+  code: "Code",
+  discussion: "Discussion",
+  changes: "Changes"
+}
 const researchPage = {
   pageTitle: "Research",
   startDate: "Start date"
@@ -261,6 +268,7 @@ export default {
   sheetPage,
   encyclopediaEditorPage,
   encyclopediaListPage,
+  encyclopediaPage,
   researchPage,
   cheatSheetListPage,
   cheatSheetPage,

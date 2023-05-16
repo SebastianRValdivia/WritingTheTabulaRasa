@@ -130,10 +130,28 @@ const routes = [
         component: () => import("src/pages/EncyclopediaEditorPage")
       },
       {
-        path: "encyclopedia/page/:url",
+        path: "encyclopedia/page/:url/",
         name: "encyclopediaPage",
         component: () => import("src/pages/EncyclopediaPage"),
-        props: true
+        props: true,
+        children: [
+          {
+            path: "",
+            name: "encyclopediaContentPage",
+            component: () => import(
+              "src/pages/EncyclopediaPage/EncyclopediaContentPage"
+            ),
+            props: true
+          },
+          {
+            path: "discussion/",
+            name: "encyclopediaDiscussionPage",
+            component: () => import(
+              "src/pages/EncyclopediaPage/EncyclopediaDiscussionPage"
+            ),
+            props: true
+          }
+        ]
       },
       {
         path: "research/",

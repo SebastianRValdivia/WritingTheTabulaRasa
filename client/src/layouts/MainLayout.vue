@@ -75,9 +75,9 @@
 
       <q-tabs align="left" v-if="appStore.isTabsOpen">
         <q-route-tab 
-          v-for="(pathName, title, index) in appStore.getTabs" 
+          v-for="(pathData, title, index) in appStore.getTabs" 
           :key="index" 
-          :to="{name: pathName}" 
+          :to="pathData" 
           :label="title"
           class="text-secondary"
         />

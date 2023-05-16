@@ -143,6 +143,14 @@ const routes = [
             ),
             props: true
           },
+          {
+            path: "discussion/",
+            name: "encyclopediaDiscussionPage",
+            component: () => import(
+              "src/pages/EncyclopediaPage/EncyclopediaDiscussionPage"
+            ),
+            props: true
+          }
         ]
       },
       {

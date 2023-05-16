@@ -48,7 +48,9 @@ export default {
         [t("encyclopediaPage.content")]: {
           name: "encyclopediaContentPage",
         },
-        [t("encyclopediaPage.discussion")]: {},
+        [t("encyclopediaPage.discussion")]: {
+          name: "encyclopediaDiscussionPage"
+        },
         [t("encyclopediaPage.changes")]: {},
         [t("encyclopediaPage.code")]: {},
       })

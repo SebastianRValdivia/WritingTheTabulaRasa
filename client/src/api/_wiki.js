@@ -1,4 +1,5 @@
 import { api } from "boot/axios"
+import { recursiveGetCall } from "src/utils/api"
 
 export default {
   async getWikiPages(url=null, previous=[]) {
@@ -43,12 +44,16 @@ export default {
           code: 200,
           card: response.data.results[0]
         }
-      } else return {
-        code: 404
-      }
+      } else return false
     } catch {
       return false
     }
+  },
+  async getWikiDiscussionPostsByPageId(pageId) {
+    let result = await recursiveGetCall(
+      `v1/encyclopedia/discussion-posts/?pg=${pageId}`
+    )
+    return result
   },
   async postWikiPage(pageData) {
     try {
@@ -75,5 +80,5 @@ export default {
         code: 400
       }
     }
-  }
+  },
 }

@@ -28,27 +28,18 @@ export const useUserStore = defineStore('user', {
     },
   },
   actions: {
-    async retrieveUserCredentials(username, password) {
+    async retrieveUserCredentials(userName, password) {
       const userStore = useUserStore()
-      this.username = username
+      this.username = userName
       try {
-        let result = await api.user.postUserAuthentication(username, password)
+        let result = await api.user.postUserAuthentication(userName, password)
         this.userToken = result.token
-        await userStore.retrieveUserId()
+        await userStore.retrieveUserData(userName)
         setUserCookies(this.username, this.userId, this.userToken)
         this.isLogged = true
         return true
       } catch {
         return false
-      }
-    },
-    async retrieveUserId() {
-      try {
-        let result = await api.user.getUserIdByUsername(this.getUsername)
-        this.userId = result.userId
-        return true
-      } catch {
-        console.warn("Failed to get user id")
       }
     },
     saveUserCredentials(username, userId, token) {
@@ -81,6 +72,7 @@ export const useUserStore = defineStore('user', {
       let result = await api.user.getUserData(this.getUserName)
 
       if (result) {
+        this.userId = result.data.pk
         this.userData = result.data
         return true
       } else return false

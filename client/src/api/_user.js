@@ -20,21 +20,6 @@ export default {
       }
     }
   },
-  async getUserIdByUsername(username) {
-    let response = await api.get(`v1/users/data/?username=${username}`)
-
-    if (response.status === 200) {
-      return {
-        code: response.status,
-        userId: response.data.results[0].pk
-      }
-    } else {
-      return {
-        code: response.status,
-        reason: response.data
-      }
-    }
-  },
   async getUserPreferencesByUserId(userId) {
     let response = await api.get(`v1/users/preferences/?owner__id=${userId}`)
 

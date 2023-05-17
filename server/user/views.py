@@ -15,7 +15,7 @@ class RetrieveUserDataView(ListAPIView):
     """
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    filterset_fields = ["username"]
+    filterset_fields = ["username", "id"]
 
 class UserPreferencesViewSet(ModelViewSet):
 

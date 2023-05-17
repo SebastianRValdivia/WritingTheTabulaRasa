@@ -1,11 +1,16 @@
 <template>
-  <div class="row">
+  <div class="row justify-center q-gutter-md">
     <div 
       v-for="post in postList"
       :key="post.id"
-      class="col col-12"
+      class="col col-9 scoped-post row"
     >
-      {{ post.content }}
+      <div class="col col-2">
+        <UserBadge :user="post.owner" />
+      </div>
+      <div class="col col-7">
+        {{ post.content }}
+      </div>
     </div>
   </div>
 </template>
@@ -16,6 +21,7 @@ import { useQuasar } from "quasar"
 
 import api from "src/api"
 import { useWikiStore } from "src/stores/wiki-store"
+import UserBadge from "src/components/for-viewing/UserBadge"
 
 export default {
   name: "EncyclopediaDiscussionPage",
@@ -24,6 +30,9 @@ export default {
       type: String,
       required: true
     }
+  },
+  components: {
+    UserBadge,
   },
   setup(props) {
     const quasar = useQuasar()
@@ -63,3 +72,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.scoped-post {
+  border: 1px solid black;
+  min-height: 5rem;
+}
+</style>

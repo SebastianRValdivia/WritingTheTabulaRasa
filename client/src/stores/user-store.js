@@ -26,6 +26,9 @@ export const useUserStore = defineStore('user', {
         if (userData) return userData.username
       }
     },
+    getUserDataById: (state) => {
+      return (userId) => state.usersList.find( (user) => user.pk === userId )
+    }
   },
   actions: {
     async retrieveUserCredentials(userName, password) {
@@ -68,6 +71,14 @@ export const useUserStore = defineStore('user', {
         return true
       } else return false
     },
+    async retrieveUserDataById(userId) {
+      let result = await api.user.getUserDataById(userId)
+
+      if (result.code === 200) {
+        this.usersList.push(result.data)
+        return true
+      } else return false
+    },
     async retrieveUserData() {
       let result = await api.user.getUserData(this.getUserName)
 
@@ -76,6 +87,6 @@ export const useUserStore = defineStore('user', {
         this.userData = result.data
         return true
       } else return false
-    }
-  },
+    },
+  }
 });

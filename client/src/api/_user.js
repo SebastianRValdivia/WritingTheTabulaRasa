@@ -67,5 +67,18 @@ export default {
     } catch {
       return false 
     }
+  },
+  async getUserDataById(userId) {
+    try {
+      let response = await api.get(`v1/users/data/?id=${userId}`)
+      if (response.status === 200) {
+        return {
+          code: response.status,
+          data: response.data.results[0]
+        }
+      } else return false
+    } catch {
+      return false 
+    }
   }
 }

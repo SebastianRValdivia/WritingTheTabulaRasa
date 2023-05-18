@@ -32,7 +32,10 @@
           <q-card-actions>
             <q-btn 
               icon="launch"
-              :to="{name: 'encyclopediaPage', params:{url: wikiPage.url}}"
+              :to="{
+                name: 'encyclopediaContentPage',
+                params:{url: wikiPage.url}
+              }"
             />
           </q-card-actions>
         </q-card>

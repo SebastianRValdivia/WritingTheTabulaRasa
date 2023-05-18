@@ -1,6 +1,12 @@
 <template>
   <div class="row justify-center q-gutter-md">
-    <div 
+    <div class="col col-10">
+      <h5 class="text-h5">
+        {{ $t('encyclopediaDiscussionPage.discussionFor') }}
+        {{ pageData.title }}
+      </h5>
+    </div>
+    <q-card 
       v-for="post in postList"
       :key="post.id"
       class="col col-9 scoped-post row"
@@ -11,7 +17,25 @@
       <div class="col col-7">
         {{ post.content }}
       </div>
-    </div>
+    </q-card>
+    <q-card class="col col-9 row scoped-post-input q-mt-xl">
+      <div class="col col-2">
+        <UserBadge loggedUser />
+      </div>
+      <div class="col col-9">
+        <q-input 
+          autogrow
+          v-model="newPostInput"
+          :label="$t('encyclopediaDiscussionPage.continueConversation')"
+        />
+      </div>
+      <q-card-actions align="right" class="absolute-bottom">
+        <q-btn 
+          icon="done"
+          @click="submitPost"
+        />
+      </q-card-actions>
+    </q-card>
   </div>
 </template>
 
@@ -38,11 +62,25 @@ export default {
     const quasar = useQuasar()
     const wikiStore = useWikiStore()
 
+    const pageData = ref({})
     const postList = ref([])
+    const newPostInput = ref("")
     
+    async function submitPost() {
+      let postData = {
+        content: newPostInput.value,
+        pg: pageData.value.id
+      }
+      let result = await api.wiki.postWikiDiscussionPost(postData)
+
+      if (result) {
+        postList.value.push(result.data)
+      } else {
+        console.log("error") // TODO replace with notify
+      }
+    }
     async function loadPage(pageUrl) {
       // Search in the store
-      let pageData 
       let wikiFromStore = wikiStore.getWikiPageByUrl(pageUrl) 
       // Not in the store, then try api and assign again
       if (wikiFromStore === undefined) {
@@ -51,12 +89,14 @@ export default {
         if (wikiFromStore === undefined) { // Doesn't exist
           router.push({name: "NotFound"})
         } else {
-          pageData = wikiFromStore
+          pageData.value = wikiFromStore
         }
       } else {
-        pageData = wikiFromStore
+        pageData.value = wikiFromStore
       }
-      let result = await api.wiki.getWikiDiscussionPostsByPageId(pageData.id)
+      let result = await api.wiki.getWikiDiscussionPostsByPageId(
+        pageData.value.id
+      )
 
       postList.value = result.data
     }
@@ -67,7 +107,11 @@ export default {
     })
 
     return {
-      postList
+      postList,
+      newPostInput,
+      pageData,
+
+      submitPost,
     }
   }
 }
@@ -75,7 +119,10 @@ export default {
 
 <style scoped>
 .scoped-post {
-  border: 1px solid black;
   min-height: 5rem;
+}
+.scoped-post-input {
+  border: 1px solid black;
+  min-height: 8rem;
 }
 </style>

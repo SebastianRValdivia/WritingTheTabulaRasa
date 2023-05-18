@@ -81,4 +81,21 @@ export default {
       }
     }
   },
+  async postWikiDiscussionPost(postData) {
+    try {
+      let response = await api.post(
+        "v1/encyclopedia/discussion-posts/",
+        postData,
+      )
+
+      if (response.status === 201) {
+        return {
+          code: response.status,
+          data: response.data,
+        }
+      } else return false
+    } catch {
+      return false
+    }
+  }
 }

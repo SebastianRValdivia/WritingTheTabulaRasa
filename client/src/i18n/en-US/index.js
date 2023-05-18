@@ -106,6 +106,10 @@ const encyclopediaPage = {
   discussion: "Discussion",
   changes: "Changes"
 }
+const encyclopediaDiscussionPage = {
+  continueConversation: "Continue the conversation",
+  discussionFor: "Discussion for",
+}
 const researchPage = {
   pageTitle: "Research",
   startDate: "Start date"
@@ -269,6 +273,7 @@ export default {
   encyclopediaEditorPage,
   encyclopediaListPage,
   encyclopediaPage,
+  encyclopediaDiscussionPage,
   researchPage,
   cheatSheetListPage,
   cheatSheetPage,

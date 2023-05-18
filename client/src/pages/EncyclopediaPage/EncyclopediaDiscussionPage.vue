@@ -27,6 +27,7 @@
           autogrow
           v-model="newPostInput"
           :label="$t('encyclopediaDiscussionPage.continueConversation')"
+          :rules="[(val) => val || $t('general.required')]"
         />
       </div>
       <q-card-actions align="right" class="absolute-bottom">
@@ -42,9 +43,11 @@
 <script>
 import { ref, onBeforeMount } from "vue"
 import { useQuasar } from "quasar"
+import { useI18n } from "vue-i18n"
 
 import api from "src/api"
 import { useWikiStore } from "src/stores/wiki-store"
+import { errorNotification } from "src/utils/notifications"
 import UserBadge from "src/components/for-viewing/UserBadge"
 
 export default {
@@ -60,6 +63,7 @@ export default {
   },
   setup(props) {
     const quasar = useQuasar()
+    const { t } = useI18n()
     const wikiStore = useWikiStore()
 
     const pageData = ref({})
@@ -67,6 +71,10 @@ export default {
     const newPostInput = ref("")
     
     async function submitPost() {
+      if (!newPostInput.value) {
+        quasar.notify(errorNotification(t("general.noInputFound")))
+        return false
+      }
       let postData = {
         content: newPostInput.value,
         pg: pageData.value.id
@@ -76,7 +84,7 @@ export default {
       if (result) {
         postList.value.push(result.data)
       } else {
-        console.log("error") // TODO replace with notify
+        quasar.notify(errorNotification(t("general.failed")))
       }
     }
     async function loadPage(pageUrl) {

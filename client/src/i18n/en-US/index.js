@@ -9,6 +9,7 @@ const general = {
   sureDelete: "Are you sure you want to delete this?",
   by: "By",
   empty: "Nothing found",
+  noInputFound: "No input found",
   toClipboard: "Added to clipboard",
   edit: "Edit",
   required: "Required"

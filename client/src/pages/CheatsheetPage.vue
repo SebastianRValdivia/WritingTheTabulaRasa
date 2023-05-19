@@ -6,24 +6,12 @@
     </div>
 
     <div class="row justify-center q-gutter-md">
-      <q-card
+      <CheatCard 
         v-for="cheat in cheats"
         :key="cheat.id"
-        :class="cheatsheetHasSize(cheat.size)"
-      >
-        <div 
-          :style="{ 'background-color': '#'+sheet.color}"
-        >
-          <q-card-section class="text-h5 text-weight-bolder">
-              {{ cheat.title }}
-          </q-card-section>
-        </div>
-        <q-card-section>
-          <div>
-            <MarkdownPreview :md="cheat.content" />
-          </div>
-        </q-card-section>
-      </q-card>
+        :cheatData="cheat"
+        :color="sheet.color"
+      />
     </div>
   </q-page>
 </template>
@@ -35,8 +23,8 @@ import { useI18n } from "vue-i18n"
 import { onBeforeRouteUpdate } from 'vue-router'
 
 import { useCheatsheetStore } from "src/stores/cheatsheet-store"
-import MarkdownPreview from "src/components/for-viewing/MarkdownPreview"
 import { cheatsheetHasSize } from "src/utils/cheatsheets"
+import CheatCard from "src/components/for-viewing/CheatCard"
 
 export default {
   name: "CheatsheetPage",
@@ -44,7 +32,7 @@ export default {
     url: String
   },
   components: {
-    MarkdownPreview,
+    CheatCard,
   },
   setup(props) {
     const $q = useQuasar()

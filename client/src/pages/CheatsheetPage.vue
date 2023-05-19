@@ -5,19 +5,25 @@
       <p v-if="sheet.description" class="text-subtitle">{{ sheet.description }}</p>
     </div>
 
-    <div class="row q-gutter-md">
-      <div 
+    <div class="row justify-center q-gutter-md">
+      <q-card
         v-for="cheat in cheats"
         :key="cheat.id"
         :class="cheatsheetHasSize(cheat.size)"
       >
-        <div>
-          <h5>{{ cheat.title }}</h5>
+        <div 
+          :style="{ 'background-color': '#'+sheet.color}"
+        >
+          <q-card-section class="text-h5 text-weight-bolder">
+              {{ cheat.title }}
+          </q-card-section>
         </div>
-        <div>
-          <MarkdownPreview :md="cheat.content" />
-        </div>
-      </div>
+        <q-card-section>
+          <div>
+            <MarkdownPreview :md="cheat.content" />
+          </div>
+        </q-card-section>
+      </q-card>
     </div>
   </q-page>
 </template>

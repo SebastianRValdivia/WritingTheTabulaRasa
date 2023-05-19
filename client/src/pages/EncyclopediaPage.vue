@@ -52,7 +52,9 @@ export default {
           name: "encyclopediaDiscussionPage"
         },
         [t("encyclopediaPage.changes")]: {},
-        [t("encyclopediaPage.code")]: {},
+        [t("encyclopediaPage.code")]: {
+          name: "encyclopediaCodePage"
+        },
       })
       $q.loading.hide()
     })

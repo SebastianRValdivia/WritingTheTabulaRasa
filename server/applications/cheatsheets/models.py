@@ -23,6 +23,11 @@ class SheetModel(models.Model):
         blank=True,
         null=True,
     )
+    color = models.CharField(
+        max_length=6, # RGB color
+        blank=True,
+        null=True,
+    )
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 

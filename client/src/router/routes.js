@@ -141,7 +141,7 @@ const routes = [
             component: () => import(
               "src/pages/EncyclopediaPage/EncyclopediaContentPage"
             ),
-            props: true
+            props: true,
           },
           {
             path: "discussion/",
@@ -149,7 +149,15 @@ const routes = [
             component: () => import(
               "src/pages/EncyclopediaPage/EncyclopediaDiscussionPage"
             ),
-            props: true
+            props: true,
+          },
+          {
+            path: "code/",
+            name: "encyclopediaCodePage",
+            component: () => import(
+              "src/pages/EncyclopediaPage/EncyclopediaCodePage"
+            ),
+            props: true,
           }
         ]
       },

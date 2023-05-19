@@ -26,11 +26,11 @@
 
     <div class="col col-12 row justify-center q-gutter-sm">
       <!-- Cheat card preview -->
-      <CheatPreview 
+      <CheatCard 
         v-for="(cheat, index) in cheatList" 
         :key="index"
         :cheatData="cheat"
-        @onUpdated="updateCheat"
+        @click.ctrl="deleteCheat(index)"
       />
 
       <!-- Input card for new cheat -->
@@ -49,16 +49,15 @@ import { useRouter, onBeforeRouteUpdate } from "vue-router"
 
 import { useCheatsheetStore } from "src/stores/cheatsheet-store"
 import { cheatsheetHasSize } from "src/utils/cheatsheets"
-import CheatPreview from 
-  "src/components/for-pages/CheatsheetEditorPage/CheatPreview"
 import CheatInput from
   "src/components/for-pages/CheatsheetEditorPage/CheatInput"
+import CheatCard from "src/components/for-viewing/CheatCard"
 
 export default {
   name: "CheatsheetEditorPage",
   components: {
-    CheatPreview,
     CheatInput,
+    CheatCard,
   },
   props: {
     url: String
@@ -77,6 +76,11 @@ export default {
     const sheetTitleInput = ref("")
     const sheetDescriptionInput = ref("")
     const cheatList = ref([])
+  
+
+    function deleteCheat(index) {
+      cheatList.value.splice(index, 1)
+    }
 
     function updateCheat(currentTitle, updatedCheatData) {
       // search cheat by current title and then update the data
@@ -162,6 +166,7 @@ export default {
       updateCheat,
       addCheat,
       deletePage,
+      deleteCheat,
 
       submit,
     }

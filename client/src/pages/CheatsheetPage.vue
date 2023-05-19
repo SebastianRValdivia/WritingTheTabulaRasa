@@ -23,7 +23,6 @@ import { useI18n } from "vue-i18n"
 import { onBeforeRouteUpdate } from 'vue-router'
 
 import { useCheatsheetStore } from "src/stores/cheatsheet-store"
-import { cheatsheetHasSize } from "src/utils/cheatsheets"
 import CheatCard from "src/components/for-viewing/CheatCard"
 
 export default {
@@ -75,7 +74,6 @@ export default {
     return {
       cheats,
       sheet,
-      cheatsheetHasSize,
     }
   }
 

@@ -11,40 +11,41 @@
         once
         transition="scale"
       >
-          <q-card class="q-pa-md sheet-card">
-            <q-card-actions class="row justify-end">
-              <q-btn
-                icon="more_horiz"
-                flat
-                v-if="userStore.isUserLogged"
-              >
-                <q-menu auto-close anchor="top start" self="top right">
-                  <q-item 
-                    clickable
-                    :to="{name: 'cheatsheetEditor', params: {url: sheet.url}}"
-                  >
-                    <q-item-section>
-                      {{ $t("general.edit") }}
-                    </q-item-section>
-                  </q-item>
-                </q-menu>
-              </q-btn>
-            </q-card-actions>
-            <router-link 
-              :to="{name: 'cheatsheet', params: {url: sheet.url}}"
+        <q-card class="q-pa-md sheet-card">
+          <q-card-actions class="row justify-end">
+            <q-btn
+              icon="more_horiz"
+              flat
+              v-if="userStore.isUserLogged"
             >
-              <q-card-section>
-                <h4 class="text-h4 column items-center">
-                  {{ sheet.title }}
-                </h4>
-              </q-card-section>
-              <q-card-section>
-                <p>
-                  {{ sheet.description }}
-                </p>
-              </q-card-section>
-            </router-link>
-          </q-card>
+              <q-menu auto-close anchor="top start" self="top right">
+                <q-item 
+                  clickable
+                  :to="{name: 'cheatsheetEditor', params: {url: sheet.url}}"
+                >
+                  <q-item-section>
+                    {{ $t("general.edit") }}
+                  </q-item-section>
+                </q-item>
+              </q-menu>
+            </q-btn>
+          </q-card-actions>
+          <router-link 
+            :to="{name: 'cheatsheet', params: {url: sheet.url}}"
+            class="wtr-link"
+          >
+            <q-card-section>
+              <h4 class="text-h4 column items-center">
+                {{ sheet.title }}
+              </h4>
+            </q-card-section>
+            <q-card-section>
+              <p>
+                {{ sheet.description }}
+              </p>
+            </q-card-section>
+          </router-link>
+        </q-card>
       </q-intersection>
     </div>
     
@@ -129,5 +130,4 @@ export default {
   color: black;
   overflow: hidden;
 }
-a { text-decoration: none; }
 </style>

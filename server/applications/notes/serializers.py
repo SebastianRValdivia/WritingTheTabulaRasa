@@ -1,4 +1,8 @@
-from rest_framework import serializers
+from rest_framework.serializers import (
+    ModelSerializer,
+    CurrentUserDefault,
+    PrimaryKeyRelatedField,
+)
 
 from applications.notes.models import (
     NoteModel,
@@ -8,25 +12,45 @@ from applications.notes.models import (
 )
 
 # Create your views here.
-class NoteSerializer(serializers.ModelSerializer):
+class NoteSerializer(ModelSerializer):
+
+    owner = PrimaryKeyRelatedField(
+        read_only=True,
+        default=CurrentUserDefault()
+    )
 
     class Meta:
         model = NoteModel
         fields = "__all__"
 
-class NoteConnectionGroupSerializer(serializers.ModelSerializer):
+class NoteConnectionGroupSerializer(ModelSerializer):
+
+    owner = PrimaryKeyRelatedField(
+        read_only=True,
+        default=CurrentUserDefault()
+    )
 
     class Meta:
         model = NoteConnectionGroupModel
         fields = "__all__"
 
-class FleetingNoteSerializer(serializers.ModelSerializer):
+class FleetingNoteSerializer(ModelSerializer):
+
+    owner = PrimaryKeyRelatedField(
+        read_only=True,
+        default=CurrentUserDefault()
+    )
 
     class Meta:
         model = FleetingNoteModel
         fields = "__all__"
 
-class LiteraryNoteSerializer(serializers.ModelSerializer):
+class LiteraryNoteSerializer(ModelSerializer):
+
+    owner = PrimaryKeyRelatedField(
+        read_only=True,
+        default=CurrentUserDefault()
+    )
 
     class Meta:
         model = LiteraryNoteModel

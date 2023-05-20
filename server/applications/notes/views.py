@@ -20,12 +20,20 @@ class NoteViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     filterset_fields = ["owner"]
 
+    def perform_create(self, serializer):
+        request = serializer.context["request"]
+        serializer.save(owner=request.user)
+
 class NoteConnectionGroupViewSet(viewsets.ModelViewSet):
 
     queryset = NoteConnectionGroupModel.objects.all().order_by("id")
     serializer_class = NoteConnectionGroupSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     filterset_fields = ["owner"]
+
+    def perform_create(self, serializer):
+        request = serializer.context["request"]
+        serializer.save(owner=request.user)
 
 class FleetingNoteViewSet(viewsets.ModelViewSet):
 
@@ -34,9 +42,17 @@ class FleetingNoteViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     filterset_fields = ["owner"]
 
+    def perform_create(self, serializer):
+        request = serializer.context["request"]
+        serializer.save(owner=request.user)
+
 class LiteraryNoteViewSet(viewsets.ModelViewSet):
 
     queryset = LiteraryNoteModel.objects.all()
     serializer_class = LiteraryNoteSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     filterset_fields = ["owner"]
+
+    def perform_create(self, serializer):
+        request = serializer.context["request"]
+        serializer.save(owner=request.user)

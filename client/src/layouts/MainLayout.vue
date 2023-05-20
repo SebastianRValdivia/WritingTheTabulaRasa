@@ -96,7 +96,7 @@
         <UserBadge logged-user class="absolute-bottom"/>
       </q-img>
       <q-scroll-area class="fit links-area">
-        <q-list>
+        <q-list padding>
           <q-expansion-item 
             :label="$t('mainDrawer.notes')" 
             icon="inbox"
@@ -351,7 +351,7 @@ export default {
 <style>
 .links-area { 
   height: calc(100% - 150px);
-  margin-top: 150px;
+  padding-top: 150px;
   border-right: 1px solid #ddd
 }
 #page-container {

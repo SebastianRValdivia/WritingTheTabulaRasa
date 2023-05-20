@@ -89,7 +89,6 @@ export default {
         }
       }
       let data = {
-        owner: userStore.getUserId,
         content: contentInput.value,
         position: positionInput.value,
         resource: resourceInput.value,

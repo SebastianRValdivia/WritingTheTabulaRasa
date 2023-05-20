@@ -85,7 +85,6 @@ export default {
       let result = await noteStore.saveNote({
         title: title.value,
         content: content.value,
-        owner: userStore.getUserId,
         identifier: noteIdentifierNumber,
         parent: parentId, 
       })

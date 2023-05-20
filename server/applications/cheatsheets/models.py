@@ -24,7 +24,7 @@ class SheetModel(models.Model):
         null=True,
     )
     color = models.CharField(
-        max_length=6, # RGB color
+        max_length=7, # RGB color Ex: #ff00ff
         blank=True,
         null=True,
     )

@@ -1,17 +1,32 @@
 <template>
   <q-page padding class="row">
-    <div class="col col-12 row q-pb-md">
+    <q-page-sticky position="top-right" :offset="[20, 20]">
+      <q-btn round icon="done" color="primary" @click="submit"/>
+    </q-page-sticky>
+    <div class="col col-12 row q-gutter-md q-pb-md">
       <q-input 
         v-model="sheetTitleInput" 
+        class="col col-7"
         :placeholder="sheetInitialState.title"
-        input-class="text-h3"
+        input-class="text-h4"
         :label="$t('cheatSheetEditorPage.sheetTitle')"
         :rules="[val => !!val || $t('general.required')]"
       />
-      <q-space/>
-      <q-page-sticky position="top-right" :offset="[20, 20]">
-        <q-btn round icon="done" color="primary" @click="submit"/>
-      </q-page-sticky>
+      <q-input
+        filled
+        v-model="sheetColorInput"
+        :rules="['hexColor']"
+        class="col col-4"
+        :style="{'background-color': sheetColorInput}"
+      >
+        <template v-slot:append>
+          <q-icon name="colorize" class="cursor-pointer">
+            <q-popup-proxy cover transition-show="scale" transition-hide="scale">
+              <q-color v-model="sheetColorInput" />
+            </q-popup-proxy>
+          </q-icon>
+        </template>
+      </q-input>
     </div>
     <div class="col col-9 q-pb-xl">
       <q-input 
@@ -30,6 +45,7 @@
         v-for="(cheat, index) in cheatList" 
         :key="index"
         :cheatData="cheat"
+        :color="sheetColorInput"
         @click.ctrl="deleteCheat(index)"
       />
 
@@ -76,6 +92,7 @@ export default {
     const sheetTitleInput = ref("")
     const sheetDescriptionInput = ref("")
     const cheatList = ref([])
+    const sheetColorInput = ref()
   
 
     function deleteCheat(index) {
@@ -96,7 +113,8 @@ export default {
       if (isNew.value) {
         let sheetCreated = await cheatsheetStore.createSheet({
           title: sheetTitleInput.value,
-          description: sheetDescriptionInput.value
+          description: sheetDescriptionInput.value,
+          color: sheetColorInput.value,
         })
         if (sheetCreated) {
           for (let cheat of cheatList.value) {
@@ -161,6 +179,7 @@ export default {
       sheetInitialState,
       sheetTitleInput,
       sheetDescriptionInput,
+      sheetColorInput,
       cheatList,
 
       updateCheat,

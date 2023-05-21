@@ -1,6 +1,7 @@
 <template>
   <q-page padding>
     <SearchInput @search="searchPracticeRoutines"/>
+    <AddNewBtn :to="{name: 'practiceRoutineEditorPage'}"/>
     <div class="row q-gutter-md">
       <q-card
         v-for="practiceRoutine in displayedPracticeRoutines"
@@ -55,12 +56,14 @@ import { useUserStore } from "src/stores/user-store"
 import { fuzzySearchByObjectByKeys } from "src/utils/search"
 import SearchInput from "src/components/for-input/SearchInput"
 import MarkdownPreview from "src/components/for-viewing/MarkdownPreview"
+import AddNewBtn from "src/components/for-input/AddNewBtn"
 
 export default {
   name: "PracticeRoutineListPage",
   components: {
     SearchInput,
     MarkdownPreview,
+    AddNewBtn,
   },
   setup() {
     const practiceStore = usePracticeStore()

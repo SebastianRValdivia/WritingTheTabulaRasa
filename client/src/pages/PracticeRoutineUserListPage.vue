@@ -1,12 +1,15 @@
 <template>
-  <q-page padding class="row">
+  <q-page padding class="row justify-center">
 
-      <PracticeRoutineInfo 
-        class="col col-12"
-        v-for="userPractice in userPracticeRoutinesList"
-        :key="userPractice.id"
-        :practiceRoutineId="userPractice.routine"
-      />
+    <EmptyMsg v-if="userPracticeRoutinesList.length === 0"/>
+
+    <PracticeRoutineInfo 
+      v-else
+      class="col col-12"
+      v-for="userPractice in userPracticeRoutinesList"
+      :key="userPractice.id"
+      :practiceRoutineId="userPractice.routine"
+    />
 
   </q-page>
 </template>
@@ -20,11 +23,13 @@ import { usePracticeStore } from "src/stores/practice-store"
 import { useUserStore } from "src/stores/user-store"
 import PracticeRoutineInfo from 
   "src/components/for-pages/PracticeRoutineUserListPage/PracticeRoutineInfo"
+import EmptyMsg from "src/components/for-viewing/EmptyMsg"
 
 export default {
   name: "PracticeRoutineUserListPage",
   components: {
-    PracticeRoutineInfo
+    PracticeRoutineInfo,
+    EmptyMsg,
   },
   setup() {
     const practiceStore = usePracticeStore()

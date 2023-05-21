@@ -49,16 +49,14 @@
       </q-card>
     </div>
 
-    <q-list class="col col-12">
-      <q-item
-        v-for="(exercise, index) in exerciseList"
-        :key="index"
-      >
-        <q-item-label>
-          {{ exercise.title }}
-        </q-item-label>
-      </q-item>
+    <q-list class="col col-12 q-pl-xl q-pt-xl">
+      <ExercisePreview 
+          v-for="(exercise, index) in exerciseList"
+          :key="index"
+          :exerciseData="exercise"
+      />
     </q-list>
+
   </q-page>
 </template>
 
@@ -70,12 +68,14 @@ import { useRouter } from "vue-router"
 
 import { usePracticeStore } from "src/stores/practice-store"
 import SubmitBtn from "src/components/for-input/SubmitBtn"
+import ExercisePreview from "src/components/for-viewing/ExercisePreview"
 
 
 export default {
   name: "PracticeRoutineEditorPage",
   components: {
     SubmitBtn,
+    ExercisePreview,
   },
   setup() {
     const { t } = useI18n()

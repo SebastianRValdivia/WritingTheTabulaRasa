@@ -12,7 +12,8 @@ const general = {
   noInputFound: "No input found",
   toClipboard: "Added to clipboard",
   edit: "Edit",
-  required: "Required"
+  required: "Required",
+  continue: "Continue"
 }
 
 const mainLayout = {
@@ -200,6 +201,9 @@ const flashCardCollectionEditorPage = {
   correctResponse: "The correct response",
   noCards: "There are no cards in this collection",
 }
+const flashCardCollectionPage = {
+  score: "Score"
+}
 const practiceRoutineEditorPage = {
   pageTitle: "Practice editor",
   routineTitle: "Routine title",
@@ -295,6 +299,7 @@ export default {
   helpCenterPage,
   flashCardListPage,
   flashCardCollectionEditorPage,
+  flashCardCollectionPage,
   practiceRoutineEditorPage,
   practiceRoutineUserPage,
   practiceRoutinePage,

@@ -1,6 +1,6 @@
 <template>
   <q-card 
-    class="col-6 scoped-input-flashcard animated"
+    class="scoped-input-flashcard animated"
     :class="{ flipInY: cardOnHintSide, flipInX: !cardOnHintSide }"
   >
     <q-card-section>
@@ -63,6 +63,11 @@ export default {
     }
     function toggleToHintSide() {
       cardOnHintSide.value = true
+    }
+    function clearInput() {
+      hintInput.value = ""
+      responseInput.value = ""
+      cardOnHintSide.value = false
     }
     function emitDone() {
       let cardData = {

@@ -13,11 +13,12 @@
       <FlashCardInput @onDone="saveFlashCard"/>
     </div>
 
-    <div class="row justify-center q-gutter-md">
+    <div class="col col-12 row justify-center q-gutter-md">
       <FlashCard
         v-for="(flashCard, index) in flashCardsList"
         :key="index"
         :cardData="flashCard"
+        class="col col-5"
       />
     </div>
 

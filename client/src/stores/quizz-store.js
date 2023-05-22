@@ -9,6 +9,7 @@ export const useQuizzStore = defineStore("quizz", {
     choicesList: [],
     flashCardCollectionList: [],
     flashCardList: [],
+    flashCardUserResultList: [],
   }),
   getters: {
     getQuizzesList: (state) => state.quizzesList,
@@ -148,6 +149,14 @@ export const useQuizzStore = defineStore("quizz", {
       if (result) {
         this.flashCardList.push(result.data)
         return true
+      } else return false
+    },
+    async createFlashCardResult(userResult) {
+      let result = await api.quizzes.postFlashCardTestResult(userResult)
+
+      if (result) {
+        this.flashCardUserResultList.push(result.data)
+        return result.data
       } else return false
     },
     async removeFlashCardCollection(collectionId) {

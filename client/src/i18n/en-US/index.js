@@ -200,6 +200,9 @@ const flashCardCollectionEditorPage = {
   correctResponse: "The correct response",
   noCards: "There are no cards in this collection",
 }
+const flashCardCollectionPage = {
+  score: "Score"
+}
 const practiceRoutineEditorPage = {
   pageTitle: "Practice editor",
   routineTitle: "Routine title",
@@ -295,6 +298,7 @@ export default {
   helpCenterPage,
   flashCardListPage,
   flashCardCollectionEditorPage,
+  flashCardCollectionPage,
   practiceRoutineEditorPage,
   practiceRoutineUserPage,
   practiceRoutinePage,

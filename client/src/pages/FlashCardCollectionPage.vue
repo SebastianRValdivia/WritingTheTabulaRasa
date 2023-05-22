@@ -1,6 +1,9 @@
 <template>
   <q-page padding class="row">
     <div v-if="!hasTestEnded" class="col column items-center">
+      <p>
+        {{ $t("flashCardCollectionPage.score")}}: {{ userScore }}
+      </p>
       <FlashCardCollectionPageFlashCardPreview 
         :cardData="displayedFlashCard"
         :isNew="isCardInitializing"
@@ -36,7 +39,7 @@
 </template>
 
 <script>
-import { ref, onBeforeMount } from "vue"
+import { ref, onBeforeMount, computed } from "vue"
 import { useQuasar } from "quasar"
 import api from "src/api"
 import { useI18n } from "vue-i18n"
@@ -71,8 +74,19 @@ export default {
     const isFlipped = ref(false) // If card is fliped to response
     const isCardInitializing = ref(false) // If a new card was just picked
     const userTries = ref(0)
-    const userScore = ref(0)
     const hasTestEnded = ref(false)
+
+    const userScore = computed(() => {
+      if (userTries.value <= 0) {
+        return 0
+      }
+      let score = (
+          flashCardList.value.length / userTries.value
+      ) * 100
+      // Since api require positive integers
+      return score.toFixed() // Round number
+      
+    })
 
     function pickNewFlashCard() {
       isCardInitializing.value = true
@@ -115,19 +129,13 @@ export default {
       userTries.value += 1
       removeCardFromDeck()
     }
-
     async function finishTest() {
-      userScore.value = (
-          flashCardList.value.length / userTries.value
-      ) * 100
-      // Since api require positive integers
-      userScore.value = userScore.value.toFixed() // Round number
-      // TODO: this should be on a store
-      let result = await api.quizzes.postFlashCardTestResult({
-        score: userScore.value,
+      let result = await quizzStore.createFlashCardResult({
+        score: userScore,
         collection: Number(props.id),
         owner: userStore.getUserId
       })
+
       if (result) {
         hasTestEnded.value = true
       } else {

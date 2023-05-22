@@ -4,7 +4,7 @@
       <p>
         {{ $t("flashCardCollectionPage.score")}}: {{ userScore }}
       </p>
-      <FlashCardCollectionPageFlashCardPreview 
+      <FlashCard 
         :cardData="displayedFlashCard"
         :isNew="isCardInitializing"
         v-model:isOnResponseSide="isFlipped"
@@ -46,8 +46,8 @@ import { useI18n } from "vue-i18n"
 
 import { useQuizzStore } from "src/stores/quizz-store"
 import { useUserStore } from "src/stores/user-store"
-import FlashCardCollectionPageFlashCardPreview from 
-  "src/components/for-pages/FlashCardCollectionPageFlashCardPreview"
+import FlashCard from
+  "src/components/for-viewing/FlashCard"
 import { errorNotification } from "src/utils/notifications"
 
 export default {
@@ -59,7 +59,7 @@ export default {
     }
   },
   components: {
-    FlashCardCollectionPageFlashCardPreview
+    FlashCard
   },
   setup(props) {
     const quizzStore = useQuizzStore()

@@ -5,9 +5,11 @@
   >
     <q-card-section 
       v-if="!isOnResponseSide"
-      class="column items-center"
+      class="row fit text-h5 text-bold"
     >
-      {{ props.cardData.hint }}
+      <span class="q-pb-xl absolute-center">
+        {{ props.cardData.hint }}
+      </span>
     </q-card-section>
     <q-card-section 
       v-else

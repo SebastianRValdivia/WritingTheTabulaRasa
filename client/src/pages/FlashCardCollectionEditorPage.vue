@@ -6,6 +6,7 @@
       v-model="titleInput"
     />
     <SubmitBtn 
+      :status="titleInput.length > 0"
       @click="submitDeck"
     />
 

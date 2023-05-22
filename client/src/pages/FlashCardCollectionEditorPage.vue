@@ -7,7 +7,7 @@
     />
     <SubmitBtn 
       :status="titleInput.length > 0"
-      @click="submitDeck"
+      @click="submit"
     />
 
     <div class="col col-12 column items-center q-pa-xl">
@@ -65,7 +65,7 @@ export default {
     function saveFlashCard(cardData) {
       flashCardsList.value.push(cardData)
     }
-    async function submitDeck() {
+    async function submit() {
       if (flashCardsList.value.length <= 0) { // There are no cards
         quasar.notify(errorNotification(
           t("flashCardCollectionEditorPage.noCards")
@@ -85,6 +85,7 @@ export default {
           await quizzStore.createFlashCard(flashCardData)
         }
       }
+      router.push({name: "flashCardCollectionListPage"})
     }
     async function deleteCollection() {
       let result = await quizzStore.removeFlashCardCollection(
@@ -104,7 +105,7 @@ export default {
       noModifications,
 
       saveFlashCard,
-      submitDeck,
+      submit,
       deleteCollection,
     }
   }

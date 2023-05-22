@@ -34,6 +34,10 @@
       }"
     >
       {{ userScore }}
+      <q-btn 
+        :label="$t('general.continue')"
+        :to="{name: 'flashCardCollectionListPage'}"
+      />
     </div>
   </q-page>
 </template>
@@ -131,7 +135,7 @@ export default {
     }
     async function finishTest() {
       let result = await quizzStore.createFlashCardResult({
-        score: userScore,
+        score: userScore.value,
         collection: Number(props.id),
         owner: userStore.getUserId
       })

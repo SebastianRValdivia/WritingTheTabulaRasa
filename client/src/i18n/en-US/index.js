@@ -12,7 +12,8 @@ const general = {
   noInputFound: "No input found",
   toClipboard: "Added to clipboard",
   edit: "Edit",
-  required: "Required"
+  required: "Required",
+  continue: "Continue"
 }
 
 const mainLayout = {

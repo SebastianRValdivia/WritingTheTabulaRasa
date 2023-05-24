@@ -1,10 +1,11 @@
 <template>
   <q-page padding class="row">
-    <SubmitBtn 
+    <SubmitBtn
       @click="submit"
+      :status="isTitleEntered"
     />
     <div class="col col-12 column items-center">
-      <q-input 
+      <q-input
         v-model="titleInput"
         :label="$t('practiceRoutineEditorPage.routineTitle')"
         input-class="text-h5"
@@ -13,7 +14,7 @@
     <div class="col col-12 column items-center">
       <q-card class="col col-12">
         <q-card-section class="row q-gutter-md">
-          <q-input 
+          <q-input
             v-model="exerciseTitleInput"
             class="col col-9"
             :label="$t('practiceRoutineEditorPage.exerciseTitle')"
@@ -29,7 +30,7 @@
               val => (val <= 5) || $t('practiceRoutineEditorPage.overMax')
             ]"
           />
-          <q-input 
+          <q-input
             v-model="exerciseContentInput"
             class="col col-12"
             :label="$t('practiceRoutineEditorPage.description')"
@@ -40,7 +41,7 @@
           />
         </q-card-section>
         <q-card-actions class="absolute-bottom" align="center">
-          <q-btn 
+          <q-btn
             flat
             icon="add"
             @click="addExercise"
@@ -50,7 +51,7 @@
     </div>
 
     <q-list class="col col-12 q-pl-xl q-pt-xl">
-      <ExercisePreview 
+      <ExercisePreview
           v-for="(exercise, index) in exerciseList"
           :key="index"
           :exerciseData="exercise"
@@ -61,7 +62,7 @@
 </template>
 
 <script>
-import { ref } from "vue"
+import { ref, computed } from "vue"
 import { useQuasar, useMeta } from "quasar"
 import { useI18n } from "vue-i18n"
 import { useRouter } from "vue-router"
@@ -87,6 +88,10 @@ export default {
     const exerciseContentInput = ref("")
     const exerciseDificultyInput = ref("")
     const exerciseList = ref([])
+
+    const isTitleEntered = computed(() => {
+      return titleInput.value.length > 0
+    })
 
     function clearExerciseInputs() {
       exerciseTitleInput.value = ""
@@ -136,6 +141,8 @@ export default {
       exerciseContentInput,
       exerciseDificultyInput,
       exerciseList,
+
+      isTitleEntered,
 
       addExercise,
       submit,

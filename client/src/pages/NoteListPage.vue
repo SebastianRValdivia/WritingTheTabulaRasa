@@ -9,10 +9,10 @@
       >
         <template v-slot:default-header="prop">
           <div class="row items-center">
-            <q-item 
+            <q-item
               clickable
               class="text-subtitle1"
-              @click="openNote(createNoteIdentifier(prop.node, noteStore.getNotesList, [String(prop.node.identifier)]))"
+              @click="openNote(prop.node.id)"
             >
               {{ createNoteIdentifier(prop.node, userNoteList, [String(prop.node.identifier)]) }}
               {{ prop.node.title }}
@@ -22,7 +22,7 @@
       </q-tree>
       <q-separator vertical class="shadow-2 q-mg-md"/>
       <div class="column content-center q-pa-md col-9" >
-        <NoteCard 
+        <NoteCard
           v-if="previewNote !== null"
           :identifier="createNoteIdentifier(previewNote, userNoteList, [String(previewNote.identifier)])"
           :noteData="previewNote"
@@ -36,9 +36,9 @@
     </div>
 
     <q-page-sticky position="top-right" :offset="[20, 20]">
-      <q-btn 
-        round 
-        color="primary" 
+      <q-btn
+        round
+        color="primary"
         icon="add"
         size="md"
         :to="{name: 'noteEditorPage'}"
@@ -77,19 +77,19 @@ export default {
 
     const isNoteListEmpty = computed(() => {
       return hierarchyNoteList.value.length === 0
-    }) 
+    })
 
     function filterUserNotes() {
       userNoteList.value = noteStore.getNotesByUser(userStore.getUserId)
     }
-    async function openNote(noteIdentifier) {
+    async function openNote(noteId) {
       // Check if note is in the store
-      if (noteStore.getNoteByIdentifier(noteIdentifier.split("-")) !== undefined) {
-        previewNote.value = noteStore.getNoteByIdentifier(noteIdentifier.split("-"))
+      if (noteStore.getNoteById(noteId)) {
+        previewNote.value = noteStore.getNoteById(noteId)
       } else { // Else retrieve notes from api and try again
         await noteStore.retrieveNotes()
-        if (noteStore.getNoteByIdentifier(noteIdentifier.split("-")) !== undefined) {
-          previewNote.value = noteStore.getNoteByIdentifier(noteIdentifier.split("-"))
+        if (previewNote.value = noteStore.getNoteById(noteId)) {
+          previewNote.value = noteStore.getNoteById(noteId)
         } else { // Note doesn't exist
           router.push({ name: "NotFound" })
           previewNote.value = null // To avoid an error
@@ -107,7 +107,7 @@ export default {
       await noteStore.retrieveNotes()
       if (userStore.isUserLogged) {
         filterUserNotes()
-      } 
+      }
       hierarchyNoteList.value = constructNoteTree(userNoteList.value)
       await noteStore.retrieveFleetingNotes()
       await noteStore.retrieveNoteConnectionListByLoggedUser()

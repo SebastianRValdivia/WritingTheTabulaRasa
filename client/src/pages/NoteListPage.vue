@@ -2,10 +2,10 @@
   <q-page>
     <div class="row window-height" v-if="!isNoteListEmpty">
       <q-tree
+        id="note-drawer"
         :nodes="hierarchyNoteList"
         node-key="id"
         class="q-pr-md"
-        style="max-width: 15%; width: 15%;"
       >
         <template v-slot:default-header="prop">
           <div class="row items-center">
@@ -138,4 +138,10 @@ export default {
 #note-list {
   max-width: fit-content;
 }
+#note-drawer {
+  min-height: 100vh;
+  overflow: auto;
+  resize: horizontal;
+}
+
 </style>

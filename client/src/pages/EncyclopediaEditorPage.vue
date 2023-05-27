@@ -1,8 +1,8 @@
 <template>
   <q-page class="q-pa-md q-gutter-sm">
     <div id="wiki-head" class="row">
-      <q-input 
-        v-model="titleInput" 
+      <q-input
+        v-model="titleInput"
         :placeholder="$t('encyclopediaEditorPage.title')"
         input-class="text-h2"
         class="col-10"
@@ -27,37 +27,37 @@
         @click="toggleCardEditor()"
         v-if="isCardEditorOpen"
       />
-      <q-card 
+      <q-card
         v-if="!isCardEditorOpen"
         class="wiki-card-editor"
       >
         <div class="row justify-end">
-          <q-btn 
+          <q-btn
             class="col-2 q-pa-sm"
             icon="close"
-            flat 
+            flat
             size="xs"
             @click="toggleCardEditor()"
           />
         </div>
-        <q-file 
+        <q-file
           v-if="!imageInputUrl"
-          class="col-2" 
-          filled 
-          v-model="imageInput" 
+          class="col-2"
+          filled
+          v-model="imageInput"
           :label="$t('encyclopediaEditorPage.presentationImage')"
         >
           <template v-slot:after>
-            <q-btn 
-              round 
+            <q-btn
+              round
               size="sm"
-              flat 
+              flat
               icon="send"
               @click="createImageUrl"
             />
           </template>
         </q-file>
-        <q-img 
+        <q-img
           v-else
           class="q-pa-xs card-image"
           :src="imageInputUrl"
@@ -81,7 +81,7 @@
       class="col-10"
     />
     <div class="q-pa-md" v-if="isPreviewOpen">
-      <MarkdownPreview 
+      <MarkdownPreview
         :md="contentInput"
         @click="toggleToInput"
       />
@@ -96,11 +96,11 @@
           {{ wordCount }}
         </div>
         <div class="col-6">
-          {{ $t("encyclopediaEditorPage.characters")}}: 
+          {{ $t("encyclopediaEditorPage.characters")}}:
           {{ characterCount }}
         </div>
       </div>
-      
+
       <div class="row justify-center">
         <q-btn icon="data_object" @click="openMetadataEditor"/>
       </div>
@@ -117,13 +117,15 @@ import { ref, computed } from "vue"
 import api from "src/api"
 import { useI18n } from "vue-i18n"
 import { useQuasar, useMeta } from "quasar"
+import { useRouter } from "vue-router"
 
 import { useWikiStore } from "src/stores/wiki-store"
 import { useMetadataStore } from "src/stores/metadata-store"
 import { useResourceStore } from "src/stores/resource-store"
+import { countWords, countCharacters } from "src/utils/text"
+import { errorNotification } from "src/utils/notifications"
 import MarkdownPreview from "src/components/for-viewing/MarkdownPreview"
 import MetadataEditorDialog from "src/components/for-input/MetadataEditorDialog"
-import { countWords, countCharacters } from "src/utils/text.js"
 
 export default {
   name: "EncyclopediaEditorPage",
@@ -136,6 +138,7 @@ export default {
     const wikiStore = useWikiStore()
     const metadataStore = useMetadataStore()
     const resourceStore = useResourceStore()
+    const router = useRouter()
 
     const titleInput = ref("")
     const epigraphInput = ref("")
@@ -158,7 +161,7 @@ export default {
       return contentInput.value.concat(
           epigraphInput.value,
           titleInput.value,
-      ) 
+      )
     }
     async function openMetadataEditor() {
       quasar.dialog({
@@ -176,7 +179,7 @@ export default {
 
       // Saves the image resource first
       if (imageInput.value) {
-        saveImageResult = await resourceStore.saveImageResource({
+        saveImageResult = await resourceStore.createImageResource({
           file: imageInput.value,
         })
       }
@@ -195,6 +198,12 @@ export default {
           content: cardContentInput.value,
           page: savePageResult.id
         })
+        if (resultCardPost) router.push({name: "encyclopediaListPage"})
+        else quasar.notify(errorNotification(t("general.failed")))
+      } else {
+        if (savePageResult) {
+          router.push({name: "encyclopediaListPage"})
+        } else quasar.notify(errorNotification(t("general.failed")))
       }
     }
     function toggleCardEditor() {
@@ -206,7 +215,7 @@ export default {
       }
     }
     function createImageUrl() {
-      // Creates a url to display the image 
+      // Creates a url to display the image
       if (imageInput.value) {
         imageInputUrl.value = URL.createObjectURL(imageInput.value)
       }

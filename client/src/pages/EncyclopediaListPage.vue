@@ -10,7 +10,7 @@
         <q-card
           class="col col-12 scoped-wiki-card overflow-hidden"
         >
-          <q-card-section class="row">
+          <q-card-section class="fit row">
             <span class="col col-6 text-h4">
               {{ wikiPage.title }}
             </span>
@@ -26,16 +26,16 @@
               ratio="1"
               fit="contain"
             />
-            <q-btn
-              icon="launch"
-              class="absolute-right"
-              flat
-              :to="{
-                name: 'encyclopediaContentPage',
-                params:{url: wikiPage.url}
-              }"
-            />
           </q-card-section>
+          <q-btn
+            icon="launch"
+            class="absolute-right"
+            flat
+            :to="{
+              name: 'encyclopediaContentPage',
+              params:{url: wikiPage.url}
+            }"
+          />
         </q-card>
       </q-item>
     </q-list>

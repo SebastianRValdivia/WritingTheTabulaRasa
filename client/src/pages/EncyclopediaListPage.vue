@@ -2,24 +2,22 @@
   <q-page padding>
     <SearchInput @search="searchPages" />
     <q-list>
-      <q-item 
-        v-for="wikiPage in displayedPages" 
+      <q-item
+        v-for="wikiPage in displayedPages"
         :key="wikiPage.id"
-        class="row justify-center"
+        class="column items-center"
       >
-        <q-card 
-          class="col-12 row justify-between scoped-wiki-card"
+        <q-card
+          class="col col-12 scoped-wiki-card overflow-hidden"
         >
-          <div class="col-7 column q-pl-xl q-pt-lg">
-            <h4 class="col-6 text-h4 q-mt-md q-mb-sm">
+          <q-card-section class="row">
+            <span class="col col-6 text-h4">
               {{ wikiPage.title }}
-            </h4>
-            
-            <p class="text-subtitle1">
-              {{ wikiPage.epigraph}}
+            </span>
+
+            <p class="col col-8 ">
+              {{ wikiPage.epigraph }}
             </p>
-          </div>
-          <div class="col-4 column justify-center">
             <q-img
               v-if="wikiPage.image"
               :src="findWikiPageUrl(wikiPage.image)"
@@ -28,16 +26,16 @@
               ratio="1"
               fit="contain"
             />
-          </div>
-          <q-card-actions>
-            <q-btn 
+            <q-btn
               icon="launch"
+              class="absolute-right"
+              flat
               :to="{
                 name: 'encyclopediaContentPage',
                 params:{url: wikiPage.url}
               }"
             />
-          </q-card-actions>
+          </q-card-section>
         </q-card>
       </q-item>
     </q-list>
@@ -116,7 +114,7 @@ export default {
 
       findWikiPageUrl,
       searchPages,
-    } 
+    }
   }
 }
 </script>

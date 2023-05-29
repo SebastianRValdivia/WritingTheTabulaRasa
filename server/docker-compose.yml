@@ -1,0 +1,30 @@
+version: "3.3"
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    command: > 
+      sh -c "python manage.py migrate &&
+            python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/src
+    depends_on: 
+      - database
+
+  database:
+    container_name: ${POSTGRES_HOST}
+    image: postgres:13
+    volumes:
+      - postgres_data:/var/lib/postgres/data/
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    ports:
+      - ${POSTGRES_PORT}:5432
+
+volumes:
+  postgres_data:
+

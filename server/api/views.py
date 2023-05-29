@@ -13,6 +13,5 @@ class SettingsAPIView(APIView):
 
     def get(self, request):
         settings = constance_settings.CONFIG
-        print(settings)
         return Response(settings)
 

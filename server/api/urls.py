@@ -1,7 +1,9 @@
 # from django.urls import path, include
 from django.urls import path, include
+from rest_framework.routers import DefaultRouter
 
- 
+from api.views import SettingsAPIView
+
 urlpatterns = [
     path("users/", include("user.api_urls")),
     path("notes/", include("applications.notes.api_urls")),
@@ -17,4 +19,5 @@ urlpatterns = [
     path("metadata/", include("applications.metadata.api_urls")),
     path("quotes/", include("applications.quotes.api_urls")),
     path("practice/", include("applications.practice.api_urls")),
+    path("settings/", SettingsAPIView.as_view()),
 ]

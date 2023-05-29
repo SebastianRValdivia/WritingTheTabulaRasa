@@ -215,7 +215,6 @@ CONSTANCE_CONFIG = {
     "language": (
         "en-us",
         "Default languange of the site",
-        str,
     ),
 }
 if env("DEBUG"):

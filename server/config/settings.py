@@ -21,8 +21,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Load and set environment variables
 env = environ.Env(
     # set casting, default value
+    SECRET_KEY=str,
     DEBUG=(bool, False),
     ALLOWED_HOSTS=(list, []),
+    POSTGRES_USER=str,
+    POSTGRES_PASSWORD=str,
+    POSTGRES_DB=str,
+    POSTGRES_HOST=str,
+    POSTGRES_PORT=str,
 )
 environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 
@@ -115,8 +121,15 @@ WSGI_APPLICATION = "config.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": env("POSTGRES_DB"),
+        "USER": env("POSTGRES_USER"),
+        "PASSWORD": env("POSTGRES_PASSWORD"),
+        "HOST": env("POSTGRES_HOST"),
+        "PORT": env("POSTGRES_PORT"),
+        "OPTIONS": {
+            "connect_timeout": 5,
+        }
     }
 }
 

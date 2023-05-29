@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     # Third party apps
     "rest_framework",
     "rest_framework.authtoken",
+    "constance",
     "corsheaders",
     "django_filters",
     "django_extensions",
@@ -208,3 +209,14 @@ CORS_ORIGIN_ALLOW_ALL = True
 # TODO: use .env settings
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
+
+# Site settings
+CONSTANCE_CONFIG = {
+    "language": (
+        "en-us",
+        "Default languange of the site",
+        str,
+    ),
+}
+if env("DEBUG"):
+    CONSTANCE_BACKEND = "constance.backends.memory.MemoryBackend"

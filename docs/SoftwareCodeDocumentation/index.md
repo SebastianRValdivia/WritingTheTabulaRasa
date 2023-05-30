@@ -98,3 +98,8 @@ The development of WTR is linear, however user stories are great to describe the
 
 The complete list of user stories can be found [here](UserStories/index.md)
 
+### How to run development mode
+
+#### How to run django back end
+
+A docker-compose file is ready to go in the server folder, set to use postgres.

@@ -31,7 +31,7 @@ export default {
       default: false,
     },
     user: {
-      type: Number,
+      type: Number || String,
     },
   },
   setup(props) {
@@ -43,21 +43,24 @@ export default {
 
 
     onBeforeMount(async () => {
-      if (props.loggedUser) {
-        userName.value = userStore.getUserName
-        userId.value = userStore.getUserId
-        userIsStaff.value = userStore.getUserData.is_staff
-      } else if (props.user) {
-        let userData = userStore.getUserDataById(props.user)
-        if (userData === undefined) {
-          await userStore.retrieveUserDataById(props.user)
-          userData = userStore.getUserDataById(props.user)
-        }
+      function setUserData(userData) {
+        // Set badge data
         userName.value = userData.username
         userId.value = userData.pk
         userIsStaff.value = userData.is_staff
       }
 
+      if (props.loggedUser) { // Check if is the logged user
+        setUserData(userStore.getUserData)
+      } else if (props.user) { // Else check if its other user
+        // Retrieve such user data
+        let userData = userStore.getUserDataById(props.user)
+        if (userData === undefined) {
+          await userStore.retrieveUserDataById(props.user)
+          userData = userStore.getUserDataById(props.user)
+        }
+        setUserData(userData)
+      }
     })
     return {
       props,

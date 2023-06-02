@@ -1,11 +1,12 @@
 <template>
   <q-page padding class="row">
+    <AddNewBtn :to="{name: 'learningResourcesEditorPage'}"/>
     <div
       v-for="learningResource in displayedLearningResources"
       :key="learningResource.id"
       class="col column items-center q-gutter-md"
     >
-      <LearningResourceCard 
+      <LearningResourceCard
         :title="learningResource.title"
         class="col-2"
       />
@@ -19,13 +20,15 @@ import { ref, computed, onBeforeMount } from "vue"
 import { useQuasar } from "quasar"
 
 import { useResourceStore } from "src/stores/resource-store"
-import LearningResourceCard from 
+import LearningResourceCard from
   "src/components/for-viewing/LearningResourceCard"
+import AddNewBtn from "src/components/for-input/AddNewBtn"
 
 export default {
   name: "LearningResourceListPage",
   components: {
     LearningResourceCard,
+    AddNewBtn,
   },
   setup() {
     const resourceStore = useResourceStore()
@@ -37,7 +40,7 @@ export default {
 
     onBeforeMount(async () => {
       quasar.loading.show()
-      
+
       let result = await resourceStore.retrieveLearningResources()
 
       if (result) {

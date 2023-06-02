@@ -4,13 +4,13 @@
       <q-input
         v-model="titleInput"
         :placeholder="$t('encyclopediaEditorPage.title')"
-        input-class="text-h2"
+        input-class="text-h3"
         class="col-10"
       />
       <q-input
         v-model="epigraphInput"
         :placeholder="$t('encyclopediaEditorPage.epigraph')"
-        input-class="text-h4"
+        input-class="text-subtitle1"
         autogrow
         borderless
         class="col-10"

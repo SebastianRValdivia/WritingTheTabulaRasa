@@ -11,13 +11,14 @@
           class="col col-12 scoped-wiki-card overflow-hidden"
         >
           <q-card-section class="fit row">
-            <span class="col col-6 text-h4">
+            <div class="col col-6 text-h3 q-mb-md">
               {{ wikiPage.title }}
-            </span>
-
-            <p class="col col-8 ">
-              {{ wikiPage.epigraph }}
-            </p>
+            </div>
+            <div class="col col-8">
+              <p class="text-subtitle1">
+                {{ wikiPage.epigraph }}
+              </p>
+            </div>
             <q-img
               v-if="wikiPage.image"
               :src="findWikiPageUrl(wikiPage.image)"

@@ -5,9 +5,9 @@ const routes = [
     children: [
       { path: "",
         name: "home",
-        component: () => import('pages/IndexPage') 
+        component: () => import('pages/IndexPage')
       },
-      { 
+      {
         path: "my/notes/permanent/",
         name: "noteListPage",
         component: () => import("src/pages/NoteListPage"),
@@ -244,8 +244,8 @@ const routes = [
         component: () => import("src/pages/LearningResourceUserListPage")
       },
       {
-        path: "my/learning-resources/editor/",
-        name: "learningResourcesEditor",
+        path: "learning-resources/editor/",
+        name: "learningResourcesEditorPage",
         component: () => import("src/pages/LearningResourceEditorPage")
       },
       {
@@ -263,10 +263,10 @@ const routes = [
         name: "helpCenterPage",
         component: () => import("src/pages/HelpCenterPage.vue"),
         children: [
-          { 
+          {
             path: "book/",
             name: "bookReaderPage",
-            component: () => import("src/pages/HelpCenterPage/BookReaderPage") 
+            component: () => import("src/pages/HelpCenterPage/BookReaderPage")
           },
         ]
       },

@@ -40,13 +40,7 @@
         </q-card>
       </q-item>
     </q-list>
-    <q-page-sticky
-      position="bottom-right"
-      :offset="[10, 10]"
-    >
-      <q-btn round icon="add" size="md" color="primary" :to="{name: 'encyclopediaEditor'}"/>
-    </q-page-sticky>
-
+    <AddNewBtn :to="{name: 'encyclopediaEditor'}"/>
   </q-page>
 </template>
 
@@ -57,13 +51,15 @@ import { useQuasar, useMeta } from "quasar"
 
 import { useWikiStore } from "src/stores/wiki-store"
 import { useResourceStore } from "src/stores/resource-store"
-import SearchInput from "src/components/for-input/SearchInput"
 import { fuzzySearchByObjectByKeys } from "src/utils/search"
+import SearchInput from "src/components/for-input/SearchInput"
+import AddNewBtn from "src/components/for-input/AddNewBtn"
 
 export default {
   name: "EncyclopediaListPage",
   components: {
-    SearchInput
+    SearchInput,
+    AddNewBtn,
   },
   setup() {
     const { t } = useI18n()

@@ -1,0 +1,929 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../_siteassets/logo.svg">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>Index - Writing The Tabula Rasa</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-software" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Writing The Tabula Rasa" class="md-header__button md-logo" aria-label="Writing The Tabula Rasa" data-md-component="logo">
+      
+  <img src="../_siteassets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Writing The Tabula Rasa
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Index
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/SebastianRValdivia/WritingTheTabulaRasa" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Writing The Tabula Rasa
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Writing The Tabula Rasa" class="md-nav__button md-logo" aria-label="Writing The Tabula Rasa" data-md-component="logo">
+      
+  <img src="../_siteassets/logo.svg" alt="logo">
+
+    </a>
+    Writing The Tabula Rasa
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/SebastianRValdivia/WritingTheTabulaRasa" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Writing The Tabula Rasa
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.md" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Book
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Book" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Book
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../book/english/" class="md-nav__link">
+        English
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../book/espa%C3%B1ol/" class="md-nav__link">
+        Español
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Code Documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Code Documentation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Code Documentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Index
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Index
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#code-review-and-guide" class="md-nav__link">
+    Code Review and Guide
+  </a>
+  
+    <nav class="md-nav" aria-label="Code Review and Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    Documentation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-commit" class="md-nav__link">
+    How to commit
+  </a>
+  
+    <nav class="md-nav" aria-label="How to commit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#branches-naming-convention" class="md-nav__link">
+    Branches naming convention
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-requirements" class="md-nav__link">
+    System requirements
+  </a>
+  
+    <nav class="md-nav" aria-label="System requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-stories" class="md-nav__link">
+    User stories
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-run-development-mode" class="md-nav__link">
+    How to run development mode
+  </a>
+  
+    <nav class="md-nav" aria-label="How to run development mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-run-django-back-end" class="md-nav__link">
+    How to run django back end
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="backend/" class="md-nav__link">
+        Back End
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="client/" class="md-nav__link">
+        Client
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lite/" class="md-nav__link">
+        Lite Client
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="design/index.md" class="md-nav__link">
+        Documentation for design and behavior
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#code-review-and-guide" class="md-nav__link">
+    Code Review and Guide
+  </a>
+  
+    <nav class="md-nav" aria-label="Code Review and Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    Documentation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-commit" class="md-nav__link">
+    How to commit
+  </a>
+  
+    <nav class="md-nav" aria-label="How to commit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#branches-naming-convention" class="md-nav__link">
+    Branches naming convention
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-requirements" class="md-nav__link">
+    System requirements
+  </a>
+  
+    <nav class="md-nav" aria-label="System requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-stories" class="md-nav__link">
+    User stories
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-run-development-mode" class="md-nav__link">
+    How to run development mode
+  </a>
+  
+    <nav class="md-nav" aria-label="How to run development mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-run-django-back-end" class="md-nav__link">
+    How to run django back end
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <a href="https://github.com/SebastianRValdivia/WritingTheTabulaRasa/edit/master/docs/software-documentation/index.md" title="Edit this page" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+<h1 id="the-software">The Software</h1>
+<p>The project is splited in parts <em>server side</em> and <em>client/s side</em>.</p>
+<p>Back End its lead by <a href="https://www.python.org/">Python</a> + <a href="https://www.djangoproject.com/">Django</a> and <a href="https://www.django-rest-framework.org/">REST</a> Framework.</p>
+<p>Front end web app is made in <a href="https://vuejs.org/">Vue</a> using the <a href="https://quasar.dev/">Quasar</a> framework. </p>
+<p>And version control is lead by, yes you guess it, <a href="https://git-scm.com/">Git</a>.</p>
+<p>To contribute use the standar PR of github method and please read how to write commits titles below.</p>
+<h2 id="code-review-and-guide">Code Review and Guide</h2>
+<p>Like any software there is a guide of how to contribute to the code. Since the code is all in one repository, its separated in parts.</p>
+<p>Need a guide to know how things work before jumping to the code? Check the each (or all).</p>
+<ul>
+<li><a href="backend/">Server Guide</a></li>
+<li><a href="lite/">Lite web site</a></li>
+<li><a href="client/">Client guide</a></li>
+</ul>
+<h3 id="documentation">Documentation</h3>
+<p>The documentation of the code (not the software) is split in hierarchy level. Each part is contained inside the folders in a README markdown file. In this files we describe the functions of the module along each file or subfolder inside. Lets avoid long and unformatted comments. Comments are only used to describe very specific parts or steps inside a file.</p>
+<h2 id="how-to-commit">How to commit</h2>
+<p>Its a hard requirement to write commit titles with this initial words. This is used to automate an changelog.
+If this condition is not met PR won't pass.</p>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Add</td>
+<td>addition to code, new feature, missing method, etc</td>
+</tr>
+<tr>
+<td>Fix</td>
+<td>fix of an bug, error or linter warning</td>
+</tr>
+<tr>
+<td>Move</td>
+<td>move/cut or rename a file</td>
+</tr>
+<tr>
+<td>Delete</td>
+<td>delete useless or buggy code</td>
+</tr>
+<tr>
+<td>Refactor</td>
+<td>refactor or improve a part of code (does <em>not</em> applies to tests)</td>
+</tr>
+<tr>
+<td>Change</td>
+<td>change or replace a functionality for something else</td>
+</tr>
+<tr>
+<td>Create</td>
+<td>start a new module or section</td>
+</tr>
+<tr>
+<td>Remove</td>
+<td>Delete a module</td>
+</tr>
+<tr>
+<td>Test</td>
+<td>add or improve tests (any type)</td>
+</tr>
+<tr>
+<td>Install</td>
+<td>install or update new dependency</td>
+</tr>
+<tr>
+<td>Uninstall</td>
+<td>uninstall a dependency</td>
+</tr>
+</tbody>
+</table>
+<p><em>Start</em> is reserved to start of the project or a sub-project.</p>
+<blockquote>
+<p>Note: you can use the comment section of the commit at will.</p>
+</blockquote>
+<h3 id="branches-naming-convention">Branches naming convention</h3>
+<p>The most important branches are: main (development head) and release-{number} (supported releases). All branches use hyphens as word separators.</p>
+<p>Branches starting with different names are for work in progress. Their names are formed along the issue they resolve or by a short resume of what is it for. </p>
+<ul>
+<li>feature-{name}</li>
+<li>install-{what is installed or updated?} </li>
+<li>fix-{what is fixed?}</li>
+<li>refactor-{what is being redone?}</li>
+<li>test-{what for?}</li>
+<li>docs-{what is it about?}.</li>
+</ul>
+<p>Once the work is done a pr is required to join the main branch.</p>
+<h2 id="system-requirements">System requirements</h2>
+<p>Table of the software requirements extracted from the book</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Requirement</th>
+<th>Book section</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>A timer for working and resting intervals</td>
+<td>A.4.3.2</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Calendar to plan goals and objectives</td>
+<td>A.4.3.3</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Resource collection for an investigation</td>
+<td>B.1.2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Resume of the resources in the collection</td>
+<td>B.2.2.1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Slip box note system</td>
+<td>B.2.2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Relationship between notes</td>
+<td>B.2.2.4</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Practice tracker</td>
+<td>B.3.3</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Study activities</td>
+<td>B.3.4</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Memorization activities</td>
+<td>B.4.1</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Quizzes</td>
+<td>B.4.2.1.1</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Flash cards</td>
+<td>B.4.2.1.2</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Projects</td>
+<td>B.4.2.2</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Diagrams</td>
+<td>C.2.1</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Images</td>
+<td>C.2.2</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Tables</td>
+<td>C.2.3</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Encyclopedia (wiki)</td>
+<td>C.3.1</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Cheat sheets</td>
+<td>C.3.2</td>
+</tr>
+<tr>
+<td>17</td>
+<td>How to guides</td>
+<td>C.3.3</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Essays</td>
+<td>C.3.4</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Bibliography references</td>
+<td>C.3.5</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Catalogs of the literary resources</td>
+<td>C.4.1.1.2</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Custom metadata</td>
+<td>C.4.3</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Categorization and relationships between resources</td>
+<td>C.4.5</td>
+</tr>
+</tbody>
+</table>
+<h3 id="user-stories">User stories</h3>
+<p>The development of WTR is linear, however user stories are great to describe the required process of an user action. Also, they are used to define the functional tests.</p>
+<p>The complete list of user stories can be found <a href="user-stories/">here</a></p>
+<h3 id="how-to-run-development-mode">How to run development mode</h3>
+<h4 id="how-to-run-django-back-end">How to run django back end</h4>
+<p>A docker-compose file is ready to go in the server folder, set to use postgres.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../book/espa%C3%B1ol/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Español" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Español
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="backend/" class="md-footer__link md-footer__link--next" aria-label="Next: Back End" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Back End
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+    
+    
+  </body>
+</html>

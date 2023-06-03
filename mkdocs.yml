@@ -12,14 +12,14 @@ theme:
 nav:
   - Home: index.md
   - Book: 
-    - English: Book/English/index.md
-    - Español: Book/Español/index.md
+    - English: book/english/index.md
+    - Español: book/español/index.md
   - Code Documentation: 
-    - Index: SoftwareCodeDocumentation/index.md
-    - Back End: SoftwareCodeDocumentation/Backend/index.md
-    - Client: SoftwareCodeDocumentation/Client/index.md
-    - Lite Client: SoftwareCodeDocumentation/Lite/index.md
-    - Documentation for design and behavior: SoftwareCodeDocumentation/Design/index.md
+    - Index: software-documentation/index.md
+    - Back End: software-documentation/backend/index.md
+    - Client: software-documentation/client/index.md
+    - Lite Client: software-documentation/lite/index.md
+    - Documentation for design and behavior: software-documentation/design/index.md
 
 repo_url: https://github.com/SebastianRValdivia/WritingTheTabulaRasa
 repo_name: Writing The Tabula Rasa

@@ -16,9 +16,9 @@ Like any software there is a guide of how to contribute to the code. Since the c
 
 Need a guide to know how things work before jumping to the code? Check the each (or all).
 
-* [Server Guide](Backend/index.md)
-* [Lite web site](Lite/index.md)
-* [Client guide](Client/index.md)
+* [Server Guide](backend/index.md)
+* [Lite web site](lite/index.md)
+* [Client guide](client/index.md)
 
 ### Documentation
 
@@ -51,7 +51,7 @@ If this condition is not met PR won't pass.
 
 The most important branches are: main (development head) and release-{number} (supported releases). All branches use hyphens as word separators.
 
-Branches starting with different names are for work in progress. Their named like 
+Branches starting with different names are for work in progress. Their names are formed along the issue they resolve or by a short resume of what is it for. 
   
 - feature-{name}
 - install-{what is installed or updated?} 
@@ -96,7 +96,7 @@ Table of the software requirements extracted from the book
 
 The development of WTR is linear, however user stories are great to describe the required process of an user action. Also, they are used to define the functional tests.
 
-The complete list of user stories can be found [here](UserStories/index.md)
+The complete list of user stories can be found [here](user-stories/index.md)
 
 ### How to run development mode
 

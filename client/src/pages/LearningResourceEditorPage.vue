@@ -1,16 +1,13 @@
 <template>
   <q-page padding class="column items-center">
-    <q-card>
+    <q-card class="scoped-resource-card">
       <q-card-section>
-        <q-input 
-          v-model="titleInput" 
+        <q-input
+          v-model="titleInput"
           :label="$t('learningResourcesEditorPage.title')"
         />
-        <q-input 
-          v-model="autorInput" :label="$t('learningResourcesEditorPage.autor')"
-        />
-        <q-input 
-          v-model="descriptionInput" 
+        <q-input
+          v-model="descriptionInput"
           type="textarea"
           :label="$t('learningResourcesEditorPage.about')"
         />
@@ -42,23 +39,20 @@ export default {
     const router = useRouter()
 
     const titleInput = ref("")
-    const autorInput = ref("")
     const descriptionInput = ref("")
 
     async function submit() {
       let result = await resourceStore.saveLearningResource({
         title: titleInput.value,
-        autor: autorInput.value,
         description: descriptionInput.value,
         owner: userStore.getUserId
       })
 
-      if (result) router.push({name: "learningResourceUserListPage"})
+      if (result) router.push({name: "learningResourceListPage"})
     }
 
     return {
       titleInput,
-      autorInput,
       descriptionInput,
 
       submit,
@@ -67,4 +61,9 @@ export default {
 }
 </script>
 
-
+<style scoped>
+.scoped-resource-card {
+  min-width: 15rem;
+  min-height: 25rem;
+}
+</style>

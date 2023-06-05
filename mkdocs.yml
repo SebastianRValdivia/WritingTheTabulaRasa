@@ -1,4 +1,5 @@
 site_name: Writing The Tabula Rasa
+site_url: https://sebastianrvaldivia.github.io/WritingTheTabulaRasa/
 
 docs_dir: "./docs"
 
@@ -10,7 +11,7 @@ theme:
     primary: black
 
 nav:
-  - Home: index.md
+  - Home: home/index.md
   - Book: 
     - English: book/english/index.md
     - Español: book/español/index.md

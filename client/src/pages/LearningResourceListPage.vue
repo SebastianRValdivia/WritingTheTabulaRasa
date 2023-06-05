@@ -8,7 +8,7 @@
     >
       <LearningResourceCard
         :title="learningResource.title"
-        class="col-2"
+        class="col-2 scoped-resource-card"
       />
     </div>
 
@@ -55,3 +55,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.scoped-resource-card {
+  min-width: 15rem;
+  min-height: 25rem;
+}
+</style>

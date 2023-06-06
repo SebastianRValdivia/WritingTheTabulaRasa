@@ -1,5 +1,9 @@
 <template>
   <q-page padding class="column items-center">
+    <SubmitBtn
+      :status="titleInput.length > 0"
+      @click="submit"
+    />
     <q-card class="scoped-resource-card">
       <q-card-section>
         <q-input
@@ -16,14 +20,6 @@
       </div>
       </q-card-section>
     </q-card>
-
-    <q-btn
-      class="q-mt-md"
-      icon="done"
-      color="primary"
-      round
-      @click="submit"
-    />
   </q-page>
 </template>
 
@@ -36,11 +32,13 @@ import { useUserStore } from "src/stores/user-store"
 import { useResourceStore } from "src/stores/resource-store"
 import { useMetadataStore } from "src/stores/metadata-store"
 import OpenMetadataEditorBtn from "src/components/for-input/OpenMetadataEditorBtn"
+import SubmitBtn from "src/components/for-input/SubmitBtn"
 
 export default {
   name: "LearningResourceEditorPage",
   components: {
     OpenMetadataEditorBtn,
+    SubmitBtn
   },
   setup() {
     const router = useRouter()

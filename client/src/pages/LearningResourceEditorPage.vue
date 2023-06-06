@@ -11,6 +11,9 @@
           type="textarea"
           :label="$t('learningResourcesEditorPage.about')"
         />
+      <div class="row justify-center">
+        <OpenMetadataEditorBtn @onDone="saveMetadataInput"/>
+      </div>
       </q-card-section>
     </q-card>
 
@@ -27,26 +30,46 @@
 <script>
 import { ref } from "vue"
 import { useRouter } from "vue-router"
+import { useQuasar } from "quasar"
 
 import { useUserStore } from "src/stores/user-store"
 import { useResourceStore } from "src/stores/resource-store"
+import { useMetadataStore } from "src/stores/metadata-store"
+import OpenMetadataEditorBtn from "src/components/for-input/OpenMetadataEditorBtn"
 
 export default {
   name: "LearningResourceEditorPage",
+  components: {
+    OpenMetadataEditorBtn,
+  },
   setup() {
+    const router = useRouter()
+    const quasar = useQuasar()
     const userStore = useUserStore()
     const resourceStore = useResourceStore()
-    const router = useRouter()
+    const metadataStore = useMetadataStore()
 
     const titleInput = ref("")
     const descriptionInput = ref("")
+    const metadataInput = ref(null)
 
+    function saveMetadataInput(metadata) {
+      metadataInput.value = metadata
+    }
     async function submit() {
-      let result = await resourceStore.saveLearningResource({
+      let data = {
         title: titleInput.value,
         description: descriptionInput.value,
         owner: userStore.getUserId
-      })
+      }
+      // If there is metadata first creates it and add it to the "data" payload
+      if (metadataInput.value) {
+        let metadataCreationResult = await metadataStore.createMetadataObject({
+          content: metadataInput.value
+        })
+        data.metadata = metadataCreationResult.id
+      }
+      let result = await resourceStore.createLearningResource(data)
 
       if (result) router.push({name: "learningResourceListPage"})
     }
@@ -54,7 +77,9 @@ export default {
     return {
       titleInput,
       descriptionInput,
+      metadataInput,
 
+      saveMetadataInput,
       submit,
     }
   }

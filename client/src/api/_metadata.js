@@ -10,7 +10,8 @@ export default {
 
       if (response.data && response.status === 201) {
         return {
-          newMetadataObject: response.data
+          code: responser.status,
+          data: response.data
         }
       }
     } catch {

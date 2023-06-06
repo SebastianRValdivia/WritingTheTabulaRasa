@@ -12,8 +12,8 @@ export const useMetadataStore = defineStore("metadata", {
       let result = await api.metadata.postMetadataObject(metadataObject)
 
       if (result) {
-        this.metadataObjectsList.push(result.newMetadataObject)
-        return result.newMetadataObject
+        this.metadataObjectsList.push(result.data)
+        return result.data
       } else return false
     }
   }

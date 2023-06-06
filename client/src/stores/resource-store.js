@@ -6,7 +6,7 @@ export const useResourceStore = defineStore("resource", {
   state: () => ({
     learningResourcesList: [],
     // List of ids of user assigned learning res
-    userLearningResourceIdsList: [], 
+    userLearningResourceIdsList: [],
     imagesResourcesList: [],
   }),
   getters: {
@@ -16,7 +16,7 @@ export const useResourceStore = defineStore("resource", {
         (resource) => resource.id === resourceId
       )
     },
-    getUserAssignedLearningResources: (state) => 
+    getUserAssignedLearningResources: (state) =>
       state.userLearningResourceIdsList,
     getImageResourceById: (state) => {
       return (imgId) => state.imagesResourcesList.find(
@@ -45,14 +45,14 @@ export const useResourceStore = defineStore("resource", {
         return true
       } else return false
     },
-    async saveLearningResource(learningResourceData) {
+    async createLearningResource(learningResourceData) {
       let result = await api.resources.postLearningResource(
         learningResourceData
       )
 
       if (result) {
         this.learningResourcesList.push(result.data)
-        return true
+        return result.data
       } else return false
     },
     async removeLearningResourceById(resourceId) {

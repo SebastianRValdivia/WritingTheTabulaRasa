@@ -5,12 +5,12 @@
       :key="image.id"
       class="col-auto"
     >
-      <q-img 
+      <q-img
         :src="image.file"
         class="scoped-image"
         @click="copyUrlToClipboard(image.file)"
       >
-        <div 
+        <div
           v-if="image.caption"
           class="absolute-bottom text-subtitle1 text-center"
         >
@@ -21,7 +21,7 @@
         </q-tooltip>
       </q-img>
     </div>
-    
+
   </q-page>
 </template>
 
@@ -30,7 +30,7 @@ import { ref, onBeforeMount } from "vue"
 import { useQuasar } from "quasar"
 import { useI18n } from "vue-i18n"
 
-import { useResourceStore } from "src/stores/resource-store"
+import { useImageStore } from "src/stores/image-store"
 import { copyToClipboard } from "src/utils/clipboard"
 
 export default {
@@ -38,7 +38,7 @@ export default {
   setup() {
     const quasar = useQuasar()
     const { t } = useI18n()
-    const resourceStore = useResourceStore()
+    const imageStore = useImageStore()
 
     const displayedImages = ref([])
 
@@ -54,9 +54,9 @@ export default {
     onBeforeMount(async () => {
       quasar.loading.show()
 
-      await resourceStore.retrieveImageResources()
-      displayedImages.value = resourceStore.getImageResourceList
-      
+      await imageStore.retrieveImages()
+      displayedImages.value = imageStore.getImageList
+
       quasar.loading.hide()
     })
 

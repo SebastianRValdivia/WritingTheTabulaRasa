@@ -249,9 +249,9 @@ const routes = [
         component: () => import("src/pages/LearningResourceEditorPage")
       },
       {
-        path: "image-resources/",
-        name: "imageResourceListPage",
-        component: () => import("src/pages/ImageResourceListPage")
+        path: "gallery/",
+        name: "imageListPage",
+        component: () => import("src/pages/ImageListPage")
       },
       {
         path: "learning-resources/",

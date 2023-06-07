@@ -5,12 +5,10 @@ from django.views.generic import ListView, DetailView
 from applications.resources.models import (
     LearningResourceModel,
     UserAssignedLearningResourceModel,
-    ImageModel,
 )
 from applications.resources.serializers import (
     LearningResourceSerializer,
     UserAssignedLearningResourceSerializer,
-    ImageSerializer,
 )
 
 # Create your views here.
@@ -26,12 +24,6 @@ class UserAssignedLearningResourceViewSet(ModelViewSet):
     serializer_class = UserAssignedLearningResourceSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
     filterset_fields = ["owner"]
-
-class ImageViewSet(ModelViewSet):
-
-    queryset = ImageModel.objects.all()
-    serializer_class = ImageSerializer
-    permission_classes = [IsAuthenticatedOrReadOnly]
 
 class LearningResourceLiteListView(ListView):
 

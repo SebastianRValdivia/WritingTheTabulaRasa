@@ -4,7 +4,6 @@ from rest_framework.routers import DefaultRouter
 from applications.resources.views import (
     LearningResourceViewSet,
     UserAssignedLearningResourceViewSet,
-    ImageViewSet,
 )
 
 router = DefaultRouter()
@@ -18,7 +17,6 @@ router.register(
     UserAssignedLearningResourceViewSet,
     basename="user-assigned-learning-resources",
 )
-router.register("images", ImageViewSet, basename="images")
 
 urlpatterns = [
   path("", include(router.urls))

@@ -27,7 +27,7 @@ class EncyclopediaPageModel(models.Model):
         null=False
     )
     image = models.ForeignKey(
-        "resources.ImageModel",
+        "images.ImageModel",
         on_delete=models.SET_NULL,
         blank=True,
         null=True,

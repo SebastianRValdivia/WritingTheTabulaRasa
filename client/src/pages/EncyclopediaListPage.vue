@@ -50,7 +50,7 @@ import { useI18n } from "vue-i18n"
 import { useQuasar, useMeta } from "quasar"
 
 import { useWikiStore } from "src/stores/wiki-store"
-import { useResourceStore } from "src/stores/resource-store"
+import { useImageStore } from "src/stores/image-store"
 import { fuzzySearchByObjectByKeys } from "src/utils/search"
 import SearchInput from "src/components/for-input/SearchInput"
 import AddNewBtn from "src/components/for-input/AddNewBtn"
@@ -64,7 +64,7 @@ export default {
   setup() {
     const { t } = useI18n()
     const wikiStore = useWikiStore()
-    const resourceStore = useResourceStore()
+    const imageStore = useImageStore()
     const quasar = useQuasar()
 
     const searchPattern = ref("")
@@ -86,13 +86,13 @@ export default {
       searchPattern.value = pattern
     }
     function findWikiPageUrl(imgId) {
-      let imgData = resourceStore.getImageResourceById(imgId)
+      let imgData = imageStore.getImageById(imgId)
       if (imgData) return imgData.file
       else return null
     }
     async function loadPage() {
       let result = await wikiStore.retrieveWikiPages()
-      if (result) result = await resourceStore.retrieveImageResources()
+      if (result) result = await imageStore.retrieveImages()
     }
 
     onBeforeMount(async() => {

@@ -13,8 +13,8 @@
         <q-separator vertical inset class="q-ml-sm"/>
         <q-toolbar-title>
           <router-link :to="{name: 'home'}" >
-            <span 
-              class="text-bold text-white" 
+            <span
+              class="text-bold text-white"
               style="text-decoration: none;"
             >
               /
@@ -60,7 +60,7 @@
                 {{ $t('mainLayout.learnignResources') }}
               </q-item-section>
             </q-item>
-            <q-item clickable :to="{name: 'imageResourceListPage'}">
+            <q-item clickable :to="{name: 'imageListPage'}">
               <q-item-section>
                 {{ $t('mainLayout.images') }}
               </q-item-section>
@@ -74,17 +74,17 @@
       </q-toolbar>
 
       <q-tabs align="left" v-if="appStore.isTabsOpen">
-        <q-route-tab 
-          v-for="(pathData, title, index) in appStore.getTabs" 
-          :key="index" 
-          :to="pathData" 
+        <q-route-tab
+          v-for="(pathData, title, index) in appStore.getTabs"
+          :key="index"
+          :to="pathData"
           :label="title"
           class="text-secondary"
         />
       </q-tabs>
     </q-header>
 
-    <q-drawer 
+    <q-drawer
       v-model="leftDrawerOpen"
       side="left"
       bordered
@@ -97,8 +97,8 @@
       </q-img>
       <q-scroll-area class="fit links-area">
         <q-list padding>
-          <q-expansion-item 
-            :label="$t('mainDrawer.notes')" 
+          <q-expansion-item
+            :label="$t('mainDrawer.notes')"
             icon="inbox"
             default-opened
             :content-inset-level="1"
@@ -150,7 +150,7 @@
           </q-item>
 
           <q-expansion-item
-            :label="$t('mainDrawer.schedule')" 
+            :label="$t('mainDrawer.schedule')"
             icon="calendar_month"
             default-opened
             :content-inset-level="1"
@@ -159,7 +159,7 @@
               <q-item-section avatar>
                 <q-icon name="flag" />
               </q-item-section>
-            
+
               <q-item-section>
                 {{ $t("mainDrawer.goals") }}
               </q-item-section>
@@ -168,7 +168,7 @@
               <q-item-section avatar>
                 <q-icon name="schedule" />
               </q-item-section>
-            
+
               <q-item-section>
                 {{ $t("mainDrawer.timeTable") }}
               </q-item-section>
@@ -220,22 +220,22 @@
     </q-drawer>
 
     <!-- Tool drawer -->
-    <q-drawer 
-      v-model="isToolDrawerOpen" 
-      side="right" 
+    <q-drawer
+      v-model="isToolDrawerOpen"
+      side="right"
       bordered
       mini
     >
       <q-scroll-area class="fit" :horizontal-thumb-style="{ opacity: 0 }">
         <q-list>
-          <q-item 
-            clickable 
+          <q-item
+            clickable
             v-ripple
             @click="openFleetingNoteDialog"
           >
-            <q-tooltip 
+            <q-tooltip
               :delay="500"
-              anchor="center start" 
+              anchor="center start"
               self="center right"
             >
               {{ $t("toolDrawer.fleetingNote") }}
@@ -245,9 +245,9 @@
             </q-item-section>
           </q-item>
           <q-item v-ripple>
-            <q-tooltip 
+            <q-tooltip
               :delay="500"
-              anchor="center start" 
+              anchor="center start"
               self="center right"
             >
               {{ $t("toolDrawer.timer") }}
@@ -257,9 +257,9 @@
             </q-item-section>
           </q-item>
           <q-item v-ripple>
-            <q-tooltip 
+            <q-tooltip
               :delay="500"
-              anchor="center start" 
+              anchor="center start"
               self="center right"
             >
               {{ $t("toolDrawer.newImage") }}
@@ -349,7 +349,7 @@ export default {
 </script>
 
 <style>
-.links-area { 
+.links-area {
   height: calc(100% - 150px);
   padding-top: 150px;
   border-right: 1px solid #ddd

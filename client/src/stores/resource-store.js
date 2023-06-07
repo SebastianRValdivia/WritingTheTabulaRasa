@@ -18,12 +18,6 @@ export const useResourceStore = defineStore("resource", {
     },
     getUserAssignedLearningResources: (state) =>
       state.userLearningResourceIdsList,
-    getImageResourceById: (state) => {
-      return (imgId) => state.imagesResourcesList.find(
-        (img) => img.id === imgId
-      )
-    },
-    getImageResourceList: (state) => state.imagesResourcesList,
   },
   actions: {
     async retrieveLearningResources() {
@@ -67,21 +61,5 @@ export const useResourceStore = defineStore("resource", {
         return true
       } else return false
     },
-    async retrieveImageResources() {
-      let result = await api.resources.getImageResources()
-
-      if (result) {
-        this.imagesResourcesList = result.data
-        return true
-      } else return false
-    },
-    async createImageResource(imageData) {
-      let result = await api.resources.postImageResource(imageData)
-
-      if (result) {
-        this.imagesResourcesList.push(result.data)
-        return result.data
-      } else return false
-    }
   }
 })

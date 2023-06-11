@@ -20,5 +20,6 @@ urlpatterns = [
     path("metadata/", include("applications.metadata.api_urls")),
     path("quotes/", include("applications.quotes.api_urls")),
     path("practice/", include("applications.practice.api_urls")),
+    path("news/", include("applications.news.api_urls")),
     path("settings/", SettingsAPIView.as_view()),
 ]

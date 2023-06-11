@@ -82,6 +82,7 @@ INSTALLED_APPS = [
     "applications.quotes",
     "applications.practice",
     "applications.images",
+    "applications.news",
 ]
 
 MIDDLEWARE = [

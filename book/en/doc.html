@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>book</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<p><strong>Autor</strong>: Valdivia, Sebastián Ricardo.</p>
+<p>CC BY-NC-SA 4.0</p>
+<p>This work is licensed under a Creative Commons
+Attribution-NonCommercial-ShareAlike 4.0 International License.</p>
+<p>Dedicated to all those who, in the face of any difficulty, chose to
+keep learning.</p>
+<h2 id="preface">Preface</h2>
+<p>As a child, my mother urged me to study, and for a considerable
+stretch of my life, I regarded this task as the mere memorization of
+answers to exams, only to promptly forget them once the obligation was
+fulfilled. It wasn’t until my teenage years that I encountered a
+semester-long course called ‘study techniques.’ Here, I was instructed
+to read, underline, reread, and rewrite my underlined notes. While this
+method improved my exam scores temporarily, the knowledge would
+invariably fade away afterward. Historical facts became meaningless
+dates, equations dissolved into scribbles, and once-learned language
+concepts transformed into loathsome words drifting in my memory.
+Remarkably, I continued to pass with excellent grades.</p>
+<p>However, my understanding of the true cost of this approach only
+dawned on me when I entered engineering university. The initial exams
+were designed merely to assess my knowledge level, but when I read the
+questions, I recognized them from somewhere in my past. I had known them
+years ago, but now they seemed vaguely familiar, and I struggled to
+provide the correct answers. My score? A mere 20%. As the coursework
+advanced, my situation deteriorated. I needed to grasp earlier concepts
+to excel in exams, a prospect that had never piqued my interest.
+Moreover, the study techniques that had served me previously proved
+inadequate in the face of the substantial amount of information I now
+encountered. I barely managed to pass, and by the time I reached my
+second year, where retaining previously learned concepts was essential,
+I faltered. Everything I had learned the prior year had vanished from
+memory.</p>
+<p>I began to doubt my abilities, believing I was inherently incapable
+and that my brain was somehow inferior. I ultimately abandoned my
+university studies, deeming them a waste of time. My goals shifted, and
+I started working as a barista. However, my thirst for knowledge
+remained unquenched. Numerous subjects, particularly programming,
+continued to captivate my interest. Encouraged by this spark, I decided
+to embark on a self-guided journey to deepen my understanding of the
+field.</p>
+<p>This path was fraught with stumbling blocks, errors, and challenges,
+but gradually, programming started to make sense. Beyond that, I began
+to discern a pattern in the learning process. I turned to dynamic
+tutorials that emphasized hands-on experience over the rote memorization
+of definitions or complex theories. This new approach kindled a fresh
+curiosity within me: How do we learn?</p>
+<p>I set out on a quest to uncover alternative methods of studying. My
+initial task was to gather information on effective study techniques. I
+scoured the internet for articles, acquired books of interest (often
+more than necessary), consulted online communities, and experimented
+extensively. My endeavors to learn programming proved particularly
+illuminating; while some approaches failed, others succeeded. I
+persisted in refining my learning skills until I gained the confidence
+to reattempt formal education. This time, I did not falter. Each passing
+year proved more productive, and I found myself surpassing both my peers
+and even some of my professors. Many attributed my success to sheer
+intelligence, willpower, or time spent studying. Yet, they were
+mistaken; I had simply mastered the art of effective learning.</p>
+<p>Over time, I noticed a significant enhancement in my comprehension
+abilities. I grew restless studying a single topic and began to tackle
+two or three simultaneously. I explored diverse disciplines, from
+programming and languages to carpentry, electricity, electronics,
+mathematics, and many others, including seemingly unrelated subjects
+like beekeeping and horticulture. This multifaceted approach felt
+effortless and enjoyable, compelling me to continue my eclectic learning
+journey.</p>
+<p>What remains paramount is my unwavering commitment to learning how to
+learn. I reached a juncture where I amalgamated my accumulated
+knowledge, formal education, and independent discoveries to assist
+others in achieving their learning goals.</p>
+<p>But why do we learn? Often, people associate learning with
+institutions, degrees, and job prospects, neglecting the value of
+learning for its intrinsic worth. Learning instills new values, nurtures
+our ethics, enhances our productivity by acquainting us with new trades
+and hobbies, imparts wisdom from history to prevent repeating past
+mistakes, and so much more. Learning doesn’t merely boost our
+intelligence; it shapes us into better individuals.</p>
+<p>From infancy, we begin to cultivate the skill of learning. Babies
+utter their first words after repeated exposure to their parents’
+voices, and this process continues throughout their lives. Schooling
+exposes them to new knowledge simply by observing teachers, acquainting
+them with games by watching peers, and etching book plots into their
+memory through reading. This childhood development lays the foundation
+for various learning styles and information retention techniques.</p>
+<h2 id="abstract">Abstract</h2>
+<p>Within the pages of this book, we embark on a profound exploration of
+the intricacies of learning, delving deep into the modus operandi of our
+minds. Our mission is to unravel the secrets of understanding and
+memorizing information with the ultimate goal of enhancing our cognitive
+capabilities and extracting knowledge in the most lucid and meticulously
+organized manner.</p>
+<p>In this quest for cognitive mastery, we encounter a rich tapestry of
+methods and intricate systems meticulously crafted by experts. These
+tools serve as catalysts, propelling us toward heightened efficacy in
+our learning endeavors. Learning, as we come to appreciate, transcends
+the mere act of reading; it demands an amalgamation of willpower,
+strategic finesse, relentless practice, and the wisdom to discern the
+most effective pathways to knowledge acquisition.</p>
+<p>The voyage of recollection, an integral facet of the learning
+process, unfolds as a cyclic odyssey, replete with twists and turns, for
+which we must be well-prepared. Once we acquire knowledge, our brains
+undergo transformative processes akin to molding clay into new forms.
+However, this remarkable property of neuroplasticity comes with its own
+set of challenges. The specter of forgetting looms, albeit not
+indefinitely or abruptly. Under specific conditions, the precious fruits
+of our learning can slip away. To combat this formidable adversary, we
+wield a powerful weapon: the art of notation. Within our arsenal, we
+find an array of mechanisms, both simple and intricate, swift or
+detailed, all finely tuned to transcribe information with precision and
+purpose.</p>
+<p>For those who may question the efficacy of the written word, there
+exists an alternative avenue of learning: the art of meticulously
+crafting organized visualizations. Diagramming, as we shall discover,
+demands an intimate understanding of the nuanced art of explicit and
+systematic description within a pristine canvas of blank space. Yet, be
+not deceived, for the mere act of tracing lines upon a canvas is
+insufficient to conjure meaningful charts and diagrams. What lies at the
+heart of this endeavor is an adherence to order and an unwavering
+dedication to the art’s guiding principles and regulations.</p>
+<p>In essence, this odyssey through the realms of learning not only
+equips us with the tools to ascend the peaks of knowledge but also
+instills a profound sense of reverence for the process itself. Learning,
+we come to realize, transcends the confines of institutions, degrees,
+and employment prospects. It is the crucible in which we forge our
+values, nurture our ethics, and expand our horizons. Learning transforms
+us into not just more intelligent beings but, fundamentally, into better
+individuals.</p>
+<blockquote>
+<p>This book was written with the objective of guiding a software
+project but is unrelated from it.</p>
+</blockquote>
+<h3 id="what-is-tabula-rasa">¿What is “tabula rasa”?</h3>
+<p>The term “tabula rasa,” Latin for “blank slate,” carries profound
+philosophical significance. It encapsulates the notion that each of us
+enters the world devoid of inherent knowledge, akin to an empty canvas,
+and it is through the journey of life that we inscribe our experiences
+upon this mental canvas, gradually etching the tapestry of our
+understanding.</p>
+<p>The origin of this term draws a compelling parallel to a tool of
+antiquity—the Roman wax tablet. Employed by the Romans in the 1st
+century B.C., this tablet could be molded afresh with a stylus,
+permitting the erasure of previous writings and enabling the opportunity
+to transcribe anew. Its very emptiness led to its designation as “rasa,”
+signifying the absence of preexisting inscriptions.</p>
+<p>In essence, “tabula rasa” stands as a testament to the malleability
+of human consciousness, where the imprints of life’s experiences
+continually shape and reshape the contours of our understanding,
+rendering each of us a unique work of intellectual artistry.</p>
+<div style="width: 700px; margin: 5px;">
+<p><img src="img/wax-tablet.png" /></p>
+<figcaption style="font-size: 10px; text-align: center;">
+Roman wax tablet
+</figcaption>
+</div>
+<p>Philosophers employed this expression to symbolize the commencement
+of learning from birth, following the theory of empiricism, which posits
+that we acquire knowledge through experience from the moment we are
+born. Here, we align ourselves with this ideology, keeping our doors
+open to all. What is explained remains indifferent to one’s origin,
+current circumstances, reasons for wanting to learn, or any other
+factors.</p>
+</body>
+</html>

@@ -39,3 +39,21 @@ For those who may question the efficacy of the written word, there exists an alt
 In essence, this odyssey through the realms of learning not only equips us with the tools to ascend the peaks of knowledge but also instills a profound sense of reverence for the process itself. Learning, we come to realize, transcends the confines of institutions, degrees, and employment prospects. It is the crucible in which we forge our values, nurture our ethics, and expand our horizons. Learning transforms us into not just more intelligent beings but, fundamentally, into better individuals.
 
 > This book was written with the objective of guiding a software project but is unrelated from it.
+
+### ¿What is "tabula rasa"?
+
+The term "tabula rasa," Latin for "blank slate," carries profound philosophical significance. It encapsulates the notion that each of us enters the world devoid of inherent knowledge, akin to an empty canvas, and it is through the journey of life that we inscribe our experiences upon this mental canvas, gradually etching the tapestry of our understanding.
+
+The origin of this term draws a compelling parallel to a tool of antiquity—the Roman wax tablet. Employed by the Romans in the 1st century B.C., this tablet could be molded afresh with a stylus, permitting the erasure of previous writings and enabling the opportunity to transcribe anew. Its very emptiness led to its designation as "rasa," signifying the absence of preexisting inscriptions.
+
+In essence, "tabula rasa" stands as a testament to the malleability of human consciousness, where the imprints of life's experiences continually shape and reshape the contours of our understanding, rendering each of us a unique work of intellectual artistry.
+
+<div style="width: 700px; margin: 5px;">
+
+  ![](img/wax-tablet.png)
+
+  <figcaption style="font-size: 10px; text-align: center;">Roman wax tablet</figcaption>
+
+</div>
+
+Philosophers employed this expression to symbolize the commencement of learning from birth, following the theory of empiricism, which posits that we acquire knowledge through experience from the moment we are born. Here, we align ourselves with this ideology, keeping our doors open to all. What is explained remains indifferent to one's origin, current circumstances, reasons for wanting to learn, or any other factors.

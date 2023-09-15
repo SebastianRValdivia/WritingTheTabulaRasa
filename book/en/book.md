@@ -264,3 +264,59 @@ Chunking is a versatile cognitive strategy that can be applied to various types 
 
 Memory plays a crucial role in how information is related; it's necessary to understand its operation. Together, both memories can manage complex streams of information, allowing us to understand and reason. Changing perspectives leads us to the next part.
 
+## A.3 Thinking
+
+Thinking or reasoning involves using all our knowledge to establish connections with the environment and **draw a conclusion**. Obtaining this conclusion is what leads the hierarchy of operations to achieve what we call intelligence. Its purpose is to obtain an understanding or make a decision correctly or as closely as possible. It is important because it allows us to form and comprehend mental models by appreciating information from our experiences.
+
+Experience is formed by **relating and processing facts stored in long-term memory**. When we were young and learning to walk, if we fell and got hurt, we used reason to understand that the negative consequence, pain, was a result of the fall. From this reflection stored in our memory, we form all the relationships that arise from such an experience. For example, falling hurts, and over time, when we try to learn to ride a bicycle, we draw from the same experience: falling will hurt - we should avoid falling. Achieving this conclusion does not require actually falling to realize it but relies on similar events that have already occurred and exist in our memory. So far, we've seen basic examples, but reasoning can be performed with complex units of information. The mind can process experiences and make judgments to understand facts; it only requires analyzing relationships based on knowledge stored in memory.
+
+When dealing with data from various sources, such as physical or abstract modalities, and not finding relationships due to not having fresher memories, more effort is required. This effort is created by combining the act of freely recalling and associating knowledge in various ways until a conclusion is reached. This activity can take time during which the mind is working to find a **meaning**, seeking to perceive its functionality or significance through intuition.
+
+This human activity is not constant from birth; it is a skill that is learned, developed and whose proficiency requires training. It is something all animals possess to varying degrees, but humans have taken it as far as possible. We depend on it to understand what we study; the better our reasoning, the more effective our study will be.
+
+The work of processing acquired information is related to the level of predisposition we have when performing this task. Whether with a high or low level, focused or not, we are working in the same way but in two different ways. One way to see it is as a shift from a more closed perspective to a more open one. What do we mean by these perspectives? There are two modes of thinking, **focused and diffuse**. Although it may seem that only the first is effective, the reality is that both are equally important for effective studying. Let's look at them separately.
+
+### A.3.1 Focused Mode
+
+The first mode of thinking is focused or concentrated. This should be the most obvious one, and we recognize it instantly. We realize it because when we use it, we are processing information with our full consciousness, expending more energy.
+
+When focused, the experiences and knowledge we use are active. During this time, the information to be used is located throughout (or almost all of) working memory, connected to archived memories. We are reasoning about it, seeking new relationships, meanings and questions. Although we only use this information and only this information as a closed group, not with a more open perspective. We are limited, but we achieve greater depth.
+
+Being focused requires an effort to avoid distractions from the environment, which affects the ability to maintain the focused state. We need to make an effort to stay in this mode, what we call **sustaining attention**.
+
+#### A.3.1.1 Attention
+
+When talking about attention, we refer to the cognitive process of selecting information and focusing on it for processing by our minds. By definition, it involves focusing on a single stimulus or specific location and the ability to stay there. When we pay attention, we select the information we want to process and put our cognitive capacity at the service of this task. It applies to the four available slots in working memory, plus three or more additional slots that are prepared.
+
+Environmental variables have the potential to affect attention positively or negatively; they can help us stay focused on the material or distract us from it to pay attention to other things. These variables can be sounds, images, movements, among others. Colors are a crude example of a variable that can be both positive and negative: if we see keywords highlighted in red in a text, we maintain focus on the text. However, if we had dozens of colorful drawings around the text, they would grab our attention more, diverting us from reading. It is important to manage variables so that they are on the positive side of the scale, helping rather than distracting.
+
+A more subtle variable is the mental challenge posed by the material. Depending on the level of difficulty, attention varies. If we deal with very complex material that is beyond our reach, not understanding a large part of it, it will be impossible to concentrate. Similarly, material that is easy and/or already familiar may also lead to a loss of attention because the brain does not need to work at 100%. Ideally, you should maintain a work pace that requires effort, with challenging but not unattainable material. 
+
+#### A.3.1.2 Cognitive Loads
+
+Cognitive loads refer to how much the study material demands from working memory. This is what we will call the unit of measurement for the mental effort required to interpret the material. The higher the cognitive load, the more concentration is required. If we want to make studying any topic easier (for ourselves or others), we need to consider what the load will be.
+
+What most affects the load is the presentation of the material. Depending on how difficult or complex the material is and how it is presented, the load will increase. Therefore, the material's load can be affected by two parts: intrinsic (how easy or difficult the material is) or extrinsic (how it is presented). The ideal intrinsic load is at an intermediate level between easy and difficult to maintain our attention in the task. On the other hand, the extrinsic load is better when it is simpler. Knowing the type of level we are facing makes us aware of the effort level we will require and, with some experience, calculate the time it will take to learn.
+
+Another load that also affects attention is perceptual, which is closely related to attention. Unlike cognitive load, which uses the mind, perceptual load uses the senses to focus. Sounds, images, among others, affect our level of concentration. The more distractions there are, the higher the perceptual load. Reducing anything that affects attention will help you stay focused.
+
+### A.3.2 Diffuse Mode
+
+The second mode of thinking is the opposite of being focused. In this mode, the mind wanders through thoughts, discarding concrete ideas and allowing new ones of any kind to flow. Here, we are not focused on anything in particular; we let distractions take us where they want, and we let the mind do what it needs.
+
+In this state of thinking, relationships with other knowledge are better constructed. During the diffuse mode, we "play" with concepts, moving them and trying to connect them with others, forming analogies and breaking them down to see how they are structured. This allows our creativity to be involved in studying.
+
+Although we may think we are wasting time, the brain continues to work on the problem. Often, we feel guilt, a negative emotion, for entering this mode, believing that it is laziness, which is not true. Negative emotions do affect performance. Naturally, studying requires a good deal of focus, but we must remember that leaving this mode is also essential for aligning ideas and making progress.
+
+Entering the diffuse mode allows the brain to explore more alternatives. We engage creativity and our knowledge in its entirety, something that would require much effort in the focused mode. Reaching the diffuse mode costs nothing; it is natural and often happens without us seeking it.
+
+#### A.3.2.1 Daydreaming
+
+It is common to feel that thoughts from within us invade our attention and lead us to daydream. At this point, the mind enters the diffuse mode without us consciously seeking it. It often happens autonomously, and even though the practice of concentration helps prevent daydreaming, it is inevitable.
+
+We all have the problem of losing focus on what we are working on because our minds seem to change the subject. Although it may seem tedious and ineffective, it is a way for the brain to request a break since the mind gets tired, meaning it exhausts its concentration energy. How many times has it happened that even with the utmost determination, we cannot focus on the text we are reading, and we exert so much effort that it causes a headache? Like an engine, the human mind needs to "cool down" after a work cycle. If we use our energy for too long, we will only tire ourselves out to the point where we are not efficient. This is why staying up all night to study for an exam the next day is futile, and it does not help with long-term learning.
+
+These distractions that separate us from studying are a sign that we are tired. It is not necessary to interpret these signals to realize it; we often think about how tired we are ourselves. At this point, the next step is to take a break and take care of ourselves; the mind will continue working in its way.
+
+The more we study, the longer we will be able to maintain the pace. We can interpret it like training for a marathon; reaching the first 5 kilometers will require practice, learning, and each day we need to achieve a few meters further. The only way to improve is to periodically make a bit more effort, achieving better results.
+

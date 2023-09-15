@@ -156,3 +156,111 @@ Without this attribute, the brain would be fixed and unchanging, much like that 
 
 This change doesn't happen overnight, nor is it extraordinary. It's akin to a plant's growth from sprout to fruit, taking months of effort. It's during the night when it grows the most. This transformation necessitates healthy habits, which we will explore in A.4.1 (Mental Health).
 
+## A.2 Memory
+
+What's the best way to attach something to your mind? This is a complicated question. There's no simple way, no single trick, to remember something forever. If we analyze everything in our heads, we don't have memories of our first days of life, but we do remember yesterday, as long as you don't have any brain damage. Nothing in memory is eternal; always remember that it's constantly changing, archiving the old in the back room, making room for the new and more needed at the front counter.
+
+But have you noticed that you can remember something like your birthday every time and every year? If you delve into this topic, you'll realize it happens for these reasons:
+
+1. It repeats over time.
+2. It's an important day.
+3. Dates are easy to remember. They're just numbers.
+
+Break this idea to decipher the trick and you'll see the pattern: it's recurrent, linked to other events, and accessible. This will be the key to memorization. But to find out how it happens, we must first understand the functioning of memory and it's parts.
+
+When we talk about memory in general, we refer to the mental process of encoding, retaining and retrieving information stored among our neurons. These tasks are performed by its parts. To understand these parts, we could compare memory to a backpack with 2 pockets.
+
+<div style="width: 800px; margin: 5px;">
+
+  ![](img/backpack.png)
+
+  <figcaption style="font-size: 10px; text-align: center;">Backpack with 2 pockets</figcaption>
+
+</div>
+
+The first pocket (1) is much more accessible, small enough for us to reach its contents with our hand and easily retrieve something like a pen or a piece of paper. Obviously, there isn't much space; we could hardly fit a notepad. For that, we have the other pocket (2). This larger space allows us to put books, folders, calendars, even our laptops; full of information. The problem is finding and retrieving something from here requires a somewhat more tedious search. Just like this backpack, the mind has these 2 types of pockets.
+
+Memory operates in two main parts, in addition to a memory that processes the senses and retains the information for a few seconds. These are:
+
+- Sensory memory or register: Operates on what is captured by the senses.
+
+- Short-term storage memory: Working memory.
+
+- Long-term storage memory: Information deposit system.
+
+We will focus on the last two.
+
+### A.2.1 Short-term Storage
+
+This memory is responsible for *processing or working with information*. It is located in the prefrontal cortex just above the eyes.
+
+It usually has 4 *slots* or spaces where it places the information. The quantity varies from 3 to 9 spaces. Note that having fewer spaces doesn't make us less capable; on the contrary, it helps with creativity as we rely on forming relationships with information in long-term memory. This method of creating relationships is the way to answer complex questions with so little space in such a short time. We can form connections with previously acquired knowledge and process all this information together.
+
+As a person does not focus, it "drops" the information, forgetting about it. It takes around 10 to 15 seconds to discard whatever is occupying it. To avoid forgetting, focus is necessary. Methods can be used to keep it longer. If no activity is done, it will simply be lost and needs to be revisited.
+
+A method that helps keep pieces of information active for longer in this memory is phonological loops or repeating what we are trying to remember again and again to keep it active. Another method is visuospatial, where information is stored visually, with images located in a space. These procedures are not for archiving information in the long term, just to keep something a few seconds longer in working memory; we'll see them in detail later.
+
+### A.2.2 Long-term Storage
+
+In this memory, *information is stored*, knowledge, mental models. The limit is immense; it can accommodate a large amount during the course of our lives. Still, everything depends on the ability to retrieve it, that is, to bring it back to working memory for use. This practice is important for improving our information retrieval.
+
+This memory, unlike the other, does not have an exact location; it is dispersed throughout the brain but is concentrated in the hippocampus. This leads us to think that memory uses a large number of neurons in the brain's gray matter. Each piece of gray matter forms a set of neuron links that create a memory.
+
+To move something from working memory to this long-term memory, it must go through 4 stages:
+
+1. **Encoding**: At this step, the brain transforms facts or concepts into models that can be interpreted by the brain.
+
+2. **Consolidation**: Once the models are obtained, the connections between neurons must be strengthened for the next step.
+
+3. **Storage**: Once consolidation is complete, the models are firmly placed in the brain after a few hours, during which the brain adapts the neurons through its plasticity.
+
+4. **Retrieval**: This stage is somewhat obvious but separate from the others. It involves simply retrieving the stored information to use it.
+
+An advantage for consolidation is to use what you already know and relate it to new knowledge. It acts as anchors, just like a spring, forming unions and pathways that connect them to the new ones. The more of these points one has, the easier it is to understand and memorize new information. It's better to study with a broader view rather than trying to memorize details.
+
+The effort to remember information helps improve the connections in this memory. Whether it's exercises with or without assistance or clues to trigger memories, performing these tasks greatly helps strengthen the engrams. Trying to remember, without looking at what you're searching for, is one of the most effective ways to improve the information's accessibility.
+
+Once you've understood the information, consolidation begins; in this stage, neurons start creating an engram. Once the process is completed, it's stored, but to keep the engram active, you need to practice retrieving that information and keep it active. If you don't use it, you'll forget it.
+
+#### A.2.2.1 Remembering
+
+This task is what we seek to perfect. It involves finding the right information as quickly as possible, which is not so simple.
+
+The mind doesn't work in a linear fashion; by this, we mean it doesn't start a sequential search in a list of memories. You can think of it as having a piece of fabric of an unknown color and wanting to find out which one it is from a list; you might go on comparing the colors on the list one by one until they match. This method is slow and ineffective. If the brain conducted the search this way, it would take hours, comparing it to the thousands of memories it stores.
+
+To describe its search method, we can see it as accessing any part of the "list" searching based on relationships or classifications we've made when learning. What it does is look for associations with more active topics in long-term memory. If it can't achieve this, it is considered forgotten.
+
+The best way to improve our memory recall ability is through practice. The effort to retrieve information makes neurons more active. The more we try to remember, the more skilled we become, and later in section B.4 (Memorization), we'll see techniques and exercises based on this theory.
+
+#### A.2.2.2 Forgetting
+
+Forgetting or failing to retrieve information can affect us in many ways. When people usually use this word, they refer to the failure or inability to remember information that has gone through all the stages listed in A.2.2 (Long-term). This can happen mainly due to the lack of use of these resources or biological factors (diseases like Alzheimer's affect long-term memory in this way).
+
+The effect of forgetting is not instant; it develops over a period of time. Reviewing and practicing memory at intervals helps keep the neurons holding the information active. The solution is managing the timing of our reviews to prevent forgetting, something we'll discuss in A.4.3 (Discipline).
+
+### A.2.3 Chunking
+
+Chunking is a cognitive process used to organize and group information into smaller, manageable units or "chunks" in order to improve memory and processing efficiency. It's a valuable technique for dealing with large amounts of information more effectively. 
+
+With this technique, we can manipulate large amounts of data stored in our minds. Since we only have about 4 usable slots in working memory, it limits the amount of information we can consider at any given time. Fortunately, human brain evolution acquired the ability to consider a context of information stored between both memories. The goal of forming chunks is to memorize something without needing to remember every detail.
+
+Forming a chunk is not that simple. When starting to build a chunk, concentration is required, focusing only on what we have in our hands. After having the material in working memory, we step away from it to see it from a different perspective. With repetition and spaced practice, we can solidify concepts entirely.
+
+To archive chunking we can follow the following process:
+
+1. **Identify Key Concepts:** Begin by identifying the key concepts or pieces of information that you need to remember. These can be words, numbers or any type of data.
+
+2. **Determine Chunk Size:** Decide on an appropriate chunk size. This can vary depending on the type of information and our own cognitive capacity. Common chunk sizes include groups of 3 to 5 items.
+
+3. **Create Meaningful Groups:** Group related pieces of information together to form meaningful chunks. This could involve grouping numbers, words or ideas that are conceptually related.
+
+4. **Use Patterns:** Look for patterns or connections within the information that can help you create chunks. For example, if you're trying to remember a series of numbers, you might group them by digits or by their meaning.
+
+5. **Practice:** Once you've created these chunks, practice recalling them as distinct units. This helps you remember the information more effectively because you're dealing with fewer, more meaningful pieces.
+
+Let's see a simple example of chunking: how to remember phone numbers. When remembering a phone number like 123-456-7890, you might chunk it into three parts: "123" as one chunk, "456" as another, and "7890" as the final chunk.
+
+Chunking is a versatile cognitive strategy that can be applied to various types of information, from phone numbers and dates to complex concepts and ideas. It's a useful tool for both learning and everyday tasks that involve remembering and processing information efficiently.
+
+Memory plays a crucial role in how information is related; it's necessary to understand its operation. Together, both memories can manage complex streams of information, allowing us to understand and reason. Changing perspectives leads us to the next part.
+

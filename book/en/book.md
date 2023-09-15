@@ -57,3 +57,19 @@ In essence, "tabula rasa" stands as a testament to the malleability of human con
 </div>
 
 Philosophers employed this expression to symbolize the commencement of learning from birth, following the theory of empiricism, which posits that we acquire knowledge through experience from the moment we are born. Here, we align ourselves with this ideology, keeping our doors open to all. What is explained remains indifferent to one's origin, current circumstances, reasons for wanting to learn, or any other factors.
+
+## General view
+
+Writing the Tabula Rasa is a metaphorical title for the content we will delve into. Firstly, we will approach it's figurative meaning, aiming to comprehend how the human mind operates and how individuals acquire knowledge. After this metaphorical exploration, we will take a literal approach and craft the 'table' creating a record of our knowledge to facilitate recollection and interpretation by others.
+
+The text is structured into three primary sections, each addressing key questions: How does our brain function? How do we learn and memorize it's concepts? And, lastly, how do we disseminate and organize this information?
+
+In the first section, we will delve into the biology of neurons, dissecting their components and understanding how they interconnect to construct mental models. We will also explore the concept of 'attention' and the pivotal role of cultivating effective study habits.
+
+The second section delves into the realms of study, memorization, and information retrieval. This domain is vast and intricate, reliant on the application of techniques across a process that leads to the comprehension and interconnection of concepts, culminating in their retention within memory. This journey takes time and cannot be accomplished in a single night.
+
+Finally, we elucidate the process of disseminating information to make it reusable, both for oneself and others. We analyze the abstract organization of information, emphasize the importance of precision in writing and present various methods for articulating ideas effectively.
+
+I have endeavored to present this book in an accessible manner, though it may still pose challenges for those less accustomed to extensive reading. Whether you are an expert or a novice, remember: strive to maintain a holistic perspective. Keep in mind the previously discussed topics and return to them as needed. Comprehending the connections is paramount to grasping the underpinnings of more advanced sections.
+
+---

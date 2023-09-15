@@ -73,3 +73,86 @@ Finally, we elucidate the process of disseminating information to make it reusab
 I have endeavored to present this book in an accessible manner, though it may still pose challenges for those less accustomed to extensive reading. Whether you are an expert or a novice, remember: strive to maintain a holistic perspective. Keep in mind the previously discussed topics and return to them as needed. Comprehending the connections is paramount to grasping the underpinnings of more advanced sections.
 
 ---
+
+# A. Understanding the mind
+
+The human brain is the most intricate organ in the animal kingdom, brimming with mysteries that have intrigued various disciplines dedicated to unraveling them. The task of thinking is carried out by tiny, specialized cells that work together in a structured and organized manner, much like bees. Each area of this remarkable organ performs a highly specific function.
+
+But why should we be interested in knowing this? This is where knowledge is brewed. Understanding how it functions enables us to comprehend how it operates, what it's limits are and how it thinks. However, the goal is not to become neuroscientists; people can drive a vehicle without being mechanics.
+
+We will explore the composition of the brain at the cellular level as it forms systems, eventually culminating in something larger. We will focus on an organic perspective before delving into the workings of what we will cover in the second part.
+
+## A.1 How does the brain work?
+
+The first step in comprehending the mind is to delve into the neuronal system within our brain, which enables us to think, remember, and understand. This peculiar organ located in our head is composed of several parts, each serving various functions. Nonetheless, our focus isn't on knowing each part individually but rather on how they come together to form the human mind.
+
+Before delving into the biological aspects, we will employ an analogy to ease the complexity, allowing us to perceive the operations of our brain from a different perspective.
+
+### A.1.1 A tiny city
+
+Imagine the mind as a miniature, microscopic city inside your head, complete with people, streets and buildings.
+
+These tiny inhabitants are so small that they can't think much on their own. They can barely hold onto a minimal unit of information, a small piece of data, something as simple as a number from 0 to 9 or a letter. They are rather clumsy on their own, but they can communicate with each other. In groups, they can form words or even images.
+
+Within the buildings, people gather to create 'mental models.' These models are ideas and concepts formed by connecting with notions we already know. They are always a work in progress: under construction, undergoing repairs or even being demolished. The city is in constant transformation and the models change shape.
+
+Because the population is immense (approximately billions), they often form neighborhoods to develop concise ideas. Some of these neighborhoods connect with each other through streets and alleyways, linking models and creating larger and more complex ones.
+
+In this city, you can reach anywhere as long as you are oriented and know the way. The streets that connect the vast urban area vary; some are fast, built with concrete, while others are rustic and abandoned, making navigation challenging. The city administration is responsible for these roads. When it notices a street is frequently used, it decides to pave it to improve traffic flow.
+
+Only a few experienced individuals can navigate the metropolis, managing tasks such as overseeing changes, organizing neighborhoods, and more. This work is carried out by our conscious and unconscious states, which are responsible for reasoning.
+
+### A.1.2 Neurons
+
+These tiny individuals we are referring to are called **neurons**.
+
+Neurons are small cells that make up the human brain. They are also found in other parts of the body, forming the central nervous system. There are billions of them in each of us. Most of them have the job of interpreting our senses (sight, hearing, touch, taste, and smell), carrying information from the organs to the brain.
+
+<div style="width: 800px; margin: 5px;">
+
+  ![](img/neuron.png)
+
+  <figcaption style="font-size:10px; text-align: center;">Neuron's parts</figcaption>
+
+</div>
+
+They have a particular shape, as seen in the image. They are composed of a body, arms, and legs. The body (2), also called the soma (the wider part on the left), mainly contains the nucleus (3) where our DNA is stored. The legs or dendrites (1) receive signals and are located around the nucleus. Finally, the axon (4) exits the center and is responsible for transmitting the signal to other neurons through synaptic buttons. Considering their parts, it's evident they have a system to communicate among themselves, known as **synapses**.
+
+There are various types of these tiny cells, but the ones that matter most to us are those that perform the "*thinking*" task.
+
+### A.1.3 Synapses
+
+Synapses serve as the communication junctions between neurons. These minute gaps exist in close proximity to the next neuron, yet they never actually touch. Within these gaps, the axon buttons surround the dendrites.
+
+<div style="float: left; width: 350px; margin: 5px;">
+
+  ![](img/synapse.png)
+  
+  <figcaption style="font-size: 10px; text-align: center">Synapse</figcaption>
+
+</div>
+
+The interaction among these entities creates intricate networks of neurons engaged in a continuous "dialogue," forming thoughts through electrical or chemical impulses. When one neuron seeks to connect with the next, it sends a signal, and the receiving neuron transmits it to the subsequent one, creating a chain until a *concept* emerges.
+
+When a group of neurons communicates synchronously, they form an engram. This can be likened to a house, building, or apartment within our small city. Here, working in harmony, they construct a small unit of information that can be used to shape a memory. This connection entirely relies on the impulses sent from one to another.
+
+As engrams are usually not substantial enough to form complete models or memories, they maintain pathways or roads connecting to other engrams in different locations. These pathways are the streets linking neighborhoods, where energy flows and constructs a vast network of neurons collaborating. The more activity along these pathways, the stronger the connection becomes. This process is known as consolidation, involving the improvement of these pathways. It's a task that requires time and resources from the body to accomplish. These neuronal pathways are responsible for managing memory through the hippocampus.
+
+### A.1.4 Hippocampus
+
+The hippocampus is a part of the brain where a significant portion of memory-related tasks takes place. It is named after its resemblance to the seahorse. This organ can be thought of as the city's computing center.
+
+It is responsible for remembering facts, events, and orientation tasks. It possesses a substantial amount of gray matter where axons lack myelin, which makes it slower but capable of processing information. Due to its structure, which is composed of somewhat different neurons, it is considered the site where 'reasoning' often occurs. For this reason, the hippocampus plays a crucial role in reasoning and the formation of abstract mental models.
+
+In summary, the hippocampus is a crucial hub for memory processes in the brain and deserves a word. It's responsible for encoding new information, consolidating it into long-term memory, linking related memories, and facilitating their retrieval. Without the hippocampus, our ability to form and recall memories would be significantly impaired, making it an essential and fascinating part of our cognitive system.
+
+### A.1.5 Neuroplasticity
+
+Similar to the dynamics in our miniature city, the brain is in constant flux, a phenomenon known as **neuroplasticity**. This is the time when construction work takes place.
+
+This characteristic states that our brain can adapt and create new connections between neurons. This is why we describe the mind as reconstructive and involving multiple processes to transform itself.
+
+Without this attribute, the brain would be fixed and unchanging, much like that of an insect. It would always perform the same basic tasks, such as eating, or perhaps a few more complex yet essential and routine ones.
+
+This change doesn't happen overnight, nor is it extraordinary. It's akin to a plant's growth from sprout to fruit, taking months of effort. It's during the night when it grows the most. This transformation necessitates healthy habits, which we will explore in A.4.1 (Mental Health).
+

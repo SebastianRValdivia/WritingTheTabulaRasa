@@ -412,3 +412,13 @@ The ideal is to keep the schedules as flexible as possible. Flexibility allows u
 
 One last task in calendar management is not to spread out work times too far apart to avoid losing momentum. As we saw in A.4.2.1 (Motivation and Interest), topics can cool down, and the mind begins to procrastinate. Work times are something that can be visualized on a calendar; if we notice several days of leisure, it is likely that during these times, interest will be lost. These prolonged breaks are better suppressed to two or three days and no more.
 
+## A.5 Conclusion of Part A
+
+In this section, our aim was to delve into the workings of the human mind during the process of thinking. We started by examining its biological composition, including its cells and how they organize into more complex systems. Moving from the organic aspect, we explored the abstract mechanism of memory. We discussed different types of memory, such as working memory, where recently acquired or retrieved information is processed, and long-term memory, where information is stored and interconnected to form logical theorems through reasoning.
+
+We also grasped the idea that information processing can be influenced by the cognitive load of the information, which, in turn, affects our concentration. When concentration is lost, our thinking becomes unfocused, yet our mind continues to process information diffusely, forming connections with other concepts.
+
+Emotions play a significant role in all these cognitive tasks, as they can either enhance or hinder our mental capacity and energy during studying. Our feelings and interest in what we are learning play a crucial role in motivation, helping us to stay on track and avoid drifting away from our studies. Although the loss of focus and vigor may naturally occur over time, it can be mitigated by maintaining a well-structured work plan, ensuring that we do not lose the will to comprehend and memorize the topics at hand.
+
+Understanding the functioning of the mind is essential for devising the most effective ways of learning, as well as for identifying the stages and methods that yield optimal efficiency. The insights gained in this chapter will serve as the foundation for the theorems discussed in the upcoming section.
+

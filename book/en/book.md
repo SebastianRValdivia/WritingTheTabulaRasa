@@ -422,3 +422,25 @@ Emotions play a significant role in all these cognitive tasks, as they can eithe
 
 Understanding the functioning of the mind is essential for devising the most effective ways of learning, as well as for identifying the stages and methods that yield optimal efficiency. The insights gained in this chapter will serve as the foundation for the theorems discussed in the upcoming section.
 
+---
+
+# B. Learning
+
+What do we consider learning? Learning is the **process** through which we acquire new knowledge or skills, whether they are intellectual or motor skills. Some examples include remembering who the Roman Emperor was in the 1st century AD, how to use a drill, or how to solve a mathematical problem. This process requires engaging the mind, which means being able to search, understand, relate concepts, and store them in long-term memory. In this section, we will explore methods that aid in this task.
+
+<div style="float: left; width: 350px; margin: 5px;">
+
+  ![](img/evolution-of-concepts.png)
+
+  <figcaption style="font-size: 10px; text-align: center;">Evolution of Concepts</figcaption>
+
+</div>
+
+All learning takes time and is progressive. Information will go from being barely distinguishable to becoming increasingly clear because neurons are forming new connections, building the houses and buildings of the miniature city. In each session, we take tiny steps that add up until they form small concepts that can then be used to interpret complex ideas. When we can see the big picture instead of its separate parts, we have successfully built a mental model.
+
+Learning has two phases: first, we place new information in working memory, where we understand and process it so it is encoded according to the mind's requirements. Then it is stored in long-term memory in the form of mental models. Initially, the work seems simple; all we need to do is read, listen, and analyze the study material to bring it into our minds. It is the next step that brings difficulties. From the moment we encounter unfamiliar information, we start trying to make sense of it. It will take time (perhaps minutes, perhaps months) to understand, depending largely on our familiarity with the subject area.
+
+These mental models we've discussed since A.1.1 (A Miniature City) are a representation of reasoning. From a hypothetical perspective, they are the mechanism we use to think, organize and make sense of something complex by piecing together small pieces of data. These models shape our minds in terms of how we perceive, decide, reflect and engage in other forms of behavior. The more models we have, the better we understand new information because we have more references.
+
+**Learning is a skill that can be learned**. When someone studies a topic, they research, take notes, memorize or perform other learning tasks with the direct goal of understanding the topic. Indirectly, they also become skilled in the tasks they perform to achieve this (in this case, researching, note-taking, and information retrieval). As we learn more, we become better at comprehending and memorizing new information. Learning is a skill, and like any other skill, it requires practice.
+

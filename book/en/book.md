@@ -444,3 +444,142 @@ These mental models we've discussed since A.1.1 (A Miniature City) are a represe
 
 **Learning is a skill that can be learned**. When someone studies a topic, they research, take notes, memorize or perform other learning tasks with the direct goal of understanding the topic. Indirectly, they also become skilled in the tasks they perform to achieve this (in this case, researching, note-taking, and information retrieval). As we learn more, we become better at comprehending and memorizing new information. Learning is a skill, and like any other skill, it requires practice.
 
+## B.1 Approaching New Information
+
+Let's delve into the first stage: introducing new concepts.
+
+To understand what information is, we must first ask: How is information formed? The definition we will use for information is **a set of organized data that is useful**. *Data* is the smallest unit; it can be facts, objects, numbers and so on. On their own, data is meaningless; they must be grouped in a way that makes sense. This grouping, in turn, is not random; data has a connecting relationship. A memorable date is composed of the day and month's numbers, along with the reason for it to be remembered. In the image below, you can see data coming together to form a tiny piece of information, for example, the International Women's Day.
+
+<div style="width: 500px; margin: 5px;">
+
+  ![](img/data-to-information.png)
+
+  <figcaption style="font-size: 10px; text-align: center;">Data forming International Women's Day</figcaption>
+
+</div>
+
+Data can be connected to the knowledge we already possess. When learning something new, it's essential to make connections between what we're learning and what we already know. The things we already know act as **anchor points**, and the more of them we have, the easier it is to understand new information.
+
+### B.1.1 Questions Before Starting
+
+We'll explore a brief questionnaire before beginning the study of a new topic. This helps uncover personal or organizational objectives, which can then be used to plan the study project. We'll follow the questions with an example of learning a simple bread recipe. Try to think for a moment about what your response would be before reading the answers, as they might be different or the same due to differing objectives or approaches to accessing the recipe.
+
+- **What are the benefits for you?**
+
+The first question prompts you to recognize your objective before starting. This is a question that influences your interest. Recognizing the usefulness of a topic generates emotions that affect your energy when studying.
+
+What are the benefits of learning a bread recipe: one might be saving money on buying bread or because they enjoy cooking. These reasons will be personal.
+
+- **What tools or study materials do you need?**
+
+The next part is discovering the necessary requirements for studying. If you want to learn carpentry, you'll need both wood and tools, as well as information to perform the work. Knowing how to handle the study material is what we call being prepared to study.
+
+What are the tools or study materials required to learn how to make bread: the recipe (list of ingredients and preparation method) and instructions for using the required appliances. If you listed the ingredients and utensils in your response, remember that we're focusing on learning how to make bread, not actually making it. We might make an exception if you wanted to learn through experimentation, which is not a very good idea in this case, but in other situations, it can be a more advantageous process.
+
+- **Where can you access the study material?**
+
+Information can be scattered across various sources. In this stage, we need to discover both physical and digital places where we'll extract information and determine the validity of this information.
+
+In our case, we could list searching on websites, cooking books, magazines or consulting a professional chef.
+
+- **What do you expect to learn from the topic?**
+
+List in bullet points what you want to gain from the material. Each item represents an objective for learning a topic, including an open field for everything you'll consider new experiences acquired during the process, not just the final goal of learning.
+
+Let's make a list of what we expect to learn from a bread recipe:
+
+- Understand the ingredients of bread.
+- Learn to prepare our food.
+- Interpret a recipe.
+- Compare different cooking methods.
+
+In this shortlist, we see that by learning a recipe, we gain several pieces of knowledge on the side. When embarking on the learning of anything, it's good to focus not only on the end goal but also on everything you'll learn and practice during the process.
+
+- **What other considerations and obstacles exist? How are these obstacles overcome?**
+
+Nothing is easy. The journey is full of ups and downs that change the speed at which we acquire information. The most common and significant obstacles that arise during data collection are the absence of information and the existence of fraudulent information. Another common problem is the existence of various versions of the same information, especially in subjects that have been researched for centuries and have evolved. What we find may be outdated or lack a more current evaluation.
+
+Let's say we find several recipes. Some of these recipes describe the steps for making bread in a clay oven, which we don't have, so these recipes are not useful. Similarly, if we come across recipes for different types of bread, such as whole wheat bread, these recipes are also not what we're looking for. A final example is recipes that, for whatever reason, are incorrect and useless. We'll explore this further later on; these recipes will appear during research and should be discarded.
+
+Overcoming obstacles of this nature depends on understanding both the research objective and the context of the information and the places where it's appropriately retrieved. Considering these parameters, we can manage the data we collect to support an accurate outcome and avoid (unintentionally) spreading misinformation.
+
+### B.1.2 Research
+
+The research process involves **finding and evaluating information** to extract the knowledge it holds. This is a critical stage because if the result is negative, we obtain incorrect information, which means that anything we derive from this information is erroneous. We need to know how to detect complete or incomplete resources, false, outdated, biased or irrelevant to the research's purpose. This knowledge is crucial to avoid triggering a series of errors in the subsequent stages of learning.
+
+Before you can start learning about a topic, you need to have investigated and familiarized yourself with it sufficiently. The amount of information needed is always as much as you can handle within the time allotted for this stage. When you begin the process of learning something new, you set aside time to gather and review the information you will use. In the initial stages, especially if it's a new topic, gather all the resources you can access. Thanks to the internet, you don't necessarily need to obtain information from a few sources; you can accumulate a vast amount of information quickly by cross-referencing titles, genres and metadata, something we'll explore in C.4.3 ("Resource Description").
+
+Finally, you'll filter out the relevant materials for your research and discard those that are irrelevant or repetitive.
+
+It's ideal to always research with a **purpose in mind**. When you're clear about what you need to obtain, the search for specific information is faster, and extraction becomes more effective. Much information can be appropriately trimmed using methods we'll explore in B.2 (Extracting Information) until you have only what you need. If you lack a purpose, you won't know what or how to narrow down the information to just the pieces you require, and you'll end up gathering material that is partly useless.
+
+This stage can be demanding. It's essential to take the time to read and understand the material, which requires significant mental activity. It can be tiring to receive new concepts that you must analyze and comprehend to move forward. Exhaustion is more common in this stage than in the following ones, and since it's just the beginning, it can lead to abandonment without fear of losing significant progress. On the other hand, if this stage is rushed, common mistakes can be made, such as not analyzing the context, evaluating the source or using outdated information.
+
+#### B.1.2.1 Context
+
+A resource has an essential property, which is the context in which it resides. When we talk about the context of information, we refer to the **characteristics that surround a text** or any other informative medium, shaping its message. This implication will vary the meaning and purpose of the resource.
+
+One of the characteristics is **temporal origin**, which is the moment when the information was generated. A world map before the discovery of the Americas is not the same as a current one. Information evolves, and with it, the context in which it is developed changes. As it changes, previous versions become obsolete and, depending on the depth we want to reach in the research, older materials may or may not be useful. In most cases, older material should be discarded.
+
+The next characteristic we pay attention to is **geopolitical origin**, where it comes from. These data often serve to deduce the reliability of the resource. Depending on where it originates, it may provide a certain degree of bias towards a particular position. It is often important for political matters that, during the time of publication or writing, facts were subject to censorship or only authors supporting a person or ideology were allowed. It is also crucial in cases where the accreditation of the institution that publishes and supports the material is unknown. Analyzing the place of origin helps detect possible defects or misrepresentations in the information.
+
+Another factor to consider when examining the context is the **reliability** of the narration of events by observers. Often, data collected from testimonies can be altered by witnesses, leading to an incorrect version of what happened. In this context, sounds or objects can obstruct viewers, changing their perspective on what happened. Suppose an object fell from a considerable height, and we are trying to find out who threw it. A witness listening to the radio claims to have heard a voice, but was it from the person who threw it or from the announcer? Contextual issues distort the investigation and should not be disregarded.
+
+Some of the contextual data we seek can be found in the **paratext**. All parts that accompany a book or other written work are part of the paratext. These elements surround the text with additional information about its content. They usually aim to convince the reader to explore its pages. Some components of the paratext include the back cover, the table of contents, the foreword, printing details, and more. From these sections, we can get an indication of the theme and learn about the context that may not be explicitly mentioned in the content.
+
+Investigating the context of information's origin not only helps detect possible errors made accidentally by authors but also helps us decipher if the information has an origin that casts doubt on its content, potentially spreading misinformation and concealing or distorting the reality of events.
+
+#### B.1.2.2 Misinformation
+
+One of the challenges we encounter in research includes fallacies, poorly conducted studies, incorrect statistics and facts without evidence. Simply put, a statement by an individual does not make it true. For example, stating that "the Roman Emperor Aurelian did not wear a crown" declares a fact, but stating it does not make it true. Facts are influenced by the author's bias, principles or beliefs. Whether what is said is true depends on the veracity of the evidence and general approval.
+
+Both rumors and personal experiences (from non-professional individuals) often are not good sources of information. Although they may not be wrong, information obtained in this way may have been coincidental and not supported by logical evaluation. Urban myths are a clear example, where society believes, for some reason, that something happens or works without investigating whether it is true; in most cases, these are simply myths. This type of information without the backing of a properly conducted study is **misinformation** or **false information**.
+
+Let's look at two examples of informal information that fail to be accepted:
+
+- A student claims that rewriting the text is the best strategy for memorization because it works for him. The premise cannot be accepted as true solely based on one person's evidence.
+
+- A horticulturist says that his apple trees produce an average of 20 fruits each, and he claims that these trees always produce that amount. He does not consider factors such as tree age, region, variety, climate, etc. This is a poorly conducted study where the data collected does not reflect the reality of apple trees in other parts of the world.
+
+There are no rules that work 100% to detect misinformation. Nowadays, with the vast amount of information available, even for the most experienced, it is quite challenging to separate fallacy from truth. In some cases, we may even discard accurate information. However, some general tips can be listed to detect deception.
+
+1. Verify the source: Check the credibility of the website or publication. Many sponsors are known to benefit from fraudulent information.
+
+2. Look for multiple reports of the same type: Any pioneering information is accompanied by several sites reporting the same thing.
+
+3. Evaluate the evidence: Check that the statistics and other data taken have been collected and evaluated properly.
+
+4. Investigate the author: Just like in step 1, check that the author is not biased and has the competence to speak on the topic.
+
+5. Comments and reviews: People who find inconsistencies in the material often make it clear. However, in many cases, they can be biased for various reasons.
+
+6. Personal intuition: We must look for contradictions, assess the quality of writing, the use of attention-grabbing elements and be neutral in our convictions.
+
+Consider the type of information source. It can be **direct or indirect**. Direct sources originate from the same sources that conduct the studies and make their claims. Indirect ones are interpretations by third parties who can publish their opinions and modify information based on their bias. Assuming that direct sources are truthful, the accounts given by others can affect the validity of the data or the meaning of the conclusions drawn. It's important to inspect the article to reach the direct sources to verify the reliability of the information.
+
+It's essential to see the scope of the statements. Saying that something *is* is different from saying that it *may be*. Authors often use words like "capable," "perhaps," "possible," among other synonyms, to indicate that their statement is not entirely certain. It doesn't mean that their assumption is incorrect; it just means they are trying to show that they might be wrong or close to the truth.
+
+Finally, one way to recognize if certain information is false is to evaluate opposing views; these may be the reason why a certain fact is false or an improved approximation to reality. To locate these opinions, look for access to comments and reviews of the material. Sometimes they are in the same place where you found the information or can be easily located using citation search. Reviews from other professionals, whether in favor or against the statements, help re-evaluate the objectivity of the material and its possible shortcomings.
+
+### B.1.3 Reading
+
+Text is a method of communication, and like all types of communication, it consists of a message that is transmitted through a medium to a recipient. When we read, we encounter two actors: a communicator (the one who emits the message) and a receiver (those of us who receive it). The communicator is the one who provides a statement, their view or understanding of a concept and has the authority to speak on the topic. While we read, we receive the message from a communicator, which they leave in written form (the medium) for us to interpret, a task we will focus on.
+
+Reading a text is a cognitive task. It evolves as we continue reading the text, moving from hypothesis to hypothesis, answering each one as we acquire new information.
+
+When we mention reading in this context, we refer to **active reading**, which involves constant interaction with the text. There are two ways to read: one is to simply follow the text word by word deliberately and generally. The other involves analyzing and evaluating the text, seeking to interpret the information and integrate it into our memory.
+
+Reading, in an academic context, aims to learn the information from the material we are working with. In the initial stages, when information enters through our eyes, it is sent to working memory to be processed, related to already incorporated mental models. This task involves a delay that takes seconds or minutes, depending on the cognitive load of the text, to make sense of what is being discussed. In cases of high difficulty where we are not familiar with the material, it is necessary to reread along with searching for definitions or analogies to simplify the topic.
+
+Reading alone does not complete the work. After grasping the meaning of the material, we move on to the memorization stage. Learning is not just about understanding what a text says but also about remembering the concept. We have to transfer what we have just understood to long-term memory. We will explore how to do this later.
+
+Today, acquiring information can also be done not only through textual reading but also through the use of static or animated images. We can replace reading words with listening to them or watching videos. This can be confusing due to the heading, but the same conditions of active reading can be applied to information published in multimedia formats.
+
+#### B.1.3.1 Analysis
+
+The information we need to learn must be critiqued. It's important to remember that critiquing is not synonymous with negativity. Critiquing refers to evaluating the content of the text in a neutral, impartial manner. The goal is to find weaknesses, discover its objectivity, and determine whether it is useful for our research.
+
+To analyze a text, we follow a process of interpretation-evaluation-decision. We interpret the author's point of view and what they intend to convey, along with the context in which it is located. The outcome of critiquing the discoveries of a physicist in the 19th century will be different from critiquing those of someone in the 21st century. We consider whether our understanding is correct: Did we understand the problem posed? What is the central idea? Next, we evaluate what the text says by comparing it with what we already know and other sources. We check if the order in which the problem is presented is correct; if it's disorganized, it can be a sign of the author's lack of knowledge. We examine whether what is said is supported by evidence, and if that evidence is valid and real. Finally, we decide whether it is correct or not and whether it is useful for our research.
+
+Once the reading and analysis are complete, we move on to the next stage in the learning process. From now on, we will focus on separating the important (what we want to learn) from the secondary or complementary information.
+

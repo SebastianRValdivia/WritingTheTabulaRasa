@@ -320,3 +320,95 @@ These distractions that separate us from studying are a sign that we are tired. 
 
 The more we study, the longer we will be able to maintain the pace. We can interpret it like training for a marathon; reaching the first 5 kilometers will require practice, learning, and each day we need to achieve a few meters further. The only way to improve is to periodically make a bit more effort, achieving better results.
 
+## A.4 Psychic State
+
+In this conclusion of the first part, let's talk about the well-being of the mind. A certain myth among students of all levels believes that getting tired and exhausting the mind is common, part of the student culture. This is false, we can verify it; during one day we make an effort and on another, we take the necessary time to avoid getting tired; we will remember and understand more in the second case. No matter how much information has been amassed, the human brain has a limit and, like a muscle, it needs to rest from time to time to grow.
+
+Stress is one of the worst enemies of learning. It is true that in life there will always be situations that push us to the limit, especially in work or personal life. During study is when one must apply what they know, and what they will learn will be the results. When we study non-stop for an exam, do you know when everything we have fresh in our memory shifts to long-term memory? In the exam itself. As soon as we read the question and look for the answer in our mind, the information becomes related to the event; we use the ability to remember and interpret what causes the memorization of the information. If we fail in the exam, we will learn from the mistake, and we will know more for the next time, perhaps more than those who passed it on the first attempt. There are no losers in studying; the only ones who lose are those who don't try.
+
+### A.4.1 Mental Health
+
+The brain is an organ and, like any other, requires care. But it's not a conventional organ, it has some special care needs. These are emotional care. Learning requires a joyful and motivated state to be carried out. In this text, we will not delve into the reasons why get these states but instead who they affect study.
+
+Negative emotions and stress are a big problem. Emotional well-being affects thinking performance. Harmful states that affect thinking, such as depression, increase the difficulty of concentrating, making studying impossible. One's behavior will change depending on how they feel; if they feel bad, their energy will turn against them, which will not help them sit at the desk. For these difficulties, learning requires a positive emotional state.
+
+Controlling these problems is essential for effective studying. Personal problems have their own origin and are not within the scope of this book, however, the concern and stress caused by studying deserve a mention. The reality is that the culture of academic institutions and society has created a demand for students that causes anxiety. The need to obtain high grades and carry out large projects in a short time is (partially) present, with a back and forth of guilt between students and teachers. In learning, there is no requirement; the establishment of requirements to pass is not part of the process, they are independent of each other, not passing does not mean you have not learned. We have to abandon the mindset of learning to be evaluated and do it to improve ourselves.
+
+Just as we take care of mental health, physical health is closely related to the mind. The brain depends on the body to survive. A balanced diet affects good blood circulation and the energy we have. Eating a variety of foods helps maintain a healthier metabolism, allowing the mind to work in better conditions. Obviously, we cannot ignore another factor, which is physical activity, where hormones are released, leaving us more active and content. Long-term well-being reduces age-related decline, preventing the death of neurons over time. The brain is part of the body, taking care of one is taking care of the other.
+
+Lastly, and perhaps most importantly to consider in the prosperity of learning, is sleep. While we sleep, our mind changes and solidifies the knowledge learned, let's remember that it possesses the property of neuroplasticity. Let's imagine that a person from the miniature city needs to renovate their apartment. At what time could they do it if they are working all day? During sleep is when neurons take the opportunity to renew, after a study session and a good night's sleep, the dendritic spines grow to strengthen the links between neurons. Another factor we find during operating hours (while we are awake), in the brain, toxins from brain waste are generated that remain between the neurons; during sleep, they are eliminated, cleaning the organ of them. For these reasons, sleep is the moment when we end the learning cycle; without sleep, we could never reach completion.
+
+### A.4.2 Stimuli
+
+Having good health may not be all that is necessary to feel energized. In addition to natural energizers like exercise, the desire to complete our own goals also generates energy. Some factors come from the awareness of the mind that affect willpower when it comes to studying. These are the incentives that provoke the curiosity that learning satisfies.
+
+The tingling of intrigue triggers the will to learn. This desire to discover is the source of energy, what fuels the determination to go through books, articles, and other texts in search of the answer to "What is it?" and "How do I learn it?" These are the questions that guide learning, but now we want to know why we ask them.
+
+#### A.4.2.1 Motivation and Interest
+
+Working on a project or studying a *subject that identifies us* gives a feeling that makes us move forward and maintain the effort in it; this feeling is **interest**. Seeing something without interest and believing it doesn't benefit us drains energy. It's like having to dig a hole for no reason; it annoys us, but if we do it to plant a tree, it gives it meaning, usefulness. When we awaken this interest in a project, we develop an attraction to the subject. We start setting goals, organizing, researching, getting in touch with other people related to the topic. We participate actively. This participation improves performance and sends the experiences gained to memory. It is important before sitting down to study to consider what makes the topic interesting for you.
+
+Being emotionally connected to the study generates excitement, leaving us physically and mentally alert. This gives us desires, the desire to study or carry out a project. This **energy is motivation**. This same excitement directly affects concentration, positive emotions, and the energy with which we tackle the work. Motivation acts as sails to our sailboat that we use for learning.
+
+**Inspiration** is an important tool for igniting motivation. Being inspired consists of having creativity and/or willpower to continue. Unlike interest, inspiration does not come from within but from external factors that trigger a reaction in the mind. These factors vary in type; they can be **personal** such as achieved goals, completed tasks, values; or they can be **external** like achievements of personalities, quotes, reference works, and many more. These factors can also make connections between solutions to the problems we face and others that have already happened, showing us the way to go. This is why the function of inspiration is important because it not only motivates but also helps to face difficulties with ingenuity.
+
+Although the benefits they bring are many, motivation can be lost if we do not maintain the momentum generated. Interest wanes over time; humans always long for new and attractive things; children abandon the toy they have in their hand when they see a new one. Losing momentum is when thoughts of dropping out arise.
+
+#### A.4.2.2 Procrastination
+
+In case this is the first time you encounter this word, it basically means: *putting things off for later*. Many times, students avoid working on their projects or studying due to procrastination. Leaving everything to the last day does not allow the neurons to develop to solidify new knowledge. Therefore, it is necessary to avoid procrastination in one way or another.
+
+The solution is not to torture ourselves to produce as much as possible. If we work until we are overwhelmed, the brain will see studying like fire; it thinks that if you touch it, you will get burned, and it has in a way. Keep in mind that overwhelming oneself will affect our mental health, bringing new problems on its own. The end result may be complete abandonment of learning and failure to achieve our goals.
+
+To avoid overwhelming ourselves with work, studying should be done in dispersed stages over time, and although willpower is important, something more is needed to achieve it.
+
+### A.4.3 Discipline
+
+Discipline creates a **constant work rhythm**. It is persistence that leads the runner to finish the marathon, continuing no matter what happens and as best as they can. Frankly, building discipline is not a simple task. It takes time, organization and effort. This time it will be okay to be obedient; it will be necessary to develop the routine we need. Acquiring a strong personal discipline to carry out daily tasks will have its reward. However, establishing this rhythm is like pushing a rock up a slope; although it takes effort to get it to the edge, once it is downhill, it will move by itself, whereas working without discipline is a path full of curves and holes, difficult to traverse.
+
+Everything we push for is a victory for ourselves and not for others; we are the masters of our own mind. Taking on the task of becoming disciplined is always for our own benefit. It is true that being disciplined is seen as both healthy and enslaving, depending on the values of the observer. Nevertheless, as it is pointed out, it does not change the fact that its usefulness is widely beneficial in study.
+
+Once we decide to establish a study routine, we must bear in mind that it is not done overnight. It involves meeting certain objectives until it has its own momentum. These tasks will form a **study habit**, which will be a link in the chain of persistence.
+
+#### A.4.3.1 Study Habit
+
+A habit is a **routine or practice performed regularly** or automatically. The idea behind developing the habit of studying is to promote the recurrence with which we return to the subject of study; we already mentioned that the most effective study methods (which we will see later) include spaced repetition over time. Additionally, maintaining energy with only motivation and interest is not a practical strategy; they tend to be inconsistent. Having the habit of learning and reviewing every day unconsciously is an ideal method for dealing with the problems that come with the effort of studying.
+
+The process of developing a new habit involves creating a cycle of **cue, craving, response and reward**. Initially, there is a cue or trigger that awakens the desire to perform the action. During the initial stage, the desire will be driven by willpower, which will later be replaced by a desire for the reward. After this, the response is triggered, which is the reaction to perform the task. Lastly, but no less important, the reward is provided. Completing the task requires giving ourselves a reward; it is important so that we do not associate work with something fruitless.
+
+The trigger or cue should be clear and appealing, it should be as comfortable as possible, otherwise, we will avoid it. If we have to form a habit of studying, place the book where you can see it or put that thesis in the middle of your computer desk to quickly attract your attention. It's not just a memory cue but a signal to get to work. There is a 20-second rule that says: if it takes more than 20 seconds to complete, we will try to avoid it by making it counterproductive.
+
+The idea of generating a cue comes from Ivan Pavlov's classical conditioning, where a stimulus like sitting down becomes a trigger that, after being conditioned, we associate with a reward. An alarm sound can mean that we are going to receive something we seek; over time, we will see the alarm as a signal of compensation. Positive rewards will play a key role in habit formation. On the other hand, Edward Thorndike's law of effect demonstrates that our behavior can be modified according to its consequences. If the consequences are positive, and we are rewarded with positive reinforcement for what we have done, it is more likely to be repeated. In contrast, if they are not rewarded, it will not be repeated. For this reason, the reward is very important. Forming a habit consists of making the task *visible and attractive* because unconsciously, we seek it to be immediately rewarded.
+
+Rewards are subjective. They are usually activities that one associates with happiness. Good rewards for the mind are moments of rest and relaxation where we perform a task of little or no difficulty that we enjoy. Some examples could be having a coffee, reading a book, playing a musical instrument, meditating, to name a few cases that can be viable and rewarding. Each person will have to discover their optimal and unique rewards, which should not require energy but rather restore it.
+
+Finally, there are bad habits that we must eliminate. If the goal is to eliminate a bad habit, we just have to do the opposite of what was explained in the previous paragraphs. We must look for everything that leads us to do it and hide it or keep it out of our reach. It should be difficult and uncomfortable to do. Once again, remember the 20-second rule; if starting that task takes more than 20 seconds, it will gradually be avoided. It should not receive a reward for completing it; instead, we provide negative reinforcement, something we don't like. Eliminating bad habits is a tactic we can use to remove triggers that lead to procrastination.
+
+#### A.4.3.2 Intervals
+
+As we saw in A.3.2.1 (Wandering), the brain gets tired of being focused for a long time. Being focused on the study material for too long proves to be inefficient. Ideally, **take breaks to recharge energy**. Working in intervals can solve this problem.
+
+Using intervals for work is a method to prevent permanent exhaustion. The goal is to give the mind a break, just like we do for a muscle to avoid fatigue. This involves maintaining controlled work cycles because they continue until a certain point where activity is stopped before it leaves us exhausted. After each cycle, the mind has a break where it is allowed to wander. Additionally, breaks are good times to stretch your legs or move around a bit, which stimulates the brain and benefits overall physical health. Of course, work cycles are not meant to last forever; eventually, we will have to sleep to finish studying. Initially, it may not be possible to do this for a long time, but with dedication, it can be improved.
+
+While the idea of intervals is quite simple and can be improvised, a known technique is the Pomodoro technique. It is as simple as setting up work intervals (usually 25 minutes) and, after completing them, taking a short break of 5 to 15 minutes, depending on how many intervals have been completed. It can be controlled with any timer or timer app.
+
+#### A.4.3.3 Schedules
+
+Scheduling is our strategy for gaining discipline and organizing study. Programming involves planning the days and hours of work in advance, when the study will take place. The time will depend on your own capacity plus the volume of information to be processed for each interval.
+
+<div style="float: right; width: 350px; margin: 5px;">
+
+  ![](img/calendar.png)
+
+  <figcaption style="font-size: 10px; text-align: center;">Scheduling a calendar</figcaption>
+
+</div>
+
+The main tool is the **calendar**, it allows us to know what happened in the past and where we need to go in the future. Its use involves noting the days we worked, the topics, and the estimated time it will take. In it, we will mark the **daily objectives** to achieve; these are minimum and dynamic, they can change by moving to another date or what we will do on a certain day. **Periodic goals** are long or short-term objectives, where we want to go. These goals are made up of a set of daily goals that are related and planned to study a topic. Dividing the study into goals and objectives gives it a logical order where we control the evolution from initial concepts to more advanced ones, avoiding saturating ourselves with information because we lack the required knowledge to face it.
+
+Once we have enough records of the study's progress, it will help us evaluate ourselves to be more precise in calculating the estimated time it takes to learn. With the days marked, we will measure the speed at which we manage to study concepts per day. The unit that replaces distance will be the mental models built in a day, concepts we manage to understand and archive in memory. Initially, these will be between two or three models per day, but with practice, the speed will increase, understanding more in less time.
+
+The ideal is to keep the schedules as flexible as possible. Flexibility allows us to cover inconveniences that affect the schedule. It is good practice to calculate extra time in case any scheduled time was affected and needs to be made up or if more concepts need to be added that were not part of the initial measurement. These times are marked as wildcard days, usually within the last days before reaching the goal, where the missing concepts are studied, and the already memorized ones are reviewed. Wildcards are an adaptable system to reserve time that may be needed.
+
+One last task in calendar management is not to spread out work times too far apart to avoid losing momentum. As we saw in A.4.2.1 (Motivation and Interest), topics can cool down, and the mind begins to procrastinate. Work times are something that can be visualized on a calendar; if we notice several days of leisure, it is likely that during these times, interest will be lost. These prolonged breaks are better suppressed to two or three days and no more.
+

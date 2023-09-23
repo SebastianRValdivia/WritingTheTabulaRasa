@@ -583,3 +583,95 @@ To analyze a text, we follow a process of interpretation-evaluation-decision. We
 
 Once the reading and analysis are complete, we move on to the next stage in the learning process. From now on, we will focus on separating the important (what we want to learn) from the secondary or complementary information.
 
+## B.2 Extracting Relevant Information
+
+Let's imagine we have a stack of books, articles and other sources of information on our desk, all our study material. But is it necessary to memorize all that content? The reality is that the vast majority of these resources can be summarized in a few pages. The reason behind this abundance is that authors try to explain, exemplify, diagram, among other ways of showing what they are trying to teach, which is important but increases the volume of information around the main topic. The concepts we are looking for can normally be extracted in many fewer words to facilitate memorization. In this chapter, we will explore methods to **separate and summarize** what we are looking for from the rest.
+
+Having large amounts of information doesn't mean we are well-informed. Authors and we don't always have the same objectives, so not everything they write is useful in its entirety. Excess only makes studying more cumbersome due to data or facts repetition, especially in the current era, where, with large volumes of information, what we get is more than we can ever need and often redundant. Extraction is a task that also involves eliminating unnecessary information. Developing the skill of separating the significant from the insignificant has become an indispensable skill in learning.
+
+The first step to consider is *What do you expect from the material?* After analyzing the text, we should ask ourselves what the general idea presented is, how it is presented and why it matters. With a clear goal, we can identify the information we are looking for and then extract it. We prepare ourselves for what we are about to study. We ask ourselves why we need to learn it; this will help us maintain our focus while delving into hours of study material. Next, we read the headings provided by the author, analyze the text's structure, and how the information is presented. We should never lose our sense of direction while studying, keeping in mind where we are coming from and where we are going.
+
+The ability to extract what is important is measured by three skills. The first is to **eliminate** any redundant or repeated information and trivial details. The second is the ability to **summarize** the study material into a sentence or a short paragraph. Finally, we have the skill to **replace** lists of elements, images or concepts with a single term. Mastering these skills ensures that we have identified the important information in the text, and with practice, it will improve our ability to perform these tasks.
+
+### B.2.1 Selection Strategies
+
+Capturing what's important involves separating everything we identify as relevant. Intuition plays an important role in extraction, as it forms when recognizing what we are looking for. Once we spot what we need to learn in the material, we move on to *selecting it*. The goal of selection is to be able to **highlight the information we want to extract** (and learn) so that we can manipulate it later.
+
+Suppose we want to learn from an instructional video how to build a wall, assuming we already know what bricks are and how tools are used. In that case, we will look to discover what other materials are needed and the steps to follow. We will discard the explanation of what a brick is and how to use tools. Not all the information provided is necessary, and part of the selection process involves discarding what is unnecessary. This follows the principle of not repeating. What we already know does not need to be relearned; when extracting, we seek what interests us, not what the content author finds interesting.
+
+It is not exactly mandatory to use these mechanisms before the next stage, but they are support tools that aid in learning. The use of these strategies involves pre-separating information by rewriting it or marking it to facilitate and organize extraction. Once we have the important information available, it is easier to organize it into concise notes or other information compendiums. Additionally, performing this task complements active reading, adding to the cognitive activities we engage in to learn.
+
+We will list the most well-known, used and common strategies, but they are not the only ones. There are a variety of ways to extract information, most of which inherit from the following.
+
+#### B.2.1.1 Summarize
+
+Summarizing is synonymous with reducing. When we talk about summarizing a text, we mean that we will bring that text to a **smaller size** and in more **concise words**. What we seek to achieve is to **extract the central idea** of the text clearly expressed. We will remove expressions and examples that are auxiliary to the explanation. To achieve this, it is assumed that we have already understood the text's argument; the purpose of a summary is to specify the theory we want to learn for ourselves.
+
+Normally, what is summarized is enough information to learn something. This content needs to be committed to memory, and due to its difference in volume from the original material, it is easier to remember or review.
+
+Although we focus on the end product, the act of summarizing itself is important. It is both a task that contributes to learning and a tool for memorization because one must have understood the topic to reduce its meaning.
+
+Summarizing a resource can be observed in three generalized steps, which are:
+
+1. First, we will read the text and reflect on the topic. This step involves fulfilling the active reading stage covered in B.1.3 (Reading) and understanding the concept(s) of the text.
+2. Next, we will identify the ideas that are important to our study. During this stage, we will focus on locating what is of greater interest, what we want to learn from this resource. We will separate less important concepts from the primary ones and move them to the next stage.
+3. Finally, we will transcribe the concepts in our own words. The third stage is the most important. Extracting word for word as the author said it (even when it is perfectly clear) loses the guarantee of being expressed in the same way as the mental model formed. The brain forms relationships between neurons, aligning concepts with others available, and these may be different from the author's. Therefore, it is best to express the idea as we would explain it in our own terminology.
+
+#### B.2.1.2 Highlight
+
+Both underlining and similar highlighting techniques aim to **emphasize** the text. It is common, as in this book, to see words or phrases highlighted to draw the reader's attention. Like the author, we can highlight parts of the text that are important to keep a record of the concepts and ideas we find while reading. Completing this task also improves our focus because we are interacting with the text and maintaining active reading.
+
+There are several ways to highlight. The most basic and straightforward is to <u>underline</u>, which is as simple as passing a line below the text, sufficient to highlight a word or sentence. The next method is to use a different color than the background and text, <span style="background-color: yellow;">like this line</span>. The last ones to mention involve a small change in the "weight" or thickness of the font, making it heavier, known as **bold**, or lighter and slanted, called *italic*. All of them are extremely similar and possess the same properties; the choice only depends on the tools available and personal preference.
+
+Highlighting can use colors for differentiation. Changing colors allows us to categorize what we are highlighting, for example, green for biology matters and orange for mathematics, which is useful when the material has various aspects. Besides differentiating by topic, colors can be used to create levels of importance, where something in red means very important and green less important. The more colors we have at our disposal, the more varied and complex our use can be designated, but regardless of this use, it is necessary to leave a hint or reference to its meaning.
+
+Highlighting too many important points is not effective. It is recommended to highlight about 10%. If we highlight everything we find, the purpose of extraction is lost, making it unconventional. In the case of encountering a whole page of substantial information, we can mark it to return to later, but this technique is for trimming down the most important points from it. The goal of highlighting is not to store information but to highlight what is important.
+
+The reality is that just highlighting is not sufficient for extraction; we depend on rewriting it later to not lose it. The problem is how to do this, and the most effective method we will see is taking notes.
+
+#### B.2.1.3 Headings
+
+We are already familiar with the headings provided by authors (which we will discuss in C.1.4.3 (Headings)), but we can also add them while extracting information. This is a less common strategy aimed at clarifying the text's structure as it relates to what we are seeking.
+
+A heading **encapsulates the idea of what is being discussed** to guide the mind. Like titles, headings are a type of organizational signal that emphasizes the text's central theme. They can be the same as a title, although titles do not need to describe what it is about. Many times, authors use catchy titles that aim to attract attention and do not encapsulate the central idea. Additionally, their wording may not be as clear as our own. Therefore, it is preferable to use our own headings.
+
+The activity of adding headings forces us to think and express in short words what the text is about, which is a cognitive task that helps memorize and understand the concepts discussed. For this reason, gradually detailing our own headings is also part of active reading.
+
+Once transcribed, headings can be used to create an outline of the text. Outlines are formed by leaving the headings in a linear order with their subtopics attached in a matrix-like form. Creating our own outline of the text makes it easier to find the information that is important to us and provides an overview.
+
+<div style="float: right; width: 500px; margin: 5px;">
+
+  ![](img/outline-vs-graphic.png)
+
+  <figcaption style="font-size: 10px; text-align: center;">Outline vs. Graphic Organizer</figcaption>
+
+</div>
+
+In addition to outlines, we can discuss graphic organizers that are more similar to concept maps, which we will see in C.2.1.2 (Concept Maps). Unlike outlines, graphic organizers are not linear and do not depend on any grid. They are usually composed of keywords connected to each other while maintaining a spatial order (from top to bottom or from left to right).
+
+#### B.2.1.4 Compare
+
+The next strategy involves comparisons with other concepts. Why compare? Making comparisons helps develop a better understanding of the material by finding *common elements* with other topics we already know. It is similar to how the mind works with large amounts of information, anchoring concepts with others, whether they are the same or opposite.
+
+To make comparisons, we seek both similarities and differences. Normally, differences between two things are more naturally found; still, the mind can group similar concepts, making it easier to memorize. It is important to define what makes both parts comparable, whether they are similarities or differences.
+
+**Analogies, metaphors and similarities** are tools used to compare complex concepts with simpler ones. They are excellent strategies for comprehension and memory aid. We will look at each one individually to understand the differences between them.
+
+##### B.2.1.4.1 Analogies
+
+Analogies are a type of comparison based on two different objects or ideas. They demonstrate an abstract equality. They use the word "like" (or synonyms) to show the relationship and, optionally, the word "because" to explain it. The comparison does not have to be something similar but rather, when analyzed, they serve similar functions; this makes analogies different from similarities.
+
+Examples: Tires are like legs for humans because both move; finding my pencil is like finding a needle in a haystack because it's nearly impossible.
+
+##### B.2.1.4.2 Similarities
+
+In this practice, we look for things that resemble each other to compare them. Unlike an analogy, here both objects or ideas are currently similar. It is useful in cases where one is known but the other is not.
+
+Examples: A pen is like a pencil because both write; a grill is like an oven because both cook.
+
+##### B.2.1.4.3 Metaphors
+
+Metaphors involve naming something by referring to something else. Simply put, we create them using the verb "is" conjugated in the third person singular of the present indicative to connect the real object with its imaginative equality. The goal is to make a mere rhetorical comparison that demonstrates a similarity between the two ideas, where both, although very different, share a certain connection.
+
+Examples: Life is a game; time is money.
+

@@ -3,13 +3,16 @@ title: "Writing The Tabula Rasa"
 author: Valdivia, Sebastián Ricardo
 ---
 
-**Autor**: Valdivia, Sebastián Ricardo.
 
+<div style="text-align:center;">
 CC BY-NC-SA 4.0
 
 This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
 
 Dedicated to all those who, in the face of any difficulty, chose to keep learning.
+</div>
+
+
 
 ## Preface
 

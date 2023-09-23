@@ -683,3 +683,111 @@ Metaphors involve naming something by referring to something else. Simply put, w
 
 Examples: Life is a game; time is money.
 
+## B.2.2 Note-Taking
+
+When we talk about notes, we are referring to **annotations about the study material** we are working with. These personal annotations are informal and are intended to aid the memory of the person taking them. They are not obligated to be understood by a third party.
+
+The goal of notes is to extract the most important information, naturally coded for our understanding, and organize them for later retrieval and work. Their use in studying is effective only if we paraphrase their meaning in our own words, eliminate trivial or redundant information, and make it clear what we are discussing.
+
+The ability to abstract information clearly and concisely requires practice and preparation. Cultivating the habit of taking notes improves their quality, helping us to separate what's important so that we can later transcribe them more explicitly, as in an article. Creating complex compendiums of information from notes is something we will address in Part C (Dumping).
+
+A common mistake in note-taking is thinking that more is better. The value of notes lies in their ability to summarize a topic for easier access to memory. The true worth of notes is in the sum of them and the quality they possess.
+
+It's worth mentioning that taking notes encompasses the activity of understanding and transcribing information, which is a cognitive activity that supports learning in general. Therefore, the task of taking and organizing notes, when done appropriately, forms a sophisticated process that helps learning.
+
+### B.2.2.1 Note-Taking Process
+
+The truth is that we won't see a process defined by several stages, but rather a general interpretation of the task of note-taking, due to the subjectivity of the matter. Any specific method for saving information in notes is normally focused on the field of work and the purpose of the information. However, there are good and bad procedures for documenting certain activities or data. So, we will analyze the action to detect and separate relevant information for the note, in order not to create unnecessary or useless notes.
+
+- 1. Understand the purpose of the note
+
+This step determines the format in which the annotations will appear and where they belong. If the notes are intended to extract a recipe, then we will know that we are looking for steps and ingredients. We will see small comments and summaries organized for each step or requirement. Finally, we will direct these notes to the category of recipes or food. In C.3 (Organizing Information), we will learn more about this.
+
+- 2. Express the information
+
+The most obvious step is to extract the selected information using what we learned in B.2.1 (Selection Strategies) or what we preserve in our minds. As mentioned earlier, the ideal is to express it in our own words, presenting the information as if we were explaining it to someone else.
+
+- 3. Review and improve the note
+
+It's always a good idea not to take for granted that the note-taking work has been perfect, even if we have a lot of practice, we can make mistakes. In the process of studying, a misunderstood concept means considering a lie as truth and learning something wrong. Detecting these errors is done either at the moment or later and is part of calibration (B.3.4.4). That's why it's important to review our notes, even just one more time, to make sure we have captured the correct information.
+
+- 4. Save the note
+
+The final step is to save it properly so it can serve its purpose. One way to do this is explained in B.2.2.3 (Note Box), but first, how do we format our notes?
+
+### B.2.2.2 Note Format
+
+The most popular way to take a note is by *writing*. Text is the most practical due to easy access to tools that perform the task and the speed of reviewing them. Despite the reputation of written notes, it is not a requirement that notes be taken in this way. An audio recording, a video, or even a drawing or a small diagram can be a note. Notes taken in audiovisual format will be referred to as *multimedia* notes.
+
+Audio recordings are popular; many people like to leave notes with their voice on a device capable of capturing and storing audio. They are more practical in situations where writing is not possible but you want to record a thought or reminder before it is lost from short-term memory.
+
+Similarly, you can record an instructional video to represent a note. Videos (given the ease of filming today) are perfect for storing complex activities and explanations that take advantage of visual perception.
+
+We will also mention the use of diagrams as a note-taking method. Using them helps store related information more quickly and easily than with simple text. Furthermore, in some diagrams (such as mind maps), you can add images to facilitate understanding and record something in a visual format. We will learn more about diagrams in C.2.1 (Diagrams).
+
+Taking multimedia notes is not a faster and easier task than writing. The difference with multimedia notes lies in the complexity of taking or editing them. If we make a mistake while speaking, we have to record again, and video editing is also complicated. Regardless of the format, notes must be **concise, coherent, and coordinated**.
+
+### B.2.2.3 Note Box
+
+An effective method of organizing notes is the note box, also known as Zettelkasten. It was popularized by Luhmann, a renowned German sociologist who, thanks to this method, managed to write more than 70 books and hundreds of articles. Although storing our notes is a personal choice, we will discuss this approach due to its advantages, based on what we saw in Part A (Understanding the Mind).
+
+The note box method consists of taking **small and focused** notes and then placing them in a "box." Inside this box, the notes are **organized by fixed numbers** listed in an **index**. These notes must follow the concept of atomic notes; they must be tiny and encapsulate a single notion in your own words.
+
+Using this method involves a sequence of steps to store each note:
+
+1. Take small notes on the study material and assign them a number.
+
+2. Build connections between the notes from step 1 and create relevant notes.
+
+3. Record the number and a reference in an index.
+
+4. Continue forming connections.
+
+The first stage involves taking notes of a **disposable** nature (of personal origin) or **literary** (from books or a resource related to what we are studying) in simple annotations where we capture the information. These initial notes are not very important since we will transform them into more polished ones that we will later call **permanent** notes.
+
+Once we have all the disposable notes related to the study material interconnected, it is time to create permanent notes. We will write in complete sentences, making the idea clear and concise. The notion we want to convey must be described as we understand it. Don't forget to record the sources of the information.
+
+Once the permanent notes are ready, we store them in the *box* and schedule their content in the index. If this note is directly related to another, it goes right behind it and not at the same level as the others. The box will have a hierarchical numbering system, just like the topics in this document, to align the notes. If necessary to place a note behind N° 23, add it as 23-1; this way, you can reach higher levels using more numbers: 23-3-1. This way, you can have a set of organized and accessible notes.
+
+<div style="float: right; width: 500px; margin: 5px;">
+
+  ![](img/note-tree.png)
+
+  <figcaption style="font-size: 10px; text-align: center;">Note tree</figcaption>
+
+</div>
+
+This system is perfect for finding relationships between different areas. The notes stored in the box have no mode of grouping by topics, only numbers to locate them. Since it lacks any firm, unalterable organization system, it allows the mind to create new relationships between the contents while maintaining ease of access and organization thanks to its index.
+
+Another advantage is the speed at which notes are stored. Since they are only placed at the end, we avoid the task of searching for the right place, which usually takes a lot of time. Other systems based on categories, for example, require an extra step, such as deciding which category it belongs to.
+
+The most important activity for learning provided by this methodology is discovering connections. After all notes are ready, we review each one individually to find connections between them. This forces the mind to see them from a global perspective. Then we record these connections to generate new content, something we will see in part C (Dumping Information).
+
+#### B.2.2.3.1 Disposable or Spontaneous Notes
+
+These types of notes originate from our thoughts while working with the study material. They are partly ideas that arise during the learning process and that we don't want to lose. The other part contains extracts as summaries that are ready to be transformed into permanent notes.
+
+Their functions are diverse, general. They do not focus on a particular resource but on an overview of everything we are learning. This is why they always represent our thoughts.
+
+They are called disposable because they have not been polished and located among other notes. Therefore, these notes tend to be deleted once transcribed. Their purpose is temporary assistance; they are meant to be disposable. If not discarded, we will end up with a pile of disorganized and unlocatable notes, like the index.
+
+#### B.2.2.3.2 Literary Notes
+
+Literary notes are ideal for concepts that stand out in the text and that we don't want to lose. Unlike headings and summaries, this type of note is part of the text or a small addition to what we already have. They have the property of carrying a reference of where they come from, such as the book and the page.
+
+In this category, we place sentence extracts or paragraphs obtained during the research phase. They also include margin notes. These last ones (so named because they are placed around the text, which is not recommended) are used to make note of connections with other notions, especially those that may be in our memory. To a lesser extent, they are used to highlight our own opinions or possible errors by the author. Both margin notes and extracts constitute literary notes.
+
+The process of noting or highlighting on the page or around it often brings the problem of losing the location of these comments. This is where literary notes come in. In them, we can locate ourselves using the page or the minute of a multimedia resource as a reference, leaving that data next to the note along with the name of the material. This way, we don't lose the origin of where we extracted the information, which helps to understand the context.
+
+### B.2.2.4 Connections Between Notes
+
+The goal behind any form of note organization is to create a system for thinking. Notes are not meant to create a personal encyclopedia. The note box is designed as a *sandbox* where we can manipulate our notes and create possible combinations.
+
+Creating connections is not a task for joining concepts. The search for connections is often related to finding a logical relationship between 2 or more concepts because they are in the same category. For example, we can link the concept of a dog with a cat because both are animals. Once we recognize a connection, we leave the number of the next note as a link. However, connections are not limited to this type of union.
+
+A note can be arranged to connect by *relationship*, in which case one note responds to the content of another. Following our example, if we look for the relation between note N° 1 (dog) and N° 2 (cat), we can think of a fight since they are associated as enemies.
+
+Another form of connection is by *conceptual similarity*. Many times, we see how one definition is similar to another, where both are the same thing expressed differently. Let's say we have a note defining N° 30 (can) and another for N°1 (dog). In one, we write domestic animal, and in the other, a household companion animal; they represent the same description, leading to redundancy. We use this connection to discover repeated or very similar notes from which we can eliminate one, reformulate them or create a new one by combining them.
+
+The last connection we will see is by *addition*, in this type, one note adds meaning to another. These are relationships that progressively advance concepts or transform them into clearer ones. If we see that in note N° 10 it says that the dog is a mammal, we can link the note to N° 1 (dog) to form a new relationship.
+

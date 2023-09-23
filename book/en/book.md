@@ -1,3 +1,8 @@
+---
+title: "Writing The Tabula Rasa"
+author: Valdivia, Sebastián Ricardo
+---
+
 **Autor**: Valdivia, Sebastián Ricardo.
 
 CC BY-NC-SA 4.0

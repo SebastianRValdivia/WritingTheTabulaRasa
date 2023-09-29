@@ -789,3 +789,105 @@ Another form of connection is by *conceptual similarity*. Many times, we see how
 
 The last connection we will see is by *addition*, in this type, one note adds meaning to another. These are relationships that progressively advance concepts or transform them into clearer ones. If we see that in note N° 10 it says that the dog is a mammal, we can link the note to N° 1 (dog) to form a new relationship.
 
+## B.3 Studying
+
+We can define the verb "study" as **understanding and memorizing a piece of information**. Such a piece is composed of data or facts that generate a notion we want to retain in our long-term memory. In this section, we will refer to the word "study" as understanding what the material is about, not just memorizing facts or concepts, as we will see in detail in B.4 (Memorization).
+
+We cannot consider studying as a mere synonym for memorization. Here, we are talking about "knowing", which includes the ability to retain in memory, but it's not the whole picture. Studying involves the cognitive task of grasping the meaning of concepts or facts. To achieve this, we must engage in the task of reflecting until we can comprehend this significance. Let's say we memorize a date; that's recalling it, but what happened on that day? Why is it important? These are the questions that are part of the study. Once we understand the notion, we can then proceed to memorize it concisely to complete the study.
+
+Another important point is that the more challenging and effort we put into it, the better our understanding will be. When material is simple, it has a low cognitive load, and we tend to grasp it more easily. However, it's often retained for a shorter time. True understanding involves delving deep into the subject, creating enough connections that aid in effective learning.
+
+### B.3.1 Types of Study
+
+There are two types or approaches to studying: focusing on parts or the whole. Consider a text to study; depending on the source of the text, it might be easier to study the generalized or abstract idea of the text or each topic separately.
+
+<div style="width: 500px; margin: 5px;">
+
+  ![](img/study-types.png)
+
+  <figcaption style="font-size: 10px; text-align: center;">Whole Study vs. Part Study</figcaption>
+
+</div>
+
+When we talk about studying the *whole* of the material, we refer to consolidating all its parts to understand what it's about and memorize the generalized idea. On the other hand, if we break down the text into parts, we can analyze each one separately, independent of the others. Each approach has its advantages and disadvantages, but we are not bound to a single type. We can mix the two methods. Possible combinations of study types include:
+
+- Studying the whole, reinforced by studying each of its parts.
+- A general or partial view of the entire material followed by studying each of its parts and then revisiting the initial stage.
+- In parts, progressively until completion, followed by analyzing the topic as a whole.
+
+In the first two approaches, we start by studying the generalization of the material to understand what it's about before delving deeper. The second approach involves a more rigorous study to memorize its parts one by one without neglecting the whole. The last method is typically more effective with large amounts of information. We study each part separately, then review to understand the overall idea.
+
+Each person has their preferences to reach the same destination. Different study methods don't significantly affect performance; rather, it's a combination of factors, which we will discuss below. However, having a clear understanding of the method being used allows for persistence in that method, which can improve study efficiency (the amount learned relative to time).
+
+### B.3.2 Repetition and Spacing
+
+The next factor that affects memory is repetition over time. Practicing recalling information from our memory is an excellent study technique. When studying a topic, it's beneficial to pause at a certain point, recite what we've understood, ask ourselves questions or even explain it to someone else. All of these activities improve comprehension and support the task of memorization.
+
+Let's assume, once again, the example of remembering our birthday, as we saw in A.2 (Memory). One of the key points is that it repeats every year. Repeating a concept forms more connections tied to temporal events. Contrary to a popular misconception, repeating a date over and over does not store it in long-term memory. Instead, it keeps it in working memory and creates a false sense of having memorized it forever. It shouldn't be surprising that a few hours later, the number has vanished. Remembering something permanently requires more than just having it in mind for a moment. Recall from A.1.3 (Synapses) that consolidating an engram requires time. This time is more efficiently distributed over a period; it requires less time remembering a fact every day for a week than cramming it for hours in a single day.
+
+This is why it's important to maintain a scheduled routine to refresh knowledge so that it can transition into long-term memory. In combination with the techniques we will discuss in B.4 (Memorization) spread over a period, it becomes our study procedure.
+
+### B.3.3 Practice
+
+Practice and understanding go hand in hand. The brain remembers events we actively engage in more than text reading. Being able to see and act enhances the storage of information in long-term memory. The more we practice a discipline, the better we will remember its concepts.
+
+Practice is an integral part of studying and requires repetition. Repeating the activity is the key to reinforcing the knowledge acquired during the practice. However, it relies on being extended in a **program**, which involves intervals of work.
+
+A program can be divided into sessions to space out the development of the skill over time, gaining proficiency. These sessions are separated by nights of good sleep, allowing the brain to make the necessary changes. Maintaining the sessions depends on good planning and discipline to carry them out. Work intervals don't need to be long; just 10 to 15 minutes a day, as long as the program is respected, is sufficient. The program concludes when the study goal is achieved.
+
+Effective practice requires evolution. If we keep revisiting the same concepts and applying the same actions, we won't learn anything new. Take the example of muscle memory required to play a musical instrument; it needs regular exercise to be used naturally. The first few days will be challenging, but over time, we'll be able to play the first melody. If we only practice the same tune over and over, we'll never learn a new one or improve our skill. To progress, we need to step out of the comfort zone of the first song and try to memorize the movements required for the next ones. Over time, learning will become easier due to having some proficiency, which means we've learned to overcome the difficulties of playing an instrument. In summary, facing new challenges helps build better memory sets and solid pathways between engrams.
+
+Based on the analysis in the previous paragraph, we can distinguish two types of practices: **lazy and deliberate**.
+
+Lazy is that practice where we only repeat what we already know. We find ourselves playing the same melody over and over again until we master it, but that doesn't mean we are great musicians. The reality is that with this practice, we reach a limit where we stop progressing. The beneficial aspect of it is that it reinforces our knowledge.
+
+Deliberate practice is when we step out of our comfort zone, when we push a little beyond our limits and strive to progress. While we won't improve overnight, the change is sufficient to engage our minds. Achieving progress is essential to maintain consistency, and the habit of regular practice, pushing ourselves a little harder each time.
+
+## B.3.4 Study Strategies
+
+We've understood that studying involves activities that require reflection and interaction to comprehend a subject. The next question is, how can we perform this task? We'll explore methodologies to understand the meaning of the concepts we want to learn.
+
+The goal of understanding these strategies is to assist in the studying task. Recognizing which method we are using to understand certain material focuses us on it and allows us to do it correctly or explore other methods.
+
+### B.3.4.1 Elaborate
+
+This technique involves uncovering new layers of information through personal reflection. It helps improve proficiency in the material and delve deeper into its content. The strategy involves the extensive use of learned concepts, which also aids in memorization.
+
+Some ways to elaborate for better learning include:
+
+- Finding examples where what you've learned is applied.
+- Creating comparisons.
+- Formulating questions based on answers we already know, which requires a good understanding of the subject.
+- Creating mnemonic aids.
+
+Within this strategy, we can mention the Feynman learning technique. This method was created to explain complex physics terms. It involves only a few steps to guide learning on any topic to the point where we can teach it. It consists of:
+
+1. Select the concept.
+2. Explain it in such a simple way that a child would understand.
+3. Identify the things you still need to learn.
+4. Simplify using comparisons.
+
+Once we've reached step four, repeat the process until you can simplify the idea as much as possible.
+
+### B.3.4.2 Generate
+
+This strategy involves attempting to answer the question posed before seeing the result. The idea here is to generate content without prior knowledge, relying solely on what the subject is about.
+
+Facing an unfamiliar subject helps build connections or pathways between neurons as you have to combine different concepts from various areas. The more we think about how to approach and overcome the steps involved in solving the problem, the more pathways are created. This task strengthens acquired knowledge, making the mind more perceptive while enhancing reasoning.
+
+### B.3.4.3 Reflect
+
+Reflecting is sitting down to think and interpret what we've studied. It involves seeking a meaning we can comprehend. Reflection is successful if we can explain something in our own words, using our own models and demonstrating connections to topics we already know.
+
+To reflect on study material, you need to enter a diffuse thinking mode. Typically, this is done a few minutes after reviewing the information. During this time, you combine recalling learned concepts (which aids memory) and your own elaboration.
+
+One popular way to reflect is to explain the information to yourself as if you were a teacher, which, of course, requires a good understanding of the topic. This allows you to review how much you know, representing it in a self-taught manner.
+
+### B.3.4.4 Calibrate
+
+This strategy involves another type of utility in studying. It consists of correcting conceptual errors, both your own and others', that create the illusion of knowing something when, in reality, you are mistaken.
+
+The first task in calibrating retained information is recognizing the error through reflection. Recognizing an error involves knowing the correct version. Afterward, review the concepts with an open mind and seek differences between what you know and what the mistaken material suggests to pinpoint where the discrepancy lies.
+
+This strategy is more commonly used in more advanced stages when you have more knowledge in the area. In the initial stages without much knowledge, it's much harder to catch errors on your own. Here, the only way to apply this method is with external assistance. If you don't have a professional to supervise the information you acquire, you rely on correcting erroneous concepts throughout the study process. For these reasons, this strategy is applied at an intermediate or advanced level.
+

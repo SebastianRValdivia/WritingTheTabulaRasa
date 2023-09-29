@@ -891,3 +891,13 @@ The first task in calibrating retained information is recognizing the error thro
 
 This strategy is more commonly used in more advanced stages when you have more knowledge in the area. In the initial stages without much knowledge, it's much harder to catch errors on your own. Here, the only way to apply this method is with external assistance. If you don't have a professional to supervise the information you acquire, you rely on correcting erroneous concepts throughout the study process. For these reasons, this strategy is applied at an intermediate or advanced level.
 
+## B.4 Memorization
+
+We've already seen that in the initial stage of studying, understanding the concepts is crucial. However, to complete the process of learning something, we need to move these understood concepts into our long-term memory. The idea behind this section is to **solidify ideas into memory through activities and spaced repetition**.
+
+Achieving effective memorization means being able to retain something in memory and being capable of recalling it after some time. The duration of the memory depends on how frequently we've engaged with it. The more we work with the same information, the longer it will stay in memory, and the quicker we'll be able to recall it. The techniques we'll explore involve consistent application until these ideas are firmly entrenched in the mind.
+
+The difficulty of memorizing varies depending on the type of information. Theoretical data can be more challenging to retain because the mind hasn't interacted with it. Study materials are often filled with conceptual facts that we can't acquire through our senses since they are typically presented in a way that isn't perceivable, such as written text. This section aims to facilitate the transfer of this type of information into long-term memory by creating tasks that use or connect with these concepts.
+
+The primary task of memorization is managing the information stored in the vast library that is our mind. The most important aspect of this task is how quickly we can store something and how efficiently we can retrieve it to bring it into working memory. Therefore, we can say that memorization is divided into two parts: **storage** and **retrieval**. Initially, we'll assess the process of encoding information in B.4.1 (Techniques for Memorization), where we'll examine methods for coding something into the mind. Then, in B.4.2 (Retrieval Exercises), we'll explore ways to solidify that information and practice retrieving it. From these activities, we'll decipher how to effectively memorize something.
+

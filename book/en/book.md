@@ -988,3 +988,35 @@ A poor practice is to permanently eliminate cards because we consider them easy.
 
 The application of spaced repetition and metacognition are features of this system. Although it is an assisted memorization technique, it has the advantage of being able to use a non-textual tool, such as an image, which forces the mind to make connections until it recognizes what is being referred to. It is similar to how puzzles work, creating an enigma to solve.
 
+#### B.4.2 Projects
+
+Completing projects involves carrying out tasks that require the use of knowledge acquired during our study. By applying what we know, we rapidly reinforce mental models. Due to the substantial interaction between what we know and practical application, we reinforce knowledge by creating memorable events.
+
+Projects consist of complex tasks where we engage in at least one activity in each task until they are completed. Unlike memorization exercises, projects take more time. They involve planning that helps distribute tasks over time, allowing us to utilize our memory to complete them, which ingrains spaced repetition.
+
+At the beginning of a project is the exploration of everything we don't know, in a phase we call **research**; one could argue it's the longest phase. The time it takes to complete a project depends on the research involved plus the percentage completed per day. During the research phase, we focus on understanding and extracting the necessary information, which often takes a considerable amount of time because we need to learn how to do things before we can actually do them. Once this stage is complete, we proceed to take action and begin fulfilling the project's requirements.
+
+Being personally connected to a project's goals generates excitement, which fuels the motivation to work. Projects can help focus our attention, as discussed in A.4.2.1 (Motivation and Interest), by igniting the desire to fulfill their purpose. This sense of ownership is perfect for capturing interest in work for a while, which self-assessments lack.
+
+However, starting a project and completing it are two different things. There are two approaches (with variations derived from them) to working on a project: short and long intervals. Long intervals involve simply taking motivation, turning it into energy and focus, and using them to work; this allows us to progress quickly and efficiently. But what happens when motivation runs out? The further we progress, the more obstacles we encounter, increasing the difficulty and decreasing motivation, leaving only discipline and planning. In our action plan, we schedule short work intervals that don't require much energy, thus avoiding exhaustion, allowing us to continue working until we overcome the pit of despair.
+
+<div style="width: 600px; margin: 5px;">
+
+  ![](img/project-motivation.png)
+
+  <figcaption style="font-size: 10px; text-align: center;">Motivation in a project</figcaption>
+
+</div>
+
+Maintaining **persistence**, i.e., the discipline to continue, is a requirement for completing projects. Due to their size, compared to something short like a quiz, a project can overwhelm us. Progress is slow and full of ups and downs. The only solution to this challenge is to break through the comfort barrier and keep completing tasks.
+
+## B.5 Conclusion of Part B
+
+During this section, we analyzed how we understand and memorize information.
+
+In the early stages of learning, we encounter the unknown. We gather material about the topic we hope to understand, with insufficient knowledge of the area. We navigate through numerous resources with a skeptical attitude until we collect enough accurate information.
+
+Once we have everything we need, we must still understand it and then remember it. This is a process filled with procedures that are divided over time until mental models are solidified in memory. Initially, we must grasp the meaning of new information, which involves reasoning using the knowledge we have already acquired and connecting it to what is new. After comprehending a concept, through interaction with it, we commit it to long-term memory for archiving purposes.
+
+The purpose of memorization is somewhat diffuse. While it is within the goal of learning, what we really seek is to store the understanding of the concept, not the concept itself in a literal sense, as this would be counterproductive. The ultimate goal is to permanently internalize these concepts, aiming to efficiently shape the information as clearly as our mental models.
+

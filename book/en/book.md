@@ -901,3 +901,35 @@ The difficulty of memorizing varies depending on the type of information. Theore
 
 The primary task of memorization is managing the information stored in the vast library that is our mind. The most important aspect of this task is how quickly we can store something and how efficiently we can retrieve it to bring it into working memory. Therefore, we can say that memorization is divided into two parts: **storage** and **retrieval**. Initially, we'll assess the process of encoding information in B.4.1 (Techniques for Memorization), where we'll examine methods for coding something into the mind. Then, in B.4.2 (Retrieval Exercises), we'll explore ways to solidify that information and practice retrieving it. From these activities, we'll decipher how to effectively memorize something.
 
+### B.4.1 Techniques for Memorization
+
+These techniques are systems designed to store something in long-term memory. They assist in memorizing information that we have already comprehended. The goal with these techniques is to find a way for the mind to solidify the concepts we are working on.
+
+Ideally, we would like memorization to be a one-time task, but unfortunately, it's not possible. As discussed in A.2.2.2 (Forgetting), we mentioned that memory needs periodic refreshing of stored content, or it will fade away. That's why these techniques need to be repeated over time until we are satisfied with how well the material is consolidated.
+
+A common feature among these strategies is that they transform what we want to remember into something captivating that stands out in our minds. When something resonates, it sticks more quickly.
+
+There may be more techniques out there, but the goal isn't to list every available option. Instead, it's to demonstrate how memorization works. By analyzing these techniques, we understand the process for the mind to retain something optimally.
+
+#### B.4.1.1 Visual-Spatial Recall
+
+This strategy involves turning a concept into an image where we visualize an object placed in a specific location. It's easier to memorize this way because we engage simulated visual receptors, especially if what we imagine is attention-grabbing. For example, it's easier to remember the appearance of a toucan by seeing a simple photograph than reading a long written description. Another complementary tool is assigning a location because the mind has the ability to remember places. Placing something in a position, even if fictitious, aids in concrete memorization. The mind can recall an idea by how we visualize it and where we place it.
+
+Knowing this technique, we can easily store a fact or concept in our mind by turning it into an image, a visual portrait, whether it's a photo or diagram. If it's dynamic, such as an animation, even better. Thanks to the various ways to represent a concept available today, it's recommended to translate ideas into a graphical representation whenever possible to assist in memorization.
+
+Regarding location, it's particularly useful for remembering things related to a physical place, making it a secondary aid for theoretical concepts. However, we can leverage it by connecting an idea to a place, creating a mental map or layout. An ancient memory technique called the "method of loci" involves placing, in an exaggerated manner, figures of objects you want to remember around a familiar location. If you want to remember that liquid nitrogen is at -196°C and can cause burns, you could visualize white flames coming out of your freezer, which helps you recall it's cold and the associated risks. By creating a position in a familiar space, you tap into the mind's diverse ways of remembering.
+
+#### B.4.1.2 Mnemonics
+
+These are creative ways to condense information into memory aids. They can be stories, rhymes, acronyms, or other strategies that involve verbal mediators or images to represent what you want to remember.
+
+Due to their limitations, the mind finds it easier to retain a word than a list of words. Lists require significant repetition and use to be remembered, but mnemonics synthesize them perfectly, condensing a list of concepts into a simple phrase or common word, even in the desired order.
+
+Mnemonics can be applied in any discipline. Their ability to compress various types of information by creating their own rules allows them to adapt to various contexts. They often use associations with everyday things like words, places, actions or body parts. In some cases, body parts are used to form figures with meanings, as in the case of knuckles to remember which months have 30 or 31 days. Another example is the phrase "Eddie Ate Dynamite Good Bye Eddie" used to remember the guitar strings in order (E, A, D, G, B, e). There are many examples like these, created by professionals who were once students themselves and passed them on to their students. However, the most effective mnemonics are often those created by individuals themselves.
+
+#### B.4.1.3 Repetition or Looping
+
+Another classic and widely known strategy for memorization is repeating content over and over in our mind. This method is born out of the fact that we tend to forget easily and often get distracted, leading to rapid forgetting. This looping methodology helps recall information, making it effective in keeping a few pieces of data within working memory for a longer duration.
+
+However, using this method doesn't necessarily mean we are actively working with and memorizing the information. It creates a *feeling* of memorization when, in reality, we haven't achieved it. The use of repetition serves as a supportive or intermediate task in studying. Information remembered in this way should be taken to other activities, as we'll see below, to be truly memorized.
+

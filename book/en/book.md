@@ -76,7 +76,7 @@ The second section delves into the realms of study, memorization, and informatio
 
 Finally, we elucidate the process of disseminating information to make it reusable, both for oneself and others. We analyze the abstract organization of information, emphasize the importance of precision in writing and present various methods for articulating ideas effectively.
 
-I have endeavored to present this book in an accessible manner, though it may still pose challenges for those less accustomed to extensive reading. Whether you are an expert or a novice, remember: strive to maintain a holistic perspective. Keep in mind the previously discussed topics and return to them as needed. Comprehending the connections is paramount to grasping the underpinnings of more advanced sections.
+I have endeavored to present this book in an accessible manner, though it may still pose challenges for those less accustomed to extensive reading. Whether we are an expert or a novice, remember: strive to maintain a holistic perspective. Keep in mind the previously discussed topics and return to them as needed. Comprehending the connections is paramount to grasping the underpinnings of more advanced sections.
 
 ---
 
@@ -96,7 +96,7 @@ Before delving into the biological aspects, we will employ an analogy to ease th
 
 ### A.1.1 A tiny city
 
-Imagine the mind as a miniature, microscopic city inside your head, complete with people, streets and buildings.
+Imagine the mind as a miniature, microscopic city inside our head, complete with people, streets and buildings.
 
 These tiny inhabitants are so small that they can't think much on their own. They can barely hold onto a minimal unit of information, a small piece of data, something as simple as a number from 0 to 9 or a letter. They are rather clumsy on their own, but they can communicate with each other. In groups, they can form words or even images.
 
@@ -104,7 +104,7 @@ Within the buildings, people gather to create 'mental models.' These models are 
 
 Because the population is immense (approximately billions), they often form neighborhoods to develop concise ideas. Some of these neighborhoods connect with each other through streets and alleyways, linking models and creating larger and more complex ones.
 
-In this city, you can reach anywhere as long as you are oriented and know the way. The streets that connect the vast urban area vary; some are fast, built with concrete, while others are rustic and abandoned, making navigation challenging. The city administration is responsible for these roads. When it notices a street is frequently used, it decides to pave it to improve traffic flow.
+In this city, we can reach anywhere as long as we are oriented and know the way. The streets that connect the vast urban area vary; some are fast, built with concrete, while others are rustic and abandoned, making navigation challenging. The city administration is responsible for these roads. When it notices a street is frequently used, it decides to pave it to improve traffic flow.
 
 Only a few experienced individuals can navigate the metropolis, managing tasks such as overseeing changes, organizing neighborhoods, and more. This work is carried out by our conscious and unconscious states, which are responsible for reasoning.
 
@@ -164,15 +164,15 @@ This change doesn't happen overnight, nor is it extraordinary. It's akin to a pl
 
 ## A.2 Memory
 
-What's the best way to attach something to your mind? This is a complicated question. There's no simple way, no single trick, to remember something forever. If we analyze everything in our heads, we don't have memories of our first days of life, but we do remember yesterday, as long as you don't have any brain damage. Nothing in memory is eternal; always remember that it's constantly changing, archiving the old in the back room, making room for the new and more needed at the front counter.
+What's the best way to attach something to we mind? This is a complicated question. There's no simple way, no single trick, to remember something forever. If we analyze everything in our heads, we don't have memories of our first days of life, but we do remember yesterday, as long as we don't have any brain damage. Nothing in memory is eternal; always remember that it's constantly changing, archiving the old in the back room, making room for the new and more needed at the front counter.
 
-But have you noticed that you can remember something like your birthday every time and every year? If you delve into this topic, you'll realize it happens for these reasons:
+But have we noticed that we can remember something like our birthday every time and every year? If we delve into this topic, we will realize it happens for these reasons:
 
 1. It repeats over time.
 2. It's an important day.
 3. Dates are easy to remember. They're just numbers.
 
-Break this idea to decipher the trick and you'll see the pattern: it's recurrent, linked to other events, and accessible. This will be the key to memorization. But to find out how it happens, we must first understand the functioning of memory and it's parts.
+Break this idea to decipher the trick and we'll see the pattern: it's recurrent, linked to other events, and accessible. This will be the key to memorization. But to find out how it happens, we must first understand the functioning of memory and it's parts.
 
 When we talk about memory in general, we refer to the mental process of encoding, retaining and retrieving information stored among our neurons. These tasks are performed by its parts. To understand these parts, we could compare memory to a backpack with 2 pockets.
 
@@ -222,17 +222,17 @@ To move something from working memory to this long-term memory, it must go throu
 
 4. **Retrieval**: This stage is somewhat obvious but separate from the others. It involves simply retrieving the stored information to use it.
 
-An advantage for consolidation is to use what you already know and relate it to new knowledge. It acts as anchors, just like a spring, forming unions and pathways that connect them to the new ones. The more of these points one has, the easier it is to understand and memorize new information. It's better to study with a broader view rather than trying to memorize details.
+An advantage for consolidation is to use what we already know and relate it to new knowledge. It acts as anchors, just like a spring, forming unions and pathways that connect them to the new ones. The more of these points one has, the easier it is to understand and memorize new information. It's better to study with a broader view rather than trying to memorize details.
 
-The effort to remember information helps improve the connections in this memory. Whether it's exercises with or without assistance or clues to trigger memories, performing these tasks greatly helps strengthen the engrams. Trying to remember, without looking at what you're searching for, is one of the most effective ways to improve the information's accessibility.
+The effort to remember information helps improve the connections in this memory. Whether it's exercises with or without assistance or clues to trigger memories, performing these tasks greatly helps strengthen the engrams. Trying to remember, without looking at what we're searching for, is one of the most effective ways to improve the information's accessibility.
 
-Once you've understood the information, consolidation begins; in this stage, neurons start creating an engram. Once the process is completed, it's stored, but to keep the engram active, you need to practice retrieving that information and keep it active. If you don't use it, you'll forget it.
+Once we've understood the information, consolidation begins; in this stage, neurons start creating an engram. Once the process is completed, it's stored, but to keep the engram active, we need to practice retrieving that information and keep it active. If we don't use it, we will forget it.
 
 #### A.2.2.1 Remembering
 
 This task is what we seek to perfect. It involves finding the right information as quickly as possible, which is not so simple.
 
-The mind doesn't work in a linear fashion; by this, we mean it doesn't start a sequential search in a list of memories. You can think of it as having a piece of fabric of an unknown color and wanting to find out which one it is from a list; you might go on comparing the colors on the list one by one until they match. This method is slow and ineffective. If the brain conducted the search this way, it would take hours, comparing it to the thousands of memories it stores.
+The mind doesn't work in a linear fashion; by this, we mean it doesn't start a sequential search in a list of memories. You can think of it as having a piece of fabric of an unknown color and wanting to find out which one it is from a list; we might go on comparing the colors on the list one by one until they match. This method is slow and ineffective. If the brain conducted the search this way, it would take hours, comparing it to the thousands of memories it stores.
 
 To describe its search method, we can see it as accessing any part of the "list" searching based on relationships or classifications we've made when learning. What it does is look for associations with more active topics in long-term memory. If it can't achieve this, it is considered forgotten.
 
@@ -254,17 +254,17 @@ Forming a chunk is not that simple. When starting to build a chunk, concentratio
 
 To archive chunking we can follow the following process:
 
-1. **Identify Key Concepts:** Begin by identifying the key concepts or pieces of information that you need to remember. These can be words, numbers or any type of data.
+1. **Identify Key Concepts:** Begin by identifying the key concepts or pieces of information that we need to remember. These can be words, numbers or any type of data.
 
 2. **Determine Chunk Size:** Decide on an appropriate chunk size. This can vary depending on the type of information and our own cognitive capacity. Common chunk sizes include groups of 3 to 5 items.
 
 3. **Create Meaningful Groups:** Group related pieces of information together to form meaningful chunks. This could involve grouping numbers, words or ideas that are conceptually related.
 
-4. **Use Patterns:** Look for patterns or connections within the information that can help you create chunks. For example, if you're trying to remember a series of numbers, you might group them by digits or by their meaning.
+4. **Use Patterns:** Look for patterns or connections within the information that can help we create chunks. For example, if we're trying to remember a series of numbers, we might group them by digits or by their meaning.
 
-5. **Practice:** Once you've created these chunks, practice recalling them as distinct units. This helps you remember the information more effectively because you're dealing with fewer, more meaningful pieces.
+5. **Practice:** Once we've created these chunks, practice recalling them as distinct units. This helps we remember the information more effectively because we're dealing with fewer, more meaningful pieces.
 
-Let's see a simple example of chunking: how to remember phone numbers. When remembering a phone number like 123-456-7890, you might chunk it into three parts: "123" as one chunk, "456" as another, and "7890" as the final chunk.
+Let's see a simple example of chunking: how to remember phone numbers. When remembering a phone number like 123-456-7890, we might chunk it into three parts: "123" as one chunk, "456" as another, and "7890" as the final chunk.
 
 Chunking is a versatile cognitive strategy that can be applied to various types of information, from phone numbers and dates to complex concepts and ideas. It's a useful tool for both learning and everyday tasks that involve remembering and processing information efficiently.
 
@@ -296,7 +296,7 @@ When talking about attention, we refer to the cognitive process of selecting inf
 
 Environmental variables have the potential to affect attention positively or negatively; they can help us stay focused on the material or distract us from it to pay attention to other things. These variables can be sounds, images, movements, among others. Colors are a crude example of a variable that can be both positive and negative: if we see keywords highlighted in red in a text, we maintain focus on the text. However, if we had dozens of colorful drawings around the text, they would grab our attention more, diverting us from reading. It is important to manage variables so that they are on the positive side of the scale, helping rather than distracting.
 
-A more subtle variable is the mental challenge posed by the material. Depending on the level of difficulty, attention varies. If we deal with very complex material that is beyond our reach, not understanding a large part of it, it will be impossible to concentrate. Similarly, material that is easy and/or already familiar may also lead to a loss of attention because the brain does not need to work at 100%. Ideally, you should maintain a work pace that requires effort, with challenging but not unattainable material. 
+A more subtle variable is the mental challenge posed by the material. Depending on the level of difficulty, attention varies. If we deal with very complex material that is beyond our reach, not understanding a large part of it, it will be impossible to concentrate. Similarly, material that is easy and/or already familiar may also lead to a loss of attention because the brain does not need to work at 100%. Ideally, we should maintain a work pace that requires effort, with challenging but not unattainable material. 
 
 #### A.3.1.2 Cognitive Loads
 
@@ -304,7 +304,7 @@ Cognitive loads refer to how much the study material demands from working memory
 
 What most affects the load is the presentation of the material. Depending on how difficult or complex the material is and how it is presented, the load will increase. Therefore, the material's load can be affected by two parts: intrinsic (how easy or difficult the material is) or extrinsic (how it is presented). The ideal intrinsic load is at an intermediate level between easy and difficult to maintain our attention in the task. On the other hand, the extrinsic load is better when it is simpler. Knowing the type of level we are facing makes us aware of the effort level we will require and, with some experience, calculate the time it will take to learn.
 
-Another load that also affects attention is perceptual, which is closely related to attention. Unlike cognitive load, which uses the mind, perceptual load uses the senses to focus. Sounds, images, among others, affect our level of concentration. The more distractions there are, the higher the perceptual load. Reducing anything that affects attention will help you stay focused.
+Another load that also affects attention is perceptual, which is closely related to attention. Unlike cognitive load, which uses the mind, perceptual load uses the senses to focus. Sounds, images, among others, affect our level of concentration. The more distractions there are, the higher the perceptual load. Reducing anything that affects attention will help we stay focused.
 
 ### A.3.2 Diffuse Mode
 
@@ -330,7 +330,7 @@ The more we study, the longer we will be able to maintain the pace. We can inter
 
 In this conclusion of the first part, let's talk about the well-being of the mind. A certain myth among students of all levels believes that getting tired and exhausting the mind is common, part of the student culture. This is false, we can verify it; during one day we make an effort and on another, we take the necessary time to avoid getting tired; we will remember and understand more in the second case. No matter how much information has been amassed, the human brain has a limit and, like a muscle, it needs to rest from time to time to grow.
 
-Stress is one of the worst enemies of learning. It is true that in life there will always be situations that push us to the limit, especially in work or personal life. During study is when one must apply what they know, and what they will learn will be the results. When we study non-stop for an exam, do you know when everything we have fresh in our memory shifts to long-term memory? In the exam itself. As soon as we read the question and look for the answer in our mind, the information becomes related to the event; we use the ability to remember and interpret what causes the memorization of the information. If we fail in the exam, we will learn from the mistake, and we will know more for the next time, perhaps more than those who passed it on the first attempt. There are no losers in studying; the only ones who lose are those who don't try.
+Stress is one of the worst enemies of learning. It is true that in life there will always be situations that push us to the limit, especially in work or personal life. During study is when one must apply what they know, and what they will learn will be the results. When we study non-stop for an exam, do we know when everything we have fresh in our memory shifts to long-term memory? In the exam itself. As soon as we read the question and look for the answer in our mind, the information becomes related to the event; we use the ability to remember and interpret what causes the memorization of the information. If we fail in the exam, we will learn from the mistake, and we will know more for the next time, perhaps more than those who passed it on the first attempt. There are no losers in studying; the only ones who lose are those who don't try.
 
 ### A.4.1 Mental Health
 
@@ -338,7 +338,7 @@ The brain is an organ and, like any other, requires care. But it's not a convent
 
 Negative emotions and stress are a big problem. Emotional well-being affects thinking performance. Harmful states that affect thinking, such as depression, increase the difficulty of concentrating, making studying impossible. One's behavior will change depending on how they feel; if they feel bad, their energy will turn against them, which will not help them sit at the desk. For these difficulties, learning requires a positive emotional state.
 
-Controlling these problems is essential for effective studying. Personal problems have their own origin and are not within the scope of this book, however, the concern and stress caused by studying deserve a mention. The reality is that the culture of academic institutions and society has created a demand for students that causes anxiety. The need to obtain high grades and carry out large projects in a short time is (partially) present, with a back and forth of guilt between students and teachers. In learning, there is no requirement; the establishment of requirements to pass is not part of the process, they are independent of each other, not passing does not mean you have not learned. We have to abandon the mindset of learning to be evaluated and do it to improve ourselves.
+Controlling these problems is essential for effective studying. Personal problems have their own origin and are not within the scope of this book, however, the concern and stress caused by studying deserve a mention. The reality is that the culture of academic institutions and society has created a demand for students that causes anxiety. The need to obtain high grades and carry out large projects in a short time is (partially) present, with a back and forth of guilt between students and teachers. In learning, there is no requirement; the establishment of requirements to pass is not part of the process, they are independent of each other, not passing does not mean we have not learned. We have to abandon the mindset of learning to be evaluated and do it to improve ourselves.
 
 Just as we take care of mental health, physical health is closely related to the mind. The brain depends on the body to survive. A balanced diet affects good blood circulation and the energy we have. Eating a variety of foods helps maintain a healthier metabolism, allowing the mind to work in better conditions. Obviously, we cannot ignore another factor, which is physical activity, where hormones are released, leaving us more active and content. Long-term well-being reduces age-related decline, preventing the death of neurons over time. The brain is part of the body, taking care of one is taking care of the other.
 
@@ -352,7 +352,7 @@ The tingling of intrigue triggers the will to learn. This desire to discover is 
 
 #### A.4.2.1 Motivation and Interest
 
-Working on a project or studying a *subject that identifies us* gives a feeling that makes us move forward and maintain the effort in it; this feeling is **interest**. Seeing something without interest and believing it doesn't benefit us drains energy. It's like having to dig a hole for no reason; it annoys us, but if we do it to plant a tree, it gives it meaning, usefulness. When we awaken this interest in a project, we develop an attraction to the subject. We start setting goals, organizing, researching, getting in touch with other people related to the topic. We participate actively. This participation improves performance and sends the experiences gained to memory. It is important before sitting down to study to consider what makes the topic interesting for you.
+Working on a project or studying a *subject that identifies us* gives a feeling that makes us move forward and maintain the effort in it; this feeling is **interest**. Seeing something without interest and believing it doesn't benefit us drains energy. It's like having to dig a hole for no reason; it annoys us, but if we do it to plant a tree, it gives it meaning, usefulness. When we awaken this interest in a project, we develop an attraction to the subject. We start setting goals, organizing, researching, getting in touch with other people related to the topic. We participate actively. This participation improves performance and sends the experiences gained to memory. It is important before sitting down to study to consider what makes the topic interesting for we.
 
 Being emotionally connected to the study generates excitement, leaving us physically and mentally alert. This gives us desires, the desire to study or carry out a project. This **energy is motivation**. This same excitement directly affects concentration, positive emotions, and the energy with which we tackle the work. Motivation acts as sails to our sailboat that we use for learning.
 
@@ -364,7 +364,7 @@ Although the benefits they bring are many, motivation can be lost if we do not m
 
 In case this is the first time you encounter this word, it basically means: *putting things off for later*. Many times, students avoid working on their projects or studying due to procrastination. Leaving everything to the last day does not allow the neurons to develop to solidify new knowledge. Therefore, it is necessary to avoid procrastination in one way or another.
 
-The solution is not to torture ourselves to produce as much as possible. If we work until we are overwhelmed, the brain will see studying like fire; it thinks that if you touch it, you will get burned, and it has in a way. Keep in mind that overwhelming oneself will affect our mental health, bringing new problems on its own. The end result may be complete abandonment of learning and failure to achieve our goals.
+The solution is not to torture ourselves to produce as much as possible. If we work until we are overwhelmed, the brain will see studying like fire; it thinks that if we touch it, we will get burned, and it has in a way. Keep in mind that overwhelming oneself will affect our mental health, bringing new problems on its own. The end result may be complete abandonment of learning and failure to achieve our goals.
 
 To avoid overwhelming ourselves with work, studying should be done in dispersed stages over time, and although willpower is important, something more is needed to achieve it.
 
@@ -382,7 +382,7 @@ A habit is a **routine or practice performed regularly** or automatically. The i
 
 The process of developing a new habit involves creating a cycle of **cue, craving, response and reward**. Initially, there is a cue or trigger that awakens the desire to perform the action. During the initial stage, the desire will be driven by willpower, which will later be replaced by a desire for the reward. After this, the response is triggered, which is the reaction to perform the task. Lastly, but no less important, the reward is provided. Completing the task requires giving ourselves a reward; it is important so that we do not associate work with something fruitless.
 
-The trigger or cue should be clear and appealing, it should be as comfortable as possible, otherwise, we will avoid it. If we have to form a habit of studying, place the book where you can see it or put that thesis in the middle of your computer desk to quickly attract your attention. It's not just a memory cue but a signal to get to work. There is a 20-second rule that says: if it takes more than 20 seconds to complete, we will try to avoid it by making it counterproductive.
+The trigger or cue should be clear and appealing, it should be as comfortable as possible, otherwise, we will avoid it. If we have to form a habit of studying, place the book where we can see it or put that thesis in the middle of our computer desk to quickly attract our attention. It's not just a memory cue but a signal to get to work. There is a 20-second rule that says: if it takes more than 20 seconds to complete, we will try to avoid it by making it counterproductive.
 
 The idea of generating a cue comes from Ivan Pavlov's classical conditioning, where a stimulus like sitting down becomes a trigger that, after being conditioned, we associate with a reward. An alarm sound can mean that we are going to receive something we seek; over time, we will see the alarm as a signal of compensation. Positive rewards will play a key role in habit formation. On the other hand, Edward Thorndike's law of effect demonstrates that our behavior can be modified according to its consequences. If the consequences are positive, and we are rewarded with positive reinforcement for what we have done, it is more likely to be repeated. In contrast, if they are not rewarded, it will not be repeated. For this reason, the reward is very important. Forming a habit consists of making the task *visible and attractive* because unconsciously, we seek it to be immediately rewarded.
 
@@ -394,13 +394,13 @@ Finally, there are bad habits that we must eliminate. If the goal is to eliminat
 
 As we saw in A.3.2.1 (Wandering), the brain gets tired of being focused for a long time. Being focused on the study material for too long proves to be inefficient. Ideally, **take breaks to recharge energy**. Working in intervals can solve this problem.
 
-Using intervals for work is a method to prevent permanent exhaustion. The goal is to give the mind a break, just like we do for a muscle to avoid fatigue. This involves maintaining controlled work cycles because they continue until a certain point where activity is stopped before it leaves us exhausted. After each cycle, the mind has a break where it is allowed to wander. Additionally, breaks are good times to stretch your legs or move around a bit, which stimulates the brain and benefits overall physical health. Of course, work cycles are not meant to last forever; eventually, we will have to sleep to finish studying. Initially, it may not be possible to do this for a long time, but with dedication, it can be improved.
+Using intervals for work is a method to prevent permanent exhaustion. The goal is to give the mind a break, just like we do for a muscle to avoid fatigue. This involves maintaining controlled work cycles because they continue until a certain point where activity is stopped before it leaves us exhausted. After each cycle, the mind has a break where it is allowed to wander. Additionally, breaks are good times to stretch our legs or move around a bit, which stimulates the brain and benefits overall physical health. Of course, work cycles are not meant to last forever; eventually, we will have to sleep to finish studying. Initially, it may not be possible to do this for a long time, but with dedication, it can be improved.
 
 While the idea of intervals is quite simple and can be improvised, a known technique is the Pomodoro technique. It is as simple as setting up work intervals (usually 25 minutes) and, after completing them, taking a short break of 5 to 15 minutes, depending on how many intervals have been completed. It can be controlled with any timer or timer app.
 
 #### A.4.3.3 Schedules
 
-Scheduling is our strategy for gaining discipline and organizing study. Programming involves planning the days and hours of work in advance, when the study will take place. The time will depend on your own capacity plus the volume of information to be processed for each interval.
+Scheduling is our strategy for gaining discipline and organizing study. Programming involves planning the days and hours of work in advance, when the study will take place. The time will depend on our own capacity plus the volume of information to be processed for each interval.
 
 <div style="float: right; width: 350px; margin: 5px;">
 
@@ -454,7 +454,7 @@ These mental models we've discussed since A.1.1 (A Miniature City) are a represe
 
 Let's delve into the first stage: introducing new concepts.
 
-To understand what information is, we must first ask: How is information formed? The definition we will use for information is **a set of organized data that is useful**. *Data* is the smallest unit; it can be facts, objects, numbers and so on. On their own, data is meaningless; they must be grouped in a way that makes sense. This grouping, in turn, is not random; data has a connecting relationship. A memorable date is composed of the day and month's numbers, along with the reason for it to be remembered. In the image below, you can see data coming together to form a tiny piece of information, for example, the International Women's Day.
+To understand what information is, we must first ask: How is information formed? The definition we will use for information is **a set of organized data that is useful**. *Data* is the smallest unit; it can be facts, objects, numbers and so on. On their own, data is meaningless; they must be grouped in a way that makes sense. This grouping, in turn, is not random; data has a connecting relationship. A memorable date is composed of the day and month's numbers, along with the reason for it to be remembered. In the image below, we can see data coming together to form a tiny piece of information, for example, the International Women's Day.
 
 <div style="width: 500px; margin: 5px;">
 
@@ -468,29 +468,29 @@ Data can be connected to the knowledge we already possess. When learning somethi
 
 ### B.1.1 Questions Before Starting
 
-We'll explore a brief questionnaire before beginning the study of a new topic. This helps uncover personal or organizational objectives, which can then be used to plan the study project. We'll follow the questions with an example of learning a simple bread recipe. Try to think for a moment about what your response would be before reading the answers, as they might be different or the same due to differing objectives or approaches to accessing the recipe.
+We'll explore a brief questionnaire before beginning the study of a new topic. This helps uncover personal or organizational objectives, which can then be used to plan the study project. We'll follow the questions with an example of learning a simple bread recipe. Try to think for a moment about what our response would be before reading the answers, as they might be different or the same due to differing objectives or approaches to accessing the recipe.
 
-- **What are the benefits for you?**
+- **What are the benefits for us?**
 
-The first question prompts you to recognize your objective before starting. This is a question that influences your interest. Recognizing the usefulness of a topic generates emotions that affect your energy when studying.
+The first question prompts we to recognize our objective before starting. This is a question that influences our interest. Recognizing the usefulness of a topic generates emotions that affect our energy when studying.
 
 What are the benefits of learning a bread recipe: one might be saving money on buying bread or because they enjoy cooking. These reasons will be personal.
 
-- **What tools or study materials do you need?**
+- **What tools or study materials do we need?**
 
-The next part is discovering the necessary requirements for studying. If you want to learn carpentry, you'll need both wood and tools, as well as information to perform the work. Knowing how to handle the study material is what we call being prepared to study.
+The next part is discovering the necessary requirements for studying. If we want to learn carpentry, we will need both wood and tools, as well as information to perform the work. Knowing how to handle the study material is what we call being prepared to study.
 
-What are the tools or study materials required to learn how to make bread: the recipe (list of ingredients and preparation method) and instructions for using the required appliances. If you listed the ingredients and utensils in your response, remember that we're focusing on learning how to make bread, not actually making it. We might make an exception if you wanted to learn through experimentation, which is not a very good idea in this case, but in other situations, it can be a more advantageous process.
+What are the tools or study materials required to learn how to make bread: the recipe (list of ingredients and preparation method) and instructions for using the required appliances. If we listed the ingredients and utensils in our response, remember that we're focusing on learning how to make bread, not actually making it. We might make an exception if we wanted to learn through experimentation, which is not a very good idea in this case, but in other situations, it can be a more advantageous process.
 
-- **Where can you access the study material?**
+- **Where can we access the study material?**
 
 Information can be scattered across various sources. In this stage, we need to discover both physical and digital places where we'll extract information and determine the validity of this information.
 
 In our case, we could list searching on websites, cooking books, magazines or consulting a professional chef.
 
-- **What do you expect to learn from the topic?**
+- **What do we expect to learn from the topic?**
 
-List in bullet points what you want to gain from the material. Each item represents an objective for learning a topic, including an open field for everything you'll consider new experiences acquired during the process, not just the final goal of learning.
+List in bullet points what we want to gain from the material. Each item represents an objective for learning a topic, including an open field for everything we will consider new experiences acquired during the process, not just the final goal of learning.
 
 Let's make a list of what we expect to learn from a bread recipe:
 
@@ -499,7 +499,7 @@ Let's make a list of what we expect to learn from a bread recipe:
 - Interpret a recipe.
 - Compare different cooking methods.
 
-In this shortlist, we see that by learning a recipe, we gain several pieces of knowledge on the side. When embarking on the learning of anything, it's good to focus not only on the end goal but also on everything you'll learn and practice during the process.
+In this shortlist, we see that by learning a recipe, we gain several pieces of knowledge on the side. When embarking on the learning of anything, it's good to focus not only on the end goal but also on everything we will learn and practice during the process.
 
 - **What other considerations and obstacles exist? How are these obstacles overcome?**
 
@@ -513,13 +513,13 @@ Overcoming obstacles of this nature depends on understanding both the research o
 
 The research process involves **finding and evaluating information** to extract the knowledge it holds. This is a critical stage because if the result is negative, we obtain incorrect information, which means that anything we derive from this information is erroneous. We need to know how to detect complete or incomplete resources, false, outdated, biased or irrelevant to the research's purpose. This knowledge is crucial to avoid triggering a series of errors in the subsequent stages of learning.
 
-Before you can start learning about a topic, you need to have investigated and familiarized yourself with it sufficiently. The amount of information needed is always as much as you can handle within the time allotted for this stage. When you begin the process of learning something new, you set aside time to gather and review the information you will use. In the initial stages, especially if it's a new topic, gather all the resources you can access. Thanks to the internet, you don't necessarily need to obtain information from a few sources; you can accumulate a vast amount of information quickly by cross-referencing titles, genres and metadata, something we'll explore in C.4.3 ("Resource Description").
+Before we can start learning about a topic, we need to have investigated and familiarized ourself with it sufficiently. The amount of information needed is always as much as we can handle within the time allotted for this stage. When we begin the process of learning something new, we set aside time to gather and review the information we will use. In the initial stages, especially if it's a new topic, gather all the resources we can access. Thanks to the internet, we don't necessarily need to obtain information from a few sources; we can accumulate a vast amount of information quickly by cross-referencing titles, genres and metadata, something we'll explore in C.4.3 ("Resource Description").
 
-Finally, you'll filter out the relevant materials for your research and discard those that are irrelevant or repetitive.
+Finally, we filter out the relevant materials for our research and discard those that are irrelevant or repetitive.
 
-It's ideal to always research with a **purpose in mind**. When you're clear about what you need to obtain, the search for specific information is faster, and extraction becomes more effective. Much information can be appropriately trimmed using methods we'll explore in B.2 (Extracting Information) until you have only what you need. If you lack a purpose, you won't know what or how to narrow down the information to just the pieces you require, and you'll end up gathering material that is partly useless.
+It's ideal to always research with a **purpose in mind**. When we're clear about what we need to obtain, the search for specific information is faster, and extraction becomes more effective. Much information can be appropriately trimmed using methods we'll explore in B.2 (Extracting Information) until we have only what we need. If we lack a purpose, we won't know what or how to narrow down the information to just the pieces we require, and we will end up gathering material that is partly useless.
 
-This stage can be demanding. It's essential to take the time to read and understand the material, which requires significant mental activity. It can be tiring to receive new concepts that you must analyze and comprehend to move forward. Exhaustion is more common in this stage than in the following ones, and since it's just the beginning, it can lead to abandonment without fear of losing significant progress. On the other hand, if this stage is rushed, common mistakes can be made, such as not analyzing the context, evaluating the source or using outdated information.
+This stage can be demanding. It's essential to take the time to read and understand the material, which requires significant mental activity. It can be tiring to receive new concepts that we must analyze and comprehend to move forward. Exhaustion is more common in this stage than in the following ones, and since it's just the beginning, it can lead to abandonment without fear of losing significant progress. On the other hand, if this stage is rushed, common mistakes can be made, such as not analyzing the context, evaluating the source or using outdated information.
 
 #### B.1.2.1 Context
 
@@ -565,7 +565,7 @@ Consider the type of information source. It can be **direct or indirect**. Direc
 
 It's essential to see the scope of the statements. Saying that something *is* is different from saying that it *may be*. Authors often use words like "capable," "perhaps," "possible," among other synonyms, to indicate that their statement is not entirely certain. It doesn't mean that their assumption is incorrect; it just means they are trying to show that they might be wrong or close to the truth.
 
-Finally, one way to recognize if certain information is false is to evaluate opposing views; these may be the reason why a certain fact is false or an improved approximation to reality. To locate these opinions, look for access to comments and reviews of the material. Sometimes they are in the same place where you found the information or can be easily located using citation search. Reviews from other professionals, whether in favor or against the statements, help re-evaluate the objectivity of the material and its possible shortcomings.
+Finally, one way to recognize if certain information is false is to evaluate opposing views; these may be the reason why a certain fact is false or an improved approximation to reality. To locate these opinions, look for access to comments and reviews of the material. Sometimes they are in the same place where we found the information or can be easily located using citation search. Reviews from other professionals, whether in favor or against the statements, help re-evaluate the objectivity of the material and its possible shortcomings.
 
 ### B.1.3 Reading
 
@@ -595,7 +595,7 @@ Let's imagine we have a stack of books, articles and other sources of informatio
 
 Having large amounts of information doesn't mean we are well-informed. Authors and we don't always have the same objectives, so not everything they write is useful in its entirety. Excess only makes studying more cumbersome due to data or facts repetition, especially in the current era, where, with large volumes of information, what we get is more than we can ever need and often redundant. Extraction is a task that also involves eliminating unnecessary information. Developing the skill of separating the significant from the insignificant has become an indispensable skill in learning.
 
-The first step to consider is *What do you expect from the material?* After analyzing the text, we should ask ourselves what the general idea presented is, how it is presented and why it matters. With a clear goal, we can identify the information we are looking for and then extract it. We prepare ourselves for what we are about to study. We ask ourselves why we need to learn it; this will help us maintain our focus while delving into hours of study material. Next, we read the headings provided by the author, analyze the text's structure, and how the information is presented. We should never lose our sense of direction while studying, keeping in mind where we are coming from and where we are going.
+The first step to consider is *What do we expect from the material?* After analyzing the text, we should ask ourselves what the general idea presented is, how it is presented and why it matters. With a clear goal, we can identify the information we are looking for and then extract it. We prepare ourselves for what we are about to study. We ask ourselves why we need to learn it; this will help us maintain our focus while delving into hours of study material. Next, we read the headings provided by the author, analyze the text's structure, and how the information is presented. We should never lose our sense of direction while studying, keeping in mind where we are coming from and where we are going.
 
 The ability to extract what is important is measured by three skills. The first is to **eliminate** any redundant or repeated information and trivial details. The second is the ability to **summarize** the study material into a sentence or a short paragraph. Finally, we have the skill to **replace** lists of elements, images or concepts with a single term. Mastering these skills ensures that we have identified the important information in the text, and with practice, it will improve our ability to perform these tasks.
 
@@ -717,11 +717,11 @@ The final step is to save it properly so it can serve its purpose. One way to do
 
 The most popular way to take a note is by *writing*. Text is the most practical due to easy access to tools that perform the task and the speed of reviewing them. Despite the reputation of written notes, it is not a requirement that notes be taken in this way. An audio recording, a video, or even a drawing or a small diagram can be a note. Notes taken in audiovisual format will be referred to as *multimedia* notes.
 
-Audio recordings are popular; many people like to leave notes with their voice on a device capable of capturing and storing audio. They are more practical in situations where writing is not possible but you want to record a thought or reminder before it is lost from short-term memory.
+Audio recordings are popular; many people like to leave notes with their voice on a device capable of capturing and storing audio. They are more practical in situations where writing is not possible but we want to record a thought or reminder before it is lost from short-term memory.
 
-Similarly, you can record an instructional video to represent a note. Videos (given the ease of filming today) are perfect for storing complex activities and explanations that take advantage of visual perception.
+Similarly, we can record an instructional video to represent a note. Videos (given the ease of filming today) are perfect for storing complex activities and explanations that take advantage of visual perception.
 
-We will also mention the use of diagrams as a note-taking method. Using them helps store related information more quickly and easily than with simple text. Furthermore, in some diagrams (such as mind maps), you can add images to facilitate understanding and record something in a visual format. We will learn more about diagrams in C.2.1 (Diagrams).
+We will also mention the use of diagrams as a note-taking method. Using them helps store related information more quickly and easily than with simple text. Furthermore, in some diagrams (such as mind maps), we can add images to facilitate understanding and record something in a visual format. We will learn more about diagrams in C.2.1 (Diagrams).
 
 Taking multimedia notes is not a faster and easier task than writing. The difference with multimedia notes lies in the complexity of taking or editing them. If we make a mistake while speaking, we have to record again, and video editing is also complicated. Regardless of the format, notes must be **concise, coherent, and coordinated**.
 
@@ -729,7 +729,7 @@ Taking multimedia notes is not a faster and easier task than writing. The differ
 
 An effective method of organizing notes is the note box, also known as Zettelkasten. It was popularized by Luhmann, a renowned German sociologist who, thanks to this method, managed to write more than 70 books and hundreds of articles. Although storing our notes is a personal choice, we will discuss this approach due to its advantages, based on what we saw in Part A (Understanding the Mind).
 
-The note box method consists of taking **small and focused** notes and then placing them in a "box." Inside this box, the notes are **organized by fixed numbers** listed in an **index**. These notes must follow the concept of atomic notes; they must be tiny and encapsulate a single notion in your own words.
+The note box method consists of taking **small and focused** notes and then placing them in a "box." Inside this box, the notes are **organized by fixed numbers** listed in an **index**. These notes must follow the concept of atomic notes; they must be tiny and encapsulate a single notion in our own words.
 
 Using this method involves a sequence of steps to store each note:
 
@@ -745,7 +745,7 @@ The first stage involves taking notes of a **disposable** nature (of personal or
 
 Once we have all the disposable notes related to the study material interconnected, it is time to create permanent notes. We will write in complete sentences, making the idea clear and concise. The notion we want to convey must be described as we understand it. Don't forget to record the sources of the information.
 
-Once the permanent notes are ready, we store them in the *box* and schedule their content in the index. If this note is directly related to another, it goes right behind it and not at the same level as the others. The box will have a hierarchical numbering system, just like the topics in this document, to align the notes. If necessary to place a note behind N° 23, add it as 23-1; this way, you can reach higher levels using more numbers: 23-3-1. This way, you can have a set of organized and accessible notes.
+Once the permanent notes are ready, we store them in the *box* and schedule their content in the index. If this note is directly related to another, it goes right behind it and not at the same level as the others. The box will have a hierarchical numbering system, just like the topics in this document, to align the notes. If necessary to place a note behind N° 23, add it as 23-1; this way, we can reach higher levels using more numbers: 23-3-1. This way, we can have a set of organized and accessible notes.
 
 <div style="float: right; width: 500px; margin: 5px;">
 
@@ -855,7 +855,7 @@ This technique involves uncovering new layers of information through personal re
 
 Some ways to elaborate for better learning include:
 
-- Finding examples where what you've learned is applied.
+- Finding examples where what we've learned is applied.
 - Creating comparisons.
 - Formulating questions based on answers we already know, which requires a good understanding of the subject.
 - Creating mnemonic aids.
@@ -864,32 +864,32 @@ Within this strategy, we can mention the Feynman learning technique. This method
 
 1. Select the concept.
 2. Explain it in such a simple way that a child would understand.
-3. Identify the things you still need to learn.
+3. Identify the things we still need to learn.
 4. Simplify using comparisons.
 
-Once we've reached step four, repeat the process until you can simplify the idea as much as possible.
+Once we've reached step four, repeat the process until we can simplify the idea as much as possible.
 
 ### B.3.4.2 Generate
 
 This strategy involves attempting to answer the question posed before seeing the result. The idea here is to generate content without prior knowledge, relying solely on what the subject is about.
 
-Facing an unfamiliar subject helps build connections or pathways between neurons as you have to combine different concepts from various areas. The more we think about how to approach and overcome the steps involved in solving the problem, the more pathways are created. This task strengthens acquired knowledge, making the mind more perceptive while enhancing reasoning.
+Facing an unfamiliar subject helps build connections or pathways between neurons as we have to combine different concepts from various areas. The more we think about how to approach and overcome the steps involved in solving the problem, the more pathways are created. This task strengthens acquired knowledge, making the mind more perceptive while enhancing reasoning.
 
 ### B.3.4.3 Reflect
 
 Reflecting is sitting down to think and interpret what we've studied. It involves seeking a meaning we can comprehend. Reflection is successful if we can explain something in our own words, using our own models and demonstrating connections to topics we already know.
 
-To reflect on study material, you need to enter a diffuse thinking mode. Typically, this is done a few minutes after reviewing the information. During this time, you combine recalling learned concepts (which aids memory) and your own elaboration.
+To reflect on study material, we need to enter a diffuse thinking mode. Typically, this is done a few minutes after reviewing the information. During this time, we combine recalling learned concepts (which aids memory) and our own elaboration.
 
-One popular way to reflect is to explain the information to yourself as if you were a teacher, which, of course, requires a good understanding of the topic. This allows you to review how much you know, representing it in a self-taught manner.
+One popular way to reflect is to explain the information to ourself as if we were a teacher, which, of course, requires a good understanding of the topic. This allows we to review how much we know, representing it in a self-taught manner.
 
 ### B.3.4.4 Calibrate
 
-This strategy involves another type of utility in studying. It consists of correcting conceptual errors, both your own and others', that create the illusion of knowing something when, in reality, you are mistaken.
+This strategy involves another type of utility in studying. It consists of correcting conceptual errors, both our own and others', that create the illusion of knowing something when, in reality, we are mistaken.
 
-The first task in calibrating retained information is recognizing the error through reflection. Recognizing an error involves knowing the correct version. Afterward, review the concepts with an open mind and seek differences between what you know and what the mistaken material suggests to pinpoint where the discrepancy lies.
+The first task in calibrating retained information is recognizing the error through reflection. Recognizing an error involves knowing the correct version. Afterward, review the concepts with an open mind and seek differences between what we know and what the mistaken material suggests to pinpoint where the discrepancy lies.
 
-This strategy is more commonly used in more advanced stages when you have more knowledge in the area. In the initial stages without much knowledge, it's much harder to catch errors on your own. Here, the only way to apply this method is with external assistance. If you don't have a professional to supervise the information you acquire, you rely on correcting erroneous concepts throughout the study process. For these reasons, this strategy is applied at an intermediate or advanced level.
+This strategy is more commonly used in more advanced stages when we have more knowledge in the area. In the initial stages without much knowledge, it's much harder to catch errors on our own. Here, the only way to apply this method is with external assistance. If we don't have a professional to supervise the information we acquire, we rely on correcting erroneous concepts throughout the study process. For these reasons, this strategy is applied at an intermediate or advanced level.
 
 ## B.4 Memorization
 
@@ -917,11 +917,11 @@ This strategy involves turning a concept into an image where we visualize an obj
 
 Knowing this technique, we can easily store a fact or concept in our mind by turning it into an image, a visual portrait, whether it's a photo or diagram. If it's dynamic, such as an animation, even better. Thanks to the various ways to represent a concept available today, it's recommended to translate ideas into a graphical representation whenever possible to assist in memorization.
 
-Regarding location, it's particularly useful for remembering things related to a physical place, making it a secondary aid for theoretical concepts. However, we can leverage it by connecting an idea to a place, creating a mental map or layout. An ancient memory technique called the "method of loci" involves placing, in an exaggerated manner, figures of objects you want to remember around a familiar location. If you want to remember that liquid nitrogen is at -196°C and can cause burns, you could visualize white flames coming out of your freezer, which helps you recall it's cold and the associated risks. By creating a position in a familiar space, you tap into the mind's diverse ways of remembering.
+Regarding location, it's particularly useful for remembering things related to a physical place, making it a secondary aid for theoretical concepts. However, we can leverage it by connecting an idea to a place, creating a mental map or layout. An ancient memory technique called the "method of loci" involves placing, in an exaggerated manner, figures of objects we want to remember around a familiar location. If we want to remember that liquid nitrogen is at -196°C and can cause burns, we could visualize white flames coming out of our freezer, which helps we recall it's cold and the associated risks. By creating a position in a familiar space, we tap into the mind's diverse ways of remembering.
 
 #### B.4.1.2 Mnemonics
 
-These are creative ways to condense information into memory aids. They can be stories, rhymes, acronyms, or other strategies that involve verbal mediators or images to represent what you want to remember.
+These are creative ways to condense information into memory aids. They can be stories, rhymes, acronyms, or other strategies that involve verbal mediators or images to represent what we want to remember.
 
 Due to their limitations, the mind finds it easier to retain a word than a list of words. Lists require significant repetition and use to be remembered, but mnemonics synthesize them perfectly, condensing a list of concepts into a simple phrase or common word, even in the desired order.
 
@@ -954,4 +954,37 @@ Assessment questions can be **deliberate**, where we test our ability to obtain 
 To truly consolidate information, it's necessary to repeat these assessments periodically. Being able to answer all the questions correctly in a single session doesn't mean we've memorized the material. It takes time to memorize something thoroughly, and during this period, we should repeat the process of searching for the concepts in our memory.
 
 Another important factor is that the mind can make mistakes and misunderstand an idea, which can be corrected in more advanced sessions with tasks we've already seen in B.3.4.4 (Calibration). To ensure we've solidified the concepts, we should space out these assessment sessions over time to compel our memory to search for the information once more.
+
+###### B.4.2.1.1 Questionnaires
+
+These assessments are used to actively engage the mind in remembering. They are commonly found in institutions, from schools to universities or even in corporations, where they are used to evaluate the knowledge of their members. However, their very use is a tool for consolidation.
+
+Questionnaires can have assisted or unassisted prompts. There are no strict rules for them, leaving them open to providing assistance or avoiding it. In cases where the question is assisted, there is a trigger that helps recognize the answer. In contrast, unassisted questions require a more strenuous search to respond to. Both cases serve for memorization, but those without assistance require more effort and therefore yield better results.
+
+There is a wide variety of question formats, but most of them derive from the basic ones:
+
+- Selecting the correct option
+- Properly ordering a list
+- Matching related items
+- Producing a response (this adds the skill of formulation)
+
+By expanding and combining them, we can create more alternatives, such as:
+
+- Choosing the true option among one or several false ones
+- Completing the correct sentence
+- Scaling from 1 to 10
+- Grouping items
+- Selecting the correct image
+
+Among others. With creativity, we can add more varieties at the cost of increasing complexity. A very complex questionnaire can lead to confusion about what is expected in the response. The idea behind questionnaires is to aid in memorization rather than demonstrating interpretation skills.
+
+##### B.4.2.1.2 Memory Cards
+
+The use of memory cards is a self-assessment model where we write a "clue" or **hint** on one side, which can be a keyword, a question, an image, etc., and the **answer** on the other. Once the cards are prepared, we shuffle them and start going through the deck, trying to recognize the solution without looking at the back of the card. We aim to answer the question or explain what the card is asking without seeing the result. The goal is to provide the mind with a trigger that indicates what it's about and then generate a response based on what we have memorized.
+
+As we answer, we separate the ones that are challenging or we cannot answer for a second round. We create two decks as we progress – one with the cards we could solve and another with the ones we couldn't. When finished, we attempt again. We can repeat this process until we have effectively memorized all the cards.
+
+A poor practice is to permanently eliminate cards because we consider them easy. The advantage of having some cards in the deck that have been consolidated is to create intervals between the difficult ones and the ones we know. The more cards we have, the more effective the session will be. We should not assume they have been memorized either.
+
+The application of spaced repetition and metacognition are features of this system. Although it is an assisted memorization technique, it has the advantage of being able to use a non-textual tool, such as an image, which forces the mind to make connections until it recognizes what is being referred to. It is similar to how puzzles work, creating an enigma to solve.
 

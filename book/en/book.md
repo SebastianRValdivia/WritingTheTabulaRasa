@@ -1020,3 +1020,17 @@ Once we have everything we need, we must still understand it and then remember i
 
 The purpose of memorization is somewhat diffuse. While it is within the goal of learning, what we really seek is to store the understanding of the concept, not the concept itself in a literal sense, as this would be counterproductive. The ultimate goal is to permanently internalize these concepts, aiming to efficiently shape the information as clearly as our mental models.
 
+---
+
+# C. Dumping Information
+
+Writing, transcribing, drawing or any other way of transferring information to something concrete like text, images or other forms is an essential skill in learning. As we learn, we must use tools such as writing to break down important information into understandable chunks. We've already seen details in previous sections where we needed to dump information before reaching this point, whether it was note-taking or creating memory exercises. Now, our goal is to organize information in a way that can be accessible to anyone, including ourselves.
+
+As we discussed in A.2.2.1 (Forgetting), we humans are capable of losing information from our brains under certain conditions. Because of this human trait, it is essential to know how to properly pour out our knowledge. Dumping information in a way that can be remembered leaves us with a representation of our mind, which serves excellently as a reminder. Everything we have written down is nothing more than memories explained as we understood them, making it an excellent resource to review concepts at any point in our lives.
+
+In this section, we will seek to understand the most effective ways to articulate a concept as the mind interprets it. We will analyze the rules of language and the structure of academic texts. We won't forget about illustrations as a way to convey information, as they are another form of transcribing ideas. Finally, we will delve into organizational systems for dealing with a large volume of information.
+
+In any type of production, it is important to view the work as the audience would. This leads us to consider the type of audience, especially whether they are familiar with the concepts we are dealing with or not. We always assume that the recipient has no idea what we are talking about. We will introduce the basic ideas first, even if it's a summary, and then we will explain the concepts.
+
+Even if it's not the exact goal, dumping information cooperates with learning. By putting information in writing, we perform the cognitive task of explaining what we know, thereby reviewing the topic and transferring its content to long-term memory. Moreover, transcription is a task that forces us to explore the mind in order to present our knowledge correctly. During this stage, we discover weaknesses, gaps, and errors among what we know, allowing us to identify and fix them before moving forward.
+

@@ -933,3 +933,25 @@ Another classic and widely known strategy for memorization is repeating content 
 
 However, using this method doesn't necessarily mean we are actively working with and memorizing the information. It creates a *feeling* of memorization when, in reality, we haven't achieved it. The use of repetition serves as a supportive or intermediate task in studying. Information remembered in this way should be taken to other activities, as we'll see below, to be truly memorized.
 
+### B.4.2 Retrieval Exercises
+
+In this section, we'll explore two activities that put our information retrieval skills to the test. They force us to navigate our minds, either deliberately or with assistance, to find what we need.
+
+Once we acquire certain knowledge, we can put it to use to ensure it remains in our memory. The more we can see and interact repeatedly with these notions, the faster we'll memorize them. Any activity that puts into practice and creates events that use the concepts learned in previous stages will solidify the information in long-term memory.
+
+The crucial aspect of these activities is the **effort to remember**. Searching for specific information in our memory improves our access to it. The more we engage in this effort, the more vividly it remains in our minds. Once the goal is achieved, we can continue repeating these exercises over time to keep the information active in our memory.
+
+#### B.4.2.1 Self-Assessments
+
+An assessment involves the challenge of recalling a particular concept to answer a question correctly.
+
+What we gain from these assessments is a result. This result serves to gauge the progress of concept consolidation in our memory. The utility is that we can maintain a record of these assessments for analysis and personal statistics.
+
+This type of evaluation consists of short quizzes that test our memory. During these quizzes, we strive to retrieve information from long-term memory to answer questions, improving the mental pathways that lead to such information, making it more "accessible" or easy to remember.
+
+Assessment questions can be **deliberate**, where we test our ability to obtain information without any hints or assistance. While these questions are more challenging to answer, they have the benefit of expediting the memorization process and testing our recall abilities. On the other hand, **assisted** prompts are more abundant and simpler, allowing for a higher volume of questions that are easier to answer, making them ideal for an initial stage. The ideal approach is to maintain a pace, starting with assisted prompts and then progressing to deliberate questions.
+
+To truly consolidate information, it's necessary to repeat these assessments periodically. Being able to answer all the questions correctly in a single session doesn't mean we've memorized the material. It takes time to memorize something thoroughly, and during this period, we should repeat the process of searching for the concepts in our memory.
+
+Another important factor is that the mind can make mistakes and misunderstand an idea, which can be corrected in more advanced sessions with tasks we've already seen in B.3.4.4 (Calibration). To ensure we've solidified the concepts, we should space out these assessment sessions over time to compel our memory to search for the information once more.
+

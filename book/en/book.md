@@ -1034,3 +1034,31 @@ In any type of production, it is important to view the work as the audience woul
 
 Even if it's not the exact goal, dumping information cooperates with learning. By putting information in writing, we perform the cognitive task of explaining what we know, thereby reviewing the topic and transferring its content to long-term memory. Moreover, transcription is a task that forces us to explore the mind in order to present our knowledge correctly. During this stage, we discover weaknesses, gaps, and errors among what we know, allowing us to identify and fix them before moving forward.
 
+## C.1 Writing
+
+Writing is one of the most explored subjects in the history of humanity. There are thousands of valuable resources for addressing writing in various formats such as books, essays, academic articles, podcasts and videos, all oriented according to the type of text to be produced, which can be narrative, journalistic or academic. The type of writing we will address, both for production and analysis, will be exclusively of an **academic** nature.
+
+Academic texts or books are those of an **informative nature**, in other words, they seek to inform about something. Some examples include theses, essays, monographs, summaries, among others. An important use of these writings is that they serve to retrieve information swiftly from our minds. Imagine wanting to navigate a miniature city, but instead of wandering around to find the place you want to reach, you have a map. It makes it easier to get there. Being able to understand something (especially if it has been studied at some point) with just a superficial reading is practical for studying and memorization.
+
+To demonstrate that a text is well-informed and that the topic is understood, it must show a clear interpretation of the concepts. This involves being able to describe the problem or context presented and provide an analysis of the information.
+
+It is worth mentioning that the very act of formulating concepts in one's own words helps with memorization and strengthens the connections in our brains. Writing requires knowledge of both language and the subject being discussed. As we progress with writing, we will learn and consolidate models because searching for other ways to explain things requires understanding the concepts in the first place. Therefore, writing is beneficial both for recording information and understanding that information.
+
+Writing is a **skill**, and like any skill, proficiency is gained through **practice**. The ability to express oneself appropriately is not achieved overnight. The more we write, the more efficient we become at it. We will try to make this work become a habit, gaining practice every day, every time we study.
+
+However, we must also understand the general aspects of this task. We will break down its stages to understand how a text takes shape. Then, we will analyze each of its components as small units come together to form more complex modules. We will leave the conventions used to give meaning to the text for the end.
+
+### C.1.1 Writing Phases
+
+Writing a text of any type is a task that involves a set of processes and subprocesses. These processes have different purposes, and each stage is a step towards completing the task, but what they aim to achieve is independent of the following phase.
+
+The writing phases can be separated into 3, and these are:
+
+1. Planning: The initial stage before starting to write is planning. During this phase, we outline what we will write and how we will do it.
+
+2. Production: During this stage, we complete the task of writing on a blank canvas. We will fill in the blank with words to convey an initial idea of what we want to present.
+
+3. Editing: Errors are inevitable. What was generated in the previous phase will have shortcomings, and this is where we correct them.
+
+The phases are cyclical. By this, we mean that they can be repeated if necessary. The order is not linear; planning can be reconsidered, leading to rewriting and editing. Nothing is conclusive.
+

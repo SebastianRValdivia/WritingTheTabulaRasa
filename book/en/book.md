@@ -1062,3 +1062,43 @@ The writing phases can be separated into 3, and these are:
 
 The phases are cyclical. By this, we mean that they can be repeated if necessary. The order is not linear; planning can be reconsidered, leading to rewriting and editing. Nothing is conclusive.
 
+## C.1.1.1 Planning
+
+The first stage is carried out before starting the writing task. At this point, we stand on all our research, our notes and the fresh information in our memory. We have everything we could extract, but before the first letter, we must plan how it will be written.
+
+Planning involves defining the topic; we will **outline** how the three parts of the text, as seen in C.1.4.1 (Text Parts), will unfold. It is common to jot down an outline of the order in which topics will be presented, writing down the titles and optionally a summary of the content to be written. 
+
+We can use graphics to demonstrate the relationship between each part. The first thing to complete is the title, which sets the overall idea of the text, followed by subtitles that focus on dividing the text into sections. A summary of the content can also be added. In this task, we focus on outlining the order and presentation of the topics to be addressed. This can be done in a matrix or as a tree.
+
+<div style="width: 600px; margin: 5px;">
+
+  ![](img/matrix-vs-tree.png)
+
+  <figcaption style="font-size: 10px; text-align: center;">Matrix vs Tree</figcaption>
+
+</div>
+
+Once the sections are outlined, we will define how they connect. The links between information must be clear for the reader to understand the relationship between concepts. This can be achieved with simple arrows that show the order and relationships between elements.
+
+#### C.1.1.2 Production
+
+This is the main stage where we **start writing** until we achieve a goal defined by the objectives that the text must cover. During this stage, we write with the aim of making the intended idea clear.
+
+As we progress, it is crucial to keep an eye on the planning. When writing, we can focus on one section and lose sight of the overall organization of the text, resulting in developing parts separately from each other. What we want to achieve is to demonstrate the relationship between various parts of a composition.
+
+We should avoid unnecessary words when writing. This happens when we speak in a generalized manner without any argument. The text should fulfill its goal of informing without presenting unnecessary information that confuses the reader.
+
+A text is complete when all the information is presented in a logical order and in a clear manner. All ideas must be fully developed. It is important not to lose sight of the argument or the question it aims to answer and if that answer is provided.
+
+#### C.1.1.3 Editing
+
+Editing or revising is when we go back over our written words in the previous stages in **search of errors**. This task is performed at least once the first draft is completed, with all the required content. Even the most experienced writer can make a slip and needs to correct their work.
+
+The errors we encounter can be linguistic or logical in origin. Confusing explanations, poorly ordered paragraphs, unclear titles are examples of logical errors because they affect the intended meaning and not just the readability. We will address linguistic errors later.
+
+During this stage, we also review if the structure planned during the planning is correct. Organizing something without having the content is quite challenging and prone to failure, even partially. When this type of error occurs, it requires rethinking the text's order.
+
+**Rephrasing** is used to improve clarity and cohesion in the text. It may also be necessary to rewrite to better suit the audience, in cases where we are dealing with a reader who lacks the required knowledge, we must adapt the text to the planned level.
+
+Finally, there is elimination or **trimming**. Many parts of a text can become excess or repetition that leads to confusion and/or misinterpretation of its meaning. When this type of content is detected and cannot be repaired, the best option is to simply delete it.
+

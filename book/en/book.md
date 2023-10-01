@@ -1164,3 +1164,29 @@ The text always progresses linearly, from the most basic to the most advanced. T
 
 In C.1.4.1 (Text Parts), we will see how multiple sections come together to create a structure.
 
+### C.1.3 Spelling and Grammar
+
+In order to be understood, any text relies on the proper use of these areas of linguistics. Words and sentences can have multiple meanings that vary depending on how they are combined. This is where defined rules come into play; they will change the meaning depending on their placement in the text.
+
+When it comes to expressing our knowledge, we will use the language we are most familiar with. The scope will be limited; any content we produce can only be utilized by oneself and others who speak the same language. Let's acknowledge that translations are not an easy task and are not within the scope of this book, as we focus solely on learning. Thus, we will not delve deeply into this area due to the disparities among different languages. We will limit ourselves to defining its function in academic writing, leaving room for individual exploration.
+
+#### C.1.3.1 Grammar
+
+Grammar **studies and defines the rules to give meaning to the text**. This study varies based on the purpose of a text; expressing oneself in an argumentative text will be different compared to a narrative one.
+
+Studying this subject allows us to convey what we want to say appropriately. Without knowing the grammar of the language, we tend to not make our intentions clear, hindering the recipient from understanding the message.
+
+A grammatical recommendation for academic texts is to maintain an **active voice**, which affects verb conjugation, where the subject directly performs the actions. If we want to convey that we drive a vehicle, we do so with the subject followed by the verb, "I drive my car" not "The car is driven by me." This allows us to simplify sentences and be more direct, avoiding misinterpretation.
+
+#### C.1.3.2 Spelling
+
+Orthographic rules are norms that define the appropriate way to write a word to convey the intended meaning. These rules are established by one or several language-studying institutions (although, in some cases, there might not be any) to ensure the correct usage of language.
+
+Similar to grammar, spelling errors can lead the reader to misinterpret the meaning of the sentence. Proper language use requires respecting the spelling rules defined to avoid learning or teaching something incorrectly.
+
+##### C.1.3.2.1 Punctuation
+
+Punctuation rules are graphical conventions that define tones in writing. They function to structure the text, especially the punctuation marks that define sentence and paragraph boundaries. Punctuation represents how we speak, our pauses, and where we emphasize.
+
+In language, a punctuation mark is as important as a word and can change the meaning of a sentence. For example, saying "Let's eat grandma" is different from "Let's eat, grandma". The correct use of punctuation is a skill we must acquire to promote proper writing.
+

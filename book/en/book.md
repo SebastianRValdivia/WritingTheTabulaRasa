@@ -1102,3 +1102,65 @@ During this stage, we also review if the structure planned during the planning i
 
 Finally, there is elimination or **trimming**. Many parts of a text can become excess or repetition that leads to confusion and/or misinterpretation of its meaning. When this type of content is detected and cannot be repaired, the best option is to simply delete it.
 
+### C.1.2 Components of a Text
+
+A text is a collection of organized sentences that convey meaning. From the smallest unit of information, which is a word, to the entire text. There are different levels that progress from more concise to more generalized.
+
+Components of the same level group together, and this grouping leads to a higher-level component. Words form sentences, sentences form paragraphs, and paragraphs are grouped into sections. Each level has links between its components; without these relationships, a coherent grouping cannot be formed.
+
+#### C.1.2.1 Words
+
+From a biological perspective, we can compare words to the cells of a body. They are the **smallest units of language with individual meanings**.
+
+A word can have one or several meanings. Meanings vary depending on the context or linguistic framework and accentuation.
+
+The type of meaning can be **denotative or connotative**. It is denotative when it exactly refers to what it means; if I call a fruit bitter, it's because it is bitter. Words of a connotative nature are especially part of metaphors and analogies. In "she couldn't hide her bitter disappointment", bitter is used connotatively to convey not the literal taste but the strong negative emotion of disappointment, resentment or unhappiness.  
+
+Meanings combine and form relationships, creating a more complex unit, which is sentences.
+
+#### C.1.2.2 Sentences
+
+Sentences are groups of words that must be **meaningful, coherent, and complete an idea**.
+
+Sentences can contain a **single central point or multiple points**. The former is called *simple* sentences as they are usually short and precise, emphasizing what they are about. Those that refer to multiple topics simultaneously are *compound* sentences, which contain complex ideas used to relate to others or make comparisons. It is important to use each one at the appropriate time; too many complex sentences lack clarity and add complexity, while using only simple sentences may limit the text's exposition. Variation between types of sentences is essential for expressing the argument and maintaining text dynamics.
+
+A good practice is for sentences to be capable of standing independently, so we can separate them from the text and understand them without knowing their context. Sentence autonomy increases their complexity but makes the text clearer.
+
+#### C.1.2.3 Paragraphs
+
+A **groups of sentences**, when strung together with **coherence and cohesion**, merge to create a notion. This set of connected sentences gives rise to a **paragraph**.
+
+Paragraphs are the organs of a text. There are no strict rules for forming paragraphs; however, informal conventions have been used nowadays to facilitate text comprehension.
+
+The **topic sentence** mentions what the paragraph is about. This sentence summarizes the central idea to be presented or argued. It may be accompanied by secondary sentences that elaborate on the main theme.
+
+The body of the paragraph lies between the topic sentence and the conclusion; it is where the argument or topic is presented. It is filled with examples, evidence, references, and explanations that support the topic presented in the topic sentence.
+
+Some recommendations for writing paragraphs include:
+
+- Each paragraph contains a central idea.
+
+- Place the topic sentence at the beginning. The start of a paragraph is considered the stress point, where the reader emphasizes and pays more attention.
+
+- Avoid long paragraphs (more than 6 sentences).
+
+- Use the body to elaborate on the argument.
+
+- Provide a conclusion at the end.
+
+- Maintain connection and coherence between paragraphs.
+
+These are optional recommendations, meaning they don't need to be followed all the time. The goal of such suggestions is to facilitate text reading and persuasion.
+
+Similar to the preceding components, the concepts addressed in each paragraph are unified into a larger area.
+
+#### C.1.2.4 Sections
+
+Text sections, usually called chapters, consist of several paragraphs. Due to dealing with various hierarchical ideas, paragraphs are grouped together to form a chapter where a **higher-level idea is represented**. This concept is explored in detail to cover all necessary details to complete the chapter.
+
+Each chapter typically begins with an introduction that outlines the topic to be discussed, followed by paragraphs that support the argument, and finally a conclusion to the worked idea. These lines serve to demarcate the content that has been addressed and what is not part of the section.
+
+The text always progresses linearly, from the most basic to the most advanced. This is why chapters have numbering and a title that summarizes the content. The first section covers the initial points, presents definitions and other prerequisites to advance. It then delves deeper into the topic until it is complete and concludes the idea.
+
+In C.1.4.1 (Text Parts), we will see how multiple sections come together to create a structure.
+

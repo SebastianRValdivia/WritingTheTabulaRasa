@@ -1,0 +1,60 @@
+<mxfile host="Electron" modified="2023-10-02T18:16:33.857Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.0.0 Chrome/114.0.5735.289 Electron/25.8.3 Safari/537.36" etag="8eWxyCOvb3Djra3HqhyV" version="22.0.0" type="device">
+  <diagram id="WmB_cbo-JUtc6rJHetP_" name="Page-1">
+    <mxGraphModel dx="880" dy="551" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="eEe0_2tljtE4D7pBppBi-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="eEe0_2tljtE4D7pBppBi-1" target="eEe0_2tljtE4D7pBppBi-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eEe0_2tljtE4D7pBppBi-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="eEe0_2tljtE4D7pBppBi-1" target="eEe0_2tljtE4D7pBppBi-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eEe0_2tljtE4D7pBppBi-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="eEe0_2tljtE4D7pBppBi-1" target="eEe0_2tljtE4D7pBppBi-18" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jgDMUYgQ2cf9zM7sPAum-1" value="stablish" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="eEe0_2tljtE4D7pBppBi-22">
+          <mxGeometry x="-0.025" y="8" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eEe0_2tljtE4D7pBppBi-1" value="Neurons" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="360" y="120" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="eEe0_2tljtE4D7pBppBi-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="eEe0_2tljtE4D7pBppBi-2" target="eEe0_2tljtE4D7pBppBi-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eEe0_2tljtE4D7pBppBi-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="eEe0_2tljtE4D7pBppBi-2" target="eEe0_2tljtE4D7pBppBi-7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eEe0_2tljtE4D7pBppBi-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="eEe0_2tljtE4D7pBppBi-2" target="eEe0_2tljtE4D7pBppBi-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eEe0_2tljtE4D7pBppBi-2" value="Parts" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="190" y="200" width="115" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="eEe0_2tljtE4D7pBppBi-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="eEe0_2tljtE4D7pBppBi-4" target="eEe0_2tljtE4D7pBppBi-14" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eEe0_2tljtE4D7pBppBi-4" value="Synapses" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="560" y="200" width="115" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="eEe0_2tljtE4D7pBppBi-5" value="Axon" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="50" y="280" width="115" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="eEe0_2tljtE4D7pBppBi-6" value="Dendrites" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="190" y="280" width="115" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="eEe0_2tljtE4D7pBppBi-7" value="Soma" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="320" y="280" width="115" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="eEe0_2tljtE4D7pBppBi-14" value="Engrams" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="560" y="280" width="115" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="eEe0_2tljtE4D7pBppBi-18" value="Memory" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="560" y="120" width="115" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

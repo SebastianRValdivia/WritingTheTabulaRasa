@@ -1368,3 +1368,19 @@ There are some simple rules, although they are not mandatory. Mind maps consist 
 
 6. Use arrows to connect different parts.
 
+#### C.2.1.2 Concept Maps
+
+These types of diagrams are very similar to mind maps in terms of purpose. They encapsulate relationships that, when combined, synthesize a concept.
+
+<div style="width: 700px; margin: 5px;">
+
+  ![](img/concept-map.png)
+
+  <figcaption style="font-size: 10px; text-align: center;">Concept Map</figcaption>
+
+</div>
+
+In these maps, entities are shown as nodes related to each other using links that connect them, such as arrows or lines. These relationships can be hierarchical, meaning that elements at the top have greater significance or represent a more generalized concept than those at the bottom. This is optional, but it can be a useful implementation; if used, it should be clarified.
+
+One drawback with these diagrams is their connections. It's easy to end up with a tangle of arrows going from one side to another. In such cases, we should organize them by moving their nodes until the arrows flow from one end (including the center) to the edge of the plane.
+

@@ -1478,3 +1478,29 @@ A suggestion is to accompany images with explanations of what they represent. De
 
 One difficulty is obtaining images. On the Internet, we can access thousands of images in seconds, which can lead to a challenging search that takes up a significant amount of time. Taking photos ourselves is also difficult, we need to have a camera on hand and ensure a good capture, including paying attention to light, distance and angle. Nevertheless, the advantages outweigh the disadvantages, making it worthwhile to put in the effort to obtain images.
 
+### C.2.3 Tables
+
+We use tables to display data and values. They are organized in **rows** (horizontal) and **columns** (vertical) that are read from right to left. The data is placed between them in what we call **cells**, starting with the first of each orientation, which is used to label what the row or column refers to.
+
+<div style="width: 450px; margin: 5px; float: right;">
+
+  ![](img/tables.png)
+
+  <figcaption style="font-size: 10px; text-align: center;">Simple and Multidimensional Tables</figcaption>
+
+</div>
+
+Each data point is located at an intersection between a row and its column, which is referred to as its cell. In the image, it is represented in red, showing the path to the corresponding cell. Cell 2B is located at the intersection of the second row and column B. This way, we can locate data that relates to both values.
+
+Some general recommendations for creating a table are:
+
+- It should have at least two columns and two rows.
+
+- The first cell contains a description of the table.
+
+- Both columns and rows have headers.
+
+- They are clearly divided.
+
+- Be concise when writing in them.
+

@@ -1626,3 +1626,43 @@ It is important to keep a record of the source of the information we obtained, w
 
 The elements in the list include the title or topic of the resource, the publication date, the author and the publisher. Sometimes, it also includes the date of access, the URL (Uniform Resource Locator), if it's a website, also annotations made by the person compiling the bibliography.
 
+## C.4 Organizing Information
+
+Why organize? Organizing serves us to better understand content, save time, retrieve effectively and for various other reasons. Retrieving information involves the task of **finding what we need as quickly as possible**.
+
+Information architecture is the process of designing and implementing a system where users have proper access to information. Building an organizational system requires planning the architecture. This process involves discovering the purpose of the information to create navigation among it and metadata schemes. Finally, the system needs to be implemented and managed.
+
+Organizing is done for a specific audience. It must be considered that anyone accessing the resources understands its organization and can navigate through it. In case they are unable, it should be documented how it has been organized in an explanatory manner.
+
+To understand the organization process, let's answer five questions that help us place a resource. In our example, it will be an encyclopedia article about a rose plant that we want to store in an appropriate place.
+
+- **What is being organized?**
+
+Having a clear understanding of what type of material is being organized is the first step, it can be seen as the moment when we analyze what it is. During this stage, we carry out the process of **categorization**, where we identify which category the resource belongs to.
+
+We never know the future use of information, so a bad practice is to organize it according to how it will be used. If we need to store information on how to plant a seed, the ideal place is under a botany category, not under a specific category like gardening tasks. Organizing involves generalizing the usefulness of information; otherwise, it will be harder to locate.
+
+In our case, we have a single article from an encyclopedia, which is a text that needs to be grouped within an organizational system, either in digital or printed format. As its name suggests, it belongs to the encyclopedic compendium and within that, it will belong to a section. We will designate the categories as botany/floral/roses (notice the use of "/" indicating subcategories).
+
+- **Why is organization needed?**
+
+The reason will always be to locate the article when needed, whether by oneself or by others. However, the question is not that general. It refers to the type of situation where it might be needed. We need to imagine possible scenarios that might trigger the search.
+
+If we see a flower and want to make sure it's a rose, we are in a search situation. In such cases, when organizing, we want to place resources where we have access to them in a future when we need them.
+
+- **How much is being organized?**
+
+It's possible that it's more than a single resource to be stored, or it could be an entire compendium. Knowing the quantity is essential because storage can be limited, and organizing takes time. Therefore, if there is a lot of material, it will take a considerable amount of time to introduce it into our system.
+
+The article consists of just a text, possibly accompanied by some images, which equates to a page in a book or a small digital file size. In cases different from the example, it can be multiple items that need organizing, such as several articles or an entire section of plants.
+
+- **When will it be organized?**
+
+This question helps define the time when the resource's useful life begins. Once the time is established, it's added to the system and becomes available for consultation. It also includes when it will undergo review and maintenance.
+
+In the case of our article, it will enter as soon as its production stage is complete because no changes are expected for a while. Maintenance planning can be scheduled for years after its publication.
+
+- **Who is organizing it?**
+
+The task can be performed by ourselves, third parties or even automatically by software. Along with the resource, a record is left of who placed it in that location to identify the responsible party for its placement.
+

@@ -1282,4 +1282,19 @@ Punctuation marks like exclamation points (¡!) or quotation marks ("") are also
 
 Finally, we have the simple mechanism of using capital letters. Although not as commonly used today, typing something in all capitals is also known to grab attention due to the increase in letter size. However, using all capital letters has a known effect of annoyance, as it is equivalent to shouting and can make reading uncomfortable for some people. This method is not the most popular and should be avoided whenever possible; however, its use is not necessarily incorrect.
 
+#### C.1.4.3 Headings
+
+Headings are a type of header that helps the reader see the topics covered, their structure and the order in which they are presented. Like signaling, headings assist in informing the reader about the content and assigning a name to what they address. They should answer the question, "What is the text I'm about to read all about?"
+
+<div style="width: 400px; margin: 5px; float: right;">
+
+  ![](img/headings.png)
+
+  <figcaption style="font-size: 10px; text-align: center;">Headings and subheadings vs. no organization</figcaption>
+
+</div>
+
+They serve to locate a specific section within the text. They are grouped in the table of contents or index, where each chapter is named in the order they appear, providing a map to locate a particular topic. For this reason, they must be precise about their subject matter.
+
+Creating a heading is not a simple task. A good header needs to be concise, allowing the reader to recognize the topic quickly. Therefore, using long sentences is not a good practice. The goal is always to make it memorable, short, and relevant to the subject it addresses.
 

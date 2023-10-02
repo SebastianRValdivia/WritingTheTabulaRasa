@@ -1540,5 +1540,32 @@ Information is not valued by quantity but by quality. Clarity and consistency ar
 
 Now we will see certain formats that will be useful to create our own compendium of information based on what we know. When two or more of these systems can document the information in such a way that it is the same, we choose the one that is more valuable and takes less time. Each element will have a purpose, making them more or less suitable for each occasion.
 
+### C.3.1 Encyclopedia
+
+The first resource model for our compendium will be the encyclopedia, which **collects information on any subject and classifies it**. Their components consist of expository text where a particular topic is presented.
+
+The **articles** in an encyclopedia are texts that focus on a single topic. They demonstrate theoretical knowledge with the purpose of informing. Each article has a name or title that defines the subject of study and a question that serves as the initiator. This question refers to what is going to be explained, how, and why.
+
+The goal of encyclopedias is to inform, not to teach, so they lack subjectivity and a didactic sense. Instead, they are objective, get to the point and avoid presenting information unrelated to the topic. They use connections between their articles to help the reader gather all the information needed to understand the text without straying from the central theme.
+
+Every article has three basic parts:
+
+- The introduction
+- The body
+- The footer
+
+<div style="width: 450px; margin: 5px; float: right;">
+
+  ![](img/article.png)
+
+  <figcaption style="font-size: 10px; text-align: center;">Encyclopedia Article</figcaption>
+
+</div>
+
+The **introduction** includes the title and a presentation. During this part, a heading is placed that summarizes and introduces the content that is about to be developed. It often contains important facts and images that illustrate what is being discussed to make an impact on the reader. It is not recommended to provide an overview of the article, personal notes or catchy phrases because the goal is to provide a definition, not to start a book. This is a critical area as it is the first thing we encounter, and if it is incomplete or incorrect, it can lead to confusion.
+
+Like any expository text, the **body** is where the main idea is developed. During this part, definitions, examples and other tools that can serve to inform the reader about everything they need to know about the topic are provided. There are headers that determine sections that are listed in a table of contents to help navigate within it. In summary, the body is where we expand on everything we know about the topic in an organized manner.
+
+The last part of an article is at the very bottom, in what we will call the **footer**. This area serves to organize the article, and we place general information and metadata, the utility of which we will see later.
 
 

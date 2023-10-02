@@ -1,1 +1,0 @@
-# Escribiendo la Tabula Rasa

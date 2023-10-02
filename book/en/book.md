@@ -1768,3 +1768,96 @@ These engines consume metadata to group and reorder resources. First, they take 
 
 They are a method that emerged thanks to the digitization of information. The advantage is that they find information quickly, accurately, and conveniently, using the processing power of computers. The disadvantage is that they require a computer agent to be used.
 
+### C.4.3 Resource Description or Metadata
+
+Having an abstract understanding of the properties of a resource helps the system to locate, identify, and obtain the resource or its alternatives. This is where detailing the characteristics of the resource plays an important role in enabling the system to utilize them effectively.
+
+Resource description, also known as metadata, is information about information. It provides a structured description of a piece of material or resource to define data about it. Metadata includes attributes such as name, location, authorship, presentation format and more. It serves the purpose of assisting the organizing system in fulfilling its functions.
+
+Metadata can be divided into three main categories: administrative, descriptive or structural. These categories are formed based on the purpose of the description. Administrative metadata deals with resource management, ownership, authorship, rights and licenses applied to the resource. Descriptive metadata simply describes the content, explaining what it is about. Lastly, structural metadata contains technical information, such as file type and size, crucial for ensuring storage and functionality on electronic devices.
+
+Metadata can interact across different organizational systems, often shared to locate missing resources in one or the other. When a system needs to acquire a resource, it first checks this data, allowing it to determine if it is capable of acquiring or using the resource.
+
+Metadata is flexible and extensible, meaning that more data can be added or modified as needed. It is common for the information contained in metadata to change, which is why easy-to-edit schemas are used. Using a rigid or difficult model could affect the system's performance.
+
+#### C.4.3.1 Schemas
+
+Metadata is organized into *fields*, each of which has a value, such as `author: S.R. Valdivia`, where "author" is the field, and "S.R. Valdivia" is the value. A **group of fields** forms a **schema**.
+
+Metadata schemas are a method for defining and standardizing metadata. They serve to control the proper use of the information contained in descriptions, ensuring that they are complete and meet the goal. Metadata should use common elements for all resources. Having the necessary data results in similar descriptions, allowing all resources to have the same information for generic use within the system.
+
+The format of metadata follows a standard created to be understood by both people and computers. It defines semantics, how fields are written (syntax), and their structure, ensuring that they can be interpreted and used by systems that leverage metadata.
+
+Within the schema, there is a **vocabulary convention** that defines rules to follow, such as how fields should be named and ordered, both semantically and syntactically. An example is the common rule of not using spaces in names, which leads to the use of writing styles that employ capitalization or hyphens to separate words, like "authorName" or "author-name."
+
+Schemas use data structures to enforce their content across various applications. These structures organize data in a way that makes sense to both humans and computer programs. Without delving into complex data structures, we will only look at the most basic forms of grouping metadata, which make up the rest. As an example, we will use the JSON (JavaScript Object Notation) format, popular for its utility on the web. There are other schema types, such as XML, yml, toml, which serve the same purpose but differ only in syntax.
+
+Let's say we're dealing with metadata for an encyclopedia article about the naval battle of Trafalgar. The data so far includes its title and the article's creation date. First, the field to which the data corresponds is named, and then its value is provided. This type of key-value relationship is the most basic way to structure minimal descriptions and forms the basis for **dictionaries**. Values can be numbers or strings of characters.
+
+```json
+{
+    "title": "Battle of Trafalgar",
+    "created": 2022
+}
+```
+    Note on quotation marks, colons, commas, and braces. They are part of the JSON syntax.
+
+In case there are multiple possible values, such as article categories, we group the information into **lists**. A list contains more than one value and is ordered; the first is called 0, the second 1, the third 2, and so on. In JSON, they are written within square brackets:
+
+```json
+{
+    ...
+    "categories": ["Napoleonic Wars", "19th Century"]
+}
+```
+In both JSON and any metadata extension, we can nest data and form a tree. These parent-child hierarchical relationships where one encompasses all the values of the next. Starting from a root, it forms branches down to the smallest unit of information, which would be the leaves of the tree.
+```json
+{
+    ...
+    "bibliography": {
+        "Trafalgar": {
+            "author": "Galdós",
+            "year": 1873
+        },
+        "Battle of Trafalgar": {
+            "author": "Wikipedia",
+            "year": 2022
+        }
+    }
+}
+```
+The final schema would look like this:
+```json
+{
+    "title": "Battle of Trafalgar",
+    "created": 2022,
+    "categories": ["Napoleonic Wars", "19th Century"],
+    "bibliography": {
+        "Trafalgar": {
+            "author": "Galdós",
+            "year": 1873
+        },
+        "Battle of Trafalgar": {
+            "author": "Wikipedia",
+            "year": 2022
+        }
+    }
+}
+```
+Or in yml:
+```yml
+---
+title: Battle of Trafalgar
+created: 2022
+categories:
+  - Napoleonic Wars
+  - 19th Century
+bibliography:
+  Trafalgar:
+    author: Galdós
+    year: 1873
+  Battle of Trafalgar:
+    author: Wikipedia
+    year: 2022
+
+```

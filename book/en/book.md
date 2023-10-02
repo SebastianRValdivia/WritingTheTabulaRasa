@@ -1598,3 +1598,31 @@ They are excellent in cases where the information is specific and needs to be re
 
 Creating references requires practice. They consist of keywords or short phrases, such as a definition, and are extremely condensed. They should occupy as little space as possible, without explanations of their content.
 
+### C.3.3 Guides
+
+A guide is a process explained in steps that provide detailed instructions for a person to accomplish a task. A well-known example is a cooking recipe, where the steps for preparing a meal are outlined.
+
+It consists of steps, which are short sections that describe a part of the process. These steps are numbered and grouped in an ordered list. Each step is a stage, which should have a header and a description of what needs to be done and what will happen.
+
+The beginning contains a summary of what will be done. It answers what is being done, why, and where it applies. It serves as an introduction with general information about the guide. Here, it clarifies who the guide is intended for, whether it's for professionals or not. Additionally, it specifies the requirements and/or materials needed for its completion. If possible, the expected time should also be mentioned. The aim is to help the reader find the right guide and determine if they can carry it out.
+
+A guide is not intended to provide information. They are instructional texts that indicate how to perform something; explaining their content is beyond their purpose. However, it's a recommendation, not an obligation, to add some comments about the results to explain why they occur.
+
+### C.3.4 Essays
+
+Unlike the others, essays are argumentative texts. In these, a persuasive discourse is presented with the goal of convincing the recipient. They belong to the discursive genre and inherit the theme, style and type of structure from it.
+
+Each essay has a supposed theory, something they can be in favor of or against. At the beginning, the supposition is explained, and then **arguments** are presented to persuade. An argument demonstrates why the statement is correct or incorrect and must be supported by evidence.
+
+They have two phases. The first involves producing the essay, where the argumentation of the hypothesis is written, presenting the question along with its answers and then the argument(s) defending the answer. The second phase of an essay is the debate it generates. During this phase, counterarguments will be presented that refute the initial assertion. In several cases, during the second stage, authors defend their work by countering the counterarguments. The goal of these stages is to find the truth.
+
+An essay can be cited by another, meaning it has been an inspiration for their work, either to contradict or rectify its content. Citations are usually placed at the end along with all other references.
+
+### C.3.5 Bibliographies
+
+Bibliographies are lists of resources based on a single topic. They are typically found alongside academic work, following a style guide and usually at the end of the text.
+
+It is important to keep a record of the source of the information we obtained, which answers future questions like, "What is the origin of this information?" and "What is the evidence?" The source's location also serves to evaluate the sources. In cases where information can change, such as in research areas, we need to know the time and the author in case there are new discoveries that refute previous statements. This makes bibliographies a collection of evidence and studies from other resources.
+
+The elements in the list include the title or topic of the resource, the publication date, the author and the publisher. Sometimes, it also includes the date of access, the URL (Uniform Resource Locator), if it's a website, also annotations made by the person compiling the bibliography.
+

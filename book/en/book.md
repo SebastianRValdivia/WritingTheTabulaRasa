@@ -1270,7 +1270,7 @@ Our second type of marker is intensity markers. These are **punctuation marks an
 
 <div style="width: 400px; margin: 5px; float: right;">
 
-  ![](img/text-size.png)
+  ![](img/text-sizes.png)
 
   <figcaption style="font-size: 10px; text-align: center;">Different font sizes affect attention</figcaption>
 

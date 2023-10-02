@@ -1384,3 +1384,63 @@ In these maps, entities are shown as nodes related to each other using links tha
 
 One drawback with these diagrams is their connections. It's easy to end up with a tangle of arrows going from one side to another. In such cases, we should organize them by moving their nodes until the arrows flow from one end (including the center) to the edge of the plane.
 
+#### C.2.1.3 Pyramids
+
+<div style="float: right; width: 400px; margin: 5px;">
+
+  ![](img/knowledge-pyramid.png)
+
+  <figcaption style="font-size: 10px; text-align: center;">Knowledge Pyramid</figcaption>
+
+</div>
+
+Pyramids are excellent for demonstrating hierarchical importance without adding complexity through relationships. In the image, we see an example of the knowledge pyramid, known for representing the evolution of knowledge from data to wisdom.
+
+At the higher levels, we find what is of the greatest importance or significance. According to this pyramid, wisdom is the most important goal. Below, we have data, which is of lesser weight or size, representing the minimum unit according to the diagram.
+
+It can also be interpreted that the lower levels form the foundation or the first step to reach the top. Each level is a stage that requires the foundation of what is below: to form information, we need data; to know, we need information, and to achieve wisdom, we need knowledge.
+
+#### C.2.1.4 Charts
+
+Charts are diagrams used to visualize information. They use a mathematical expression to represent data between two axes, commonly known as the *x* and *y* axes (sometimes *z* for three dimensions). Each axis is assigned an orientation, with *x* typically being horizontal and *y* vertical. There are also charts that do not use both axes at each end of the plane; for example, circular or pie charts are used to represent proportions.
+
+These types of diagrams are prevalent in statistics and are used as visualization tools for data analysis. Their data comes from tables or matrices, which we will discuss in C.2.3 (Tables).
+
+<div style="width: 700px; margin: 5px;">
+
+  ![](img/charts.png)
+
+  <figcaption style="font-size: 10px; text-align: center;">Charts</figcaption>
+
+</div>
+
+Let's take a closer look at the ones shown in the image.
+
+##### C.2.1.4.1 Lines
+
+In line charts, the *x* axis, oriented horizontally, represents progress from left to right (in the order of natural numbers from 0 to infinity). The *y* axis, oriented vertically, provides the range of values for the variable of interest. Lines are drawn continuously, connecting points in space. They show changes in value on the *y* axis relative to the attribute on the *x* axis.
+
+One scenario where line charts are ideal is for the analysis of temporal variation, where we visualize progress over time (usually located on the *x* axis). The lines formed represent changes in value over time.
+
+##### C.2.1.4.2 Bars or Columns
+
+The bar chart, or its tilted counterpart in columns, has numerical values on one axis and evaluated data in a bar on the other. These data can also be stacked to show more values. Their use is to illustrate the distribution of data in categories, where each group (the bar or column) represents a category to be depicted. Such a chart can have one or several categories defined.
+
+The difference between columns and bars lies in the orientation of the plane, that is, which axis they use as a reference. Bar charts have rectangles formed in a horizontal orientation, while column charts are vertical.
+
+##### C.2.1.4.3 Area
+
+Area charts are used to differentiate data where the difference in elevation is the central point to be highlighted. In these charts, what's most important comes first, covering the second and so on. They are created in the same way as line charts, by filling the space between the line and the *x* axis with color. They are practical for distinguishing differences between two variables.
+
+##### C.2.1.4.4 Circle or Pie
+
+Circular charts can be interpreted as a pie or cake, where slices are cut to distribute. Circular sectors represent the most common alternative to axes. These use the entire circle's size to represent 100%, with a portion or slice representing the percentage of the statistic being displayed.
+
+##### C.2.1.4.5 Radar
+
+Radar charts, or spider net charts, form a small spiderweb where each color represents a data point. They are excellent for connecting points similar to line charts but also for showing approximations to the other ends of the (*-y* and *-x*) axes. Like area charts, they show differences in values and the approximation of their variables.
+
+##### C.2.1.4.6 Bubbles
+
+The last ones we'll look at are bubble charts. They are suitable for indicating areas but in disconnected and scattered regions within the chart space. They demonstrate isolated values using the circle's size (or bubble).
+

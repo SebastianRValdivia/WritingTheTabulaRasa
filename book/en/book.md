@@ -1338,3 +1338,33 @@ Another important factor in any diagram is the placement of its elements. Depend
 
 There is a wide variety of diagrams, and we can even create our diagrams from scratch or based on others. The main difference lies in the utility we give them. Some are better at explaining a concept, others at organizing data, and some at demonstrating hierarchy. Each type has its benefits, so let's explore some popular models.
 
+#### C.2.1.1 Mind Maps
+
+A mind map is a diagram designed to illustrate the **relationship between different ideas**, much like the brain does. They are commonly used as memory aids. The overall goal is to condense large amounts of information into small, understandable pieces.
+
+<div style="width: 700px; margin: 5px;">
+
+  ![](img/mind-map.png)
+
+  <figcaption style="font-size: 10px; text-align: center;">Mind Map of the Book</figcaption>
+
+</div>
+
+These diagrams are useful for getting an overview of a topic. They may use simplified words but are capable of conveying a vast amount of information using hierarchical and easy-to-read relationships. Having a clear understanding of the connections around the topic assists in creativity and organizing subtopics.
+
+As seen in the diagram, images are allowed, and they facilitate comprehension. It's worth noting that visual memory is crucial for memorization. Placing these images alongside the words they represent helps solidify concepts in the mind. It's even better if these images are chosen or drawn by oneself.
+
+There are some simple rules, although they are not mandatory. Mind maps consist of limited components like branches, words and arrows, but we can add our own clever additions to expand them. They have the property of being an informal and flexible diagram, making them perfect for various situations such as study review, planning, gaining an overview, connecting concepts, among others. The rules or recommendations created by popular consensus for creating a mind map include:
+
+1. Place the title of the topic in the center or root, using an image to represent it.
+
+2. Use keywords rather than phrases.
+
+3. Subtopic branches radiate from the center.
+
+4. Branches vary in thickness depending on the level.
+
+5. Use colors to distinguish each branch originating from the center.
+
+6. Use arrows to connect different parts.
+

@@ -1460,3 +1460,21 @@ A flowchart (similar to other diagram types) represents operations or steps for 
 
 There are more types of blocks than those listed, each with its own functionality. The ones presented are the most fundamental. The key symbol we look for in this diagram is the flow symbol (the arrows), which illustrates the sequence of steps and their order. Flowcharts also depict loops, situations where a process repeats, often accompanied by decision points. The collection of symbols defines the type of operation and the sequence in which it occurs, making the diagram an excellent tool for illustrating processes.
 
+### C.2.2 Images
+
+An image can make an impact through sight more quickly than several descriptive paragraphs. Colors and shadows are naturally identified and processed by the mind, eliminating the cognitive effort of imagining what many words attempt to describe. Furthermore, seeing something allows the mind to process its appearance, which is more conducive to memorization.
+
+<div style="width: 350px; margin: 5px; float: left;">
+
+  ![](img/image-example.png)
+
+  <figcaption style="font-size: 10px; text-align: center;">Image with description</figcaption>
+
+</div>
+
+The best learning opportunity is to capture images personally. By viewing and experimenting with something, we create an event that registers in our memory. If we take a photograph of the moment, we can create a memorable image that will be a great aid to memory in the future. This is why it's important to capture moments of experimentation or observation.
+
+A suggestion is to accompany images with explanations of what they represent. Despite their advantages, a photograph or similar image can be confusing if it doesn't convey the intended message. For this reason, it is recommended to provide a description along with the image.
+
+One difficulty is obtaining images. On the Internet, we can access thousands of images in seconds, which can lead to a challenging search that takes up a significant amount of time. Taking photos ourselves is also difficult, we need to have a camera on hand and ensure a good capture, including paying attention to light, distance and angle. Nevertheless, the advantages outweigh the disadvantages, making it worthwhile to put in the effort to obtain images.
+

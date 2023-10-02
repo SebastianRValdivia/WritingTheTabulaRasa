@@ -1298,3 +1298,19 @@ They serve to locate a specific section within the text. They are grouped in the
 
 Creating a heading is not a simple task. A good header needs to be concise, allowing the reader to recognize the topic quickly. Therefore, using long sentences is not a good practice. The goal is always to make it memorable, short, and relevant to the subject it addresses.
 
+### C.1.5 Typography and Colors
+
+The typeface (also known as font) is what defines the appearance of text. It affects subliminally, indirectly impacting reading and text comprehension. We have already seen how a change in font thickness can influence attention; this is an example of the importance of typography. When choosing a font, one should select a clear, visually appealing one; otherwise, it may pose difficulties in reading, leading to reader disengagement.
+
+Each typeface corresponds to a type of information. When dealing with various topics, available fonts can be used to differentiate between them. Typically, this is clarified in the style guide.
+
+<div style="width: 400px; margin: 5px;">
+
+  ![](img/colors.png)
+
+  <figcaption style="font-size: 10px; text-align: center;">Colors influence attention</figcaption>
+
+</div>
+
+Colors, on the other hand, affect attention. It is advisable to use high-contrast colors to draw more attention and enhance visibility. The pattern of a white background with black text is an example of a combination to maintain eye focus on the text. Another suggestion is to maintain color consistency; if red is used for warnings and then reused to highlight a title, it may create confusion, leading readers to believe that the topic under that title is something to avoid.
+

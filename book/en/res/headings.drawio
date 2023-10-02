@@ -1,0 +1,34 @@
+<mxfile host="Electron" modified="2023-10-02T15:55:03.666Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.0.0 Chrome/114.0.5735.289 Electron/25.8.3 Safari/537.36" etag="nZRJ4Tn37Ju65wcS7qf7" version="22.0.0" type="device">
+  <diagram id="7kWuOk1LWORHG97-ZrQI" name="Page-1">
+    <mxGraphModel dx="880" dy="551" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Ja7025ez9XTsAeeHThh5-1" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="160" y="40" width="320" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="Ja7025ez9XTsAeeHThh5-2" value="Heading" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="530" y="70" width="130" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="Ja7025ez9XTsAeeHThh5-4" value="Heading" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="560" y="230" width="130" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="Ja7025ez9XTsAeeHThh5-5" value="Heading" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="670" y="115" width="130" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="Ja7025ez9XTsAeeHThh5-6" value="Sub-heading 2" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="200" y="200" width="130" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="Ja7025ez9XTsAeeHThh5-7" value="Sub-heading 1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="310" y="80" width="130" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="Ja7025ez9XTsAeeHThh5-8" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Heading 1&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="200" y="140" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ja7025ez9XTsAeeHThh5-9" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Sub-subheading&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="340" y="160" width="60" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

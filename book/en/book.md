@@ -1190,3 +1190,51 @@ Punctuation rules are graphical conventions that define tones in writing. They f
 
 In language, a punctuation mark is as important as a word and can change the meaning of a sentence. For example, saying "Let's eat grandma" is different from "Let's eat, grandma". The correct use of punctuation is a skill we must acquire to promote proper writing.
 
+### C.1.4 Text Structure
+
+We've already mentioned that a text is divided into parts, but why do we do this? We do it to **gradually introduce concepts** in an organized and encapsulated manner. Whenever possible, we'll set aside a concept to define it, explain it, and provide examples; subsequently, we'll relate it to another. We'll follow this framework repeatedly until we conclude.
+
+Having a structure is essential. A building doesn't stand without pillars, and the same applies to a text. The pillars are the main ideas upon which we constantly rely. Meanwhile, the walls and windows are everything else, assisting the main ideas—these are arguments or evidence that demonstrate and explain. Every text is composed of main ideas (what we want to inform) and secondary ideas (what contributes to the text's objective).
+
+Understanding how a text is structured helps us not only in writing but also in its interpretation. The ability to understand the different parts allows us to interpret better, know what to expect, and anticipate what will happen.
+
+Information presented directly, like in a dictionary, doesn't achieve the same educational impact as when arranged sequentially. That's why each part discusses from start to finish, introducing the concepts in a more accessible way to the recipient.
+
+#### C.1.4.1 Parts of the Text
+
+Every academically inclined text consists of three parts: an **introduction** or opening where the argument and/or theme are presented, the **body** or development and a **conclusion** or closing.
+
+We use each part for a different purpose. Both the introduction and the conclusion will talk about the same theme and are within the same text, but each will encapsulate its own meaning. Despite their differences, they remain part of the same project and are interconnected.
+
+Unlike the components of text C.1.2 (Components of a Text), the parts are not as obviously separated. Their divisions are more abstract and diffuse than a period; they often span one or several chapters. We could compare it to a speech—as the speaker progresses, the central point changes, adapting to what they're discussing.
+
+##### C.1.4.1.1 Introduction
+
+It's the text's opening, the welcome, and the orientation. At any beginning, the reader is **introduced to what will be discussed**. In this stage, it's important to answer: What is the question being answered? How will it be answered? And what is required?
+
+One of the first things placed is the **abstract or the overview**. These paragraphs are organizers that start before the main content, aiming to guide the reader regarding the order in which things are presented and why. Similar to the overview is the **prologue**. Unlike the former, here, the author often comments on the text, other works and so on. Another tool often placed in this part is the **preface**, where what will be discussed is presented, usually in an informal manner. Prefaces contain the reasons for why it was written, why to read it, what to expect from the text, among other content the author would like to convey before starting.
+
+Introductory tools are essential to introduce the reader to the content, the theme and the organization; they're also used to establish conventions. Much of what we will discuss has requirements that the reader may be unaware of, and it's our job to declare and justify the need to know these contents. If given the opportunity, it's suggested to provide a summary of these requirements; otherwise, at least cite where the reader can obtain information about them. The beginning is the time to determine all the requirements for reading the material.
+
+##### C.1.4.1.2 Development
+
+This is the stage where we present what we are going to convey. Naturally, it's the longest of all. It involves **explaining**, in a didactic manner, the answer to the main question posed in the previous part. Introducing and analyzing each concept to be presented in an orderly manner until we determine that the explanation is sufficient and the theme is clear.
+
+Here, we will present and develop the information the reader needs to learn what we are communicating. This information must be justified, proven and explained (in one or several ways) until its meaning becomes clear. There are various resources we can use to express ourselves; some of them include:
+
+- Explanations of the statement
+- Examples
+- Definitions
+- Comparisons
+- Connectors that demonstrate a relationship between two facts
+
+The content must not be disorganized. The paragraphs of this stage should be connected by signals that we will discuss in C.1.4.2 (Signaling). The text should give the impression that it is organized logically, accessible, and properly detailed; otherwise, the explanation will lack sense.
+
+##### C.1.4.1.3 Conclusion
+
+Finally, the closing of the text. The conclusion should answer, in a few words, the question posed at the beginning of the text. We can think of this part as a **synthesis**.
+
+A good article has its final words, which can be a sentence or a paragraph where the main idea is summarized to leave the reader thinking. This part may contain a question or a reflection on what has been discussed, encouraging the reader to reflect. Obviously, this part lacks extensive information detailing what has been announced. There will be no explanations or examples; it will simply convey the essence of the text.
+
+It is precisely useful for rereading and refreshing the content. Once we have learned the topic, we expect this part to help our memory, which is why the conclusion should contain all the information possible to make it easy for us to recall the theory we studied earlier.
+

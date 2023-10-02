@@ -1528,3 +1528,17 @@ An equation consists of two members, separated by an equal sign, which means tha
 
 Mathematical logic is a symbolic method with limited use. It can be used to test the truth of a statement. It demonstrates an equality, where the terms make up the parts of the second member, showing their composition. With them, we can build a function, determine the possible values of the variables or domain, and visualize them on a coordinate system as we saw in C.2.1.4 (Graphs).
 
+## C.3 Compendiums
+
+Compendiums are **organized collections of information** used to document knowledge. They serve as our libraries, where we store information of all kinds according to their classification. All the tasks we have undertaken to learn so far can be materialized in these systems for storage; we move from learning from resources to creating our own. These collections form physical structures, not abstract like the models in our minds.
+
+The content of their components varies, and all their parts consist of interactions with each other to make sense. The elements of compendiums form a kind of web of links that connect them. Each connection refers to a more comprehensive compound formed by parts at each end. We can say it is a wall of bricks where each one requires the one below and the cement that makes the union to be able to stand.
+
+A compendium is a complex taxonomy, implying difficult organizational work. These large collections are divided into various sub-collections. The deeper we go, the more divisions we find. Each element has certain properties, in relation to the content, that make it different, leaving us with a sea of information that needs to be grouped and organized for quick retrieval. We will see how to organize in C.4 (Organizing Information).
+
+Information is not valued by quantity but by quality. Clarity and consistency are required attributes to form a good compilation of information. When documenting the members of the compendium, we will have to use the previous mechanisms correctly; otherwise, we won't find meaning.
+
+Now we will see certain formats that will be useful to create our own compendium of information based on what we know. When two or more of these systems can document the information in such a way that it is the same, we choose the one that is more valuable and takes less time. Each element will have a purpose, making them more or less suitable for each occasion.
+
+
+

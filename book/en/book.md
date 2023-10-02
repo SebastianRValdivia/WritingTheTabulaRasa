@@ -1504,3 +1504,27 @@ Some general recommendations for creating a table are:
 
 - Be concise when writing in them.
 
+### C.2.4 Multimedia
+
+Audiovisual resources have come to stay. They have the ability to convey images, audio and text in parallel, significantly speeding up the explanatory process; which means learning more in less time.
+
+The only drawback of this learning medium is its development. Creating an educational video involves planning, recording and editing, which requires training. Even with some experience, it remains a time-consuming task. We need to assess whether producing a video is beneficial for the topic we want to address.
+
+It is possible, like with text, for an educational video to be overwhelming. Due to the high concentration of information, multimedia resources can become tiring and confusing. That's why we should isolate concepts separately and ensure they are not longer than 15 minutes, the shorter, the better.
+
+A video is composed of many parts, and in each one, we address a specific topic, but it is necessary to relate them to make sense. We use anchors to transition data from one scene to another. Each scene has a specific objective, and its transition demonstrates the relationship between it, the previous ones, and the next.
+
+One last point to consider is the use of effects. Videos use camera effects to maintain attention; these are animations displayed on the screen with colors or abrupt movements. Using too many of them is counterproductive.
+
+### C.2.5 Mathematical Logic
+
+Logic is the last method of visualizing information that we will see. We will use **variables** to symbolize an expression that refers to a theory. It is a less conventional method than an image but much quicker to write and has great flexibility.
+
+Let's say we want to demonstrate the importance of time in learning. In this example, we will call all learning activities like reading or practice *l* and processing them in the mind *p*, which leads us to say that `l + p = learning`. However, we still have to evaluate the time *t* for these activities, resulting in `(l + p) * t = learning`. This simple case helps us understand mathematics as a tool to express a statement, even if it is abstract.
+
+The most important tool is variables. Unlike constants, these can "vary," which means they can be assigned different values that are quantified (represent a number). In the previous example, we can assign any amount of time, such as ten minutes, one hour, or one day, depending on how much we assign will change the result. Variables are typically symbolized with a letter from the alphabet.
+
+An equation consists of two members, separated by an equal sign, which means that both members are equivalent. The terms contain mathematical operations that may not be the same in both members. These operations include variables, which we can treat as variables and assign them a value to test the truth of the equality.
+
+Mathematical logic is a symbolic method with limited use. It can be used to test the truth of a statement. It demonstrates an equality, where the terms make up the parts of the second member, showing their composition. With them, we can build a function, determine the possible values of the variables or domain, and visualize them on a coordinate system as we saw in C.2.1.4 (Graphs).
+

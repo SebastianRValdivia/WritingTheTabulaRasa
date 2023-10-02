@@ -1444,3 +1444,19 @@ Radar charts, or spider net charts, form a small spiderweb where each color repr
 
 The last ones we'll look at are bubble charts. They are suitable for indicating areas but in disconnected and scattered regions within the chart space. They demonstrate isolated values using the circle's size (or bubble).
 
+#### C.2.1.5 Processes
+
+Process diagrams depict the steps to follow, operations to perform and decisions to make. There is a wide variety of diagrams created for the purpose of representing processes, including the sequence diagram, Nassi-Shneiderman and flowchart, to name a few popular ones. These graphical representations adhere to a set of rules for their design. Here, we'll focus on one of the most popular ones: the flowchart. It's relatively simple, with a few rules, and easy to understand.
+
+A flowchart (similar to other diagram types) represents operations or steps for executing a process, workflow or algorithm one by one. When creating process diagrams, we keep the steps basic and concise. Complex tasks should not be grouped into a single stage; each step should be easily comprehensible.
+
+<div style="width: 700px; margin: 5px;">
+
+  ![](img/flowchart.png)
+
+  <figcaption style="font-size: 10px; text-align: center;">Flowchart</figcaption>
+
+</div>
+
+There are more types of blocks than those listed, each with its own functionality. The ones presented are the most fundamental. The key symbol we look for in this diagram is the flow symbol (the arrows), which illustrates the sequence of steps and their order. Flowcharts also depict loops, situations where a process repeats, often accompanied by decision points. The collection of symbols defines the type of operation and the sequence in which it occurs, making the diagram an excellent tool for illustrating processes.
+

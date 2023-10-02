@@ -1568,4 +1568,15 @@ Like any expository text, the **body** is where the main idea is developed. Duri
 
 The last part of an article is at the very bottom, in what we will call the **footer**. This area serves to organize the article, and we place general information and metadata, the utility of which we will see later.
 
+#### C.3.1.1 Wiki
+
+In the digital age, collaborative encyclopedias (written by multiple people) have given rise to the term wiki, which refers to rapid editing. These are web spaces where any registered contributor to the system can edit and add content.
+
+Wikis use a different organization than traditional encyclopedias that were in print and in alphabetical order. With the skills that digitalization brings, related pages can be linked together. Links allow for redirection to other articles to help readers expand their understanding of the content. This way, they create an interconnected network of encyclopedia articles.
+
+It's not mandatory to impose a hierarchical order; pages may not be connected to each other and maintain a flat and shallow organization. Nevertheless, it's common to create parent-child relationships where one article (parent) encompasses several topics, and each sub-topic is separated (child). With this architecture, information is encapsulated in chunks, and redundant information is separated.
+
+One advantage of wikis is version control. This is the ability to keep track of changes in articles. With the records, you can view and compare changes between old versions and the newest one, and if necessary, you can revert to and restore a previous version.
+
+Restructuring a wiki is inevitable. Due to its dynamic nature, it's necessary to move some pages, create new links, and categories. This task is performed periodically, especially when it's noticed that chaos is taking over the organization, and a better pattern is envisioned. The iteration of **maintaining and improving the wiki is constant**.
 

@@ -1314,3 +1314,27 @@ Each typeface corresponds to a type of information. When dealing with various to
 
 Colors, on the other hand, affect attention. It is advisable to use high-contrast colors to draw more attention and enhance visibility. The pattern of a white background with black text is an example of a combination to maintain eye focus on the text. Another suggestion is to maintain color consistency; if red is used for warnings and then reused to highlight a title, it may create confusion, leading readers to believe that the topic under that title is something to avoid.
 
+## C.2 Information Visualization
+
+Since our minds naturally think visually, it is more plausible to store data in images, objects or even locations imprinted in memory. Viewing information in this way helps to remember it for longer, especially if we transform it into something more engaging, aiding quicker memorization.
+
+Images first enter the working memory to be processed. As they enter through our retinas, eye neurons send what they obtain to the brain for understanding. We first analyze what we see and then start processing to recognize objects or patterns.
+
+The brain remembers images better than text, together they provide a simple and easy-to-memorize cognitive interpretation. The idea behind visualizing information is that using more than one medium allows for better understanding. Images and words work better together than separately. Of course, this depends on a good association between the media used.
+
+Another goal of visualizing information is to simplify its complexity. Explaining with words can be unclear, especially when expressing various relationships that can be indicated with arrows. In non-linear diagrams, we can show connections in an orderly manner, making them easier than several paragraphs of text.
+
+Regardless of the type of visualization, a general recommendation is to provide a clarification at the bottom. This clarification can be either a short phrase or a whole paragraph, depending on personal preference. Some authors use images in the form of a section with additional information explained in text below, while others incorporate it into the text or even assume that the reader interprets its meaning correctly.
+
+### C.2.1 Diagrams
+
+This type of visual tool transforms a **pile of data into a comprehensible picture** using standards or conventions that define the meaning of its parts.
+
+Their use has become so popular that many **standardized models** have been created. In these models, certain shapes such as circles, rectangles, or specific arrows have specific meanings. The disadvantage is that one needs to be familiar with these standards, but the good thing is that once you are, interpretation becomes much faster.
+
+Diagrams are a visual illustration and not text; therefore, they should avoid having too many words. However, the few words or phrases they do have are crucial, as they focus us on what is being explained or shown while coordinating their parts.
+
+Another important factor in any diagram is the placement of its elements. Depending on the type, they may use a column arrangement or simply coordinates on the plane to define their value or category. Position plays an essential role and can give meaning to an element depending on where it is placed.
+
+There is a wide variety of diagrams, and we can even create our diagrams from scratch or based on others. The main difference lies in the utility we give them. Some are better at explaining a concept, others at organizing data, and some at demonstrating hierarchy. Each type has its benefits, so let's explore some popular models.
+

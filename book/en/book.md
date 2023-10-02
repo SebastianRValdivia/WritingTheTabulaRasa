@@ -1666,3 +1666,105 @@ In the case of our article, it will enter as soon as its production stage is com
 
 The task can be performed by ourselves, third parties or even automatically by software. Along with the resource, a record is left of who placed it in that location to identify the responsible party for its placement.
 
+### C.4.1 Organizational Systems
+
+An organizational system is a deliberately ordered **group of resources** that serves a purpose.
+
+We consider a **resource** in an organized system to be anything valuable for user activities. Resources can be primary (the object itself) or descriptive, which describe the former; we'll explore these further in C.4.3 (Resource Description or Metadata). Once identified and distinguished from other resources, they are given an identifier, which is a way to reference them following established conventions. This allows assigning meaningful and unique aliases to differentiate the resource from any other.
+
+Interaction is the action that utilizes the resource within the system. This activity can be a query about the existence of a resource, its extraction, manipulation (editing, moving or permanent deletion of the resource). Each interaction is recorded, especially the last two, to manage changes and, if necessary, revert to a previous version.
+
+Systems have agents, those who autonomously and intentionally organize and interact with resources. They have authority to perform these activities, not just anyone (even other members within the system) can act on the material without authorization. Think of them like librarians; library members can view and access books, but only administrators can manipulate them.
+
+These systems follow certain principles for organization, such as alphabetical or chronological order. Besides categorization, all resources receive a general-level ordering, which applies equally to all. It could be based on when it was added to the system, the alphabetical order of title letters or the author, the identifier number, the primary key of the database and so on.
+
+Based on the properties of the resource, the grouping of resources can be done in various ways. The choice of which one to use is part of the system's architecture, based on these properties. The three most commonly used types of grouping are: placement, logical hierarchies and classification. The first is simple; there's no order, only that the resource is inside, somewhere. Hierarchies have a higher level that groups a category and then subdivides into others until there are no more ways to divide, like folders of photos on a computer where the first level is "vacations," the second is the "location," and the last is the date where the photos are located. Classifications are organized according to the properties we assign, performing searches based on the property that is desired.
+
+#### C.4.1.1 Activities of an Organizational System
+
+Every organizing system must be able to perform four activities to fulfill its purpose. The actions it takes are repetitive, meaning they are done cyclically like in a loop. The goal of this iteration is to optimize the system and make resource retrieval more effective.
+
+1. **Select**
+
+Every system has a scope. Certain resources don't fall within this limit and must be discarded. Selection serves to limit the resources so that the system only includes those within the covered scope. Each item is identified with its domain and characteristics to evaluate if it can or cannot be part of the collection.
+
+The rules that limit what can or cannot belong are called selection policies. These are guidelines like the area it belongs to or the type of file that makes up the system. To verify that a resource complies with the policies, a set of questions is asked, such as "What area does it belong to?" where the answer must be within the designed statutes.
+
+2. **Organize**
+
+Once the resource has passed selection, it becomes part of the collection.
+
+In this stage, an architecture is designed, creating an effective **classification** of information to facilitate navigation among the resources. When classifying, a **class** is created, which means we create and assign a type.
+
+3. **Design Interactions**
+
+In this stage, the actions to be taken with our system, which uses a resource, are projected. Access policies limit the interactions that users perform with the system. For example, certain interactions may require permission to access sensitive information; for this, the system checks the user's identity through a verification process like a password.
+
+4. **Maintenance**
+
+The final function is to adapt the system to new resources or interactions. During moments when a reorganization of the collection is done, obsolete information is separated, incomplete resources are identified and available user activities are updated. The movement of resources is also part of this stage and includes archiving (saving old information), creating backups and preparing for migration.
+
+Not all resources persist over time; the effectiveness of stored information can expire. If the information's useful life ends, it may be discontinued and replaced with newer information. This is also true for the course of the evolution of knowledge; new discoveries appear and replace previous theories. Information preservation involves safeguarding old information and, if it is outdated, updating it. Certain types of information, for example, language-related, may have a longer period of usefulness than others in fields like medicine, where innovation is frequent.
+
+#### C.4.1.2 Organization Models
+
+These systems provide a descriptive view to facilitate resource retrieval through access points. They offer a comprehensible preview that allows users to see all the resources that are part of the model.
+
+Each model is oriented towards a type of resource and an activity. When a user uses the organizational model, they expect it to assist them in their search.
+
+The models we'll explore for organizing our compendium are the record, catalogs, and index.
+
+##### C.4.1.1.1 Record Table
+
+The first model we'll look at is for displaying **records**. These are notes about the **outcome of an activity**. For example, the time spent studying each day, exam grades, when an essay was accessed, etc. They are designed for measuring progress and detecting changes.
+
+A resource management system must capture records and organize them to allow interested parties to analyze them. They are often created automatically, where an activity is recorded upon detection, including who performed it. The set of records is grouped and displayed in tables listing at least three main pieces of information: the name of the activity, who performed it and when.
+
+##### C.4.1.1.2 Catalogs
+
+These are direct access points to resources; they locate or reference where they are. Their primary use is for exploration, where users can navigate and discover content independently of the organization method.
+
+Each item is presented with a description that provides information about what it is about. They may also display the author, creation date, a cover, or other relevant data. The process of creating these terms involves analyzing the content and writing a summary of what it is about. It can focus on the text's subject matter or its structure, but consistency with other elements is important, no matter the approach.
+
+They are used to display a collection of resources in a category. They are typically divided alphabetically, but they can be rearranged in various ways, such as the resource's origin, the author, or the topic it covers.
+
+##### C.4.1.1.3 Indexes
+
+Indexes are a basic tool for listing resources by title. They are shown one after the other, usually numbered or using their identifier. The same list can be rearranged by other data or according to a category, just like a catalog, depending on the user's interest.
+
+Below the title is a reference to the location or direct access. In digital versions, there is often a link that is clickable to go directly to a URL.
+
+### C.4.2 Search Process
+
+This operation involves **using all possible tools and methodologies** to find a resource. During this process, we filter and discard all possible options that do not match our search criteria. At the end of the process, we should be able to extract the resource. From this process, we can say that finding relevant information consists of four steps:
+
+1. **Locate**
+
+Locating information is the initial stage, the first thing we do. Here, we search for all entities that meet the criteria, forming a new collection.
+
+For example, we go to a library in search of a book about birds. Libraries have search systems such as catalogs (digital or card catalogs) where we use data like the title or author to find all resources that meet the criteria.
+
+2. **Identify**
+
+As soon as we have the results from step number one, we must take and verify that they are of the same type we were looking for. With the obtained list, we go through all its elements until we identify the one we were looking for. A requirement to achieve this stage is to be able to differentiate the sought material from other similar ones.
+
+At this point, we know the location of the book. We know where it is. All that's left is to go and get it.
+
+3. **Obtain**
+
+Once we identify the resource, we retrieve it. In some cases, resources may be protected, and obtaining them may require fulfilling certain requirements, such as purchasing or obtaining permission.
+
+Depending on the library, access may be restricted; only registered members can access. When we meet all the requirements to obtain it, all that's left is to take it and complete the search.
+
+4. **Explore**
+
+An optional step is to explore more content. If we don't find the resource (or out of simple interest), we proceed to view other results suggested by the system based on the search criteria. Browsing through content helps find new or old information that may be useful.
+
+#### C.4.2.1 Search Engines
+
+Search engines are digital tools that use algorithms to locate the desired resource or similar ones. A **search term** is used because it contains one or more references to the material. Once the program completes its task, it returns one or more elements whose description matches the entered term.
+
+These engines consume metadata to group and reorder resources. First, they take the search term as a keyword; some engines also use synonyms to assist the user. Then, they analyze, within an organized network of resources, all those that match in metadata or have the term in their title or content. Finally, they deliver the results in order of highest to lowest accuracy, followed by sorting by popularity (calculated based on usage) in a list format with a reference on where to find them.
+
+They are a method that emerged thanks to the digitization of information. The advantage is that they find information quickly, accurately, and conveniently, using the processing power of computers. The disadvantage is that they require a computer agent to be used.
+

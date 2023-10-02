@@ -1580,3 +1580,21 @@ One advantage of wikis is version control. This is the ability to keep track of 
 
 Restructuring a wiki is inevitable. Due to its dynamic nature, it's necessary to move some pages, create new links, and categories. This task is performed periodically, especially when it's noticed that chaos is taking over the organization, and a better pattern is envisioned. The iteration of **maintaining and improving the wiki is constant**.
 
+### C.3.2 Reference Sheet
+
+A **reference** is a tiny **note about something**. They are small blocks with the minimum data to trigger a certain memory without requiring an explanation of their content. They contain only what we might need in a hurry, although prior knowledge of the topic is required. They are also called cheat sheets.
+
+<div style="width: 450px; margin: 5px; float: left;">
+
+  ![](img/cheatsheet.png)
+
+  <figcaption style="font-size: 10px; text-align: center;">Cheat Sheet</figcaption>
+
+</div>
+
+The cheat sheet contains a large group of the references mentioned earlier, grouped according to a category, typically within an area we'll call a **block**. Each reference is encapsulated within its block. This is the organization of the sheet, containing titles, blocks, and within each of these, the references.
+
+They are excellent in cases where the information is specific and needs to be remembered exactly as presented. We may understand a concept, but in some cases, we need to know a word or phrase exactly as it is presented, which can be difficult to memorize, especially in the long term. In these cases, referring to a reference sheet helps find that information without having to search through all the material again for a specific piece of data.
+
+Creating references requires practice. They consist of keywords or short phrases, such as a definition, and are extremely condensed. They should occupy as little space as possible, without explanations of their content.
+

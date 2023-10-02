@@ -1238,3 +1238,48 @@ A good article has its final words, which can be a sentence or a paragraph where
 
 It is precisely useful for rereading and refreshing the content. Once we have learned the topic, we expect this part to help our memory, which is why the conclusion should contain all the information possible to make it easy for us to recall the theory we studied earlier.
 
+#### C.1.4.2 Signaling
+
+The signals we leave behind act as a **guide** for the reader; they serve to emphasize and direct the concepts we address. Signaling in a text can be compared to signs with arrows or warnings; the goal is to mark the path and connect the concepts so that the text makes sense.
+
+We'll look at two types: phrases or words that set the course and typographic tools that highlight the text.
+
+##### C.1.4.2.1 Connectors
+
+When we write, we use phrases and keywords that help guide the reader and maintain the flow of the text. We refer to these orientation markers as **connectors**. If we come across the phrase "*from this point forward*, we will identify the unknown as *x*," we know that the change will begin from that point forward, and not before. It's like seeing a sign that says UNKNOWN = X.
+
+The purpose of connectors is to create transitions. These transitions serve to show the relationship between ideas and topics presented as the text progresses. Without these connectors (or their improper use), the reader will not find coherence. Another important utility is maintaining a narrative order where we lead from a premise to a conclusion.
+
+There are various types of connectors, and their utility is crucial for demonstrating a relationship between concepts. Therefore, we must know them well and understand which ones to use in each case. Some examples of connectors from the text can be categorized by the type of guidance they provide:
+
+- Connectors that show contrast: "however", "but", "on the other hand"
+
+- Connectors that show continuation or addition: "in addition", "furthermore"
+
+- Connectors that indicate conclusion: "as a result", "thus", "to conclude"
+
+- Connectors that emphasize importance: "it is important", "one must not forget"
+
+- Connectors that provide examples: "for example", "to illustrate"
+
+- Connectors that indicate time: "before", "in a moment"
+
+##### C.1.4.2.2 Intensity Markers
+
+Our second type of marker is intensity markers. These are **punctuation marks and tools for emphasis** that serve to highlight a specific word or phrase. By using them, we draw the reader's attention with the aim of making an impact and demonstrating importance.
+
+<div style="width: 400px; margin: 5px; float: right;">
+
+  ![](img/text-size.png)
+
+  <figcaption style="font-size: 10px; text-align: center;">Different font sizes affect attention</figcaption>
+
+</div>
+
+Since the birth of printing, certain text styles have been standardized to stand out from the rest of the text. These styles add or remove weight, making the letters different by either making them bolder or thinner. They are commonly known as **bold** (the boldest) and *italic* (thinner and slanted). Another method to attract attention is font size; our eyes are naturally drawn from larger to smaller text.
+
+Punctuation marks like exclamation points (¡!) or quotation marks ("") are also used for emphasis. These have been in use before bold or italic styles, but unlike the latter, they do not stand out as much to the human eye, making them subtler compared to text formatting.
+
+Finally, we have the simple mechanism of using capital letters. Although not as commonly used today, typing something in all capitals is also known to grab attention due to the increase in letter size. However, using all capital letters has a known effect of annoyance, as it is equivalent to shouting and can make reading uncomfortable for some people. This method is not the most popular and should be avoided whenever possible; however, its use is not necessarily incorrect.
+
+

@@ -1861,3 +1861,132 @@ bibliography:
     year: 2022
 
 ```
+
+#### C.4.3.2 Metadata Creation
+
+When creating metadata, we provide general information about the resource without focusing on its content. The goal is to describe the resource as an object. Metadata should not include subjective properties like a rating but rather describe the resource.
+
+Let's look at the steps for creating metadata (the order may vary):
+
+1. Identify the domain of the resource.
+2. Determine the purpose of the metadata.
+3. Identify the properties of the resource.
+4. Design the schema (the fields it will have).
+5. Create the metadata (either automatically or manually).
+6. Review and test to ensure it serves its purpose.
+
+A good description is designed for the convenience of the user. The purpose of metadata is to make the organizational system work effectively. The data in the schema should assist the system in meeting the user's demand and contain enough information to fulfill its purpose.
+
+Resources have the same properties and should be standardized. As new resources enter the system, the same schema is applied. If a new field is required, it should be applied uniformly to all resources in the system.
+
+#### C.4.3.3 Tags
+
+Tags, also called labels, are single-word or short phrase designations that provide a single description of the resource. It's like naming a property. Some examples of tags for the article about Trafalgar are: "1805," "Spain," "Napoleonic Wars," "Naval."
+
+It is advisable for tags to be clear and concise, not more than one or two words, so they can be understood without having to read the content. Additionally, they should use simple and commonly known words to avoid confusion.
+
+### C.4.4 Digital Organization
+
+In today's digital age, it's challenging to separate from the advantages of virtuality. Despite the differences, the way we organize information in the digital realm is similar to physical places like a library, with the addition of some taxonomies such as file extensions.
+
+Digital collections contain digitized resources, ready to be viewed or edited by computers. Their organization is carried out within the storage device, meaning the system depends on the availability of the computer(s).
+
+Digital organization often uses both human resources and algorithms to automate the process of organizing. It involves the same processes we've discussed, but instead of being done physically, it's done from a terminal with access to the collection. In cases where systems are too large for a single PC, multiple computers are used with the sole purpose of serving resources; these are called servers.
+
+### C.4.5 Style Guide
+
+Conventions are necessary to standardize organization and the format of resources. Users of the system are familiar with these conventions, which help establish a common model for understanding the structure of the text.
+
+Why is it part of an organizational system? We've already seen that the purpose of organizing is to retrieve specific information effectively. By maintaining a style guide, the recipient can use this model to speed up the process and understand the organization. By already knowing how the content is presented, the recipient will know how to navigate within the system, speeding up the reading of texts and metadata.
+
+Texts also use a set of writing, design and organization rules to establish regulatory parts, such as an abstract. When a reader accesses the resource in the system under this style guide, they will know that they will always have that summary at the beginning, which they can consult before continuing to read. Standardizing the components of a compendium serves to facilitate navigation within it.
+
+In many cases, choosing an existing system can simplify the decision. We can copy schemes from other systems, such as those of a library, taking the fields and adapting them to the schema format we use. In written texts, we can use standards such as APA, MLA or Chicago.
+
+### C.4.5 Relationship Between Resources
+
+By relating resources, we create paths or connections between them. The more paths there are, the better we can explore a large amount of information on a particular topic. By creating relationships, we ensure that we can connect all the information about a topic, leaving no important material out of the results when searching for it.
+
+The relationship between resources can be indicated from a semantic perspective, explaining how one resource is linked to another. This type of relationship is expressed with a predicate or verbal phrase that connects the resources.
+
+A network of relationships between resources forms an ontology. This is how we connect information in our minds, forming links between models. Returning to the analogy of a city, it's easier to navigate it with a map than to wander aimlessly until you reach the desired location.
+
+We will use connectors to list the types of relationships. Depending on how we connect the titles of resources, we determine the type of relationship we create.
+
+- **Inclusion**: One resource is contained within another, using predicates like "corresponds to," "is within," "is part of." Examples include cheese -> is a type of -> dairy product or natural numbers -> are part of -> rational numbers.
+
+- **Attribution**: It attributes a property to the resource, using phrases like "the author is," "is employed by." An example is Doyle -> is the author of -> Sherlock Holmes.
+
+- **Possession**: It indicates ownership of a resource, using "has" or "owns." For example, coffee -> has -> caffeine.
+
+- **Classification**: It is part of a class and is denoted by "is," "is a member of," "is part of." A pigeon -> is -> a bird.
+
+#### C.4.5.1 Categorization
+
+Categorization assigns a relationship to all elements within the same category. Categories are equivalent classes, things grouped as equals. Categorization allows us to relate to familiar concepts that facilitate understanding. This task involves creating relationships based on context using principles such as shared properties, families (like birds or vehicles), visual or conceptual similarities, common objectives, to name a few.
+
+Creating a category system with its principles is classification. After designing the scope and membership requirements, we systematically and consistently add resources belonging to the category. A category of elements is not a flexible grouping. Once the properties forming the principles of categorization are established, attempts should be made to avoid changes to accommodate more elements. It's even preferable to create new categories or subdivide existing ones.
+
+## C.5 Conclusion Part C
+
+In *Information Dumping*, we learned how to capture, group and manage what we've learned.
+
+We learned how to write appropriately to transcribe information effectively. Additionally, we explored using other tools besides writing, such as diagrams, images and even multimedia formats like videos.
+
+Once we had transcribed knowledge, we moved on to place it somewhere for future retrieval, in our own compendium. We grouped it with similar content or organized it within a system to help us search and maintain the resources we've created, using an architecture and defining metadata to ensure we can find it later.
+
+Thanks to all of this, we've learned how to transfer our knowledge from our minds to our own files.
+
+---
+
+# Bibliography
+
+- Matthew Allen (2004) Smart thinking: skills for critical understanding & writing. Oxford University Press.
+
+- Jeremy Wolfe (2004) Introduction to Psychology. MIT Open Courseware.
+
+- Rowena Murray, Sarah Moore (2006) The Handbook of Academic Writing A Fresh Approach. Open University Press.
+
+- James West, Margaret West (2008) Using Wikis for Online Collaboration. Jossey-Bass.
+
+- Don Shiach (2010) How To Write Essays: 2nd edition. How To Content.
+
+- Elvira Narvaja De Arnoux, Mariana Di Stefano, Cicilia Pereira (2010) La lectura y la escritura en la universidad. Editorial Universitaria de Buenos Aires.
+
+- Alan J. Porter (2010) Wiki: Grow Your Own for Fun and Profit. XML Press.
+
+- Mariam Adawiah Dzulkifli, Muhammad Faiz Mustafar (2012) The Influence of Colour on Memory Performance: A Review
+
+- Michael O'Brien Moran, L. Soiferman (2013) A Student's Guide to Academic Writing. Pearson Canada Inc.
+
+- Nelleke Bak (2013) Guide to Academic Writing.
+
+- Peter C. Brown, Henry L. Roediger III, Mark A. McDaniel (2014) make it stick The Science of Successful Learning. Harvard University Press.
+
+- Donald O. Case, Lisa M. Given (2016) Looking for Information: A Survey Of Research On Information Seeking, Needs and Behavior. Emerald Group.
+
+- Barbara Oakley, Terrence Sejnowski (2018) Learning How To Learn. Penguin Random House LLC.
+
+- Fiona McPherson (2018) Effective Note-taking 3rd edition. Wayz Press.
+
+- Tony Buzan (2018) Mind Map Mastery: The Complete Guide to Learning and Using the Most Powerful Thinking Tool in the Universe. Watkins.
+
+- Colin Ware (2019) Information Visualization: Perception for Design. Elsevier Science.
+
+- James Clear (2019) Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones. Penguin Random House LLC.
+
+- Maarten van Doorn (2019) The Complete Guide to Effective Reading. Medium.
+
+- Yana Weinstein, Megan Sumeracki (2019) Understanding How We Learn A Visual Guide. Routledge.
+
+- Creating a 'How to' Guide (2021). Reviewed august 2023 in: [https://www.bath.ac.uk/guides/creating-a-how-to-guide/](https://www.bath.ac.uk/guides/creating-a-how-to-guide/)
+
+- Peter Hollins (2021) How to Teach Anything: Break Down Complex Topics and Explain with Clarity, While Keeping Engagement and Motivation. PH Learning Co.
+
+- Flowcharts (2022). Reviewed august 2022 in: [https://es.wikipedia.org/wiki/Diagrama_de_flujo](https://es.wikipedia.org/wiki/Diagrama_de_flujo).
+
+- Sönke Ahrens (2022) How to Take Smart Notes.
+
+- Tiago Forte (2022) Building a Second Brain. Profile Books Ltd.
+
+

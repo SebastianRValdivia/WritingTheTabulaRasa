@@ -54,9 +54,9 @@ The origin of this term draws a compelling parallel to a tool of antiquity—the
 
 In essence, "tabula rasa" stands as a testament to the malleability of human consciousness, where the imprints of life's experiences continually shape and reshape the contours of our understanding, rendering each of us a unique work of intellectual artistry.
 
-<div style="width: 700px; margin: 5px;">
+<div style="text-align:center; margin: 5px;">
 
-  ![](img/wax-tablet.png)
+  <img src="img/wax-tablet.png"/>
 
   <figcaption style="font-size: 10px; text-align: center;">Roman wax tablet</figcaption>
 
@@ -114,9 +114,9 @@ These tiny individuals we are referring to are called **neurons**.
 
 Neurons are small cells that make up the human brain. They are also found in other parts of the body, forming the central nervous system. There are billions of them in each of us. Most of them have the job of interpreting our senses (sight, hearing, touch, taste, and smell), carrying information from the organs to the brain.
 
-<div style="width: 800px; margin: 5px;">
+<div style="text-align:center; margin: 5px;">
 
-  ![](img/neuron.png)
+  <img src="img/neuron.png" />
 
   <figcaption style="font-size:10px; text-align: center;">Neuron's parts</figcaption>
 
@@ -130,9 +130,9 @@ There are various types of these tiny cells, but the ones that matter most to us
 
 Synapses serve as the communication junctions between neurons. These minute gaps exist in close proximity to the next neuron, yet they never actually touch. Within these gaps, the axon buttons surround the dendrites.
 
-<div style="float: left; width: 350px; margin: 5px;">
+<div style="float: left; width: 550px; height: 350px; margin: 5px;">
 
-  ![](img/synapse.png)
+  <img src="img/synapse.png" width="550px" height="350px"/>
   
   <figcaption style="font-size: 10px; text-align: center">Synapse</figcaption>
 
@@ -176,9 +176,9 @@ Break this idea to decipher the trick and we'll see the pattern: it's recurrent,
 
 When we talk about memory in general, we refer to the mental process of encoding, retaining and retrieving information stored among our neurons. These tasks are performed by its parts. To understand these parts, we could compare memory to a backpack with 2 pockets.
 
-<div style="width: 800px; margin: 5px;">
+<div style="float: right; margin: 5px;">
 
-  ![](img/backpack.png)
+  <img src="img/backpack.png" width="550px" height="550px"/>
 
   <figcaption style="font-size: 10px; text-align: center;">Backpack with 2 pockets</figcaption>
 
@@ -404,7 +404,7 @@ Scheduling is our strategy for gaining discipline and organizing study. Programm
 
 <div style="float: right; width: 350px; margin: 5px;">
 
-  ![](img/calendar.png)
+  <img src="img/calendar.png" width="320px"/>
 
   <figcaption style="font-size: 10px; text-align: center;">Scheduling a calendar</figcaption>
 
@@ -436,7 +436,7 @@ What do we consider learning? Learning is the **process** through which we acqui
 
 <div style="float: left; width: 350px; margin: 5px;">
 
-  ![](img/evolution-of-concepts.png)
+  <img src="img/evolution-of-concepts.png" width="320px"/>
 
   <figcaption style="font-size: 10px; text-align: center;">Evolution of Concepts</figcaption>
 
@@ -454,15 +454,15 @@ These mental models we've discussed since A.1.1 (A Miniature City) are a represe
 
 Let's delve into the first stage: introducing new concepts.
 
-To understand what information is, we must first ask: How is information formed? The definition we will use for information is **a set of organized data that is useful**. *Data* is the smallest unit; it can be facts, objects, numbers and so on. On their own, data is meaningless; they must be grouped in a way that makes sense. This grouping, in turn, is not random; data has a connecting relationship. A memorable date is composed of the day and month's numbers, along with the reason for it to be remembered. In the image below, we can see data coming together to form a tiny piece of information, for example, the International Women's Day.
+<div style="width: 400px; margin: 5px; float: right;">
 
-<div style="width: 500px; margin: 5px;">
-
-  ![](img/data-to-information.png)
+  <img src="img/data-to-information.png" />
 
   <figcaption style="font-size: 10px; text-align: center;">Data forming International Women's Day</figcaption>
 
 </div>
+
+To understand what information is, we must first ask: How is information formed? The definition we will use for information is **a set of organized data that is useful**. *Data* is the smallest unit; it can be facts, objects, numbers and so on. On their own, data is meaningless; they must be grouped in a way that makes sense. This grouping, in turn, is not random; data has a connecting relationship. A memorable date is composed of the day and month's numbers, along with the reason for it to be remembered. In the image below, we can see data coming together to form a tiny piece of information, for example, the International Women's Day.
 
 Data can be connected to the knowledge we already possess. When learning something new, it's essential to make connections between what we're learning and what we already know. The things we already know act as **anchor points**, and the more of them we have, the easier it is to understand new information.
 
@@ -643,15 +643,15 @@ A heading **encapsulates the idea of what is being discussed** to guide the mind
 
 The activity of adding headings forces us to think and express in short words what the text is about, which is a cognitive task that helps memorize and understand the concepts discussed. For this reason, gradually detailing our own headings is also part of active reading.
 
-Once transcribed, headings can be used to create an outline of the text. Outlines are formed by leaving the headings in a linear order with their subtopics attached in a matrix-like form. Creating our own outline of the text makes it easier to find the information that is important to us and provides an overview.
+<div style="float: right; width: 350px; margin: 5px;">
 
-<div style="float: right; width: 500px; margin: 5px;">
-
-  ![](img/outline-vs-graphic.png)
+  <img src="img/outline-vs-graphic.png" />
 
   <figcaption style="font-size: 10px; text-align: center;">Outline vs. Graphic Organizer</figcaption>
 
 </div>
+
+Once transcribed, headings can be used to create an outline of the text. Outlines are formed by leaving the headings in a linear order with their subtopics attached in a matrix-like form. Creating our own outline of the text makes it easier to find the information that is important to us and provides an overview.
 
 In addition to outlines, we can discuss graphic organizers that are more similar to concept maps, which we will see in C.2.1.2 (Concept Maps). Unlike outlines, graphic organizers are not linear and do not depend on any grid. They are usually composed of keywords connected to each other while maintaining a spatial order (from top to bottom or from left to right).
 
@@ -747,9 +747,9 @@ Once we have all the disposable notes related to the study material interconnect
 
 Once the permanent notes are ready, we store them in the *box* and schedule their content in the index. If this note is directly related to another, it goes right behind it and not at the same level as the others. The box will have a hierarchical numbering system, just like the topics in this document, to align the notes. If necessary to place a note behind N° 23, add it as 23-1; this way, we can reach higher levels using more numbers: 23-3-1. This way, we can have a set of organized and accessible notes.
 
-<div style="float: right; width: 500px; margin: 5px;">
+<div style="float: right; width: 350px; margin: 5px;">
 
-  ![](img/note-tree.png)
+  <img src="img/note-tree.png" />
 
   <figcaption style="font-size: 10px; text-align: center;">Note tree</figcaption>
 
@@ -801,9 +801,9 @@ Another important point is that the more challenging and effort we put into it, 
 
 There are two types or approaches to studying: focusing on parts or the whole. Consider a text to study; depending on the source of the text, it might be easier to study the generalized or abstract idea of the text or each topic separately.
 
-<div style="width: 500px; margin: 5px;">
+<div style="margin: 5px; width: 550px; float: right;">
 
-  ![](img/study-types.png)
+  <img src="img/study-types.png" />
 
   <figcaption style="font-size: 10px; text-align: center;">Whole Study vs. Part Study</figcaption>
 
@@ -1000,9 +1000,9 @@ Being personally connected to a project's goals generates excitement, which fuel
 
 However, starting a project and completing it are two different things. There are two approaches (with variations derived from them) to working on a project: short and long intervals. Long intervals involve simply taking motivation, turning it into energy and focus, and using them to work; this allows us to progress quickly and efficiently. But what happens when motivation runs out? The further we progress, the more obstacles we encounter, increasing the difficulty and decreasing motivation, leaving only discipline and planning. In our action plan, we schedule short work intervals that don't require much energy, thus avoiding exhaustion, allowing us to continue working until we overcome the pit of despair.
 
-<div style="width: 600px; margin: 5px;">
+<div style="margin: 5px; text-align:center;">
 
-  ![](img/project-motivation.png)
+  <img src="img/project-motivation.png" />
 
   <figcaption style="font-size: 10px; text-align: center;">Motivation in a project</figcaption>
 
@@ -1070,9 +1070,9 @@ Planning involves defining the topic; we will **outline** how the three parts of
 
 We can use graphics to demonstrate the relationship between each part. The first thing to complete is the title, which sets the overall idea of the text, followed by subtitles that focus on dividing the text into sections. A summary of the content can also be added. In this task, we focus on outlining the order and presentation of the topics to be addressed. This can be done in a matrix or as a tree.
 
-<div style="width: 600px; margin: 5px;">
+<div style="text-align: center; margin: 5px;">
 
-  ![](img/matrix-vs-tree.png)
+  <img src="img/matrix-vs-tree.png" />
 
   <figcaption style="font-size: 10px; text-align: center;">Matrix vs Tree</figcaption>
 
@@ -1268,9 +1268,9 @@ There are various types of connectors, and their utility is crucial for demonstr
 
 Our second type of marker is intensity markers. These are **punctuation marks and tools for emphasis** that serve to highlight a specific word or phrase. By using them, we draw the reader's attention with the aim of making an impact and demonstrating importance.
 
-<div style="width: 400px; margin: 5px; float: right;">
+<div style="width: 450px; margin: 5px; float: right;">
 
-  ![](img/text-sizes.png)
+  <img src="img/text-sizes.png" />
 
   <figcaption style="font-size: 10px; text-align: center;">Different font sizes affect attention</figcaption>
 
@@ -1286,9 +1286,9 @@ Finally, we have the simple mechanism of using capital letters. Although not as 
 
 Headings are a type of header that helps the reader see the topics covered, their structure and the order in which they are presented. Like signaling, headings assist in informing the reader about the content and assigning a name to what they address. They should answer the question, "What is the text I'm about to read all about?"
 
-<div style="width: 400px; margin: 5px; float: right;">
+<div style="margin: 5px; text-align:center;">
 
-  ![](img/headings.png)
+  <img src="img/headings.png" />
 
   <figcaption style="font-size: 10px; text-align: center;">Headings and subheadings vs. no organization</figcaption>
 
@@ -1304,9 +1304,9 @@ The typeface (also known as font) is what defines the appearance of text. It aff
 
 Each typeface corresponds to a type of information. When dealing with various topics, available fonts can be used to differentiate between them. Typically, this is clarified in the style guide.
 
-<div style="width: 400px; margin: 5px;">
+<div style="float: left; width: 550px; margin: 5px;">
 
-  ![](img/colors.png)
+  <img src="img/colors.png" />
 
   <figcaption style="font-size: 10px; text-align: center;">Colors influence attention</figcaption>
 
@@ -1342,9 +1342,9 @@ There is a wide variety of diagrams, and we can even create our diagrams from sc
 
 A mind map is a diagram designed to illustrate the **relationship between different ideas**, much like the brain does. They are commonly used as memory aids. The overall goal is to condense large amounts of information into small, understandable pieces.
 
-<div style="width: 700px; margin: 5px;">
+<div style="text-align: center; margin: 5px;">
 
-  ![](img/mind-map.png)
+  <img src="img/mind-map.png" width="800px" height="500px"/>
 
   <figcaption style="font-size: 10px; text-align: center;">Mind Map of the Book</figcaption>
 
@@ -1372,9 +1372,9 @@ There are some simple rules, although they are not mandatory. Mind maps consist 
 
 These types of diagrams are very similar to mind maps in terms of purpose. They encapsulate relationships that, when combined, synthesize a concept.
 
-<div style="width: 700px; margin: 5px;">
+<div style="text-align: center; margin: 5px;">
 
-  ![](img/concept-map.png)
+  <img src="img/concept-map.png" />
 
   <figcaption style="font-size: 10px; text-align: center;">Concept Map</figcaption>
 
@@ -1386,9 +1386,9 @@ One drawback with these diagrams is their connections. It's easy to end up with 
 
 #### C.2.1.3 Pyramids
 
-<div style="float: right; width: 400px; margin: 5px;">
+<div style="float: right; text-align:center; margin: 5px;">
 
-  ![](img/knowledge-pyramid.png)
+  <img src="img/knowledge-pyramid.png" width="200px" height="200px"/>
 
   <figcaption style="font-size: 10px; text-align: center;">Knowledge Pyramid</figcaption>
 
@@ -1406,9 +1406,9 @@ Charts are diagrams used to visualize information. They use a mathematical expre
 
 These types of diagrams are prevalent in statistics and are used as visualization tools for data analysis. Their data comes from tables or matrices, which we will discuss in C.2.3 (Tables).
 
-<div style="width: 700px; margin: 5px;">
+<div style="text-align:center; margin: 5px;">
 
-  ![](img/charts.png)
+  <img src="img/charts.png" />
 
   <figcaption style="font-size: 10px; text-align: center;">Charts</figcaption>
 
@@ -1450,9 +1450,9 @@ Process diagrams depict the steps to follow, operations to perform and decisions
 
 A flowchart (similar to other diagram types) represents operations or steps for executing a process, workflow or algorithm one by one. When creating process diagrams, we keep the steps basic and concise. Complex tasks should not be grouped into a single stage; each step should be easily comprehensible.
 
-<div style="width: 700px; margin: 5px;">
+<div style="text-align: center; margin: 5px;">
 
-  ![](img/flowchart.png)
+  <img src="img/flowchart.png" />
 
   <figcaption style="font-size: 10px; text-align: center;">Flowchart</figcaption>
 
@@ -1464,9 +1464,9 @@ There are more types of blocks than those listed, each with its own functionalit
 
 An image can make an impact through sight more quickly than several descriptive paragraphs. Colors and shadows are naturally identified and processed by the mind, eliminating the cognitive effort of imagining what many words attempt to describe. Furthermore, seeing something allows the mind to process its appearance, which is more conducive to memorization.
 
-<div style="width: 350px; margin: 5px; float: left;">
+<div style="margin: 5px; float: left;">
 
-  ![](img/image-example.png)
+  <img src="img/image-example.png" width="350px"/>
 
   <figcaption style="font-size: 10px; text-align: center;">Image with description</figcaption>
 
@@ -1482,9 +1482,9 @@ One difficulty is obtaining images. On the Internet, we can access thousands of 
 
 We use tables to display data and values. They are organized in **rows** (horizontal) and **columns** (vertical) that are read from right to left. The data is placed between them in what we call **cells**, starting with the first of each orientation, which is used to label what the row or column refers to.
 
-<div style="width: 450px; margin: 5px; float: right;">
+<div style="margin: 5px; float: right;">
 
-  ![](img/tables.png)
+  <img src="img/tables.png" width="450px"/>
 
   <figcaption style="font-size: 10px; text-align: center;">Simple and Multidimensional Tables</figcaption>
 
@@ -1548,19 +1548,19 @@ The **articles** in an encyclopedia are texts that focus on a single topic. They
 
 The goal of encyclopedias is to inform, not to teach, so they lack subjectivity and a didactic sense. Instead, they are objective, get to the point and avoid presenting information unrelated to the topic. They use connections between their articles to help the reader gather all the information needed to understand the text without straying from the central theme.
 
+<div style="margin: 5px; float: right;">
+
+  <img src="img/article.png" width="450px"/>
+
+  <figcaption style="font-size: 10px; text-align: center;">Encyclopedia Article</figcaption>
+
+</div>
+
 Every article has three basic parts:
 
 - The introduction
 - The body
 - The footer
-
-<div style="width: 450px; margin: 5px; float: right;">
-
-  ![](img/article.png)
-
-  <figcaption style="font-size: 10px; text-align: center;">Encyclopedia Article</figcaption>
-
-</div>
 
 The **introduction** includes the title and a presentation. During this part, a heading is placed that summarizes and introduces the content that is about to be developed. It often contains important facts and images that illustrate what is being discussed to make an impact on the reader. It is not recommended to provide an overview of the article, personal notes or catchy phrases because the goal is to provide a definition, not to start a book. This is a critical area as it is the first thing we encounter, and if it is incomplete or incorrect, it can lead to confusion.
 
@@ -1584,9 +1584,9 @@ Restructuring a wiki is inevitable. Due to its dynamic nature, it's necessary to
 
 A **reference** is a tiny **note about something**. They are small blocks with the minimum data to trigger a certain memory without requiring an explanation of their content. They contain only what we might need in a hurry, although prior knowledge of the topic is required. They are also called cheat sheets.
 
-<div style="width: 450px; margin: 5px; float: left;">
+<div style="margin: 5px; float: left;">
 
-  ![](img/cheatsheet.png)
+  <img src="img/cheatsheet.png" width="300px" />
 
   <figcaption style="font-size: 10px; text-align: center;">Cheat Sheet</figcaption>
 

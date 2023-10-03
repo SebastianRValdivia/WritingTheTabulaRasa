@@ -14,7 +14,6 @@ nav:
   - Home: home/index.md
   - Book: 
     - English: book/english/index.md
-    - Español: book/español/index.md
   - Code Documentation: 
     - Index: software-documentation/index.md
     - Back End: software-documentation/backend/index.md

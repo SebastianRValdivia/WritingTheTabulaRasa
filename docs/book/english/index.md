@@ -54,9 +54,9 @@ The origin of this term draws a compelling parallel to a tool of antiquity—the
 
 In essence, "tabula rasa" stands as a testament to the malleability of human consciousness, where the imprints of life's experiences continually shape and reshape the contours of our understanding, rendering each of us a unique work of intellectual artistry.
 
-<div style="width: 700px; margin: 5px;">
+<div style="text-align:center; margin: 5px;">
 
-  <img src="img/wax-tablet.png" />
+  <img src="img/wax-tablet.png"/>
 
   <figcaption style="font-size: 10px; text-align: center;">Roman wax tablet</figcaption>
 
@@ -114,7 +114,7 @@ These tiny individuals we are referring to are called **neurons**.
 
 Neurons are small cells that make up the human brain. They are also found in other parts of the body, forming the central nervous system. There are billions of them in each of us. Most of them have the job of interpreting our senses (sight, hearing, touch, taste, and smell), carrying information from the organs to the brain.
 
-<div style="width: 800px; margin: 5px;">
+<div style="text-align:center; margin: 5px;">
 
   <img src="img/neuron.png" />
 

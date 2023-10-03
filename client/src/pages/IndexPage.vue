@@ -1,17 +1,28 @@
 <template>
-  <q-page class="flex flex-center">
-    <img
-      alt="Quasar logo"
-      src="~assets/quasar-logo-vertical.svg"
-      style="width: 200px; height: 200px"
-    >
+  <q-page padding>
   </q-page>
 </template>
 
 <script>
-import { defineComponent } from 'vue'
+import { useMeta } from "quasar"
+import { useI18n } from "vue-i18n"
+import { defineComponent, onMounted } from "vue"
+
+import api from "src/api"
+
 
 export default defineComponent({
-  name: 'IndexPage'
+  name: "IndexPage",
+  setup() {
+    const { t } = useI18n()
+
+
+    useMeta({
+      title: t("indexPage.pageTitle")
+    })
+
+    return {
+    }
+  }
 })
 </script>

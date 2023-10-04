@@ -2,7 +2,7 @@
   <q-card
     :class="cheatsheetHasSize(cheatData.size)"
   >
-    <div 
+    <div
       :style="{ 'background-color': computedCardColor}"
     >
       <q-card-section class="text-h5 text-weight-bolder">
@@ -21,7 +21,7 @@
 import { computed } from "vue"
 
 import { cheatsheetHasSize } from "src/utils/cheatsheets"
-import MarkdownPreview from "src/components/for-viewing/MarkdownPreview"
+import MarkdownPreview from "src/components/for-viewing/MarkdownPreview.vue"
 
 export default {
   name: "CheatCard",

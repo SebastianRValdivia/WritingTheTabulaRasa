@@ -1,6 +1,6 @@
 <template>
-  <q-card 
-    class="column fleeting-note-card full-height" 
+  <q-card
+    class="column fleeting-note-card full-height"
     :class="isEditing ? 'shadow-24' : 'shadow-4'"
   >
     <q-card-section v-if="isEditing">
@@ -14,8 +14,8 @@
       />
     </q-card-section>
 
-    <q-card-section 
-      v-else 
+    <q-card-section
+      v-else
       class="q-pt-xs"
       @click="editNote"
     >
@@ -24,18 +24,18 @@
       />
     </q-card-section>
     <q-card-actions align="right" class="absolute-bottom">
-      <q-btn 
+      <q-btn
         v-if="isEditing"
-        icon="done" 
-        round 
-        flat 
+        icon="done"
+        round
+        flat
         @click="removeNote"
       />
-      <q-btn 
+      <q-btn
         v-else
-        icon="delete" 
-        round 
-        flat 
+        icon="delete"
+        round
+        flat
         color="negative"
         @click="removeNote"
       />
@@ -47,7 +47,7 @@
 import { ref, onBeforeMount } from "vue"
 
 import { useNoteStore } from "src/stores/note-store"
-import MarkdownPreview from "src/components/for-viewing/MarkdownPreview"
+import MarkdownPreview from "src/components/for-viewing/MarkdownPreview.vue"
 
 export default {
   name: "FleetingNoteCard",

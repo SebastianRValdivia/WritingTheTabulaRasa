@@ -3,14 +3,14 @@
   <q-card v-if="!isEditing" class="q-pa-sm note-card-desktop" >
     <div class="column items-end">
       <span class="col row">
-        <q-btn 
+        <q-btn
           class="col"
           flat
           icon="more_horiz"
           size="sm"
         >
           <q-menu anchor="bottom left" self="top left">
-            <q-item 
+            <q-item
               clickable
               @click="toggleEditor"
             >
@@ -18,7 +18,7 @@
                 {{ $t("general.edit") }}
               </q-item-section>
             </q-item>
-            <q-item 
+            <q-item
               clickable
               @click="deleteNote"
             >
@@ -35,7 +35,7 @@
       </span>
     </div>
     <q-card-section class="text-h6 row">
-      <span class="text-bold">{{ props.identifier }}:</span> 
+      <span class="text-bold">{{ props.identifier }}:</span>
       <span>{{props.noteData.title}}</span>
     </q-card-section>
     <q-separator />
@@ -43,10 +43,10 @@
       <MarkdownPreview :md="props.noteData.content"/>
     </q-card-section>
     <q-card-actions class="absolute-bottom q-pa-md" align="right">
-      <q-btn 
-      v-if="props.noteData.audio !== null" 
-        round 
-        color="primary" 
+      <q-btn
+      v-if="props.noteData.audio !== null"
+        round
+        color="primary"
         :icon="isAudioPlaying ? 'pause' : 'play_arrow'"
         @click="toggleAudio"
         class="q-ma-sm"
@@ -57,10 +57,10 @@
   <!-- Editor mode -->
   <q-card v-else class="q-pa-sm note-card-desktop">
     <div class="column items-end">
-      <q-btn 
-        round 
+      <q-btn
+        round
         flat
-        icon="close" 
+        icon="close"
         @click="cancelEdit"
         size="sm"
       />
@@ -73,14 +73,14 @@
       <q-input
         type="textarea"
         v-model="newNoteContent"
-        autogrow 
+        autogrow
         borderless
       />
     </q-card-section>
     <q-card-actions
       class="q-mt-md absolute-bottom"
       align="right"
-      v-if="userStore.isLogged" 
+      v-if="userStore.isLogged"
     >
       <span>
         <q-btn round color="primary" icon="done" @click="saveEdit"/>
@@ -96,7 +96,7 @@ import { useI18n } from "vue-i18n"
 
 import { useUserStore } from "src/stores/user-store"
 import { useNoteStore } from "src/stores/note-store"
-import MarkdownPreview from "src/components/for-viewing/MarkdownPreview"
+import MarkdownPreview from "src/components/for-viewing/MarkdownPreview.vue"
 import { errorNotification } from "src/utils/notifications/"
 
 export default {
@@ -120,7 +120,7 @@ export default {
     const isEditing = ref(false)
     const newNoteContent = ref("")
     const noteAudio = ref(null)
-    
+
     const isAudioPlaying = computed(() => {
       if (noteAudio.value === null) {
         return false

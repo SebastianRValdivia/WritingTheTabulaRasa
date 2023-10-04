@@ -68,8 +68,8 @@ import { useI18n } from "vue-i18n"
 import { useRouter } from "vue-router"
 
 import { usePracticeStore } from "src/stores/practice-store"
-import SubmitBtn from "src/components/for-input/SubmitBtn"
-import ExercisePreview from "src/components/for-viewing/ExercisePreview"
+import SubmitBtn from "src/components/for-input/SubmitBtn.vue"
+import ExercisePreview from "src/components/for-viewing/ExercisePreview.vue"
 
 
 export default {

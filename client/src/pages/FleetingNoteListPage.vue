@@ -8,19 +8,19 @@
       position="top-right"
       :offset="[20, 20]"
     >
-      <q-btn 
-        icon="add" 
-        round 
+      <q-btn
+        icon="add"
+        round
         color="primary"
         @click="toggleNewFleetingNote"
       />
     </q-page-sticky>
-    <div 
+    <div
       class="row justify-center q-pa-md"
       v-else
     >
-      <q-card 
-        class="column fleeting-note-card animated fadeInDown" 
+      <q-card
+        class="column fleeting-note-card animated fadeInDown"
       >
         <q-card-section>
           <q-input
@@ -43,8 +43,8 @@
       v-if="displayedNotes.length > 0"
       :class="{'fadeInDown': isAddingFleetingNote}"
     >
-      <FleetingNoteCard 
-        v-for="fleetingNoteData in displayedNotes" 
+      <FleetingNoteCard
+        v-for="fleetingNoteData in displayedNotes"
         :key="fleetingNoteData.id"
         :fleetingNoteData="fleetingNoteData"
       />
@@ -62,9 +62,9 @@ import Fuse from "fuse.js"
 import { useNoteStore } from "src/stores/note-store"
 import { useUserStore } from "src/stores/user-store"
 import { fuzzySearchByObjectByKeys } from "src/utils/search"
-import FleetingNoteCard from "src/components/for-input/FleetingNoteCard"
-import SearchInput from "src/components/for-input/SearchInput"
-import EmptyAlert from "src/components/for-viewing/EmptyAlert"
+import FleetingNoteCard from "src/components/for-input/FleetingNoteCard.vue"
+import SearchInput from "src/components/for-input/SearchInput.vue"
+import EmptyAlert from "src/components/for-viewing/EmptyAlert.vue"
 
 export default {
   name: 'FleetingNotePage',
@@ -115,7 +115,7 @@ export default {
     useMeta({
       title: t("fleetingNoteListPage.pageTitle")
     })
-    
+
     return {
       contentInput,
       isAddingFleetingNote,

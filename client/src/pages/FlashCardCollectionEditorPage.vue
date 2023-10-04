@@ -1,11 +1,11 @@
 <template>
   <q-page padding class="row">
-    <q-input 
+    <q-input
       :label="$t('flashCardCollectionEditorPage.collectionTitle')"
       class="col col-10"
       v-model="titleInput"
     />
-    <SubmitBtn 
+    <SubmitBtn
       :status="titleInput.length > 0"
       @click="submit"
     />
@@ -34,10 +34,10 @@ import { useRouter } from "vue-router"
 
 import { useQuizzStore } from "src/stores/quizz-store"
 import { errorNotification } from "src/utils/notifications"
-import SubmitBtn from "src/components/for-input/SubmitBtn"
-import FlashCard from "src/components/for-viewing/FlashCard"
-import FlashCardInput from 
-  "src/components/for-pages/FlashCardCollectionEditorPage/FlashCardInput"
+import SubmitBtn from "src/components/for-input/SubmitBtn.vue"
+import FlashCard from "src/components/for-viewing/FlashCard.vue"
+import FlashCardInput from
+  "src/components/for-pages/FlashCardCollectionEditorPage/FlashCardInput.vue"
 
 export default {
   name: "flashCardCollectionEditorPage",
@@ -60,7 +60,7 @@ export default {
     const titleInput = ref("")
     const flashCardsList = ref([])
     // Change when something has been modified
-    const noModifications = ref(true) 
+    const noModifications = ref(true)
 
     function saveFlashCard(cardData) {
       flashCardsList.value.push(cardData)

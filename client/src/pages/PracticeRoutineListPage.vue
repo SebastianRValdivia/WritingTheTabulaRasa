@@ -12,10 +12,10 @@
           v-if="userStore.isUserLogged"
           align="right"
         >
-          <p 
+          <p
             v-if="isUserAssignedToRoutine(practiceRoutine.id)"
           > {{ $t("practiceRoutineListPage.enlisted") }}</p>
-          <q-btn 
+          <q-btn
             v-else
             icon="add_box"
             @click="enlist(practiceRoutine.id)"
@@ -29,7 +29,7 @@
           class="absolute-bottom"
           align="center"
         >
-          <q-btn 
+          <q-btn
             icon="visibility"
             flat
             :to="{
@@ -54,9 +54,9 @@ import { useQuasar, useMeta } from "quasar"
 import { usePracticeStore } from "src/stores/practice-store"
 import { useUserStore } from "src/stores/user-store"
 import { fuzzySearchByObjectByKeys } from "src/utils/search"
-import SearchInput from "src/components/for-input/SearchInput"
-import MarkdownPreview from "src/components/for-viewing/MarkdownPreview"
-import AddNewBtn from "src/components/for-input/AddNewBtn"
+import SearchInput from "src/components/for-input/SearchInput.vue"
+import MarkdownPreview from "src/components/for-viewing/MarkdownPreview.vue"
+import AddNewBtn from "src/components/for-input/AddNewBtn.vue"
 
 export default {
   name: "PracticeRoutineListPage",
@@ -83,7 +83,7 @@ export default {
       } else {
         return practiceStore.getPracticeRoutines
       }
-      
+
     })
 
     function searchPracticeRoutines(pattern) {
@@ -98,18 +98,18 @@ export default {
       return index !== -1
     }
     async function enlist(routineId) {
-      let result = 
+      let result =
         await practiceStore.createAssignedPracticeRoutineToUser(routineId)
-      userPracticeRoutines.value = 
+      userPracticeRoutines.value =
         practiceStore.getAssignedPracticeRoutinesByUser(userStore.getUserId)
     }
 
     onBeforeMount(async () => {
       quasar.loading.show()
       let result = await practiceStore.retrievePracticeRoutines()
-      let resultUserPracticeRoutines = 
+      let resultUserPracticeRoutines =
         await practiceStore.retrieveAssignedPracticeRoutines()
-      userPracticeRoutines.value = 
+      userPracticeRoutines.value =
         practiceStore.getAssignedPracticeRoutinesByUser(userStore.getUserId)
       if (result) {
         quasar.loading.hide()
@@ -126,7 +126,7 @@ export default {
       isUserAssignedToRoutine,
       enlist,
     }
-    
+
   }
 }
 </script>

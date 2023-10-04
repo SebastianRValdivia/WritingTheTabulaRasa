@@ -2,9 +2,9 @@
   <q-page padding>
     <SearchInput @search="searchEssays"/>
     <q-list>
-      <q-item 
+      <q-item
         v-for="essayData in displayedEssays"
-        :key="essayData.id" 
+        :key="essayData.id"
         v-ripple
         clickable
         :to="{name: 'essayPage', params: {url: essayData.url}}"
@@ -18,16 +18,16 @@
         </q-item-section>
       </q-item>
     </q-list>
-    <q-page-sticky 
+    <q-page-sticky
       v-if="userStore.isUserLogged"
-      position="top-right" 
+      position="top-right"
       :offset="[20, 20]"
     >
-      <q-btn 
-        round 
-        color="primary" 
-        icon="add" 
-        size="md" 
+      <q-btn
+        round
+        color="primary"
+        icon="add"
+        size="md"
         :to="{name: 'essayEditorPage' }"
       />
     </q-page-sticky>
@@ -41,7 +41,7 @@ import { useI18n } from "vue-i18n"
 
 import { useEssayStore } from "src/stores/essay-store"
 import { useUserStore } from "src/stores/user-store"
-import SearchInput from "src/components/for-input/SearchInput"
+import SearchInput from "src/components/for-input/SearchInput.vue"
 import { fuzzySearchByObjectByKeys } from "src/utils/search"
 
 
@@ -53,7 +53,7 @@ export default {
   setup() {
     const quasar = useQuasar()
     const { t } = useI18n()
-    const essayStore = useEssayStore() 
+    const essayStore = useEssayStore()
     const userStore = useUserStore()
 
     const searchInput = ref("")
@@ -77,7 +77,7 @@ export default {
     onBeforeMount(async () => {
       quasar.loading.show()
       let result = await essayStore.retrieveEssays()
-      
+
       if (result) {
         quasar.loading.hide()
       }

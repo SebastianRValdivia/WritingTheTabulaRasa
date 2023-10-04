@@ -21,12 +21,12 @@
         :title="question.question"
         :done="quizzQuestionsResultsList[index] === true"
       >
-        <QuizzPageFormulationQuestion 
+        <QuizzPageFormulationQuestion
           v-if="question.type === 0"
           :questionId="question.id"
           @ready="saveResult"
         />
-        <QuizzPageChoiceQuestion 
+        <QuizzPageChoiceQuestion
           v-if="question.type === 1"
           :questionId="question.id"
           @ready="saveResult"
@@ -36,13 +36,13 @@
         <q-stepper-navigation align="center">
           <q-btn-group flat>
             <q-btn
-              @click="nextStep()" 
+              @click="nextStep()"
               icon="arrow_downward"
             />
-            <q-btn 
-              @click="previousStep()" 
+            <q-btn
+              @click="previousStep()"
               icon="arrow_upward"
-              class="q-ml-sm" 
+              class="q-ml-sm"
             />
           </q-btn-group>
         </q-stepper-navigation>
@@ -56,10 +56,10 @@
 import { ref, computed, onBeforeMount } from "vue"
 
 import { useQuizzStore } from "src/stores/quizz-store"
-import QuizzPageFormulationQuestion from 
-  "src/components/for-pages/QuizzPageFormulationQuestion"
-import QuizzPageChoiceQuestion from 
-  "src/components/for-pages/QuizzPageChoiceQuestion"
+import QuizzPageFormulationQuestion from
+  "src/components/for-pages/QuizzPageFormulationQuestion.vue"
+import QuizzPageChoiceQuestion from
+  "src/components/for-pages/QuizzPageChoiceQuestion.vue"
 
 export default {
   name: "QuizzPage",

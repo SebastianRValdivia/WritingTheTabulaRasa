@@ -2,12 +2,12 @@
   <q-page padding class="column items-center">
     <q-card class="literary-note-card">
       <q-card-section>
-        <q-input 
+        <q-input
           v-model.number="positionInput"
           type="number"
           :label="$t('literaryNoteEditorPage.location')"
         />
-        <q-input 
+        <q-input
           v-model="contentInput"
           class="content-input"
           autogrow
@@ -16,13 +16,13 @@
         />
       </q-card-section>
       <q-card-actions align="center" class="absolute-bottom">
-        <LearningResourceChooser 
+        <LearningResourceChooser
           v-model="resourceInput"
         />
       </q-card-actions>
     </q-card>
     <q-page-sticky position="top-right" :offset="[20, 20]">
-      <q-btn 
+      <q-btn
         v-if="inputComplete"
         icon="done"
         round
@@ -39,10 +39,10 @@ import { useRouter } from "vue-router"
 import { useQuasar } from "quasar"
 import { useI18n } from "vue-i18n"
 
-import { useUserStore } from "src/stores/user-store" 
+import { useUserStore } from "src/stores/user-store"
 import { useNoteStore } from "src/stores/note-store"
-import LearningResourceChooser from 
-  "src/components/for-input/LearningResourceChooser"
+import LearningResourceChooser from
+  "src/components/for-input/LearningResourceChooser.vue"
 
 
 export default {

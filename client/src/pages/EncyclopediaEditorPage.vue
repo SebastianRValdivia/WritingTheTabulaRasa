@@ -124,8 +124,8 @@ import { useMetadataStore } from "src/stores/metadata-store"
 import { useResourceStore } from "src/stores/resource-store"
 import { countWords, countCharacters } from "src/utils/text"
 import { errorNotification } from "src/utils/notifications"
-import MarkdownPreview from "src/components/for-viewing/MarkdownPreview"
-import MetadataEditorDialog from "src/components/for-input/MetadataEditorDialog"
+import MarkdownPreview from "src/components/for-viewing/MarkdownPreview.vue"
+import MetadataEditorDialog from "src/components/for-input/MetadataEditorDialog.vue"
 
 export default {
   name: "EncyclopediaEditorPage",

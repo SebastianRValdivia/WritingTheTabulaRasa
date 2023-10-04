@@ -1,6 +1,6 @@
 <template>
-  <q-dialog 
-    v-model="isOpen" 
+  <q-dialog
+    v-model="isOpen"
     @keyup.enter="submit"
   >
     <q-card>
@@ -37,12 +37,12 @@
 </template>
 
 <script>
-import { ref } from "vue"
+import { defineComponent, ref } from "vue"
 
 import { useResourceStore } from "src/stores/resource-store"
 import { copyToClipboard } from "src/utils/clipboard"
 
-export default {
+export default defineComponent({
   setup() {
     const resourceStore = useResourceStore()
 
@@ -71,7 +71,7 @@ export default {
       submit,
     }
   }
-}
+})
 </script>
 
 <style>

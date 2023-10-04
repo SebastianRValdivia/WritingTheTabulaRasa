@@ -31,8 +31,8 @@ import { useQuasar } from "quasar"
 import { useUserStore } from "src/stores/user-store"
 import { useResourceStore } from "src/stores/resource-store"
 import { useMetadataStore } from "src/stores/metadata-store"
-import OpenMetadataEditorBtn from "src/components/for-input/OpenMetadataEditorBtn"
-import SubmitBtn from "src/components/for-input/SubmitBtn"
+import OpenMetadataEditorBtn from "src/components/for-input/OpenMetadataEditorBtn.vue"
+import SubmitBtn from "src/components/for-input/SubmitBtn.vue"
 
 export default {
   name: "LearningResourceEditorPage",

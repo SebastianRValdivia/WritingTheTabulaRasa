@@ -2,43 +2,43 @@
   <q-page padding>
     <div class="col-12 row justify-center q-mb-md">
       <q-page-sticky position="top-right" :offset="[20, 20]">
-        <q-btn 
-          round 
-          color="primary" 
-          icon="add" 
-          size="md" 
+        <q-btn
+          round
+          color="primary"
+          icon="add"
+          size="md"
           :to="{name: 'literaryNoteEditorPage'}"
         />
       </q-page-sticky>
-      <SearchInput 
+      <SearchInput
         @search="searchLiteraryNotes"
         learningResourceChooser
         @learningResource="filterLearningResource"
       />
     </div>
-    <div 
+    <div
       class="row justify-center q-gutter-md"
       v-if="displayedNotes.length > 0"
-    > 
-      
+    >
+
       <q-card
         v-for="note in displayedNotes"
         :key="note.id"
         class="col-5 literary-note-card"
       >
         <q-card-actions align="right" class="q-pa-none">
-          <q-btn 
+          <q-btn
             icon="more_horiz"
             flat
           >
             <q-menu>
-              <q-item 
+              <q-item
                 clickable
                 :to="{name: 'literaryNoteEditorPage', params: {id: note.id}}"
               >
                 {{ $t("general.edit") }}
               </q-item>
-              <q-item 
+              <q-item
                 clickable
                 @click="deleteNote(note.id)"
               >
@@ -79,8 +79,8 @@ import { useUserStore } from "src/stores/user-store"
 import { useResourceStore } from "src/stores/resource-store"
 import { fuzzySearchByObjectByKeys } from "src/utils/search"
 import { dangerConfirmNotification } from "src/utils/notifications"
-import SearchInput from "src/components/for-input/SearchInput"
-import MarkdownPreview from "src/components/for-viewing/MarkdownPreview"
+import SearchInput from "src/components/for-input/SearchInput.vue"
+import MarkdownPreview from "src/components/for-viewing/MarkdownPreview.vue"
 
 export default {
   name: "LiteraryNoteListPage",

@@ -2,14 +2,14 @@
   <q-page padding class="row">
     <SubmitBtn @click="submit" />
     <div class="col col-10">
-        <q-input 
+        <q-input
           input-class="text-h4"
           v-model="titleInput"
           :label="$t('quizzEditorPage.quizzTitle')"
           :rules="[val => !!val || $t('general.required')]"
         />
       <div class="col col-10 row scoped-question-input">
-        <q-input 
+        <q-input
           class="col col-5"
           :label="$t('quizzEditorPage.question')"
           v-model="questionInput"
@@ -20,7 +20,7 @@
           </template>
         </q-input>
         <q-space />
-        <q-select 
+        <q-select
           class="col col-3"
           :label="$t('quizzEditorPage.type')"
           v-model="typeSelection"
@@ -29,7 +29,7 @@
           map-options
         />
         <q-space />
-        <q-btn 
+        <q-btn
           class="col col-1"
           icon="add"
           flat
@@ -37,7 +37,7 @@
         />
       </div>
     </div>
-    <q-stepper 
+    <q-stepper
       class="col col-12"
       v-model="questionStep"
       color="primary"
@@ -45,13 +45,13 @@
       vertical
       header-nav
     >
-      <q-step 
+      <q-step
         v-for="(questionData, index) of questionList"
         :key="index"
         :name="index"
         :title="questionData.question"
       >
-        <InputFormulationQuestion 
+        <InputFormulationQuestion
           v-if="questionData.type == 1"
           :index="index"
           @ready="saveQuestionResponseInput"
@@ -67,9 +67,9 @@ import { ref } from "vue"
 import { useI18n } from "vue-i18n"
 
 import { useQuizzStore } from "src/stores/quizz-store"
-import SubmitBtn from "src/components/for-input/SubmitBtn"
-import InputFormulationQuestion from 
-  "src/components/for-pages/QuizzEditorPage/InputFormulationQuestion"
+import SubmitBtn from "src/components/for-input/SubmitBtn.vue"
+import InputFormulationQuestion from
+  "src/components/for-pages/QuizzEditorPage/InputFormulationQuestion.vue"
 
 export default {
   name: "QuizzEditorPage",
@@ -139,7 +139,7 @@ export default {
           switch (questionData.type) {
             case 1:
               await quizzStore.createFormulationQuestion(
-                { 
+                {
                   ...questionResponseDataList.value[index],
                   question: resultQuestionCreation.id,
                 }
@@ -153,7 +153,7 @@ export default {
       }
     }
 
-    return { 
+    return {
       titleInput,
       questionList,
       questionInput,

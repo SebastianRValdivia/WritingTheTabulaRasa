@@ -21,8 +21,8 @@ import { useQuasar } from "quasar"
 
 import { useResourceStore } from "src/stores/resource-store"
 import LearningResourceCard from
-  "src/components/for-viewing/LearningResourceCard"
-import AddNewBtn from "src/components/for-input/AddNewBtn"
+  "src/components/for-viewing/LearningResourceCard.vue"
+import AddNewBtn from "src/components/for-input/AddNewBtn.vue"
 
 export default {
   name: "LearningResourceListPage",

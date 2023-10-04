@@ -286,20 +286,20 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { defineComponent, ref } from 'vue'
 import { useUserStore } from "src/stores/user-store"
 import { useAppStore } from "src/stores/app-store"
 import { useRouter } from "vue-router"
 import { useQuasar } from "quasar"
 
-import LoginDialog from "src/components/for-control/LoginDialog"
-import FleetingNoteDialog from "src/components/for-control/FleetingNoteDialog"
-import PomodoroTimer from 'src/components/for-control/PomodoroTimer'
-import QuoteBtn from "src/components/for-input/QuoteBtn"
-import UploadImageBtn from "src/components/for-input/UploadImageBtn"
-import UserBadge from "src/components/for-viewing/UserBadge"
+import LoginDialog from "src/components/for-control/LoginDialog.vue"
+import FleetingNoteDialog from "src/components/for-control/FleetingNoteDialog.vue"
+import PomodoroTimer from 'src/components/for-control/PomodoroTimer.vue'
+import QuoteBtn from "src/components/for-input/QuoteBtn.vue"
+import UploadImageBtn from "src/components/for-input/UploadImageBtn.vue"
+import UserBadge from "src/components/for-viewing/UserBadge.vue"
 
-export default {
+export default defineComponent({
   components: {
     LoginDialog,
     PomodoroTimer,
@@ -345,7 +345,7 @@ export default {
 
     }
   }
-}
+})
 </script>
 
 <style>

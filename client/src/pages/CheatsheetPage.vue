@@ -6,7 +6,7 @@
     </div>
 
     <div class="row justify-center q-gutter-md">
-      <CheatCard 
+      <CheatCard
         v-for="cheat in cheats"
         :key="cheat.id"
         :cheatData="cheat"
@@ -23,7 +23,7 @@ import { useI18n } from "vue-i18n"
 import { onBeforeRouteUpdate } from 'vue-router'
 
 import { useCheatsheetStore } from "src/stores/cheatsheet-store"
-import CheatCard from "src/components/for-viewing/CheatCard"
+import CheatCard from "src/components/for-viewing/CheatCard.vue"
 
 export default {
   name: "CheatsheetPage",

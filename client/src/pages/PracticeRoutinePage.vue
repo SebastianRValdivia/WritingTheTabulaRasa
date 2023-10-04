@@ -1,8 +1,8 @@
 <template>
-  <q-page 
+  <q-page
     padding
   >
-    <div 
+    <div
       class="row"
       v-if="!isRoutineFinished && practiceExercisesList.length > 0"
     >
@@ -33,18 +33,18 @@
         class="col-10 column items-center"
       >
         <h4>
-          {{ displayedExerciseData.title }} 
+          {{ displayedExerciseData.title }}
         </h4>
         <div>
           <MarkdownPreview :md="displayedExerciseData.content"/>
         </div>
-        <q-btn 
+        <q-btn
           label="done"
           @click="markCompleted(displayedExerciseData.id)"
         />
       </div>
     </div>
-    <div 
+    <div
       v-else-if="isRoutineFinished && practiceExercisesList.length > 0"
       class="column items-center"
     >
@@ -52,13 +52,13 @@
         {{ $t("practiceRoutinePage.practiceDone") }}
       </h2>
       <div class="row justify-center">
-        <q-icon 
+        <q-icon
           class="flip-horizontal col"
           name="celebration"
           size="xl"
           color="positive"
         />
-        <q-icon 
+        <q-icon
           class="col"
           name="celebration"
           size="xl"
@@ -84,8 +84,8 @@ import { ref, onBeforeMount, computed, watch } from "vue"
 import { useRouter } from "vue-router"
 
 import { usePracticeStore } from "src/stores/practice-store"
-import MarkdownPreview from "src/components/for-viewing/MarkdownPreview"
-import EmptyMsg from "src/components/for-viewing/EmptyMsg"
+import MarkdownPreview from "src/components/for-viewing/MarkdownPreview.vue"
+import EmptyMsg from "src/components/for-viewing/EmptyMsg.vue"
 
 export default {
   name: "PracticeRoutinePage",
@@ -105,16 +105,16 @@ export default {
 
     const practiceExercisesList = ref([])
     // List of ids to completed exercises
-    const completedExercisesIdList = ref([]) 
+    const completedExercisesIdList = ref([])
     const displayedExerciseData = ref({})
     const exerciseIndex = ref(0)
 
     // Return true when all exercises are completed
     const isRoutineFinished = computed(() => {
-      return practiceExercisesList.value.length === 
+      return practiceExercisesList.value.length ===
         completedExercisesIdList.value.length
     })
-    
+
     watch(isRoutineFinished, async (newValue) => {
       if (newValue) {
         let result = await practiceStore.
@@ -130,7 +130,7 @@ export default {
       completedExercisesIdList.value.push(exerciseId)
     }
     function isExerciseDone(idExerciseToCheck) {
-      let foundExercise = completedExercisesIdList.value.find( 
+      let foundExercise = completedExercisesIdList.value.find(
         (completedExerciseId) => completedExerciseId === idExerciseToCheck
       )
       return foundExercise ? true : false
@@ -147,14 +147,14 @@ export default {
 
       // Check if exercises are on the store
       if (practiceStore.getPracticeExercisesByRoutine(routineId).length > 0) {
-        practiceExercisesList.value = 
+        practiceExercisesList.value =
           practiceStore.getPracticeExercisesByRoutine(routineId)
       } else { // Tries to retrieve exercises
         let result = await practiceStore.retrievePracticeExercisesByRoutine(
           routineId
         )
         if (result) {
-          practiceExercisesList.value = 
+          practiceExercisesList.value =
             practiceStore.getPracticeExercisesByRoutine(routineId)
         } else {
           // TODO: use notify
@@ -164,7 +164,7 @@ export default {
       displayedExerciseData.value = practiceExercisesList.value[0]
     })
 
-    return { 
+    return {
       practiceExercisesList,
       displayedExerciseData,
       exerciseIndex,

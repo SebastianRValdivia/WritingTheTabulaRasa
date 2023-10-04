@@ -2,9 +2,9 @@
   <q-page class="q-pa-md">
     <SearchInput @search="searchGuides"/>
     <q-list>
-      <q-item 
+      <q-item
         v-for="guideData in displayedGuidesList"
-        :key="guideData.id" 
+        :key="guideData.id"
         v-ripple
         clickable
         :to="{name: 'guidePage', params: {url: guideData.url}}"
@@ -16,13 +16,13 @@
         </q-item-section>
       </q-item>
     </q-list>
-    <q-page-sticky 
+    <q-page-sticky
       v-if="userStore.isUserLogged"
       position="top-right"
       :offset="[20, 20]"
     >
-      <q-btn 
-        round 
+      <q-btn
+        round
         icon="add"
         color="primary"
         :to="{name: 'guideEditor'}"
@@ -38,7 +38,7 @@ import { useI18n } from "vue-i18n"
 
 import { useGuideStore } from "src/stores/guide-store"
 import { useUserStore } from "src/stores/user-store"
-import SearchInput from "src/components/for-input/SearchInput"
+import SearchInput from "src/components/for-input/SearchInput.vue"
 import { fuzzySearchByObjectByKeys } from "src/utils/search"
 
 export default {

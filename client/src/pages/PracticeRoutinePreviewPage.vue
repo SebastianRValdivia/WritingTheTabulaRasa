@@ -1,6 +1,6 @@
 <template>
   <q-page padding class="row">
-    <div 
+    <div
       class="col col-12 self-center"
       v-if="!practiceExercisesList"
     >
@@ -36,8 +36,8 @@ import { useQuasar, useMeta } from "quasar"
 import { useI18n } from "vue-i18n"
 
 import { usePracticeStore } from "src/stores/practice-store"
-import EmptyMsg from "src/components/for-viewing/EmptyMsg"
-import MarkdownPreview from "src/components/for-viewing/MarkdownPreview"
+import EmptyMsg from "src/components/for-viewing/EmptyMsg.vue"
+import MarkdownPreview from "src/components/for-viewing/MarkdownPreview.vue"
 
 export default {
   name: "PracticeRoutinePreviewPage",
@@ -78,14 +78,14 @@ export default {
 
       // Check if exercises are on the store
       if (practiceStore.getPracticeExercisesByRoutine(routineId).length > 0) {
-        practiceExercisesList.value = 
+        practiceExercisesList.value =
           practiceStore.getPracticeExercisesByRoutine(routineId)
       } else { // Tries to retrieve exercises
         let result = await practiceStore.retrievePracticeExercisesByRoutine(
           routineId
         )
         if (result) {
-          practiceExercisesList.value = 
+          practiceExercisesList.value =
             practiceStore.getPracticeExercisesByRoutine(routineId)
         } else {
           practiceExercisesList.value = null

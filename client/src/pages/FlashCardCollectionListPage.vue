@@ -7,26 +7,26 @@
         :offset="[20, 20]"
         class="scoped-add-btn"
       >
-        <q-btn 
+        <q-btn
           v-if="userStore.isUserLogged"
-          round 
-          color="primary" 
-          icon="add" 
-          size="md" 
+          round
+          color="primary"
+          icon="add"
+          size="md"
           :to="{name: 'flashCardCollectionEditorPage' }"
         />
       </q-page-sticky>
     </div>
     <q-list class="col col-12">
-      <q-item 
+      <q-item
         class="scoped-collection-item row q-ma-md"
-        v-for="collection in quizzStore.getFlashCardCollectionList" 
+        v-for="collection in quizzStore.getFlashCardCollectionList"
         :key="collection.id"
       >
         <div class="col col-9 overflow-auto">
           <h4>
             {{ collection.title }}
-            <q-btn 
+            <q-btn
               flat
               round
               icon="edit"
@@ -37,7 +37,7 @@
             {{ collection.description }}
           </p>
         </div>
-        <CardDeck 
+        <CardDeck
           v-if="
             quizzStore.getFlashCardsByCollectionId(collection.id).length > 0
           "
@@ -59,8 +59,8 @@ import { useRouter } from "vue-router"
 
 import { useQuizzStore } from "src/stores/quizz-store"
 import { useUserStore } from "src/stores/user-store"
-import CardDeck from "src/components/for-viewing/CardDeck"
-import SearchInput from "src/components/for-input/SearchInput"
+import CardDeck from "src/components/for-viewing/CardDeck.vue"
+import SearchInput from "src/components/for-input/SearchInput.vue"
 
 export default {
   name: "FlashCardListPage",
@@ -75,7 +75,7 @@ export default {
     const userStore = useUserStore()
     const router = useRouter()
 
-    
+
     function pushToEditPage(id) {
       router.push({
         name: "flashCardCollectionEditorPage",

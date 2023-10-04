@@ -18,7 +18,7 @@ import { useI18n } from "vue-i18n"
 
 import { useEssayStore } from "src/stores/essay-store"
 import { useUserStore } from "src/stores/user-store"
-import MarkdownPreview from "src/components/for-viewing/MarkdownPreview"
+import MarkdownPreview from "src/components/for-viewing/MarkdownPreview.vue"
 
 export default {
   name: "EssayPage",
@@ -70,7 +70,7 @@ export default {
 
     return {
       essayData,
-      
+
       getUsername,
     }
   }

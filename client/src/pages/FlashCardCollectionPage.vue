@@ -4,20 +4,20 @@
       <p>
         {{ $t("flashCardCollectionPage.score")}}: {{ userScore }}
       </p>
-      <FlashCard 
+      <FlashCard
         :cardData="displayedFlashCard"
         :isNew="isCardInitializing"
         v-model:isOnResponseSide="isFlipped"
         class="q-mt-xl"
       />
       <div class="row q-gutter-md q-ma-lg">
-        <q-btn 
+        <q-btn
           round
           icon="close"
           color="negative"
           @click="negativeAttempt()"
         />
-        <q-btn 
+        <q-btn
           round
           icon="done"
           color="positive"
@@ -25,8 +25,8 @@
         />
       </div>
     </div>
-    <div 
-      v-else 
+    <div
+      v-else
       class="col column items-center text-h1"
       :class="{
         'text-positive': userScore >= 50,
@@ -34,7 +34,7 @@
       }"
     >
       {{ userScore }}
-      <q-btn 
+      <q-btn
         :label="$t('general.continue')"
         :to="{name: 'flashCardCollectionListPage'}"
       />
@@ -51,7 +51,7 @@ import { useI18n } from "vue-i18n"
 import { useQuizzStore } from "src/stores/quizz-store"
 import { useUserStore } from "src/stores/user-store"
 import FlashCard from
-  "src/components/for-viewing/FlashCard"
+  "src/components/for-viewing/FlashCard.vue"
 import { errorNotification } from "src/utils/notifications"
 
 export default {
@@ -70,7 +70,7 @@ export default {
     const userStore = useUserStore()
     const quasar = useQuasar()
     const { t } = useI18n()
-    
+
     const flashCardList = ref()
     const displayedFlashCard = ref(null)
     const toSolveFlashCards = ref([]) // TODO: Add list in name
@@ -89,7 +89,7 @@ export default {
       ) * 100
       // Since api require positive integers
       return score.toFixed() // Round number
-      
+
     })
 
     function pickNewFlashCard() {

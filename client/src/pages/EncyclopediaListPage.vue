@@ -52,8 +52,8 @@ import { useQuasar, useMeta } from "quasar"
 import { useWikiStore } from "src/stores/wiki-store"
 import { useImageStore } from "src/stores/image-store"
 import { fuzzySearchByObjectByKeys } from "src/utils/search"
-import SearchInput from "src/components/for-input/SearchInput"
-import AddNewBtn from "src/components/for-input/AddNewBtn"
+import SearchInput from "src/components/for-input/SearchInput.vue"
+import AddNewBtn from "src/components/for-input/AddNewBtn.vue"
 
 export default {
   name: "EncyclopediaListPage",

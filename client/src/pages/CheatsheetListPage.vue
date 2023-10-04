@@ -1,13 +1,13 @@
 <template>
   <q-page padding>
-    <div 
-      v-if="cheatsheetStore.getSheets.length > 0" 
+    <div
+      v-if="cheatsheetStore.getSheets.length > 0"
       class="row justify-center q-gutter-lg"
     >
       <SearchInput @search="searchSheets"/>
       <q-intersection
-        v-for="sheet in displayedSheets" 
-        :key="sheet.id" 
+        v-for="sheet in displayedSheets"
+        :key="sheet.id"
         once
         transition="scale"
       >
@@ -19,7 +19,7 @@
               v-if="userStore.isUserLogged"
             >
               <q-menu auto-close anchor="top start" self="top right">
-                <q-item 
+                <q-item
                   clickable
                   :to="{name: 'cheatsheetEditor', params: {url: sheet.url}}"
                 >
@@ -30,7 +30,7 @@
               </q-menu>
             </q-btn>
           </q-card-actions>
-          <router-link 
+          <router-link
             :to="{name: 'cheatsheet', params: {url: sheet.url}}"
             class="wtr-link"
           >
@@ -48,16 +48,16 @@
         </q-card>
       </q-intersection>
     </div>
-    
+
     <div v-else class="row justify-center">
       <h1>{{ $t("sheetPage.noSheets") }}</h1>
     </div>
-    
+
     <q-page-sticky position="top-right" :offset="[20, 20]">
-      <q-btn 
-        round 
-        color="primary" 
-        icon="add" 
+      <q-btn
+        round
+        color="primary"
+        icon="add"
         :to="{name: 'cheatsheetEditor' }"
       />
     </q-page-sticky>
@@ -71,7 +71,7 @@ import { useI18n } from "vue-i18n"
 
 import { useCheatsheetStore } from "src/stores/cheatsheet-store"
 import { useUserStore } from "src/stores/user-store"
-import SearchInput from "src/components/for-input/SearchInput"
+import SearchInput from "src/components/for-input/SearchInput.vue"
 import { fuzzySearchByObjectByKeys } from "src/utils/search"
 
 export default {
@@ -105,7 +105,7 @@ export default {
       await cheatsheetStore.retrieveSheets()
       $q.loading.hide()
     })
-    
+
     useMeta({
       title: t("cheatSheetListPage.pageTitle"),
     })

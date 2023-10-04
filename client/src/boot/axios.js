@@ -9,7 +9,7 @@ import { useUserStore } from "src/stores/user-store"
 // "export default () => {}" function below (which runs individually
 // for each client)
 const api = axios.create({
-  baseURL: "http://localhost:8000/api" 
+  baseURL: "http://localhost:8000/api"
 })
 
 api.interceptors.request.use((config) => {
@@ -19,6 +19,8 @@ api.interceptors.request.use((config) => {
   }
   return config
 })
+
+
 
 export default boot(({ app }) => {
   // for use inside Vue files (Options API) through this.$axios and this.$api

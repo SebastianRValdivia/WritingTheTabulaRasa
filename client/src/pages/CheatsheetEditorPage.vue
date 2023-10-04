@@ -4,8 +4,8 @@
       <q-btn round icon="done" color="primary" @click="submit"/>
     </q-page-sticky>
     <div class="col col-12 row q-gutter-md q-pb-md">
-      <q-input 
-        v-model="sheetTitleInput" 
+      <q-input
+        v-model="sheetTitleInput"
         class="col col-7"
         :placeholder="sheetInitialState.title"
         input-class="text-h4"
@@ -29,20 +29,20 @@
       </q-input>
     </div>
     <div class="col col-9 q-pb-xl">
-      <q-input 
+      <q-input
         v-model="sheetDescriptionInput"
-        autogrow 
+        autogrow
         borderless
         :label="$t('cheatSheetEditorPage.sheetDescription')"
-        :placeholder="sheetInitialState.description" 
+        :placeholder="sheetInitialState.description"
         :rules="[val => !!val || $t('general.required')]"
       />
     </div>
 
     <div class="col col-12 row justify-center q-gutter-sm">
       <!-- Cheat card preview -->
-      <CheatCard 
-        v-for="(cheat, index) in cheatList" 
+      <CheatCard
+        v-for="(cheat, index) in cheatList"
         :key="index"
         :cheatData="cheat"
         :color="sheetColorInput"
@@ -66,8 +66,8 @@ import { useRouter, onBeforeRouteUpdate } from "vue-router"
 import { useCheatsheetStore } from "src/stores/cheatsheet-store"
 import { cheatsheetHasSize } from "src/utils/cheatsheets"
 import CheatInput from
-  "src/components/for-pages/CheatsheetEditorPage/CheatInput"
-import CheatCard from "src/components/for-viewing/CheatCard"
+  "src/components/for-pages/CheatsheetEditorPage/CheatInput.vue"
+import CheatCard from "src/components/for-viewing/CheatCard.vue"
 
 export default {
   name: "CheatsheetEditorPage",
@@ -93,7 +93,7 @@ export default {
     const sheetDescriptionInput = ref("")
     const cheatList = ref([])
     const sheetColorInput = ref()
-  
+
 
     function deleteCheat(index) {
       cheatList.value.splice(index, 1)
@@ -101,7 +101,7 @@ export default {
 
     function updateCheat(currentTitle, updatedCheatData) {
       // search cheat by current title and then update the data
-      let indexOfCheatToChange = 
+      let indexOfCheatToChange =
         cheatList.value.findIndex( (cheat) => cheat.title === currentTitle)
       cheatList.value[indexOfCheatToChange] = updatedCheatData
     }

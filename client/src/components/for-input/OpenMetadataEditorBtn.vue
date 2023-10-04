@@ -5,7 +5,7 @@
 <script>
 import { useQuasar } from "quasar"
 
-import MetadataEditorDialog from "src/components/for-input/MetadataEditorDialog"
+import MetadataEditorDialog from "src/components/for-input/MetadataEditorDialog.vue"
 
 export default {
   name: "OpenMetadataEditorBtn",

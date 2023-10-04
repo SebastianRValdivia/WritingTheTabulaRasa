@@ -3,7 +3,7 @@
 
     <EmptyMsg v-if="userPracticeRoutinesList.length === 0"/>
 
-    <PracticeRoutineInfo 
+    <PracticeRoutineInfo
       v-else
       class="col col-12"
       v-for="userPractice in userPracticeRoutinesList"
@@ -21,9 +21,9 @@ import { useI18n } from "vue-i18n"
 
 import { usePracticeStore } from "src/stores/practice-store"
 import { useUserStore } from "src/stores/user-store"
-import PracticeRoutineInfo from 
-  "src/components/for-pages/PracticeRoutineUserListPage/PracticeRoutineInfo"
-import EmptyMsg from "src/components/for-viewing/EmptyMsg"
+import PracticeRoutineInfo from
+  "src/components/for-pages/PracticeRoutineUserListPage/PracticeRoutineInfo.vue"
+import EmptyMsg from "src/components/for-viewing/EmptyMsg.vue"
 
 export default {
   name: "PracticeRoutineUserListPage",

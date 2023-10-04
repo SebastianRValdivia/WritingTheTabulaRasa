@@ -10,7 +10,7 @@
         <router-link :to="{name: 'quizzPage', params:{id: quizz.id}}">
           {{ quizz.title }}
         </router-link>
-      </li> 
+      </li>
     </ul>
   </q-page>
 </template>
@@ -23,8 +23,8 @@ import { useI18n } from "vue-i18n"
 import { useQuizzStore } from "src/stores/quizz-store"
 import { errorNotification } from "src/utils/notifications"
 import { fuzzySearchByObjectByKeys } from "src/utils/search"
-import SearchInput from "src/components/for-input/SearchInput"
-import AddNewBtn from "src/components/for-input/AddNewBtn"
+import SearchInput from "src/components/for-input/SearchInput.vue"
+import AddNewBtn from "src/components/for-input/AddNewBtn.vue"
 
 
 export default {
@@ -45,7 +45,7 @@ export default {
           quizzStore.getQuizzesList,
           searchInput.value,
           ["title"],
-        ) 
+        )
       } else return quizzStore.getQuizzesList
     })
 
@@ -62,13 +62,13 @@ export default {
     useMeta({
       title: t("quizzesListPage.pageTitle"),
     })
-    
+
     return {
       displayedQuizzes,
 
       searchQuizzes,
     }
-    
+
   }
 }
 </script>

@@ -6,11 +6,11 @@
 
 <script>
 import { useQuasar } from "quasar"
-import { onBeforeMount } from "vue"
+import { defineComponent, onBeforeMount } from "vue"
 
 import { useUserStore } from "src/stores/user-store"
 
-export default ({
+export default defineComponent({
   name: 'App',
   setup() {
     const $q = useQuasar()
@@ -35,7 +35,6 @@ export default ({
     })
 
   }
-
 })
 </script>
 

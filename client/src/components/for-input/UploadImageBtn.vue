@@ -1,7 +1,7 @@
 <template>
   <q-btn
     icon="add_photo_alternate"
-    flat 
+    flat
     @click="openImageDialog"
   >
   </q-btn>
@@ -10,7 +10,7 @@
 <script>
 import { useQuasar } from "quasar"
 
-import ImageUploadDialog from "src/components/for-control/ImageUploadDialog"
+import ImageUploadDialog from "src/components/for-control/ImageUploadDialog.vue"
 
 export default {
   name: "UploadImageBtn",

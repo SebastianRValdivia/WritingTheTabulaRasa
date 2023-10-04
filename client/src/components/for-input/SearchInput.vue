@@ -1,27 +1,27 @@
 <template>
-  <div 
+  <div
     class="col-12 row justify-center q-pa-sm"
     @keydown.enter="done"
   >
-    <q-input 
+    <q-input
       rounded
       outlined
       v-model="patternInput"
       class="col-4 q-mr-md self-center"
     >
       <template v-slot:append>
-        <q-icon 
+        <q-icon
           v-if="patternInput"
           name="send"
           @click="done"
         />
-        <q-icon 
+        <q-icon
           v-else
           name="search"
         />
       </template>
     </q-input>
-    <LearningResourceChooser 
+    <LearningResourceChooser
       class="col-2"
       v-if="props.learningResourceChooser"
       v-model="learningResourceInput"
@@ -33,7 +33,7 @@
 <script>
 import { ref } from "vue"
 
-import LearningResourceChooser from "src/components/for-input/LearningResourceChooser"
+import LearningResourceChooser from "src/components/for-input/LearningResourceChooser.vue"
 
 export default {
   name: "SearchInput",

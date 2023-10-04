@@ -9,12 +9,12 @@
         <li
           v-for="stepData in orderedStepsDataList"
           :key="stepData.id"
-          ref="orderedStepsDataListRefs" 
+          ref="orderedStepsDataListRefs"
         >
           <h3 class="text-h3">
             {{ stepData.order }} - {{ stepData.title }}
           </h3>
-          <MarkdownPreview 
+          <MarkdownPreview
             :md="stepData.content"
           />
         </li>
@@ -22,7 +22,7 @@
     </div>
     <div class="col col-2 q-pt-xl">
       <ul class="scoped-step-order fixed">
-          <q-item 
+          <q-item
             clickable
             v-for="(stepData, index) in orderedStepsDataList"
             :key="stepData.id"
@@ -34,7 +34,7 @@
             {{ stepData.order }} - {{ stepData.title }}
           </q-item>
       </ul>
-    
+
     </div>
   </q-page>
 </template>
@@ -44,7 +44,7 @@ import { ref, computed, onBeforeMount } from "vue"
 import { scroll } from 'quasar'
 
 import api from "src/api"
-import MarkdownPreview from "src/components/for-viewing/MarkdownPreview"
+import MarkdownPreview from "src/components/for-viewing/MarkdownPreview.vue"
 
 export default {
   name: "GuidePage",
@@ -56,7 +56,7 @@ export default {
   },
   setup(props) {
     const { getScrollTarget, setVerticalScrollPosition } = scroll
-    
+
     const guideData = ref({})
     const stepsDataList = ref([])
     const orderedStepsDataListRefs = ref([])

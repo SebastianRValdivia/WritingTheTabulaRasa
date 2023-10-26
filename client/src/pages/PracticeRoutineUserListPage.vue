@@ -1,6 +1,7 @@
 <template>
   <q-page padding class="row justify-center">
 
+    <AddNewBtn :to="{name: 'practiceRoutineListPage' }"/>
     <EmptyMsg v-if="userPracticeRoutinesList.length === 0"/>
 
     <PracticeRoutineInfo
@@ -24,12 +25,14 @@ import { useUserStore } from "src/stores/user-store"
 import PracticeRoutineInfo from
   "src/components/for-pages/PracticeRoutineUserListPage/PracticeRoutineInfo.vue"
 import EmptyMsg from "src/components/for-viewing/EmptyMsg.vue"
+import AddNewBtn from "src/components/for-input/AddNewBtn.vue"
 
 export default {
   name: "PracticeRoutineUserListPage",
   components: {
     PracticeRoutineInfo,
     EmptyMsg,
+    AddNewBtn,
   },
   setup() {
     const practiceStore = usePracticeStore()

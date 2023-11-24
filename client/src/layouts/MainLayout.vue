@@ -21,7 +21,7 @@
             </span>
           </router-link>
         </q-toolbar-title>
-        <q-btn :label="$t('mainLayout.compendiums')">
+        <q-btn flat :label="$t('mainLayout.compendiums')">
           <q-menu fit anchor="bottom left">
             <q-item clickable :to="{name: 'encyclopediaListPage'}">
               <q-item-section>{{ $t('mainLayout.encyclopedia') }}</q-item-section>
@@ -37,7 +37,7 @@
             </q-item>
           </q-menu>
         </q-btn>
-        <q-btn :label="$t('mainLayout.activities')">
+        <q-btn flat :label="$t('mainLayout.activities')">
           <q-menu fit anchor="bottom left">
             <q-item clickable :to="{name: 'researchListPage'}">
               <q-item-section>{{ $t('mainLayout.research') }}</q-item-section>
@@ -53,7 +53,7 @@
             </q-item>
           </q-menu>
         </q-btn>
-        <q-btn :label="$t('mainLayout.resources')">
+        <q-btn flat :label="$t('mainLayout.resources')">
           <q-menu fit anchor="bottom left">
             <q-item clickable :to="{name: 'learningResourceListPage'}">
               <q-item-section>

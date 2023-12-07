@@ -14,6 +14,12 @@ npm install
 quasar dev
 ```
 
+### Update
+```bash
+quasar upgrade
+bun update
+```
+
 
 ### Lint the files
 ```bash

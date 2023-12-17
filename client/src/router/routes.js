@@ -271,6 +271,11 @@ const routes = [
           },
         ]
       },
+      {
+        path: "lectures/",
+        name: "lectureListPage",
+        component: () => import("src/pages/LectureListPage.vue")
+      },
     ]
   },
 

@@ -30,6 +30,7 @@ const mainLayout = {
   resources: "Resources",
   learnignResources: "Learning resources",
   images: "Images",
+  lectures: "Lectures",
 }
 const mainDrawer = {
   notes: "My notes",
@@ -294,7 +295,7 @@ export default {
   quizzEditorPage,
   essaysListPage,
   essayPage,
-  essayEditorPage, 
+  essayEditorPage,
   learningResourcesEditorPage,
   helpCenterPage,
   flashCardListPage,
@@ -303,7 +304,7 @@ export default {
   practiceRoutineEditorPage,
   practiceRoutineUserPage,
   practiceRoutinePage,
-  practiceRoutineListPage, 
+  practiceRoutineListPage,
   practiceRoutinePreviewPage,
   timeTableUserPage,
 

@@ -21,7 +21,7 @@
             </span>
           </router-link>
         </q-toolbar-title>
-        <q-btn flat :label="$t('mainLayout.lectures')">
+        <q-btn flat :to="{name: 'lectureListPage'}" :label="$t('mainLayout.lectures')">
         </q-btn>
         <q-btn flat :label="$t('mainLayout.compendiums')">
           <q-menu fit anchor="bottom left">

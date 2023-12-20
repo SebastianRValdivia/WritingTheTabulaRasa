@@ -25,6 +25,11 @@ class LectureModel(models.Model):
         blank=True,
         validators=[FileExtensionValidator(allowed_extensions=['mp4',])]
     )
+    thumbnail = models.ImageField(
+        upload_to="lectures_videos/thumbnails/",
+        blank=True,
+        null=True,
+    )
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 

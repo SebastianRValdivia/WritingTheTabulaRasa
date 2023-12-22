@@ -13,6 +13,7 @@ import metadata from "./_metadata"
 import quotes from "./_quotes"
 import practice from "./_practice.js"
 import images from "./_images.js"
+import lectures from "./_lectures.js"
 
 export default {
   user,
@@ -30,4 +31,5 @@ export default {
   quotes,
   practice,
   images,
+  lectures,
 }

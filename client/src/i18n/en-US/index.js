@@ -239,6 +239,9 @@ const timeTableUserPage = {
   sunday: "Sunday",
   hours: "Hours",
 }
+const lectureListPage = {
+  pageTitle: "Lectures"
+}
 
 
 const imageUploadDialog = {
@@ -307,6 +310,7 @@ export default {
   practiceRoutineListPage,
   practiceRoutinePreviewPage,
   timeTableUserPage,
+  lectureListPage,
 
   imageUploadDialog,
   metadataEditorDialog,

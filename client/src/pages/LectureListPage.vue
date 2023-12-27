@@ -3,6 +3,7 @@
     <div
       v-for="lecture in displayedLectures"
       :key="lecture.id"
+      class="q-pa-md row items-start q-gutter-md"
     >
       <LectureCard
         :title="lecture.title"

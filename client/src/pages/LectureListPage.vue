@@ -1,14 +1,16 @@
 <template>
   <q-page>
-    <div>
-      <q-card
-        v-for="lecture in displayedLectures"
-        :key="lecture.id"
+    <div
+      v-for="lecture in displayedLectures"
+      :key="lecture.id"
+      class="q-pa-md row items-start q-gutter-md"
+    >
+      <LectureCard
+        :title="lecture.title"
+        :description="lecture.description"
+        :thumbnail="lecture.thumbnail"
       >
-        {{ lecture.title }}
-
-      </q-card>
-
+      </LectureCard>
     </div>
 
   </q-page>
@@ -20,9 +22,13 @@ import { useQuasar, useMeta } from "quasar"
 import { useI18n} from "vue-i18n"
 
 import { useLectureStore } from "src/stores/lecture-store"
+import LectureCard from "src/components/for-viewing/LectureCard.vue"
 
 export default {
   name: "LectureListPage",
+  components: {
+    LectureCard
+  },
   setup() {
     const lectureStore = useLectureStore()
     const { t } = useI18n()

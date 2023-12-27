@@ -1,9 +1,11 @@
 <template>
-  <q-page>
+  <q-page
+    class="q-pa-md row justify-center q-gutter-md"
+  >
     <div
       v-for="lecture in displayedLectures"
       :key="lecture.id"
-      class="q-pa-md row items-start q-gutter-md"
+      class="col-2"
     >
       <LectureCard
         :title="lecture.title"

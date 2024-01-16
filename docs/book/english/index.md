@@ -3,14 +3,14 @@ title: "Writing The Tabula Rasa"
 author: Valdivia, Sebastián Ricardo
 ---
 
-
 <div style="text-align:center;">
 CC BY-NC-SA 4.0
 
 This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
 
-*Dedicated to all those who, in the face of any difficulty, chose to keep learning.*
 </div>
+
+*Dedicated to all those who, in the face of any difficulty, chose to keep learning.*
 
 ## Preface
 
@@ -1939,54 +1939,281 @@ Thanks to all of this, we've learned how to transfer our knowledge from our mind
 
 ---
 
+# D. Teaching
+
+Studying is a self-teaching endeavor, the student assumes the role of the teacher for oneself. This alters our perception of teaching; a teacher becomes a valuable source of information for subjects we wish to explore. In this book, the teacher is likened to a repository of useful information rather than someone merely inputting data into a student as if filling a box.
+
+Acquiring the skill of teaching, even as students, opens doors for personal growth. While it's essential to learn teaching to assist others, our approach to documenting should enable us to teach ourselves once again. Also by understanding how to teach, we can also learn how to extract the most from a teacher.
+
+Understanding a complex subject like teaching can be simplified by viewing it as a communication skill. This skill involves imparting new knowledge to those who do not possess it yet. In this chapter we will cover how to become good comunicators.
+
+## D.1 Communicating
+
+Communication involves the **exchange of information** between two parties. Serves as a foundational element in learning, facilitating the acquisition of knowledge, fostering critical thinking and creating an interactive and engaging learning environment.
+
+Let's delve into the parties mentioned in the last paragraph. The first is the **sender**, responsible for conveying the information by transmitting a **message**. The second is the **receiver**, representing the person or people who receive the message.
+
+
+<div style="text-align:center; margin: 5px;">
+
+  <img src="img/communication.png"/>
+
+  <figcaption style="font-size: 10px; text-align: center;">Communication diagram</figcaption>
+
+</div>
+
+### D.1.1 Sender
+
+In our case the sender refers to the teacher. This person, often called the *source*, is responsible for formulating, encoding, and transmitting a message containing information, thoughts, ideas or emotions to another individual or group of individuals, known as the receivers. 
+
+The sender's role involves encoding the intended message into a format (such as words, gestures, or symbols) that the receivers can understand and then transmitting it through a chosen communication channel. One of the most important task of a teacher is to format the message in a way to avoid confusion and be received clearly by his students.
+
+#### D.1.1.1 Speaking
+
+The primary modes of communication in teaching are verbal expression, predominantly through speaking, followed by written communication. Verbal communication involves articulating words, which are then received by the auditory receptors of the learners. Subsequently, students process these ideas, drawing upon their existing knowledge and, in some cases, emotional responses.
+
+There are two main systems used by people to speak: verbally and non-verbally. Verbally is all the sounds we produce with our vocal tract. Non-verbal communication involves the use of gestures, facial expressions, body language, posture, tone of voice and other non-linguistic tools to convey messages. Effective communication often requires a combination of both verbal and non-verbal elements to convey messages accurately and comprehensively.
+
+Improving clarity in our speech involves practice. One aspect to focus on is pronouncing each word clearly and distinctly. It is important to avoid speaking too quickly; maintaining a moderate pace allows listeners to process your words.
+
+### D.1.2 Receiver
+
+The receiver is the individual or group intended to receive and interpret the message transmitted by the sender. Effective communication occurs when the receiver successfully interprets the message, providing feedback or taking appropriate action based on their understanding of the message. In this case the receiver is our student.
+
+Emotion and prior knowledge play a significant role in shaping how the receiver interprets a message. The receiver's capacity to decode and understand the information is influenced by factors like their knowledge, experiences, cultural background and familiarity with the language or symbols employed by the sender. The receiver forms a personal perception of the message's meaning, and if the message lacks clarity, this understanding can be distorted or altered.
+
+It's also crucial to monitor the time it takes for the receiver to process information. Every time specific information is presented to a student, they need time to process it. Allowing intervals between subsequent data deliveries permits the brain to carry out its cognitive processes.
+
+Another noteworthy consideration is to be aware of the level of attention the receiver is dedicating to the communication. Two states, **passive and active**, akin to those discussed in A.3, can be identified. In a passive state, the receiver is processing the message secondarily, possibly due to distractions or other focus. In an active state, they are fully engaged in hearing or reading the information, improving the overall consumption and understanding of the data.
+
+#### D.1.2.1 Feedback
+
+In the communication process, feedback is the valuable response or reaction provided by the receiver to the sender's message. Feedback can be verbal or non-verbal and helps in confirming that the message was received, understood and interpreted as intended. It allows the sender to make necessary adjustments. This step address misunderstandings and the overall quality of the interaction between the sender and the receiver.
+
+Feedback provides valuable information to educators about how well students are comprehending the material. This insight allows teachers to assess the effectiveness of their instructional methods and make necessary adjustments to meet the diverse needs of students. This facilitates a supportive learning environment by offering constructive guidance and addressing areas that need improvement.
+
+### D.1.3 Message
+
+The message refers to the information, ideas or thoughts that the sender intends to convey to the receiver. The effectiveness of communication relies on the clarity and precision with which the message is formulated and transmitted. The receiver's understanding and interpretation of the message play a crucial role in determining the success of communication, and feedback from the receiver often helps refine and improve the message for better comprehension.
+
+#### D.1.3.1 Encoding and decoding
+
+For effective communication to occur, both encoding and decoding process must take effect.
+
+Encoding refers to the process by which the teacher translates their thoughts, ideas or feelings into a **format** that can be understood by his students. It involves selecting appropriate words, gestures or other forms of communication to convey the intended message clearly. For instance, when speaking, encoding occurs as thoughts are transformed into spoken words.
+
+On the other side, decoding is the process by which the student interprets and understands the encoded message sent by the sender. It involves **deciphering** the received information, converting it back into thoughts or ideas that the receiver can comprehend. This depends on the receiver's knowledge, experiences, cultural background and familiarity with the language or symbols used by the sender.
+
+#### D.1.3.2 Channel
+
+This refers to the **medium** through which information is transmitted, such as spoken words, written text or visual cues. Its purpose is to pass information from the teacher to the student. While the channel task may seem straightforward, it holds significant sensitivity.
+
+##### D.1.3.2.1 Noise
+
+Misunderstandings or communication breakdowns can arise if there are discrepancies or barriers in either the encoding or decoding process. Factors such as language barriers, differing cultural interpretations, distractions, or noise in the communication channel can influence the accuracy of encoding and decoding messages.
+
+Consider this scenario: a casual exchange of a simple verbal 'hello' between two individuals. The first person encodes the message by articulating it aloud in a shared language, awaiting a response from the other. However, in the vicinity where they communicate, several cars are speeding by, impeding clear reception. Consequently, the receiver fails to hear the message clearly and responds with confusion. The disruptive noise caused by the passing cars significantly interfered with the message, resulting in failure.
+
+We should always consider all possibles types of noise in our communication to avoid misunderstanding issues.
+
+## D.2 The teacher
+
+A teacher is a **guide** in the self-learning process, acting as a source of information rather than a force that simply feeds facts to students. In this book, we won't delve into the task of evaluation, is out of the scope. Thus, in this context, teaching involves providing and making resources and tools available to the student.
+
+The teacher is the embodiment of the desired destination of the learning process. The student's objective is to attain an equivalent or superior level of knowledge compared to the teacher. Essentially, the teacher is the focal point of their aspiration.
+
+It's crucial to recognize that teaching is a **skill**. Let's not overlook the fact that teaching itself is a learning process; it's through practice that we acquire mastery in the art. Therefore, successful teaching requires regular practice, especially in collaboration with others.
+
+### D.2.1 How to act
+
+As we've discussed, the teacher serves as the **conveyor of information**. Articulating ideas with clarity and simplicity enhances student comprehension. It's essential to construct a framework, like a *fence*, that respects the boundaries set by their existing knowledge.
+
+Understanding the terrain involves gauging the students' existing knowledge, identifying their strengths and weakness, pinpointing areas that may be unfamiliar. The premise here is that learning builds upon a foundation of pre-existing knowledge. It's imperative to ascertain whether students possess the necessary prerequisites. Without a solid grasp of the fundamentals, progress becomes challenging, as the acquisition of new knowledge is intricately linked to a solid understanding of what precedes it. We can use quizzes to gauge knowledge through frequent, non-graded assessment tests.
+
+Meanwhile, the educator's social behavior functions as an additional tool that enhances the learning experience. Expected behaviors include formality, charm and engagement, continuously motivating the student.
+
+To motivate them, we adopt the perspective that the student is a buyer, and we are the seller. We must demonstrate the relevance of what we want to teach. Repeatedly highlighting the advantages of learning specific content will foster motivation.
+
+An essential consideration is the practical relevance of the acquired knowledge. Illustrating real-world applications underscores the subject's significance and establishes connections with other disciplines, providing the student with valuable reference points.
+
+### D.2.2 Indirect teaching
+
+In direct teaching, the educator directly explains the subject matter to the students, providing explicit guidance and instruction, this what we treated so far. On the other hand, indirect teaching involves creating an environment where students are encouraged to discover and **learn on their own**. It emphasizes self-directed learning, allowing students to explore, question, and acquire knowledge through independent efforts. Both approaches have their merits and may be employed based on the learning objectives and the nature of the subject matter.
+
+#### D.2.2.1 Work
+
+We make students engage by assigning challenging yet manageable tasks that require the practical application of their existing knowledge. This way we encourage the generation of information through activities like essay writing and projects, nurturing a deeper understanding of the subject.
+
+The assignments given to students should prompt them to actively seek answers, promoting an exploration not limited to our guidance but extending to external sources. This investigative approach contributes significantly not only to their learning process but also to the research skill.
+
+#### D.2.2.2 Cooperation and coordination
+
+The human inclination to work in groups is deeply rooted in our social nature. Studying together harnesses the power of collective knowledge, promotes collaboration and creates a supportive and accountable learning environment, contributing to a more robust and effective learning experience.
+
+A study group functions as a support system where individuals can turn to their peers for help and/or clarification when encountering challenges or difficulties. This collaborative environment promote problem-solving and mutual learning. Moreover, studying together helps uphold a sense of responsibility among group members. This collective duty can be enhanced through gamification or rating, introducing a competitive element to the learning process.
+
+## D.3 The program
+
+An educational program is a **curated series of lectures and activities** scheduled at specific times, designed to fulfill the *learning objectives* of the students. The selection of the program should represent the optimal solution, grounded in a comprehensive study and diagnosis of the identified issues (as determined through diagnostic tests).
+
+Planning can be susceptible to failure, and relying solely on improvisation is not a good idea. It is crucial to establish alternative routes. While designing a program, regular evaluations should occur to identify errors in the chosen path. To address these issues, alternative routes must be pre-planned, enabling the program to adapt effectively. The program must be dynamic and adaptable.
+
+### D.3.1 Phases
+
+To design an effective program, it is essential to deconstruct the learning subjects into their most granular components. Breaking down the information into smaller units facilitates understanding and memorization.
+
+The course organization should treat subjects systematically, starting from the foundational concepts, followed by the easier topics, and concluding with the more complex ones. This sequential arrangement enhances the learning experience by building a structured and progressive path for the participants.
+
+#### D.3.1.1 Start
+
+In this initial phase, our primary goal is to provide a comprehensive introduction. We aim to present an overview of the program, outlining the specific objectives that students are expected to achieve throughout the course. It's crucial to establish a clear connection between these objectives and broader educational goals, providing context for the significance of the material covered.
+
+Equally important is the communication of essential resources for students. This includes specifying required textbooks, materials and additional resources that will be utilized during the course, ensuring students have the necessary tools for successful learning.
+
+Additionally, establishing effective feedback mechanisms is a priority. We must clarify how communication will take place between students and teachers, whether through face-to-face interactions, email, or other mediums. This transparent communication strategy ensures that feedback channels are understood and accessible.
+
+#### D.3.1.2 Midpoint
+
+In the course's midpoint, we actively assess its progression by evaluating students' knowledge to identify and correct any misconceptions. The results obtained are instrumental in pinpointing areas that may require additional attention and refinement.
+
+At this juncture, it becomes crucial to reiterate the course's outline and main objectives to students. Given their focused engagement with specific topics, a periodic review serves as a valuable practice, ensuring students maintain a holistic understanding of the overarching goals and the significance of individual pieces of information within a broader context.
+
+If needed, adjustments to the pace or depth of instruction should be considered based on feedback from students. While initial adjustments may occur early in the course, a more accurate assessment of the teaching approach is achievable at the midpoint. This flexibility enables instructors to fine-tune the flow of information to match the learning needs of students effectively. Any alterations to the original course plan should be communicated clearly, ensuring students are informed and aligned with the adjusted trajectory of the course.
+
+#### D.3.1.3 Finish
+
+The final phase of the course is characterized by the cover of all primary subjects, ensuring that students possess all necessary information. After this stage, the conclusion of the course is initiated, allowing for a refinement by addressing global misconceptions and responding to any remaining questions from students. This moment can also be utilized to introduce upcoming subjects, providing students with a roadmap for further learning.
+
+Simultaneously, it marks the last opportunity to gather conclusive feedback, encouraging students to reflect on the entire course rather than specific lectures.
+
+### D.3.2 The syllabus
+
+The syllabus of a course is a document that set a roadmap, outlying the structure, content, resources, goals and expectations program. It ensures transparency, clarity, and consistency in course delivery, expectations, and evaluation.
+
+The foundational elements of a syllabus encompass essential details such as the course title and general information. This section also includes a comprehensive list of instructors' names along with their respective communication channels.
+
+Subsequently, the syllabus presents an overview of the course content and objectives, accompanied by concise descriptions of the covered topics. The schedule which includes a breakdown of lecture subjects, and when feasible, the allocated times for each. Lastly, it have quizzes, notes, articles and other pertinent organized information related to the course.
+
+Integral to a well-crafted syllabus is a thorough bibliography, incorporating both primary and supplementary resources. This section provides clarity on where students can access or obtain materials, whether through libraries or specific websites.
+
+### D.3.3 Time management
+
+A crucial skill for an effective teacher is adept time management throughout the course, scheduling lectures and practice sessions.
+
+The initial step involves establishing a realistic and achievable **minimum** goal. This entails setting study goals for the worst-case scenario, envisioning students with minimal prerequisite knowledge, limited time for practice and low energy. A schedule will be devised, ensuring success even under challenging circumstances, and it can be adapted to expedite progress.
+
+The approach employs a **minimized schedule format**, utilizing the most dominant time unit, such as 15 minutes. Although larger units like hours or lectures are feasible and easier to digest, they can introduce more errors. The resulting schedule takes the form of a tree-like structure resembling a single-sided mind map, featuring minuscule time intervals and focused topics. This allows for easy removal, rearrangement, and addition of themes, creating a dynamic and adaptable schedule.
+
+It is imperative to allocate dedicated time for practical exercises, allowing students the opportunity to apply and reinforce their skills throughout the course. To facilitate this, intentional *gaps* will be incorporated into the schedule, providing designated periods for students to engage in hands-on practice sessions.
+
+### D.3.4 Feedback
+
+Encouraging students to regularly review the course progression is crucial, emphasizing that this is not a one-time task typically reserved for the end. By making it an ongoing practice, we ensure early adaptability. Teaching is dynamic, fluctuating in pace; feedback becomes the compass, helping us gauge the speed students require and identify any weaknesses in the course. Regular reviews enable timely adjustments, maintaining a responsive and effective learning environment.
+
+## D.4 Lectures
+
+A lecture is a structured and formal presentation delivered by a teacher on a specific subject to an audience. During a lecture, the sender uses verbal and/or textual communication, visual aids and other instructional methods to engage the audience and facilitate learning. They are designed to impart knowledge and contribute to the educational experience of the audience.
+
+There must be a seamless *flow* of information, carefully paced and controlled by a deliberate tempo. Achieving a cohesive flow involves adhering to the planned structure, maintaining audience engagement through motivation, and, crucially, delivering each segment of the lecture swiftly and precisely. Clarity is the most important part. Whether presenting a definition, an example, or any other aspect of the lecture, it is essential that the information is conveyed distinctly to the students. Visuals or audio must seamlessly align with their related subjects in time, avoiding any separation. Maintaining control over the rhythm at which information is presented ensures a smooth and comprehensible learning experience.
+
+To sustain focus, keep the discussion concise and centered on the main subject. Human attention can waver during extended periods, so it's beneficial to reinforce key points by repeating them at least three times. We will outline the topics in the beginning and intermittently remind your audience of the lecture's progression. Employing a well-structured companion document can serve as a valuable resource to regain attention if distractions occur.
+
+Additionally, consider the option of recording lectures for later reference. Similar to articles, lectures can serve as valuable tools for disseminating and preserving information. Recording sessions allows for convenient review, reinforcing the learning experience and making the content accessible for future consultations.
+
+### D.4.1 Pre-planning
+
+It is crucial to meticulously plan the content and structure of a lecture to avoid encountering unproductive, dead time spent attempting to organize information; essentially, improvisation.
+
+Initiating lesson planning involves clearly defining the objective of the lesson. What is the key concept or skill being presented? Once the goal is established, the next step is to deconstruct the ideas and outline the approach for each one. With organized ideas and a well-structured plan for information presentation, the focus can shift towards determining the specific content and activities for each segment of the lecture. This approach ensures an effective delivery of the intended material.
+
+### D.4.2 Parts of a lecture
+
+The following presents a suggested, straightforward structure for a lecture, but not an exhaustive guide. It is divided into three distinct parts: the introduction, the main content, and the conclusion. Let's delve into each segment.
+
+#### D.4.2.1 Introduction
+
+The initial step is to give a clear commitment to what the audience will gain from the lecture. It is our responsibility to impart knowledge to the listener, and by doing so, we elucidate the message's objectives. In this phase, we differentiate between the topics that will be covered and those that will not. We make a promise to them of what they will gain from the lecture.
+
+The subsequent segment of the introduction involves a brief yet essential recap of preceding subjects. As discussed earlier, it is imperative to elucidate the prerequisite knowledge expected from the students before proceeding. With this clarity established, we can seamlessly transition to presenting the primary focal points.
+
+Finally, we provide a comprehensive overview of the topics we will cover. The sequencing of these subjects holds significance for the students, especially for them to comprehend the rationale behind the chosen order. While individuals with prior knowledge can easily grasp why subject A precedes B, students unfamiliar with A, B or C need a clear explanation of the logical progression. It is essential to maintain an open dialogue about the lesson's structure, ensuring a transparent and accessible learning experience.
+
+#### D.4.2.2 Middle
+
+Following a presentation, we introduce new information to students by establishing connections with the fundamentals. It involves revisiting and reinforcing key concepts, underscoring their significance and relevance. Our approach is like constructing a wall, block by block, providing a clearly visible information panel of what they are learning.
+
+Ensuring seamless transitions between different segments, facilitating students in effortlessly tracking the lecture's progression. This meticulous structuring contributes to a lucid and organized advancement through the material.
+
+Maintain a vigilant eye on time. Various factors can influence the lecture duration, potentially leading to extensions. A common error is to fail to deliver the information in time. Precision in adhering to the allotted time is the hallmark of delivering a well-paced and effective lecture.
+
+In this juncture is where props fulfill their purpose. Further elaboration on this aspect will be provided later.
+
+#### D.4.2.3 Conclusion
+
+Highlight what they have learned, showcase their accomplishments or actions, and, finally, outline the next steps. The conclusion serves as a valuable tool for teachers to consolidate the provided information. It also serves as an opportunity to communicate prerequisites or tasks that students need to be prepared for in the upcoming class.
+
+This stage presents an opportune moment for a review, achievable through discussions or quizzes. While seeking feedback is an option, relying solely on student participation might have limitations. A more effective approach involves utilizing quizzes to succinctly summarize what they have learned and fostering active recall, achieving two benefits in a single endeavor.
+
+### D.4.3 Companion
+
+The companion document is a written resource that enables students to track the contents of the class. Within this document, key points are meticulously listed and succinctly explained. Additionally, it incorporates questions and quizzes, prompting students to actively seek answers during the lecture. The overarching purpose is to provide students with a comprehensive and well-organized tool that enhances the lecture experience, improving understanding and retention of the material.
+
+The elements encompassed within a companion document include:
+
+- **The Outline of the Lecture:** A comprehensive list of key points covered in the lecture.
+- **Visual Aids:** Graphs, images and other visual tools designed to enhance student comprehension.
+- **Bibliography and Supplementary Information Sources:** Recommended readings and external resources for students interested in further exploration of the subject matter.
+- **Practice Exercises:** Inclusion of exercises within the document or references to external exercises for student practice.
+- **Additional Content:** The structure of a companion document is flexible, allowing for the incorporation of various elements based on the specific needs and preferences of the instructor.
+
+### D.4.4 Props
+
+Props are instrumental aids utilized in a lecture to enhance the explanation of subjects. While textual and verbal methods are valuable, they may not always be the most effective. Tools like a board are essential to deliver optimal explanations. In the upcoming discussion, we will explore how these props function and the best practices for their utilization.
+
+The use of props is strategic, as excessive utilization can divert attention from the main point. A logistical approach involves incorporating no more than one prop per subject, and ideally, props should not be removed until their intended function has been fully realized.
+
+We must anticipate where the audience's focus will be directed. Given that students may not all concentrate on the same point, especially when dealing with visuals like graphics, it is crucial to specify and reinforce through both verbal and non-verbal communication where attention should be directed.
+
+An effective strategy is to employ props concurrently with verbal communication, emphasizing key points and leaving a lasting impression on the audience. They serve as a succinct and easily digestible visual summary, often encapsulating the essence of the discussion in just a few words.
+
+## D.5 Conclusion Part D
+
+In this segment, we delve into the imperative nature of teaching, assuming the role of educators to comprehend what it entails and how our actions shape this role. This exploration is fundamental for maintaining a systematic and organized approach to information, beneficial for both ourselves and others.
+
+We elaborate the concept of communication, dissecting the roles of both sender and receiver. Our discussion encompasses the key components that distinguish effective communication from its less proficient counterpart.
+
+Subsequently, we shift our focus to the teacher's responsibility of crafting a course to impart knowledge to students. We explore the intricacies of planning and designing lectures, the backbone of any course. Here, we navigate the process of providing information to individuals who possess minimal or no prior knowledge of the subject matter.
+
+---
+
 # Bibliography
 
-- Matthew Allen (2004) Smart thinking: skills for critical understanding & writing. Oxford University Press.
-
-- Jeremy Wolfe (2004) Introduction to Psychology. MIT Open Courseware.
-
-- Rowena Murray, Sarah Moore (2006) The Handbook of Academic Writing A Fresh Approach. Open University Press.
-
-- James West, Margaret West (2008) Using Wikis for Online Collaboration. Jossey-Bass.
-
-- Don Shiach (2010) How To Write Essays: 2nd edition. How To Content.
-
-- Elvira Narvaja De Arnoux, Mariana Di Stefano, Cicilia Pereira (2010) La lectura y la escritura en la universidad. Editorial Universitaria de Buenos Aires.
-
 - Alan J. Porter (2010) Wiki: Grow Your Own for Fun and Profit. XML Press.
-
-- Mariam Adawiah Dzulkifli, Muhammad Faiz Mustafar (2012) The Influence of Colour on Memory Performance: A Review
-
-- Michael O'Brien Moran, L. Soiferman (2013) A Student's Guide to Academic Writing. Pearson Canada Inc.
-
-- Nelleke Bak (2013) Guide to Academic Writing.
-
-- Peter C. Brown, Henry L. Roediger III, Mark A. McDaniel (2014) make it stick The Science of Successful Learning. Harvard University Press.
-
-- Donald O. Case, Lisa M. Given (2016) Looking for Information: A Survey Of Research On Information Seeking, Needs and Behavior. Emerald Group.
-
 - Barbara Oakley, Terrence Sejnowski (2018) Learning How To Learn. Penguin Random House LLC.
-
-- Fiona McPherson (2018) Effective Note-taking 3rd edition. Wayz Press.
-
-- Tony Buzan (2018) Mind Map Mastery: The Complete Guide to Learning and Using the Most Powerful Thinking Tool in the Universe. Watkins.
-
 - Colin Ware (2019) Information Visualization: Perception for Design. Elsevier Science.
-
-- James Clear (2019) Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones. Penguin Random House LLC.
-
-- Maarten van Doorn (2019) The Complete Guide to Effective Reading. Medium.
-
-- Yana Weinstein, Megan Sumeracki (2019) Understanding How We Learn A Visual Guide. Routledge.
-
 - Creating a 'How to' Guide (2021). Reviewed august 2023 in: [https://www.bath.ac.uk/guides/creating-a-how-to-guide/](https://www.bath.ac.uk/guides/creating-a-how-to-guide/)
-
-- Peter Hollins (2021) How to Teach Anything: Break Down Complex Topics and Explain with Clarity, While Keeping Engagement and Motivation. PH Learning Co.
-
+- Don Shiach (2010) How To Write Essays: 2nd edition. How To Content.
+- Donald O. Case, Lisa M. Given (2016) Looking for Information: A Survey Of Research On Information Seeking, Needs and Behavior. Emerald Group.
+- Elvira Narvaja De Arnoux, Mariana Di Stefano, Cicilia Pereira (2010) La lectura y la escritura en la universidad. Editorial Universitaria de Buenos Aires.
+- Fiona McPherson (2018) Effective Note-taking 3rd edition. Wayz Press.
 - Flowcharts (2022). Reviewed august 2022 in: [https://es.wikipedia.org/wiki/Diagrama_de_flujo](https://es.wikipedia.org/wiki/Diagrama_de_flujo).
-
+- James Clear (2019) Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones. Penguin Random House LLC.
+- James West, Margaret West (2008) Using Wikis for Online Collaboration. Jossey-Bass.
+- Jeremy Wolfe (2004) Introduction to Psychology. MIT Open Courseware.
+- John Hattie (2012) Visible Learning for Teachers: Maximizing Impact on Learning. Routledge.
+- Katherine Hampsten (2016) How miscommunication happens (and how to avoid it). [Ted Ed](https://ed.ted.com/lessons/how-to-avoid-miscommunication-katherine-hampsten)
+- Ken Bain (2004) What the Best College Teachers Do. Harvard University Press.
+- Maarten van Doorn (2019) The Complete Guide to Effective Reading. Medium.
+- Mariam Adawiah Dzulkifli, Muhammad Faiz Mustafar (2012) The Influence of Colour on Memory Performance: A Review
+- Matthew Allen (2004) Smart thinking: skills for critical understanding & writing. Oxford University Press.
+- Michael O'Brien Moran, L. Soiferman (2013) A Student's Guide to Academic Writing. Pearson Canada Inc.
+- Nelleke Bak (2013) Guide to Academic Writing.
+- Patrick Winston (2018) How to Speak. [MIT Open Courseware](https://ocw.mit.edu/courses/res-tll-005-how-to-speak-january-iap-2018/pages/how-to-speak/)
+- Peter C. Brown, Henry L. Roediger III, Mark A. McDaniel (2014) make it stick The Science of Successful Learning. Harvard University Press.
+- Peter Hollins (2021) How to Teach Anything: Break Down Complex Topics and Explain with Clarity, While Keeping Engagement and Motivation. PH Learning Co.
+- Rowena Murray, Sarah Moore (2006) The Handbook of Academic Writing A Fresh Approach. Open University Press.
 - Sönke Ahrens (2022) How to Take Smart Notes.
-
 - Tiago Forte (2022) Building a Second Brain. Profile Books Ltd.
-
+- Tony Buzan (2018) Mind Map Mastery: The Complete Guide to Learning and Using the Most Powerful Thinking Tool in the Universe. Watkins.
+- Yana Weinstein, Megan Sumeracki (2019) Understanding How We Learn A Visual Guide. Routledge.
 

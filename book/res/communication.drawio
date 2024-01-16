@@ -1,0 +1,72 @@
+<mxfile host="Electron" modified="2024-01-10T13:25:47.315Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.16 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="A4QkjeuXbK-ZU-BHziH6" version="22.1.16" type="device">
+  <diagram name="Page-1" id="a-Os2JuJvmvJtfI_8bZA">
+    <mxGraphModel dx="1122" dy="489" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="w-WW_tIjTCFArf6tReRk-1" value="Sender" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="-160" y="210" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="w-WW_tIjTCFArf6tReRk-14" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;fontSize=12;startSize=8;endSize=8;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="w-WW_tIjTCFArf6tReRk-2" target="w-WW_tIjTCFArf6tReRk-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="200" y="80" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="200" y="80" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="w-WW_tIjTCFArf6tReRk-2" value="Receiver" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="440" y="210" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="w-WW_tIjTCFArf6tReRk-5" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="w-WW_tIjTCFArf6tReRk-1" target="w-WW_tIjTCFArf6tReRk-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-30" y="240" as="sourcePoint" />
+            <mxPoint x="20" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="w-WW_tIjTCFArf6tReRk-6" value="Channel" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="170" y="210" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="w-WW_tIjTCFArf6tReRk-8" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.mail;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="185" y="253.5" width="30" height="16.5" as="geometry" />
+        </mxCell>
+        <mxCell id="w-WW_tIjTCFArf6tReRk-9" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.envelope_(message);fontSize=16;" vertex="1" parent="1">
+          <mxGeometry y="180" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="w-WW_tIjTCFArf6tReRk-10" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.envelope_(message);fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="360" y="180" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="w-WW_tIjTCFArf6tReRk-11" value="Encoding" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="-15" y="200" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="w-WW_tIjTCFArf6tReRk-12" value="Decoding" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="345" y="200" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="w-WW_tIjTCFArf6tReRk-15" value="Feedback" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="170" y="120" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="w-WW_tIjTCFArf6tReRk-16" value="" style="endArrow=none;dashed=1;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint y="300" as="sourcePoint" />
+            <mxPoint x="400" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="w-WW_tIjTCFArf6tReRk-18" value="Noise" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="170" y="300" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="w-WW_tIjTCFArf6tReRk-20" value="" style="endArrow=none;dashed=1;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="80" y="300" as="sourcePoint" />
+            <mxPoint x="80" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="w-WW_tIjTCFArf6tReRk-21" value="" style="endArrow=none;dashed=1;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="320" y="300" as="sourcePoint" />
+            <mxPoint x="320" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

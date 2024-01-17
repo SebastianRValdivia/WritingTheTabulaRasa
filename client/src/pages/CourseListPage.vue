@@ -23,7 +23,7 @@ import { ref, computed, onBeforeMount } from "vue"
 import { useQuasar, useMeta } from "quasar"
 import { useI18n} from "vue-i18n"
 
-import { useLectureStore } from "src/stores/lecture-store"
+import { useCourseStore } from "src/stores/course-store"
 import LectureCard from "src/components/for-viewing/LectureCard.vue"
 
 export default {
@@ -32,7 +32,7 @@ export default {
     LectureCard
   },
   setup() {
-    const lectureStore = useLectureStore()
+    const courseStore = useCourseStore()
     const { t } = useI18n()
     const quasar = useQuasar()
 
@@ -41,18 +41,18 @@ export default {
     const displayedLectures =  computed(() => {
       if (searchPattern.value) {
         return fuzzySearchByObjectByKeys(
-          lectureStore.getLectureList,
+          courseStore.getLectureList,
           searchPattern.value,
           ['title',]
         )
       } else {
-        return lectureStore.getLectureList
+        return courseStore.getLectureList
       }
     })
 
 
     onBeforeMount(async () => {
-      let result = await lectureStore.retrieveLiteLectureList()
+      let result = await courseStore.retrieveLiteLectureList()
 
       if (!result) quasar.notify(errorNotification(t("general.failed")))
     })

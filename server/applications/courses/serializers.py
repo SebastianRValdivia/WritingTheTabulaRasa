@@ -1,6 +1,12 @@
 from rest_framework.serializers import ModelSerializer
 
-from .models import LectureModel
+from .models import LectureModel, CourseModel
+
+class CourseSerializer(ModelSerializer):
+
+    class Meta:
+        model = CourseModel
+        fields = "__all__"
 
 class LectureSerializer(ModelSerializer):
 
@@ -12,4 +18,4 @@ class LiteLectureSerializer(ModelSerializer):
 
     class Meta:
         model = LectureModel
-        fields = ["title", "thumbnail", "updated", "created", "owner"]
+        fields = ["title", "updated", "created", "owner"]

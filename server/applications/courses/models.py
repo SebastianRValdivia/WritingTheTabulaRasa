@@ -4,11 +4,25 @@ from django.core.validators import FileExtensionValidator
 from config.fields_default_values import (CHARFIELD_LONG)
 
 # Create your models here.
+class CourseModel(models.Model):
+
+    title = models.CharField(
+        max_length=CHARFIELD_LONG,
+        blank=False,
+        null=False,
+    )
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    students = models.ManyToManyField("courses.LectureModel")
 
 
 class LectureModel(models.Model):
 
 
+    course = models.ForeignKey(
+        CourseModel,
+        on_delete=models.SET_NULL,
+        null=True,
+    )
     title = models.CharField(
         max_length=CHARFIELD_LONG,
         blank=False,

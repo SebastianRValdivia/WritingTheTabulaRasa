@@ -2,9 +2,9 @@ import { api } from "boot/axios";
 import { recursiveGetCall } from "src/utils/api"
 
 export default {
-  async getLecturesLite() {
+  async getLectures() {
     let result = await recursiveGetCall(
-      "v1/lectures/lite/"
+      "v1/courses/lectures/"
     )
     return result
   },

@@ -17,10 +17,12 @@ export default {
       let response = await api.get(`v1/resources/user-learning/?owner=${userId}`)
 
       if (response.status === 200) {
-        return {
-          code: 200,
-          data: response.data.results[0].resources
-        }
+        if (response.data.results.length > 0) {
+          return {
+            code: 200,
+            data: response.data.results[0].resources
+          }
+        } else return false
       } else return false
     } catch {
       return false

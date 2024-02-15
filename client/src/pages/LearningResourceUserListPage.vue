@@ -1,7 +1,7 @@
 <template>
   <q-page padding>
     <div class="col-12 row justify-center">
-      <div 
+      <div
         v-if="selectedLearningResourcesList.length >= 1"
         class="column justify-center q-pr-md"
       >
@@ -11,7 +11,7 @@
           @click="deleteSelectedResources"
         />
       </div>
-      <q-input 
+      <q-input
         rounded
         outlined
         v-model="searchInput"
@@ -21,19 +21,22 @@
           <q-icon name="search" />
         </template>
       </q-input>
-      <q-page-sticky 
+      <q-page-sticky
         position="top-right"
         :offset="[20, 20]"
       >
-        <q-btn 
-          round 
+        <q-btn
+          round
           icon="add"
           color="primary"
           :to="{name: 'learningResourcesEditor'}"
         />
       </q-page-sticky>
     </div>
-    <div class="row q-gutter-md q-pt-md">
+    <div v-if="displayedResources">
+      <EmptyMsg />
+    </div>
+    <div class="row q-gutter-md q-pt-md" v-else>
       <q-card
         v-for="resource in displayedResources"
         :key="resource.id"
@@ -58,15 +61,19 @@ import { useI18n } from "vue-i18n"
 
 import { useUserStore } from "src/stores/user-store"
 import { useResourceStore } from "src/stores/resource-store"
+import EmptyMsg from "src/components/for-viewing/EmptyMsg.vue"
 
 export default {
   name: "LearningResourcesPage",
+  components: {
+    EmptyMsg,
+  },
   setup() {
     const quasar = useQuasar()
     const { t } = useI18n()
     const userStore = useUserStore()
     const resourcesStore = useResourceStore()
-    
+
     const selectedLearningResourcesList = ref([])
     const searchInput = ref("")
     const displayedResources = computed(() => {
@@ -99,8 +106,7 @@ export default {
     onBeforeMount(async () => {
       quasar.loading.show()
       let result = await resourcesStore.retrieveLearningResources()
-      if (result) 
-        result = await resourcesStore.retrieveUserAssignedLearningResources()
+      if (result) await resourcesStore.retrieveUserAssignedLearningResources()
       if (result) {
         quasar.loading.hide()
       }

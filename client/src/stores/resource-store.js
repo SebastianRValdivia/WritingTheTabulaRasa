@@ -33,7 +33,6 @@ export const useResourceStore = defineStore("resource", {
       let result = await api.resources.getUserAssignedLearningResources(
         userStore.getUserId
       )
-
       if (result) {
         this.userLearningResourceIdsList = result.data
         return true

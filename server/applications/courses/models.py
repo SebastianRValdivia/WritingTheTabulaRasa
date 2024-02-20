@@ -11,8 +11,15 @@ class CourseModel(models.Model):
         blank=False,
         null=False,
     )
-    owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    students = models.ManyToManyField("courses.LectureModel")
+    owner = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name="professor",
+    )
+    students = models.ManyToManyField(
+        User,
+        related_name="students",
+    )
 
 
 class LectureModel(models.Model):

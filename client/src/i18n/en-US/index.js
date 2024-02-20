@@ -30,7 +30,7 @@ const mainLayout = {
   resources: "Resources",
   learnignResources: "Learning resources",
   images: "Images",
-  lectures: "Lectures",
+  courses: "Courses",
 }
 const mainDrawer = {
   notes: "My notes",

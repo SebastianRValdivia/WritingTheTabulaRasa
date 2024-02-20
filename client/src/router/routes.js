@@ -272,9 +272,9 @@ const routes = [
         ]
       },
       {
-        path: "lectures/",
-        name: "lectureListPage",
-        component: () => import("src/pages/LectureListPage.vue")
+        path: "courses/",
+        name: "courseListPage",
+        component: () => import("src/pages/CourseListPage.vue")
       },
     ]
   },

@@ -1,7 +1,7 @@
 import { defineStore } from "pinia"
 import api from "src/api"
 
-export const useLectureStore = defineStore('lecture', {
+export const useCourseStore = defineStore('course', {
   state: () => ({
     lectureList: [],
 
@@ -11,7 +11,7 @@ export const useLectureStore = defineStore('lecture', {
   },
   actions: {
     async retrieveLiteLectureList() {
-      let result = await api.lectures.getLecturesLite()
+      let result = await api.courses.getLectures()
 
       if (result) {
         this.lectureList = result.data
